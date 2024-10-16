@@ -1,0 +1,391 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+%\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+\newcommand{\D}[2]{\dfrac{\partial {#1}}{\partial {#2}}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\title {Derivada Direcional}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Derivada Direcional}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Derivada Direcional}{derivada_direcional}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição}
+  A derivada de $f$ em $(x_0, y_0)$
+  \pause
+  na direção do vetor unitário
+  \[
+    u
+    \pause
+    = u_1 \veci + u_2 \vecj
+    \pause
+    = \vetor{u_1}{u_2}
+  \]
+  \pause
+  é o número
+  \[
+    \left(\frac{df}{ds}\right)_{u, (x_0, y_0)}
+    \pause
+    = \left(D_u f\right)_{(x_0, y_0)}
+    \pause
+    = \lim_{s\to 0} \frac{f(x_0+su_1, y_0+su_2)-f(x_0, y_0)}{s}
+  \]
+\end{frame}
+
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Interpretação da Derivada Direcional}{derivada_direcional_interpretacao}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Interpretação da Derivada Direcional}
+  A derivada direcional é a taxa de variação da função $f$ na direção do vetor $u$
+
+  \pause
+  \vspace{\baselineskip}
+  Se \(u=\veci=\vetor{1}{0}\)
+  \pause
+  então
+  \(
+    \left(D_u f\right) = \D{f}{x}
+  \)
+
+  \pause
+  \vspace{\baselineskip}
+  Se \(u=\vecj=\vetor{0}{1}\)
+  \pause
+  então
+  \(
+    \left(D_u f\right) = \D{f}{y}
+  \)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Use a definição para calcular a derivada de \(f(x, y) = x^2 + xy\)
+  no ponto \((1, 2)\) na direção
+  \(
+    u = 2\veci + 3\vecj
+  \)
+
+  \vspace{2\baselineskip}
+  (Para simplificar os cálculos, ignore o fato desse vetor não ser unitário)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \begin{align*}
+    \onslide<+->{\left(\frac{df}{du}\right)_{u, (1, 2)}}
+    \onslide<+->{& = \lim_{s\to 0} \frac{f(x_0+su_1, y_0+su_2)-f(x_0, y_0)}{s} \\}
+    \onslide<+->{& = \lim_{s\to 0} \frac{f(1+2s, 2+3s)-f(1, 2)}{s} \\[2mm]}
+    \onslide<+->{& = \lim_{s\to 0} \frac{\big((1+2s)^2 + (1+2s)(2+3s)\big)
+                                         -\left(1^2+1\times 2\right)}{s} \\[2mm]}
+    \onslide<+->{& = \lim_{s\to 0} \frac{(1 + 4s + 4s^2) + (2 + 3s + 4s + 6s^2) -3}{s} \\[2mm]}
+    \onslide<+->{& = \lim_{s\to 0} \frac{11s + 10s^2}{s} \\[2mm]}
+    \onslide<+->{& = \lim_{s\to 0} (11 + 10s)}
+    \onslide<+->{  = 11}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Vetor Gradiente}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Vetor Gradiente}
+  O \emph{vetor gradiente} de $f(x, y)$ em um ponto $(x_0, y_0)$
+  \pause
+  é
+  \[
+    \nabla f
+    \pause
+    \;=\; \D{f}{x}\veci \,+\, \D{f}{y}\vecj
+    \pause
+    \;=\; \left(\begin{array}{c} \D{f}{x} \\[5mm] \D{f}{y} \end{array}\right)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Calcule o vetor gradiente da função \(f(x, y) = \sqrt{2x+3y}\)
+  no ponto \((-1, 2)\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Calculando as derivadas parciais
+
+  \pause
+  \[
+    \D{f}{x}
+    \pause
+    \;=\; \D{}{x}\sqrt{2x+3y}
+    \pause
+    \;=\; \D{}{x}\left(2x+3y\right)^{\sfrac{1}{2}}
+  \]
+  \[
+    \hphantom{\D{f}{x}}
+    \pause
+    \;=\; \frac{1}{2}\left(2x+3y\right)^{\sfrac{-1}{2}}\D{}{x}\left(2x+3y\right)
+    \pause
+    \;=\; \frac{1}{\sqrt{2x+3y}}
+  \]
+
+  \pause
+  \[
+    \D{f}{x}(-1, 2)
+    \pause
+    \;=\; \frac{1}{\sqrt{2(-1)+3(2)}}
+    \pause
+    \;=\; \frac{1}{\sqrt{-2+6}}
+    \pause
+    \;=\; \frac{1}{\sqrt{4}}
+    \pause
+    \;=\; \frac{1}{2}
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Calculando as derivadas parciais
+
+  \pause
+  \[
+    \D{f}{y}
+    \pause
+    \;=\; \D{}{y}\sqrt{2x+3y}
+    \pause
+    \;=\; \D{}{y}\left(2x+3y\right)^{\sfrac{1}{2}}
+    \]
+    \[
+    \hphantom{\D{f}{y}}
+    \pause
+    \;=\; \frac{1}{2}\left(2x+3y\right)^{\sfrac{-1}{2}}\D{}{y}\left(2x+3y\right)
+    \pause
+    \;=\; \frac{3}{2\sqrt{2x+3y}}
+  \]
+
+  \pause
+  \[
+    \D{f}{y}(-1, 2)
+    \pause
+    \;=\; \frac{3}{2\sqrt{2(-1)+3(2)}}
+    \pause
+    \;=\; \frac{3}{2\sqrt{-2+6}}
+    \pause
+    \;=\; \frac{3}{2\sqrt{4}}
+    \pause
+    \;=\; \frac{3}{4}
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  O vetor gradiente
+  \[
+    \nabla f
+    \pause
+    \;=\; \left(\begin{array}{c} \D{f}{x} \\[5mm] \D{f}{y} \end{array}\right)
+    \pause
+    \;=\; \left(\begin{array}{c}
+             \dfrac{1}{\sqrt{2x+3y}} \\[5mm]
+             \dfrac{3}{2\sqrt{2x+3y}}
+          \end{array}\right)
+    \pause
+    \;=\; \frac{1}{\sqrt{2x+3y}} \left(\begin{array}{c}
+            1 \\[2mm]
+            \sfrac{3}{2}
+          \end{array}\right)
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  O vetor gradiente no ponto \((-1, 2)\)
+  \[
+    \nabla f(-1, 2)
+    \;=\; \left[\frac{1}{\sqrt{2x+3y}} \left(\begin{array}{c}
+      1 \\[2mm]
+      \sfrac{3}{2}
+    \end{array}\right)\right]\evalat{(-1, 2)}{}
+    \;=\; \vetor{\sfrac{1}{2}}{\sfrac{3}{4}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Calculando a Derivada Direcional}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Calculando a Derivada Direcional}
+  Considere a reta que passa por \((x_0, y_0)\)
+  \pause
+  na direção de \(u=u_1\veci+u_2\vecj\)
+  \pause
+  \[
+    x = x_0 + su_1 \qquad
+    y = y_0 + su_2
+  \]
+
+  Restringindo $f$ à reta
+  \[
+    f(s) = f\big(x(s), y(s)\big)
+  \]
+
+  \pause
+  Pela regra da cadeira temos
+  \[
+    D_u f
+    \pause
+    \;=\; \frac{df}{ds}
+    \pause
+    \;=\; \D{f}{x}\frac{dx}{ds} + \D{f}{y}\frac{dy}{ds}
+    \pause
+    \;=\; \D{f}{x}u_1 + \D{f}{y}u_2
+    \pause
+    \;=\; \left(\begin{array}{c} \D{f}{x} \\[5mm] \D{f}{y} \end{array}\right)
+      \cdot \vetor{u_1}{u_2}
+    \pause
+    \;=\; \nabla f \cdot u
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre a derivada de \(f(x, y) = xe^y + \cos(xy)\)
+  no ponto \((2, 0)\)
+  na direção \(v=3\veci-4\vecj\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  O vetor $v$ não é unitário,
+  \pause
+  então precisamos dividi-lo pelo seu
+  comprimento
+  \[
+    \pause
+    u
+    \;=\; \frac{v}{\abs{v}}
+    \pause
+    \;=\; \frac{3\veci-4\vecj}{\sqrt{3^2+4^2}}
+    \pause
+    \;=\; \frac{3\veci-4\vecj}{\sqrt{25}}
+    \pause
+    \;=\; \frac{3}{5}\veci - \frac{4}{5}\vecj
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Calculando as derivadas parciais
+
+  \pause
+  \[
+    \D{f}{x}
+    \pause
+    \;=\;  \D{}{x}\left(xe^y + \cos(xy)\right)
+    \pause
+    \;=\;  e^y - y\sin(xy)
+  \]
+
+  \pause
+  \[
+    \D{f}{x}(2, 0)
+    \pause
+    \;=\;  e^0 - 0\sin(2\times 0)
+    \pause
+    \;=\;  1
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Calculando as derivadas parciais
+
+  \pause
+  \[
+    \D{f}{y}
+    \pause
+    \;=\;  \D{}{x}\left(xe^y + \cos(xy)\right)
+    \pause
+    \;=\;  xe^y - x\sin(xy)
+  \]
+
+  \pause
+  \[
+    \D{f}{y}(2, 0)
+    \pause
+    \;=\;  2e^0 - 2\sin(2\times 0)
+    \pause
+    \;=\;  2
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Calculando a derivada direcional
+  \[
+    \left(D_u f\right)\evalat{(2, 0)}{}
+    \pause
+    \;=\; \left(\nabla f\right)\evalat{(2, 0)}{} \cdot u
+    \pause
+    \;=\; \vetor{1}{2} \cdot \vetor{\sfrac{3}{5}}{-\sfrac{4}{5}}
+  \]
+  \[
+    \hphantom{\left(D_u f\right)\evalat{(2, 0)}{}}
+    \pause
+    \;=\; 1 \frac{3}{5} + 2 \frac{-4}{5}
+    \pause
+    \;=\; \frac{3}{5} - \frac{8}{5}
+    \pause
+    \;=\; - \frac{5}{5}
+    \pause
+    \;=\; -1
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.5
+  \begin{enumerate}
+    \item Estudar o texto da seção
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

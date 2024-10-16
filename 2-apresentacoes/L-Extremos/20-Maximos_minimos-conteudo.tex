@@ -1,0 +1,593 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+%\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+\newcommand{\D}[2]{\dfrac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\title {Máximos e Mínimos}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Extremos Locais}
+
+%------------------------------------------------------------------------------%
+%\framedgraphic{Derivada Direcional}{derivada_direcional}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Extremos Locais}
+  Seja $f(x, y)$ definida em uma região $R$ que contém o ponto $(a, b)$
+
+  \pause
+  \begin{itemize}[<+->]
+    \item \(f(a, b)\) é um valor \emph{máximo local} de $f$ se
+          \[
+            f(a, b) \geq f(x, y)
+          \]
+          para \((x, y)\) do domínio em um disco aberto centrado em \((a, b)\)
+    \item \(f(a, b)\) é um valor \emph{mínimo local} de $f$ se
+          \[
+            f(a, b) \leq f(x, y)
+          \]
+          para \((x, y)\) do domínio em um disco aberto centrado em \((a, b)\)
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teste da Derivada de Primeira Ordem}
+  Se $f(x, y)$ tiver um máximo ou mínimo local em um ponto interior \((a, b)\)
+  do seu domínio
+
+  \pause
+  \vspace{\baselineskip}
+  e se as derivadas de primerira ordem existirem em \((a, b)\), então
+
+  \pause
+  \vspace{\baselineskip}
+  \[
+    f_x(a, b) = 0
+    \qquad
+    f_y(a, b) = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Ponto Crítico}
+  Um ponto interior do domínio de uma função \(f(x, y)\) onde
+
+  \pause
+  \vspace{\baselineskip}
+  \(f_x\) e \(f_y\) sejam zero, ou
+
+  \pause
+  \vspace{\baselineskip}
+  \(f_x\) ou \(f_y\) não existam
+
+  \pause
+  \vspace{\baselineskip}
+  é um \emph{Ponto Crítico} de $f$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Ponto de Sela}
+  Uma função diferenciável \(f(x, y)\) possui um \emph{ponto de sela} em \((a, b)\)
+
+  \pause
+  \vspace{\baselineskip}
+  se em todo disco aberto centrado em \((a, b)\)
+
+  \pause
+  \vspace{\baselineskip}
+  existirem pontos \((x, y)\) onde
+  \[
+    f(x, y) > f(a, b)
+  \]
+  \pause
+  e existirem pontos \((x, y)\) onde
+  \[
+    f(x, y) < f(a, b)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre os valores extremos locais de
+  \[
+     f(x, y) = x^2 + y^2 - 4y + 9
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Derivadas parciais
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \D{f}{x}
+    \pause
+    = \D{}{x}\left(x^2 + y^2 - 4y + 9\right)
+    \pause
+    = 2x
+  \]
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \D{f}{y}
+    \pause
+    = \D{}{y}\left(x^2 + y^2 - 4y + 9\right)
+    \pause
+    = 2y -4
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  A função está definida no plano todo
+
+  \pause
+  \vspace{\baselineskip}
+  Pontos críticos
+
+  \pause
+  \vspace{\baselineskip}
+  As derivadas existem em todos os pontos do plano
+
+  \pause
+  \vspace{\baselineskip}
+  Plano tangente horizontal
+  \[
+    f_x(x, y) = 2x = 0
+    \pause
+    \quad\Rightarrow\quad
+    \pause
+    x = 0
+  \]
+  \[
+    \pause
+    f_y(x, y) = 2y -4 = 0
+    \pause
+    \quad\Rightarrow\quad
+    \pause
+    y = 2
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  O único ponto critico é \((0, 2)\)
+
+  \pause
+  \vspace{\baselineskip}
+  Onde a função vale
+  \[
+    f(0, 2)
+    \pause
+    = \left(x^2 + y^2 - 4y + 9\right)\evalat{(0, 2)}{}
+    \pause
+    = 0 + 4 - 8 + 9
+    \pause
+    = 5
+  \]
+
+  \pause
+  \vspace{\baselineskip}
+  Analizando a função percebemos que 5 é o menor valor que ela assume,
+  portanto é um ponto de mínimo local (e nesse caso global também)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Teste da Derivada Segunda}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Hessiana}
+  Matriz Hessiana
+  \[
+    \arraycolsep=2mm
+    \def\arraystretch{1.2}
+    H(x, y) = \begin{bmatrix}
+      \null\;f_{xx}(x, y)\;\null & \null\;f_{xy}(x, y)\;\null \\
+      f_{yx}(x, y) & f_{yy}(x, y)
+    \end{bmatrix}
+  \]
+
+  \pause
+  \vspace{\baselineskip}
+  Discrimiante (ou hessiano)
+  \[
+    \arraycolsep=2mm
+    \def\arraystretch{1.2}
+    \det H(x, y) \;=\; f_{xx}(x, y)\,f_{yy}(x, y) \;-\; f_{xy}^2(x, y)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teste da Derivada Segunda}
+  Seja $f(x, y)$ diferenciável e
+  \(
+    f_x(a, b) \;=\; f_y(a, b) \;=\; 0
+  \)
+
+  \pause
+  \vspace{\baselineskip}
+  \begin{enumerate}[<+->]
+    \item $f$ tem um \emph{máximo local} em $(a, b)$ se
+    \[
+      f_{xx}(a, b) \bm{<} 0
+      \quad\text{e}\quad
+      f_{xx}(a, b) f_{yy}(a, b) - f^2_{xy}(a, b) \bm{>} 0
+    \]
+    \item $f$ tem um \emph{mínimo local} em $(a, b)$ se
+    \[
+      f_{xx}(a, b) \bm{>} 0
+      \quad\text{e}\quad
+      f_{xx}(a, b) f_{yy}(a, b) - f^2_{xy}(a, b) \bm{>} 0
+    \]
+  \end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teste da Derivada Segunda}
+\begin{enumerate}[<+->]
+  \setcounter{enumi}{2}
+  \item $f$ tem um \emph{ponto de sela} em $(a, b)$ se
+  \[
+    f_{xx}(a, b) f_{yy}(a, b) - f^2_{xy}(a, b) \bm{<} 0
+  \]
+  \item o teste é inconclusivo se
+  \[
+    f_{xx}(a, b) f_{yy}(a, b) - f^2_{xy}(a, b) \bm{=} 0
+  \]
+\end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre os valores extremos locais da função
+  \[
+    f(x, y) = xy -x^2 - y^2 -2x -2y +4
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Derivadas parciais
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \D{f}{x}
+    \pause
+    = \D{}{x}\left(xy -x^2 - y^2 -2x -2y +4\right)
+    \pause
+    = y -2x -2
+  \]
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \D{f}{y}
+    \pause
+    = \D{}{y}\left(xy -x^2 - y^2 -2x -2y +4\right)
+    \pause
+    = x -2y -2
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  A função está definida no plano todo
+
+  \pause
+  \vspace{\baselineskip}
+  Pontos críticos
+
+  \pause
+  \vspace{\baselineskip}
+  As derivadas existem em todos os pontos do plano
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{f_x(x, y) & = y -2x -2 = 0 \\}
+    \onslide<+->{f_y(x, y) & = x -2y -2 = 0}
+  \end{align*}
+
+  \vspace{\baselineskip}
+  \begin{align*}
+    \onslide<+->{x -2y -2 & = 0      \\}
+    \onslide<+->{x        & = 2y + 2}
+  \end{align*}
+
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{y -2x -2         & = 0  \\}
+    \onslide<+->{y -2(2y + 2) - 2 & = 0  \\}
+    \onslide<+->{y -4y + -6       & = 0  \\}
+    \onslide<+->{-3y              & = 6  \\}
+    \onslide<+->{y                & = -2}
+  \end{align*}
+
+  \vspace{\baselineskip}
+  \[
+    \onslide<+->{x
+    = 2y + 2}
+    \onslide<+->{= 2(-2) + 2}
+    \onslide<+->{= -2}
+  \]
+\end{columns}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Calculando as derivadas segundas
+  \[
+    \pause
+    \DS{f}{x}
+    \pause
+    = \D{}{x}\left(y -2x -2\right)
+    \pause
+    = -2
+  \]
+  \[
+    \pause
+    \DS{f}{y}
+    \pause
+    = \D{}{y}\left(x -2y -2\right)
+    \pause
+    = -2
+  \]
+  \[
+    \pause
+    \DM{f}{x}{y}
+    \pause
+    = \D{}{x}\left(x -2y -2\right)
+    \pause
+    = 1
+  \]
+
+  \pause
+  Discriminante
+  \[
+    \pause
+    D(x, y)
+    \pause
+    = f_{xx}(-2, -2) f_{yy}(-2, -2) - f^2_{xy}(-2, -2)
+    \pause
+    = (-2)(-2) - 1
+    \pause
+    = 3
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Como \(f_{xx}(-2, -2) = -2 < 0\)
+  \pause
+  e \(D=3>0\)
+
+  \pause
+  \vspace{\baselineskip}
+  O ponto \((-2, -2)\) é um ponto de mínimo local
+
+  \pause
+  \vspace{\baselineskip}
+  O valor mínimo da função é
+  \[
+    f(-2, -2)
+    \pause
+    = \left(xy -x^2 - y^2 -2x -2y +4\right)\evalat{(-2, -2)}{}
+  \]
+  \[
+    \hphantom{f(-2, -2)}
+    \pause
+    = (-2)(-2) - (-2)^2 - (-2)^2 -2(-2) -2(-2) + 4
+  \]
+  \[
+    \hphantom{f(-2, -2)}
+    \pause
+    = 4 -4 -4 +4 +4 + 4
+  \]
+  \[
+    \hphantom{f(-2, -2)}
+    \pause
+    = 8
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre os valores extremos locais da função
+  \[
+    f(x, y) = 3y^2 -2y^3 -3x^2 +6xy
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Derivadas parciais
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \D{f}{x}
+    \pause
+    = \D{}{x}\left(3y^2 -2y^3 -3x^2 +6xy\right)
+    \pause
+    = -6x +6y
+    \pause
+    = 6y -6x
+  \]
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \D{f}{y}
+    \pause
+    = \D{}{y}\left(3y^2 -2y^3 -3x^2 +6xy\right)
+    \pause
+    = 6y -6y^2 +6x
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  A função está definida no plano todo
+
+  \pause
+  \vspace{\baselineskip}
+  Pontos críticos
+
+  \pause
+  \vspace{\baselineskip}
+  As derivadas existem em todos os pontos do plano
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{f_x(x, y) & = 6y -6x = 0 \\}
+    \onslide<+->{f_y(x, y) & = 6y -6y^2 +6x = 0}
+  \end{align*}
+  \begin{align*}
+    \onslide<+->{6y -6x & = 0 \\}
+    \onslide<+->{x      & = y}
+  \end{align*}
+  \column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{6y -6y^2 +6x & = 0 \\}
+    \onslide<+->{6y^2 -6y -6x & = 0 \\}
+    \onslide<+->{6y^2 -6y -6y & = 0 \\}
+    \onslide<+->{6y^2 - 12y   & = 0 \\}
+    \onslide<+->{6y(y-2)      & = 0}
+  \end{align*}
+
+  \vspace{\baselineskip}
+  \onslide<+->{Portanto \(y=0\) ou \(y=2\)}
+
+  \vspace{\baselineskip}
+  \onslide<+->{Os pontos críticos são \((0, 0)\) e \((2, 2)\)}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Calculando as derivadas segundas
+  \[
+    \pause
+    \DS{f}{x}
+    \pause
+    = \D{}{x}\left(6y -6x\right)
+    \pause
+    = -6
+  \]
+  \[
+    \pause
+    \DS{f}{y}
+    \pause
+    = \D{}{y}\left(6y -6y^2 +6x\right)
+    \pause
+    = 6 -12y
+  \]
+  \[
+    \pause
+    \DM{f}{x}{y}
+    \pause
+    = \D{}{y}\left(6y -6x\right)
+    \pause
+    = 6
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Discriminante}
+  \begin{align*}
+    \onslide<+->{D(x, y)}
+    \onslide<+->{& = f_{xx}(0, 0) f_{yy}(0, 0) - f^2_{xy}(0, 0) \\}
+    \onslide<+->{& = (-6)(6-12y) - 6^2 \\}
+    \onslide<+->{& = -36 +72y - 36 \\}
+    \onslide<+->{& = 72(y-1)}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Analizando o ponto \((0, 0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  Como
+  \[
+    \pause
+    D(0, 0)
+    \pause
+    = 72(0-1)
+    \pause
+    = -72
+    \pause
+    \;<\; 0
+  \]
+  \pause
+  esse ponto é um ponto de sela
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Analizando o ponto \((2, 2)\)}
+
+  \onslide<+->{Como}
+  \[
+    \onslide<+->{D(0, 0) = 72(2-1) = 72 > 0}
+    \qquad
+    \onslide<+->{f_{xx} = -6 < 0}
+  \]
+  \onslide<+->{o ponto \((2, 2)\) é um máximo local com valor}
+  \begin{align*}
+    \onslide<+->{f(2, 2)
+    & = \left(3y^2 -2y^3 -3x^2 +6xy\right)\evalat{(2, 2)}{} \\}
+    \onslide<+->{& = 3\times 2^2 -2 \times 2^3 -3\times 2^2 + 6\times 2 \times 2\\}
+    \onslide<+->{& = 12 -16 -12 + 24 \\}
+    \onslide<+->{& = 8}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.7
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 2, 9, 11, 21, 23, 24, 25, 27
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

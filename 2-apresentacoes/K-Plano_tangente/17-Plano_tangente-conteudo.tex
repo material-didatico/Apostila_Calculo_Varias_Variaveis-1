@@ -1,0 +1,330 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+%\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+\newcommand{\D}[2]{\dfrac{\partial {#1}}{\partial {#2}}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\title {Planos Tangentes}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Plano Tangente à Superfície de Nível}
+
+%------------------------------------------------------------------------------%
+%\framedgraphic{Derivada Direcional}{derivada_direcional}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Justificativa}
+  Seja
+  \[
+    r(t) = g(t)\veci + h(t)\vecj + k(t)\veck
+  \]
+  \pause
+  uma curva lisa na superfície de nível
+  \[
+    f(x, y, z)  = c
+  \]
+  \pause
+  de uma função diferenciável $f$, então
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Justificativa}
+  \begin{align*}
+     \onslide<+->{f(g(t), h(t), k(t)) & = c \\[2mm]}
+     \onslide<+->{\frac{d}{dt}f(g(t), h(t), k(t)) & = \frac{dc}{dt} \\[2mm]}
+     \onslide<+->{\D{f}{x}\frac{dg}{dt} + \D{f}{y}\frac{dh}{dt} + \D{f}{z}\frac{dk}{dt} & = 0 \\[2mm]}
+     \onslide<+->{\left(
+       \D{f}{x}\veci + \D{f}{y}\vecj + \D{f}{z}\veck
+     \right)
+     \cdot
+     \left(
+       \frac{dg}{dt}\veci + \frac{dh}{dt}\vecj + \frac{dk}{dt}\veck
+     \right)
+     & = 0 \\[2mm]}
+     \onslide<+->{\nabla f \cdot \frac{dr}{dt} & = 0}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Justificativa}
+  Se tomarmos todas as curvas suaves que passam por um ponto \((x_0, y_0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  Seus vetores tantentes são todos ortogonais ao vetor gradiente no ponto
+
+  \pause
+  \vspace{\baselineskip}
+  Todos os vetores tangentes estão no plano tangente a superfície
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição}
+  O Plano Tangente ao ponto \((x_0, y_0, z_0)\)
+  \pause
+  na superfície de nível
+  \(f(x, y, z) = c\)
+
+  \pause
+  de uma função diferenciável $f$
+  \pause
+  é o plano passando pelo
+  ponto
+
+  \pause
+  e normal a \(\nabla f (x_0, y_0, z_0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A Reta Normal da superfície no ponto é a reta passando pelo ponto
+
+  \pause
+  e paralela
+  a \(\nabla f (x_0, y_0, z_0)\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equações}
+  Equação do Plano Tangente
+  \[
+    f_x(x_0, y_0, z_0) (x-x_0) +
+    f_y(x_0, y_0, z_0) (y-y_0) +
+    f_z(x_0, y_0, z_0) (z-z_0) = 0
+  \]
+
+  \pause
+  Equação da Reta Normal
+  \begin{align*}
+    x & = x_0 + f_x(x_0, y_0, z_0) t \\
+    y & = y_0 + f_y(x_0, y_0, z_0) t \\
+    z & = z_0 + f_z(x_0, y_0, z_0) t
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre o plano tangente e a reta normal da superfície
+  \[
+    f(x, y, z) = x^2 + y^2 + z - 9 = 0
+  \]
+  no ponto \((1, 2, 4)\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  Calculando as derivadas parciais
+  \begin{align*}
+    \onslide<+->{\D{f}{x} & = \D{}{x} \left(x^2 + y^2 + z - 9\right) = 2x \\[5mm]}
+    \onslide<+->{\D{f}{y} & = \D{}{y} \left(x^2 + y^2 + z - 9\right) = 2y \\[5mm]}
+    \onslide<+->{\D{f}{z} & = \D{}{z} \left(x^2 + y^2 + z - 9\right) = 1}
+  \end{align*}
+\column{0.5\linewidth}
+  \onslide<+->{Montando o vetor gradiente}
+  \[
+    \onslide<+->{\nabla f}
+    \onslide<+->{= 2x\veci + 2y\vecj + \veck}
+    \onslide<+->{= \left(\begin{array}{c}
+        2x \\ 2y \\ 1
+      \end{array}\right)}
+  \]
+  \onslide<+->{Avaliando o gradiente no ponto dado}
+  \[
+    \onslide<+->{\nabla f(1, 2, 4)}
+    \onslide<+->{= \left(2x\veci + 2y\vecj + \veck\right)\evalat{(1, 2, 4)}{}}
+  \]
+  \[
+    \hphantom{\nabla f(1, 2, 4)}
+    \onslide<+->{= 2\veci + 4\vecj + \veck}
+    \onslide<+->{= \left(\begin{array}{c}
+        2 \\ 4 \\ 1
+      \end{array}\right)}
+  \]
+\end{columns}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Plano tangente
+  \pause
+  \[
+    f_x(x_0, y_0, z_0) (x-x_0) +
+    f_y(x_0, y_0, z_0) (y-y_0) +
+    f_z(x_0, y_0, z_0) (z-z_0) = 0
+  \]
+  \pause
+  \[
+    2 (x-1) + 4 (y-2) + (z-4) = 0
+  \]
+  \pause
+  \[
+    2x + 4y + z = 14
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Reta normal
+  \begin{align*}
+    \onslide<+->{x & = x_0 + f_x(x_0, y_0, z_0) t}\onslide<+->{ = 1 + 2t \\}
+    \onslide<+->{y & = y_0 + f_y(x_0, y_0, z_0) t}\onslide<+->{ = 2 + 4t \\}
+    \onslide<+->{z & = z_0 + f_z(x_0, y_0, z_0) t}\onslide<+->{ = 4 + t}
+  \end{align*}
+\end{frame}
+
+
+%------------------------------------------------------------------------------%
+\section{Plano Tangente ao Grafico de uma Função}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Justificativa}
+  Queremos o Plano Tangente a superfície suave \(z=f(x, y)\) \\
+  em um ponto \((x_0, y_0, z_0)\)
+  onde \(z_0 = f(x_0, y_0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  Podemos escrever \(z=f(x, y)\) como \(f(x, y) - z = 0\)
+
+  \pause
+  \vspace{\baselineskip}
+  Queremos o plano tangente a curva de nível zero da função
+  \[
+    F(x, y, z) = f(x, y) - z = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Justificativa}
+  Derivadas de $F$
+  \begin{align*}
+    \onslide<+->{F_x = \D{}{x}\left(f(x, y) - z\right) = f_x - 0 = f_x \\[5mm]}
+    \onslide<+->{F_y = \D{}{y}\left(f(x, y) - z\right) = f_y - 0 = f_y \\[5mm]}
+    \onslide<+->{F_z = \D{}{z}\left(f(x, y) - z\right) = 0 - 1 = -1}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Justificativa}
+  Equação do Plano Tangente
+  \pause
+  \[
+    F_x(x_0, y_0, z_0) (x-x_0) +
+    F_y(x_0, y_0, z_0) (y-y_0) +
+    F_z(x_0, y_0, z_0) (z-z_0) = 0
+  \]
+  \pause
+  \[
+    f_x(x_0, y_0) (x-x_0) +
+    f_y(x_0, y_0) (y-y_0) -
+    (z-z_0) = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Plano Tangente a superfície $z=f(x, y)$}
+  O plano tangente à superfície \(z=f(x, y)\)
+  de uma função diferenciável $f$ no ponto \(\left(x_0, y_0, f(x_0, y_0)\right)\)
+  é
+  \[
+    f_x(x_0, y_0) (x-x_0) +
+    f_y(x_0, y_0) (y-y_0) -
+    (z-z_0) = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre o plano tangente à superfície
+  \[
+    z = x\cos(y) - ye^x
+  \]
+  em \((0, 0, 0)\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Derivadas parciais de $f(x, y)$}
+  \begin{align*}
+    \onslide<+->{\D{f}{x} & = \D{}{x} \left(x\cos(y) - ye^x\right)}
+    \onslide<+->{           = \cos(y) - ye^x \\[3mm]}
+    \onslide<+->{\D{f}{y} & = \D{}{y} \left(x\cos(y) - ye^x\right)}
+    \onslide<+->{           = -x\sin(y) - e^x}
+  \end{align*}
+  \begin{align*}
+    \onslide<+->{\D{f}{x}(0, 0) & = \left(  \cos(y) - ye^x\right) \evalat{(0, 0)}{}}
+    \onslide<+->{                 = 1 \\[3mm]}
+    \onslide<+->{\D{f}{y}(0, 0) & = \left(-x\sin(y) - e^x \right) \evalat{(0, 0)}{}}
+    \onslide<+->{                 = -1}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Plano tangente
+  \[
+    f_x(x_0, y_0) (x-x_0) +
+    f_y(x_0, y_0) (y-y_0) -
+    (z-z_0) = 0
+  \]
+  \pause
+  \[
+     1 (x-0) +
+    -1 (y-0) -
+       (z-0) = 0
+  \]
+  \pause
+  \[
+    x - y - z = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.6
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 2, 4, 6, 8
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

@@ -1,0 +1,590 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+%\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+\newcommand{\D}[2]{\dfrac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\title {Máximos e Mínimos em Regiões Fechadas}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Extremos Absolutos em Regiões Fechadas e Limitadas}
+
+%------------------------------------------------------------------------------%
+%\framedgraphic{Derivada Direcional}{derivada_direcional}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Região Fechada e Limitada}
+  \begin{description}[<+->]
+    \item[Fechada] Contém todos os pontos de fronteira
+    \item[Limitada] Está dentro de um círculo centrado na origem
+  \end{description}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Função Contínua}
+  Uma função contínua em uma região fechada e limitada possui um máximo e um
+  mínimo absolutos (globais)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Encontando os Extremos Absolutos}
+  Encontando os Extremos Absolutos de uma função $f$ \\
+  em uma Região Fechada e Limitada $R$
+  \pause
+  \begin{enumerate}[<+->]
+    \item Listar os pontos críticos de $f$ no interior de $R$
+    \item Listar os pontos onde $f$ pode ter máximos ou mínimos na fronteira de $R$
+    \item Calcular o valor de $f$ nos pontos listados
+    \item Encontrar os valores máximo e mínino nas listas
+  \end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre os valores máximo e mínimo absolutos de
+  \[
+    f(x, y) = 2 + 2x + 2y - x^2 - y^2
+  \]
+  na região triangular no primeiro quadrante limitada pelas retas \\
+  \(x=0\), \(y=0\) e \(y = 9-x\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Pontos críticos interiores
+  \[
+    f_x(x, y)
+    \pause
+    = \D{}{x}\left(2 + 2x + 2y - x^2 - y^2\right)
+    \pause
+    = 2-2x
+    \pause
+    = 0
+    \pause
+    \quad\Rightarrow\quad
+    x = 1
+  \]
+  \[
+    \pause
+    f_y(x, y)
+    \pause
+    = \D{}{y}\left(2 + 2x + 2y - x^2 - y^2\right)
+    \pause
+    = 2-2y
+    \pause
+    = 0
+    \pause
+    \quad\Rightarrow\quad
+    y = 1
+  \]
+  \pause
+  É um ponto interior
+
+  \pause
+  \vspace{\baselineskip}
+  Valor da função
+  \[
+    f(1, 1)
+    \pause
+    = \left(2 + 2x + 2y - x^2 - y^2\right)\evalat{(1, 1)}{}
+    \pause
+    = 2 + 2 + 2 - 1 - 1
+    \pause
+    = 4
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Pontos na fronteira
+
+  \pause
+  \vspace{\baselineskip}
+  Vamos tratar cada segmento em separado
+  \begin{enumerate}[<+->]
+    \item \(y=0\), \(0\leq x\leq 9\)
+    \item \(x=0\), \(0\leq y\leq 9\)
+    \item \(y=9-x\), \(0\leq x\leq 9\)
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Segmento \(y=0\), \(0\leq x\leq 9\)
+
+  \pause
+  \vspace{\baselineskip}
+  Função de uma variável, $x$, no intervalo fechado \(0\leq x\leq 9\)
+  \[
+    \pause
+    g(x)
+    \pause
+    = f(x, 0)
+    \pause
+    = 2 + 2x - x^2
+  \]
+
+  \pause
+  \vspace{0.3\baselineskip}
+  Pontos interiores
+  \[
+    g'(x) = 2 - 2x = 0
+    \pause
+    \quad\Rightarrow\quad
+    x = 1
+  \]
+  \pause
+  Extremos \(x=0\) e \(x=9\)
+
+  \pause
+  \vspace{0.5\baselineskip}
+  Pontos no plano
+  \((0, 0)\), \((1, 0)\), \((9, 0)\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Valores da função
+  \[
+    \pause
+    f(0, 0)
+    \pause
+    = g(0)
+    \pause
+    = 2
+  \]
+  \[
+    \pause
+    f(1, 0)
+    \pause
+    = g(1)
+    \pause
+    = 3
+  \]
+  \[
+    \pause
+    f(9, 0)
+    \pause
+    = g(9)
+    \pause
+    = 2 + 2\times 9 - 9^2
+    \pause
+    = -61
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Segmento \(x=0\), \(0\leq y\leq 9\)
+
+  \pause
+  \vspace{\baselineskip}
+  Função de uma variável, $y$, no intervalo fechado \(0\leq y\leq 9\)
+  \[
+    \pause
+    h(y)
+    \pause
+    = f(0, y)
+    \pause
+    = 2 + 2y - y^2
+  \]
+
+  \pause
+  \vspace{0.3\baselineskip}
+  Pontos interiores
+  \[
+    \pause
+    h'(y) = 2 - 2y = 0
+    \pause
+    \quad\Rightarrow\quad
+    y = 1
+  \]
+  \pause
+  Extremos \(y=0\) e \(y=9\)
+
+  \pause
+  \vspace{0.5\baselineskip}
+  Pontos no plano
+  \((0, 0)\), \((0, 1)\), \((0, 9)\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Valores da função
+  \[
+    \pause
+    f(0, 0)
+    \pause
+    = h(0)
+    \pause
+    = 2
+  \]
+  \[
+    \pause
+    f(0, 1)
+    \pause
+    = h(1)
+    \pause
+    = 3
+  \]
+  \[
+    \pause
+    f(0, 9)
+    \pause
+    = g(9) \pause
+    = 2 + 2\times 9 - 9^2
+    \pause
+    = -61
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Segmento \(y=9-x\), \(0\leq x\leq 9\)
+
+  \pause
+  \vspace{\baselineskip}
+  Função de uma variável, $x$, no intervalo fechado \(0\leq y\leq 9\)
+  \[
+    \pause
+    p(x)
+    \pause
+    = f(x, 9-x)
+    \pause
+    = 2 + 2x + 2(9-x) - x^2 - (9-x)^2
+%    \pause
+%    = 2 + 2x + 2\times 9 -2x - x^2 - 9^2 +2\times 9x - x^2
+  \]
+  \[
+    \hphantom{p(x)}
+    \pause
+    = 2 + 18 - 81 + 2x -2x +18x -x^2 - x^2
+  \]
+  \[
+    \hphantom{p(x)}
+    \pause
+    = -61 + 18x -2x^2
+  \]
+
+  \pause
+  \vspace{0.3\baselineskip}
+  Pontos interiores
+  \[
+    \pause
+    p'(x) = 18 - 4x = 0
+    \pause
+    \quad\Rightarrow\quad
+    x = \frac{18}{4}
+    \pause
+    = \frac{9}{2}
+  \]
+  \pause
+  Extremos \(x=0\) e \(x=9\)
+
+  \pause
+  \vspace{0.5\baselineskip}
+  Pontos no plano
+  \((0, 9)\), \(\left(\sfrac{9}{2}, \sfrac{9}{2}\right)\), \((9, 0)\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+    Valores da função
+    \[
+      \pause
+      f(0, 9) = -61
+    \]
+    \[
+      \pause
+      f\left(\frac{9}{2}, \frac{9}{2}\right)
+      \pause
+      = 2 + 2\frac{9}{2} + 2\frac{9}{2} - \left(\frac{9}{2}\right)^2 - \left(\frac{9}{2}\right)^2
+      \pause
+      = 2 + 9 + 9 -\frac{81}{4} -\frac{81}{4}
+      \]
+      \[
+      \pause
+      \hphantom{p(x)}
+      = 20 -\frac{81}{2}
+      \pause
+      = \frac{40-81}{2}
+      \pause
+      = \frac{-41}{2}
+    \]
+    \[
+      \pause
+      f(9, 0) = -61
+    \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Máximo absoluto de $f$ em $R$ é 4 e ocorre no ponto \((1, 1)\)
+
+  \vspace{\baselineskip}
+  Mínimo absoluto de $f$ em $R$ é $-61$ e ocorre nos pontos \((9, 0)\) e \((0, 9)\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre os máximos e mínimos absolutos da função
+  \[
+    f(x, y) = x^2 + 2y^2 - x
+  \]
+  na região
+  \[
+    x^2 + y^2 \leq 1
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Pontos críticos interiores
+  \[
+    f_x(x, y)
+    \pause
+    = \D{}{x}\left(x^2 + 2y^2 - x\right)
+    \pause
+    = 2x-1
+    \pause
+    = 0
+    \pause
+    \quad\Rightarrow\quad
+    x = \frac{1}{2}
+  \]
+  \[
+    \pause
+    f_y(x, y)
+    \pause
+    = \D{}{x}\left(x^2 + 2y^2 - x\right)
+    \pause
+    = 4y
+    \pause
+    = 0
+    \pause
+    \quad\Rightarrow\quad
+    y = 0
+  \]
+  \pause
+  É um ponto interior
+
+  \pause
+  \vspace{\baselineskip}
+  Valor da função
+  \[
+    f\left(\sfrac{1}{2}, 0\right)
+    \pause
+    = \left(x^2 + 2y^2 - x\right)\evalat{\left(\sfrac{1}{2}, 0\right)}{}
+    \pause
+    = \left(\frac{1}{2}\right)^2 + 2\times 0 ^2 - \frac{1}{2}
+    \pause
+    = \frac{1}{4} - \frac{2}{4}
+    \pause
+    = -\frac{1}{4}
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Fronteira
+  \[
+    x^2+y^2 = 1
+    \pause
+    \quad\Rightarrow\quad
+    y^2 = 1 - x^2
+  \]
+  \pause
+  com \(-1\leq x \leq 1\)
+
+  \pause
+  \vspace{\baselineskip}
+  Função $f$ restrita à fronteira
+  \[
+    g(x)
+    \pause
+    = x^2 + 2\left(1 - x^2\right) -x
+    \pause
+    = x^2 + 2 - 2x^2 - x
+    \pause
+    = 2 - x^2 - x
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Candidatos a máximos e mínimos na fronteira
+
+  \pause
+  \vspace{\baselineskip}
+  Extremidade esquerda
+  \[
+    x = -1
+    \pause
+    \quad\Rightarrow\quad
+    \pause
+    y^2 = 1 - (-1)^2 = 0
+  \]
+  \pause
+  Extremidade direita
+  \[
+    \pause
+    x = 1
+    \pause
+    \quad\Rightarrow\quad
+    y^2 = 1 - 1^2
+    \pause
+    = 0
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Interior
+  \[
+    \pause
+    g'(x)
+    \pause
+    = \frac{d}{dx}\left(2 - x^2 - x\right)
+    \pause
+    = -2x - 1
+    \pause
+    = 0
+    \pause
+    \quad\Rightarrow\quad
+    x = -\frac{1}{2}
+  \]
+  \[
+    \pause
+    y^2 = 1 - x^2
+    \pause
+    = 1 - \left(-\frac{1}{2}\right)^2
+    \pause
+    = \frac{4}{4} - \frac{1}{4}
+    \pause
+    = \frac{3}{4}
+ \]
+ \[
+    \pause
+    \abs{y} = \sqrt{\frac{3}{4}}
+  \]
+  \[
+    \pause
+    y
+    = \pm\sqrt{\frac{3}{4}}
+    \pause
+    = \pm\frac{\sqrt{3}}{2}
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Avaliando a função nos pontos
+  \[
+    \pause
+    f(-1, 0)
+    \pause
+    = \left(x^2 + 2y^2 - x\right)\evalat{(-1, 0)}{}
+    \pause
+    = 1 + 0 - (-1)
+    \pause
+    = 2
+  \]
+  \[
+    \pause
+    f(1, 0)
+    \pause
+    = \left(x^2 + 2y^2 - x\right)\evalat{(1, 0)}{}
+    \pause
+    = 1 + 0 - 1
+    \pause
+    = 0
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \[
+    f\left(-\frac{1}{2}, \frac{\sqrt{3}}{2}\right)
+    \pause
+    = \left(x^2 + 2y^2 - x\right)\evalat{\left(-\frac{1}{2}, \frac{\sqrt{3}}{2}\right)}{}
+    \pause
+    = \left(-\frac{1}{2}\right)^2 + 2\left(\frac{\sqrt{3}}{2}\right)^2 - \left(-\frac{1}{2}\right)
+  \]
+  \[
+    \pause
+    \hphantom{f\left(-\frac{1}{2}, \frac{\sqrt{3}}{2}\right)}\,
+    = \frac{1}{4} + 2\frac{3}{4} + \frac{2}{4}
+    \pause
+    = \frac{9}{4}
+    = 2,25
+  \]
+
+  \pause
+  \[
+    f\left(-\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)
+    \pause
+    = \left(x^2 + 2y^2 - x\right)\evalat{\left(-\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)}{}
+    \pause
+    = \left(-\frac{1}{2}\right)^2 + 2\left(-\frac{\sqrt{3}}{2}\right)^2 - \left(-\frac{1}{2}\right)
+  \]
+  \[
+    \pause
+    \hphantom{f\left(-\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)}\,
+    = \frac{1}{4} + 2\frac{3}{4} + \frac{2}{4}
+    \pause
+    = \frac{9}{4}
+    = 2,25
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Máximo absoluto de $f$ na região é \(\frac{9}{4}\) e ocorre nos pontos \\
+  \(\left(-\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)\) e
+  \(\left(-\frac{1}{2},  \frac{\sqrt{3}}{2}\right)\)
+
+  \vspace{\baselineskip}
+  Mínimo absoluto de $f$ na região é \(-\frac{1}{4}\)
+  e ocorre no ponto
+  \(\left(\frac{1}{2}, 0\right)\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.7
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 31, 34, 37, 38
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

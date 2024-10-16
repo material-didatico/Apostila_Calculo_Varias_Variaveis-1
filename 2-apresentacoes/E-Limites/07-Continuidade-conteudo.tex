@@ -1,0 +1,335 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+%------------------------------------------------------------------------------%
+\title {Continuidade de Funções de Várias Variáveis}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Continuidade}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição}
+  Uma função \(f(x, y)\) é \emph{contínua no ponto} $(x_0, y_0)$, se
+  \begin{enumerate}[<+->]
+    \setlength\itemsep{1em}
+    \item $f$ é definida em \((x_0, y_0)\)
+    \item \(\lim_{(x, y)\to(x_0, y_0)} f(x, y)\) existe
+    \item \(\lim_{(x, y)\to(x_0, y_0)} f(x, y) = f(x_0, y_0)\)
+  \end{enumerate}
+
+  \vspace{\baselineskip}
+  \onslide<+->{Uma \emph{função é contínua} se for contínua em todos os pontos do seu domínio}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Limite de Função Contínua}
+  Se \(f(x, y)\) é contínua em $(x_0, y_0)$,
+  \pause
+  então
+  \[
+    \lim_{(x, y)\to(x_0, y_0)} f(x, y) \pause = f(x_0, y_0)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Combinações Algébricas}
+  Combinações algébricas de funções contínuas são funções contínuas
+
+  \pause
+  \vspace{\baselineskip}
+  Aplicação direta das propriedades de limites
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Exemplos de funções contínuas no plano
+  \begin{enumerate}[<+->]
+    \item \(f(x, y) = x\)
+    \item \(f(x, y) = y\)
+    \item \(f(x, y) = xy\)
+    \item \(f(x, y) = x^n\) para $n$ inteiro positivo
+    \item \(f(x, y) = y^n\) para $n$ inteiro positivo
+  \end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Mostre que
+  \[
+    f(x, y) =
+    \begin{cases}
+      \dfrac{2xy}{x^2+y^2}, & (x, y) \neq (0, 0) \\
+      \quad\; 0,            & (x, y) =    (0, 0)
+    \end{cases}
+  \]
+  é contínua em todos os pontos, exceto na origem.
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Consideramos primeiro o caso \((x, y) \neq (0, 0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  \(2xy\) é uma função contínua no plano
+
+  \pause
+  \(x^2+y^2\) é uma função contínua no plano
+
+  \pause
+  então \(\frac{2xy}{x^2+y^2}\)
+  \pause
+  é contínua para todo \((x, y) \neq (0, 0)\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Em \((x, y) = (0, 0)\) temos que aplicar a definição
+  \pause
+  \begin{enumerate}
+    \item \(f\) é definida em \((0, 0)\)
+    \item \(\lim_{(x, y)\to(0, 0)} f(x, y)\) existe
+    \item \(\lim_{(x, y)\to(0, 0)} f(x, y) = f(0, 0)\)
+  \end{enumerate}
+
+  \pause
+  \vspace{\baselineskip}
+  A condição 1 vale pois \(f(0, 0) = 0\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Verificando a condição 2, percebemos que o limite não existe.
+
+  \pause
+  Se fizermos \(y=mx\),
+  \pause
+  para \(m\neq 0\) e \(x\neq 0\), temos
+  \pause
+  \[
+    f(x, y)\evalat{y=mx}{}
+    \pause
+    = \frac{2xy}{x^2+y^2}\evalat{y=mx}{}
+    \pause
+    = \frac{2mx^2}{x^2+m^2x^2}
+    \pause
+    = \frac{2mx^2}{\left(1+m^2\right)x^2}
+    \pause
+    = \frac{2m}{1+m^2}
+  \]
+
+  \pause
+  Para cada valor de $m$, a função $f$ se aproxima da origem com um valor diferente.
+
+  \pause
+  Portanto, o limite não existe e a função não é contínua na origem
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teste dos Dois Caminhos}
+  Se \(f(x, y)\) tem limites diferentes ao longo de dois caminhos
+  diferentes,
+
+  \pause
+  no domínio de $f$,
+
+  \pause
+  quando $(x, y)$ se aproxima de $(x_0, y_0)$,
+
+  \pause
+  então
+  \[
+    \lim_{(x, y)\to(x_0, y_0)} f(x, y) \quad \text{ \emph{não existe}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Verifique se a função
+  \(
+    f(x, y) = \frac{2x^2y}{x^4+y^2}
+  \)
+  possui limite na origem.
+
+  \pause
+  \vspace{\baselineskip}
+  O limite na origem leva a uma indeterminação do tipo $\sfrac{0}{0}$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Fazendo \(y=mx\), para \(m\neq 0\) e \(x\neq 0\),
+  \pause
+  temos
+  \[
+    f(x, y)\evalat{y=mx}{}
+    \pause
+    = \frac{2x^2y}{x^4+y^2} \evalat{y=mx}{}
+    \pause
+    = \frac{2mx^3}{x^4+m^2x^2}
+    \pause
+    = \frac{2mx\,x^2}{\left(x^2+m^2\right)x^2}
+    \pause
+    = \frac{2mx}{x^2+m^2}
+  \]
+
+  \pause
+  $f$ tende para zero quando $x$ vai para zero por todas as direções
+
+  \pause
+  Portanto,
+  \[
+    \lim_{(x, y)\to(0, 0)} \frac{2x^2y}{x^4+y^2} = 0
+    \pause
+    \qquad
+    \qquad
+    \text{\textcolor{red}{\textbf{Falso!}}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Fazendo \(y=kx^2\), para \(k\neq 0\) e \(x\neq 0\),
+  \pause
+  temos
+  \[
+    f(x, y)\evalat{y=kx^2}{}
+    \pause
+    = \frac{2x^2y}{x^4+y^2} \evalat{y=kx^2}{}
+    \pause
+    = \frac{2kx^4}{x^4+k^2x^4}
+    \pause
+    = \frac{2kx^4}{\left(1+k^2\right)x^4}
+    \pause
+    = \frac{2k}{1+k^2}
+  \]
+
+  \pause
+  Para cada valor de $k$, a função $f$ se aproxima da origem com um valor diferente
+
+  \pause
+  Portanto, o limite não existe
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Continuidade de Compostas}
+  Se $f(x, y)$ é contínua em $(x_0, y_0)$
+
+  \pause
+  e $g$ é uma função, de uma variável, contínua em $z_0 = f(x_0, y_0)$
+
+  \pause
+  então a função composta
+  \(
+    h = g\circ f
+  \)
+  \pause
+  definida como
+  \[
+    h(x, y) = g\big(f(x, y)\big)
+  \]
+  \pause
+  é contínua em $(x_0, y_0)$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Mostre que
+  \[
+    f(x, y) = \cos\left(\frac{xy}{x^2+1}\right)
+  \]
+  é contínua em todos os pontos do plano
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Primeiro reconhecemos que temos a composição de funções $f=g\circ h$,
+  \pause
+  com
+  \[
+    h(x, y) = \frac{xy}{x^2+1}
+    \qquad\qquad\text{e}\qquad\qquad
+    g(t) = \cos(t)
+  \]
+  \pause
+  isso é,
+  \[
+    f(x, y) = g\big(h(x, y)\big) = \cos\left(\frac{xy}{x^2+1}\right)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  $h$ é uma combinação algébrica de funções contínuas e nunca teremos
+  uma divisão por zero, portanto, $h$ é contínua em todo o plano
+
+  \pause
+  \vspace{\baselineskip}
+  $g$ é uma função contínua em toda a reta real, portanto, qualquer que seja o ponto
+  $(x_0, y_0)$ a função $g$ será contínua em $h(x_0, y_0  )$
+
+  \pause
+  \vspace{\baselineskip}
+  Pelo teorema da continuidade da composta, $f$ é contínua em todo o plano
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema do Valor Extremo}
+  Se \(f\colon\R^n\to\R\) é uma função \emph{contínua}
+
+  \pause
+  em uma região $R$, \emph{fechada e limitada},
+
+  \pause
+  a função assume um máximo e um mínimo absolutos m $R$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.2
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 31-33, 36-37, 60
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

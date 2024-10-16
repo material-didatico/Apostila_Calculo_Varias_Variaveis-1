@@ -1,0 +1,185 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+%------------------------------------------------------------------------------%
+\title {Cilindros e Superfícies Quádricas}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Cilindros}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cilindro Sólido}
+  \centering
+  \includegraphics[height=70mm]{cilindro}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cilindros}
+  \centering
+  \includegraphics[height=75mm]{curva_geradora}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cilindros - Exemplo}
+  Qual a equação do cilindro formado pelas retas paralelas ao eixo-$z$ que
+  passam pela parábola \(y=c^2\), \(z=0\).
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Cônicas}
+
+\begin{frame}{Superfícies Quádricas}
+
+  \emph{Cônica}:
+  Gráfico de uma equação de segundo grau no plano
+  \[
+    Ax^2 + By^2 + Cxy + Dx + Ey + F = 0
+  \]
+
+  \emph{Quádrica}:
+  gráfico de uma equação de segundo grau em $\R^3$
+  \[
+    Ax^2 + By^2 + Cz^2 +
+    Dxy  + Exz  + Fyz +
+    Gx   + Hy   + Iz + G = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cônicas}
+  Seções cônicas
+  \begin{itemize}
+    \item Elipse (círculo)
+    \item Parábola
+    \item Hipérbole
+  \end{itemize}
+  Seção 11.6 do livro do Thomas
+\end{frame}
+\framedgraphic{Cônicas}{conicas}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Parábola}
+  \begin{columns}
+    \column{0.4\linewidth}
+    Pontos equidistantes de um ponto fixo (foco)
+    e uma reta dada (diretriz)
+    \[
+      y = \frac{x^2}{4p}
+    \]
+    \column{0.6\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{parabola}
+  \end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Elipse}
+  \begin{columns}
+    \column{0.4\linewidth}
+    Pontos cuja soma das distâncias até
+    os focos é constante
+    \[
+      \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1
+    \]
+    \column{0.6\linewidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{elipse}
+  \end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Hipérbole}
+  \begin{columns}
+    \column{0.4\linewidth}
+    Pontos cujas distâncias a partir de dois pontos fixos (focos)
+    tem diferença constante
+    \[
+      \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1
+    \]
+    A hipérbole tem duas assintotas
+    \column{0.6\linewidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{hiperbole}
+  \end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Quádricas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Quádricas}
+  \begin{itemize}
+    \item Elipsoides
+    \item Paraboloides
+    \item Cones elípticos
+    \item Hiperboloides
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Elipsoides}
+  \[
+    \frac{x^2}{a^2} +
+    \frac{y^2}{b^2} +
+    \frac{z^2}{c^2} = 1
+  \]
+\end{frame}
+\framedgraphic{Elipsoides}{elipsoide}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Paraboloide Hiperbólico}
+  \[
+    \frac{y^2}{b^2} -
+    \frac{x^2}{a^2} =
+    \frac{z}{c}
+  \]
+  Ponto de sela
+\end{frame}
+\framedgraphic{Elipsoides}{paraboloide-hiperbolico}{}
+
+\framedgraphic{Elipsoide}{elipsoide_imagem}{}
+\framedgraphic{Paraboloide Elíptico}{paraboloide_eliptico_imagem}{}
+\framedgraphic{Cone Elíptico}{cone_eliptico_imagem}{}
+\framedgraphic{Hiperboloide de Uma Folha}{hiperboloide_de_uma_folha_imagem}{}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 12.6
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios:
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

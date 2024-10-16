@@ -1,0 +1,629 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+%\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+\newcommand{\D}[2]{\dfrac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\title {Multiplicadores de Lagrange}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Extremos Condicionados}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Extremos Condicionados}
+  Encontre o máximo (mínimo) da função \(f(x, y, z)\)\\[2mm]
+  sujeito a \(g(x, y, z) = 0\)
+
+  \pause
+  \vspace{2\baselineskip}
+  \emph{$f$} função objetivo
+
+  \pause
+  \emph{$g$} restrição
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Extremos Condicionados}{campo_gradiente}{}
+
+%------------------------------------------------------------------------------%
+\section{Extremos Locais Restritos a uma Curva}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema do Gradiente Ortogonal}
+  Seja \(f(x, y, z)\) uma função diferenciável em uma região
+
+  \pause
+  cujo interior contém a curva
+  \[
+    C\colon r(t)
+    = g(t)\veci
+    + h(t)\vecj
+    + k(t)\veck
+  \]
+
+  \pause
+  Se $P_0$ é um ponto em $C$ onde $f$ possua um máximo ou mínimo local relativo
+  aos seus valores em $C$,
+  \pause
+  então \(\nabla f\) é ortogonal a $C$ em $P_0$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Demonstração}
+  Os valores de $f$ em $C$ são dados pela composta
+  \[
+    p(t) = f(g(t), h(t), k(t))
+  \]
+  \pause
+  então
+  \[
+    \frac{dp}{dt}
+    \pause
+    = \D{f}{g}\frac{dg}{dt}
+    + \D{f}{h}\frac{dh}{dt}
+    + \D{f}{k}\frac{dk}{dt}
+    \pause
+    = \nabla f \cdot \frac{dr}{dt}
+  \]
+
+  \pause
+  Se $f$ possui máximo (mínimo) em \((a, b, c)\) correspondente a $t_0$
+  \[
+    \nabla f\evalat{(a, b, c)}{} \cdot \frac{dr}{dt}\evalat{t_0}{} = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Multiplicadores de Lagrange}
+
+\framedgraphic{Extremos Condicionados}{LagrangeMultipliers2D}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Método dos Multiplicadores de Lagrange}
+  Suponha que \(f(x, y, z)\) e \(g(x, y, z)\) sejam diferenciáveis\\[2mm]
+  e \(\nabla g\neq 0\) quando \(g(x, y, z)=0\)
+
+  \pause
+  \vspace{\baselineskip}
+  Para encontrar os valores extremos locais de \(f(x, y, z)\) \\[2mm]
+  \pause
+  sujeito a restrição \(g(x, y, z)=0\) \\[2mm]
+  \pause
+  encontre $x$, $y$, $z$ e $\lambda$ tais que
+  \[
+    \nabla f = \lambda \nabla g
+    \qquad\qquad
+    g(x, y, z) = 0
+  \]
+  \pause
+  \(\lambda\) é o Multiplicador de Lagrande
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre o maior e menor valores que a função
+  \[
+    f(x, y) = xy
+  \]
+  assume na elipse
+  \[
+    \frac{x^2}{8} + \frac{y^2}{2} = 1
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Queremos encontrar os valores extremos da função
+  \[
+    f(x, y) = xy
+  \]
+  \pause
+  sujeito a restrição
+  \[
+    g(x, y) = \frac{x^2}{8} + \frac{y^2}{2} - 1 = 0
+  \]
+
+  \pause
+  Para isso precisamos encontrar os valores $x$, $y$, $z$ e $\lambda$ tais que
+  \[
+    \nabla f = \lambda \nabla g
+    \qquad\qquad
+    g(x, y) = 0
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.4\linewidth}
+  Gradiente de $f$
+  \[
+    \pause
+    \D{f}{x}
+    \pause
+    = \D{}{x}\left(xy\right)
+    \pause
+    = y
+  \]
+  \[
+    \pause
+    \D{f}{y}
+    \pause
+    = \D{}{y}\left(xy\right)
+    \pause
+    = x
+  \]
+  \pause
+  \[
+    {\color<19>{blue}\nabla f = \vetor{y}{x}}
+  \]
+\column{0.6\linewidth}
+  \pause
+  Gradiente de $g$
+  \[
+    \pause
+    \D{g}{x}
+    \pause
+    = \D{}{x}\left(\frac{x^2}{8} + \frac{y^2}{2} - 1\right)
+    \pause
+    = \frac{2x}{8}
+    \pause
+    = \frac{x}{4}
+  \]
+  \[
+    \pause
+    \D{g}{y}
+    \pause
+    = \D{}{y}\left(\frac{x^2}{8} + \frac{y^2}{2} - 1 \right)
+    \pause
+    = \frac{2y}{2}
+    \pause
+    = y
+  \]
+  \pause
+  \[
+    {\color<19>{blue}\nabla g = \vetor{\dfrac{x}{4}}{y}}
+  \]
+\end{columns}
+\end{frame}
+
+\begin{frame}[t]{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  A equação
+  \[
+    \nabla f = \lambda \nabla g
+  \]
+  \pause
+  se torna
+  \[
+    \vetor{y}{x} = \lambda \vetor{\sfrac{x}{4}}{y}
+  \]
+  {\color<8>{blue}%
+  \pause
+  \[
+    \begin{cases}
+      y = \dfrac{\lambda x}{4} \\[2mm]
+      x = \lambda y
+    \end{cases}
+  \]}
+\column{0.5\linewidth}
+  \pause
+  A equação
+  \[
+    g(x, y) = 0
+  \]
+  \pause
+  se torna
+  \[
+    \frac{x^2}{8} + \frac{y^2}{2} - 1 = 0
+  \]
+  \[
+    \pause
+    \frac{x^2}{8} + \frac{y^2}{2} = 1
+  \]
+  {\color<8>{blue}%
+  \pause
+  \[
+    x^2 + 4y^2 = 8
+  \]}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  Precisamos resolver o sistema
+  \[
+    \begin{cases}
+      y = \dfrac{\lambda x}{4} \\
+      x = \lambda y \\
+      x^2 + 4y^2 = 8
+    \end{cases}
+  \]
+  \pause
+  Por substituição
+  \[
+    y = \dfrac{\lambda}{4} x
+    \pause
+    = \dfrac{\lambda}{4} \lambda y
+    \pause
+    = \dfrac{\lambda^2}{4} y
+  \]
+\column{0.5\linewidth}
+  \pause
+  Assim {\color<10>{blue}$y=0$}
+  \pause
+  ou
+  \[
+    1 = \dfrac{\lambda^2}{4}
+  \]
+  \[
+    \pause
+    \lambda^2 = 4
+  \]
+  \[
+    \pause
+    \abs{\lambda} = 2
+  \]
+  \[
+    \pause
+    {\color<10>{blue}\lambda = \pm 2}
+  \]
+\end{columns}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Caso 1
+  \[
+    y = 0
+  \]
+
+  \pause
+  \[
+    x = \lambda y
+    \pause
+    = 0
+  \]
+
+  \pause
+  \[
+    x^2 + 4y^2
+    \pause
+    = 0
+    \pause
+    \neq 8
+  \]
+
+  \pause
+  Não resolve o sistema
+
+  \pause
+  \vspace{\baselineskip}
+  Portanto \(y\neq 0\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Caso 2
+
+  \pause
+  \[
+    y \neq 0
+    \qquad
+    \lambda = \pm 2
+  \]
+
+  \pause
+  \[
+    x
+    = \lambda y
+    \pause
+    = \pm 2 y
+  \]
+  \[
+    \pause
+    x^2 = 4y^2
+  \]
+  \[
+    \pause
+    x^2 + 4y^2
+    \pause
+    = 4y^2 + 4y^2
+    \pause
+    = 8y^2
+    \pause
+    = 8
+  \]
+
+  \pause
+  Portanto \(y=\pm 1\)
+
+  \pause
+  \vspace{\baselineskip}
+  Temos então os pontos
+  \((-2, -1)\),
+  \((2, -1)\),
+  \((-2, 1)\) e
+  \((2, 1)\)
+
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Avaliando a função \(f(x, y)=xy\) nos pontos}
+  \begin{align*}
+    \onslide<+->{f(           -2,            -1) & = (-2)(-1) = 2 \\[2mm]}
+    \onslide<+->{f(\hphantom{-}2,            -1) & = 2(-1) = -2 \\[2mm]}
+    \onslide<+->{f(           -2, \hphantom{-}1) & = -2 \times 1 = -2 \\[2mm]}
+    \onslide<+->{f(\hphantom{-}2, \hphantom{-}1) & = 2\times 1 = 2}
+  \end{align*}
+
+  \onslide<+->{O valor máximo de $f$ é \hspace{1ex} 2 e ocorre nos pontos \((-2, -1)\) e \(( 2, 1)\)}
+
+  \onslide<+->{O valor mínimo de $f$ é $-2$ e ocorre nos pontos \((-2, 1)\) e \((2, -1)\)}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre os valores máximo e mínimo da função
+  \[
+    f(x, y) = 3x + 4y
+  \]
+  na circunferência
+  \[
+    x^2 + y^2 = 1
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Queremos encontrar os valores extremos da função
+  \[
+    f(x, y) = 3x + 4y
+  \]
+  \pause
+  sujeito a restrição
+  \[
+    g(x, y) = x^2 + y^2 - 1 = 0
+  \]
+
+  \pause
+  Para isso precisamos encontrar os valores $x$, $y$, $z$ e $\lambda$ tais que
+  \[
+    \nabla f = \lambda \nabla g
+    \qquad\qquad
+    g(x, y) = 0
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.4\linewidth}
+  Gradiente de $f$
+  \[
+    \pause
+    \D{f}{x}
+    \pause
+    = \D{}{x}\left(3x + 4y\right)
+    \pause
+    = 3
+  \]
+  \[
+    \pause
+    \D{f}{y}
+    \pause
+    = \D{}{y}\left(3x + 4y\right)
+    \pause
+    = 4
+  \]
+  \pause
+  \[
+    {\color<17>{blue}\nabla f = \vetor{3}{4}}
+  \]
+\column{0.6\linewidth}
+  \pause
+  Gradiente de $g$
+  \[
+    \pause
+    \D{g}{x}
+    \pause
+    = \D{}{x}\left(x^2 + y^2 - 1\right)
+    \pause
+    = 2x
+  \]
+  \[
+    \pause
+    \D{g}{y}
+    \pause
+    = \D{}{y}\left(x^2 + y^2 - 1\right)
+    \pause
+    = 2y
+  \]
+  \pause
+  \[
+    {\color<17>{blue}\nabla g = \vetor{2x}{2y}}
+  \]
+\end{columns}
+\end{frame}
+
+\begin{frame}[t]{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  A equação
+  \[
+    \nabla f = \lambda \nabla g
+  \]
+  \pause
+  se torna
+  \[
+    \vetor{3}{4} = \lambda \vetor{2x}{2y}
+  \]
+  {\color<7>{blue}%
+    \pause
+    \[
+    \begin{cases}
+      x = \dfrac{3}{2\lambda} \\[4mm]
+      y = \dfrac{2}{\lambda}
+    \end{cases}
+  \]}
+\column{0.5\linewidth}
+  \pause
+  A equação
+  \[
+    g(x, y) = 0
+  \]
+  \pause
+  se torna
+  \[
+    x^2 + y^2 - 1 = 0
+  \]
+  {\color<7>{blue}%
+    \pause
+  \[
+    x^2 + y^2 = 1
+  \]}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  \onslide<+->{Precisamos resolver o sistema
+  \[
+  \begin{cases}
+    x = \dfrac{3}{2\lambda} \\[3mm]
+    y = \dfrac{2}{\lambda} \\[3mm]
+    x^2 + y^2 = 1
+  \end{cases}
+  \]}
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{x^2 + y^2 & = 1 \\[2mm]}
+    \onslide<+->{\left(\frac{3}{2\lambda}\right)^2 +
+    \left(\frac{2}{\lambda}\right)^2 & = 1  \\[2mm]}
+    \onslide<+->{\frac{9}{4\lambda^2} +
+    \frac{4}{\lambda^2} & = 1  \\[2mm]}
+    \onslide<+->{\frac{9+16}{4\lambda^2} & = 1  \\[2mm]
+    4\lambda^2 & = 25  \\[2mm]}
+    \onslide<+->{\lambda & = \pm \frac{5}{2}}
+  \end{align*}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  Quando \(\lambda=\sfrac{5}{2}\)
+  \[
+    \pause
+    x
+    = \frac{3}{2\lambda}
+    \pause
+    = \frac{3}{2\sfrac{5}{2}}
+    \pause
+    = \frac{3}{5}
+  \]
+  \[
+    y
+    = \frac{2}{\lambda}
+    \pause
+    = \frac{2}{\sfrac{5}{2}}
+    \pause
+    = \frac{4}{5}
+  \]
+\column{0.5\linewidth}
+  \pause
+  Quando \(\lambda=-\sfrac{5}{2}\)
+  \[
+    \pause
+    x
+    = \frac{3}{2\lambda}
+    \pause
+    = -\frac{3}{2\sfrac{5}{2}}
+    \pause
+    = -\frac{3}{5}
+  \]
+  \[
+    \pause
+    y
+    = \frac{2}{\lambda}
+    \pause
+    = -\frac{2}{\sfrac{5}{2}}
+    \pause
+    = -\frac{4}{5}
+  \]
+\end{columns}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Avaliando a função \(f(x, y)=3x + 4y\) nos pontos}
+  \begin{align*}
+    \onslide<+->{f\left(           -\frac{3}{5},            -\frac{4}{5}\right) &= }
+    \onslide<+->{3\left(-\frac{3}{5}\right) + 4\left(-\frac{4}{5}\right) = }
+    \onslide<+->{\frac{-9-16}{5} = }
+    \onslide<+->{-5 \\[5mm]}
+    \onslide<+->{f\left(\hphantom{-}\frac{3}{5}, \hphantom{-}\frac{4}{5}\right) &= }
+    \onslide<+->{3\frac{3}{5} + 4\frac{4}{5} = }
+    \onslide<+->{\frac{9+16}{5} = }
+    \onslide<+->{5}
+  \end{align*}
+
+  \onslide<+->{O valor máximo de $f$ é \hspace{1ex} 5 e ocorre no ponto
+  \(\left(\frac{3}{5}, \frac{4}{5}\right)\)}
+
+  \vspace{0.3\baselineskip}
+  \onslide<+->{O valor mínimo de $f$ é $-5$ e ocorre no ponto
+  \(\left(-\frac{3}{5}, -\frac{4}{5}\right)\)}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.8
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 3, 5, 7, 12, 16, 18, 24 e 30
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

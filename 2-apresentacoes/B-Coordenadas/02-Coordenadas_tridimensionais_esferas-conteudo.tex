@@ -1,0 +1,252 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+%------------------------------------------------------------------------------%
+\title {Coordenadas Tridimensionais e Esferas}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Sistema de Coordenadas Cartesianas}
+
+\begin{frame}{Coordenadas Cartesianas Tridimensionais}
+  \centering
+  \includegraphics[height=68mm]{coordenadas_tridimensionais}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Distância}
+  Distancia entre dois pontos \(P_1(x_1, y_1, z_1)\) e  \(P_2(x_2, y_2, z_2)\)
+  \[
+    \dist(P_1, P_2)
+    = \abs{P_1P_2}
+    = \sqrt{\left(x_2-x_1\right)^2 + \left(y_2-y_1\right)^2 + \left(z_2-z_1\right)^2}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo 1}
+  Interprete geometricamente
+  \begin{enumerate}
+    \item \(z > 0\)
+    \item \(x = -3\)
+    \item \(z=0\), \(x\leq 0\), \(y\geq 0\)
+    \item \(-1\leq y \leq 1\)
+    \item \(y=-2\), \(z=2\)
+  \end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo 1}
+  \begin{enumerate}[<+->]
+    \item \(z > 0\) \\
+          Semiespaço dos pontos acima do plano $z$
+    \item \(x = -3\) \\
+          Plano perpendicular ao eixo $x$ que passa pelo ponto $x=-3$
+    \item \(z=0\), \(x\leq 0\), \(y\geq 0\) \\
+          Segundo quadrante do plano $xy$
+    \item \(-1\leq y \leq 1\) \\
+          Fatia entre os planos \(y=-1\) e \(y=1\)
+    \item \(y=-2\), \(z=2\) \\
+          Reta comum aos planos \(y=-2\) e \(z=2\)
+  \end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Esferas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Esferas}
+  Equação padrão da esfera de centro \((x_0, y_0, z_0)\) e raio \(r\)
+  \[
+    \left(x-x_0\right)^2 + \left(y-y_0\right)^2 + \left(z-z_0\right)^2 = r^2
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo 2}
+  Encontre o centro da esfera
+  \[
+    x^2 + y^2 + z^2 + 6x - 4z + 1 = 0
+  \]
+  \pause
+  Dica
+  \[
+    (a+b)^2 = a^2 + 2ab + b^2
+  \]
+  \[
+    (a-b)^2 = a^2 - 2ab + b^2
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo 2}
+  \onslide<+->{Completando os quadrados}
+  \begin{align*}
+    \onslide<+->{x^2 + y^2 + z^2 + 6x - 4z + 1 & = 0 \\}
+    \onslide<+->{\left(x^2 + 6x\right) + y^2 + \left(z^2 - 4z\right) & = -1 \\}
+    \onslide<+->{\left(x^2 + 2\cdot 3x\right)}
+    \onslide<+->{+ \left(y-0\right)^2}
+    \onslide<+->{+ \left(z^2 - 2\cdot 2z\right)} &
+    \onslide<+->{= -1} \\
+    \onslide<+->{\left(x^2 + 2\cdot 3x + 3^2\right) - 3^2}
+    \onslide<+->{+ \left(y-0\right)^2}
+    \onslide<+->{+ \left(z^2 - 2\cdot 2z + 2^2\right) -2^2} &
+    \onslide<+->{= -1 \\}
+    \onslide<+->{\left(x^2 + 2\cdot 3x + 3^2\right)
+    + \left(y - 0\right)^2
+    + \left(z^2 - 2\cdot 2z + 2^2\right) & = -1 + 3^2 + 2^2 \\}
+    \onslide<+->{\left(x + 3\right)^2 +
+    \left(y - 0\right)^2 +
+    \left(z - 2\right)^2 & = 12}
+  \end{align*}
+  \onslide<+->{O centro da esfera é o ponto \((-3, 0, 2)\)
+  o raio é \(\sqrt{12}\)}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Vetores}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Vetores em $R^3$}
+  Segmento de reta orientado
+
+  \pause
+  Dois vetores são iguais se tem o mesmo comprimento e direção
+
+  \pause
+  Componentes
+  \[
+    v
+    = \left< \nu_1, \nu_2, \nu_3 \right>
+    = \left( \nu_1, \nu_2, \nu_3 \right)
+  \]
+
+  \pause
+  Magnitude ou comprimento
+  \[
+    \abs{v} = \sqrt{\nu_1^2 + \nu_2^2 + \nu_3^2}
+  \]
+
+  \pause
+  Vetor unitário
+  \[
+    \abs{v} = 1
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Produto Escalar}
+  Produto escalar entre
+  \(u=\left<u_1, u_2, u_3\right>\) e
+  \(v=\left<v_1, v_2, v_3\right>\)
+  \[
+    u\cdot v = u_1v_1 + u_2v_2 + u_3v_3
+  \]
+
+  \pause
+  Ângulo entre dois vetores
+  \[
+    \cos(\theta) = \frac{u\cdot v}{\abs{u}\abs{v}}
+  \]
+
+  \pause
+  Vetores ortogonais
+  \[
+    u\cdot v = 0
+  \]
+  \end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Retas e Planos}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Retas}
+  Equação vetorial para uma reta
+  \[
+    r(t) = r_0 + tv
+    \qquad
+    t\in\R
+  \]
+  Reta que passa pelo ponto \(r_0=\left(x_0, y_0, z_0\right)\)
+  na direção do vetor \(v=\left<v_1, v_2, v_3\right>\)
+
+  \pause
+  \vspace{\baselineskip}
+  Equações paramétricas
+  \begin{align*}
+    x & = x_0 + tv_1 \\
+    y & = y_0 + tv_2 \\
+    z & = z_0 + tv_3 \\
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Planos}
+  Definimos um plano por um ponto, $P_0=(x_0, y_0, z_0)$, \\
+  \pause
+  e uma inclinação (vetor perpendicular), $n=\left<A, B, C\right>$
+
+  \pause
+  \vspace{\baselineskip}
+  $P=(x, y, z)$ pertence ao plano se
+  \[
+    n\cdot \overrightarrow{P_0P} = 0
+  \]
+  \pause
+  \[
+    \left<A, B, C\right>\cdot \left<x-x_0, y-y_0, z-z_0\right> = 0
+  \]
+  \pause
+  \[
+    A(x-x_0) + B(y-y_0) + C(z-z_0) = 0
+  \]
+  \pause
+  \[
+    Ax + By + Cz = Ax_0 + By_0 + Cz_0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 12.1
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 11-14, 21-24, 38-42, 48, 53, 57, 59, 61
+  \end{enumerate}
+
+  Revisão Geometria
+  \begin{enumerate}
+    \item Estudar o texto das Seções 12.2, 12.3, 12.5
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

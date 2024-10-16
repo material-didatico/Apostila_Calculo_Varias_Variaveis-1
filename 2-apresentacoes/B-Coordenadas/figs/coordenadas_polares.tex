@@ -1,0 +1,25 @@
+
+\begin{tikzpicture}
+
+	% Coordinates
+	\coordinate (A) at (6,0);
+	\coordinate (B) at (0,0);
+	\coordinate (C) at (2.5,2.5);
+	\coordinate (B') at (2.5,3.5);
+	\coordinate (A') at (1.8,3.2);
+
+	% Axis
+	\draw[thick,-latex] (-1ex,0) -- (6,0) node [below] {$x$};
+	\draw[thick,-latex] (0,-1ex) -- (0,5) node [left]  {$y$};
+
+	\draw[thick] (0,0) -- (2.5,2.5) node[pos=0.6, above left] {$r$};
+  \node at (0.8,0.3) {$\theta$};
+
+	% Help Lines
+	\draw[dashed] (0,2.5) -- (2.5,2.5) -- (2.5,0);
+	\draw[dashed] (3.53,0) arc (0:90:3.53);
+
+	% Angle
+	\pic[draw, ->, thick, angle eccentricity=1.7] {angle = A--B--C};
+
+\end{tikzpicture}

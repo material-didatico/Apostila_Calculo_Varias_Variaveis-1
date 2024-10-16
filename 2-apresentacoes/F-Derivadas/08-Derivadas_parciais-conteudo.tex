@@ -1,0 +1,363 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+
+%------------------------------------------------------------------------------%
+\title {Derivadas Parciais}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Derivadas Parciais}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivada Ordinária -- Uma variável}
+
+  Variação da função com relação a variável
+
+  \pause
+  \vspace{\baselineskip}
+  Derivada da função \(f\colon R\subset\R\to\R\) no ponto $x_0$
+
+  \[
+    \frac{df}{dx}\evalat{x=x_0}{}
+    =\; \lim_{h\to 0} \frac{f(x_0+h)-f(x_0)}{h}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivada Parcial}
+  Variação da função com relação a \emph{uma} das variáveis
+
+  considerando as demais \emph{fixas}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição -- Derivada Parcial em $x$}
+  A derivada parcial, com relação a \emph{$x$},
+  da função \(f\colon R\subset\R^2\to\R\), \(f(x, y)\)
+
+  no ponto \((x, y) = (x_0, y_0)\)
+
+  \[
+    \frac{\partial f}{\partial x}\evalat{(x, y) = (x_0, y_0)}{}
+    =\; \lim_{h\to 0} \frac{f(\emph{x_0+h}, y_0)-f(x_0, y_0)}{h}
+  \]
+
+  \vspace{\baselineskip}
+  Desde que o limite exista
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição -- Derivada Parcial em $y$}
+  A derivada parcial, com relação a \emph{$y$},
+  da função \(f\colon R\subset\R^2\to\R\), \(f(x, y)\)
+
+  no ponto \((x, y) = (x_0, y_0)\)
+
+  \[
+    \frac{\partial f}{\partial y}\evalat{(x, y) = (x_0, y_0)}{}
+    =\; \lim_{h\to 0} \frac{f(x_0, \emph{y_0+h})-f(x_0, y_0)}{h}
+  \]
+
+  \vspace{\baselineskip}
+  Desde que o limite exista
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Notações}
+  \[
+    \frac{\partial f}{\partial y}(x, y) \qquad\qquad
+    f_y(x, y)
+  \]
+
+  \vspace{\baselineskip}
+  \[
+    \frac{\partial f}{\partial y} \qquad\qquad\qquad
+    f_y
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Retas Tangentes}{retas_tangentes}{}
+
+\begin{frame}{Retas Tangentes}
+  Temos duas retas tangentes, uma na direção $x$ e uma na direção $y$
+
+  \pause
+  \vspace{\baselineskip}
+  Nem sempre o plano gerado por elas é plano tangente da superfície
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre os valores de \(\D{f}{x}\) e \(\D{f}{y}\) no ponto \((4, -5)\)
+  para a função
+  \[
+    f(x, y) = x^2 + 3xy + y - 1
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \begin{align*}
+    \onslide<+->{\D{f}{x}}
+    \onslide<+->{& = \D{}{x} \left(x^2 + 3xy + y - 1\right)} \\[2mm]
+    \onslide<+->{& = \D{x^2}{x} + \D{3xy}{x} + \D{y}{x} - \D{1}{x}} \\[2mm]
+    \onslide<+->{& = 2x + 3y\D{x}{x} + 0 - 0} \\[2mm]
+    \onslide<+->{& = 2x + 3y}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \[
+    \D{f}{x}(4, -5)
+    \pause
+    = \left(2x + 3y\right)\evalat{(x, y)=(4, -5)}{}
+    \pause
+    = 2\cdot 4 + 3(-5)
+    \pause
+    = -7
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \begin{align*}
+    \onslide<+->{\D{f}{y}}
+    \onslide<+->{& = \D{}{y} \left(x^2 + 3xy + y - 1\right)} \\[2mm]
+    \onslide<+->{& = \D{x^2}{y} + \D{3xy}{y} + \D{y}{y} - \D{1}{y}} \\[2mm]
+    \onslide<+->{& = 0 + 3x\D{y}{y} + \D{y}{y} - 0} \\[2mm]
+    \onslide<+->{& = 3x + 1}
+    \onslide<+->{\hspace{60mm}\text{Cadê o $y$?}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \[
+    \D{f}{y}(4, -5)
+    \pause
+    = \left(3x + 1\right)\evalat{(x, y)=(4, -5)}{}
+    \pause
+    = 3\cdot 4 + 1
+    \pause
+    = 13
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre \(\D{f}{y}\) para \(f(x, y) = y\sin(xy)\)
+\end{frame}
+
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Exemplo \theexemplo}
+%  \begin{align*}
+%    \D{f}{x}
+%    & = \D{}{x} \big(y\sin(xy)\big) \\[2mm]
+%    & = y \D{}{x}\sin(xy)  \\[2mm]
+%    & = y y \cos(xy)  \\[2mm]
+%    & = y^2 \cos(xy)
+%  \end{align*}
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{align*}
+  \onslide<+->{\D{f}{y}}
+  \onslide<+->{& = \D{}{y} \big(y\sin(xy)\big)} \\[2mm]
+  \onslide<+->{& = \D{y}{y} \sin(xy) + y \D{}{y}\sin(xy)} \\[2mm]
+  \onslide<+->{& = \sin(xy) + y x\cos(xy)}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre as funções $f_x$ e $f_y$ sendo que
+  \(
+    f(x, y) = \frac{2y}{y+\cos(x)}
+  \)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{align*}
+  \onslide<+->{\D{f}{x}}
+  \onslide<+->{& = 2\;\D{}{x} \left(\frac{y}{y+\cos(x)}\right)} \\[2mm]
+  \onslide<+->{& = 2\;\dfrac{\displaystyle\;\D{y}{x}\left(y+\cos(x)\right) - y \D{}{x}\left(y+\cos(x)\right)\;}
+               {\left(y+\cos(x)\right)^2}} \\[2mm]
+  \onslide<+->{& = 2\;\dfrac{\; 0 - y \left(0-\sin(x)\right)\;}
+               {\left(y+\cos(x)\right)^2}} \\[2mm]
+  \onslide<+->{& = \frac{2y \sin(x)\;}{\left(y+\cos(x)\right)^2}}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{align*}
+  \onslide<+->{\D{f}{y}}
+  \onslide<+->{& = 2\;\D{}{y} \left(\frac{y}{y+\cos(x)}\right)} \\[2mm]
+  \onslide<+->{& = 2\;\dfrac{\displaystyle\;\D{y}{y}\left(y+\cos(x)\right) - y \D{}{y}\left(y+\cos(x)\right)\;}
+                            {\left(y+\cos(x)\right)^2}} \\[2mm]
+  \onslide<+->{& = 2\;\dfrac{\;\left(y +\cos(x)\right) - y(1 + 0)\;}
+                            {\left(y+\cos(x)\right)^2}} \\[2mm]
+  \onslide<+->{& = \frac{2\cos(x)}{\,\left(y+\cos(x)\right)^2\,}}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre \(\D{z}{x}\) se a equação
+  \[
+    yz - \ln(z) = x + 1
+  \]
+  define $z$ como uma função de $x$ e $y$
+
+  \pause
+  \vspace{\baselineskip}
+  Vamos derivar os dois lados por $x$, assumindo \(z=z(x, y)\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \begin{align*}
+    \onslide<+->{yz - \ln(z) & = x + 1} \\[2mm]
+    \onslide<+->{\D{}{x}\big(yz - \ln(z)\big) & = \D{}{x}\left(x + 1\right)} \\[2mm]
+    \onslide<+->{\D{}{x}(yz) - \D{}{x}\big(\ln(z)\big) & = 1} \\[2mm]
+    \onslide<+->{y\D{z}{x} - \frac{1}{z}\D{z}{x} & = 1} \\[2mm]
+    \onslide<+->{\D{z}{x}\left( y - \frac{1}{z} \right) & = 1}  \\[2mm]
+    \onslide<+->{\D{z}{x}
+    & = \left(y - \frac{1}{z}\right)^{-1}}
+    \onslide<+->{  = \left(\frac{yz-1}{z}\right)^{-1}}
+    \onslide<+->{  =  \frac{z}{yz-1}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Derivadas Parciais e Continuidade}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivada e Continuidade em Uma Variável}
+  No cálculo de funções de \emph{uma variável}
+
+  \pause
+  se uma função é derivável em um ponto $x_0$
+
+  \pause
+  ela é contínua nesse ponto
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivadas Parciais e Continuidade}
+  Se as derivadas parciais de $f$ existem em $(x_0, y_0)$
+
+  \pause
+  \emph{não podemos dizer nada} sobre a continuidade de $f$ no ponto
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Considerando a função
+  \(
+  f(x, y) = \begin{cases}
+    0, & xy \neq 0 \\
+    1, & xy = 0
+  \end{cases}
+  \)
+  \begin{enumerate}
+    \item Prove que $f$ não é contínua na origem
+    \item Mostre que suas derivadas parciais existem na origem
+  \end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  1 -- Queremos mostrar que $f$ não é contínua na origem
+
+  \pause
+  Verificando a condição 2: existência do limite na origem
+
+  \pause
+  Considerando a reta $y=0$, com $x\neq 0$
+  \pause
+  \[
+    f(x, y)\evalat{y=0}{}
+    \pause
+    = f(x, 0)
+    \pause
+    = 1
+  \]
+
+  \pause
+  Considerando a reta $y=x$, com $x\neq 0$
+  \[
+    \pause
+    f(x, y)\evalat{y=x}{}
+    \pause
+    = f(x, x)
+    \pause
+    = 0
+  \]
+
+  \pause
+  Como $f$ tende a valores diferentes por
+  caminhos diferentes para a origem,\\
+  o limite não existe
+\end{frame}
+
+\framedgraphic{Derivada e Continuidade}{Derivadas_parciais_continuidade}{}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.3
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 4, 10, 37-40
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

@@ -1,0 +1,227 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+%------------------------------------------------------------------------------%
+\title {Funções de Várias Variáveis}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Funções}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Funções}
+  \[
+    f\colon A \to B
+  \]
+  \pause
+  \vspace{-\baselineskip}
+  \begin{itemize}[<+->]
+    \item $A$ \emph{domínio}
+    \item $B$ \emph{contradomínio}
+    \item $f$ \emph{relação} que associa elementos do domínio a elementos do contradomínio
+    \item Cada elemento do domínio deve estar associado a \emph{um único} elemento do contradomínio
+    \item A \emph{imagem} é um subconjunto de $B$ composto dos \emph{elementos que são imagem} de algum elemento de $A$
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Domínio}
+  \begin{itemize}[<+->]
+    \item Precisa ser dado a priori
+    \item Geralmente é determinado pela aplicação
+    \item Se nada for dito, assumimos o domínio ``natural'', \\
+          ie, todos os valores onde podemos efetuar as contas
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Imagem}
+  \begin{itemize}[<+->]
+    \item Subconjunto do contradomínio
+    \item O contradomínio é definido a priori
+    \item Pode ser difícil identificar a imagem de uma função
+    \item Dada uma função \(f\colon D \to C \) \\
+          $y$ pertence a imagem de $f$,
+          se existe $x\in D$ tal que
+          \[y=f(x)\]
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Nomenclatura -- Curiosidade}
+  Função real
+  \[
+    f\colon D \subset \R \to \R
+  \]
+  \pause
+  Função de várias variáveis
+  \[
+    f\colon D \subset \R^n \to \R
+  \]
+  \pause
+  Função vetorial ou paramétrica
+  \[
+    f\colon D \subset \R \to \R^n
+  \]
+  \pause
+  Campo vetorial
+  \[
+    f\colon D \subset \R^n \to \R^m
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Funções de Várias Variáveis}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Funções de Várias Variáveis}
+  \[
+    f\colon D \subset \R^n \to \R
+  \]
+  \pause
+  \[
+    f(x, y) = x + y
+  \]
+  \pause
+  \[
+    f(\vec{r}) = \sqrt{\sum_{k=1}^n r_i^2\,}
+  \]
+\end{frame}
+
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Funções de Várias Variáveis}{definicao_funcao}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Domínio e Imagem}
+
+  Determinamos o \emph{domínio} eliminando pontos que levam a divisões por zero ou
+  valores complexos.
+
+  \pause
+  \vspace{\baselineskip}
+
+  \textit{``A \emph{imagem} consiste on conjunto de valores de saída para a variável dependente''} (sic.)
+
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo 1}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Intervalos}
+  Subconjuntos contínuos de $\R$
+  \vspace{\baselineskip}
+
+  \pause
+  Intervalo fechado
+  \[
+    [0, 1] = \left\{ x\in\R\st 0 \leq x \leq 1 \right\}
+  \]
+  \pause
+  Intervalo aberto
+  \[
+    (-2, 2) = \left\{ x\in\R\st -2 < x < 2 \right\}
+  \]
+  \pause
+  Aberto a esquerda e fechado a direita
+  \[
+    (1, 5] = \left\{ x\in\R\st 1 < x \leq 5 \right\}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Regiões no Plano}{definicao_regioes}{}
+\framedgraphic{Regiões no Plano}{pontos_regioes}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regiões Limitadas}
+  Uma região do plano é limitada se está dentro de um disco de raio fixo
+
+  \pause
+  \vspace{\baselineskip}
+
+  Caso contrário ela é ilimitada
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo 2}
+  Descreva o domínio da função \(f(x, y) = \sqrt{y-x^2}\)
+
+  \pause
+  \vspace{\baselineskip}
+  \begin{enumerate}[<+->]
+    \item Qual a condição que os pontos do domínio deve satisfazer?
+    \item Que região é essa? Represente-a graficamente.
+    \item Qual o interior da região?
+    \item Qual a fronteira da região?
+    \item A região é aberta ou fechada?
+    \item A região é limitada?
+  \end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Exemplo 2}{dominio_funcao}{}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.1
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 1-2, 5-9
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

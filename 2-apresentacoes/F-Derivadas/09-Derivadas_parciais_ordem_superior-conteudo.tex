@@ -1,0 +1,389 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+%------------------------------------------------------------------------------%
+\title {Derivadas Parciais de Ordem Superior}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Derivadas Parciais de Segunda Ordem}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Conceito}
+  Derivada de uma derivada de uma função
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Notações}
+\begin{columns}
+\column{0.5\linewidth}
+  Derivadas de segunda ordem
+  \[
+    \frac{\partial^2 f}{\partial x^2} \qquad\qquad\qquad
+    f_{xx}
+  \]
+
+  \vspace{\baselineskip}
+  \[
+    \frac{\partial^2 f}{\partial y^2} \qquad\qquad\qquad
+    f_{yy}
+  \]
+\column{0.5\linewidth}
+  \pause
+  Derivadas de segunda ordem mistas
+  \[
+    \frac{\partial^2 f}{\partial x \partial y} \qquad\qquad\qquad
+    f_{yx}
+  \]
+
+  \vspace{\baselineskip}
+  \[
+    \frac{\partial^2 f}{\partial y \partial x} \qquad\qquad\qquad
+    f_{xy}
+  \]
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Atenção Para a Ordem das Derivadas Mistas}
+  \[
+    \frac{\partial^2 f}{\partial x \partial \emph{y}}
+    = \frac{\partial}{\partial x}
+      \left(\,\frac{\partial f}{\partial \emph{y}}\,\right)
+  \]
+
+  \vspace{\baselineskip}
+  \[
+    f_{\emph{x}y} = \big(\,f_\emph{x}\,\big)_y
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre as derivadas de segunda ordem da função
+  \[
+    f(x, y) = x\cos(y) + ye^x
+  \]
+
+  \pause
+  \vspace{\baselineskip}
+  $f$ é contínua no plano
+
+  \pause
+  \vspace{\baselineskip}
+  Precisamos calcular \, $f_{xx}$,\, $f_{yy}$,\, $f_{xy}$\, e\, $f_{yx}$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Exemplo \theexemplo \; -- \qquad $f_x$}
+\begin{align*}
+  \onslide<+->{f_x(x, y)}
+  \onslide<+->{& = \D{f}{x} \\[2mm]}
+  \onslide<+->{& = \D{}{x}\big(x\cos(y) + ye^x\big) \\[2mm]}
+  \onslide<+->{& = \D{}{x}\big(x\cos(y)\big) + \D{}{x}\big(ye^x\big) \\[2mm]}
+  \onslide<+->{& = \cos(y)\D{x}{x} + y\D{e^x}{x} \\[2mm]}
+  \onslide<+->{& = \cos(y) + ye^x }
+  \onslide<+->{& \text{contínua no plano}}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Exemplo \theexemplo \; -- \qquad $f_y$}
+\begin{align*}
+  \onslide<+->{f_y(x, y)}
+  \onslide<+->{& = \D{f}{y} \\[2mm]}
+  \onslide<+->{& = \D{}{y}\big(x\cos(y) + ye^x\big) \\[2mm]}
+  \onslide<+->{& = \D{}{y}\big(x\cos(y)\big) + \D{}{y}\big(ye^x\big) \\[2mm]}
+  \onslide<+->{& = x\D{}{y}\cos(y) + e^x\D{y}{y} \\[2mm]}
+  \onslide<+->{& = -x\sin(y) + e^x \\[2mm]}
+  \onslide<+->{& = e^x - x\sin(y)}
+  \onslide<+->{& \text{contínua no plano}}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Exemplo \theexemplo \; -- \qquad $f_{xx}$}
+\begin{align*}
+  \onslide<+->{f_{xx}(x, y)}
+  \onslide<+->{& = \DS{f}{x} \\[2mm]}
+  \onslide<+->{& = \D{}{x}\left(\D{f}{x}\right) \\[2mm]}
+  \onslide<+->{& = \D{}{x}\big(\cos(y) + ye^x\big) \\[2mm]}
+  \onslide<+->{& = \D{}{x}\big(\cos(y)\big) + \D{}{x}\big(ye^x\big) \\[2mm]}
+  \onslide<+->{& = 0 + y\D{e^x}{x} \\[2mm]}
+  \onslide<+->{& = ye^x}
+  \onslide<+->{& \text{contínua no plano}}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Exemplo \theexemplo \; -- \qquad $f_{xy}$}
+\begin{align*}
+  \onslide<+->{f_{xy}(x, y)}
+  \onslide<+->{& = \left(f_x\right)_y(x, y) \\[1mm]}
+  \onslide<+->{& = \D{}{y}\left(\D{f}{x}\right) \\[1mm]}
+  \onslide<+->{& = \D{}{y}\big(\cos(y) + ye^x\big) \\[1mm]}
+  \onslide<+->{& = \D{}{y}\big(\cos(y)\big) + \D{}{y}\big(ye^x\big) \\[1mm]}
+  \onslide<+->{& = -\sin(y) + e^x \D{y}{y} \\[1mm]}
+  \onslide<+->{& = -\sin(y) + e^x}
+  \onslide<+->{  \;=\; e^x - \sin(y)}
+  \onslide<+->{& \text{contínua no plano}}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Exemplo \theexemplo \; -- \qquad $f_{yy}$}
+\begin{align*}
+  \onslide<+->{f_{yy}(x, y)}
+  \onslide<+->{& = \DS{f}{y} \\[2mm]}
+  \onslide<+->{& = \D{}{y}\left(\D{f}{y}\right) \\[1mm]}
+  \onslide<+->{& = \D{}{y}\big(e^x - x\sin(y)\big) \\[1mm]}
+  \onslide<+->{& = \D{}{y}\big(e^x\big) - \D{}{y}\big(x\sin(y)\big) \\[1mm]}
+  \onslide<+->{& = 0 - x\D{}{y}\sin(y) \\[1mm]}
+  \onslide<+->{& = -x\cos(x)}
+  \onslide<+->{& \text{contínua no plano}}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Exemplo \theexemplo \; -- \qquad $f_{yx}$}
+\begin{align*}
+  \onslide<+->{f_{yx}(x, y) }
+  \onslide<+->{& = \left(f_y\right)_x(x, y) \\[1mm]}
+  \onslide<+->{& = \D{}{x}\left(\D{f}{y}\right) \\[1mm]}
+  \onslide<+->{& = \D{}{x}\big(e^x - x\sin(y)\big) \\[1mm]}
+  \onslide<+->{& = \D{}{x}e^x - \D{}{x}\big(x\sin(y)\big) \\[1mm]}
+  \onslide<+->{& = e^x - \sin(y)\D{x}{x} \\[1mm]}
+  \onslide<+->{& = e^x - \sin(y)}
+  \onslide<+->{& \text{contínua no plano}}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo \; -- \; Resposta}
+\begin{align*}
+  f_{xx}(x, y) & = ye^x \\[6mm]
+  f_{xy}(x, y) & = \color<2>{blue}{e^x - \sin(y)} \\[6mm]
+  f_{yy}(x, y) & = -x\cos(x) \\[6mm]
+  f_{yx}(x, y) & = \color<2>{blue}{e^x - \sin(y)}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema das Derivadas Mistas}
+  Se a função \(f(x, y)\) e suas derivadas parciais
+  \, $f_\emph{x}$,\, $f_\emph{y}$,\, $f_{\emph{xy}}$\, e \,$f_{\emph{yx}}$
+
+  \pause
+  forem definidas em uma vizinhança do ponto \((a, b)\)
+
+  \pause
+  e \emph{todas forem contínuas}, então
+
+  \pause
+  \[
+    \DM{f}{x}{y} = \DM{f}{y}{x}
+  \]
+
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre
+  \(\;
+    \DM{w}{x}{y}
+  \;\)
+  se
+  \(\;
+    w = xy + \frac{e^y}{y^2+1}
+  \;\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Queremos calcular
+  \[
+    \DM{w}{x}{y} = \D{}{x}\left(\D{w}{y}\right)
+  \]}
+  \onslide<+->{Calculando a primeira derivada}
+  \begin{align*}
+    \onslide<+->{\D{w}{y}
+    & = \D{}{y}\left(xy + \frac{e^y}{y^2+1}\right) \\[2mm]}
+    \onslide<+->{& = \D{}{y}\left(xy\right) + \D{}{y}\left(\frac{e^y}{y^2+1}\right)}
+  \end{align*}
+
+  \onslide<+->{Precisamos calcular a derivada de uma divisão}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Observando que $w$ é contínua no plano
+
+  \pause
+  e \emph{assumindo} que suas derivadas parciais também serão
+
+  \pause
+  podemos usar o teorema
+  \[
+    \DM{w}{x}{y} = \DM{w}{y}{x}
+  \]
+
+  \pause
+  Temos então que calcular
+  \[
+    \DM{w}{x}{y} = \D{}{y}\left(\D{w}{x}\right)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Calculando a derivada primeira}
+  \begin{align*}
+    \onslide<+->{\D{w}{x}
+    & = \D{}{x}\left(xy + \frac{e^y}{y^2+1}\right) \\[2mm]}
+    \onslide<+->{& = \D{}{x}\left(xy\right) + \D{}{x}\left(\frac{e^y}{y^2+1}\right) \\[2mm]}
+    \onslide<+->{& = y \D{x}{x} + 0 \\[2mm]}
+    \onslide<+->{& = y}
+    \onslide<+->{& \text{contínua no plano}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Calculando a derivada segunda}
+  \begin{align*}
+    \onslide<+->{\DM{w}{x}{y}
+    & = \D{}{y}\left(\D{w}{x}\right) \\[2mm]}
+    \onslide<+->{& = \D{}{y}\left(y\right) \\[2mm]}
+    \onslide<+->{& = 1}
+    \onslide<+->{& \text{contínua no plano}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Derivadas Parciais de Ordem Superior}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Notações}
+  \begin{columns}
+    \column{0.5\linewidth}
+    Derivadas terceiras
+    \[
+      \frac{\partial^3 f}{\partial x^3} \qquad\qquad\qquad
+      f_{xxx}
+    \]
+
+    \vspace{\baselineskip}
+    \[
+      \frac{\partial^3 f}{\partial y\partial x^2} \qquad\qquad\qquad
+      f_{xxy}
+    \]
+    \column{0.5\linewidth}
+    Derivadas quartas
+    \[
+      \frac{\partial^4 f}{\partial x^4} \qquad\qquad\qquad
+      f_{xxx}
+    \]
+
+    \vspace{\baselineskip}
+    \[
+      \frac{\partial^4 f}{\partial y^2 \partial x^2} \qquad\qquad\qquad
+      f_{xxyy}
+    \]
+  \end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Ordem de Derivação}
+  Desde que todas as derivadas envolvidas sejam contínuas
+
+  \pause
+  a ordem de derivação é irrelevante
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre
+  \(
+    f_{yxyz}
+  \)
+  da função
+  \(
+    f(x, y, z) = 1 - 2xy^2z + x^2y
+  \)
+
+  \pause
+  \vspace{\baselineskip}
+  Queremos calcular
+  \[
+    f_{yxyz} = \big(\,\big(\,\big(\,f_y\,\big)\!\,_x\,\big)\!\,_y\,\big)\!\,_z
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{align*}
+  \onslide<+->{f        & = 1 - 2xy^2z + x^2y} \\
+  \onslide<+->{f_y      & = \D{}{y}\left(1 - 2xy^2z + x^2y\right)}
+  \onslide<+->{           = 0 -2x2yz + x^2}
+  \onslide<+->{           = -4xyz + x^2 \\}
+  \onslide<+->{f_{yx}   & = \D{}{x}\left(-4xyz + x^2\right)}
+  \onslide<+->{           = -4yz + 2x \\}
+  \onslide<+->{f_{yxy}  & = \D{}{y}\left(-4yz + 2x\right)}
+  \onslide<+->{           = -4z + 0}
+  \onslide<+->{           = -4z \\}
+  \onslide<+->{f_{yxyz} & = \D{}{z}\left(-4z\right)}
+  \onslide<+->{           = -4}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.3
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 43-45, 51-54, 57, 61
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

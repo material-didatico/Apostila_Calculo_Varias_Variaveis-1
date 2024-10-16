@@ -1,0 +1,228 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+%\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+
+%------------------------------------------------------------------------------%
+\title {Derivação Implicita}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Derivação Implicita}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivação Implicita}
+  Suponha que $F(x, y)$ seja diferenciável e que a equação $F(x, y)=0$
+  defina $y$ como função de $x$.
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivação Implicita -- Justificativa}
+\begin{columns}
+\column{0.5\linewidth}
+\begin{align*}
+  \onslide<+->{w(x)          & = F\big(x, y(x)\big) = 0                              \\[2mm]}
+  \onslide<+->{\frac{dw}{dx} & = \D{F}{x} \frac{dx}{dx} + \D{F}{y} \frac{dy}{dx} = 0 \\[2mm]}
+  \onslide<+->{\frac{dw}{dx} & = F_x \frac{dx}{dx} + F_y \frac{dy}{dx} = 0}
+\end{align*}
+\column{0.5\linewidth}
+\begin{align*}
+  \onslide<+->{F_x + F_y \frac{dy}{dx} & = 0                 &  \\[2mm]}
+  \onslide<+->{F_y \frac{dy}{dx}       & = - F_x             &  \\[2mm]}
+  \onslide<+->{\frac{dy}{dx}           & = - \frac{F_x}{F_y} &  & \text{desde que } F_y \neq 0}
+\end{align*}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivação Implicita -- Fórmula}
+  Suponha que $F(x, y)$ seja diferenciável e que a equação $F(x, y)=0$
+  defina $y$ como função de $x$
+
+  \pause
+  Então
+  \[
+    \frac{dy}{dx} = -\frac{F_x}{F_y}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Calcule \(\frac{dy}{dx}\) se \(y^2-x^2-\sin(xy) = 0\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \[
+    \frac{dy}{dx} = -\frac{F_x}{F_y}
+  \]
+  \pause
+  \[
+    F_x
+    \pause
+    = \D{}{x}\big(y^2-x^2-\sin(xy)\big)
+    \pause
+    = 0 - 2x - y\cos(xy)
+    \pause
+    = - 2x - y\cos(xy)
+  \]
+  \pause
+  \[
+    F_y
+    \pause
+    = \D{}{y}\big(y^2-x^2-\sin(xy)\big)
+    \pause
+    = 2y - 0 - x\cos(xy)
+    \pause
+    = 2y - x\cos(xy)
+  \]
+  \pause
+  \[
+    \frac{dy}{dx}
+    \pause
+    = -\frac{F_x}{F_y}
+    \pause
+    = -\frac{- 2x - y\cos(xy)}{2y - x\cos(xy)}
+    \pause
+    = \frac{2x + y\cos(xy)}{2y - x\cos(xy)}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivação Implicita -- Três Variáveis}
+  Suponha que $F(x, y, z)$ seja diferenciável e que a equação $F(x, y, z)=0$
+  defina $z$ como função de $z=f(x, y)$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivação Implicita -- Justificativa}
+\begin{columns}
+  \column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{F\big(x, y, z(x, y)\big)                               & = 0 \\[2mm]}
+    \onslide<+->{\D{}{x}\left[F\big(x, y, z(x, y)\big)\right]           & = 0 \\[2mm]}
+    \onslide<+->{\D{F}{x}\D{x}{x} + \D{F}{y}\D{y}{x} + \D{F}{z}\D{z}{x} & = 0 \\[2mm]}
+    \onslide<+->{\D{F}{x} + 0 + \D{F}{z}\D{z}{x} & = 0}
+  \end{align*}
+  \column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{F_x + F_z \D{z}{x} & = 0                 &  &  \\[2mm]}
+    \onslide<+->{F_z \D{z}{x}       & = - F_x             &  &  \\[2mm]}
+    \onslide<+->{\D{z}{x}           & = - \frac{F_x}{F_z} &  & \text{desde que } F_z \neq 0}
+  \end{align*}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivação Implicita -- Três Variáveis -- Fórmulas}
+  Suponha que $F(x, y, z)$ seja diferenciável e que a equação $F(x, y, z)=0$
+  defina $z$ como função de $z=f(x, y)$
+  \[
+    \D{z}{x} = -\frac{F_x}{F_z} \qquad
+    \D{z}{y} = -\frac{F_y}{F_z}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Calcule \(\D{z}{x}\) e \(\D{z}{z}\) se \(x^3 + z^2 + ye^{xz} + z\cos(y) = 0\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \[
+    F(x, y, z) = x^3 + z^2 + ye^{xz} + z\cos(y)
+  \]
+  \pause
+  \[
+    F_x
+    \pause
+    = \D{}{x}\left[x^3 + z^2 + ye^{xz} + z\cos(y)\right]
+    \pause
+    = 3x^2 + 0 + ye^{xz}z + 0
+    \pause
+    = 3x^2 + yze^{xz}
+  \]
+  \pause
+  \[
+    F_y
+    \pause
+    = \D{}{y}\left[x^3 + z^2 + ye^{xz} + z\cos(y)\right]
+    \pause
+    = 0 + 0 + e^{xz} -z\sin(y)
+    \pause
+    = e^{xz} -z\sin(y)
+  \]
+  \pause
+  \[
+    F_z
+    \pause
+    = \D{}{z}\left[x^3 + z^2 + ye^{xz} + z\cos(y)\right]
+    \pause
+    = 0 + 2z + ye^{xy}x + \cos(y)
+    \pause
+    = 2z + yxe^{xy} + \cos(y)
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \[
+    \D{z}{x}
+    = -\frac{F_x}{F_z}
+    \pause
+    = -\frac{3x^2 + yze^{xz}}{2z + yxe^{xy} + \cos(y)}
+  \]
+  \pause
+  \[
+    \D{z}{y}
+    = -\frac{F_y}{F_z}
+    \pause
+    = -\frac{e^{xz} -z\sin(y)}{2z + yxe^{xy} + \cos(y)}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.4
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 26, 28, 30, 32
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+

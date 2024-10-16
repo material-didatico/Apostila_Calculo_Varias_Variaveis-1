@@ -1,0 +1,266 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+%\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+
+%------------------------------------------------------------------------------%
+\title {Regra da Cadeia}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Regra da Cadeia}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regra da Cadeia em uma variável}
+    \[
+        h(x) = f\big(g(x)\big)
+    \]
+
+    \pause
+    \vspace{\baselineskip}
+    \[
+        \frac{dh}{dx}(x) = \frac{df}{dg}\big(g(x)\big)\frac{dg}{dx}(x)
+    \]
+
+    \pause
+    \vspace{\baselineskip}
+    \[
+        h'(x) = f'\big(g(x)\big) g'(x)
+    \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Caso 1}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regra da Cadeia -- Caso 1}
+    Uma váriável independente e duas variáveis intermediárias
+    \vspace{\baselineskip}
+
+    \pause
+    Se \(w=f(x, y)\) é diferenciável
+    \pause
+    e se \(x=x(t)\) e \(y=y(t)\) são deriváveis
+
+    \pause
+    \vspace{.5\baselineskip}
+    a composta \(w=f\big(x(t), y(t)\big)\) será uma função derivável de $t$ e
+    \pause
+    \[
+        \frac{dw}{dt}
+        \;=\; \D{f}{x}\big(x(t), y(t)\big)\; \frac{dx}{dt}(t)
+        \;+\; \D{f}{y}\big(x(t), y(t)\big)\; \frac{dy}{dt}(t)
+    \]
+\end{frame}
+
+\framedgraphic{Regra da Cadeia -- Caso 1}{diagrama-caso-1}{}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+    Calcule a derivada de \(w=xy\) com relação a $t$ ao longo do caminho
+    \[
+        x = \cos(t) \qquad
+        y = \sin(t)
+    \]
+    Qual o valor da derivada em \(t=\frac{\pi}{2}\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{align*}
+    \onslide<+->{\frac{dw}{dt}}
+    \onslide<+->{& = \D{w}{x}\frac{dx}{dt} + \D{w}{y}\frac{dy}{dt} \\[3mm]}
+    \onslide<+->{& = \D{}{x}(xy)\;\frac{d}{dt}\big(\cos(t)\big)
+               \;+\; \D{}{y}(xy)\;\frac{d}{dt}\big(\sin(t)\big) \\[3mm]}
+    \onslide<+->{& = y\big(-\sin(t)\big) + x\big(\cos(t)\big) \\[3mm]}
+    \onslide<+->{& = \big(\sin(t)\big)\big(-\sin(t)\big) + \big(\cos(t)\big)\big(\cos(t)\big) \\[3mm]}
+    \onslide<+->{& = -\sin^2(t) + \cos^2(t) \\[2mm]}
+    \onslide<+->{& = \cos(2t)}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+    \begin{align*}
+        \onslide<+->{\frac{dw}{dt}\left(\frac{\pi}{2}\right)}
+        \onslide<+->{& = \frac{dw}{dt}\evalat{t=\frac{\pi}{2}}{} \\[2mm]}
+        \onslide<+->{& = \cos\left(2\frac{\pi}{2}\right) \\[2mm]}
+        \onslide<+->{& = \cos(\pi) \\[2mm]}
+        \onslide<+->{& = -1}
+    \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Com Três Variáveis}
+    Se \(w=f(x, y, z)\) é diferenciável
+
+    \pause
+     \vspace{0.5\baselineskip}
+     e se \(x=x(t)\), \(y=y(t)\) e \(z=z(t)\) são deriváveis
+
+    \pause
+    \vspace{0.5\baselineskip}
+    a composta \(w=f\big(x(t), y(t), z(t)\big)\) será uma função derivável de $t$ e
+    \pause
+    \begin{align*}
+        \frac{dw}{dt}
+        & = \D{f}{x}\big(x(t), y(t), z(t)\big) \; \frac{dx}{dt}(t) \\[3mm]
+        & + \D{f}{y}\big(x(t), y(t), z(t)\big) \; \frac{dy}{dt}(t) \\[3mm]
+        & + \D{f}{z}\big(x(t), y(t), z(t)\big) \; \frac{dz}{dt}(t)
+    \end{align*}
+\end{frame}
+
+\framedgraphic{Regra da Cadeia -- Caso 1}{diagrama-caso-1-3D}{}
+
+%------------------------------------------------------------------------------%
+\section{Caso 2}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regra da Cadeia -- Caso 2 }
+    Funções definidas em superfícies
+    \vspace{\baselineskip}
+
+    \pause
+    Se \(w=f(x, y, z)\) é diferenciável
+
+    \pause
+    \vspace{0.2\baselineskip}
+    e se \(x=x(r, s)\), \(y=y(r, s)\) e \(z=z(r, s)\) são deriváveis
+
+    \pause
+    \vspace{0.2\baselineskip}
+    a composta \(w=f\big(x(r, s), y(r, s), z(r, s)\big)\)
+    será uma função das deriváveis $r$ e $s$
+
+    \pause
+    \vspace{0.2\baselineskip}
+    e terá duas derivadas parciais
+    \[
+        \D{w}{r}
+        = \D{f}{x} \D{x}{r}
+        + \D{f}{y} \D{y}{r}
+        + \D{f}{z} \D{z}{r}
+    \]
+    \[
+        \pause
+        \D{w}{s}
+        = \D{f}{x} \D{x}{s}
+        + \D{f}{y} \D{y}{s}
+        + \D{f}{z} \D{z}{s}
+    \]
+\end{frame}
+
+\framedgraphic{Regra da Cadeia -- Caso 2}{diagrama-caso-2}{}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+    Expresse \(\D{w}{r}\) e \(\D{w}{s}\) em termos de $r$ e $s$
+    \[
+        w = x + 2y + z^2    \qquad
+        x = \frac{r}{s}     \qquad
+        y = r^2 + \ln(s)    \qquad
+        z = 2r
+    \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+    \begin{align*}
+        \onslide<+->{\D{w}{r}}
+        \onslide<+->{& = \D{w}{x}\D{x}{r} + \D{w}{y}\D{y}{r} + \D{w}{z}\D{z}{r}  \\[2mm]}
+        \onslide<+->{& = 1\D{x}{r} + 2\D{y}{r} + 2z\D{z}{r}  \\[2mm]}
+        \onslide<+->{& = 1\frac{1}{s} + 2(2r) + 2z2  \\[2mm]}
+        \onslide<+->{& = \frac{1}{s} + 4r + 4z   \\[2mm]}
+        \onslide<+->{& = \frac{1}{s} + 4r + 4(2r)\\[2mm]}
+        \onslide<+->{& = \frac{1}{s} + 12r }
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+    \begin{align*}
+        \onslide<+->{\D{w}{s}}
+        \onslide<+->{& = \D{w}{x}\D{x}{s} + \D{w}{y}\D{y}{s} + \D{w}{z}\D{z}{s}  \\[2mm]}
+        \onslide<+->{& = 1\D{x}{s} + 2\D{y}{s} + 2z\D{z}{s}  \\[2mm]}
+        \onslide<+->{& = 1\left(\frac{-r}{s^2}\right) + 2\frac{1}{s} + 2z\times 0  \\[2mm]}
+        \onslide<+->{& = -\frac{r}{s^2} + \frac{2}{s}}
+    \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+    Expresse \(\D{w}{r}\) e \(\D{w}{s}\) em termos de $r$ e $s$
+    \[
+        w = x^2 + y^2    \qquad
+        x = r-s     \qquad
+        y = r+s
+    \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+    \begin{align*}
+        \onslide<+->{\D{w}{r}}
+        \onslide<+->{& = \D{w}{x}\D{x}{r} + \D{w}{y}\D{y}{r}  \\[2mm]}
+        \onslide<+->{& = 2x\D{x}{r} + 2y\D{y}{r}  \\[2mm]}
+        \onslide<+->{& = 2x1 + 2y1  \\[2mm]}
+        \onslide<+->{& = 2(r-s) + 2(r+s) \\[2mm]}
+        \onslide<+->{& = 2r -2s + 2r + 2s \\[2mm]}
+        \onslide<+->{& = 4r}
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{align*}
+    \onslide<+->{\D{w}{s}}
+    \onslide<+->{& = \D{w}{x}\D{x}{s} + \D{w}{y}\D{y}{s}  \\[2mm]}
+    \onslide<+->{& = 2x\D{x}{s} + 2y\D{y}{s}  \\[2mm]}
+    \onslide<+->{& = 2x(-1) + 2y1  \\[2mm]}
+    \onslide<+->{& = -2(r-s) + 2(r+s) \\[2mm]}
+    \onslide<+->{& = -2r +2s + 2r +2s \\[2mm]}
+    \onslide<+->{& = 4s}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.4
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 3, 5, 6, 10, 12, 14, 17
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

@@ -1,0 +1,173 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+%------------------------------------------------------------------------------%
+\title {Fórmula de Euler}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Cálculo com Números Complexos}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivadas e Integrais}
+  Quando derivamos ou integramos por uma variável real, $x\in\R$
+  \pause
+  \begin{itemize}
+    \item A constante \emph{\(i\)} se comporta como uma \emph{constante}
+  \end{itemize}~\\
+
+  \pause
+  Para derivar ou integrar por uma variável complexa
+  \pause
+  \begin{itemize}
+    \item Precisamos de uma nova teoria
+    \pause
+    --\emph{ Variáveis Complexas}
+  \end{itemize}
+\end{frame}
+
+
+%------------------------------------------------------------------------------%
+\section{Funções de Números Complexos}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Funções de Variáveis Complexas}
+  Conhecemos as Séries de Taylor das funções em $\R$
+  \pause
+  \[
+    \sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} + \frac{x^7}{7!} - \cdots
+  \]
+  \pause
+  \[
+    \cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} + \frac{x^8}{8!} - \cdots
+  \]
+  \pause
+  \[
+    e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} +  \cdots
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Funções de Variáveis Complexas}
+  Podemos estender a definições das funções para \(\mathbb{C}\)
+  \pause
+  \[
+    \sin z = z - \frac{z^3}{3!} + \frac{z^5}{5!} + \frac{z^7}{7!} - \cdots
+  \]
+  \pause
+  \[
+    \cos z = 1 - \frac{z^2}{2!} + \frac{z^4}{4!} + \frac{z^8}{8!} - \cdots
+  \]
+  \pause
+  \[
+    e^z = 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \frac{z^4}{4!} +  \cdots
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exponencial Complexa}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exponencial Complexa}
+  Escolhendo $z=i\theta$
+  \begin{align*}
+    \action<+->{e^{i\theta}}
+    \action<+->{& = 1 + (i\theta)
+      + \frac{(i\theta)^2}{2!}
+      + \frac{(i\theta)^3}{3!}
+      + \frac{(i\theta)^4}{4!}
+      + \frac{(i\theta)^5}{5!}
+      + \frac{(i\theta)^6}{6!}
+      + \cdots \\[2mm]}
+    \action<+->{& = 1 +  i\theta
+      + \frac{i^2\theta^2}{2!}
+      + \frac{i^3\theta^3}{3!}
+      + \frac{i^4\theta^4}{4!}
+      + \frac{i^5\theta^5}{5!}
+      + \frac{i^6\theta^6}{6!}
+      + \cdots \\[2mm]}
+    \action<+->{& = 1 +  i\theta
+      - \frac{\theta^2}{2!}
+      - i\frac{\theta^3}{3!}
+      + \frac{\theta^4}{4!}
+      + i\frac{\theta^5}{5!}
+      - \frac{\theta^6}{6!}
+      + \cdots \\[2mm]}
+    \action<+->{& = \left( 1 - \frac{\theta^2}{2!}
+      + \frac{\theta^4}{4!}
+      - \frac{\theta^6}{6!}
+      + \cdots
+      \right)
+      + i \left( \theta - \frac{\theta^3}{3!}
+      + \frac{\theta^5}{5!}
+      - \cdots
+      \right) \\[2mm]}
+    \action<+->{& = \cos\theta + i\sin\theta}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Identidade de Euler}
+  \[
+    e^{i\theta} = \cos\theta + i\sin\theta
+  \]
+  \pause
+  ``Todas as Constantes da Matemática''
+  \[
+    e^{i\pi}
+    \pause
+    \;=\; \cos\pi + i\sin\pi
+    \pause
+    \;=\; -1 + i0
+    \pause
+    \;=\; -1
+  \]
+  \[
+    \pause
+    e^{i\pi} + 1 = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exponencial Complexa}
+  \[
+    e^{z}
+    \;=\; e^{a+bi}                                   \pause
+    \;=\; e^a\; e^{bi}                               \pause
+    \;=\; e^a \; \big[ \cos(b) + i\sin(b)\; \big]
+  \]
+  \pause
+  \vspace{-\baselineskip}
+  \begin{itemize}[<+->]
+    \item \(e^a\)                \tabto{35mm} crescimento ou decrescimento
+    \item \(\cos(b) + i\sin(b)\) \tabto{35mm} oscilação
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+\end{document}
+%------------------------------------------------------------------------------%

@@ -1,0 +1,431 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+%\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+\newcommand{\D}[2]{\dfrac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\title {Linearização}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Variação em uma Direção}
+
+%------------------------------------------------------------------------------%
+%\framedgraphic{Derivada Direcional}{derivada_direcional}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Variação em uma Dimensão}
+  Em uma dimensão podemos estimar o valor da função em um ponto próximo à $x_0$
+  usando a derivada em $x_0$
+
+  \pause
+  \[
+    df = f'(x_0) ds
+  \]
+
+  \[
+    \pause
+    ds = x - x_0
+  \]
+
+  \[
+    \pause
+    df \approx f(x) - f(x_0)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Variação em Várias Dimensões}
+  Em várias dimensões usamos a derivada direcional
+  \pause
+  \[
+    df
+    = \left(D_u f\evalat{(x_0, y_0)}{}\right) ds
+    \pause
+    = \left(\nabla f\evalat{(x_0, y_0)}{} \cdot u\right) ds
+  \]
+  \pause
+  \[
+    ds = \sqrt{(x - x_0)^2 + (y-y_0)^2}
+  \]
+  \pause
+  \[
+    df \approx f(x, y) - f(x_0, y_0)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Calcule quanto
+  \[
+    f(x, y, z) = y\sin(x) + 2yz
+  \]
+  irá variar se nos movermos 0,1 unidades a partir de \(P_0(0, 1, 0)\) \\
+  na direção do ponto \(P_1(2, 2, -2)\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Direção do movimento
+  \[
+    \pause
+    v
+    \pause
+    = \overrightarrow{P_0P_1}
+    \pause
+    = \left(\begin{array}{r} 2 \\ 2 \\ -2 \end{array}\right)
+    - \left(\begin{array}{r} 0 \\ 1 \\  0 \end{array}\right)
+    \pause
+    = \left(\begin{array}{r} 2 \\ 1 \\  -2 \end{array}\right)
+    \pause
+    = 2\veci + \vecj -2\veck
+  \]
+  \pause
+  Normalizando o vetor
+  \[
+    \pause
+    u
+    \pause
+    = \frac{v}{\abs{v}}
+    \pause
+    = \frac{2\veci + \vecj -2\veck}{\sqrt{2^2 + 1^2 + (-2)^2}}
+    \pause
+    = \frac{2\veci + \vecj -2\veck}{\sqrt{9}}
+    \pause
+    = \frac{2}{3} \veci + \frac{1}{3} \vecj - \frac{2}{3} \veck
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Derivadas parciais}
+  \begin{align*}
+    \onslide<+->{\D{f}{x} & = \D{}{x}\left(y\sin(x) + 2yz\right)}
+    \onslide<+->{ = y\cos(x) \\[5mm]}
+    \onslide<+->{\D{f}{y} & = \D{}{y}\left(y\sin(x) + 2yz\right)}
+    \onslide<+->{ = \sin(x) + 2z\\[5mm]}
+    \onslide<+->{\D{f}{z} & = \D{}{z}\left(y\sin(x) + 2yz\right)}
+    \onslide<+->{ = 2y}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Gradiente de $f$}
+
+  \[
+    \onslide<+->{\nabla f}
+    \onslide<+->{= (y\cos(x))\veci + (\sin(x) + 2z)\vecj + (2y)\veck}
+    \onslide<+->{= \left(\begin{array}{c}
+       y\cos(x) \\
+       \sin(x) + 2z \\
+       2y
+    \end{array}\right)}
+  \]
+
+  \[
+    \onslide<+->{\nabla f(0, 1, 0)}
+    \onslide<+->{= (1\cos(0))\veci + (\sin(0) + 2\times 0)\vecj + (2\times 1)\veck}
+    \onslide<+->{= \veci + 2\veck}
+    \onslide<+->{= \left(\begin{array}{r} 1 \\ 0 \\ 2 \end{array}\right)}
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Derivada direcional
+  \[
+    \pause
+    D_u f\evalat{(0, 1, 0)}{}
+    \pause
+    = \left(\nabla f\evalat{(0, 1, 0)}{} \cdot u\right)
+    \pause
+    = \left(\veci + 2\veck\right)
+    \cdot
+    \left(\frac{2}{3} \veci + \frac{1}{3} \vecj - \frac{2}{3} \veck\right)
+  \]
+  \[
+    \hphantom{D_u f\evalat{(0, 1, 0)}{}}
+    \pause
+    = 1\times\frac{2}{3} + 0\times\frac{1}{3} + 2 \times\left(- \frac{2}{3}\right)
+    \pause
+    = \frac{2}{3} - \frac{4}{3}
+    \pause
+    = -\frac{2}{3}
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Variação
+  \[
+    \pause
+    df
+    \pause
+    = \left(D_u f\evalat{(0, 1, 0)}{}\right) ds
+    \pause
+    = -\frac{2}{3}\times 0,1
+    \pause
+    = -\frac{2}{3} \frac{1}{10}
+    \pause
+    = -\frac{2}{30}
+    \pause
+    = -\frac{1}{15}
+    \pause
+    \approx -0,067
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Aproximação Linear}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema do Incremento}
+  Suponha que as derivadas parciais de primeira ordem de $f(x, y)$ sejam
+  definidas em uma região aberta $R$, que contem o ponto $(x_0, y_0)$
+  \pause
+  e que $f_x$ e $f_y$ sejam contínuas em $(x_0, y_0)$,
+  \pause
+  então a variação
+  \[
+    \pause
+    \Delta z
+    = f\left(x_0+\Delta x, y_0 + \Delta y\right)
+    - f(x_0, y_0)
+  \]
+  \pause
+  com \(\left(x_0+\Delta x, y_0 + \Delta y\right)\in R\),
+  \pause
+  satisfaz
+  \[
+    \Delta z
+    = f_x(x_0, y_0) \Delta x
+    + f_y(x_0, y_0) \Delta y
+    + \varepsilon_1 \Delta x
+    + \varepsilon_2 \Delta y
+  \]
+  \[
+    \pause
+    \varepsilon_1, \varepsilon_2 \to 0 \text{ quando } \Delta x, \Delta y \to 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Aproximação Linear}
+  Aproximação linear de uma função diferenciável de duas variáveis
+  em torno do ponto \((x_0, y_0)\)
+  \pause
+  \[
+    L(x, y)
+    \pause
+    = f(x_0, y_0)
+    + f_x(x_0, y_0)(x-x_0)
+    + f_y(x_0, y_0)(y-y_0)
+  \]
+
+  \pause
+  Aproximação linear padrão de $f$ em \((x_0, y_0)\)
+  \[
+    f(x, y) \approx L(x, y)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre a linearização de
+  \[
+    f(x, y) = x^2 - xy + \frac{y^2}{2} + 3
+  \]
+  no ponto \((3, 2)\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Avaliando as derivadas parciais}
+  \begin{align*}
+    \onslide<+->{f_x(x, y)}
+    \onslide<+->{& = \D{}{x} \left(x^2 - xy + \frac{y^2}{2} + 3\right)}
+    \onslide<+->{= 2x - y \\[5mm]}
+    \onslide<+->{f_y(x, y)}
+    \onslide<+->{& = \D{}{y} \left(x^2 - xy + \frac{y^2}{2} + 3\right)}
+    \onslide<+->{= -x + y}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\onslide<+->{Avaliando a função e as derivadas parciais no ponto \((3, 2)\)}
+\begin{align*}
+  \onslide<+->{f(3, 2)}
+  \onslide<+->{& = \left(x^2 - xy + \frac{y^2}{2} + 3\right)\evalat{(3, 2)}{}}
+  \onslide<+->{= 3^2 - 3\times 2 + \frac{2^2}{2} + 3}
+  \onslide<+->{= 8 \\[3mm]}
+  \onslide<+->{f_x(3, 2)}
+  \onslide<+->{& = \left(2x - y\right)\evalat{(3, 2)}{}}
+  \onslide<+->{= 2\times 3 - 2}
+  \onslide<+->{= 4\\[3mm]}
+  \onslide<+->{f_y(3, 2)}
+  \onslide<+->{& = \left(-x + y\right)\evalat{(3, 2)}{}}
+  \onslide<+->{= -3 + 2}
+  \onslide<+->{= -1}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Aproximação linear}
+  \begin{align*}
+    \onslide<+->{L(x, y)}
+    \onslide<+->{& = f(x_0, y_0) + f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0) \\[3mm]}
+    \onslide<+->{& = f(3, 2) + f_x(3, 2)(x-3) + f_y(3, 2)(y-2) \\[3mm]}
+    \onslide<+->{& = 8 + 4(x-3) + (-1)(y-2) \\[3mm]}
+    \onslide<+->{& = 4x -y -2}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Erro na Aproximação Linear}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Erro na Aproximação Linear}
+  Se $f$ possui primeira e segunda derivadas parciais
+  \pause
+  sobre um conjunto aberto
+  contendo umm retângulo $R$ centrado em \((x_0, y_0)\)
+  \pause
+  e se $M$ é qualquer
+  limitante superior para os valores de \(\abs{f_{xx}}\),  \(\abs{f_{yy}}\)
+  e \(\abs{f_{xy}}\) em $R$
+  \pause
+  \[
+    \abs{f_{xx}} \leq M \qquad
+    \abs{f_{yy}} \leq M \qquad
+    \abs{f_{xy}} \leq M \qquad
+    \forall (x, y) \in R
+  \]
+  \pause
+  então o erro $E(x, y)$ na linearização satisfaz
+  \[
+    \abs{E(x, y)} \leq \frac{M}{2} \big(\abs{x-x_0}+\abs{y-y_0}\big)^2
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre um limitante superior para o erro na aproximação
+  \[
+    f(x, y) \approx L(x, y) = 4x -y -2
+  \]
+  no retângulo
+  \[
+    R: \abs{x-3} \leq 0,1 \,,\quad \abs{y-2} \leq 0,1
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Calculando os módulos das derivadas segundas
+  \begin{align*}
+    \onslide<+->{f_{xx}(x, y)}
+    \onslide<+->{& = \DS{}{x} \left(x^2 - xy + \frac{y^2}{2} + 3\right) \\[3mm]}
+    \onslide<+->{& = \D{}{x}\left(2x - y\right) \\[3mm]}
+    \onslide<+->{& = 2 \\[3mm]}
+    \onslide<+->{\abs{f_{xx}(x, y)}}
+    \onslide<+->{& = 2}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \begin{align*}
+    \onslide<+->{f_{yy}(x, y)}
+    \onslide<+->{& = \DS{}{y} \left(x^2 - xy + \frac{y^2}{2} + 3\right) \\[3mm]}
+    \onslide<+->{& = \D{}{y}\left(-x + y\right) \\[3mm]}
+    \onslide<+->{& = 1 \\[3mm]}
+    \onslide<+->{\abs{f_{yy}(x, y)}}
+    \onslide<+->{& = 1}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \begin{align*}
+    \onslide<+->{f_{xy}(x, y)}
+    \onslide<+->{& = \DM{}{x}{y} \left(x^2 - xy + \frac{y^2}{2} + 3\right) \\[3mm]}
+    \onslide<+->{& = \D{}{x}\left(-x + y\right) \\[3mm]}
+    \onslide<+->{& = -1 \\[3mm]}
+    \onslide<+->{\abs{f_{xy}(x, y)}}
+    \onslide<+->{& = 1}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Como o máximo das deriavas segundas em $R$ é 2}
+
+  \onslide<+->{podemos escolher $M=2$, portanto}
+  \begin{align*}
+      \onslide<+->{\abs{E(x, y)}}
+      \onslide<+->{& \leq \frac{M}{2} \big(\abs{x-x_0}+\abs{y-y_0}\big)^2 \\[3mm]}
+      \onslide<+->{& = \frac{2}{2} \big(\abs{x-3}+\abs{y-2}\big)^2 \\[3mm]}
+      \onslide<+->{& = \big(\abs{x-3}+\abs{y-2}\big)^2}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Como
+  \[
+    \abs{x-3} \leq 0,1 \qquad \abs{y-2} \leq 0,1
+  \]}
+  \begin{align*}
+    \onslide<+->{\abs{E(x, y)}}
+    \onslide<+->{& \leq \big(\abs{x-3}+\abs{y-2}\big)^2\\[3mm]}
+    \onslide<+->{& \leq \big(0,1+0,1\big)^2\\[3mm]}
+    \onslide<+->{& = \big(0,2\big)^2\\[2mm]}
+    \onslide<+->{& = 0,04}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.6
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 20, 22, 24, 26, 30, 34, 36, 42, 48
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

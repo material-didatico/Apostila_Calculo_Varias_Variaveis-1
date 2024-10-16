@@ -1,0 +1,171 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+%\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+\newcommand{\D}[2]{\dfrac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\title {Diferenciais}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Diferenciais}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diferenial em Uma Dimensão}
+  Quando $x$ varia de $x_0$ para
+  \tabto{55mm}\(x_0+\Delta x\)
+
+  \pause
+  \vspace{\baselineskip}
+  A variação da função $f$ é
+  \tabto{55mm}\(\Delta f = f(x_0 + \Delta x) - f(x_0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A diferencial de $f$ é
+  \tabto{55mm}\(df = f'(x_0) \Delta x\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diferenial em Uma Dimensão}
+  Quando $x$ varia de $x_0$ para
+  \tabto{55mm}\(x_0+dx\)
+
+  \vspace{\baselineskip}
+  A variação da função $f$ é
+  \tabto{55mm}\(\Delta f = f(x_0 + dx) - f(x_0)\)
+
+  \vspace{\baselineskip}
+  A diferencial de $f$ é
+  \tabto{55mm}\(df = f'(x_0) dx\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diferenial em Duas Dimensão}
+  Quando $(x, y)$ varia de $(x_0, y_0)$ para
+  \tabto{65mm}\((x_0+dx, y_0+dy)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A variação da função $f$ é
+  \tabto{65mm}\(\Delta f = f(x_0+dx, y_0+dy) - f(x_0, y_0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A diferencial de $f$ é
+  \tabto{65mm}\(df = f_x(x_0, y_0) dx +  f_y(x_0, y_0) dy\)
+
+  \pause
+  \vspace{\baselineskip}
+  As diferenciais $dx$ e $dy$ são variáveis independentes
+  \[
+    dx = x - x_0
+    \qquad
+    dy=y-y_0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição}
+  Se movemos de \((x_0, y_0)\) para um ponto próximo \((x_0+dx, y_0+dy)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A \emph{Diferencial Total de $f$} é
+  \[
+    df \;=\; f_x(x_0, y_0)\, dx \;+\;  f_y(x_0, y_0)\, dy
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Uma lata de formato cilíndrico foi projetada para ter um raio de 1 pol.
+  e uma altura de 5 pol., mas o raio tem um erro de \(dr=0,03\) e a altura
+  tem um erro de \(dh=-0,1\).
+
+  \vspace{\baselineskip}
+  Qual a variação resultante no volume da lata?
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Variação exata}
+  \begin{align*}
+    \onslide<+->{\Delta V}
+    \onslide<+->{& = V(r_0+dr, h_0+dh)- V(r_0, h_0) \\}
+    \onslide<+->{& = V(1+0,03, 5-0,1) - V(1, 5)\\}
+    \onslide<+->{& = V(1,03, 4,9) - V(1, 5) \\}
+    \onslide<+->{& = \pi(1,03)^2 \times 4,9 - \pi 1^2 \times 5 \\}
+    \onslide<+->{& \approx 16,3313 - 15,7080 \\}
+    \onslide<+->{& = 0,6233}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Variação usando o diferencial}
+  \begin{align*}
+    \onslide<+->{\Delta V}
+    \onslide<+->{& \approx dV = V_r(r_0, h_0) dr + V_h(r_0, h_0) dh \\}
+    \onslide<+->{& = \left(2\pi r h\right)\evalat{(r_0, h_0)}{} dr
+      + \left(\pi r^2\right)\evalat{(r_0, h_0)}{} dh \\}
+    \onslide<+->{& = \left(2\pi r h\right)\evalat{(1, 5)}{} (0,03)
+      + \left(\pi r^2\right)\evalat{(1, 5)}{} (-0,1) \\}
+    \onslide<+->{& = \left(2\pi 1 \times 5\right)(0,03)
+      - \left(\pi 1^2\right)(0,1) \\}
+    \onslide<+->{& = 0,3\pi - 0,1\pi  \\}
+    \onslide<+->{& = 0,2\pi \\}
+    \onslide<+->{& \approx 0,6283}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.6
+  \begin{enumerate}
+    \item Estudar o texto da seção
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

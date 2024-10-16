@@ -1,0 +1,438 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{apresentacao}
+\usepackage{mathconfig}
+\usepackage{tabto}
+
+\setlength{\parskip}{0.5\baselineskip}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+\makeatletter
+\graphicspath  {{./figs/}}
+\def\input@path{{./figs/}}
+\makeatother
+
+%------------------------------------------------------------------------------%
+\title {Limites de Funções de Várias Variáveis}
+\author{\large Luis Alberto D'Afonseca}
+\date  {Cálculo de Funções de Várias Variáveis I}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+    \titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Limites}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição}
+  Uma função
+  \(f\colon R \subset \R^2 \to \R\), \;
+  \pause
+  \(f(x, y)\),
+
+  \pause
+  se aproxima do \emph{limite} $L$
+  a medida que \((x, y)\) se aproxima de \((x_0, y_0)\)
+
+  \pause
+  se, para todo \emph{$\varepsilon>0$,}
+  \pause
+  existe um \emph{\(\delta(\varepsilon)>0\)}
+  \pause
+  tal que,
+  \pause
+  para todo \((x, y)\) no domínio de $f$
+
+  \pause
+  \[
+    \abs{f(x, y)-L} < \varepsilon
+    \quad\text{ sempre que }\quad
+    0 < \sqrt{ \left(x-x_0\right)^2 + \left(y-y_0\right)^2 } < \delta(\varepsilon)
+  \]
+
+  \pause
+  Obs: \((x_0, y_0)\) não precisa estar no domínio de $f$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Notação}
+  \[
+    \lim_{(x, y)\to(x_0, y_0)} f(x, y) = L
+  \]
+  \pause
+  \vspace{\baselineskip}
+  \[
+    f(x, y) \to L \quad\text{ quando }\quad (x, y)\to(x_0, y_0)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Propriedades}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema -- Unicidade do Limite}
+  Se uma função \(f(x, y)\) possui um limite $L$
+
+  quando \((x, y)\) se aproxima de \((x_0, y_0)\),
+
+  \pause
+  então \emph{$L$ é único}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema -- Propriedades dos limites de várias variáveis}
+  As propriedades a seguir são verdadeiras se
+  \begin{itemize}[<+->]
+    \setlength\itemsep{1.5em}
+    \item $L$, $M$ e $k$ forem números reais
+    \item \(\lim_{(x, y)\to(x_0, y_0)} f(x, y) = L\)
+    \item \(\lim_{(x, y)\to(x_0, y_0)} g(x, y) = M\)
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regra da Soma e Diferença}
+  \[
+    \lim_{(x, y)\to(x_0, y_0)} \left[f(x, y) + g(x, y)\right]
+    \pause =
+    \lim_{(x, y)\to(x_0, y_0)} f(x, y) + \lim_{(x, y)\to(x_0, y_0)} g(x, y)
+    \pause =
+    L + M
+  \]
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \lim_{(x, y)\to(x_0, y_0)} \left[f(x, y) - g(x, y)\right]
+    \pause =
+    \lim_{(x, y)\to(x_0, y_0)} f(x, y) - \lim_{(x, y)\to(x_0, y_0)} g(x, y)
+    \pause =
+    L - M
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regra da Multiplicação por Constante e do Produto}
+  \[
+    \lim_{(x, y)\to(x_0, y_0)} \left[k f(x, y)\right]
+    \pause =
+    k \lim_{(x, y)\to(x_0, y_0)} f(x, y)
+    \pause =
+    k L
+  \]
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \lim_{(x, y)\to(x_0, y_0)} \left[f(x, y) g(x, y)\right]
+    \pause =
+    \left[\lim_{(x, y)\to(x_0, y_0)} f(x, y) \right]
+    \left[\lim_{(x, y)\to(x_0, y_0)} g(x, y) \right]
+    \pause =
+    LM
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regra do Quociente (Divisão)}
+  \[
+    \lim_{(x, y)\to(x_0, y_0)} \left[ \,\frac{\,f(x, y)\,}{g(x, y)} \, \right]
+    \pause =
+    \dfrac{\displaystyle\lim_{(x, y)\to(x_0, y_0)} f(x, y)\,}
+          {\displaystyle\lim_{(x, y)\to(x_0, y_0)} g(x, y)\,}
+    \pause =
+    \frac{L}{M}
+  \]
+
+  \pause
+  \emph{Desde que \(M\neq 0\)}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regra da Potência e da Raiz}
+  Para $n$ inteiro positivo
+  \pause
+  \[
+    \lim_{(x, y)\to(x_0, y_0)} \left[f(x, y)\right]^n
+    \pause =
+    \left[\lim_{(x, y)\to(x_0, y_0)} f(x, y)\right]^n
+    \pause =
+    L^n
+  \]
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \lim_{(x, y)\to(x_0, y_0)} \sqrt[n]{f(x, y)}
+    \pause =
+    \sqrt[n]{\lim_{(x, y)\to(x_0, y_0)} f(x, y)}
+    \pause =
+    \sqrt[n]{L}
+  \]
+  \pause
+  Se $n$ for par $L$ precisa ser positivo
+\end{frame}
+
+%------------------------------------------------------------------------------%
+%\begin{frame}{Demonstração da Propriedade da Soma}
+%  \[
+%    \lim_{(x, y)\to(x_0, y_0)} \left[f(x, y) + g(x, y)\right] = L + M
+%  \]
+%  \pause
+%  Queremos mostrar que para para qualquer $\varepsilon>0$
+%  \pause
+%  existe um $\delta(\varepsilon)>0$
+%  \pause
+%  tal que, para todo \((x, y)\) nos domínios de $f$ e de $g$,
+%  \pause
+%  sempre que
+%  \[
+%    0 < \sqrt{ \left(x-x_0\right)^2 + \left(y-y_0\right)^2 } < \delta(\varepsilon)
+%  \]
+%  temos que
+%  \[
+%    \abs{\,\big(f(x, y) + g(x, y)\big) - \left(L + M\right)\,} < \varepsilon
+%  \]
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  Calcule os limites
+  \begin{enumerate}
+    \setlength\itemsep{1.5em}
+    \item \(\lim_{(x, y)\to(a, b)} k\)
+    \item \(\lim_{(x, y)\to(a, b)} x\)
+    \item \(\lim_{(x, y)\to(a, b)} y\)
+    \item \(\lim_{(x, y)\to(a, b)} xy\)
+  \end{enumerate}
+\column{0.5\linewidth}
+  \pause
+  \begin{enumerate}[<+->]
+    \setlength\itemsep{1.5em}
+    \item \(\lim_{(x, y)\to(a, b)} k  = k  \)
+    \item \(\lim_{(x, y)\to(a, b)} x  = a  \)
+    \item \(\lim_{(x, y)\to(a, b)} y  = b  \)
+    \item \(\lim_{(x, y)\to(a, b)} xy = ab \)
+  \end{enumerate}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Calcule o limite
+  \(
+    \lim_{(x, y)\to(0, 1)} \frac{x-xy+3}{x^2y +5xy - y^3}
+  \),
+  se ele existir.
+
+  \pause
+  \vspace{2\baselineskip}
+  Assumindo que todos os limites necessários para aplicar as propriedades existam
+
+  (Isso pode não ser verdade)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{align*}
+  \onslide<+->{\lim_{(x, y)\to(0, 1)} \frac{x-xy+3}{x^2y +5xy - y^3}}
+  \onslide<+->{& = \frac{\displaystyle \lim_{(x, y)\to(0, 1)}(x-xy+3)}
+           {\displaystyle \lim_{(x, y)\to(0, 1)}(x^2y +5xy - y^3)} \\}
+  \onslide<+->{& = \frac{\displaystyle \lim_{(x, y)\to(0, 1)} x -
+                          \lim_{(x, y)\to(0, 1)} xy +
+                          \lim_{(x, y)\to(0, 1)} 3}
+           {\displaystyle \lim_{(x, y)\to(0, 1)} x^2y +
+                          \lim_{(x, y)\to(0, 1)} 5xy -
+                          \lim_{(x, y)\to(0, 1)} y^3} \\}
+  \onslide<+->{& = \frac{0 - 0\times 1 + 3}{0^2\times 1 + 5\times 0 \times 1 - 1^3} \\}
+  \onslide<+->{& = \frac{3}{-1}}
+  \onslide<+->{= -3}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Calcule o limite
+  \(
+    \lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
+  \)
+  se ele existir
+
+  \pause
+  \vspace{\baselineskip}
+  Assumindo que todos os limites necessários para aplicar as propriedades existam
+
+  (Isso pode não ser verdade)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Exemplo \theexemplo}
+\begin{align*}
+  \onslide<+->{\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
+  & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
+           {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\}
+  \onslide<+->{& = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
+           {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\}
+  \onslide<+->{& = \frac{0-0}{0-0} \\}
+  \onslide<+->{& = 1}
+\end{align*}
+\vfill
+\onslide<+->{\textcolor{red}{\textbf{Não existe divisão por zero!}}}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Exemplo \theexemplo}
+\begin{align*}
+  \,\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
+  & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
+    {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\
+  & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
+    {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\
+  & = \frac{0-0}{0-0}  \\
+  & \;\nexists
+\end{align*}
+\vfill
+Então o limite não existe?
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Exemplo \theexemplo}
+  \begin{align*}
+    \,\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
+    & \color{red}
+    = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
+    {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\
+    & \color{red} = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
+    {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\
+    & \color{red} = \frac{0-0}{0-0}  \\
+  \end{align*}
+  \vfill
+  \vspace{-\baselineskip}
+  Não podemos aplicar a propriedade do quociente \\  \pause
+  Precisamos remover a indeterminação
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Exemplo \theexemplo}\((x, y)\) se aproxima de \((x_0, y_0)\)
+  \begin{align*}
+    \onslide<+->{\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}}
+    \onslide<+->{&
+      \vphantom{\frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
+        {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)}}
+       =\lim_{(x, y)\to(0, 0)} \frac{\left(x^2-xy\right)\left(\sqrt{x}+\sqrt{y}\right)}
+                                  {\left(\sqrt{x}-\sqrt{y}\right)\left(\sqrt{x}+\sqrt{y}\right)} \\}
+    \onslide<+->{& =\lim_{(x, y)\to(0, 0)} \frac{x\left(x-y\right)\left(\sqrt{x}+\sqrt{y}\right)}
+                                  {x-y} \\}
+    \onslide<+->{& =\lim_{(x, y)\to(0, 0)} x\left(\sqrt{x}+\sqrt{y}\right) \\}
+    \onslide<+->{& =\lim_{(x, y)\to(0, 0)} 0\left(\sqrt{0}+\sqrt{0}\right) \\}
+    \onslide<+->{& = 0}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Analise o limite de \(f(x, y) = \frac{y}{x}\)
+  quando \((x, y)\)  se aproxima de \((0, 0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A reta \(x=0\) não faz parte do domínio de $f$
+
+  \pause
+  O ponto \((0, 0)\) não está no domínio de $f$
+
+  \pause
+  Não podemos usar as propriedades diretamente
+
+  \pause
+  Não existe manipulação que remova a indeterminação
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Analisando $f$ sobre a reta \(y=x\)
+  \pause
+  \[
+    f(x, y) \evalat{y=x}{}
+    \pause
+    = f(x, x)
+    \pause
+    = \frac{x}{x}
+    \pause
+    = 1
+    \pause
+    \qquad\text{ pois } x=0 \text{ não está no domínio de } f
+  \]
+
+  \pause
+  Analisando $f$ sobre a reta \(y=0\)
+  \pause
+  \[
+    f(x, y) \evalat{y=0}{}
+    \pause
+    = f(x, 0)
+    \pause
+    = \frac{0}{x}
+    \pause
+    = 0
+    \pause
+    \qquad\text{ pois } x=0 \text{ não está no domínio de } f
+  \]
+
+  \pause
+  O que vai acontecer com outas retas da forma \(y=ax\)?
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Para qualquer $\varepsilon>0$
+  \pause
+  sempre vai existir um ponto da forma \((x, x)\) e um ponto da forma \((x, 0)\)
+  \pause
+  dentro da bola de raio $\delta$
+  \pause
+  de centro em \((0, 0)\)
+
+  \pause
+  Nenhum valor $L$ atende as condições da definição de limite
+
+  \pause
+  O limite não existe
+
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.2
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 4-6, 13-15, 18, 26, 55
+  \end{enumerate}
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
