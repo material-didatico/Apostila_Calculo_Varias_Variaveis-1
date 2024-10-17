@@ -27,5 +27,6 @@ clean:
 .PHONY: distclean
 distclean: clean
 	-@ rm -vf $(PDF_FILES)
+	-@ rm -vf _sandbox.pdf _exercises.pdf
 
 #------------------------------------------------------------------------------#
