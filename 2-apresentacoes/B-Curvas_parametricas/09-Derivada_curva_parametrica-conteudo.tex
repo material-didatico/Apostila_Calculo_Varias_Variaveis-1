@@ -2,167 +2,12 @@
 
 \usepackage{calculo_varias_variaveis-1}
 
-\title {Derivadas de Curvas Paramétricas}
+\title{Derivadas de Curvas Paramétricas}
 
 %------------------------------------------------------------------------------%
 \begin{document}
 
 \addtitle
-
-%------------------------------------------------------------------------------%
-\section{Vetor Tangente}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Curva Paramétrica}
-  $x$ e $y$ são dados como funções
-  \[
-    x = f(t)     \qquad
-    y = g(t)     \qquad
-    t \in I
-  \]
-
-  \pause
-  Vetorialmente escrevemos
-  \[
-    \begin{bmatrix}  x    \\ y    \end{bmatrix} =
-    \begin{bmatrix}  f(t) \\ g(t) \end{bmatrix}
-  \]
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Vetor Tangente}
-  Se $f$ e $g$ forem deriváveis em $t$, o \emph{vetor tangente} é
-  \pause
-  \[
-    \frac{d}{dt}\begin{bmatrix}  x    \\ y    \end{bmatrix} =
-    \pause
-    \begin{bmatrix}  x    \\ y    \end{bmatrix}' =
-    \pause
-    \begin{bmatrix} \;\dfrac{df}{dt}\;\null \\[5mm] \;\dfrac{dg}{dt}\;\null \end{bmatrix} =
-    \pause
-    \begin{bmatrix} \,f'(t)\,\null \\[2mm] \,g'(t)\,\null \end{bmatrix}
-  \]
-\end{frame}
-
-\framedgraphic{Vetor Tangente}{Vetor_tangente}{}
-
-% 01
-%------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Calcule o vetor tangente a curva
-  \[
-    x = t\cos(t)  \qquad
-    y = t\sin(t)  \qquad
-    0 \leq t < \infty
-  \]
-  quando \(t=\frac{\pi}{2}\)
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \begin{columns}
-    \column{0.5\linewidth}
-    \onslide<+->{Derivada da coordenada $x$}
-    \begin{align*}
-      \onslide<+->{x' & = \frac{dx}{dt}       \\[2mm]}
-      \onslide<+->{   & = \frac{d}{dt}t\cos(t) \\[2mm]}
-      \onslide<+->{   & = 1\times\cos(t) + t(-\sin(t)) \\[2mm]}
-      \onslide<+->{   & = \cos(t) - t\sin(t)      }
-    \end{align*}
-
-    \column{0.5\linewidth}
-    \onslide<+->{Derivada da coordenada $y$}
-    \begin{align*}
-      \onslide<+->{y' & = \frac{dy}{dt}       \\[2mm]}
-      \onslide<+->{   & = \frac{d}{dt}t\sin(t) \\[2mm]}
-      \onslide<+->{   & = 1\times \sin(t) + t\cos(t)  \\[2mm]}
-      \onslide<+->{   & = \sin(t) + t\cos(t)          }
-    \end{align*}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \onslide<+->{Avaliando as derivadas em \(t=\frac{\pi}{2}\)}
-  \[
-    \onslide<+->{x'\left(\frac{\pi}{2}\right)}
-    \onslide<+->{   = \left(\cos(t) - t\sin(t)\right) \evalat{\frac{\pi}{2}}{}     }
-    \onslide<+->{   = \cos\left(\frac{\pi}{2}\right) - \frac{\pi}{2}\sin\left(\frac{\pi}{2}\right)}
-    \onslide<+->{   = 0 - \frac{\pi}{2} \times 1}
-    \onslide<+->{   = -\frac{\pi}{2}}
-  \]
-  \[
-    \onslide<+->{y'\left(\frac{\pi}{2}\right)}
-    \onslide<+->{   = \left(\sin(t) + t\cos(t)\right) \evalat{\frac{\pi}{2}}{}     }
-    \onslide<+->{   = \sin\left(\frac{\pi}{2}\right) + \frac{\pi}{2}\cos\left(\frac{\pi}{2}\right)}
-    \onslide<+->{   = 1 + \frac{\pi}{2} \times 0}
-    \onslide<+->{   = 1}
-  \]
-
-\vspace{\baselineskip}
-\onslide<+->{O vetor tangente é
-  \(
-    \begin{bmatrix}
-      \sfrac{-\pi}{2} \\ 1
-    \end{bmatrix}
-  \)}
-  \end{frame}
-
-% 02
-%------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Calcule o vetor tangente a curva
-  \[
-    x = \sec(t)  \qquad
-    y = \tan(t)  \qquad
-    -\frac{\pi}{2} < t < \frac{\pi}{2}
-  \]
-  no quando \(t=\frac{\pi}{4}\)
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \begin{columns}
-  \column{0.5\linewidth}
-    \onslide<+->{Derivada da coordenada $x$}
-    \begin{align*}
-      \onslide<+->{x' & = \frac{dx}{dt}       \\[2mm]}
-      \onslide<+->{   & = \frac{d}{dt}\sec(t) \\[2mm]}
-      \onslide<+->{   & = \tan(t)\sec(t)      }
-    \end{align*}
-
-  \column{0.5\linewidth}
-    \onslide<+->{Derivada da coordenada $y$}
-    \begin{align*}
-      \onslide<+->{y' & = \frac{dy}{dt}       \\[2mm]}
-      \onslide<+->{   & = \frac{d}{dt}\tan(t) \\[2mm]}
-      \onslide<+->{   & = \sec^2(t)           }
-    \end{align*}
-  \end{columns}
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \onslide<+->{Avaliando as derivadas em \(t=\frac{\pi}{4}\)}
-  \[
-    \onslide<+->{x'\left(\frac{\pi}{4}\right)}
-    \onslide<+->{   = \tan\left(\frac{\pi}{4}\right)\sec\left(\frac{\pi}{4}\right)}
-    \onslide<+->{   = 1 \times \sqrt{2}}
-    \onslide<+->{   = \sqrt{2}}
-  \]
-  \[
-    \onslide<+->{y'\left(\frac{\pi}{4}\right)}
-    \onslide<+->{   = \sec^2\left(\frac{\pi}{4}\right)}
-    \onslide<+->{   = \left(\sqrt{2}\right)^2}
-    \onslide<+->{   = 2}
-  \]
-
-  \vspace{\baselineskip}
-  \onslide<+->{O vetor tangente é
-  \(
-    \begin{bmatrix}
-      \sqrt{2} \\ 2
-    \end{bmatrix}
-  \)}
-\end{frame}
 
 %------------------------------------------------------------------------------%
 \section{Derivada Primeira}
@@ -278,7 +123,7 @@
 
 \begin{frame}{Exemplo \theexemplo}
 	\[
-		\frac{dx}{dt} 
+		\frac{dx}{dt}
 		\pause
 		= \frac{d}{dt}\cos^3(t)
 		\pause
@@ -286,10 +131,10 @@
 		\pause
 		= -3\cos^2(t)\sin(t)
 	\]
-	
+
 	\pause
 	\[
-		\frac{dy}{dt}  
+		\frac{dy}{dt}
 		\pause
 		= \frac{d}{dt}\sin^3(t)
 		\pause
@@ -297,7 +142,7 @@
 		\pause
 		= 3\sin^2(t)\cos(t)
 	\]
-	
+
 	\pause
 	Portanto
 	\[
@@ -311,7 +156,7 @@
 		\pause
 		= -\tan(t)
 	\]
-	
+
 	\pause
 	Avaliando no ponto
 	\[
@@ -319,7 +164,7 @@
 		\pause
 		= -\tan\left(\frac{\pi}{6}\right)
 		\pause
-		= -\frac{\sqrt{3}}{3} 
+		= -\frac{\sqrt{3}}{3}
 		\pause
 		= \frac{-1}{\sqrt{3}}
 		= \frac{-1}{3^{\sfrac{1}{2}}}
@@ -329,7 +174,7 @@
 \begin{frame}{Exemplo \theexemplo}
 	Equação da reta
 	\[
-		y - y_0 
+		y - y_0
 		= a (x - x_0)
 		\pause
 		= \frac{dy}{dx}\evalat{t_0}{} (x - x_0)
@@ -347,7 +192,7 @@
 		\pause
 		= \frac{3^{\sfrac{3}{2}}}{2^3}
 	\]
-	
+
 	\pause
 	\[
 		y_0
@@ -368,13 +213,13 @@
 		\onslide<+->{y - y_0 & = \frac{dy}{dx}\evalat{t_0}{} (x - x_0) \\[3mm]}
 		\onslide<+->{y - \frac{1}{2^3}
 			         & = \frac{-1}{3^{\sfrac{1}{2}}} \left(x - \frac{3^{\sfrac{3}{2}}}{2^3}\right) }
-		\onslide<+->{  = \frac{-x}{3^{\sfrac{1}{2}}} 
+		\onslide<+->{  = \frac{-x}{3^{\sfrac{1}{2}}}
 			           - \frac{-1\;}{3^{\sfrac{1}{2}}} \frac{3^{\sfrac{3}{2}}}{2^3} \\[3mm]}
 		\onslide<+->{y & = -\frac{x}{\sqrt{3}} + \frac{3}{2^{3}} + \frac{1}{2^3}       }
 		\onslide<+->{    = -\frac{x}{\sqrt{3}} + \frac{4}{8} }
 		\onslide<+->{    = -\frac{x}{\sqrt{3}} + \frac{1}{2} }
 	\end{align*}
-	
+
 	\onslide<+->{
 		Equação da reta tangente
 		\[
@@ -489,14 +334,14 @@
 %------------------------------------------------------------------------------%
 \addtocounter{exemplo}{1}
 \begin{frame}{Exemplo \theexemplo}
-	Calcule \(\sfrac{dy}{dx}\), em $t = 2$, 
+	Calcule \(\sfrac{dy}{dx}\), em $t = 2$,
 	para a curva paramétrica definida implicitamente
 	\[
 		x^3 + 2t^2 = 9
 		\qquad
 		2y^3 - 3t^2 = 4
 	\]
-	
+
 	\pause
 	Nesse caso podemos isolar $x$ e $y$
 	\[
@@ -518,7 +363,7 @@
 		\onslide<+->{3x^2\frac{dx}{dt} & = 0 - 2\times 2t \\[3mm]}
 		\onslide<+->{\frac{dx}{dt} & = \frac{-4t}{3x^2}}
 	\end{align*}
-\column{0.5\linewidth} 
+\column{0.5\linewidth}
 	\begin{align*}
 		\onslide<+->{2y^3 - 3t^2 & = 4 \\[3mm]}
 		\onslide<+->{2y^3 & = 4 + 3t^2 \\[3mm]}
