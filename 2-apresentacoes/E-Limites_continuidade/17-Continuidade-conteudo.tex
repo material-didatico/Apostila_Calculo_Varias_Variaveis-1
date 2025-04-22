@@ -2,7 +2,7 @@
 
 \usepackage{calculo_varias_variaveis-1}
 
-\title {Continuidade de Funções de Várias Variáveis}
+\title{Continuidade de Funções de Várias Variáveis}
 
 %------------------------------------------------------------------------------%
 \begin{document}
@@ -15,8 +15,10 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Definição}
   Uma função \(f(x, y)\) é \emph{contínua no ponto} $(x_0, y_0)$, se
+
+  \vspace{0.5\baselineskip}
   \begin{enumerate}[<+->]
-    \setlength\itemsep{1em}
+    \setlength\itemsep{1.5em}
     \item $f$ é definida em \((x_0, y_0)\)
     \item \(\lim_{(x, y)\to(x_0, y_0)} f(x, y)\) existe
     \item \(\lim_{(x, y)\to(x_0, y_0)} f(x, y) = f(x_0, y_0)\)
@@ -38,7 +40,8 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Combinações Algébricas}
-  Combinações algébricas de funções contínuas são funções contínuas
+  Combinações algébricas de funções contínuas são funções contínuas, \\
+  exceto por divisões por zero, raízes de números negativos, \dots
 
   \pause
   \vspace{\baselineskip}
@@ -69,7 +72,7 @@
       \quad\; 0,            & (x, y) =    (0, 0)
     \end{cases}
   \]
-  é contínua em todos os pontos, exceto na origem.
+  é contínua em todos os pontos, exceto na origem
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -92,8 +95,11 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Exemplo \theexemplo}
   Em \((x, y) = (0, 0)\) temos que aplicar a definição
+
   \pause
+  \vspace{0.5\baselineskip}
   \begin{enumerate}
+    \setlength\itemsep{1.5em}
     \item \(f\) é definida em \((0, 0)\)
     \item \(\lim_{(x, y)\to(0, 0)} f(x, y)\) existe
     \item \(\lim_{(x, y)\to(0, 0)} f(x, y) = f(0, 0)\)
@@ -106,7 +112,7 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Exemplo \theexemplo}
-  Verificando a condição 2, percebemos que o limite não existe.
+  Verificando a condição 2, percebemos que o limite não existe
 
   \pause
   Se fizermos \(y=mx\),
@@ -130,93 +136,6 @@
 
   \pause
   Portanto, o limite não existe e a função não é contínua na origem
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Teste dos Dois Caminhos}
-  Se \(f(x, y)\) tem limites diferentes ao longo de dois caminhos
-  diferentes,
-
-  \pause
-  no domínio de $f$,
-
-  \pause
-  quando $(x, y)$ se aproxima de $(x_0, y_0)$,
-
-  \pause
-  então
-  \[
-    \lim_{(x, y)\to(x_0, y_0)} f(x, y) \quad \text{ \emph{não existe}}
-  \]
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Verifique se a função
-  \(
-    f(x, y) = \frac{2x^2y}{x^4+y^2}
-  \)
-  possui limite na origem.
-
-  \pause
-  \vspace{\baselineskip}
-  O limite na origem leva a uma indeterminação do tipo $\sfrac{0}{0}$
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Fazendo \(y=mx\), para \(m\neq 0\) e \(x\neq 0\),
-  \pause
-  temos
-  \[
-    f(x, y)\evalat{y=mx}{}
-    \pause
-    = \frac{2x^2y}{x^4+y^2} \evalat{y=mx}{}
-    \pause
-    = \frac{2mx^3}{x^4+m^2x^2}
-    \pause
-    = \frac{2mx\,x^2}{\left(x^2+m^2\right)x^2}
-    \pause
-    = \frac{2mx}{x^2+m^2}
-  \]
-
-  \pause
-  $f$ tende para zero quando $x$ vai para zero por todas as direções
-
-  \pause
-  Portanto,
-  \[
-    \lim_{(x, y)\to(0, 0)} \frac{2x^2y}{x^4+y^2} = 0
-    \pause
-    \qquad
-    \qquad
-    \text{\textcolor{red}{\textbf{Falso!}}}
-  \]
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Fazendo \(y=kx^2\), para \(k\neq 0\) e \(x\neq 0\),
-  \pause
-  temos
-  \[
-    f(x, y)\evalat{y=kx^2}{}
-    \pause
-    = \frac{2x^2y}{x^4+y^2} \evalat{y=kx^2}{}
-    \pause
-    = \frac{2kx^4}{x^4+k^2x^4}
-    \pause
-    = \frac{2kx^4}{\left(1+k^2\right)x^4}
-    \pause
-    = \frac{2k}{1+k^2}
-  \]
-
-  \pause
-  Para cada valor de $k$, a função $f$ se aproxima da origem com um valor diferente
-
-  \pause
-  Portanto, o limite não existe
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -283,14 +202,18 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
+\section{Valor Extremo de Função Contínua}
+
+%------------------------------------------------------------------------------%
 \begin{frame}{Teorema do Valor Extremo}
   Se \(f\colon\R^n\to\R\) é uma função \emph{contínua}
+  em uma região $R$,
 
   \pause
-  em uma região $R$, \emph{fechada e limitada},
+  \emph{fechada e limitada} (compacta),
 
   \pause
-  a função assume um máximo e um mínimo absolutos m $R$
+  a função assume \emph{um máximo e um mínimo absolutos} em $R$
 \end{frame}
 
 %------------------------------------------------------------------------------%

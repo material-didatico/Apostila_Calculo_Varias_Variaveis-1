@@ -2,7 +2,7 @@
 
 \usepackage{calculo_varias_variaveis-1}
 
-\title {Limites de Funções de Várias Variáveis}
+\title{Limites de Funções de Várias Variáveis}
 
 %------------------------------------------------------------------------------%
 \begin{document}
@@ -155,41 +155,22 @@
     \pause =
     \sqrt[n]{L}
   \]
+
   \pause
   Se $n$ for par $L$ precisa ser positivo
 \end{frame}
 
 %------------------------------------------------------------------------------%
-%\begin{frame}{Demonstração da Propriedade da Soma}
-%  \[
-%    \lim_{(x, y)\to(x_0, y_0)} \left[f(x, y) + g(x, y)\right] = L + M
-%  \]
-%  \pause
-%  Queremos mostrar que para para qualquer $\varepsilon>0$
-%  \pause
-%  existe um $\delta(\varepsilon)>0$
-%  \pause
-%  tal que, para todo \((x, y)\) nos domínios de $f$ e de $g$,
-%  \pause
-%  sempre que
-%  \[
-%    0 < \sqrt{ \left(x-x_0\right)^2 + \left(y-y_0\right)^2 } < \delta(\varepsilon)
-%  \]
-%  temos que
-%  \[
-%    \abs{\,\big(f(x, y) + g(x, y)\big) - \left(L + M\right)\,} < \varepsilon
-%  \]
-%\end{frame}
-
-%------------------------------------------------------------------------------%
 \section{Exemplos}
 
+% 01
 %------------------------------------------------------------------------------%
 \addtocounter{exemplo}{1}
 \begin{frame}{Exemplo \theexemplo}
-\begin{columns}
+\begin{columns}[t]
 \column{0.5\linewidth}
   Calcule os limites
+  \vspace{0.5\baselineskip}
   \begin{enumerate}
     \setlength\itemsep{1.5em}
     \item \(\lim_{(x, y)\to(a, b)} k\)
@@ -199,6 +180,9 @@
   \end{enumerate}
 \column{0.5\linewidth}
   \pause
+  Respostas
+  \pause
+  \vspace{0.5\baselineskip}
   \begin{enumerate}[<+->]
     \setlength\itemsep{1.5em}
     \item \(\lim_{(x, y)\to(a, b)} k  = k  \)
@@ -209,6 +193,7 @@
 \end{columns}
 \end{frame}
 
+% 02
 %------------------------------------------------------------------------------%
 \addtocounter{exemplo}{1}
 \begin{frame}{Exemplo \theexemplo}
@@ -216,7 +201,7 @@
   \(
     \lim_{(x, y)\to(0, 1)} \frac{x-xy+3}{x^2y +5xy - y^3}
   \),
-  se ele existir.
+  se ele existir
 
   \pause
   \vspace{2\baselineskip}
@@ -243,6 +228,7 @@
 \end{align*}
 \end{frame}
 
+% 03
 %------------------------------------------------------------------------------%
 \addtocounter{exemplo}{1}
 \begin{frame}{Exemplo \theexemplo}
@@ -264,14 +250,14 @@
 \begin{align*}
   \onslide<+->{\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
   & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
-           {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\}
+           {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\[2mm]}
   \onslide<+->{& = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
-           {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\}
-  \onslide<+->{& = \frac{0-0}{0-0} \\}
-  \onslide<+->{& = 1}
+           {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\[2mm]}
+  \onslide<+->{& =   \frac{0-0}{0-0} }
+  \onslide<+->{\;=\; \frac{0}{0} }
+  \onslide<+->{\;=\; 1}
 \end{align*}
-\vfill
-\onslide<+->{\textcolor{red}{\textbf{Não existe divisão por zero!}}}
+\onslide<+->{\textcolor{red}{\textbf{Não existe divisão por zero !!!}}}
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -279,14 +265,14 @@
 \begin{align*}
   \,\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
   & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
-    {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\
+    {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\[2mm]
   & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
-    {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\
-  & = \frac{0-0}{0-0}  \\
-  & \;\nexists
+    {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\[2mm]
+  & =  \frac{0-0}{0-0}
+  \;=\; \frac{0}{0}
+  \qquad\nexists
 \end{align*}
-\vfill
-Então o limite não existe?
+\emph{Então o limite não existe?}
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -295,34 +281,36 @@ Então o limite não existe?
     \,\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
     & \color{red}
     = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
-    {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\
+    {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\[2mm]
     & \color{red} = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
-    {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\
-    & \color{red} = \frac{0-0}{0-0}  \\
+    {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\[2mm]
+    & \color{red} = \frac{0-0}{0-0}
   \end{align*}
-  \vfill
-  \vspace{-\baselineskip}
   Não podemos aplicar a propriedade do quociente \\  \pause
-  Precisamos remover a indeterminação
+  \emph{Precisamos remover a indeterminação}
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}[t]{Exemplo \theexemplo}\((x, y)\) se aproxima de \((x_0, y_0)\)
+\begin{frame}[t]{Exemplo \theexemplo}
+  \onslide<+->{Ao calcular o limite \((x, y) \to (0, 0)\), assumimos \((x, y) \neq (0, 0)\)}
   \begin{align*}
     \onslide<+->{\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}}
-    \onslide<+->{&
-      \vphantom{\frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
-        {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)}}
-       =\lim_{(x, y)\to(0, 0)} \frac{\left(x^2-xy\right)\left(\sqrt{x}+\sqrt{y}\right)}
-                                  {\left(\sqrt{x}-\sqrt{y}\right)\left(\sqrt{x}+\sqrt{y}\right)} \\}
-    \onslide<+->{& =\lim_{(x, y)\to(0, 0)} \frac{x\left(x-y\right)\left(\sqrt{x}+\sqrt{y}\right)}
-                                  {x-y} \\}
-    \onslide<+->{& =\lim_{(x, y)\to(0, 0)} x\left(\sqrt{x}+\sqrt{y}\right) \\}
-    \onslide<+->{& =\lim_{(x, y)\to(0, 0)} 0\left(\sqrt{0}+\sqrt{0}\right) \\}
-    \onslide<+->{& = 0}
+    \onslide<+->{& = \lim_{(x, y)\to(0, 0)}
+                     \frac{\left(x^2-xy\right) \emph{\left(\sqrt{x}+\sqrt{y}\right)}}
+                          {\left(\sqrt{x}-\sqrt{y}\right)\emph{\left(\sqrt{x}+\sqrt{y}\right)}} \\[1mm]}
+    \onslide<+->{& = \lim_{(x, y)\to(0, 0)}
+                     \frac{x\left(\emph{x-y}\right)\left(\sqrt{x}+\sqrt{y}\right)}{\emph{x-y}} \\[1mm]}
+    \onslide<+->{& = \lim_{(x, y)\to(0, 0)} x\left(\sqrt{x}+\sqrt{y}\right) \\[1mm]}
+    \onslide<+->{& = \left(\lim_{(x, y)\to(0, 0)} x\right)
+                     \left[
+                     \left(\lim_{(x, y)\to(0, 0)}\sqrt{x}\right) +
+                     \left(\lim_{(x, y)\to(0, 0)}\sqrt{y}\right)\right] \\[2mm]}
+    \onslide<+->{& = 0\left(\sqrt{0}+\sqrt{0}\right)}
+    \onslide<+->{\;=\; 0}
   \end{align*}
 \end{frame}
 
+% 04
 %------------------------------------------------------------------------------%
 \addtocounter{exemplo}{1}
 \begin{frame}{Exemplo \theexemplo}
@@ -393,7 +381,100 @@ Então o limite não existe?
 
   \pause
   O limite não existe
+\end{frame}
 
+%------------------------------------------------------------------------------%
+\section{Inexistência do Limite}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teste dos Dois Caminhos}
+  Se \(f(x, y)\) tem limites diferentes ao longo de dois caminhos
+  diferentes,
+
+  \pause
+  no domínio de $f$,
+
+  \pause
+  quando $(x, y)$ se aproxima de $(x_0, y_0)$,
+
+  \pause
+  então
+  \[
+  \lim_{(x, y)\to(x_0, y_0)} f(x, y) \quad \text{ \emph{não existe}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+% 05
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Verifique se a função
+  \(
+  f(x, y) = \frac{2x^2y}{x^4+y^2}
+  \)
+  possui limite na origem.
+
+  \pause
+  \vspace{\baselineskip}
+  O limite na origem leva a uma indeterminação do tipo $\sfrac{0}{0}$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Fazendo \(y=mx\), para \(m\neq 0\) e \(x\neq 0\),
+  \pause
+  temos
+  \[
+  f(x, y)\evalat{y=mx}{}
+  \pause
+  = \frac{2x^2y}{x^4+y^2} \evalat{y=mx}{}
+  \pause
+  = \frac{2mx^3}{x^4+m^2x^2}
+  \pause
+  = \frac{2mx\,x^2}{\left(x^2+m^2\right)x^2}
+  \pause
+  = \frac{2mx}{x^2+m^2}
+  \]
+
+  \pause
+  $f$ tende para zero quando $x$ vai para zero por todas as direções
+
+  \pause
+  Portanto,
+  \[
+  \lim_{(x, y)\to(0, 0)} \frac{2x^2y}{x^4+y^2} = 0
+  \pause
+  \qquad
+  \qquad
+  \text{\textcolor{red}{\textbf{Falso!}}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Fazendo \(y=kx^2\), para \(k\neq 0\) e \(x\neq 0\),
+  \pause
+  temos
+  \[
+  f(x, y)\evalat{y=kx^2}{}
+  \pause
+  = \frac{2x^2y}{x^4+y^2} \evalat{y=kx^2}{}
+  \pause
+  = \frac{2kx^4}{x^4+k^2x^4}
+  \pause
+  = \frac{2kx^4}{\left(1+k^2\right)x^4}
+  \pause
+  = \frac{2k}{1+k^2}
+  \]
+
+  \pause
+  Para cada valor de $k$, a função $f$ se aproxima da origem com um valor diferente
+
+  \pause
+  Portanto, o limite não existe
 \end{frame}
 
 %------------------------------------------------------------------------------%
