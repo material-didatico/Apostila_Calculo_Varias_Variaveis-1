@@ -2,7 +2,7 @@
 
 \usepackage{calculo_varias_variaveis-1}
 
-\title {Derivadas Parciais}
+\title{Derivadas Parciais}
 
 %------------------------------------------------------------------------------%
 \begin{document}
@@ -68,16 +68,11 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Notações}
-  \[
-    \frac{\partial f}{\partial y}(x, y) \qquad\qquad
-    f_y(x, y)
-  \]
-
-  \vspace{\baselineskip}
-  \[
-    \frac{\partial f}{\partial y} \qquad\qquad\qquad
-    f_y
-  \]
+  \begin{align*}
+     \onslide<+->{& \frac{\partial f}{\partial y}(x, y) &  & \frac{\partial f}{\partial y} \\[11mm]}
+     \onslide<+->{& f_y(x, y)                           &  & f_y                           \\[11mm]}
+     \onslide<+->{& \partial_x f(x, y)                  &  & \partial_y f}
+  \end{align*}
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -243,81 +238,6 @@
     \onslide<+->{  =  \frac{z}{yz-1}}
   \end{align*}
 \end{frame}
-
-%------------------------------------------------------------------------------%
-\section{Derivadas Parciais e Continuidade}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Derivada e Continuidade em Uma Variável}
-  No cálculo de funções de \emph{uma variável}
-
-  \pause
-  se uma função é derivável em um ponto $x_0$
-
-  \pause
-  ela é contínua nesse ponto
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Derivadas Parciais e Continuidade}
-  Se as derivadas parciais de $f$ existem em $(x_0, y_0)$
-
-  \pause
-  \emph{não podemos dizer nada} sobre a continuidade de $f$ no ponto
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Considerando a função
-  \(
-  f(x, y) = \begin{cases}
-    0, & xy \neq 0 \\
-    1, & xy = 0
-  \end{cases}
-  \)
-  \begin{enumerate}
-    \item Prove que $f$ não é contínua na origem
-    \item Mostre que suas derivadas parciais existem na origem
-  \end{enumerate}
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  1 -- Queremos mostrar que $f$ não é contínua na origem
-
-  \pause
-  Verificando a condição 2: existência do limite na origem
-
-  \pause
-  Considerando a reta $y=0$, com $x\neq 0$
-  \pause
-  \[
-    f(x, y)\evalat{y=0}{}
-    \pause
-    = f(x, 0)
-    \pause
-    = 1
-  \]
-
-  \pause
-  Considerando a reta $y=x$, com $x\neq 0$
-  \[
-    \pause
-    f(x, y)\evalat{y=x}{}
-    \pause
-    = f(x, x)
-    \pause
-    = 0
-  \]
-
-  \pause
-  Como $f$ tende a valores diferentes por
-  caminhos diferentes para a origem,\\
-  o limite não existe
-\end{frame}
-
-\framedgraphic{Derivada e Continuidade}{Derivadas_parciais_continuidade}{}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}
