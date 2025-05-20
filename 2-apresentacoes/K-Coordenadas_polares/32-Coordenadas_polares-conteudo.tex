@@ -1,0 +1,171 @@
+%------------------------------------------------------------------------------%
+
+\usepackage{calculo_varias_variaveis-1}
+
+\usepackage{tikz}
+\usetikzlibrary{angles}
+
+\title{Coordenadas Polares}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Sistema de Coordenadas Polares}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Coordenadas Polares}
+  \centering
+  \input{coordenadas_polares}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Coordenadas Polares}
+  Definição
+  \begin{itemize}[<+->]
+    \item Origem ou polo
+    \item Raio inicial
+    \item $r$ distância orientada até a origem
+    \item $\theta$ ângulo orientado a partir do raio inicial (em radianos)
+    \item Coordenadas polares $(r, \theta)$
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equações em Coordenadas Polares}
+  \begin{itemize}[<+->]
+    \item \(r=a\)              \tabto{16mm} circulo com centro na origem e raio \(\abs{a}\)
+    \item \(\theta=\theta_0\)  \tabto{16mm} reta passando pela origem com ângulo $\theta_0$ com o raio inicial
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Relação Entre Coordenadas Polares e Cartesianas}
+  \centering
+  \includegraphics[height=68mm]{relacao_polares_catesianas}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Relação Entre Coordenadas Polares e Cartesianas}
+  \[
+    x = r\cos(\theta) \qquad\qquad
+    y = r\sin(\theta)
+  \]
+
+  \pause
+  \vspace{\baselineskip}
+  \[
+    r^2 = x^2 + y^2  \qquad\qquad
+    \tan\theta = \frac{x}{y}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo 1}
+  Encontre todas as coordenadas polares do ponto
+  \(
+    \left(r,\theta\right) =
+    \left(2, \frac{\pi}{6}\right)
+  \)
+
+  \pause
+  \vspace{\baselineskip}
+  Os pares são
+  \[
+    \left( 2, \frac{\pi}{6}+2n\pi\right)
+    \hphantom{--5}
+    \qquad n=0, \pm 1, \pm 2, \dots
+  \]
+  \[
+    \left(-2, -\frac{5\pi}{6}+2n\pi\right)
+    \qquad n=0, \pm 1, \pm 2, \dots
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo 2}
+  Encontre a equação polar para o círculo \(x^2+(y-3)^2=9\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo 2}
+\onslide<+->{Escrevendo a equação em coordenadas polares}
+\begin{align*}
+  \onslide<+->{x^2 + (y-3)^2                 & = 9 \\}
+  \onslide<+->{x^2 + y^2 - 6y + 3^2          & = 9 \\}
+  \onslide<+->{x^2 + y^2 - 6y                & = 0 \\}
+  \onslide<+->{r^2 - 6 r \sin(\theta)        & = 0 \\}
+  \onslide<+->{r \big(r - 6\sin(\theta)\big) & = 0}
+\end{align*}
+\onslide<+->{Portanto}
+\[
+  \onslide<+->{r=0}
+  \onslide<+->{
+  \qquad\text{ou}\qquad
+  r = 6\sin(\theta)}
+\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo 3}
+  Escreva a equação
+  \[
+    r = \frac{4}{2\cos(\theta)-\sin(\theta)}
+  \]
+  em coordenadas cartesianas
+  e identifique seu gráfico
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo 3}
+  Sabemos que
+  \(
+    x = r\cos(\theta) \quad
+    y = r\sin(\theta)
+  \)
+
+  \pause
+  Manipulando
+  \[
+    r = \frac{4}{2\cos(\theta)-\sin(\theta)}
+  \]
+  \pause
+  temos
+  \[
+    2r\cos(\theta) - r\sin(\theta) = 4
+  \]
+  \pause
+  que é o mesmo que
+  \[
+    2x - y = 4
+  \]
+  \pause
+  ou
+  \[
+    y = 2x - 4
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 11.3
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 1, 2, 6, 7, 11-15, 27-31, 53-57, 68
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
