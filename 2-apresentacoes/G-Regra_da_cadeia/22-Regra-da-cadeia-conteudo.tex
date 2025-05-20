@@ -50,8 +50,8 @@
     \pause
     \[
         \frac{dw}{dt}
-        \;=\; \D{f}{x}\big(x(t), y(t)\big)\; \frac{dx}{dt}(t)
-        \;+\; \D{f}{y}\big(x(t), y(t)\big)\; \frac{dy}{dt}(t)
+        \;=\; \emph{\D{f}{x}\big(x(t), y(t)\big)}\; \frac{dx}{dt}(t)
+        \;+\; \emph{\D{f}{y}\big(x(t), y(t)\big)}\; \frac{dy}{dt}(t)
     \]
 \end{frame}
 
@@ -69,6 +69,54 @@
 \end{frame}
 
 \begin{frame}{Exemplo \theexemplo}
+  Pela regra da cadeia
+  \[
+    \frac{dw}{dt} = \D{w}{x}\frac{dx}{dt} + \D{w}{y}\frac{dy}{dt}
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Calculando as derivadas separadamente
+  \[
+    \pause
+    \D{w}{x}
+    \pause
+    \;=\; \D{}{x} (xy)
+    \pause
+    \;=\; y\D{x}{x}
+    \pause
+    \;=\; y
+  \]
+  \[
+    \pause
+    \D{w}{y}
+    \pause
+    \;=\; \D{}{y}(xy)
+    \pause
+    \;=\; x\D{y}{y}
+    \pause
+    \;=\; x
+  \]
+
+  \[
+    \pause
+    \frac{dx}{dt}
+    \pause
+    \;=\; \frac{d}{dt} \cos(t)
+    \pause
+    \;=\; -\sin(t)
+  \]
+  \[
+    \pause
+    \frac{dy}{dt}
+    \pause
+    \;=\; \frac{d}{dt} \sin(t)
+    \pause
+    \;=\; \cos(t)
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
 \begin{align*}
     \onslide<+->{\frac{dw}{dt}}
     \onslide<+->{& = \D{w}{x}\frac{dx}{dt} + \D{w}{y}\frac{dy}{dt} \\[3mm]}
@@ -83,10 +131,10 @@
 
 \begin{frame}{Exemplo \theexemplo}
     \begin{align*}
-        \onslide<+->{\frac{dw}{dt}\left(\frac{\pi}{2}\right)}
-        \onslide<+->{& = \frac{dw}{dt}\evalat{t=\frac{\pi}{2}}{} \\[2mm]}
-        \onslide<+->{& = \cos\left(2\frac{\pi}{2}\right) \\[2mm]}
-        \onslide<+->{& = \cos(\pi) \\[2mm]}
+        \onslide<+->{\frac{dw}{dt}\left(\frac{\pi}{2}\right)       }
+        \onslide<+->{& = \cos(2t)\evalat{t=\frac{\pi}{2}}{} \\[2mm]}
+        \onslide<+->{& = \cos\left(2\frac{\pi}{2}\right)    \\[2mm]}
+        \onslide<+->{& = \cos(\pi)                          \\[2mm]}
         \onslide<+->{& = -1}
     \end{align*}
 \end{frame}
@@ -96,18 +144,17 @@
     Se \(w=f(x, y, z)\) é diferenciável
 
     \pause
-     \vspace{0.5\baselineskip}
      e se \(x=x(t)\), \(y=y(t)\) e \(z=z(t)\) são deriváveis
 
     \pause
-    \vspace{0.5\baselineskip}
     a composta \(w=f\big(x(t), y(t), z(t)\big)\) será uma função derivável de $t$ e
+
     \pause
     \begin{align*}
         \frac{dw}{dt}
-        & = \D{f}{x}\big(x(t), y(t), z(t)\big) \; \frac{dx}{dt}(t) \\[3mm]
-        & + \D{f}{y}\big(x(t), y(t), z(t)\big) \; \frac{dy}{dt}(t) \\[3mm]
-        & + \D{f}{z}\big(x(t), y(t), z(t)\big) \; \frac{dz}{dt}(t)
+        & = \emph{\D{f}{x}\big(x(t), y(t), z(t)\big)} \; \frac{dx}{dt}(t) \\[3mm]
+        & + \emph{\D{f}{y}\big(x(t), y(t), z(t)\big)} \; \frac{dy}{dt}(t) \\[3mm]
+        & + \emph{\D{f}{z}\big(x(t), y(t), z(t)\big)} \; \frac{dz}{dt}(t)
     \end{align*}
 \end{frame}
 
@@ -119,35 +166,32 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Regra da Cadeia -- Caso 2 }
     Funções definidas em superfícies
-    \vspace{\baselineskip}
+    \vspace{0.5\baselineskip}
 
     \pause
     Se \(w=f(x, y, z)\) é diferenciável
 
     \pause
-    \vspace{0.2\baselineskip}
     e se \(x=x(r, s)\), \(y=y(r, s)\) e \(z=z(r, s)\) são deriváveis
 
     \pause
-    \vspace{0.2\baselineskip}
     a composta \(w=f\big(x(r, s), y(r, s), z(r, s)\big)\)
     será uma função das deriváveis $r$ e $s$
 
     \pause
-    \vspace{0.2\baselineskip}
     e terá duas derivadas parciais
     \[
         \D{w}{r}
-        = \D{f}{x} \D{x}{r}
-        + \D{f}{y} \D{y}{r}
-        + \D{f}{z} \D{z}{r}
+        = \emph{\D{f}{x}} \D{x}{r}
+        + \emph{\D{f}{y}} \D{y}{r}
+        + \emph{\D{f}{z}} \D{z}{r}
     \]
     \[
         \pause
         \D{w}{s}
-        = \D{f}{x} \D{x}{s}
-        + \D{f}{y} \D{y}{s}
-        + \D{f}{z} \D{z}{s}
+        = \emph{\D{f}{x}} \D{x}{s}
+        + \emph{\D{f}{y}} \D{y}{s}
+        + \emph{\D{f}{z}} \D{z}{s}
     \]
 \end{frame}
 
@@ -163,6 +207,106 @@
         y = r^2 + \ln(s)    \qquad
         z = 2r
     \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Pela regra da cadeia
+
+  \begin{align*}
+    \D{w}{r} & = \D{w}{x}\D{x}{r} + \D{w}{y}\D{y}{r} + \D{w}{z}\D{z}{r}  \\[5mm]
+    \D{w}{s} & = \D{w}{x}\D{x}{s} + \D{w}{y}\D{y}{s} + \D{w}{z}\D{z}{s}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Calculando as derivadas separadamente
+
+  \[
+    \pause
+    \D{w}{x}
+    \pause
+    \;=\; \D{}{x}\left(x + 2y + z^2\right)
+    \pause
+    \;=\; 1
+  \]
+
+  \[
+    \pause
+    \D{w}{y}
+    \pause
+    \;=\; \D{}{y}\left(x + 2y + z^2\right)
+    \pause
+    \;=\; 2
+  \]
+
+  \[
+    \pause
+    \D{w}{z}
+    \pause
+    \;=\; \D{}{z}\left(x + 2y + z^2\right)
+    \pause
+    \;=\; 2z
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.4\linewidth}
+  \[
+    \D{x}{r}
+    \pause
+    \;=\; \D{}{r}\left(\frac{r}{s}\right)
+    \pause
+    \;=\; \frac{1}{s}
+  \]
+
+  \[
+    \pause
+    \D{y}{r}
+    \pause
+    \;=\; \D{}{r}\left(r^2 + \ln(s)\right)
+    \pause
+    \;=\; 2r
+  \]
+
+  \[
+    \pause
+    \D{z}{r}
+    \pause
+    \;=\; \D{}{r}\left(2r\right)
+    \pause
+    \;=\; 2
+  \]
+\column{0.6\linewidth}
+  \[
+    \pause
+    \D{x}{s}
+    \pause
+    \;=\; \D{}{s}\left(\frac{r}{s}\right)
+    \pause
+    \;=\; \D{}{s}\left(rs^{-1}\right)
+    \pause
+    \;=\; -\frac{r}{s^2}
+  \]
+
+  \[
+    \pause
+    \D{y}{s}
+    \pause
+    \;=\; \D{}{s}\left(r^2 + \ln(s)\right)
+    \pause
+    \;=\; \frac{1}{s}
+  \]
+
+  \[
+    \pause
+    \D{z}{s}
+    \pause
+    \;=\; \D{}{s}\left(2r\right)
+    \pause
+    \;=\; 0
+  \]
+\end{columns}
 \end{frame}
 
 \begin{frame}{Exemplo \theexemplo}
@@ -188,38 +332,353 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
+\section{Exemplos}
+
+%------------------------------------------------------------------------------%
 \addtocounter{exemplo}{1}
 \begin{frame}{Exemplo \theexemplo}
-    Expresse \(\D{w}{r}\) e \(\D{w}{s}\) em termos de $r$ e $s$
-    \[
-        w = x^2 + y^2    \qquad
-        x = r-s     \qquad
-        y = r+s
-    \]
+  Expresse \(\D{w}{r}\) e \(\D{w}{s}\) em termos de $r$ e $s$
+  \[
+    w = x^2 + y^2  \qquad
+    x = r^3 - s^2  \qquad
+    y = r^2 + s^3
+  \]
 \end{frame}
 
 \begin{frame}{Exemplo \theexemplo}
-    \begin{align*}
-        \onslide<+->{\D{w}{r}}
-        \onslide<+->{& = \D{w}{x}\D{x}{r} + \D{w}{y}\D{y}{r}  \\[2mm]}
-        \onslide<+->{& = 2x\D{x}{r} + 2y\D{y}{r}  \\[2mm]}
-        \onslide<+->{& = 2x1 + 2y1  \\[2mm]}
-        \onslide<+->{& = 2(r-s) + 2(r+s) \\[2mm]}
-        \onslide<+->{& = 2r -2s + 2r + 2s \\[2mm]}
-        \onslide<+->{& = 4r}
-    \end{align*}
+  Pela regra da cadeia
+  \begin{align*}
+    \D{w}{r} & = \D{w}{x}\D{x}{r} + \D{w}{y}\D{y}{r}  \\[2mm]
+    \D{w}{s} & = \D{w}{x}\D{x}{s} + \D{w}{y}\D{y}{s}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+Calculando as derivadas
+
+  \[
+    \pause
+    \D{w}{x}
+    \pause
+    \;=\; \D{}{x}\left(x^2 + y^2\right)
+    \pause
+    \;=\; 2x
+  \]
+
+  \[
+    \pause
+    \D{w}{y}
+    \pause
+    \;=\; \D{}{y}\left(x^2 + y^2\right)
+    \pause
+    \;=\; 2y
+  \]
+\column{0.5\linewidth}
+  \[
+    \pause
+    \D{x}{r}
+    \pause
+    \;=\; \D{}{r}\left(r^3 - s^2\right)
+    \pause
+    \;=\; 3r^2
+  \]
+
+  \[
+    \pause
+    \D{y}{r}
+    \pause
+    \;=\; \D{}{r}\left(r^2 + s^3\right)
+    \pause
+    \;=\; 2r
+  \]
+
+  ~
+  \[
+    \pause
+    \D{x}{s}
+    \pause
+    \;=\; \D{}{s}\left(r^3 - s^2\right)
+    \pause
+    \;=\; -2s
+  \]
+
+  \[
+    \pause
+    \D{y}{s}
+    \pause
+    \;=\; \D{}{s}\left(r^2 + s^3\right)
+    \pause
+    \;=\; 3s^2
+  \]
+\end{columns}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \begin{align*}
+    \onslide<+->{\D{w}{r}}
+    \onslide<+->{& = \D{w}{x}\D{x}{r} + \D{w}{y}\D{y}{r}  \\[2mm]}
+    \onslide<+->{& = 2x\D{x}{r} + 2y\D{y}{r}  \\[2mm]}
+    \onslide<+->{& = 2x3r^2 + 2y2r  \\[2mm]}
+    \onslide<+->{& = 6(r^3 - s^2)r^2 + 4(r^2 + s^3)r \\[2mm]}
+    \onslide<+->{& = 6r^5 - 6s^2r^2 +4r^3 + 4s^3r \\[2mm]}
+    \onslide<+->{& = 6r^5 + 4r^3 - 6r^2s^2 + 4rs^3}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \begin{align*}
+    \onslide<+->{\D{w}{s}}
+    \onslide<+->{& = \D{w}{x}\D{x}{s} + \D{w}{y}\D{y}{s}  \\[2mm]}
+    \onslide<+->{& = 2x\D{x}{s} + 2y\D{y}{s}  \\[2mm]}
+    \onslide<+->{& = 2x\left(-2s\right) + 2y3s^2  \\[2mm]}
+    \onslide<+->{& = -4(r^3 - s^2)s + 6(r^2 + s^3)s^2 \\[2mm]}
+    \onslide<+->{& = -4r^3s +4s^3 +6r^2s^2 + 6s^5}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Considere \(z = \sin\left(x^2 + y^2\right)\)
+  onde \(x = st\) e \(y = 2s + t\)
+
+  Encontre \(\frac{\partial z}{\partial s}\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Pela regra da cadeia
+  \[
+    \D{z}{s} = \D{z}{x}\D{x}{s} + \D{z}{y}\D{y}{s}
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \[
+    \D{z}{x}
+    \pause
+    \;=\; \D{}{x} \sin\left(x^2 + y^2\right)
+    \pause
+    \;=\; \cos\left(x^2 + y^2\right) \D{}{x}\left(x^2 + y^2\right)
+    \pause
+    \;=\; \cos(x^2 + y^2) 2x
+  \]
+  \[
+    \pause
+    \D{z}{y}
+    \pause
+    \;=\; \D{}{y} \sin\left(x^2 + y^2\right)
+    \pause
+    \;=\; \cos\left(x^2 + y^2\right) \D{}{y}\left(x^2 + y^2\right)
+    \pause
+    \;=\; \cos(x^2 + y^2) 2y
+  \]
+
+  \[
+    \pause
+    \D{x}{s}
+    \pause
+    \;=\; \D{}{s} \left(st\right)
+    \pause
+    \;=\; t
+  \]
+  \[
+    \pause
+    \D{y}{s}
+    \pause
+    \;=\; \D{}{s} \left(2s+t\right)
+    \pause
+    \;=\; 2
+  \]
 \end{frame}
 
 \begin{frame}{Exemplo \theexemplo}
 \begin{align*}
-    \onslide<+->{\D{w}{s}}
-    \onslide<+->{& = \D{w}{x}\D{x}{s} + \D{w}{y}\D{y}{s}  \\[2mm]}
-    \onslide<+->{& = 2x\D{x}{s} + 2y\D{y}{s}  \\[2mm]}
-    \onslide<+->{& = 2x(-1) + 2y1  \\[2mm]}
-    \onslide<+->{& = -2(r-s) + 2(r+s) \\[2mm]}
-    \onslide<+->{& = -2r +2s + 2r +2s \\[2mm]}
-    \onslide<+->{& = 4s}
+  \onslide<+->{\D{z}{s}}
+  \onslide<+->{& = \D{z}{x}\D{x}{s} + \D{z}{y}\D{y}{s} \\[2mm]}
+  \onslide<+->{& = 2x\cos\left(x^2 + y^2\right)\D{x}{s} + 2y\cos\left(x^2 + y^2\right)\D{y}{s} \\[2mm]}
+  \onslide<+->{& = 2x\cos\left(x^2 + y^2\right) t
+    + 2y\cos\left(x^2 + y^2\right) 2 \\[2mm]}
+  \onslide<+->{& = \left(2xt + 4y \right) \cos\left(x^2 + y^2\right)    \\[2mm]}
+  \onslide<+->{& = \left[ 2(st)t + 4(s+t) \right] \cos\left((st)^2 + (s+t)^2\right)   \\[2mm]}
+  \onslide<+->{& = \left( 2st^2 + 4s +4t \right) \cos\left(s^2t^2 + (s+t)^2\right)}
 \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+Seja \(w = e^{xyz}\) onde \(x = r^2 + 4s\), \(y = 2r - 3s\), \(z = rs\)
+
+Encontre \(\D{w}{r}\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Pela regra da cadeia
+  \[
+      \D{w}{r}
+    = \D{w}{x}\D{x}{r}
+    + \D{w}{y}\D{y}{r}
+    + \D{w}{z}\D{z}{r}
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  \[
+    \D{w}{x}
+    \pause
+    \;=\; \D{}{x} e^{xyz}
+    \pause
+    \;=\; yz e^{xyz}
+  \]
+  \[
+    \pause
+    \D{w}{y}
+    \pause
+    \;=\; \D{}{y} e^{xyz}
+    \pause
+    \;=\; xz e^{xyz}
+  \]
+  \[
+    \pause
+    \D{w}{z}
+    \pause
+    \;=\; \D{}{z} e^{xyz}
+    \pause
+    \;=\; xy e^{xyz}
+  \]
+\column{0.5\linewidth}
+  \[
+    \pause
+    \D{x}{r}
+    \pause
+    \;=\; \D{}{r}\left(r^2 + 4s\right)
+    \pause
+    \;=\; 2r
+  \]
+  \[
+    \pause
+    \D{y}{r}
+    \pause
+    \;=\; \D{}{r}\left(2r - 3s\right)
+    \pause
+    \;=\; 2
+  \]
+  \[
+    \pause
+    \D{z}{r}
+    \pause
+    \;=\; \D{}{r}\left(rs\right)
+    \pause
+    \;=\; s
+  \]
+\end{columns}
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+\begin{align*}
+  \onslide<+->{\D{w}{r}}
+  \onslide<+->{& = \D{w}{x}\D{x}{r} + \D{w}{y}\D{y}{r} + \D{w}{z}\D{z}{r} \\[2mm]}
+  \onslide<+->{& = yz e^{xyz}\D{x}{r} + xz e^{xyz}\D{y}{r} + xy e^{xyz}\D{z}{r} \\[2mm]}
+  \onslide<+->{& = e^{xyz}\left(yz \D{x}{r} + xz \D{y}{r} + xy \D{z}{r}\right) \\[2mm]}
+  \onslide<+->{& = e^{xyz}\left(yz2r + xz2 + xys \right) \\[2mm]}
+  \onslide<+->{& = e^{xyz}\left[2(2r - 3s)(rs)r + 2(r^2 + 4s)(rs) + (r^2 + 4s)(2r - 3s)s \right] \\[2mm]}
+  \onslide<+->{& = e^{xyz}\left[2r^2s(2r - 3s) + 2rs(r^2 + 4s) + s(r^2 + 4s)(2r - 3s) \right]}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+Dada \(u = \ln\left(x^2 + y^2 + z^2\right)\) com \(x = e^t\), \(y = e^{-t}\), \(z = t^2\)
+
+Encontre \(\frac{du}{dt}\)
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Pela regra da cadeia
+  \[
+    \frac{du}{dt}
+    = \D{u}{x}\frac{dx}{dt}
+    + \D{u}{y}\frac{dy}{dt}
+    + \D{u}{z}\frac{dz}{dt}
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \[
+    \D{u}{x}
+    \pause
+    \;=\; \ln'\left(x^2 + y^2 + z^2\right) \D{}{x}\left(x^2 + y^2 + z^2\right)
+    \pause
+    \;=\; \frac{2x}{x^2 + y^2 + z^2}
+  \]
+
+  \[
+    \pause
+    \D{u}{y}
+    \pause
+    \;=\; \ln'\left(x^2 + y^2 + z^2\right) \D{}{y}\left(x^2 + y^2 + z^2\right)
+    \pause
+    \;=\; \frac{2y}{x^2 + y^2 + z^2}
+  \]
+
+  \[
+    \pause
+    \D{u}{z}
+    \pause
+    \;=\; \ln'\left(x^2 + y^2 + z^2\right) \D{}{z}\left(x^2 + y^2 + z^2\right)
+    \pause
+    \;=\; \frac{2z}{x^2 + y^2 + z^2}
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \[
+    \frac{dx}{dt}
+    \pause
+    \;=\; \frac{de^t}{dt}
+    \pause
+    \;=\; e^t
+  \]
+
+  \[
+    \pause
+    \frac{dy}{dt}
+    \pause
+    \;=\; \frac{de^{-t}}{dt}
+    \pause
+    \;=\; -e^{-t}
+  \]
+
+  \[
+    \pause
+    \frac{dz}{dt}
+    \pause
+    \;=\; \frac{dt^2}{dt}
+    \pause
+    \;=\; 2t
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  \begin{align*}
+    \onslide<+->{\frac{du}{dt}}
+    \onslide<+->{& = \D{u}{x}\frac{dx}{dt} + \D{u}{y}\frac{dy}{dt} + \D{u}{z}\frac{dz}{dt}  \\[2mm]}
+    \onslide<+->{& = \frac{2x}{x^2 + y^2 + z^2}\frac{dx}{dt}
+      + \frac{2y}{x^2 + y^2 + z^2}\frac{dy}{dt}
+      + \frac{2z}{x^2 + y^2 + z^2}\frac{dz}{dt}  \\[2mm]}
+    \onslide<+->{& = \frac{2}{x^2 + y^2 + z^2}\left(
+          x\frac{dx}{dt}
+        + y\frac{dy}{dt}
+        + z\frac{dz}{dt}
+        \right) \\[2mm]}
+    \onslide<+->{& = \frac{2}{x^2 + y^2 + z^2}\left(xe^t -ye^{-t} + 2zt \right) \\[2mm]}
+    \onslide<+->{& = \frac{2e^{2t} -2e^{-2t} + 4t^3}{x^2 + y^2 + z^2}}
+  \end{align*}
 \end{frame}
 
 %------------------------------------------------------------------------------%

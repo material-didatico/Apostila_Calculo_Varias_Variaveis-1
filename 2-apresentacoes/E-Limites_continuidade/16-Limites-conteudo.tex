@@ -285,6 +285,7 @@
     & \color{red} = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
     {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\[2mm]
     & \color{red} = \frac{0-0}{0-0}
+    \;=\; \frac{0}{0}
   \end{align*}
   Não podemos aplicar a propriedade do quociente \\  \pause
   \emph{Precisamos remover a indeterminação}
@@ -292,22 +293,33 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}[t]{Exemplo \theexemplo}
-  \onslide<+->{Ao calcular o limite \((x, y) \to (0, 0)\), assumimos \((x, y) \neq (0, 0)\)}
+  \onslide<+->{Ao calcular o limite consideramos apenas os pontos dentro do domínio da função}
+
+  \onslide<+->{Para \(x\neq y\)}
+
   \begin{align*}
-    \onslide<+->{\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}}
-    \onslide<+->{& = \lim_{(x, y)\to(0, 0)}
-                     \frac{\left(x^2-xy\right) \emph{\left(\sqrt{x}+\sqrt{y}\right)}}
+    \onslide<+->{\frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}}
+    \onslide<+->{& = \frac{\left(x^2-xy\right) \emph{\left(\sqrt{x}+\sqrt{y}\right)}}
                           {\left(\sqrt{x}-\sqrt{y}\right)\emph{\left(\sqrt{x}+\sqrt{y}\right)}} \\[1mm]}
-    \onslide<+->{& = \lim_{(x, y)\to(0, 0)}
-                     \frac{x\left(\emph{x-y}\right)\left(\sqrt{x}+\sqrt{y}\right)}{\emph{x-y}} \\[1mm]}
-    \onslide<+->{& = \lim_{(x, y)\to(0, 0)} x\left(\sqrt{x}+\sqrt{y}\right) \\[1mm]}
-    \onslide<+->{& = \left(\lim_{(x, y)\to(0, 0)} x\right)
-                     \left[
-                     \left(\lim_{(x, y)\to(0, 0)}\sqrt{x}\right) +
-                     \left(\lim_{(x, y)\to(0, 0)}\sqrt{y}\right)\right] \\[2mm]}
-    \onslide<+->{& = 0\left(\sqrt{0}+\sqrt{0}\right)}
-    \onslide<+->{\;=\; 0}
+    \onslide<+->{& = \frac{x\left(\emph{x-y}\right)\left(\sqrt{x}+\sqrt{y}\right)}{\emph{x-y}} \\[1mm]}
+    \onslide<+->{& = x\left(\sqrt{x}+\sqrt{y}\right)}
   \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Exemplo \theexemplo}
+\onslide<+->{Calculando o limite}
+
+\begin{align*}
+  \onslide<+->{\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}}
+  \onslide<+->{& = \lim_{(x, y)\to(0, 0)} x\left(\sqrt{x}+\sqrt{y}\right) \\[1mm]}
+  \onslide<+->{& = \left(\lim_{(x, y)\to(0, 0)} x\right)
+    \left[
+    \left(\lim_{(x, y)\to(0, 0)}\sqrt{x}\right) +
+    \left(\lim_{(x, y)\to(0, 0)}\sqrt{y}\right)\right] \\[2mm]}
+  \onslide<+->{& = 0\left(\sqrt{0}+\sqrt{0}\right) \\[2mm]}
+  \onslide<+->{& = 0}
+\end{align*}
 \end{frame}
 
 % 04
@@ -368,19 +380,21 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Exemplo \theexemplo}
-  Para qualquer $\varepsilon>0$
+  Para qualquer $\delta>0$
   \pause
-  sempre vai existir um ponto da forma \((x, x)\) e um ponto da forma \((x, 0)\)
+  sempre vai existir um
+
+  ponto da forma \((x, x)\) e um ponto da forma \((x, 0)\)
+
   \pause
-  dentro da bola de raio $\delta$
-  \pause
-  de centro em \((0, 0)\)
+  dentro da bola de raio $\delta$ de centro em \((0, 0)\)
 
   \pause
   Nenhum valor $L$ atende as condições da definição de limite
 
   \pause
-  O limite não existe
+  \vspace{\baselineskip}
+  \emph{O limite não existe}
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -391,16 +405,14 @@
   Se \(f(x, y)\) tem limites diferentes ao longo de dois caminhos
   diferentes,
 
-  \pause
   no domínio de $f$,
-
   \pause
   quando $(x, y)$ se aproxima de $(x_0, y_0)$,
 
   \pause
   então
   \[
-  \lim_{(x, y)\to(x_0, y_0)} f(x, y) \quad \text{ \emph{não existe}}
+    \lim_{(x, y)\to(x_0, y_0)} f(x, y) \quad \text{ \emph{não existe}}
   \]
 \end{frame}
 
@@ -428,29 +440,42 @@
   \pause
   temos
   \[
-  f(x, y)\evalat{y=mx}{}
-  \pause
-  = \frac{2x^2y}{x^4+y^2} \evalat{y=mx}{}
-  \pause
-  = \frac{2mx^3}{x^4+m^2x^2}
-  \pause
-  = \frac{2mx\,x^2}{\left(x^2+m^2\right)x^2}
-  \pause
-  = \frac{2mx}{x^2+m^2}
+    f(x, y)\evalat{y=mx}{}
+    \pause
+    = \frac{2x^2y}{x^4+y^2} \evalat{y=mx}{}
+    \pause
+    = \frac{2mx^3}{x^4+m^2x^2}
+    \pause
+    = \frac{2mx\,x^2}{\left(x^2+m^2\right)x^2}
+    \pause
+    = \frac{2mx}{x^2+m^2}
   \]
 
   \pause
-  $f$ tende para zero quando $x$ vai para zero por todas as direções
+  Calculando o limite \(x\to 0\), que corresponde a \((x, y)\to (0, 0)\)
+  \[
+    \pause
+    \lim_{x\to 0} \frac{2mx}{x^2+m^2}
+    \pause
+    = \frac{0}{m^2}
+    \pause
+    = 0
+    \qquad\qquad
+    \forall m
+  \]
 
   \pause
   Portanto,
-  \[
-  \lim_{(x, y)\to(0, 0)} \frac{2x^2y}{x^4+y^2} = 0
-  \pause
-  \qquad
-  \qquad
-  \text{\textcolor{red}{\textbf{Falso!}}}
-  \]
+  \(
+    {
+      \color<12->{red}
+      \lim_{(x, y)\to(0, 0)} \frac{2x^2y}{x^4+y^2} = 0
+    }
+    \pause
+    \qquad
+    \qquad
+    \text{\textcolor{red}{\textbf{Falso!}}}
+  \)
 \end{frame}
 
 %------------------------------------------------------------------------------%

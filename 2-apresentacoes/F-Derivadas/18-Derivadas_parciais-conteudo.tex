@@ -15,14 +15,15 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Derivada Ordinária -- Uma variável}
 
-  Variação da função com relação a variável
+  Variação da função com relação a uma variável
 
   \pause
   \vspace{\baselineskip}
   Derivada da função \(f\colon R\subset\R\to\R\) no ponto $x_0$
 
   \[
-    \frac{df}{dx}\evalat{x=x_0}{}
+    \frac{df}{dx}(x_0)
+    = \frac{df}{dx}\evalat{x=x_0}{}
     =\; \lim_{h\to 0} \frac{f(x_0+h)-f(x_0)}{h}
   \]
 \end{frame}
@@ -37,12 +38,16 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Definição -- Derivada Parcial em $x$}
   A derivada parcial, com relação a \emph{$x$},
-  da função \(f\colon R\subset\R^2\to\R\), \(f(x, y)\)
+  da função \(f\colon R\subset\R^2\to\R\),
 
-  no ponto \((x, y) = (x_0, y_0)\)
+  \pause
+  \(f(x, y)\),
+  no ponto \((x_0, y_0)\)
 
+  \pause
   \[
-    \frac{\partial f}{\partial x}\evalat{(x, y) = (x_0, y_0)}{}
+    \D{f}{\emph{x}}(x_0, y_0)
+    = \D{f}{\emph{x}}\evalat{(x, y) = (x_0, y_0)}{}
     =\; \lim_{h\to 0} \frac{f(\emph{x_0+h}, y_0)-f(x_0, y_0)}{h}
   \]
 
@@ -53,12 +58,16 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Definição -- Derivada Parcial em $y$}
   A derivada parcial, com relação a \emph{$y$},
-  da função \(f\colon R\subset\R^2\to\R\), \(f(x, y)\)
+  da função \(f\colon R\subset\R^2\to\R\),
 
-  no ponto \((x, y) = (x_0, y_0)\)
+  \pause
+  \(f(x, y)\),
+  no ponto \((x_0, y_0)\)
 
+  \pause
   \[
-    \frac{\partial f}{\partial y}\evalat{(x, y) = (x_0, y_0)}{}
+    \D{f}{\emph{y}}(x_0, y_0)
+    = \D{f}{\emph{y}}\evalat{(x, y) = (x_0, y_0)}{}
     =\; \lim_{h\to 0} \frac{f(x_0, \emph{y_0+h})-f(x_0, y_0)}{h}
   \]
 
@@ -226,18 +235,115 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
   \begin{align*}
     \onslide<+->{yz - \ln(z) & = x + 1} \\[2mm]
     \onslide<+->{\D{}{x}\big(yz - \ln(z)\big) & = \D{}{x}\left(x + 1\right)} \\[2mm]
     \onslide<+->{\D{}{x}(yz) - \D{}{x}\big(\ln(z)\big) & = 1} \\[2mm]
     \onslide<+->{y\D{z}{x} - \frac{1}{z}\D{z}{x} & = 1} \\[2mm]
     \onslide<+->{\D{z}{x}\left( y - \frac{1}{z} \right) & = 1}  \\[2mm]
-    \onslide<+->{\D{z}{x}
-    & = \left(y - \frac{1}{z}\right)^{-1}}
-    \onslide<+->{  = \left(\frac{yz-1}{z}\right)^{-1}}
-    \onslide<+->{  =  \frac{z}{yz-1}}
   \end{align*}
+\column{0.5\linewidth}
+\begin{align*}
+  \onslide<+->{\D{z}{x} & = \left(y - \frac{1}{z}\right)^{-1}  \\}
+  \onslide<+->{         & = \left(\frac{yz-1}{z}\right)^{-1}   \\}
+  \onslide<+->{         & =  \frac{z}{yz-1}}
+\end{align*}
+\end{columns}
 \end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Calcule as derivadas parciais de primeira ordem da função
+  \[
+    f(x,y) = \sin\left(x^2y\right) + e^{xy^2}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{align*}
+  \onslide<+->{\D{f}{x}}
+  \onslide<+->{& = \D{}{x} \left(\sin\left(x^2y\right) + e^{xy^2}\right) \\[2mm]}
+  \onslide<+->{& = \D{}{x} \left(\sin\left(x^2y\right)\right) + \D{}{x} \left(e^{xy^2}\right) \\[2mm]}
+  \onslide<+->{& = \cos\left(x^2y\right) \D{}{x}\left(x^2y\right) + e^{xy^2}  \D{}{x}\left(xy^2\right) \\[2mm]}
+  \onslide<+->{& = \cos\left(x^2y\right) 2xy + e^{xy^2} y^2 \\[2mm]}
+  \onslide<+->{& = 2xy\cos\left(x^2y\right) + y^2e^{xy^2}}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{align*}
+  \onslide<+->{\D{f}{y}}
+  \onslide<+->{& = \D{}{y} \left(\sin\left(x^2y\right) + e^{xy^2}\right) \\[2mm]}
+  \onslide<+->{& = \D{}{y} \left(\sin\left(x^2y\right)\right) + \D{}{y} \left(e^{xy^2}\right) \\[2mm]}
+  \onslide<+->{& = \cos\left(x^2y\right) \D{}{y}\left(x^2y\right) + e^{xy^2}  \D{}{y}\left(xy^2\right) \\[2mm]}
+  \onslide<+->{& = \cos\left(x^2y\right) x^2 + e^{xy^2} 2xy \\[2mm]}
+  \onslide<+->{& = x^2\cos\left(x^2y\right) + 2xy e^{xy^2}}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Calcule as derivadas parciais de primeira ordem da função
+  \[
+    f(x,y) = \arctan\left(\frac{x}{y}\right)
+  \]
+
+  \pause
+  \[
+    \frac{d}{du} \arctan(u) = \arctan'(u) = \frac{1}{1 + u^2}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  \begin{align*}
+    \D{f}{x}
+    & = \D{}{x}\left(\arctan\left(\frac{x}{y}\right)\right) \\[2mm]
+    & = \arctan'\left(\frac{x}{y}\right) \D{}{x}\left(\frac{x}{y}\right) \\[2mm]
+    & = \frac{1}{1+\left(\frac{x}{y}\right)^2} \D{}{x}\left(\frac{x}{y}\right) \\[2mm]
+    & = \frac{1}{1+\left(\frac{x}{y}\right)^2}\left(\frac{1}{y}\right) \\[2mm]
+  \end{align*}
+\column{0.5\linewidth}
+\begin{align*}
+  \D{f}{x}
+  & = \frac{1}{1+\frac{x^2}{y^2}}\left(\frac{1}{y}\right) \\[2mm]
+  & = \frac{1}{\;\dfrac{y^2+x^2}{y^2}\;}\left(\frac{1}{y}\right) \\[2mm]
+  & = \frac{y^2}{y^2+x^2}\left(\frac{1}{y}\right) \\[2mm]
+  & = \frac{y}{x^2 + y^2}
+\end{align*}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \begin{columns}
+    \column{0.5\linewidth}
+    \begin{align*}
+      \D{f}{y}
+      & = \D{}{y}\left(\arctan\left(\frac{x}{y}\right)\right) \\[2mm]
+      & = \arctan'\left(\frac{x}{y}\right) \D{}{y}\left(\frac{x}{y}\right) \\[2mm]
+      & = \frac{1}{1+\left(\frac{x}{y}\right)^2} \D{}{y}\left(xy^{-1}\right) \\[2mm]
+      & = \frac{1}{1+\left(\frac{x}{y}\right)^2} \left(-xy^{-2}\right) \\[2mm]
+    \end{align*}
+    \column{0.5\linewidth}
+    \begin{align*}
+      \D{f}{x}
+      & = \frac{1}{1+\frac{x^2}{y^2}}        \left(-xy^{-2}\right) \\[2mm]
+      & = \frac{1}{\;\dfrac{y^2+x^2}{y^2}\;} \left(-xy^{-2}\right) \\[2mm]
+      & = \frac{y^2}{y^2+x^2}                \left(-xy^{-2}\right) \\[2mm]
+      & = \frac{-x}{x^2 + y^2}
+    \end{align*}
+  \end{columns}
+\end{frame}
+
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}

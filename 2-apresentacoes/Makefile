@@ -16,6 +16,7 @@ CLEAN_FILES= *~ .*.sw?
 DISTCLEAN_FILES= ${CLEAN_FILES} 
 
 all: 
+	rm -r ./pdf
 	for D in ${SUBDIRS} ; do                                      \
 	  make -C $$D ;                                               \
 	  mkdir -p ./pdf/1-apresentacoes/$${D} ;                      \

@@ -146,7 +146,7 @@
   \onslide<+->{& = \D{}{y}\big(e^x - x\sin(y)\big) \\[1mm]}
   \onslide<+->{& = \D{}{y}\big(e^x\big) - \D{}{y}\big(x\sin(y)\big) \\[1mm]}
   \onslide<+->{& = 0 - x\D{}{y}\sin(y) \\[1mm]}
-  \onslide<+->{& = -x\cos(x)}
+  \onslide<+->{& = -x\cos(y)}
   \onslide<+->{& \text{(contínua no plano)}}
 \end{align*}
 \end{frame}
@@ -170,7 +170,7 @@
 \begin{align*}
   f_{xx}(x, y) & = ye^x                           \\[6mm]
   f_{xy}(x, y) & = \color<2>{blue}{e^x - \sin(y)} \\[6mm]
-  f_{yy}(x, y) & = -x\cos(x)                      \\[6mm]
+  f_{yy}(x, y) & = -x\cos(y)                      \\[6mm]
   f_{yx}(x, y) & = \color<2>{blue}{e^x - \sin(y)}
 \end{align*}
 \end{frame}
@@ -334,6 +334,8 @@
   \(\;
     w = xy + \frac{e^y}{y^2+1}
   \;\)
+
+  Assumindo que as derivadas são contínuas
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -354,10 +356,7 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Exemplo \theexemplo}
-  Observando que $w$ é contínua no plano
-
-  \pause
-  e \emph{assumindo} que suas derivadas parciais também serão
+  Usando a hipótese de que as derivadas são \emph{contínuas}
 
   \pause
   podemos usar o teorema
@@ -381,7 +380,7 @@
     \onslide<+->{& = \D{}{x}\left(xy\right) + \D{}{x}\left(\frac{e^y}{y^2+1}\right) \\[2mm]}
     \onslide<+->{& = y \D{x}{x} + 0 \\[2mm]}
     \onslide<+->{& = y}
-    \onslide<+->{& \text{contínua no plano}}
+    \onslide<+->{& \text{(contínua no plano)}}
   \end{align*}
 \end{frame}
 
@@ -393,7 +392,7 @@
     & = \D{}{y}\left(\D{w}{x}\right) \\[2mm]}
     \onslide<+->{& = \D{}{y}\left(y\right) \\[2mm]}
     \onslide<+->{& = 1}
-    \onslide<+->{& \text{contínua no plano}}
+    \onslide<+->{& \text{(contínua no plano)}}
   \end{align*}
 \end{frame}
 
@@ -441,9 +440,9 @@
 %------------------------------------------------------------------------------%
 \addtocounter{exemplo}{1}
 \begin{frame}{Exemplo \theexemplo}
-  Encontre
+  Encontre a derivada
   \(
-    f_{yxyz}
+    f_{yxyz}(x, y, z)
   \)
   da função
   \(
@@ -454,23 +453,25 @@
   \vspace{\baselineskip}
   Queremos calcular
   \[
-    f_{yxyz} = \big(\,\big(\,\big(\,f_y\,\big)\!\,_x\,\big)\!\,_y\,\big)\!\,_z
+    f_{yxyz}(x, y, z)
+    = \big(\,\big(\,\big(\,f_y(x, y, z)\,\big)\!\,_x\,\big)\!\,_y\,\big)\!\,_z
+    = \D{}{z}\left(\D{}{y}\left(\D{}{x}\left(\D{f}{y}\right)\right)\right)
   \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Exemplo \theexemplo}
 \begin{align*}
-  \onslide<+->{f        & = 1 - 2xy^2z + x^2y} \\
-  \onslide<+->{f_y      & = \D{}{y}\left(1 - 2xy^2z + x^2y\right)}
+  \onslide<+->{f(x, y, z)        & = 1 - 2xy^2z + x^2y} \\
+  \onslide<+->{f_y(x, y, z)      & = \D{}{y}\left(1 - 2xy^2z + x^2y\right)}
   \onslide<+->{           = 0 -2x2yz + x^2}
   \onslide<+->{           = -4xyz + x^2 \\}
-  \onslide<+->{f_{yx}   & = \D{}{x}\left(-4xyz + x^2\right)}
+  \onslide<+->{f_{yx}(x, y, z)   & = \D{}{x}\left(-4xyz + x^2\right)}
   \onslide<+->{           = -4yz + 2x \\}
-  \onslide<+->{f_{yxy}  & = \D{}{y}\left(-4yz + 2x\right)}
+  \onslide<+->{f_{yxy}(x, y, z)  & = \D{}{y}\left(-4yz + 2x\right)}
   \onslide<+->{           = -4z + 0}
   \onslide<+->{           = -4z \\}
-  \onslide<+->{f_{yxyz} & = \D{}{z}\left(-4z\right)}
+  \onslide<+->{f_{yxyz}(x, y, z) & = \D{}{z}\left(-4z\right)}
   \onslide<+->{           = -4}
 \end{align*}
 \end{frame}
