@@ -52,7 +52,8 @@ clean:
 
 .PHONY: distclean
 distclean: clean
-	-@ rm -vf ${HANDOUT_PDF_FILES}
-	-@ rm -vf ${PRESENT_PDF_FILES}
+	# -@ rm -vf ${HANDOUT_PDF_FILES}
+	# -@ rm -vf ${PRESENT_PDF_FILES}
+	-@ rm -vf *.pdf
 
 #------------------------------------------------------------------------------#
