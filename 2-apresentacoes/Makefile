@@ -16,10 +16,11 @@ CLEAN_FILES= *~ .*.sw?
 DISTCLEAN_FILES= ${CLEAN_FILES} 
 
 all: 
-	rm -r ./pdf
 	for D in ${SUBDIRS} ; do                                      \
 	  make -C $$D ;                                               \
+	  rm -rf   ./pdf/1-apresentacoes/$${D} ;                      \
 	  mkdir -p ./pdf/1-apresentacoes/$${D} ;                      \
+	  rm -rf   ./pdf/2-handouts/$${D}      ;                      \
 	  mkdir -p ./pdf/2-handouts/$${D}      ;                      \
 	  cp -v $$D/*-apresentacao.pdf  ./pdf/1-apresentacoes/$${D} ; \
 	  cp -v $$D/*-handout.pdf       ./pdf/2-handouts/$${D}      ; \
