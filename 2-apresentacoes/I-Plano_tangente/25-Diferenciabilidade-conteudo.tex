@@ -15,7 +15,7 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Derivada Ordinária -- Uma variável}
 
-  Variação da função com relação a variável
+  Variação da função com relação à variável
 
   \pause
   \vspace{\baselineskip}
@@ -32,27 +32,27 @@
 	Se a \emph{derivada de $f$ existe} em $x_0$ então $f$ é \emph{diferenciável} em $x_0$
 
 	\pause
-	\vspace{0.5\baselineskip}
+	\vspace{0.3\baselineskip}
 	Existe uma \emph{reta tangente} a $f$ no ponto \(\big(x_0, f(x_0)\big)\)
 
 	\pause
-	\vspace{0.5\baselineskip}
+	\vspace{0.3\baselineskip}
 	Podemos \emph{aproximar} a função pela reta em uma vizinhança de $x_0$
-  \[
-    \pause
-    \Delta y = f(x) - f(x_0)
-  \]
-  \[
-    \pause
-    \Delta y = f'(x_0)\Delta x + \varepsilon \Delta x
-  \]
   \[
     \pause
     \Delta x = x - x_0
   \]
   \[
     \pause
-    \varepsilon\to 0 \;\text{ quando }\; \Delta x \to 0
+    \Delta y = f(x) - f(x_0)
+  \]
+  \[
+    \pause
+    \hphantom{\Delta y} = f'(x_0)\Delta x + \emph{\varepsilon \Delta x}
+  \]
+  \[
+    \pause
+    \emph{\varepsilon\to 0} \;\text{ quando }\; \emph{\Delta x \to 0}
   \]
 \end{frame}
 
@@ -63,8 +63,8 @@
   no ponto \((x, y) = (x_0, y_0)\)
 
   \[
-    \frac{\partial f}{\partial x}\evalat{(x, y) = (x_0, y_0)}{}
-    =\; \lim_{h\to 0} \frac{f(\emph{x_0+h}, y_0)-f(x_0, y_0)}{h}
+    \frac{\partial f}{\partial x}(x_0, y_0)
+    =\; \lim_{h\to 0} \frac{f(\emph{x_0+h}, y_0)-f(\emph{x_0}, y_0)}{h}
   \]
 
   \vspace{\baselineskip}
@@ -78,6 +78,36 @@
 	\pause
 	\vspace{\baselineskip}
 	Diferenciabilidade está associada a existência do \emph{plano tangente}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição: Diferenciabilidade em 2D}
+  Uma função \(z=f(x, y)\) é \emph{diferenciável} em \((x_0, y_0)\)
+
+  \pause
+  \vspace{0.5\baselineskip}
+  se \(\frac{df}{dx}(x_0, y_0)\) e \(\frac{df}{dy}(x_0, y_0)\) existem
+
+  \pause
+  \vspace{0.5\baselineskip}
+  e \(\Delta z = f(x_0+\Delta x, y_0+\Delta y)-f(x_o, y_0)\)
+
+  \pause
+  \vspace{0.5\baselineskip}
+  satisfaz
+  \[
+    \Delta z
+    \;=\; f_x(x_0, y_0) \Delta x
+    \;+\; f_y(x_0, y_0) \Delta y
+    \;+\; \emph{\varepsilon_1 \Delta x}
+    \;+\; \emph{\varepsilon_2 \Delta y}
+  \]
+  \[
+    \pause
+    \emph{\varepsilon_1, \varepsilon_2 \to 0}
+    \;\text{ quando }\;
+    \emph{\Delta x, \Delta y \to 0}
+  \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -102,73 +132,43 @@
 		\Delta z
 		= f_x(x_0, y_0) \Delta x
 		+ f_y(x_0, y_0) \Delta y
-		+ \varepsilon_1 \Delta x
-		+ \varepsilon_2 \Delta y
+		+ \emph{\varepsilon_1 \Delta x}
+		+ \emph{\varepsilon_2 \Delta y}
 	\]
 	\[
 		\pause
-    \varepsilon_1, \varepsilon_2 \to 0
+    \emph{\varepsilon_1, \varepsilon_2 \to 0}
     \;\text{ quando }\;
-    \Delta x, \Delta y \to 0
+    \emph{\Delta x, \Delta y \to 0}
 	\]
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Definição: Diferenciabilidade em 2D}
-	Uma função \(z=f(x, y)\) é \emph{diferenciável} em \((x_0, y_0)\)
-
-  \pause
-  \vspace{0.5\baselineskip}
-  se \(\frac{df}{dx}(x_0, y_0)\) e \(\frac{df}{dy}(x_0, y_0)\) existem
-
-  \pause
-  \vspace{0.5\baselineskip}
-  e \(\Delta z = f(x_0+\Delta x, y_0+\Delta y)-f(x_o, y_0)\)
-
-  \pause
-  \vspace{0.5\baselineskip}
-  satisfaz
-	\[
-		\Delta z
-		\;=\; f_x(x_0, y_0) \Delta x
-		\;+\; f_y(x_0, y_0) \Delta y
-		\;+\; \varepsilon_1 \Delta x
-		\;+\; \varepsilon_2 \Delta y
-	\]
-	\[
-		\pause
-    \varepsilon_1, \varepsilon_2 \to 0
-    \;\text{ quando }\;
-    \Delta x, \Delta y \to 0
-	\]
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Diferenciabilidade em 2D}
-	Dizemos que $f$ é \emph{diferenciável}
-	se ela é diferenciável em todos os
-	pontos do seu domínio
-
-	\pause
-    \vspace{0.5\baselineskip}
-    Nesse caso dizemos que seu gráfico é uma \emph{superfície lisa}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Corolário do Teorema do Incremento}
-    Se \(\frac{df}{dx}(x_0, y_0)\) e \(\frac{df}{dy}(x_0, y_0)\) existem
+  Se \(\frac{df}{dx}(x_0, y_0)\) e \(\frac{df}{dy}(x_0, y_0)\) existem
 
-    \pause
-    \vspace{0.5\baselineskip}
-    e são \emph{contínuas} em uma região aberta $R$
+  \pause
+  \vspace{0.5\baselineskip}
+  e são \emph{contínuas} em uma região aberta $R$
 
-    \pause
-    \vspace{0.5\baselineskip}
-    então $f$ é \emph{diferenciável} em $R$
+  \pause
+  \vspace{0.5\baselineskip}
+  então $f$ é \emph{diferenciável} em $R$
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Teorema Diferenciabilidade e Contiuidade}
+\begin{frame}{Diferenciabilidade em 2D}
+  Dizemos que $f$ é \emph{diferenciável}
+  se ela é diferenciável em todos os
+  pontos do seu domínio
+
+  \pause
+  \vspace{0.5\baselineskip}
+  Nesse caso dizemos que seu gráfico é uma \emph{superfície lisa}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema Diferenciabilidade e Continuidade}
     Se uma função $f(x, y)$ é \emph{diferenciável} em \((x_0, y_0)\)
 
     \pause

@@ -22,19 +22,17 @@
   na direção do vetor unitário
   \[
     u
-    \pause
     = u_1 \veci + u_2 \vecj
-    \pause
     = \vetor{u_1}{u_2}
+    \qquad
+    \qquad
+    \norm{u} = 1
   \]
   \pause
   é o número
   \[
-    \left(\frac{df}{ds}\right)_{u, (x_0, y_0)}
-    \pause
-    = \left(D_u f\right)_{(x_0, y_0)}
-    \pause
-    = \lim_{s\to 0} \frac{f(x_0+su_1, y_0+su_2)-f(x_0, y_0)}{s}
+    D_u f(x_0, y_0)
+    = \lim_{h\to 0} \frac{\;f( x_0 + hu_1, y_0 + hu_2)-f(x_0, y_0)\;}{h}
   \]
 \end{frame}
 
@@ -51,7 +49,7 @@
   \pause
   então
   \(
-    \left(D_u f\right) = \D{f}{x}
+    D_u f = \D{f}{x}
   \)
 
   \pause
@@ -60,14 +58,14 @@
   \pause
   então
   \(
-    \left(D_u f\right) = \D{f}{y}
+    D_u f = \D{f}{y}
   \)
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \addtocounter{exemplo}{1}
 \begin{frame}{Exemplo \theexemplo}
-  Use a definição para calcular a derivada de \(f(x, y) = x^2 + xy\)
+  Use a definição para calcular a derivada de \(f(x, y) = x^2 + xy\) \\
   no ponto \((1, 2)\) na direção
   \(
     u = 2\veci + 3\vecj
@@ -79,14 +77,14 @@
 
 \begin{frame}{Exemplo \theexemplo}
   \begin{align*}
-    \onslide<+->{\left(\frac{df}{du}\right)_{u, (1, 2)}}
-    \onslide<+->{& = \lim_{s\to 0} \frac{f(x_0+su_1, y_0+su_2)-f(x_0, y_0)}{s} \\}
-    \onslide<+->{& = \lim_{s\to 0} \frac{f(1+2s, 2+3s)-f(1, 2)}{s} \\[2mm]}
-    \onslide<+->{& = \lim_{s\to 0} \frac{\big((1+2s)^2 + (1+2s)(2+3s)\big)
-                                         -\left(1^2+1\times 2\right)}{s} \\[2mm]}
-    \onslide<+->{& = \lim_{s\to 0} \frac{(1 + 4s + 4s^2) + (2 + 3s + 4s + 6s^2) -3}{s} \\[2mm]}
-    \onslide<+->{& = \lim_{s\to 0} \frac{11s + 10s^2}{s} \\[2mm]}
-    \onslide<+->{& = \lim_{s\to 0} (11 + 10s)}
+    \onslide<+->{D_u f(1, 2)}
+    \onslide<+->{& = \lim_{h\to 0} \frac{f(x_0+hu_1, y_0+hu_2)-f(x_0, y_0)}{h} \\}
+    \onslide<+->{& = \lim_{h\to 0} \frac{f(1+2h, 2+3h)-f(1, 2)}{h} \\[2mm]}
+    \onslide<+->{& = \lim_{h\to 0} \frac{\big[(1+2h)^2 + (1+2h)(2+3h)\big]
+                                         -\left(1^2+1\times 2\right)}{h} \\[2mm]}
+    \onslide<+->{& = \lim_{h\to 0} \frac{(1 + 4h + 4h^2) + (2 + 3h + 4h + 6h^2) -3}{h} \\[2mm]}
+    \onslide<+->{& = \lim_{h\to 0} \frac{11h + 10h^2}{h} \\[2mm]}
+    \onslide<+->{& = \lim_{h\to 0} (11 + 10h)}
     \onslide<+->{  = 11}
   \end{align*}
 \end{frame}
@@ -96,16 +94,22 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Vetor Gradiente}
-  O \emph{vetor gradiente} de $f(x, y)$ em um ponto $(x_0, y_0)$
-  \pause
-  é
+  O \emph{vetor gradiente} de $f(x, y)$ é
+
   \[
+    \pause
     \nabla f
     \pause
     \;=\; \D{f}{x}\veci \,+\, \D{f}{y}\vecj
     \pause
-    \;=\; \left(\begin{array}{c} \D{f}{x} \\[5mm] \D{f}{y} \end{array}\right)
+    \;=\; \left(\begin{array}{c}
+            \displaystyle\D{f}{x} \\[5mm]
+            \displaystyle\D{f}{y}
+          \end{array}\right)
   \]
+
+  \pause
+  O símbolo \(\nabla\) é chamado nabla
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -186,7 +190,10 @@
   \[
     \nabla f
     \pause
-    \;=\; \left(\begin{array}{c} \D{f}{x} \\[5mm] \D{f}{y} \end{array}\right)
+    \;=\; \left(\begin{array}{c}
+        \displaystyle\D{f}{x} \\[5mm]
+        \displaystyle\D{f}{y}
+      \end{array}\right)
     \pause
     \;=\; \left(\begin{array}{c}
              \dfrac{1}{\sqrt{2x+3y}} \\[5mm]
@@ -230,30 +237,25 @@
   \[
     f(s) = f\big(x(s), y(s)\big)
   \]
+\end{frame}
 
-  \pause
-  Pela regra da cadeira temos
-  \[
-    D_u f
-    \pause
-    \;=\; \frac{df}{ds}
-    \pause
-    \;=\; \D{f}{x}\frac{dx}{ds} + \D{f}{y}\frac{dy}{ds}
-    \pause
-    \;=\; \D{f}{x}u_1 + \D{f}{y}u_2
-    \pause
-    \;=\; \left(\begin{array}{c} \D{f}{x} \\[5mm] \D{f}{y} \end{array}\right)
-      \cdot \vetor{u_1}{u_2}
-    \pause
-    \;=\; \nabla f \cdot u
-  \]
+\begin{frame}{Calculando a Derivada Direcional}
+\begin{align*}
+  \onslide<+->{D_u f }
+  \onslide<+->{& = \frac{df}{ds}                                 \\[2mm]}
+  \onslide<+->{& = \D{f}{x}\frac{dx}{ds} + \D{f}{y}\frac{dy}{ds} \\[2mm]}
+  \onslide<+->{& = \D{f}{x}u_1 + \D{f}{y}u_2                     \\[2mm]}
+  \onslide<+->{& = \left(\begin{array}{c} F_x \\ F_y \end{array}\right)
+                   \cdot \vetor{u_1}{u_2}                        \\[2mm]}
+  \onslide<+->{& = \emph{\nabla f \cdot u}}
+\end{align*}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \addtocounter{exemplo}{1}
 \begin{frame}{Exemplo \theexemplo}
   Encontre a derivada de \(f(x, y) = xe^y + \cos(xy)\)
-  no ponto \((2, 0)\)
+  no ponto \((2, 0)\) \\
   na direção \(v=3\veci-4\vecj\)
 \end{frame}
 
@@ -304,7 +306,7 @@
   \[
     \D{f}{y}
     \pause
-    \;=\;  \D{}{x}\left(xe^y + \cos(xy)\right)
+    \;=\;  \D{}{y}\left(xe^y + \cos(xy)\right)
     \pause
     \;=\;  xe^y - x\sin(xy)
   \]
@@ -321,15 +323,17 @@
 
 \begin{frame}{Exemplo \theexemplo}
   Calculando a derivada direcional
+
   \[
-    \left(D_u f\right)\evalat{(2, 0)}{}
+    D_u f(2, 0)
     \pause
-    \;=\; \left(\nabla f\right)\evalat{(2, 0)}{} \cdot u
+    \;=\; \nabla f(2, 0) \cdot u
     \pause
     \;=\; \vetor{1}{2} \cdot \vetor{\sfrac{3}{5}}{-\sfrac{4}{5}}
   \]
+
   \[
-    \hphantom{\left(D_u f\right)\evalat{(2, 0)}{}}
+    \hphantom{D_u f(2, 0){}}
     \pause
     \;=\; 1 \frac{3}{5} + 2 \frac{-4}{5}
     \pause

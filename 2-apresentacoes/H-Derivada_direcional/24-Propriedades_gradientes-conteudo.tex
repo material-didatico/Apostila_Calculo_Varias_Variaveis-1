@@ -13,147 +13,202 @@
 \section{Vetor Gradiente}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Vetor Gradiente}
+\begin{frame}[t]{Vetor Gradiente}
   Se uma função \(f(x, y)\) possui derivadas parciais,
-  \pause
   seu \emph{vetor gradiente} é
+
+  \vspace{0.99\baselineskip}
   \[
-    \pause
     \nabla f
-    \pause
     \;=\; \D{f}{x}\veci + \D{f}{y}\vecj
-    \pause
-    \;=\; \left(\begin{array}{c} \D{f}{x} \\[5mm] \D{f}{y} \end{array}\right)
+    \;=\; \left(\begin{array}{c}
+            \displaystyle\D{f}{x} \\[5mm]
+            \displaystyle\D{f}{y}
+          \end{array}\right)
   \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Vetor Gradiente 3D}
+\begin{frame}[t]{Vetor Gradiente 3D}
   Se uma função \(f(x, y, z)\) possui derivadas parciais,
-  \pause
   seu \emph{vetor gradiente} é
+
   \[
-    \pause
     \nabla f
-    \pause
     \;=\; \D{f}{x}\veci + \D{f}{y}\vecj + \D{f}{z}\veck
-    \pause
-    \;=\; \left(\begin{array}{c} \D{f}{x} \\[5mm] \D{f}{y} \\[5mm] \D{f}{z} \end{array}\right)
+    \;=\; \left(\begin{array}{c}
+            \displaystyle\D{f}{x} \\[5mm]
+            \displaystyle\D{f}{y} \\[5mm]
+            \displaystyle\D{f}{z}
+          \end{array}\right)
   \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\section{Propriedades}
+\section{Gradientes e Crescimento da Função}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Propriedades da Derivada Direcional}
-  Podemos usar a fórmula do produto interno
-  \[
-    \left(D_u f\right)
-    \pause
-    = \nabla f \cdot u
-    \pause
-    = \abs{\nabla f} \abs{u} \cos(\theta)
-    \pause
-    = \abs{\nabla f} \cos(\theta)
-  \]
+\begin{frame}{Derivada Direcional}
+  \begin{align*}
+    \onslide<+->{D_u f}
+    \onslide<+->{& = \nabla f \cdot u                        \\[5mm]}
+    \onslide<+->{& = \norm{\nabla f}\; \norm{u} \cos(\theta)     \\[5mm]}
+    \onslide<+->{& = \norm{\nabla f} \cos(\theta)}
+  \end{align*}
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Propriedades da Derivada Direcional}
-\begin{enumerate}[<+->]
+\begin{frame}{Derivada Direcional}
+\begin{enumerate}
   \setlength\itemsep{1.5em}
-  \item A função aumenta mais rapidamente quando $\cos(\theta)=1$, $\theta=0$ \\
+  \item A função aumenta mais rapidamente quando
+        \pause
+        \tabto{82mm}\emph{$\cos(\theta)=1$},
+        \pause
+        \emph{$\hphantom{-}\quad\theta=0$} \\[2mm]
+        \pause
         Direção do gradiente
-  \item A função descresce mais rapidamente quando $\cos(\theta)=-1$, $\theta=\pi$ \\
+        \pause
+  \item A função descresse mais rapidamente quando
+        \pause
+        \tabto{82mm}\emph{$\cos(\theta)=-1$},
+        \pause
+        \emph{$\quad\theta=\pi$} \\[2mm]
+        \pause
         Direção oposta ao gradiente
-  \item Se $u$ for ortogonal a \(\nabla f\neq 0\) ele aponta para uma direção de variação zero
+        \pause
+  \item Se $u$ for \emph{ortogonal} a \(\nabla f\neq 0\)
+        \pause
+        ele aponta para uma direção de \emph{variação zero}
 \end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Gradientes e Crescimento da Função}
+  \begin{enumerate}[<+->]
+    \setlength\itemsep{1.5em}
+    \item Direção de maior crescimento da função $f$ no ponto \({x, y}\)
+          \[
+            v_M = \nabla f(x, y)
+          \]
+    \item Direção de maior decrescimento da função $f$ no ponto \({x, y}\)
+          \[
+            v_m = -\nabla f(x, y)
+          \]
+    \item Direção de variação nula da função $f$ no ponto \({x, y}\)
+          \[
+            \nabla f(x, y) \cdot v_o  = 0
+          \]
+  \end{enumerate}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \addtocounter{exemplo}{1}
 \begin{frame}{Exemplo \theexemplo}
-  Encontre as direções nas quais \(f(x, y) = x^2 + \frac{y^2}{2}\)
-  \begin{enumerate}
-    \item[a)] cresce mais rapidamente no ponto \((1, 1)\)
-    \item[b)] descresce mais rapidamente no ponto \((1, 1)\)
-    \item[c)] quais as direções de variação zero de $f$ em \((1, 1)\)
-  \end{enumerate}
+  Analisando a função \(f(x, y) = x^2 + \frac{y^2}{2}\)
+  no ponto \((1, 1)\)
+
+  Encontre as direções nas quais:
+
+  a)\; $f$ cresce mais rapidamente
+
+  b)\; $f$ decresce mais rapidamente
+
+  c)\; $f$ não varia
 \end{frame}
 
 \begin{frame}{Exemplo \theexemplo}
-  Calculando o gradiente
+  Calculando as derivadas parciais
+
+  \[
+    \pause
+    \D{f}{x}
+    \pause
+    \:=\; \D{}{x}\left(x^2 + \frac{y^2}{2}\right)
+    \pause
+    \:=\; 2x
+  \]
+
+  \[
+    \pause
+    \D{f}{y}
+    \pause
+    \:=\; \D{}{y}\left(x^2 + \frac{y^2}{2}\right)
+    \pause
+    \:=\; y
+  \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  Montando o gradiente
+  \pause
   \[
     \nabla f
     \pause
-    = \D{f}{x} \veci + \D{f}{y}\vecj
+    = \Vetor{\D{f}{x}}{\D{f}{y}}
     \pause
-    = \D{}{x}\left(x^2 + \frac{y^2}{2}\right) \veci
-    + \D{}{y}\left(x^2 + \frac{y^2}{2}\right) \vecj
-    \pause
-    = 2x\veci + y\vecj
+    = \Vetor{\D{}{x}\left(x^2 + \frac{y^2}{2}\right)}
+            {\D{}{y}\left(x^2 + \frac{y^2}{2}\right)}
     \pause
     = \vetor{2x}{y}
+    \]
+    \pause
+    Avaliando o gradiente no ponto solicitado
+    \[
+    \pause
+    \nabla f(1, 1)
+    \pause
+    \;=\; \vetor{2x}{y}\evalat{(1, 1)}{}
+    \pause
+    \;=\; \vetor{2}{1}
   \]
+\end{frame}
+
+\begin{frame}{Exemplo \theexemplo}
+  a)\; $f$ cresce mais rapidamente
   \pause
-  Avaliando o gradiente no ponto solicitado
+  na direção do gradiente
   \[
     \pause
-    \nabla f (1, 1)
+    v_M
     \pause
-    = \left(2x\veci + y\vecj\right)\evalat{(1, 1)}{}
+    = \nabla f(1, 1)
     \pause
     = \vetor{2}{1}
   \]
+
+  \pause
+  b)\; $f$ decresce mais rapidamente
+  \pause
+  na direção oposta ao gradiente
+  \[
+    \pause
+    v_m
+    \pause
+    = -\nabla f (1, 1)
+    \pause
+    = \vetor{-2}{-1}
+  \]
 \end{frame}
 
 \begin{frame}{Exemplo \theexemplo}
-  \begin{enumerate}
-  \item[a)]
-    \pause
-    cresce mais rapidamente no ponto \((1, 1)\)
-    \[
-      \pause
-      v_M
-      \pause
-      = \nabla f(1, 1)
-      \pause
-      = \vetor{2}{1}
-    \]
-  \item[b)]
-    \pause
-    descresce mais rapidamente no ponto \((1, 1)\)
-    \[
-      \pause
-      v_m
-      \pause
-      = -\nabla f (1, 1)
-      \pause
-      = \vetor{-2}{-1}
-    \]
-\end{enumerate}
-\end{frame}
+  \onslide<+->{c)\; $f$ não varia}
+  \onslide<+->{na direção, $v_o$, ortogonal ao gradiente}
+  \begin{align*}
+    \onslide<+->{\nabla f(1, 1) \cdot v_o              & = 0 \\[2mm]}
+    \onslide<+->{\vetor{2}{1} \cdot \vetor{v_1}{v_2}   & = 0 \\[2mm]}
+    \onslide<+->{2v_1 + v_2                            & = 0 \\[2mm]}
+    \onslide<+->{v_2                                   & = -2v_1}
+  \end{align*}
 
-\begin{frame}{Exemplo \theexemplo}
-\begin{enumerate}
-  \item[c)]
-    \onslide<+->{quais as direções de variação zero de $f$ em \((1, 1)\)} \\
-    \onslide<+->{$v_z$ ortogonal ao gradiente}
-    \begin{align*}
-      \onslide<+->{\nabla f(1, 1) \cdot n & = 0 \\[2mm]}
-      \onslide<+->{(2\veci + \vecj) \cdot (n_1\veci + n_2\vecj)   & = 0 \\[2mm]}
-      \onslide<+->{2n_1 + n_2                                     & = 0 \\[2mm]}
-      \onslide<+->{n_2                                            & = -2n_1}
-    \end{align*}
-    \onslide<+->{As direções são}
-    \[
-      \onslide<+->{n = \vetor{1}{-2}}
-      \onslide<+->{
-      \qquad\text{e}\qquad
-      -n = \vetor{-1}{2}}
-    \]
-\end{enumerate}
+  \onslide<+->{As direções são
+  \(
+    v_o = \vetor{1}{-2}
+  \)}
+  \onslide<+->{e
+  \(
+    v_o = \vetor{-1}{2}
+  \)}
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -186,25 +241,28 @@
   \pause
   Vetorialmente temos
   \[
-    r(t) = g(t)\veci + h(t)\vecj
+    r(t)
+    = g(t)\veci + h(t)\vecj
+    = \vetor{g(t)}{h(t)}
   \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Tangente de uma Curva de Nível}
-  \begin{columns}
-  \column{0.5\linewidth}
-    \begin{align*}
-      \onslide<+->{f\big(g(t), h(t)\big) & = c \\[2mm]}
-      \onslide<+->{\frac{d}{dt} f\big(g(t), h(t)\big) & = 0 \\[2mm]}
-      \onslide<+->{\D{f}{x}\frac{dg}{dt} + \D{f}{y}\frac{dh}{dt} & = 0  \\[2mm]}
-      \onslide<+->{\left(\D{f}{x}\veci + \D{f}{y}\vecj\right) \cdot
-      \left(\frac{dg}{dt}\veci +\frac{dh}{dt} \vecj\right) & = 0 \\[2mm]}
-      \onslide<+->{\nabla f \cdot \frac{dr}{dt} & = 0}
-    \end{align*}
-  \column{0.5\linewidth}
-    \onslide<+->{O gradiente é ortogonal ao vetor tangente à curva de nível}
-  \end{columns}
+\begin{columns}
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{f\big(g(t), h(t)\big) & = c \\[2mm]}
+    \onslide<+->{\frac{d}{dt} f\big(g(t), h(t)\big) & = 0 \\[2mm]}
+    \onslide<+->{\D{f}{x}\frac{dg}{dt} + \D{f}{y}\frac{dh}{dt} & = 0  \\[2mm]}
+    \onslide<+->{\Vetor{\D{f}{x}}{\D{f}{y}} \cdot
+                 \Vetor{\frac{dg}{dt}}{\frac{dh}{dt}} & = 0}
+  \end{align*}
+\column{0.5\linewidth}
+  \onslide<+->{\[\nabla f \cdot \frac{dr}{dt} = 0\]}
+
+  \onslide<+->{O gradiente é ortogonal ao vetor tangente à curva de nível}
+\end{columns}
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -222,8 +280,157 @@
 
 %------------------------------------------------------------------------------%
 \addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Dada a função
+  \(
+    f(x, y) = (x-2)^2 + (y-1)^2
+  \)
+
+  a) Determine e esboce a curva de nível \(f(x, y) = 4\)
+
+  b) Calcule e esboce o gradiente de $f$ nos pontos
+  \((0,  1)\),
+  \((2, -1)\),
+  \((2,  3)\) e
+  \((4,  1)\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{a) Determinando a curva de nível}
+  \begin{align*}
+    \onslide<+->{f(x, y)           & = 4}   \\
+    \onslide<+->{(x-2)^2 + (y-1)^2 & = 2^2}
+  \end{align*}
+  \onslide<+->{Equação da circunferência centrada em \((2, 1)\) e raio 2}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  b) Calculando as derivadas parciais de $f$
+
+  \pause
+  \[
+    \D{f}{x}
+    \pause
+    \;=\; \D{}{x}\left[(x-2)^2 + (y-1)^2\right]
+    \pause
+    \;=\; 2(x-2)\D{}{x}(x-2)
+    \pause
+    \;=\; 2(x-2)
+  \]
+
+  \pause
+  \[
+    \D{f}{y}
+    \pause
+    \;=\; \D{}{y}\left[(x-2)^2 + (y-1)^2\right]
+    \pause
+    \;=\; 2(y-1)\D{}{y}(y-1)
+    \pause
+    \;=\; 2(y-1)
+  \]
+
+  \pause
+  Gradiente de $f$
+  \pause
+  \[
+    \nabla f(x, y)
+    \pause
+    \;=\; \nabla\left[(x-2)^2 + (y-1)^2\right]
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\[2mm] 2(y-1)
+    \end{pmatrix}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Calculando o gradiente nos pontos
+  \((0,  1)\) e
+  \((2, -1)\)
+
+  \pause
+  \[
+    \nabla f(0, 1)
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\[2mm] 2(y-1)
+    \end{pmatrix} \evalat{(0, 1)}{}
+    \pause
+    \;=\; \begin{pmatrix}
+    2(0-2) \\[2mm] 2(1-1)
+    \end{pmatrix}
+    \pause
+    \;=\; \begin{pmatrix}
+    -4 \\[2mm] 0
+    \end{pmatrix}
+  \]
+
+  \pause
+  \[
+    \nabla f(2, -1)
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\[2mm] 2(y-1)
+    \end{pmatrix} \evalat{(2, -1)}{}
+    \pause
+    \;=\; \begin{pmatrix}
+      2(2-2) \\[2mm] 2(-1-1)
+    \end{pmatrix}
+    \pause
+    \;=\; \begin{pmatrix}
+      0 \\[2mm] -4
+    \end{pmatrix}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Calculando o gradiente nos pontos
+  \((2,  3)\) e
+  \((4,  1)\)
+
+  \pause
+  \[
+    \nabla f(2, 3)
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\[2mm] 2(y-1)
+    \end{pmatrix} \evalat{(2, 3)}{}
+    \pause
+    \;=\; \begin{pmatrix}
+      2(2-2) \\[2mm] 2(2-1)
+    \end{pmatrix}
+    \pause
+    \;=\; \begin{pmatrix}
+      0 \\[2mm] 4
+    \end{pmatrix}
+  \]
+
+  \pause
+  \[
+    \nabla f(4, 1)
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\[2mm] 2(y-1)
+    \end{pmatrix} \evalat{(4, 1)}{}
+    \pause
+    \;=\; \begin{pmatrix}
+      2(4-2) \\[2mm] 2(1-1)
+    \end{pmatrix}
+    \pause
+    \;=\; \begin{pmatrix}
+      4 \\[2mm] 0
+    \end{pmatrix}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
 \begin{frame}[t]{Exemplo \theexemplo}
-  Encontre uma equação para a tangente à eclipse
+  Encontre uma equação para a tangente à elipse
   \[
     \frac{x^2}{4} + y^2 = 2
   \]
@@ -231,9 +438,9 @@
 \end{frame}
 
 \begin{frame}[t]{Exemplo \theexemplo}
-  Encontre uma equação para a tangente à eclipse
+  Encontre uma equação para a tangente à elipse
   \[
-  \frac{x^2}{4} + y^2 = 2
+    \frac{x^2}{4} + y^2 = 2
   \]
   no ponto \((-2, 1)\)
 
@@ -270,30 +477,38 @@
   Então o gradiente de $f$, no ponto \((-2, 1)\), é
   \pause
   \[
-    \left(\nabla f\right) \evalat{(-2, 1)}{}
+    \nabla f(-2, 1)
     \pause
-    = \left(\frac{x}{2}\veci + 2y\vecj\right) \evalat{(-2, 1)}{}
+    \;=\; \Vetor{\frac{x}{2}}{2y}\evalat{(-2, 1)}{}
     \pause
-    = -\veci + 2\vecj
+    = \vetor{-1}{2}
   \]
 \end{frame}
 
 \begin{frame}{Exemplo \theexemplo}
   \onslide<+->{A reta tangente é ortogonal ao vetor gradiente}
+  \begin{columns}
+  \column{0.5\linewidth}
+    \begin{align*}
+      \onslide<+->{\nabla f(x_0, y_0) \cdot \vetor{x-x_0}{y-y_0} & = 0 \\[3mm]}
+      \onslide<+->{\nabla f(-2, 1)    \cdot \vetor{x-(-2)}{y-1} & = 0 \\[3mm]}
+      \onslide<+->{\vetor{-1}{2} \cdot \vetor{x+2}{y-1} & = 0}
+    \end{align*}
+  \column{0.5\linewidth}
   \begin{align*}
-    \onslide<+->{\left(\nabla f\right) \evalat{(x_0, y_0)}{}
-                 \cdot \big((x-x_0)\veci + (y-y_0)\vecj\big) & = 0 \\[3mm]}
-    \onslide<+->{\left(\nabla f\right) \evalat{(-2, 1)}{}
-                 \cdot \big((x+2)\veci + (y-1)\vecj\big) & = 0 \\[3mm]}
-    \onslide<+->{\left(-\veci + 2\vecj\right) \cdot \big((x+2)\veci + (y-1)\vecj\big) & = 0 \\}
     \onslide<+->{-(x+2) + 2(y-1) & = 0 \\}
-    \onslide<+->{x +2y -4 & = 0 \\}
-    \onslide<+->{x +2y & = 4}
+    \onslide<+->{-x +2y -4 & = 0 \\}
+    \onslide<+->{-x +2y    & = 4 \\}
+    \onslide<+->{ x        & = 2y-4}
   \end{align*}
+  \end{columns}
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Propriedades Algebricas do Gradiente}
+\section{Propriedades Algébricas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedades Algébricas do Gradiente}
   \begin{enumerate}[<+->]
     \setlength\itemsep{1.5em}
     \item Soma                        \tabto{55mm} \(\nabla(f+g) = \nabla f + \nabla g\)
@@ -308,31 +523,35 @@
 %------------------------------------------------------------------------------%
 \addtocounter{exemplo}{1}
 \begin{frame}{Exemplo \theexemplo}
-  Dadas \(f(x, y)=x^2-2y\) e \(g(x, y)=xy^2\)
-  \begin{enumerate}
-    \item calcule os gradientes de $f$ e $g$
-    \item calcule \(\nabla(f-g)\)
-    \item calcule \(\nabla(fg)\)
-  \end{enumerate}
+  Dadas \; \(f(x, y)=x^2-2y\) \; e \; \(g(x, y)=xy^2\)
+
+  a)\; calcule os gradientes de $f$ e $g$
+
+  b)\; calcule \(\nabla(f-g)\)
+
+  c)\; calcule \(\nabla(fg)\)
 \end{frame}
 
 \begin{frame}{Exemplo \theexemplo}
   \[
     \nabla f
     \pause
-    \;=\; \D{f}{x}\veci + \D{f}{y}\vecj
+    \;=\; \Vetor{\D{f}{x}}{\D{f}{y}}
     \pause
-    \;=\; 2x\veci - 2\vecj
+    \;=\; \Vetor{\D{}{x}\left(x^2-2y\right)}{\D{}{y}\left(x^2-2y\right)}
+    \pause
+    \;=\; \vetor{2x}{-2}
   \]
 
   \pause
-  \vspace{\baselineskip}
   \[
     \nabla g
     \pause
-    \;=\; \D{g}{x}\veci + \D{g}{y}\vecj
+    \;=\; \Vetor{\D{g}{x}}{\D{g}{y}}
     \pause
-    \;=\; y^2\veci + 2xy\vecj
+    \;=\; \Vetor{\D{}{x}\left(xy^2\right)}{\D{}{y}\left(xy^2\right)}
+    \pause
+    \;=\; \vetor{y^2}{2xy}
   \]
 \end{frame}
 
@@ -340,9 +559,7 @@
   \begin{align*}
     \onslide<+->{\nabla(f-g)}
     \onslide<+->{& = \nabla f - \nabla g \\[2mm]}
-    \onslide<+->{& = \big(2x\veci - 2\vecj\big) - \big(y^2\veci + 2xy\vecj\big) \\[2mm]}
-    \onslide<+->{& = \big(2x-y^2\big)\veci + \big(-2-2xy\big)\vecj  \\[2mm]}
-    \onslide<+->{& = \big(2x-y^2\big)\veci - 2\big(1+xy\big)\vecj \\[2mm]}
+    \onslide<+->{& = \vetor{2x}{-2} - \vetor{y^2}{2xy} \\[2mm]}
     \onslide<+->{& = \vetor{2x-y^2}{-2-2xy}}
   \end{align*}
 \end{frame}
@@ -350,19 +567,13 @@
 \begin{frame}{Exemplo \theexemplo}
   \begin{align*}
     \onslide<+->{\nabla(fg)}
-    \onslide<+->{& = f\nabla g + g\nabla f \\[2mm]}
-    \onslide<+->{& = \big(x^2-2y\big)\big(y^2\veci + 2xy\vecj\big)
-      + \big(xy^2\big)\big(2x\veci + 2\vecj\big) \\[2mm]}
-    \onslide<+->{& = \big(x^2-2y\big)\big(y^2\veci\big)
-      + \big(x^2-2y\big)\big(2xy\vecj\big)
-      + \big(xy^2\big)\big(2x\veci\big)
-      + \big(xy^2\big)\big(2\vecj\big) \\[2mm]}
-    \onslide<+->{& = \big(x^2y^2-2y^3\big)\veci
-      + \big(2x^2y^2\big)\veci
-      + \big(2x^3y-4xy^2\big)\vecj
-      + \big(2xy^2\big)\vecj \\[2mm]}
-    \onslide<+->{& = \big(3x^2y^2 - 2y^3\big)\veci
-      + \big(2x^3y - 2xy^2\big)\vecj \\[2mm]}
+    \onslide<+->{& = f\nabla g + g\nabla f                   \\[2mm]}
+    \onslide<+->{& = \big(x^2-2y\big)\vetor{y^2}{2xy}
+                   + \big(xy^2  \big)\vetor{2x}{2}           \\[2mm]}
+    \onslide<+->{& = \vetor{(x^2-2y)y^2}{(x^2-2y)2xy}
+                   + \vetor{(xy^2)2x}{(xy^2)2}               \\[2mm]}
+    \onslide<+->{& = \vetor{x^2y^2-2y^3}{2x^3y-4xy^2}
+                   + \vetor{2x^2y^2}{2xy^2}                  \\[2mm]}
     \onslide<+->{& = \vetor{3x^2y^2 - 2y^3}{2x^3y - 2xy^2}}
   \end{align*}
 \end{frame}
