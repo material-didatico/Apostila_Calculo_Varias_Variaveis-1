@@ -1,0 +1,157 @@
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre e classifique os pontos críticos da função
+  \[
+    f(x, y) = 3y^2 -2y^3 -3x^2 +6xy
+  \]
+  Avalie os valores extremos locais de $f$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Derivadas parciais
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \D{f}{x}
+    \pause
+    = \D{}{x}\left(3y^2 -2y^3 -3x^2 +6xy\right)
+    \pause
+    = -6x +6y
+    \pause
+    = 6y -6x
+  \]
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \D{f}{y}
+    \pause
+    = \D{}{y}\left(3y^2 -2y^3 -3x^2 +6xy\right)
+    \pause
+    = 6y -6y^2 +6x
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Pontos críticos
+
+  \pause
+  \vspace{\baselineskip}
+  As derivadas existem em todos os pontos do plano
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{f_x(x, y) & = 6y -6x = 0 \\}
+    \onslide<+->{f_y(x, y) & = 6y -6y^2 +6x = 0}
+  \end{align*}
+  \begin{align*}
+    \onslide<+->{6y -6x & = 0 \\}
+    \onslide<+->{x      & = y}
+  \end{align*}
+  \column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{6y -6y^2 +6x & = 0 \\}
+    \onslide<+->{6y^2 -6y -6x & = 0 \\}
+    \onslide<+->{6y^2 -6y -6y & = 0 \\}
+    \onslide<+->{6y^2 - 12y   & = 0 \\}
+    \onslide<+->{6y(y-2)      & = 0}
+  \end{align*}
+
+  \vspace{\baselineskip}
+  \onslide<+->{Portanto \(y=0\) ou \(y=2\)}
+
+  \vspace{\baselineskip}
+  \onslide<+->{Os pontos críticos são \((0, 0)\) e \((2, 2)\)}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}[t]
+\column{0.5\linewidth}
+  \onslide<+->{Calculando as derivadas segundas}
+  \[
+    \onslide<+->{\DS{f}{x}}
+    \onslide<+->{= \D{}{x}\left(6y -6x\right)}
+    \onslide<+->{= -6}
+  \]
+
+  ~
+  \[
+    \onslide<+->{\DS{f}{y}}
+    \onslide<+->{= \D{}{y}\left(6y -6y^2 +6x\right)}
+    \onslide<+->{= 6 -12y}
+  \]
+
+  ~
+  \[
+    \onslide<+->{\DM{f}{x}{y}}
+    \onslide<+->{= \DM{f}{y}{x}}
+    \onslide<+->{= \D{}{y}\left(6y -6x\right)}
+    \onslide<+->{= 6}
+  \]
+\column{0.5\linewidth}
+  \onslide<+->{Discriminante}
+  \begin{align*}
+    \onslide<+->{D(x, y)}
+    \onslide<+->{& = f_{xx}(x, y) f_{yy}(x, y) - f^2_{xy}(x, y) \\}
+    \onslide<+->{& = (-6)(6-12y) - 6^2 \\}
+    \onslide<+->{& = -36 +72y - 36 \\}
+    \onslide<+->{& = 72(y-1)}
+  \end{align*}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Analisando o ponto \((0, 0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  Como
+  \[
+    \pause
+    D(0, 0)
+    \pause
+    = 72(0-1)
+    \pause
+    = -72
+    \pause
+    \;<\; 0
+  \]
+  \pause
+  esse ponto é um ponto de sela
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Analisando o ponto \((2, 2)\)}
+
+  \onslide<+->{Como}
+  \[
+    \onslide<+->{D(2, 2)}
+    \onslide<+->{= 72(2-1)}
+    \onslide<+->{= 72}
+    \onslide<+->{> 0}
+    \qquad
+    \onslide<+->{f_{xx}}
+    \onslide<+->{= -6}
+    \onslide<+->{< 0}
+  \]
+  \onslide<+->{o ponto \((2, 2)\) é um máximo local com valor}
+  \begin{align*}
+    \onslide<+->{f(2, 2)}
+    \onslide<+->{& = \left(3y^2 -2y^3 -3x^2 +6xy\right)\evalat{(2, 2)}{} \\}
+    \onslide<+->{& = 3\times 2^2 -2 \times 2^3 -3\times 2^2 + 6\times 2 \times 2\\}
+    \onslide<+->{& = 12 -16 -12 + 24 \\}
+    \onslide<+->{& = 8}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%

@@ -1,0 +1,113 @@
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre o ponto do plano \(x+2y+3z=13\) mais próximo do ponto \((1, 1, 1)\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Queremos minimizar a distância
+  \[
+    d(x, y, z) = \sqrt{(x-1)^2 + (y-1)^2 + (z-1)^2}
+  \]
+  Como a função raiz quadrada é crescente podemos minimizar a função
+  \[
+    f(x, y, z) = (x-1)^2 + (y-1)^2 + (z-1)^2
+  \]
+  suas derivadas parciais são
+  \[
+    f_x(x, y, z) = 2(x-1)
+    \qquad
+    f_y(x, y, z) = 2(y-1)
+    \qquad
+    f_z(x, y, z) = 2(z-1)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  As derivadas parciais da função \(g(x, y, z)=x+2y+3z\) são
+  \[
+    g_x(x, y, z) = 1
+    \qquad
+    g_y(x, y, z) = 2
+    \qquad
+    g_z(x, y, z) = 3
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Aplicando os Multiplicadores de Lagrange, precisamos resolver o sistema
+  \[
+  \begin{cases}
+    2(x-1) =  \lambda \\
+    2(y-1) = 2\lambda \\
+    2(z-1) = 3\lambda \\
+    x + 2y + 3z = 13
+  \end{cases}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Das três primeiras equações obtemos
+  \[
+    2(x-1) = \lambda
+    \quad\Rightarrow\quad
+    x = \frac{\lambda}{2} + 1
+  \]
+  \[
+    2(y-1) = 2\lambda
+    \quad\Rightarrow\quad
+    y = \lambda + 1
+  \]
+  \[
+    2(z-1) = 3\lambda
+    \quad\Rightarrow\quad
+    z = \frac{3\lambda}{2} + 1
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Substituindo na última equação
+  \begin{align*}
+    x + 2y + 3z & = 13
+    \\[2mm]
+    \left(\frac{\lambda}{2} + 1\right)
+    + 2 \left(\lambda + 1\right)
+    + 3 \left(\frac{3\lambda}{2} + 1\right) & = 13
+    \\[2mm]
+    \frac{\lambda}{2} + 1
+    + 2\lambda + 2
+    + \frac{9\lambda}{2} + 3 & = 13
+    \\[2mm]
+    \lambda + 2
+    + 4\lambda + 4
+    + 9\lambda + 6 & = 13\times 2
+    \\[2mm]
+    14\lambda + 12 & = 26
+    \\[2mm]
+    14\lambda & = 14
+    \\[2mm]
+    \lambda & = 1
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Portanto
+  \[
+    x = \frac{\lambda}{2} + 1 = \frac{3}{2}
+  \]
+  \[
+    y = \lambda + 1 = 2
+  \]
+  \[
+    z = \frac{3\lambda}{2} + 1 = \frac{5}{2}
+  \]
+  O ponto mais próximo é o ponto \(\left(\frac{3}{2}, 2, \frac{5}{2}\right)\)
+\end{frame}
+
+%------------------------------------------------------------------------------%

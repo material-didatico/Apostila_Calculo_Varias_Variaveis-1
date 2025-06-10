@@ -1,0 +1,79 @@
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre os pontos críticos e valores extremos locais da função
+  \[
+     f(x, y) = x^2 + y^2 - 4y + 9
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Derivadas parciais
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \D{f}{x}
+    \pause
+    = \D{}{x}\left(x^2 + y^2 - 4y + 9\right)
+    \pause
+    = 2x
+  \]
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \D{f}{y}
+    \pause
+    = \D{}{y}\left(x^2 + y^2 - 4y + 9\right)
+    \pause
+    = 2y -4
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Pontos críticos}
+
+  \vspace{0.1\baselineskip}
+  \onslide<+->{As derivadas existem em todos os pontos do plano}
+
+  \vspace{0.1\baselineskip}
+  \onslide<+->{Plano tangente horizontal}
+  \begin{columns}
+  \column{0.33\linewidth}
+    \begin{align*}
+      \onslide<+->{f_x(x, y) & = 0 \\}
+      \onslide<+->{2x        & = 0 \\}
+      \onslide<+->{x         & = 0}
+    \end{align*}
+  \column{0.33\linewidth}
+    \begin{align*}
+      \onslide<+->{f_y(x, y) & = 0 \\}
+      \onslide<+->{2y -4     & = 0 \\}
+      \onslide<+->{y         & = 2}
+    \end{align*}
+    \column{0.33\linewidth}
+    \onslide<+->{Ponto critico é \((0, 2)\)}
+  \end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Onde a função vale
+  \[
+    f(0, 2)
+    \pause
+    = \left(x^2 + y^2 - 4y + 9\right)\evalat{(0, 2)}{}
+    \pause
+    = 0 + 4 - 8 + 9
+    \pause
+    = 5
+  \]
+
+  \pause
+  \vspace{\baselineskip}
+  Analisando a função percebemos que 5 é o menor valor que ela assume,
+  portanto é um ponto de mínimo local (e nesse caso global também)
+\end{frame}
+
+%------------------------------------------------------------------------------%

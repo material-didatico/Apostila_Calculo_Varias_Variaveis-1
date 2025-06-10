@@ -1,0 +1,181 @@
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Considerando a função
+  \(
+    f(x, y) = 4xy -x^4 -y^4
+  \)
+
+  a) Calcule o gradiente de $f$
+
+  b) Calcule a hessiana de $f$
+
+  c) Encontre todos os pontos críticos de $f$
+
+  d) Classifique cada ponto crítico de $f$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \noindent\textbf{a)}
+
+  Precisamos das derivadas parciais de $f$
+  \[
+  \D{f}{x}
+  = \D{}{x}\left[4xy -x^4 -y^4\right]
+  = 4y - 4x^3
+  \]
+  \[
+  \D{f}{y}
+  = \D{}{y}\left[4xy -x^4 -y^4\right]
+  = 4x -4y^3
+  \]
+  então
+  \[
+  \nabla f = \vetor{4y - 4x^3}{4x -4y^3}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \noindent\textbf{b)}
+
+  Precisamos das derivadas parciais de segunda ordem de $f$
+  \[
+  \DS{f}{x}
+  = \D{}{x}\left[4y - 4x^3\right]
+  = -12x^2
+  \]
+  \[
+  \D{f}{y}
+  = \D{}{y}\left[4x -4y^3\right]
+  = -12y^2
+  \]
+  \[
+  \DM{f}{x}{y}
+  = \D{}{x}\D{f}{y}
+  = \D{}{x}\left[4x -4y^3\right]
+  = 4
+  \]
+  então
+  \[
+  H = \left(\begin{array}{cc}
+    -12x^2 & 4 \\
+    4 & -12y^2
+  \end{array}\right)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \noindent\textbf{c)}
+
+  A função é um polinômio, então possui derivadas em todos os pontos do plano.
+  Assim os pontos críticos são apenas os pontos onde as derivadas parciais são zero,
+  \(\nabla f = 0\)
+  \[
+  4y - 4x^3 = 0
+  \qquad\text{e}\qquad
+  4x -4y^3 = 0
+  \]
+  ou, simplificando,
+  \[
+  y - x^3 = 0
+  \qquad\text{e}\qquad
+  x - y^3 = 0
+  \]
+  Isolando $y$ na primeira equação, \(y = x^3\), e substituindo na segunda, temos
+  \begin{align*}
+    x - y^3                & = 0 \\
+    x - \left(x^3\right)^3 & = 0 \\
+    x -x^9                 & = 0 \\
+    x(1 - x^8)             & = 0
+  \end{align*}
+  As soluções dessa equação são $x=0$, $x=1$ ou $x-1$.
+  Se $x=0$ temos $y=0$,
+  se $x=1$ temos $y=1$ e
+  se $x=-1$ temos $y=-1$.
+  Portanto, os pontos críticos são
+  \[
+  (x_1, y_1) = (0, 0),
+  \qquad\qquad
+  (x_2, y_2) = (1, 1)
+  \qquad\text{e}\qquad
+  (x_3, y_3) = (-1, -1)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \noindent\textbf{d)}
+
+  Para classificar os pontos críticos precisamos avaliar o discriminante nos
+  pontos críticos.
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Considerando o ponto \((x_1, y_1) = (0, 0)\)
+  \[
+  f_{xx}(0, 0) = 0
+  \]
+  \[
+  f_{yy}(0, 0) = 0
+  \]
+  \[
+  f_{xy}(0, 0) = 4
+  \]
+  \[
+  D_1
+  = f_{xx}(0, 0)f_{yy}(0, 0) - f^2_{xy}(0, 0)
+  = 0 \times 0 - 4^2
+  = -16 < 0
+  \]
+  Portanto, o ponto $(0, 0)$ é um ponto de sela.
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Considerando o ponto \((x_2, y_2) = (1, 1)\)
+  \[
+  f_{xx}(1, 1) = -12
+  \]
+  \[
+  f_{yy}(1, 1) = -12
+  \]
+  \[
+  f_{xy}(1, 1) = 4
+  \]
+  \[
+  D_2
+  = f_{xx}(1, 1)f_{yy}(1, 1) - f^2_{xy}(1, 1)
+  = (-12)(-12) - 4^2
+  = 144 -16
+  = 128 > 0
+  \]
+  Portanto, o ponto $(1, 1)$ é um máximo ou mínimo local. Como \(f_{xx}(1, 1) = -12 < 0\)
+  o ponto é um ponto de máximo local.
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Considerando o ponto \((x_3, y_3) = (-1, -1)\)
+  \[
+  f_{xx}(-1, -1) = -12
+  \]
+  \[
+  f_{yy}(-1, -1) = -12
+  \]
+  \[
+  f_{xy}(-1, -1) = 4
+  \]
+  \[
+  D_3
+  = f_{xx}(-1, -1)f_{yy}(-1, -1) - f^2_{xy}(-1, -1)
+  = (-12)(-12) - 4^2
+  = 144 -16
+  = 128 > 0
+  \]
+  Portanto, o ponto $(-1, -1)$ é um máximo ou mínimo local. Como \(f_{xx}(-1, -1) = -12 < 0\)
+  o ponto é um ponto de máximo local.
+\end{frame}

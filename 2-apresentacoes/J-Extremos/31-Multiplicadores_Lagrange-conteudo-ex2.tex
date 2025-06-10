@@ -1,0 +1,221 @@
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre os valores máximo e mínimo da função
+  \[
+    f(x, y) = 3x + 4y
+  \]
+  na circunferência
+  \[
+    x^2 + y^2 = 1
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Queremos encontrar os valores extremos da função
+  \[
+    f(x, y) = 3x + 4y
+  \]
+  \pause
+  sujeito a restrição
+  \[
+    g(x, y) = x^2 + y^2 - 1 = 0
+  \]
+
+  \pause
+  Para isso precisamos encontrar os valores $x$, $y$, $z$ e $\lambda$ tais que
+  \[
+    \nabla f = \lambda \nabla g
+    \qquad\qquad
+    g(x, y) = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.4\linewidth}
+  Gradiente de $f$
+  \[
+    \pause
+    \D{f}{x}
+    \pause
+    = \D{}{x}\left(3x + 4y\right)
+    \pause
+    = 3
+  \]
+  \[
+    \pause
+    \D{f}{y}
+    \pause
+    = \D{}{y}\left(3x + 4y\right)
+    \pause
+    = 4
+  \]
+  \pause
+  \[
+    {\color<17>{blue}\nabla f = \vetor{3}{4}}
+  \]
+\column{0.6\linewidth}
+  \pause
+  Gradiente de $g$
+  \[
+    \pause
+    \D{g}{x}
+    \pause
+    = \D{}{x}\left(x^2 + y^2 - 1\right)
+    \pause
+    = 2x
+  \]
+  \[
+    \pause
+    \D{g}{y}
+    \pause
+    = \D{}{y}\left(x^2 + y^2 - 1\right)
+    \pause
+    = 2y
+  \]
+  \pause
+  \[
+    {\color<17>{blue}\nabla g = \vetor{2x}{2y}}
+  \]
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  A equação
+  \[
+    \nabla f = \lambda \nabla g
+  \]
+  \pause
+  se torna
+  \[
+    \vetor{3}{4} = \lambda \vetor{2x}{2y}
+  \]
+  {\color<7>{blue}%
+    \pause
+    \[
+    \begin{cases}
+      x = \dfrac{3}{2\lambda} \\[4mm]
+      y = \dfrac{2}{\lambda}
+    \end{cases}
+  \]}
+\column{0.5\linewidth}
+  \pause
+  A equação
+  \[
+    g(x, y) = 0
+  \]
+  \pause
+  se torna
+  \[
+    x^2 + y^2 - 1 = 0
+  \]
+  {\color<7>{blue}%
+    \pause
+  \[
+    x^2 + y^2 = 1
+  \]}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  \onslide<+->{Precisamos resolver o sistema
+  \[
+  \begin{cases}
+    x = \dfrac{3}{2\lambda} \\[3mm]
+    y = \dfrac{2}{\lambda} \\[3mm]
+    x^2 + y^2 = 1
+  \end{cases}
+  \]}
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{x^2 + y^2 & = 1 \\[2mm]}
+    \onslide<+->{\left(\frac{3}{2\lambda}\right)^2 +
+                 \left(\frac{2}{\lambda}\right)^2 & = 1  \\[2mm]}
+    \onslide<+->{\frac{9}{4\lambda^2} +
+                 \frac{4}{\lambda^2} & = 1  \\[2mm]}
+    \onslide<+->{\frac{9+16}{4\lambda^2} & = 1  \\[2mm]}
+    \onslide<+->{4\lambda^2 & = 25  \\[2mm]}
+    \onslide<+->{\lambda & = \pm \frac{5}{2}}
+  \end{align*}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  Quando \(\lambda=\sfrac{5}{2}\)
+  \[
+    \pause
+    x
+    = \frac{3}{2\lambda}
+    \pause
+    = \frac{3}{2\sfrac{5}{2}}
+    \pause
+    = \frac{3}{5}
+  \]
+  \[
+    \pause
+        y
+    = \frac{2}{\lambda}
+    \pause
+    = \frac{2}{\sfrac{5}{2}}
+    \pause
+    = \frac{4}{5}
+  \]
+\column{0.5\linewidth}
+  \pause
+  Quando \(\lambda=-\sfrac{5}{2}\)
+  \[
+    \pause
+    x
+    = \frac{3}{2\lambda}
+    \pause
+    = -\frac{3}{2\sfrac{5}{2}}
+    \pause
+    = -\frac{3}{5}
+  \]
+  \[
+    \pause
+    y
+    = \frac{2}{\lambda}
+    \pause
+    = -\frac{2}{\sfrac{5}{2}}
+    \pause
+    = -\frac{4}{5}
+  \]
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Avaliando a função \(f(x, y)=3x + 4y\) nos pontos}
+  \begin{align*}
+    \onslide<+->{f\left(           -\frac{3}{5},            -\frac{4}{5}\right) &= }
+    \onslide<+->{3\left(-\frac{3}{5}\right) + 4\left(-\frac{4}{5}\right) = }
+    \onslide<+->{\frac{-9-16}{5} = }
+    \onslide<+->{-5 \\[5mm]}
+    \onslide<+->{f\left(\hphantom{-}\frac{3}{5}, \hphantom{-}\frac{4}{5}\right) &= }
+    \onslide<+->{3\frac{3}{5} + 4\frac{4}{5} = }
+    \onslide<+->{\frac{9+16}{5} = }
+    \onslide<+->{5}
+  \end{align*}
+
+  \onslide<+->{O valor máximo de $f$ é \hspace{1ex} 5 e ocorre no ponto
+  \(\left(\frac{3}{5}, \frac{4}{5}\right)\)}
+
+  \vspace{0.3\baselineskip}
+  \onslide<+->{O valor mínimo de $f$ é $-5$ e ocorre no ponto
+  \(\left(-\frac{3}{5}, -\frac{4}{5}\right)\)}
+\end{frame}
+
+%------------------------------------------------------------------------------%

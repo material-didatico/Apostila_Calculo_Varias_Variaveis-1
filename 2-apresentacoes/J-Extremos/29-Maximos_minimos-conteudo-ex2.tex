@@ -1,0 +1,164 @@
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre e classifique os pontos críticos da função
+  \[
+    f(x, y) = xy -x^2 - y^2 -2x -2y +4
+  \]
+  Avalie os valores extremos locais de $f$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Derivadas parciais
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \D{f}{x}
+    \pause
+    = \D{}{x}\left(xy -x^2 - y^2 -2x -2y +4\right)
+    \pause
+    = y -2x -2
+  \]
+  \pause
+  \vspace{\baselineskip}
+  \[
+    \D{f}{y}
+    \pause
+    = \D{}{y}\left(xy -x^2 - y^2 -2x -2y +4\right)
+    \pause
+    = x -2y -2
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Pontos críticos
+
+  \pause
+  \vspace{\baselineskip}
+  As derivadas existem em todos os pontos do plano
+
+  \pause
+  \vspace{\baselineskip}
+  Buscando os pontos onde plano tangente é horizontal
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+\begin{columns}
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{f_x(x, y) & = y -2x -2 = 0 \\}
+    \onslide<+->{f_y(x, y) & = x -2y -2 = 0}
+  \end{align*}
+
+  \vspace{0.1\baselineskip}
+  \begin{align*}
+    \onslide<+->{x -2y -2 & = 0      \\}
+    \onslide<+->{x        & = 2y + 2}
+  \end{align*}
+
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{y -2x -2         & = 0  \\}
+    \onslide<+->{y -2(2y + 2) - 2 & = 0  \\}
+    \onslide<+->{y -4y + -6       & = 0  \\}
+    \onslide<+->{-3y              & = 6  \\}
+    \onslide<+->{y                & = -2}
+  \end{align*}
+
+  \[
+    \onslide<+->{x = 2y + 2}
+    \onslide<+->{= 2(-2) + 2}
+    \onslide<+->{= -2}
+  \]
+
+  \onslide<+->{Ponto crítico $(-2, -2)$}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Calculando as derivadas segundas
+  \[
+    \pause
+    \DS{f}{x}
+    \pause
+    = \D{}{x}\left(y -2x -2\right)
+    \pause
+    = -2
+  \]
+  \[
+    \pause
+    \DS{f}{y}
+    \pause
+    = \D{}{y}\left(x -2y -2\right)
+    \pause
+    = -2
+  \]
+  \[
+    \pause
+    \DM{f}{x}{y}
+    \pause
+    = \D{}{x}\left(x -2y -2\right)
+    \pause
+    = 1
+  \]
+
+  \pause
+  Discriminante
+  \[
+    \pause
+    D(x, y)
+    \pause
+    = f_{xx}(x, y) f_{yy}(x, y) - f^2_{xy}(x, y)
+    \pause
+    = (-2)(-2) - 1
+    \pause
+    = 3
+  \]
+  \[
+  \pause
+    D(-2, -2)
+    \pause
+    = 3
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Como \(D(-2, -2)=3>0\)
+  \pause
+  e  \(f_{xx}(-2, -2) = -2 < 0\)
+
+  \pause
+  \vspace{\baselineskip}
+  O ponto \((-2, -2)\) é um ponto de máximo local
+
+  \pause
+  \vspace{\baselineskip}
+  O valor da função neste máximo local é
+  \[
+    f(-2, -2)
+    \pause
+    = \left(xy -x^2 - y^2 -2x -2y +4\right)\evalat{(-2, -2)}{}
+  \]
+  \[
+    \hphantom{f(-2, -2)}
+    \pause
+    = (-2)(-2) - (-2)^2 - (-2)^2 -2(-2) -2(-2) + 4
+  \]
+  \[
+    \hphantom{f(-2, -2)}
+    \pause
+    = 4 -4 -4 +4 +4 + 4
+  \]
+  \[
+    \hphantom{f(-2, -2)}
+    \pause
+    = 8
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%

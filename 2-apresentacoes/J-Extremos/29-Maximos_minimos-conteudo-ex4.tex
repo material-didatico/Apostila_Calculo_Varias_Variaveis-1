@@ -1,0 +1,49 @@
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Seja
+  \[
+    f(x, y) = e^x \cos(y)
+  \]
+  encontre os pontos críticos de $f$ e classifique-os
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \onslide<+->{Derivadas primeiras}
+  \begin{align*}
+    \onslide<+->{f_x(x, y) & = e^x \cos(y) &}
+    \onslide<+->{f_y(x, y) & = - e^x \sin(y)}
+  \end{align*}
+
+  \onslide<+->{Pontos onde as derivadas são nulas}
+  \begin{columns}
+  \column{0.5\linewidth}
+    \begin{align*}
+      \onslide<+->{f_x(x, y)  & = 0                                 \\}
+      \onslide<+->{e^x\cos(y) & = 0                                 \\}
+      \onslide<+->{\cos(y)    & = 0                                 \\}
+      \onslide<+->{y          & = \frac{\pi}{2} + n\pi \quad n \in \Z }
+    \end{align*}
+  \column{0.5\linewidth}
+    \begin{align*}
+      \onslide<+->{f_y(x, y)   & = 0                 \\}
+      \onslide<+->{-e^x\sin(y) & = 0                 \\}
+      \onslide<+->{\sin(y)     & = 0                 \\}
+      \onslide<+->{y           & = n\pi \quad n \in \Z }
+    \end{align*}
+  \end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Não existe solução simultânea
+
+  \pause
+  e as derivadas existem em todos os pontos de $\R^2$,
+
+  \pause
+  portanto, não há pontos críticos
+\end{frame}
+
+%------------------------------------------------------------------------------%

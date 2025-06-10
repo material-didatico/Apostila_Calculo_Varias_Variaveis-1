@@ -1,0 +1,153 @@
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{frame}{Exemplo \theexemplo}
+  Encontre o ponto da esfera \(x^2+y^2+z^2=4\) mais distante do ponto \((1, -1, 1)\)
+
+  \textit{Dica: não é necessário avaliar completamente a distância para determinar o máximo}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Queremos minimizar a distância
+  \[
+    d(x, y, z) = \sqrt{(x-1)^2 + (y+1)^2 + (z-1)^2}
+  \]
+  Como a função raiz quadrada é crescente podemos minimizar a função
+  \[
+    f(x, y, z) = (x-1)^2 + (y+1)^2 + (z-1)^2
+  \]
+  suas derivadas parciais são
+  \[
+    f_x(x, y, z) = 2(x-1)
+    \qquad
+    f_y(x, y, z) = 2(y+1)
+    \qquad
+    f_z(x, y, z) = 2(z-1)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  As derivadas parciais da função \(g(x, y, z)=x^2+y^2+z^2\) são
+  \[
+    g_x(x, y, z) = 2x
+    \qquad
+    g_y(x, y, z) = 2y
+    \qquad
+    g_z(x, y, z) = 2z
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Aplicando os Multiplicadores de Lagrange, precisamos resolver o sistema
+  \[
+  \begin{cases}
+    2(x-1) = 2\lambda x \\
+    2(y+1) = 2\lambda y \\
+    2(z-1) = 2\lambda z \\
+    x^2 + y^2 + z^2 = 4
+  \end{cases}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Das três primeiras equações obtemos
+  \begin{align*}
+    2(x-1)       & = 2\lambda x          & 2(y+1)       & = 2\lambda y          & 2(z-1)       & = 2\lambda z          \\
+    x-1          & = \lambda x           & y+1          & = \lambda y           & z-1          & = \lambda z           \\
+    x(1-\lambda) & = 1                   & y(1-\lambda) & = -1                  & z(1-\lambda) & = 1                   \\
+    x            & = \frac{1}{1-\lambda} & y            & =\frac{-1}{1-\lambda} & z            & = \frac{1}{1-\lambda}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Sabemos que \(1-\lambda\neq 0\) pois \(x(1-\lambda) = 1\).
+
+  Substituindo na última equação
+  \begin{align*}
+    x^2 + y^2 + z^2 & = 4
+    \\[2mm]
+    \left(\frac{1}{1-\lambda}\right)^2 +
+    \left(\frac{-1}{1-\lambda}\right)^2 +
+    \left(\frac{1}{1-\lambda}\right)^2 & = 4
+    \\[2mm]
+    \frac{1 + 1 + 1}{\left(1-\lambda\right)^2} & = 4
+    \\[2mm]
+    \frac{1}{\left(1-\lambda\right)^2} & = \frac{4}{3}
+    \\[2mm]
+    \frac{1}{1-\lambda} & = \pm\sqrt{\frac{4}{3}}
+    = \pm\frac{2}{\sqrt{3}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Para \(\frac{1}{1-\lambda} = \frac{2}{\sqrt{3}}\)
+  \[
+    x = \frac{2}{\sqrt{3}}
+    \qquad
+    y = \frac{-2}{\sqrt{3}}
+    \qquad
+    z = \frac{2}{\sqrt{3}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Para \(\frac{1}{1-\lambda} = -\frac{2}{\sqrt{3}}\)
+  \[
+    x = \frac{-2}{\sqrt{3}}
+    \qquad
+    y = \frac{2}{\sqrt{3}}
+    \qquad
+    z = \frac{-2}{\sqrt{3}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Temos dois candidatos
+  \(\left( \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}\right)\) e
+  \(\left( \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}\right)\).
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Avaliando a função em cada ponto temos
+  \begin{align*}
+    f\left( \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}\right)
+    & = \left(\frac{ 2}{\sqrt{3}}-1\right)^2
+    + \left(\frac{-2}{\sqrt{3}}+1\right)^2
+    + \left(\frac{ 2}{\sqrt{3}}-1\right)^2 \\[2mm]
+    & = \left(\frac{2}{\sqrt{3}}-1\right)^2
+    + \left(\frac{2}{\sqrt{3}}-1\right)^2
+    + \left(\frac{2}{\sqrt{3}}-1\right)^2 \\[2mm]
+    & = 3\left(\frac{2}{\sqrt{3}}-1\right)^2
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  \begin{align*}
+    f\left( \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}\right)
+    & = \left(\frac{-2}{\sqrt{3}}-1\right)^2
+    + \left(\frac{ 2}{\sqrt{3}}+1\right)^2
+    + \left(\frac{-2}{\sqrt{3}}-1\right)^2 \\[2mm]
+    & = \left(\frac{2}{\sqrt{3}}+1\right)^2
+    + \left(\frac{2}{\sqrt{3}}+1\right)^2
+    + \left(\frac{2}{\sqrt{3}}+1\right)^2 \\[2mm]
+    & = 3\left(\frac{2}{\sqrt{3}}+1\right)^2
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo \theexemplo}
+  Portanto o ponto mais distante é
+  \(\left( \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}\right)\)
+  \clearpage
+\end{frame}
+
+%------------------------------------------------------------------------------%
