@@ -1,0 +1,62 @@
+%------------------------------------------------------------------------------%
+\addtocounter{exemplo}{1}
+\begin{question}
+  Calcule \; \(\D{z}{x}\) e \(\D{z}{y}\) \; se \;
+  \(x^3 + z^2 + ye^{xz} + z\cos(y) = 0\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    F(x, y, z) = x^3 + z^2 + ye^{xz} + z\cos(y)
+  \]
+  \pause
+  \[
+    F_x
+    \pause
+    = \D{}{x}\left[x^3 + z^2 + ye^{xz} + z\cos(y)\right]
+    \pause
+    = 3x^2 + 0 + ye^{xz}z + 0
+    \pause
+    = 3x^2 + yze^{xz}
+  \]
+  \pause
+  \[
+    F_y
+    \pause
+    = \D{}{y}\left[x^3 + z^2 + ye^{xz} + z\cos(y)\right]
+    \pause
+    = 0 + 0 + e^{xz} -z\sin(y)
+    \pause
+    = e^{xz} -z\sin(y)
+  \]
+  \pause
+  \[
+    F_z
+    \pause
+    = \D{}{z}\left[x^3 + z^2 + ye^{xz} + z\cos(y)\right]
+    \pause
+    = 0 + 2z + ye^{xz}x + \cos(y)
+    \pause
+    = 2z + yxe^{xz} + \cos(y)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \D{z}{x}
+    = -\frac{F_x}{F_z}
+    \pause
+    = -\frac{3x^2 + yze^{xz}}{2z + yxe^{xy} + \cos(y)}
+  \]
+  \pause
+  \[
+    \D{z}{y}
+    = -\frac{F_y}{F_z}
+    \pause
+    = -\frac{e^{xz} -z\sin(y)}{2z + yxe^{xy} + \cos(y)}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

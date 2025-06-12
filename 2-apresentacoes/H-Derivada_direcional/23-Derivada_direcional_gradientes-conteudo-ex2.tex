@@ -1,0 +1,111 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Calcule o vetor gradiente da função \(f(x, y) = \sqrt{2x+3y}\)
+  no ponto \((-1, 2)\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Calculando as derivadas parciais
+
+  \pause
+  \[
+    \D{f}{x}
+    \pause
+    \;=\; \D{}{x}\sqrt{2x+3y}
+    \pause
+    \;=\; \D{}{x}\left(2x+3y\right)^{\sfrac{1}{2}}
+  \]
+  \[
+    \hphantom{\D{f}{x}}
+    \pause
+    \;=\; \frac{1}{2}\left(2x+3y\right)^{\sfrac{-1}{2}}\D{}{x}\left(2x+3y\right)
+    \pause
+    \;=\; \frac{1}{\sqrt{2x+3y}}
+  \]
+
+  \pause
+  \[
+    \D{f}{x}(-1, 2)
+    \pause
+    \;=\; \frac{1}{\sqrt{2(-1)+3(2)}}
+    \pause
+    \;=\; \frac{1}{\sqrt{-2+6}}
+    \pause
+    \;=\; \frac{1}{\sqrt{4}}
+    \pause
+    \;=\; \frac{1}{2}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Calculando as derivadas parciais
+
+  \pause
+  \[
+    \D{f}{y}
+    \pause
+    \;=\; \D{}{y}\sqrt{2x+3y}
+    \pause
+    \;=\; \D{}{y}\left(2x+3y\right)^{\sfrac{1}{2}}
+  \]
+  \[
+    \hphantom{\D{f}{y}}
+    \pause
+    \;=\; \frac{1}{2}\left(2x+3y\right)^{\sfrac{-1}{2}}\D{}{y}\left(2x+3y\right)
+    \pause
+    \;=\; \frac{3}{2\sqrt{2x+3y}}
+  \]
+
+  \pause
+  \[
+    \D{f}{y}(-1, 2)
+    \pause
+    \;=\; \frac{3}{2\sqrt{2(-1)+3(2)}}
+    \pause
+    \;=\; \frac{3}{2\sqrt{-2+6}}
+    \pause
+    \;=\; \frac{3}{2\sqrt{4}}
+    \pause
+    \;=\; \frac{3}{4}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  O vetor gradiente
+  \[
+    \nabla f
+    \pause
+    \;=\; \left(\begin{array}{c}
+        \displaystyle\D{f}{x} \\[5mm]
+        \displaystyle\D{f}{y}
+      \end{array}\right)
+    \pause
+    \;=\; \left(\begin{array}{c}
+             \dfrac{1}{\sqrt{2x+3y}} \\[5mm]
+             \dfrac{3}{2\sqrt{2x+3y}}
+          \end{array}\right)
+    \pause
+    \;=\; \frac{1}{\sqrt{2x+3y}} \left(\begin{array}{c}
+            1 \\[2mm]
+            \sfrac{3}{2}
+          \end{array}\right)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  O vetor gradiente no ponto \((-1, 2)\)
+  \[
+    \nabla f(-1, 2)
+    \;=\; \left[\frac{1}{\sqrt{2x+3y}} \left(\begin{array}{c}
+      1 \\[2mm]
+      \sfrac{3}{2}
+    \end{array}\right)\right]\evalat{(-1, 2)}{}
+    \;=\; \vetor{\sfrac{1}{2}}{\sfrac{3}{4}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

@@ -1,0 +1,29 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre \(\D{f}{y}\) e \(\D{f}{y}\) para \(f(x, y) = y\sin(xy)\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{\D{f}{x}}
+    \onslide<+->{& = \D{}{x} \big(y\sin(xy)\big) \\}
+    \onslide<+->{& = y \D{}{x}\sin(xy)           \\}
+    \onslide<+->{& = y \cos(xy) \D{}{x}(xy)      \\}
+    \onslide<+->{& = y \cos(xy)  y               \\}
+    \onslide<+->{& = y^2 \cos(xy)}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+  \onslide<+->{\D{f}{y}}
+  \onslide<+->{& = \D{}{y} \big(y\sin(xy)\big)} \\
+  \onslide<+->{& = \D{y}{y} \sin(xy) + y \D{}{y}\sin(xy)} \\
+  \onslide<+->{& = \sin(xy) + y \cos(xy)\D{}{y}(xy)} \\
+  \onslide<+->{& = \sin(xy) + y \cos(xy)x} \\
+  \onslide<+->{& = \sin(xy) + xy \cos(xy)}
+\end{align*}
+\end{resolution}
+

@@ -28,7 +28,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Unidade Imaginário}
+\begin{frame}{Unidade Imaginária}
   \emph{Unidade imaginária}
   \[ i^2 = -1 \]
 
@@ -140,7 +140,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Cuidado com Raizes}
+\begin{frame}{Cuidado com Raízes}
 \begin{columns}
 \column{0.4\linewidth}
   Sabemos que
@@ -186,67 +186,12 @@
   \]
 
   \vspace{\baselineskip}
-  \onslide<16>{\emph{Só é verdade para raizes reais!}}
+  \onslide<16>{\emph{Só é verdade para raízes reais!}}
 \end{columns}
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Simplifique as expressões
-  \[
-    a = i^7
-  \]
-
-  \[
-    b = i^{57}
-  \]
-
-  \[
-    c = \frac{i^4 + i^{17}}{i^4}
-  \]
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \[
-    a
-    = i^7
-    \pause
-    = i^4 \, i^3
-    \pause
-    = i^3
-    \pause
-    = i^2 i
-    \pause
-    = -i
-  \]
-
-  \pause
-  \vspace{\baselineskip}
-  \[
-    b
-    = i^{57}
-    \pause
-    = i^{4\times 14} \, i^1
-    \pause
-    = i
-  \]
-
-  \pause
-  \vspace{\baselineskip}
-  \[
-    c
-    = \frac{i^4 + i^{17}}{i^4}
-    \pause
-    = \frac{i^4}{i^4} + \frac{i^{17}}{i^4}
-    \pause
-    = 1 + i^{13}
-    \pause
-    = 1 + i^{4\times 3} \, i
-    \pause
-    = 1 + i
-  \]
-\end{frame}
+\include{33-Numeros_Complexos-conteudo-ex1}
 
 %------------------------------------------------------------------------------%
 \section{Números Complexos}
@@ -395,45 +340,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Calcule
-  \begin{gather*}
-    a = \big[(3 + 2i) + (4 - 5i)\big](1 + i)                      \\[8mm]
-    b = \big[ (2 + 3i) (1 - i) \big] \big[ (1 + 2i) (2 - i) \big] \\[5mm]
-    c = \frac{3 + 4i}{2 - i}
-  \end{gather*}
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \begin{align*}
-  \onslide<+->{a & = \big[(3 + 2i) + (4 - 5i)\big](1 + i) \\[2mm]}
-  \onslide<+->{  & = [7 - 3i] (1 + i)                     \\[2mm]}
-  \onslide<+->{  & = 7 + 7i -3i -3i^2                     \\[2mm]}
-  \onslide<+->{  & = 7 + 7i -3i +3                        \\[2mm]}
-  \onslide<+->{  & = 10 + 4i                                     }
-  \end{align*}
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \begin{align*}
-    \onslide<+->{b & = \big[ (2 + 3i) (1 - i) \big] \big[ (1 + 2i) (2 - i) \big] \\[2mm]}
-    \onslide<+->{  & = [ 2 - 2i + 3i + 3 ] [ 2 -i + 4i + 2 ] \\[2mm]                    }
-    \onslide<+->{  & = ( 5 + i ) ( 4 + 3i ) \\[2mm]                                     }
-    \onslide<+->{  & = 20 + 15i + 4i -3 \\[2mm]                                         }
-    \onslide<+->{  & = 17 + 19i                                                         }
-  \end{align*}
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \begin{align*}
-    \onslide<+->{c & = \frac{3 + 4i}{2 - i}                   \\[3mm]}
-    \onslide<+->{  & = \frac{(3 + 4i)(2 + i)}{(2 - i)(2 + i)} \\[3mm]}
-    \onslide<+->{  & = \frac{6 + 3i + 8i -4}{4 + 2i -2i +1}   \\[3mm]}
-    \onslide<+->{  & = \frac{2 + 11i}{5}                      \\[3mm]}
-    \onslide<+->{  & = \frac{2}{5} + \frac{11}{5}i                   }
-  \end{align*}
-\end{frame}
+\include{33-Numeros_Complexos-conteudo-ex2}
 
 %------------------------------------------------------------------------------%
 \section{Plano Complexo}
@@ -484,15 +391,15 @@
 
   \pause
   \vspace{\baselineskip}
-  Um polinômio de grau $n$ possui $n$ raizes complexas
+  Um polinômio de grau $n$ possui $n$ raízes complexas
 
   \pause
   \vspace{\baselineskip}
-  Se os coeficientes \(a_k\) forem reais, as raizes serão reais ou pares conjugados
+  Se os coeficientes \(a_k\) forem reais, as raízes serão reais ou pares conjugados
 \end{frame}
 %------------------------------------------------------------------------------%
 \begin{frame}{Raízes da Equação Quadrática}
-  Raizes do polinôomio
+  Raízes do polinômio
   \[
     ax^2 + bx + c = 0
     \qquad\qquad
@@ -515,35 +422,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Encontre as raizes do poninômio
-  \[
-    p = 2z^2 -4z + 4
-  \]
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-\begin{columns}
-\column{0.5\linewidth}
-  \begin{align*}
-	  \onslide<+->{\Delta        & = b^2 - 4 ac                   \\}
-	  \onslide<+->{              & = (-4)^2 - 4 \times 2 \times 4 \\}
-	  \onslide<+->{              & = 16 - 32                      \\}
-	  \onslide<+->{              & = -16                          \\[9mm]}
-	  \onslide<+->{\sqrt{\Delta} & = \sqrt{-16}                   \\}
-	  \onslide<+->{              & = \sqrt{16}\,i                 \\}
-	  \onslide<+->{              & = 4i}
-  \end{align*}
-\column{0.5\linewidth}
-  \begin{align*}
-	  \onslide<+->{z & = \frac{-b \pm \sqrt{\Delta}}{2a} \\[3mm]}
-	  \onslide<+->{  & = \frac{-(-4) \pm 4i}{2\times 2}  \\[3mm]}
-	  \onslide<+->{  & = \frac{4 \pm 4i}{4}  \\[3mm]}
-	  \onslide<+->{  & = 1 \pm i}
-  \end{align*}
-\end{columns}
-\end{frame}
+\include{33-Numeros_Complexos-conteudo-ex3}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}

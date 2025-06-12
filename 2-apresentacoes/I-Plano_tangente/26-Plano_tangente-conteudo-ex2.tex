@@ -1,0 +1,79 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre o plano tangente à superfície
+  \[
+    z = x\cos(y) - ye^x
+  \]
+  no ponto \((x_0, y_0, z_0) = (0, 0, 0)\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+    Essa superfície corresponde ao gráfico da função \(f(x, y) = x\cos(y) - ye^x\)
+
+  \pause
+  \vspace{\baselineskip}
+  Conferindo que o ponto $(0, 0, 0)$ está na superfície
+  \[
+    \pause
+    f(0, 0)
+    \pause
+    \;=\; \left(x\cos(y) - ye^x\right)\evalat{(0, 0)}{}
+    \pause
+    \;=\; 0\times\cos(0) - 0\times e^0
+    \pause
+    \;=\; 0
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Derivadas parciais de $f(x, y)$}
+  \begin{align*}
+    \onslide<+->{\D{f}{x}}
+    \onslide<+->{& = \D{}{x} \left(x\cos(y) - ye^x\right)}
+    \onslide<+->{  = \cos(y) - ye^x                        \\}
+    \onslide<+->{\D{f}{y}}
+    \onslide<+->{& = \D{}{y} \left(x\cos(y) - ye^x\right)}
+    \onslide<+->{  = -x\sin(y) - e^x}
+  \end{align*}
+  \begin{align*}
+    \onslide<+->{\D{f}{x}(0, 0)}
+    \onslide<+->{& = \left(  \cos(y) - ye^x\right) \evalat{(0, 0)}{}}
+    \onslide<+->{  = 1                                    \\}
+    \onslide<+->{\D{f}{y}(0, 0)}
+    \onslide<+->{& = \left(-x\sin(y) - e^x \right) \evalat{(0, 0)}{}}
+    \onslide<+->{  = -1}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Plano tangente
+  \[
+    \emph{f_x(x_0, y_0)} (x-x_0) +
+    \emph{f_y(x_0, y_0)} (y-y_0) -
+    (z-z_0) = 0
+  \]
+
+  \pause
+  \[
+    \emph{f_x(0, 0)} (x-0) +
+    \emph{f_y(0, 0)} (y-0) -
+    (z-0) = 0
+  \]
+
+  \pause
+  \[
+    \emph{1} (x-0) -
+    \emph{1} (y-0) -
+    (z-0) = 0
+  \]
+
+  \pause
+  \[
+    x - y - z = 0
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

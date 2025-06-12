@@ -1,0 +1,81 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre uma equação para a tangente à elipse
+  \[
+    \frac{x^2}{4} + y^2 = 2
+  \]
+  no ponto \((-2, 1)\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Encontre uma equação para a tangente à elipse
+  \[
+    \frac{x^2}{4} + y^2 = 2
+  \]
+  no ponto \((-2, 1)\)
+
+  \addgraphic{9}{6.5,2.5}{tangente_elipse}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Precisamos notar que a elipse é uma curva de nível da função
+  \[
+    f(x, y) = \frac{x^2}{4} + y^2
+  \]
+
+  \pause
+  Calculando as derivadas parciais de $f$ temos
+  \[
+    \pause
+    \D{f}{x}
+    \pause
+    = \D{}{x}\left(\frac{x^2}{4} + y^2\right)
+    \pause
+    = \frac{x}{2}
+  \]
+  \[
+    \pause
+    \D{f}{y}
+    \pause
+    = \D{}{y}\left(\frac{x^2}{4} + y^2\right)
+    \pause
+    = 2y
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Então o gradiente de $f$, no ponto \((-2, 1)\), é
+  \pause
+  \[
+    \nabla f(-2, 1)
+    \pause
+    \;=\; \Vetor{\frac{x}{2}}{2y}\evalat{(-2, 1)}{}
+    \pause
+    = \vetor{-1}{2}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{A reta tangente é ortogonal ao vetor gradiente}
+  \begin{columns}
+  \column{0.5\linewidth}
+    \begin{align*}
+      \onslide<+->{\nabla f(x_0, y_0) \cdot \vetor{x-x_0}{y-y_0} & = 0 \\}
+      \onslide<+->{\nabla f(-2, 1)    \cdot \vetor{x-(-2)}{y-1}  & = 0 \\}
+      \onslide<+->{\vetor{-1}{2} \cdot \vetor{x+2}{y-1} & = 0}
+    \end{align*}
+  \column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{-(x+2) + 2(y-1) & = 0 \\}
+    \onslide<+->{-x +2y -4 & = 0 \\}
+    \onslide<+->{-x +2y    & = 4 \\}
+    \onslide<+->{ x        & = 2y-4}
+  \end{align*}
+  \end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

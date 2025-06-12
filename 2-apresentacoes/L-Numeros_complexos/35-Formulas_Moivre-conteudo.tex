@@ -25,13 +25,13 @@
   \end{align*}
 \end{frame}
 
-%------------------------------------------------------------------------------%
+% 01
 \begin{frame}{Primeira Fórmula de De Moivre}
   Se
   \[
     z = \rho \big[\cos(\varphi) + i\sin(\varphi)\big]
   \]
-  e $n$ um número natual
+  e $n$ um número natural
 
   \pause
   \vspace{\baselineskip}
@@ -42,142 +42,19 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Calcule
-  \[
-    \left[2\left(\cos\left(\frac{\pi}{6}\right) + i\sin\left(\frac{\pi}{6}\right)\right)\right]^4
-  \]
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \[
-    z = 2\left(\cos\left(\frac{\pi}{6}\right) + i\sin\left(\frac{\pi}{6}\right)\right)
-  \]
-
-  \[
-    \pause
-    \rho = 2
-    \qquad\qquad
-    \pause
-    \varphi = \frac{\pi}{6}
-  \]
-
-  \[
-    \pause
-    z^4
-    \pause
-    = \rho^4 \big[\cos(4\varphi) + i\sin(4\varphi)\big]
-  \]
-  \[
-    \hphantom{z^4}
-    \pause
-    = 2^4 \left[\cos\left(4\frac{\pi}{6}\right) + i\sin\left(4\frac{\pi}{6}\right)\right]
-    \pause
-    = 16  \left[\cos\left(\frac{2\pi}{3}\right) + i\sin\left(\frac{2\pi}{3}\right)\right]
-  \]
-\end{frame}
+\include{35-Formulas_Moivre-conteudo-ex1}
+\include{35-Formulas_Moivre-conteudo-ex2}
 
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Calcule \(\left(1+\sqrt{3}i\right)^6\)
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \[
-    z = 1+\sqrt{3}i
-    \qquad\qquad
-    \pause
-    a = \Re(z) = 1
-    \qquad\qquad
-    \pause
-    b = \Im(z) = \sqrt{3}
-  \]
-
-  \[
-    \pause
-    \rho
-    \pause
-    = \sqrt{a^2 + b^2}
-    \pause
-    = \sqrt{1 + 3}
-    \pause
-    = \sqrt{4}
-    \pause
-    = 2
-  \]
-
-  \[
-    \pause
-    \sin(\varphi)
-    \pause
-    = \frac{b}{\rho}
-    \pause
-    = \frac{\sqrt{3}}{2}
-    \pause
-    \qquad\qquad
-    \cos(\varphi)
-    \pause
-    = \frac{a}{\rho}
-    \pause
-    = \frac{1}{2}
-  \]
-
-  \[
-    \pause
-    \varphi
-    \pause
-    = \ang{60}
-    \pause
-    = \frac{\pi}{3} \si{\radian}
-  \]
-
-  \[
-    \pause
-    z
-    \pause
-    = \rho\left(\cos(\varphi)+i\sin(\varphi)\right)
-    \pause
-    = 2\left(\cos\left(\frac{\pi}{3}\right)+i\sin\left(\frac{\pi}{3}\right)\right)
-  \]
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \[
-    z = 1+\sqrt{3}i
-    \pause
-    = 2\left(\cos\left(\frac{\pi}{3}\right)+i\sin\left(\frac{\pi}{3}\right)\right)
-  \]
-
-  \vspace{0\baselineskip}
-  \[
-    \pause
-    z^6
-    \pause
-    = \rho^6 \big[\cos(6\varphi) + i\sin(6\varphi)\big]
-    \]
-    \[
-    \hphantom{z^6}
-    \pause
-    = 2^6 \left[\cos\left(6\frac{\pi}{3}\right) + i\sin\left(6\frac{\pi}{3}\right)\right]
-    \pause
-    = 64  \left[\cos\left(2\pi\right) + i\sin\left(2\pi\right)\right]
-    \pause
-    = 64
-  \]
-\end{frame}
+\section{Raízes de Números Complexos}
 
 %------------------------------------------------------------------------------%
-\section{Raizes de Números Complexos}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Raizes}
+\begin{frame}{Raízes}
   Se
   \(
     z = \rho \big[\cos(\varphi) + i\sin(\varphi)\big]
   \)
-  e $n>1$ é um número natual
+  e $n>1$ é um número natural
 
   \pause
   \vspace{\baselineskip}
@@ -198,7 +75,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Raizes}
+\begin{frame}{Raízes}
 \begin{columns}
 \column{0.5\linewidth}
   Encontrar $r$ e $\alpha$
@@ -230,15 +107,15 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Sengunda Formula de De Moire}
+\begin{frame}{Segunda Formula de De Moire}
   Se
   \(
     z = \rho \big[\cos(\varphi) + i\sin(\varphi)\big]
   \)
-  e $n>1$ é um número natual
+  e $n>1$ é um número natural
 
   \vspace{\baselineskip}
-  As raizes $n$-ésimas de $z$ são
+  As raízes $n$-ésimas de $z$ são
   \[
     u_k = \sqrt[n]{\rho}
     \left[
@@ -250,78 +127,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Encontre as raizes cúbicas de 1
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \[
-    z = 1
-    \pause
-    = 1 + 0i
-    \pause
-    = 1\big[\cos(0) + i\sin(0)\big]
-  \]
-
-  \[
-    \pause
-    \rho = 1
-    \qquad\qquad
-    \pause
-    \varphi = 0
-  \]
-
-  \[
-    \pause
-    u_k = \sqrt[3]{\rho}
-    \left[
-       \cos\left(\frac{\varphi+2k\pi}{3}\right)
-    + i\sin\left(\frac{\varphi+2k\pi}{3}\right)
-    \right]
-    \qquad\qquad
-    k=0, 1, 2
-  \]
-  \[
-    \pause
-    \hphantom{u_k}
-    = \sqrt[3]{1}
-    \left[
-    \cos\left(\frac{0+2k\pi}{3}\right)
-    + i\sin\left(\frac{0+2k\pi}{3}\right)
-    \right]
-  \]
-  \[
-    \pause
-    \hphantom{u_k}
-    =  \cos\left(\frac{2k\pi}{3}\right)
-    + i\sin\left(\frac{2k\pi}{3}\right)
-  \]
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-\vspace{-1.5\baselineskip}
-\begin{columns}[t]
-\column{0.5\linewidth}
-  \begin{align*}
-  \onslide<+->{u_0}
-  \onslide<+->{& = \cos\left(\frac{2\times 0 \pi}{3}\right) + i\sin\left(\frac{2\times 0 \pi}{3}\right) \\}
-  \onslide<+->{& = \cos(0) + i\sin(0) \\}
-  \onslide<+->{& = 1 \\[5mm]}
-  \onslide<+->{u_1}
-  \onslide<+->{& = \cos\left(\frac{2\times 1 \pi}{3}\right) + i\sin\left(\frac{2\times 1 \pi}{3}\right) \\}
-  \onslide<+->{& = \cos\left(\frac{2\pi}{3}\right) + i\sin\left(\frac{2\pi}{3}\right) \\}
-  \onslide<+->{& = -\frac{1}{2} + \frac{\sqrt{3}}{2}i}
-\end{align*}
-\column{0.5\linewidth}
-\begin{align*}
-  \onslide<+->{u_2}
-  \onslide<+->{& = \cos\left(\frac{2\times 2 \pi}{3}\right) + i\sin\left(\frac{2\times 2 \pi}{3}\right) \\}
-  \onslide<+->{& = \cos\left(\frac{4\pi}{3}\right) + i\sin\left(\frac{4\pi}{3}\right) \\}
-  \onslide<+->{& = -\frac{1}{2} - \frac{\sqrt{3}}{2}i}
-\end{align*}
-\end{columns}
-\end{frame}
+\include{35-Formulas_Moivre-conteudo-ex3}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}

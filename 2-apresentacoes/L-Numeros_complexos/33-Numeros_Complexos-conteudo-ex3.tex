@@ -1,0 +1,32 @@
+%------------------------------------------------------------------------------%
+\begin{question}{Exemplo \theexemplo}
+  Encontre as raízes do polinômio
+  \[
+    p = 2z^2 -4z + 4
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.5\linewidth}
+  \begin{align*}
+	  \onslide<+->{\Delta        & = b^2 - 4 ac                   \\}
+	  \onslide<+->{              & = (-4)^2 - 4 \times 2 \times 4 \\}
+	  \onslide<+->{              & = 16 - 32                      \\}
+	  \onslide<+->{              & = -16                          \\[5mm]}
+	  \onslide<+->{\sqrt{\Delta} & = \sqrt{-16}                   \\}
+	  \onslide<+->{              & = \sqrt{16}\,i                 \\}
+	  \onslide<+->{              & = 4i}
+  \end{align*}
+\column{0.5\linewidth}
+  \begin{align*}
+	  \onslide<+->{z & = \frac{-b \pm \sqrt{\Delta}}{2a} \\}
+	  \onslide<+->{  & = \frac{-(-4) \pm 4i}{2\times 2}  \\}
+	  \onslide<+->{  & = \frac{4 \pm 4i}{4}              \\}
+	  \onslide<+->{  & = 1 \pm i}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

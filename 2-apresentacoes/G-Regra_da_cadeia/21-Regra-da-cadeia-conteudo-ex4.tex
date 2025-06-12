@@ -1,0 +1,71 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Considere \(z = \sin\left(x^2 + y^2\right)\)
+  onde \(x = st\) e \(y = 2s + t\)
+
+  Encontre \(\frac{\partial z}{\partial s}\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Pela regra da cadeia
+  \[
+    \D{z}{s} = \D{z}{x}\D{x}{s} + \D{z}{y}\D{y}{s}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \D{z}{x}
+    \pause
+    \;=\; \D{}{x} \sin\left(x^2 + y^2\right)
+    \pause
+    \;=\; \cos\left(x^2 + y^2\right) \D{}{x}\left(x^2 + y^2\right)
+    \pause
+    \;=\; \cos(x^2 + y^2) 2x
+  \]
+  \[
+    \pause
+    \D{z}{y}
+    \pause
+    \;=\; \D{}{y} \sin\left(x^2 + y^2\right)
+    \pause
+    \;=\; \cos\left(x^2 + y^2\right) \D{}{y}\left(x^2 + y^2\right)
+    \pause
+    \;=\; \cos(x^2 + y^2) 2y
+  \]
+
+  \[
+    \pause
+    \D{x}{s}
+    \pause
+    \;=\; \D{}{s} \left(st\right)
+    \pause
+    \;=\; t
+  \]
+  \[
+    \pause
+    \D{y}{s}
+    \pause
+    \;=\; \D{}{s} \left(2s+t\right)
+    \pause
+    \;=\; 2
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+  \onslide<+->{\D{z}{s}}
+  \onslide<+->{& = \D{z}{x}\D{x}{s} + \D{z}{y}\D{y}{s}                              \\}
+  \onslide<+->{& = 2x\cos\left(x^2 + y^2\right)\D{x}{s} + 2y\cos\left(x^2 + y^2\right)\D{y}{s} \\}
+  \onslide<+->{& = 2x\cos\left(x^2 + y^2\right) t
+    + 2y\cos\left(x^2 + y^2\right) 2                                                \\}
+  \onslide<+->{& = \left(2xt + 4y \right) \cos\left(x^2 + y^2\right)                \\}
+  \onslide<+->{& = \left[ 2(st)t + 4(s+t) \right] \cos\left((st)^2 + (s+t)^2\right) \\}
+  \onslide<+->{& = \left( 2st^2 + 4s +4t \right) \cos\left(s^2t^2 + (s+t)^2\right)}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

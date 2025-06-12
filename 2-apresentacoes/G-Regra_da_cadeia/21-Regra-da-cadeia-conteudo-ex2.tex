@@ -1,0 +1,139 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+    Expresse \(\D{w}{r}\) e \(\D{w}{s}\) em termos de $r$ e $s$
+    \[
+        w = x + 2y + z^2    \qquad
+        x = \frac{r}{s}     \qquad
+        y = r^2 + \ln(s)    \qquad
+        z = 2r
+    \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Pela regra da cadeia
+
+  \begin{align*}
+    \D{w}{r} & = \D{w}{x}\D{x}{r} + \D{w}{y}\D{y}{r} + \D{w}{z}\D{z}{r}  \\[3mm]
+    \D{w}{s} & = \D{w}{x}\D{x}{s} + \D{w}{y}\D{y}{s} + \D{w}{z}\D{z}{s}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Calculando as derivadas separadamente
+
+  \[
+    \pause
+    \D{w}{x}
+    \pause
+    \;=\; \D{}{x}\left(x + 2y + z^2\right)
+    \pause
+    \;=\; 1
+  \]
+
+  \[
+    \pause
+    \D{w}{y}
+    \pause
+    \;=\; \D{}{y}\left(x + 2y + z^2\right)
+    \pause
+    \;=\; 2
+  \]
+
+  \[
+    \pause
+    \D{w}{z}
+    \pause
+    \;=\; \D{}{z}\left(x + 2y + z^2\right)
+    \pause
+    \;=\; 2z
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.4\linewidth}
+  \[
+    \D{x}{r}
+    \pause
+    \;=\; \D{}{r}\left(\frac{r}{s}\right)
+    \pause
+    \;=\; \frac{1}{s}
+  \]
+
+  \[
+    \pause
+    \D{y}{r}
+    \pause
+    \;=\; \D{}{r}\left(r^2 + \ln(s)\right)
+    \pause
+    \;=\; 2r
+  \]
+
+  \[
+    \pause
+    \D{z}{r}
+    \pause
+    \;=\; \D{}{r}\left(2r\right)
+    \pause
+    \;=\; 2
+  \]
+\column{0.6\linewidth}
+  \[
+    \pause
+    \D{x}{s}
+    \pause
+    \;=\; \D{}{s}\left(\frac{r}{s}\right)
+    \pause
+    \;=\; \D{}{s}\left(rs^{-1}\right)
+    \pause
+    \;=\; -\frac{r}{s^2}
+  \]
+
+  \[
+    \pause
+    \D{y}{s}
+    \pause
+    \;=\; \D{}{s}\left(r^2 + \ln(s)\right)
+    \pause
+    \;=\; \frac{1}{s}
+  \]
+
+  \[
+    \pause
+    \D{z}{s}
+    \pause
+    \;=\; \D{}{s}\left(2r\right)
+    \pause
+    \;=\; 0
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+    \begin{align*}
+        \onslide<+->{\D{w}{r}}
+        \onslide<+->{& = \D{w}{x}\D{x}{r} + \D{w}{y}\D{y}{r} + \D{w}{z}\D{z}{r}  \\}
+        \onslide<+->{& = 1\D{x}{r} + 2\D{y}{r} + 2z\D{z}{r}  \\}
+        \onslide<+->{& = 1\frac{1}{s} + 2(2r) + 2z2          \\}
+        \onslide<+->{& = \frac{1}{s} + 4r + 4z               \\}
+        \onslide<+->{& = \frac{1}{s} + 4r + 4(2r)            \\}
+        \onslide<+->{& = \frac{1}{s} + 12r }
+    \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+    \begin{align*}
+        \onslide<+->{\D{w}{s}}
+        \onslide<+->{& = \D{w}{x}\D{x}{s} + \D{w}{y}\D{y}{s} + \D{w}{z}\D{z}{s}   \\}
+        \onslide<+->{& = 1\D{x}{s} + 2\D{y}{s} + 2z\D{z}{s}                       \\}
+        \onslide<+->{& = 1\left(\frac{-r}{s^2}\right) + 2\frac{1}{s} + 2z\times 0 \\}
+        \onslide<+->{& = -\frac{r}{s^2} + \frac{2}{s}}
+    \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

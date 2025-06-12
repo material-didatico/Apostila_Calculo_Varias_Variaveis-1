@@ -1,0 +1,27 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dada a equação \; \(x^2y + y^2z + z^2x = 1\) \;
+  encontre \; \(\D{z}{x}\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Derivando ambos os lados por $x$,
+    tratando $z$ como função \(z=z(x, y)\)}
+\begin{columns}
+\column{0.6\linewidth}
+  \begin{align*}
+  \onslide<+->{x^2y + y^2z + z^2x                            & = 1          \\}
+  \onslide<+->{\D{}{x}\left(x^2y + y^2z + z^2x\right)        & = \D{1}{x}   \\}
+  \onslide<+->{\D{}{x}(x^2y) + \D{}{x}(y^2z) + \D{}{x}(z^2x) & = 0          \\}
+  \onslide<+->{2xy + y^2\D{z}{x} + 2zx\D{z}{x} + z^2         & = 0          }
+\end{align*}
+\column{0.4\linewidth}
+  \begin{align*}
+  \onslide<+->{\D{z}{x}\left(y^2 + 2zx\right) & = -2xy - z^2           \\[2mm]}
+  \onslide<+->{\D{z}{x}                       & = -\frac{2xy + z^2}{y^2 + 2zx}}
+\end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

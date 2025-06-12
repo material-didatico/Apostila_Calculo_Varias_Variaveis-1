@@ -1,0 +1,28 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Use a definição para calcular a derivada de \(f(x, y) = x^2 + xy\) \\
+  no ponto \((1, 2)\) na direção
+  \(
+    u = 2\veci + 3\vecj
+  \)
+
+  \vspace{2\baselineskip}
+  (Para simplificar os cálculos, ignore o fato desse vetor não ser unitário)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{D_u f(1, 2)}
+    \onslide<+->{& = \lim_{h\to 0} \frac{f(x_0+hu_1, y_0+hu_2)-f(x_0, y_0)}{h} \\}
+    \onslide<+->{& = \lim_{h\to 0} \frac{f(1+2h, 2+3h)-f(1, 2)}{h}             \\}
+    \onslide<+->{& = \lim_{h\to 0} \frac{\big[(1+2h)^2 + (1+2h)(2+3h)\big]
+                                         -\left(1^2+1\times 2\right)}{h}       \\}
+    \onslide<+->{& = \lim_{h\to 0} \frac{(1 + 4h + 4h^2) + (2 + 3h + 4h + 6h^2) -3}{h} \\}
+    \onslide<+->{& = \lim_{h\to 0} \frac{11h + 10h^2}{h}                       \\}
+    \onslide<+->{& = \lim_{h\to 0} (11 + 10h)}
+    \onslide<+->{  = 11}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

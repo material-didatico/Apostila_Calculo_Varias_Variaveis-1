@@ -1,0 +1,99 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Dada
+\(
+  u = \ln\left(x^2 + y^2 + z^2\right)
+\)
+com \(x = e^t\), \(y = e^{-t}\), \(z = t^2\)
+
+Encontre \(\frac{du}{dt}\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Pela regra da cadeia
+  \[
+    \frac{du}{dt}
+    = \D{u}{x}\frac{dx}{dt}
+    + \D{u}{y}\frac{dy}{dt}
+    + \D{u}{z}\frac{dz}{dt}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \D{u}{x}
+    \pause
+    \;=\; \ln'\left(x^2 + y^2 + z^2\right) \D{}{x}\left(x^2 + y^2 + z^2\right)
+    \pause
+    \;=\; \frac{2x}{x^2 + y^2 + z^2}
+  \]
+
+  \[
+    \pause
+    \D{u}{y}
+    \pause
+    \;=\; \ln'\left(x^2 + y^2 + z^2\right) \D{}{y}\left(x^2 + y^2 + z^2\right)
+    \pause
+    \;=\; \frac{2y}{x^2 + y^2 + z^2}
+  \]
+
+  \[
+    \pause
+    \D{u}{z}
+    \pause
+    \;=\; \ln'\left(x^2 + y^2 + z^2\right) \D{}{z}\left(x^2 + y^2 + z^2\right)
+    \pause
+    \;=\; \frac{2z}{x^2 + y^2 + z^2}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \frac{dx}{dt}
+    \pause
+    \;=\; \frac{de^t}{dt}
+    \pause
+    \;=\; e^t
+  \]
+
+  \[
+    \pause
+    \frac{dy}{dt}
+    \pause
+    \;=\; \frac{de^{-t}}{dt}
+    \pause
+    \;=\; -e^{-t}
+  \]
+
+  \[
+    \pause
+    \frac{dz}{dt}
+    \pause
+    \;=\; \frac{dt^2}{dt}
+    \pause
+    \;=\; 2t
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{\frac{du}{dt}}
+    \onslide<+->{& = \D{u}{x}\frac{dx}{dt} + \D{u}{y}\frac{dy}{dt} + \D{u}{z}\frac{dz}{dt}  \\}
+    \onslide<+->{& = \frac{2x}{x^2 + y^2 + z^2}\frac{dx}{dt}
+      + \frac{2y}{x^2 + y^2 + z^2}\frac{dy}{dt}
+      + \frac{2z}{x^2 + y^2 + z^2}\frac{dz}{dt}  \\}
+    \onslide<+->{& = \frac{2}{x^2 + y^2 + z^2}\left(
+          x\frac{dx}{dt}
+        + y\frac{dy}{dt}
+        + z\frac{dz}{dt}
+        \right) \\}
+    \onslide<+->{& = \frac{2}{x^2 + y^2 + z^2}\left(xe^t -ye^{-t} + 2zt \right) \\}
+    \onslide<+->{& = \frac{2e^{2t} -2e^{-2t} + 4t^3}{x^2 + y^2 + z^2}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

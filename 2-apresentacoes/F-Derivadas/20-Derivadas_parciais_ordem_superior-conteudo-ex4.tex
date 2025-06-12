@@ -1,0 +1,39 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre a derivada
+  \(
+    f_{yxyz}(x, y, z)
+  \)
+  da função
+  \(
+    f(x, y, z) = 1 - 2xy^2z + x^2y
+  \)
+
+  \pause
+  \vspace{\baselineskip}
+  Queremos calcular
+  \[
+    f_{yxyz}(x, y, z)
+    = \big(\,\big(\,\big(\,f_y(x, y, z)\,\big)\!\,_x\,\big)\!\,_y\,\big)\!\,_z
+    = \D{}{z}\left(\D{}{y}\left(\D{}{x}\left(\D{f}{y}\right)\right)\right)
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{solução}
+\begin{align*}
+  \onslide<+->{f(x, y, z)        & = 1 - 2xy^2z + x^2y} \\
+  \onslide<+->{f_y(x, y, z)      & = \D{}{y}\left(1 - 2xy^2z + x^2y\right)}
+  \onslide<+->{           = 0 -2x2yz + x^2}
+  \onslide<+->{           = -4xyz + x^2 \\}
+  \onslide<+->{f_{yx}(x, y, z)   & = \D{}{x}\left(-4xyz + x^2\right)}
+  \onslide<+->{           = -4yz + 2x \\}
+  \onslide<+->{f_{yxy}(x, y, z)  & = \D{}{y}\left(-4yz + 2x\right)}
+  \onslide<+->{           = -4z + 0}
+  \onslide<+->{           = -4z \\}
+  \onslide<+->{f_{yxyz}(x, y, z) & = \D{}{z}\left(-4z\right)}
+  \onslide<+->{           = -4}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

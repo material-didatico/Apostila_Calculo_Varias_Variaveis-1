@@ -48,9 +48,9 @@
   Aplicação direta das propriedades de limites
 \end{frame}
 
+% 01
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Exemplos de funções contínuas no plano
   \begin{enumerate}[<+->]
     \item \(f(x, y) = x\)
@@ -59,11 +59,11 @@
     \item \(f(x, y) = x^n\) para $n$ inteiro positivo
     \item \(f(x, y) = y^n\) para $n$ inteiro positivo
   \end{enumerate}
-\end{frame}
+\end{question}
 
+% 02
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Mostre que
   \[
     f(x, y) =
@@ -73,10 +73,10 @@
     \end{cases}
   \]
   é contínua em todos os pontos, exceto na origem
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   Consideramos primeiro o caso \((x, y) \neq (0, 0)\)
 
   \pause
@@ -90,10 +90,10 @@
   então \(\frac{2xy}{x^2+y^2}\)
   \pause
   é contínua para todo \((x, y) \neq (0, 0)\)
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   Em \((x, y) = (0, 0)\) temos que aplicar a definição
 
   \pause
@@ -107,8 +107,8 @@
 
   \pause
   \vspace{\baselineskip}
-  A condição 1 vale pois \(f(0, 0) = 0\)
-\end{frame}
+  A condição 1 vale, pois \(f(0, 0) = 0\)
+\end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Exemplo \theexemplo}
@@ -159,18 +159,18 @@
   é contínua em $(x_0, y_0)$
 \end{frame}
 
+% 03
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Mostre que
   \[
     f(x, y) = \cos\left(\frac{xy}{x^2+1}\right)
   \]
   é contínua em todos os pontos do plano
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   Primeiro reconhecemos que temos a composição de funções $f=g\circ h$,
   \pause
   com
@@ -184,10 +184,10 @@
   \[
     f(x, y) = g\big(h(x, y)\big) = \cos\left(\frac{xy}{x^2+1}\right)
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   $h$ é uma combinação algébrica de funções contínuas e nunca teremos
   uma divisão por zero, portanto, $h$ é contínua em todo o plano
 
@@ -199,7 +199,7 @@
   \pause
   \vspace{\baselineskip}
   Pelo teorema da continuidade da composta, $f$ é contínua em todo o plano
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
 \section{Valor Extremo de Função Contínua}

@@ -165,8 +165,7 @@
 
 % 01
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
 \begin{columns}[t]
 \column{0.5\linewidth}
   Calcule os limites
@@ -191,12 +190,11 @@
     \item \(\lim_{(x, y)\to(a, b)} xy = ab \)
   \end{enumerate}
 \end{columns}
-\end{frame}
+\end{question}
 
 % 02
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Calcule o limite
   \(
     \lim_{(x, y)\to(0, 1)} \frac{x-xy+3}{x^2y +5xy - y^3}
@@ -208,10 +206,10 @@
   Assumindo que todos os limites necessários para aplicar as propriedades existam
 
   (Isso pode não ser verdade)
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
 \begin{align*}
   \onslide<+->{\lim_{(x, y)\to(0, 1)} \frac{x-xy+3}{x^2y +5xy - y^3}}
   \onslide<+->{& = \frac{\displaystyle \lim_{(x, y)\to(0, 1)}(x-xy+3)}
@@ -226,12 +224,11 @@
   \onslide<+->{& = \frac{3}{-1}}
   \onslide<+->{= -3}
 \end{align*}
-\end{frame}
+\end{resolution}
 
 % 03
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Calcule o limite
   \(
     \lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
@@ -243,10 +240,10 @@
   Assumindo que todos os limites necessários para aplicar as propriedades existam
 
   (Isso pode não ser verdade)
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}[t]{Exemplo \theexemplo}
+\begin{resolution}{Solução}
 \begin{align*}
   \onslide<+->{\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
   & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
@@ -258,10 +255,10 @@
   \onslide<+->{\;=\; 1}
 \end{align*}
 \onslide<+->{\textcolor{red}{\textbf{Não existe divisão por zero !!!}}}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}[t]{Exemplo \theexemplo}
+\begin{resolution}{Solução}
 \begin{align*}
   \,\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
   & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
@@ -273,10 +270,10 @@
   \qquad\nexists
 \end{align*}
 \emph{Então o limite não existe?}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}[t]{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   \begin{align*}
     \,\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
     & \color{red}
@@ -289,10 +286,10 @@
   \end{align*}
   Não podemos aplicar a propriedade do quociente \\  \pause
   \emph{Precisamos remover a indeterminação}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}[t]{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   \onslide<+->{Ao calcular o limite consideramos apenas os pontos dentro do domínio da função}
 
   \onslide<+->{Para \(x\neq y\)}
@@ -304,10 +301,10 @@
     \onslide<+->{& = \frac{x\left(\emph{x-y}\right)\left(\sqrt{x}+\sqrt{y}\right)}{\emph{x-y}} \\[1mm]}
     \onslide<+->{& = x\left(\sqrt{x}+\sqrt{y}\right)}
   \end{align*}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}[t]{Exemplo \theexemplo}
+\begin{resolution}{Solução}
 \onslide<+->{Calculando o limite}
 
 \begin{align*}
@@ -320,12 +317,11 @@
   \onslide<+->{& = 0\left(\sqrt{0}+\sqrt{0}\right) \\[2mm]}
   \onslide<+->{& = 0}
 \end{align*}
-\end{frame}
+\end{resolution}
 
 % 04
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Analise o limite de \(f(x, y) = \frac{y}{x}\)
   quando \((x, y)\)  se aproxima de \((0, 0)\)
 
@@ -341,10 +337,10 @@
 
   \pause
   Não existe manipulação que remova a indeterminação
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   Analisando $f$ sobre a reta \(y=x\)
   \pause
   \[
@@ -376,10 +372,10 @@
 
   \pause
   O que vai acontecer com outas retas da forma \(y=ax\)?
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   Para qualquer $\delta>0$
   \pause
   sempre vai existir um
@@ -395,7 +391,7 @@
   \pause
   \vspace{\baselineskip}
   \emph{O limite não existe}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
 \section{Inexistência do Limite}
@@ -421,8 +417,7 @@
 
 % 05
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Verifique se a função
   \(
   f(x, y) = \frac{2x^2y}{x^4+y^2}
@@ -432,10 +427,10 @@
   \pause
   \vspace{\baselineskip}
   O limite na origem leva a uma indeterminação do tipo $\sfrac{0}{0}$
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   Fazendo \(y=mx\), para \(m\neq 0\) e \(x\neq 0\),
   \pause
   temos
@@ -476,10 +471,10 @@
     \qquad
     \text{\textcolor{red}{\textbf{Falso!}}}
   \)
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   Fazendo \(y=kx^2\), para \(k\neq 0\) e \(x\neq 0\),
   \pause
   temos
@@ -500,7 +495,7 @@
 
   \pause
   Portanto, o limite não existe
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}

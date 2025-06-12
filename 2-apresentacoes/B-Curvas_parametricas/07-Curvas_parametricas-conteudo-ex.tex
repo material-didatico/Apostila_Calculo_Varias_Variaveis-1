@@ -1,0 +1,306 @@
+%------------------------------------------------------------------------------%
+
+% 01
+%------------------------------------------------------------------------------%
+\begin{question}
+  Trace a curva definida pelas equações paramétricas
+  \[
+    x = t^2       \qquad
+    y = t + 1     \qquad
+    -\infty < t < \infty
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.3\linewidth}
+  Note que
+
+  \pause
+  \vspace{\baselineskip}
+  $y$ varia com $t$ e
+
+  \pause
+  \vspace{\baselineskip}
+  $x$ varia com $t^2$
+
+\column{0.5\linewidth}
+  \pause
+  Calculando alguns pontos
+  \[
+    \begin{array}{r<{\qquad}r<{\quad}r}
+      \hline
+      t  & x & y  \\ \hline
+      -3 & 9 & -2 \\
+      -2 & 4 & -1 \\
+      -1 & 1 & 0  \\
+      0  & 0 & 1  \\
+      1  & 1 & 2  \\
+      2  & 4 & 3  \\
+      3  & 9 & 4  \\ \hline
+    \end{array}
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \centering
+  \includegraphics[height=0.6\textheight]{exemplo_curvas_1}
+\end{resolution}
+
+
+
+% 02
+%------------------------------------------------------------------------------%
+\begin{question}
+  Identifique geometricamente a curva do Exemplo 1 eliminando o parâmetro $t$
+  \[
+    x = t^2        \qquad
+    y = t + 1      \qquad
+    -\infty < t < \infty
+  \]
+
+  \pause
+  Transformar a curva paramétrica em $t$ em uma equação envolvendo $x$ e $y$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.3\linewidth}
+  \onslide<+->{Eliminar $t$ em
+  \begin{align*}
+    x & = t^2   \\
+    y & = t + 1
+  \end{align*}}
+
+\column{0.3\linewidth}
+  \begin{align*}
+    \onslide<+->{y & = t + 1 \\}
+    \onslide<+->{t & = y - 1}
+  \end{align*}
+
+\column{0.3\linewidth}
+  \begin{align*}
+    \onslide<+->{x & = t^2} \\
+    \onslide<+->{  & = (y - 1)^2} \\
+    \onslide<+->{  & = y^2 - 2y + 1}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+
+
+% 03
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se os pontos \((2, 3)\) e \((4, -1)\) pertencem à curva paramétrica
+  \[
+    x = t^2       \qquad
+    y = t + 1     \qquad
+    -\infty < t < \infty
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.4\linewidth}
+  \onslide<+->{Testando o ponto \((2, 3)\)}
+  \begin{align*}
+    \onslide<+->{y & = 3} \\[2mm]
+    \onslide<+->{t & + 1 = 3}         \\[2mm]
+    \onslide<+->{t & = 3 -1}
+    \onslide<+->{ = 2}      \\[2mm]
+    \onslide<+->{x & = t^2}
+    \onslide<+->{ = 2^2}
+    \onslide<+->{ = 4}
+    \onslide<+->{\neq 2}
+  \end{align*}
+  \onslide<+->{O ponto não pertence a curva}
+
+\column{0.4\linewidth}
+\onslide<+->{Testando o ponto \((4, -1)\)}
+\begin{align*}
+  \onslide<+->{y & = -1}               \\[2mm]
+  \onslide<+->{t & + 1 = -1}           \\[2mm]
+  \onslide<+->{t & = -1 -1}
+  \onslide<+->{ = -2}       \\[2mm]
+  \onslide<+->{x & = t^2}
+  \onslide<+->{ = (-2)^2}
+  \onslide<+->{ = 4}
+\end{align*}
+\onslide<+->{O ponto pertence a curva}
+\end{columns}
+\end{resolution}
+
+
+
+% 04
+%------------------------------------------------------------------------------%
+\begin{question}
+  Represente graficamente a curva paramétrica
+  \[
+    x = \cos(t)         \qquad
+    y = \sin(t)         \qquad
+    0 \leq t \leq 2\pi
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Sabemos que essa é a parametrização do circulo trigonométrico
+
+  \pause
+  Calculando alguns pontos
+  \[
+  \renewcommand*{\arraystretch}{1.7}
+  \begin{array}{c<{\quad}r<{\quad}r}
+    \hline
+    t               & x  & y  \\ \hline
+    0               & 1  & 0  \\
+    \dfrac{\pi}{2}  & 0  & 1  \\
+    \pi             & -1 & 0  \\
+    \dfrac{3\pi}{2} & 0  & -1 \\
+    2\pi            & 1  & 0  \\ \hline
+  \end{array}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \centering
+  \includegraphics[height=0.6\textheight]{exemplo_curvas_3}
+\end{resolution}
+
+
+
+% 05
+%------------------------------------------------------------------------------%
+\begin{question}
+  Esboce a trajetória definida pela curva paramétrica
+  \[
+  \begin{cases}
+    x = t \cos(t\pi) \\
+    y = t \sin(t\pi)
+  \end{cases}
+  \]
+  \(0\leq t\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Similar a parametrização do circulo trigonométrico
+
+  \pause
+  \[
+  \renewcommand*{\arraystretch}{1.7}
+  \begin{array}{c<{\quad}c<{\quad}c<{\quad}c<{\quad}c<{\quad}c}
+    \hline
+    t            & t\pi            & \cos(t\pi) & \sin(t\pi) & x  & y             \\ \hline
+    0            & 0               & 1          & 0          & 0  & 0             \\
+    \dfrac{1}{2} & \dfrac{\pi}{2}  & 0          & 1          & 0  & \dfrac{1}{2}  \\
+    1            & \pi             & -1         & 0          & -1 & 0             \\
+    \dfrac{3}{2} & \dfrac{3\pi}{2} & 0          & -1         & 0  & -\dfrac{3}{2} \\
+    2            & 2\pi            & 1          & 0          & 2  & 0             \\ \hline
+  \end{array}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \centering
+  \input{grafico_parametricas}
+\end{resolution}
+
+
+
+% 06
+%------------------------------------------------------------------------------%
+\begin{question}
+  A posição de uma partícula se movendo no plano $xy$ é dada por
+  \[
+    x = \sqrt{t}  \qquad
+    y = t         \qquad
+    t \geq 0
+  \]
+
+  Esboce sua trajetória
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.4\linewidth}
+  Eliminando $t$ em
+  \begin{align*}
+    x & = \sqrt{t} \\
+    y & = t
+  \end{align*}
+  temos
+  \[
+    x
+    = \sqrt{t}
+    = \sqrt{y}
+  \]
+
+\column{0.4\linewidth}
+  Elevando os dois lados ao quadrado
+  \begin{align*}
+    x   & = \sqrt{y}                \\
+    x^2 & = \left(\sqrt{y}\right)^2
+          = \abs{y}
+          = y                       \\
+    y   & = x^2
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \centering
+  \includegraphics[height=0.8\textheight]{exemplo_curvas_4}
+\end{resolution}
+
+
+
+% 07
+%------------------------------------------------------------------------------%
+\begin{question}
+  Construa uma curva paramétrica cuja trajetória seja uma circunferência\\
+  de raio 2 centrada em $(3, 4)$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.3\linewidth}
+  Sabemos que
+  \begin{align*}
+    x & = \cos(t) \\
+    y & = \sin(t) \\
+    0 & \leq t < 2\pi
+  \end{align*}
+  parametriza uma circunferência de raio 1 centrada em \((0, 0)\)
+\column{0.3\linewidth}
+  \pause
+  Para que o raio seja 2 multiplicamos as funções por 2
+  \begin{align*}
+    x & = 2\cos(t) \\
+    y & = 2\sin(t) \\
+    0 & \leq t < 2\pi
+  \end{align*}
+\column{0.3\linewidth}
+  \pause
+  Para mover o centro para $(3, 4)$ somamos esses valores
+  \begin{align*}
+    x & = 2\cos(t) + 3\\
+    y & = 2\sin(t) + 4\\
+    0 & \leq t < 2\pi
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

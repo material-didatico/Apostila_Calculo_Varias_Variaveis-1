@@ -1,0 +1,43 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Calcule \(\frac{dy}{dx}\) se \(y^2-x^2-\sin(xy) = 0\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \frac{dy}{dx} = -\frac{F_x}{F_y}
+  \]
+  \pause
+  \[
+    F_x
+    \pause
+    = \D{}{x}\big(y^2-x^2-\sin(xy)\big)
+    \pause
+    = 0 - 2x - y\cos(xy)
+    \pause
+    = - 2x - y\cos(xy)
+  \]
+  \pause
+  \[
+    F_y
+    \pause
+    = \D{}{y}\big(y^2-x^2-\sin(xy)\big)
+    \pause
+    = 2y - 0 - x\cos(xy)
+    \pause
+    = 2y - x\cos(xy)
+  \]
+  \pause
+  \[
+    \frac{dy}{dx}
+    \pause
+    = -\frac{F_x}{F_y}
+    \pause
+    = -\frac{- 2x - y\cos(xy)}{2y - x\cos(xy)}
+    \pause
+    = \frac{2x + y\cos(xy)}{2y - x\cos(xy)}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

@@ -207,8 +207,7 @@
 
 % 01
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Descreva o domínio da função \(f(x, y) = \sqrt{y-x^2}\)
 
   \pause
@@ -221,11 +220,11 @@
     \item A região é aberta ou fechada?
     \item A região é limitada?
   \end{enumerate}
-\end{frame}
+\end{question}
 
 % 01
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   \onslide<+->{Condição que deve ser satisfeita para um ponto estar no domínio}
   \begin{align*}
     \onslide<+->{y-x^2 & \geq 0 \\}
@@ -237,13 +236,16 @@
   \[
     D_f = \left\{ (x, y)\in\R^2 \st y \geq x^2\right\}
   \]}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\framedgraphic{Exemplo \theexemplo -- Representação Gráfica}{dominio_funcao}{}
+\begin{resolution}{Representação Gráfica}
+  \centering
+  \includegraphics[height=0.8\textheight]{dominio_funcao}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   \begin{enumerate}
     \item \onslide<+->{Interior da região} \\
     \onslide<+->{
@@ -262,20 +264,19 @@
     \onslide<+->{Ilimitada,}
     \onslide<+->{pois dado qualquer disco sempre teremos um ponto fora dele}
   \end{enumerate}
-\end{frame}
+\end{resolution}
 
 % 02
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Encontre e esboce o domínio da função
   \[
     f(x, y) = \ln\left(x^2 + y^2 - 4\right)
   \]
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   \onslide<+->{Condição}
   \begin{align*}
     \onslide<+->{x^2 + y^2 - 4 & > 0 \\}
@@ -289,20 +290,19 @@
   \[
     D_f = \left\{ (x, y)\in\R^2 \st x^2 + y^2 > 4\right\}
   \]}
-\end{frame}
+\end{resolution}
 
 % 03
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Encontre e esboce o domínio da função
   \(
     f(x, y) = \frac{\sqrt{x^2-4\,}}{\;\ln(y-1)\;}
   \)
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   Condições para avaliar a função
   \(f(x, y) = \frac{\sqrt{x^2-4\,}}{\;\ln(y-1)\;}\)
 
@@ -312,10 +312,10 @@
     \item \(\ln(y-1) \neq 0\)
     \item \(y-1 > 0\)
   \end{enumerate}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
 \begin{columns}[t]
 \column{0.3\linewidth}
   \onslide<+->{Condição 1}
@@ -339,10 +339,10 @@
     \onslide<+->{y   & > 1}
   \end{align*}
 \end{columns}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   Domínio
   \[
     D_f = \left\{ (x, y)\in\R^2 \st
@@ -351,7 +351,7 @@
       y \neq 2
     \right\}
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}

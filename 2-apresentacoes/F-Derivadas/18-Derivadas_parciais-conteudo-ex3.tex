@@ -1,0 +1,34 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre as funções $f_x$ e $f_y$ sendo que
+  \(
+    f(x, y) = \frac{2y}{y+\cos(x)}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+  \onslide<+->{\D{f}{x}}
+  \onslide<+->{& = 2\;\D{}{x} \left(\frac{y}{y+\cos(x)}\right)} \\
+  \onslide<+->{& = 2\;\dfrac{\displaystyle\;\D{y}{x}\left(y+\cos(x)\right) - y \D{}{x}\left(y+\cos(x)\right)\;}
+               {\left(y+\cos(x)\right)^2}} \\
+  \onslide<+->{& = 2\;\dfrac{\; 0 - y \left(0-\sin(x)\right)\;}
+               {\left(y+\cos(x)\right)^2}} \\
+  \onslide<+->{& = \frac{2y \sin(x)\;}{\left(y+\cos(x)\right)^2}}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+  \onslide<+->{\D{f}{y}}
+  \onslide<+->{& = 2\;\D{}{y} \left(\frac{y}{y+\cos(x)}\right)} \\
+  \onslide<+->{& = 2\;\dfrac{\displaystyle\;\D{y}{y}\left(y+\cos(x)\right) - y \D{}{y}\left(y+\cos(x)\right)\;}
+                            {\left(y+\cos(x)\right)^2}} \\
+  \onslide<+->{& = 2\;\dfrac{\;\left(y +\cos(x)\right) - y(1 + 0)\;}
+                            {\left(y+\cos(x)\right)^2}} \\
+  \onslide<+->{& = \frac{2\cos(x)}{\,\left(y+\cos(x)\right)^2\,}}
+\end{align*}
+\end{resolution}
+

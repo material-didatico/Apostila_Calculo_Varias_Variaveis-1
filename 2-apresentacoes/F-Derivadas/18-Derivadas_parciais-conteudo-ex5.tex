@@ -1,0 +1,33 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Calcule as derivadas parciais de primeira ordem da função
+  \[
+    f(x,y) = \sin\left(x^2y\right) + e^{xy^2}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+  \onslide<+->{\D{f}{x}}
+  \onslide<+->{& = \D{}{x} \left(\sin\left(x^2y\right) + e^{xy^2}\right) \\}
+  \onslide<+->{& = \D{}{x} \left(\sin\left(x^2y\right)\right) + \D{}{x} \left(e^{xy^2}\right) \\}
+  \onslide<+->{& = \cos\left(x^2y\right) \D{}{x}\left(x^2y\right) + e^{xy^2}  \D{}{x}\left(xy^2\right) \\}
+  \onslide<+->{& = \cos\left(x^2y\right) 2xy + e^{xy^2} y^2 \\}
+  \onslide<+->{& = 2xy\cos\left(x^2y\right) + y^2e^{xy^2}}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+  \onslide<+->{\D{f}{y}}
+  \onslide<+->{& = \D{}{y} \left(\sin\left(x^2y\right) + e^{xy^2}\right) \\}
+  \onslide<+->{& = \D{}{y} \left(\sin\left(x^2y\right)\right) + \D{}{y} \left(e^{xy^2}\right) \\}
+  \onslide<+->{& = \cos\left(x^2y\right) \D{}{y}\left(x^2y\right) + e^{xy^2}  \D{}{y}\left(xy^2\right) \\}
+  \onslide<+->{& = \cos\left(x^2y\right) x^2 + e^{xy^2} 2xy \\}
+  \onslide<+->{& = x^2\cos\left(x^2y\right) + 2xy e^{xy^2}}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

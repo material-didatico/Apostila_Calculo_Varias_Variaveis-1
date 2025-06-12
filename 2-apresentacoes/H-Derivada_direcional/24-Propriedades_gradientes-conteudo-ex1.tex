@@ -1,0 +1,113 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Analisando a função \(f(x, y) = x^2 + \frac{y^2}{2}\)
+  no ponto \((1, 1)\)
+
+  Encontre as direções nas quais:
+
+  a)\; $f$ cresce mais rapidamente
+
+  b)\; $f$ decresce mais rapidamente
+
+  c)\; $f$ não varia
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Calculando as derivadas parciais
+
+  \[
+    \pause
+    \D{f}{x}
+    \pause
+    \:=\; \D{}{x}\left(x^2 + \frac{y^2}{2}\right)
+    \pause
+    \:=\; 2x
+  \]
+
+  \[
+    \pause
+    \D{f}{y}
+    \pause
+    \:=\; \D{}{y}\left(x^2 + \frac{y^2}{2}\right)
+    \pause
+    \:=\; y
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Montando o gradiente
+  \pause
+  \[
+    \nabla f
+    \pause
+    = \Vetor{\D{f}{x}}{\D{f}{y}}
+    \pause
+    = \Vetor{\D{}{x}\left(x^2 + \frac{y^2}{2}\right)}
+            {\D{}{y}\left(x^2 + \frac{y^2}{2}\right)}
+    \pause
+    = \vetor{2x}{y}
+  \]
+  \pause
+  Avaliando o gradiente no ponto solicitado
+  \[
+    \pause
+    \nabla f(1, 1)
+    \pause
+    \;=\; \vetor{2x}{y}\evalat{(1, 1)}{}
+    \pause
+    \;=\; \vetor{2}{1}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  a)\; $f$ cresce mais rapidamente
+  \pause
+  na direção do gradiente
+  \[
+    \pause
+    v_M
+    \pause
+    = \nabla f(1, 1)
+    \pause
+    = \vetor{2}{1}
+  \]
+
+  \pause
+  b)\; $f$ decresce mais rapidamente
+  \pause
+  na direção oposta ao gradiente
+  \[
+    \pause
+    v_m
+    \pause
+    = -\nabla f (1, 1)
+    \pause
+    = \vetor{-2}{-1}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{c)\; $f$ não varia}
+  \onslide<+->{na direção, $v_o$, ortogonal ao gradiente}
+  \begin{align*}
+    \onslide<+->{\nabla f(1, 1) \cdot v_o            & = 0  \\}
+    \onslide<+->{\vetor{2}{1} \cdot \vetor{v_1}{v_2} & = 0  \\}
+    \onslide<+->{2v_1 + v_2                          & = 0  \\}
+    \onslide<+->{v_2                                 & = -2v_1}
+  \end{align*}
+
+  \onslide<+->{As direções são
+  \(
+    v_o = \vetor{1}{-2}
+  \)}
+  \onslide<+->{e
+  \(
+    v_o = \vetor{-1}{2}
+  \)}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

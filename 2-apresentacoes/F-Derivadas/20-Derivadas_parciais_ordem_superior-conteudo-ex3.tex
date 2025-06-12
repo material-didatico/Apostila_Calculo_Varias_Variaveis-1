@@ -1,0 +1,73 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre
+  \(\;
+    \DM{w}{x}{y}
+  \;\)
+  se
+  \(\;
+    w = xy + \frac{e^y}{y^2+1}
+  \;\)
+
+  Assumindo que as derivadas são contínuas
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{solução}
+  \onslide<+->{Queremos calcular
+  \[
+    \DM{w}{x}{y} = \D{}{x}\left(\D{w}{y}\right)
+  \]}
+  \onslide<+->{Calculando a primeira derivada}
+  \begin{align*}
+    \onslide<+->{\D{w}{y}
+    & = \D{}{y}\left(xy + \frac{e^y}{y^2+1}\right) \\}
+    \onslide<+->{& = \D{}{y}\left(xy\right) + \D{}{y}\left(\frac{e^y}{y^2+1}\right)}
+  \end{align*}
+
+  \onslide<+->{Precisamos calcular a derivada de uma divisão}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{solução}
+  Usando a hipótese de que as derivadas são \emph{contínuas}
+
+  \pause
+  podemos usar o teorema
+  \[
+    \DM{w}{x}{y} = \DM{w}{y}{x}
+  \]
+
+  \pause
+  Temos então que calcular
+  \[
+    \DM{w}{x}{y} = \D{}{y}\left(\D{w}{x}\right)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{solução}
+  \onslide<+->{Calculando a derivada primeira}
+  \begin{align*}
+    \onslide<+->{\D{w}{x}
+    & = \D{}{x}\left(xy + \frac{e^y}{y^2+1}\right) \\}
+    \onslide<+->{& = \D{}{x}\left(xy\right) + \D{}{x}\left(\frac{e^y}{y^2+1}\right) \\}
+    \onslide<+->{& = y \D{x}{x} + 0 \\}
+    \onslide<+->{& = y}
+    \onslide<+->{& \text{(contínua no plano)}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{solução}
+  \onslide<+->{Calculando a derivada segunda}
+  \begin{align*}
+    \onslide<+->{\DM{w}{x}{y}
+    & = \D{}{y}\left(\D{w}{x}\right) \\}
+    \onslide<+->{& = \D{}{y}\left(y\right) \\}
+    \onslide<+->{& = 1}
+    \onslide<+->{& \text{(contínua no plano)}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

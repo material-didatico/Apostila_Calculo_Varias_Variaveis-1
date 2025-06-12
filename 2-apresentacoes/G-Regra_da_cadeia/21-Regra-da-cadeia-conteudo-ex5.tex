@@ -1,0 +1,87 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Seja \(w = e^{xyz}\) onde \(x = r^2 + 4s\), \(y = 2r - 3s\), \(z = rs\)
+
+Encontre \(\D{w}{r}\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Pela regra da cadeia
+  \[
+      \D{w}{r}
+    = \D{w}{x}\D{x}{r}
+    + \D{w}{y}\D{y}{r}
+    + \D{w}{z}\D{z}{r}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.5\linewidth}
+  \[
+    \D{w}{x}
+    \pause
+    \;=\; \D{}{x} e^{xyz}
+    \pause
+    \;=\; yz e^{xyz}
+  \]
+  \[
+    \pause
+    \D{w}{y}
+    \pause
+    \;=\; \D{}{y} e^{xyz}
+    \pause
+    \;=\; xz e^{xyz}
+  \]
+  \[
+    \pause
+    \D{w}{z}
+    \pause
+    \;=\; \D{}{z} e^{xyz}
+    \pause
+    \;=\; xy e^{xyz}
+  \]
+\column{0.5\linewidth}
+  \[
+    \pause
+    \D{x}{r}
+    \pause
+    \;=\; \D{}{r}\left(r^2 + 4s\right)
+    \pause
+    \;=\; 2r
+  \]
+  \[
+    \pause
+    \D{y}{r}
+    \pause
+    \;=\; \D{}{r}\left(2r - 3s\right)
+    \pause
+    \;=\; 2
+  \]
+  \[
+    \pause
+    \D{z}{r}
+    \pause
+    \;=\; \D{}{r}\left(rs\right)
+    \pause
+    \;=\; s
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+  \onslide<+->{\D{w}{r}}
+  \onslide<+->{& = \D{w}{x}\D{x}{r} + \D{w}{y}\D{y}{r} + \D{w}{z}\D{z}{r}       \\}
+  \onslide<+->{& = yz e^{xyz}\D{x}{r} + xz e^{xyz}\D{y}{r} + xy e^{xyz}\D{z}{r} \\}
+  \onslide<+->{& = e^{xyz}\left(yz \D{x}{r} + xz \D{y}{r} + xy \D{z}{r}\right)  \\}
+  \onslide<+->{& = e^{xyz}\left(yz2r + xz2 + xys \right)                        \\}
+  \onslide<+->{& = e^{xyz}\left[2(2r - 3s)(rs)r + 2(r^2 + 4s)(rs) + (r^2 + 4s)(2r - 3s)s \right] \\}
+  \onslide<+->{& = e^{xyz}\left[2r^2s(2r - 3s) + 2rs(r^2 + 4s) + s(r^2 + 4s)(2r - 3s) \right]}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

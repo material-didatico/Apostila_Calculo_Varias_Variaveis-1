@@ -1,0 +1,98 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre a derivada de \(f(x, y) = xe^y + \cos(xy)\)
+  no ponto \((2, 0)\) \\
+  na direção \(v=3\veci-4\vecj\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  O vetor $v$ não é unitário,
+  \pause
+  então precisamos dividi-lo pelo seu
+  comprimento
+  \[
+    \pause
+    u
+    \;=\; \frac{v}{\abs{v}}
+    \pause
+    \;=\; \frac{3\veci-4\vecj}{\sqrt{3^2+4^2}}
+    \pause
+    \;=\; \frac{3\veci-4\vecj}{\sqrt{25}}
+    \pause
+    \;=\; \frac{3}{5}\veci - \frac{4}{5}\vecj
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Calculando as derivadas parciais
+
+  \pause
+  \[
+    \D{f}{x}
+    \pause
+    \;=\;  \D{}{x}\left(xe^y + \cos(xy)\right)
+    \pause
+    \;=\;  e^y - y\sin(xy)
+  \]
+
+  \pause
+  \[
+    \D{f}{x}(2, 0)
+    \pause
+    \;=\;  e^0 - 0\sin(2\times 0)
+    \pause
+    \;=\;  1
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Calculando as derivadas parciais
+
+  \pause
+  \[
+    \D{f}{y}
+    \pause
+    \;=\;  \D{}{y}\left(xe^y + \cos(xy)\right)
+    \pause
+    \;=\;  xe^y - x\sin(xy)
+  \]
+
+  \pause
+  \[
+    \D{f}{y}(2, 0)
+    \pause
+    \;=\;  2e^0 - 2\sin(2\times 0)
+    \pause
+    \;=\;  2
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Calculando a derivada direcional
+
+  \[
+    D_u f(2, 0)
+    \pause
+    \;=\; \nabla f(2, 0) \cdot u
+    \pause
+    \;=\; \vetor{1}{2} \cdot \vetor{\sfrac{3}{5}}{-\sfrac{4}{5}}
+  \]
+
+  \[
+    \hphantom{D_u f(2, 0){}}
+    \pause
+    \;=\; 1 \frac{3}{5} + 2 \frac{-4}{5}
+    \pause
+    \;=\; \frac{3}{5} - \frac{8}{5}
+    \pause
+    \;=\; - \frac{5}{5}
+    \pause
+    \;=\; -1
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

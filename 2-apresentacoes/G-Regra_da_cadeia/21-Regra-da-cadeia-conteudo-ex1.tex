@@ -1,0 +1,86 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+    Calcule a derivada de \(w=xy\) com relação a $t$ ao longo do caminho
+    \[
+        x = \cos(t) \qquad
+        y = \sin(t)
+    \]
+    Qual o valor da derivada em \(t=\frac{\pi}{2}\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Pela regra da cadeia
+  \[
+    \frac{dw}{dt} = \D{w}{x}\frac{dx}{dt} + \D{w}{y}\frac{dy}{dt}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Calculando as derivadas separadamente
+  \[
+    \pause
+    \D{w}{x}
+    \pause
+    \;=\; \D{}{x} (xy)
+    \pause
+    \;=\; y\D{x}{x}
+    \pause
+    \;=\; y
+  \]
+  \[
+    \pause
+    \D{w}{y}
+    \pause
+    \;=\; \D{}{y}(xy)
+    \pause
+    \;=\; x\D{y}{y}
+    \pause
+    \;=\; x
+  \]
+
+  \[
+    \pause
+    \frac{dx}{dt}
+    \pause
+    \;=\; \frac{d}{dt} \cos(t)
+    \pause
+    \;=\; -\sin(t)
+  \]
+  \[
+    \pause
+    \frac{dy}{dt}
+    \pause
+    \;=\; \frac{d}{dt} \sin(t)
+    \pause
+    \;=\; \cos(t)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+    \onslide<+->{\frac{dw}{dt}}
+    \onslide<+->{& = \D{w}{x}\frac{dx}{dt} + \D{w}{y}\frac{dy}{dt} \\}
+    \onslide<+->{& = \D{}{x}(xy)\;\frac{d}{dt}\big(\cos(t)\big)
+               \;+\; \D{}{y}(xy)\;\frac{d}{dt}\big(\sin(t)\big)    \\}
+    \onslide<+->{& = y\big(-\sin(t)\big) + x\big(\cos(t)\big)      \\}
+    \onslide<+->{& = \big(\sin(t)\big)\big(-\sin(t)\big) + \big(\cos(t)\big)\big(\cos(t)\big) \\}
+    \onslide<+->{& = -\sin^2(t) + \cos^2(t) \\}
+    \onslide<+->{& = \cos(2t)}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+    \begin{align*}
+        \onslide<+->{\frac{dw}{dt}\left(\frac{\pi}{2}\right)  }
+        \onslide<+->{& = \cos(2t)\evalat{t=\frac{\pi}{2}}{} \\}
+        \onslide<+->{& = \cos\left(2\frac{\pi}{2}\right)    \\}
+        \onslide<+->{& = \cos(\pi)                          \\}
+        \onslide<+->{& = -1}
+    \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

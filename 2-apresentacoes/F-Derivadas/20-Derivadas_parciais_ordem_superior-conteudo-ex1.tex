@@ -1,0 +1,111 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre as derivadas de segunda ordem da função
+  \[
+    f(x, y) = x\cos(y) + ye^x
+  \]
+
+  \pause
+  \vspace{\baselineskip}
+  Note que $f$ é contínua no plano
+
+  \pause
+  \vspace{\baselineskip}
+  Precisamos calcular \, $f_{xx}$,\, $f_{yy}$,\, $f_{xy}$\, e\, $f_{yx}$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{$f_x$}
+\begin{align*}
+  \onslide<+->{f_x(x, y)}
+  \onslide<+->{& = \D{f}{x} \\}
+  \onslide<+->{& = \D{}{x}\big(x\cos(y) + ye^x\big) \\}
+  \onslide<+->{& = \D{}{x}\big(x\cos(y)\big) + \D{}{x}\big(ye^x\big) \\}
+  \onslide<+->{& = \cos(y)\D{x}{x} + y\D{e^x}{x} \\}
+  \onslide<+->{& = \cos(y) + ye^x }
+  \onslide<+->{& \text{(contínua no plano)}}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{$f_y$}
+\begin{align*}
+  \onslide<+->{f_y(x, y)}
+  \onslide<+->{& = \D{f}{y} \\}
+  \onslide<+->{& = \D{}{y}\big(x\cos(y) + ye^x\big) \\}
+  \onslide<+->{& = \D{}{y}\big(x\cos(y)\big) + \D{}{y}\big(ye^x\big) \\}
+  \onslide<+->{& = x\D{}{y}\cos(y) + e^x\D{y}{y} \\}
+  \onslide<+->{& = -x\sin(y) + e^x \\}
+  \onslide<+->{& = e^x - x\sin(y)}
+  \onslide<+->{& \text{(contínua no plano)}}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{$f_{xx}$}
+\begin{align*}
+  \onslide<+->{f_{xx}(x, y)}
+  \onslide<+->{& = \DS{f}{x} \\}
+  \onslide<+->{& = \D{}{x}\left(\D{f}{x}\right) \\}
+  \onslide<+->{& = \D{}{x}\big(\cos(y) + ye^x\big) \\}
+  \onslide<+->{& = \D{}{x}\big(\cos(y)\big) + \D{}{x}\big(ye^x\big) \\}
+  \onslide<+->{& = 0 + y\D{e^x}{x} \\}
+  \onslide<+->{& = ye^x}
+  \onslide<+->{& \text{(contínua no plano)}}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{$f_{xy}$}
+\begin{align*}
+  \onslide<+->{f_{xy}(x, y)}
+  \onslide<+->{& = \left(f_x\right)_y(x, y) \\}
+  \onslide<+->{& = \D{}{y}\left(\D{f}{x}\right) \\}
+  \onslide<+->{& = \D{}{y}\big(\cos(y) + ye^x\big) \\}
+  \onslide<+->{& = \D{}{y}\big(\cos(y)\big) + \D{}{y}\big(ye^x\big) \\}
+  \onslide<+->{& = -\sin(y) + e^x \D{y}{y} \\}
+  \onslide<+->{& = -\sin(y) + e^x}
+  \onslide<+->{  \;=\; e^x - \sin(y)}
+  \onslide<+->{& \text{(contínua no plano)}}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{$f_{yy}$}
+\begin{align*}
+  \onslide<+->{f_{yy}(x, y)}
+  \onslide<+->{& = \DS{f}{y} \\}
+  \onslide<+->{& = \D{}{y}\left(\D{f}{y}\right) \\}
+  \onslide<+->{& = \D{}{y}\big(e^x - x\sin(y)\big) \\}
+  \onslide<+->{& = \D{}{y}\big(e^x\big) - \D{}{y}\big(x\sin(y)\big) \\}
+  \onslide<+->{& = 0 - x\D{}{y}\sin(y) \\}
+  \onslide<+->{& = -x\cos(y)}
+  \onslide<+->{& \text{(contínua no plano)}}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{$f_{yx}$}
+\begin{align*}
+  \onslide<+->{f_{yx}(x, y) }
+  \onslide<+->{& = \left(f_y\right)_x(x, y) \\}
+  \onslide<+->{& = \D{}{x}\left(\D{f}{y}\right) \\}
+  \onslide<+->{& = \D{}{x}\big(e^x - x\sin(y)\big) \\}
+  \onslide<+->{& = \D{}{x}e^x - \D{}{x}\big(x\sin(y)\big) \\}
+  \onslide<+->{& = e^x - \sin(y)\D{x}{x} \\}
+  \onslide<+->{& = e^x - \sin(y)}
+  \onslide<+->{& \text{(contínua no plano)}}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Resposta}
+\begin{align*}
+  f_{xx}(x, y) & = ye^x                           \\[3mm]
+  f_{xy}(x, y) & = \color<2>{blue}{e^x - \sin(y)} \\[3mm]
+  f_{yy}(x, y) & = -x\cos(y)                      \\[3mm]
+  f_{yx}(x, y) & = \color<2>{blue}{e^x - \sin(y)}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

@@ -1,0 +1,149 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dada a função
+  \(
+    f(x, y) = (x-2)^2 + (y-1)^2
+  \)
+
+  a) Determine e esboce a curva de nível \(f(x, y) = 4\)
+
+  b) Calcule e esboce o gradiente de $f$ nos pontos
+  \((0,  1)\),
+  \((2, -1)\),
+  \((2,  3)\) e
+  \((4,  1)\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{a) Determinando a curva de nível}
+  \begin{align*}
+    \onslide<+->{f(x, y)           & = 4}   \\
+    \onslide<+->{(x-2)^2 + (y-1)^2 & = 2^2}
+  \end{align*}
+  \onslide<+->{Equação da circunferência centrada em \((2, 1)\) e raio 2}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  b) Calculando as derivadas parciais de $f$
+
+  \pause
+  \[
+    \D{f}{x}
+    \pause
+    \;=\; \D{}{x}\left[(x-2)^2 + (y-1)^2\right]
+    \pause
+    \;=\; 2(x-2)\D{}{x}(x-2)
+    \pause
+    \;=\; 2(x-2)
+  \]
+
+  \pause
+  \[
+    \D{f}{y}
+    \pause
+    \;=\; \D{}{y}\left[(x-2)^2 + (y-1)^2\right]
+    \pause
+    \;=\; 2(y-1)\D{}{y}(y-1)
+    \pause
+    \;=\; 2(y-1)
+  \]
+
+  \pause
+  Gradiente de $f$
+  \pause
+  \[
+    \nabla f(x, y)
+    \pause
+    \;=\; \nabla\left[(x-2)^2 + (y-1)^2\right]
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\ 2(y-1)
+    \end{pmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Calculando o gradiente nos pontos
+  \((0,  1)\) e
+  \((2, -1)\)
+
+  \pause
+  \[
+    \nabla f(0, 1)
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\ 2(y-1)
+    \end{pmatrix} \evalat{(0, 1)}{}
+    \pause
+    \;=\; \begin{pmatrix}
+    2(0-2) \\ 2(1-1)
+    \end{pmatrix}
+    \pause
+    \;=\; \begin{pmatrix}
+    -4 \\ 0
+    \end{pmatrix}
+  \]
+
+  \pause
+  \[
+    \nabla f(2, -1)
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\ 2(y-1)
+    \end{pmatrix} \evalat{(2, -1)}{}
+    \pause
+    \;=\; \begin{pmatrix}
+      2(2-2) \\ 2(-1-1)
+    \end{pmatrix}
+    \pause
+    \;=\; \begin{pmatrix}
+      0 \\ -4
+    \end{pmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Calculando o gradiente nos pontos
+  \((2,  3)\) e
+  \((4,  1)\)
+
+  \pause
+  \[
+    \nabla f(2, 3)
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\ 2(y-1)
+    \end{pmatrix} \evalat{(2, 3)}{}
+    \pause
+    \;=\; \begin{pmatrix}
+      2(2-2) \\ 2(2-1)
+    \end{pmatrix}
+    \pause
+    \;=\; \begin{pmatrix}
+      0 \\ 4
+    \end{pmatrix}
+  \]
+
+  \pause
+  \[
+    \nabla f(4, 1)
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\ 2(y-1)
+    \end{pmatrix} \evalat{(4, 1)}{}
+    \pause
+    \;=\; \begin{pmatrix}
+      2(4-2) \\ 2(1-1)
+    \end{pmatrix}
+    \pause
+    \;=\; \begin{pmatrix}
+      4 \\ 0
+    \end{pmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

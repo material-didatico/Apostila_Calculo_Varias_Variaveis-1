@@ -34,7 +34,7 @@
   \onslide<+->{F_x \frac{dx}{dx} + F_y \frac{dy}{dx} & = 0      \\[2mm]}
   \onslide<+->{F_x + F_y \frac{dy}{dx}               & = 0      \\[2mm]}
   \onslide<+->{F_y \frac{dy}{dx}                     & = - F_x  \\[2mm]}
-  \onslide<+->{\frac{dy}{dx}                         & = - \frac{F_x}{F_y} 
+  \onslide<+->{\frac{dy}{dx}                         & = - \frac{F_x}{F_y}
                \qquad \text{desde que } F_y \neq 0}
 \end{align*}
 \end{columns}
@@ -54,46 +54,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Calcule \(\frac{dy}{dx}\) se \(y^2-x^2-\sin(xy) = 0\)
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \[
-    \frac{dy}{dx} = -\frac{F_x}{F_y}
-  \]
-  \pause
-  \[
-    F_x
-    \pause
-    = \D{}{x}\big(y^2-x^2-\sin(xy)\big)
-    \pause
-    = 0 - 2x - y\cos(xy)
-    \pause
-    = - 2x - y\cos(xy)
-  \]
-  \pause
-  \[
-    F_y
-    \pause
-    = \D{}{y}\big(y^2-x^2-\sin(xy)\big)
-    \pause
-    = 2y - 0 - x\cos(xy)
-    \pause
-    = 2y - x\cos(xy)
-  \]
-  \pause
-  \[
-    \frac{dy}{dx}
-    \pause
-    = -\frac{F_x}{F_y}
-    \pause
-    = -\frac{- 2x - y\cos(xy)}{2y - x\cos(xy)}
-    \pause
-    = \frac{2x + y\cos(xy)}{2y - x\cos(xy)}
-  \]
-\end{frame}
+\include{22-Derivacao_implicita-conteudo-ex1}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Derivação Implícita -- Três Variáveis}
@@ -162,236 +123,13 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Calcule \; \(\D{z}{x}\) e \(\D{z}{y}\) \; se \; \(x^3 + z^2 + ye^{xz} + z\cos(y) = 0\)
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \[
-    F(x, y, z) = x^3 + z^2 + ye^{xz} + z\cos(y)
-  \]
-  \pause
-  \[
-    F_x
-    \pause
-    = \D{}{x}\left[x^3 + z^2 + ye^{xz} + z\cos(y)\right]
-    \pause
-    = 3x^2 + 0 + ye^{xz}z + 0
-    \pause
-    = 3x^2 + yze^{xz}
-  \]
-  \pause
-  \[
-    F_y
-    \pause
-    = \D{}{y}\left[x^3 + z^2 + ye^{xz} + z\cos(y)\right]
-    \pause
-    = 0 + 0 + e^{xz} -z\sin(y)
-    \pause
-    = e^{xz} -z\sin(y)
-  \]
-  \pause
-  \[
-    F_z
-    \pause
-    = \D{}{z}\left[x^3 + z^2 + ye^{xz} + z\cos(y)\right]
-    \pause
-    = 0 + 2z + ye^{xz}x + \cos(y)
-    \pause
-    = 2z + yxe^{xz} + \cos(y)
-  \]
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \[
-    \D{z}{x}
-    = -\frac{F_x}{F_z}
-    \pause
-    = -\frac{3x^2 + yze^{xz}}{2z + yxe^{xy} + \cos(y)}
-  \]
-  \pause
-  \[
-    \D{z}{y}
-    = -\frac{F_y}{F_z}
-    \pause
-    = -\frac{e^{xz} -z\sin(y)}{2z + yxe^{xy} + \cos(y)}
-  \]
-\end{frame}
+\include{22-Derivacao_implicita-conteudo-ex2}
 
 %------------------------------------------------------------------------------%
 \section{Exemplos}
 
-%------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Considerando que a equação
-  \[
-    x^3 + y^3 + z^3 = 3xyz + 1
-  \]
-  defina $z$ como função de $x$ e $y$. Encontre, se possível,
-  \(\D{z}{x}\) e \(\D{z}{y}\)
-  nos pontos \((1, 1, 1)\) e \((1, 3, 2)\)
-
-  \pause
-  \vspace{\baselineskip}
-  Note que
-  \(F(x,y,z) = x^3 + y^3 + z^3 - 3xyz - 1\)
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  Sabemos que, se \(F_z \neq 0\)
-  \[
-    \D{z}{x} = -\frac{F_x}{F_z}
-  \]
-  \[
-    \D{z}{y} = -\frac{F_y}{F_z}
-  \]
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  Calculando as derivadas parciais de $F(z, y, z)$
-
-  \[
-    \pause
-    F_x
-    \pause
-    \;=\; \D{}{x}\left(x^3 + y^3 + z^3 - 3xyz - 1\right)
-    \pause
-    \;=\; 3x^2 - 3yz
-  \]
-
-  \[
-    \pause
-    F_y
-    \pause
-    \;=\; \D{}{y}\left(x^3 + y^3 + z^3 - 3xyz - 1\right)
-    \pause
-    \;=\; 3y^2 - 3xz
-  \]
-
-  \[
-    \pause
-    F_z
-    \pause
-    \;=\; \D{}{z}\left(x^3 + y^3 + z^3 - 3xyz - 1\right)
-    \pause
-    \;=\; 3z^2 - 3xy
-  \]
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  Avaliando as derivadas parciais no ponto \((1, 1, 1)\)
-
-  \[
-    F_z(1, 1, 1)
-    \pause
-    \;=\; \left(3z^2 - 3xy\right)\evalat{(1, 1, 1)}{}
-    \pause
-    \;=\;  3 - 3
-    \pause
-    \;=\; 0
-  \]
-
-  \pause
-  \emph{Não é possível} calcular as derivadas neste ponto
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  Avaliando as derivadas parciais no ponto \((1, 3, 2)\)
-
-  \[
-    \pause
-    F_z(1, 1, 2)
-    \pause
-    \;=\; \left(3z^2 - 3xy\right)\evalat{(1, 3, 2)}{}
-    \pause
-    \;=\; 3\times 2^2 - 3 \times 1 \times 3
-    \pause
-    \;=\; 12 - 9
-    \pause
-    \;=\; 3
-    \pause
-    \;\neq\; 0
-  \]
-
-  \pause
-  \emph{É possível} calcular as derivadas neste ponto
-
-  \[
-    \pause
-    F_x(1, 1, 2)
-    \pause
-    \;=\; \left(3x^2 - 3yz\right)\evalat{(1, 3, 2)}{}
-    \pause
-    \;=\; 3 \times 1^2 - 3 \times 3 \times 2
-    \pause
-    \;=\; 3 - 18
-    \pause
-    \;=\; -15
-  \]
-
-  \[
-    \pause
-    F_y(1, 1, 2)
-    \pause
-    \;=\; \left(3y^2 - 3xz\right)\evalat{(1, 3, 2)}{}
-    \pause
-    \;=\; 3 \times 3^3 - 3 \times1 \times 2
-    \pause
-    \;=\; 27 - 6
-    \pause
-    \;=\; 21
-  \]
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \[
-    \D{z}{x}(1, 3, 2)
-    \pause
-    \;=\; -\frac{F_x(1, 3, 2)}{F_z(1, 3, 2)}
-    \pause
-    \;=\; -\frac{-15}{3}
-    \pause
-    \;=\; 5
-  \]
-
-  \[
-    \pause
-    \D{z}{y}(1, 1, 2)
-    \pause
-    \;=\; -\frac{F_y(1, 3, 2)}{F_z(1, 3, 2)}
-    \pause
-    \;=\; -\frac{21}{3}
-    \pause
-    \;=\; -7
-  \]
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Dada a equação \; \(x^2y + y^2z + z^2x = 1\) \;
-  encontre \; \(\D{z}{x}\)
-\end{frame}
-
-\begin{frame}{Exemplo \theexemplo}
-  \onslide<+->{Derivando ambos os lados por $x$, tratando $z$ como função \(z=z(x, y)\)}
-\begin{columns}
-\column{0.6\linewidth}
-  \begin{align*}
-  \onslide<+->{x^2y + y^2z + z^2x                            & = 1          \\[2mm]}
-  \onslide<+->{\D{}{x}\left(x^2y + y^2z + z^2x\right)        & = \D{1}{x}   \\[2mm]}
-  \onslide<+->{\D{}{x}(x^2y) + \D{}{x}(y^2z) + \D{}{x}(z^2x) & = 0          \\[2mm]}
-  \onslide<+->{2xy + y^2\D{z}{x} + 2zx\D{z}{x} + z^2         & = 0          }
-\end{align*}
-\column{0.4\linewidth}
-  \begin{align*}
-  \onslide<+->{\D{z}{x}\left(y^2 + 2zx\right) & = -2xy - z^2           \\[3mm]}
-  \onslide<+->{\D{z}{x}                       & = -\frac{2xy + z^2}{y^2 + 2zx}}
-\end{align*}
-\end{columns}
-\end{frame}
+\include{22-Derivacao_implicita-conteudo-ex3}
+\include{22-Derivacao_implicita-conteudo-ex4}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}

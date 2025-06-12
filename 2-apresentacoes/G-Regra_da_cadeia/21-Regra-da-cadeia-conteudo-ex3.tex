@@ -1,0 +1,108 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Expresse \(\D{w}{r}\) e \(\D{w}{s}\) em termos de $r$ e $s$
+  \[
+    w = x^2 + y^2  \qquad
+    x = r^3 - s^2  \qquad
+    y = r^2 + s^3
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Pela regra da cadeia
+  \begin{align*}
+    \D{w}{r} & = \D{w}{x}\D{x}{r} + \D{w}{y}\D{y}{r}  \\
+    \D{w}{s} & = \D{w}{x}\D{x}{s} + \D{w}{y}\D{y}{s}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.5\linewidth}
+Calculando as derivadas
+
+  \[
+    \pause
+    \D{w}{x}
+    \pause
+    \;=\; \D{}{x}\left(x^2 + y^2\right)
+    \pause
+    \;=\; 2x
+  \]
+
+  \[
+    \pause
+    \D{w}{y}
+    \pause
+    \;=\; \D{}{y}\left(x^2 + y^2\right)
+    \pause
+    \;=\; 2y
+  \]
+\column{0.5\linewidth}
+  \[
+    \pause
+    \D{x}{r}
+    \pause
+    \;=\; \D{}{r}\left(r^3 - s^2\right)
+    \pause
+    \;=\; 3r^2
+  \]
+
+  \[
+    \pause
+    \D{y}{r}
+    \pause
+    \;=\; \D{}{r}\left(r^2 + s^3\right)
+    \pause
+    \;=\; 2r
+  \]
+
+  ~
+  \[
+    \pause
+    \D{x}{s}
+    \pause
+    \;=\; \D{}{s}\left(r^3 - s^2\right)
+    \pause
+    \;=\; -2s
+  \]
+
+  \[
+    \pause
+    \D{y}{s}
+    \pause
+    \;=\; \D{}{s}\left(r^2 + s^3\right)
+    \pause
+    \;=\; 3s^2
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{\D{w}{r}}
+    \onslide<+->{& = \D{w}{x}\D{x}{r} + \D{w}{y}\D{y}{r}  \\}
+    \onslide<+->{& = 2x\D{x}{r} + 2y\D{y}{r}              \\}
+    \onslide<+->{& = 2x3r^2 + 2y2r                        \\}
+    \onslide<+->{& = 6(r^3 - s^2)r^2 + 4(r^2 + s^3)r      \\}
+    \onslide<+->{& = 6r^5 - 6s^2r^2 +4r^3 + 4s^3r         \\}
+    \onslide<+->{& = 6r^5 + 4r^3 - 6r^2s^2 + 4rs^3}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{\D{w}{s}}
+    \onslide<+->{& = \D{w}{x}\D{x}{s} + \D{w}{y}\D{y}{s}  \\}
+    \onslide<+->{& = 2x\D{x}{s} + 2y\D{y}{s}              \\}
+    \onslide<+->{& = 2x\left(-2s\right) + 2y3s^2          \\}
+    \onslide<+->{& = -4(r^3 - s^2)s + 6(r^2 + s^3)s^2     \\}
+    \onslide<+->{& = -4r^3s +4s^3 +6r^2s^2 + 6s^5}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

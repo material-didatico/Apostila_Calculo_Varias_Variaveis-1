@@ -1,0 +1,92 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Calcule \(\left(1+\sqrt{3}i\right)^6\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    z = 1+\sqrt{3}i
+    \qquad\qquad
+    \pause
+    a = \Re(z) = 1
+    \qquad\qquad
+    \pause
+    b = \Im(z) = \sqrt{3}
+  \]
+
+  \[
+    \pause
+    \rho
+    \pause
+    = \sqrt{a^2 + b^2}
+    \pause
+    = \sqrt{1 + 3}
+    \pause
+    = \sqrt{4}
+    \pause
+    = 2
+  \]
+
+  \[
+    \pause
+    \sin(\varphi)
+    \pause
+    = \frac{b}{\rho}
+    \pause
+    = \frac{\sqrt{3}}{2}
+    \pause
+    \qquad\qquad
+    \cos(\varphi)
+    \pause
+    = \frac{a}{\rho}
+    \pause
+    = \frac{1}{2}
+  \]
+
+  \[
+    \pause
+    \varphi
+    \pause
+    = \ang{60}
+    \pause
+    = \frac{\pi}{3} \si{\radian}
+  \]
+
+  \[
+    \pause
+    z
+    \pause
+    = \rho\left(\cos(\varphi)+i\sin(\varphi)\right)
+    \pause
+    = 2\left(\cos\left(\frac{\pi}{3}\right)+i\sin\left(\frac{\pi}{3}\right)\right)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    z = 1+\sqrt{3}i
+    \pause
+    = 2\left(\cos\left(\frac{\pi}{3}\right)+i\sin\left(\frac{\pi}{3}\right)\right)
+  \]
+
+  \vspace{0\baselineskip}
+  \[
+    \pause
+    z^6
+    \pause
+    = \rho^6 \big[\cos(6\varphi) + i\sin(6\varphi)\big]
+    \]
+    \[
+    \hphantom{z^6}
+    \pause
+    = 2^6 \left[\cos\left(6\frac{\pi}{3}\right) + i\sin\left(6\frac{\pi}{3}\right)\right]
+    \pause
+    = 64  \left[\cos\left(2\pi\right) + i\sin\left(2\pi\right)\right]
+    \pause
+    = 64
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

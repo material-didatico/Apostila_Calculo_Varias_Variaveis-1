@@ -1,0 +1,34 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre \(\D{z}{x}\) se a equação
+  \[
+    yz - \ln(z) = x + 1
+  \]
+  define $z$ como uma função de $x$ e $y$
+
+  \pause
+  \vspace{\baselineskip}
+  Vamos derivar os dois lados por $x$, assumindo \(z=z(x, y)\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{yz - \ln(z) & = x + 1} \\
+    \onslide<+->{\D{}{x}\big(yz - \ln(z)\big) & = \D{}{x}\left(x + 1\right)} \\
+    \onslide<+->{\D{}{x}(yz) - \D{}{x}\big(\ln(z)\big) & = 1} \\
+    \onslide<+->{y\D{z}{x} - \frac{1}{z}\D{z}{x} & = 1} \\
+    \onslide<+->{\D{z}{x}\left( y - \frac{1}{z} \right) & = 1}  \\
+  \end{align*}
+\column{0.5\linewidth}
+\begin{align*}
+  \onslide<+->{\D{z}{x} & = \left(y - \frac{1}{z}\right)^{-1}  \\}
+  \onslide<+->{         & = \left(\frac{yz-1}{z}\right)^{-1}   \\}
+  \onslide<+->{         & =  \frac{z}{yz-1}}
+\end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
