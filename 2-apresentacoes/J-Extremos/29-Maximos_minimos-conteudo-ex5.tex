@@ -1,16 +1,14 @@
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Seja
   \[
     f(x, y) = \ln(x^2 + y^2 + 1)
   \]
   encontre os pontos críticos de $f$ e classifique-os
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  \onslide<+->{Derivadas primeiras}
+\begin{resolution}{Derivadas primeiras}
   \begin{align*}
     \onslide<+->{f_x(x, y) & }
     \onslide<+->{= \frac{1}{x^2 + y^2 + 1} \,\D{}{x}(x^2 + y^2 + 1)}
@@ -36,10 +34,10 @@
     \column{0.33\linewidth}
     \onslide<+->{Ponto crítico $(0, 0)$}
   \end{columns}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Derivadas segundas}
   \begin{align*}
     \onslide<+->{f_{xx}(x, y)}
     \onslide<+->{& = \D{}{x}\left(\frac{2x}{x^2 + y^2 + 1}\right) \\}
@@ -47,10 +45,10 @@
     \onslide<+->{& = \frac{2(x^2 + y^2 + 1) - 2x(2x)}{(x^2 + y^2 + 1)^2} \\}
     \onslide<+->{& = \frac{2(y^2 + 1 - x^2)}{(x^2 + y^2 + 1)^2} }
   \end{align*}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Derivadas segundas}
   \begin{align*}
     \onslide<+->{f_{yy}(x, y)}
     \onslide<+->{& = \D{}{y}\left(\frac{2y}{x^2 + y^2 + 1}\right) \\}
@@ -58,10 +56,10 @@
     \onslide<+->{& = \frac{2(x^2 + y^2 + 1) - 2y(2y)}{(x^2 + y^2 + 1)^2} \\}
     \onslide<+->{& =  \frac{2(x^2 + 1 - y^2)}{(x^2 + y^2 + 1)^2}}
   \end{align*}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Derivadas segundas}
   \begin{align*}
     \onslide<+->{f_{xy}(x, y)}
     \onslide<+->{& = \D{}{y}\left(\frac{2x}{x^2 + y^2 + 1}\right) \\}
@@ -69,11 +67,10 @@
     \onslide<+->{& = \frac{0 - 2x(2y)}{(x^2 + y^2 + 1)^2} \\}
     \onslide<+->{& =  \frac{-4xy}{(x^2 + y^2 + 1)^2}}
   \end{align*}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  \onslide<+->{Derivadas de segunda ordem}
+\begin{resolution}{Derivadas segundas}
   \begin{align*}
     \onslide<+->{f_{xx}(x, y) & = \frac{2(y^2 + 1 - x^2)}{(x^2 + y^2 + 1)^2} &}
     \onslide<+->{f_{xx}(0, 0) & = 2 \\}
@@ -82,11 +79,10 @@
     \onslide<+->{f_{xy}(x, y) & = \frac{-4xy}{(x^2 + y^2 + 1)^2}             &}
     \onslide<+->{f_{xy}(0, 0) & = 0}
   \end{align*}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  \onslide<+->{Discriminante}
+\begin{resolution}{Discriminante}
   \begin{align*}
     \onslide<+->{D(0, 0)}
     \onslide<+->{& = f_{xx}(0, 0) f_{yy}(0, 0) - f^2_{xy}(0, 0) \\}
@@ -102,6 +98,6 @@
   \]
 
   \onslide<+->{O ponto $(0, 0)$ é um mínimo local}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%

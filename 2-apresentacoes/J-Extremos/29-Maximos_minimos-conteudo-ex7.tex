@@ -1,6 +1,5 @@
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Considerando a função
   \(
     f(x, y) = x^3 + 3xy + y^3
@@ -13,76 +12,70 @@
   c) Encontre todos os pontos críticos de $f$
 
   d) Classifique cada ponto crítico de $f$
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  \noindent\textbf{a)}
-
+\begin{resolution}{a}
   Precisamos das derivadas parciais de $f$
   \[
-  \D{f}{x}
-  = \D{}{x}\left[x^3 + 3xy + y^3\right]
-  = 3x^2 + 3y
+    \D{f}{x}
+    = \D{}{x}\left[x^3 + 3xy + y^3\right]
+    = 3x^2 + 3y
   \]
   \[
-  \D{f}{y}
-  = \D{}{y}\left[x^3 + 3xy + y^3\right]
-  = 3x + 3y^2
+    \D{f}{y}
+    = \D{}{y}\left[x^3 + 3xy + y^3\right]
+    = 3x + 3y^2
   \]
   então
   \[
-  \nabla f = \vetor{3x^2 + 3y}{3x + 3y^2}
+    \nabla f = \vetor{3x^2 + 3y}{3x + 3y^2}
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  \noindent\textbf{b)}
-
+\begin{resolution}{b}
   Precisamos das derivadas parciais de segunda ordem de $f$
   \[
-  \DS{f}{x}
-  = \D{}{x}\left[3x^2 + 3y\right]
-  = 6x
+    \DS{f}{x}
+    = \D{}{x}\left[3x^2 + 3y\right]
+    = 6x
   \]
   \[
-  \D{f}{y}
-  = \D{}{y}\left[3x + 3y^2\right]
-  = 6y
+    \D{f}{y}
+    = \D{}{y}\left[3x + 3y^2\right]
+    = 6y
   \]
   \[
-  \DM{f}{x}{y}
-  = \D{}{x}\D{f}{y}
-  = \D{}{x}\left[3x + 3y^2\right]
-  = 3
+    \DM{f}{x}{y}
+    = \D{}{x}\D{f}{y}
+    = \D{}{x}\left[3x + 3y^2\right]
+    = 3
   \]
   então
   \[
-  H = \left(\begin{array}{cc}
-    6x & 3 \\
-    3 & 6y
-  \end{array}\right)
+    H = \left(\begin{array}{cc}
+      6x & 3 \\
+      3 & 6y
+    \end{array}\right)
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  \noindent\textbf{c)}
-
+\begin{resolution}{c}
   A função é um polinômio, então possui derivadas em todos os pontos do plano.
   Assim os pontos críticos são apenas os pontos onde as derivadas parciais são zero,
   \(\nabla f = 0\)
   \[
-  3x^2 + 3y = 0
-  \qquad\text{e}\qquad
-  3x + 3y^2 = 0
+    3x^2 + 3y = 0
+    \qquad\text{e}\qquad
+    3x + 3y^2 = 0
   \]
   ou, simplificando,
   \[
-  x^2 + y = 0
-  \qquad\text{e}\qquad
-  x + y^2 = 0
+    x^2 + y = 0
+    \qquad\text{e}\qquad
+    x + y^2 = 0
   \]
   Isolando $y$ na primeira equação, \(y = -x^2\), e substituindo na segunda, temos
   \begin{align*}
@@ -96,57 +89,61 @@
   se $x=-1$ temos $y=-1$.
   Portanto, os pontos críticos são
   \[
-  (x_1, y_1) = (0, 0)
-  \qquad\text{e}\qquad
-  (x_2, y_2) = (-1, -1)
+    (x_1, y_1) = (0, 0)
+    \qquad\text{e}\qquad
+    (x_2, y_2) = (-1, -1)
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  \noindent\textbf{d)}
-
+\begin{resolution}{d}
   Para classificar os pontos críticos precisamos avaliar o discriminante nos
   pontos críticos.
+\end{resolution}
 
+%------------------------------------------------------------------------------%
+\begin{resolution}{d}
   Considerando o ponto \((x_1, y_1) = (0, 0)\)
   \[
-  f_{xx}(0, 0) = 0
+    f_{xx}(0, 0) = 0
   \]
   \[
-  f_{yy}(0, 0) = 0
+    f_{yy}(0, 0) = 0
   \]
   \[
-  f_{xy}(0, 0) = 3
+    f_{xy}(0, 0) = 3
   \]
   \[
-  D_1
-  = f_{xx}(0, 0)f_{yy}(0, 0) - f^2_{xy}(0, 0)
-  = 0 \times 0 - 3^2
-  = -9 < 0
+    D_1
+    = f_{xx}(0, 0)f_{yy}(0, 0) - f^2_{xy}(0, 0)
+    = 0 \times 0 - 3^2
+    = -9 < 0
   \]
   Portanto, o ponto $(0, 0)$ é um ponto de sela.
+\end{resolution}
 
+%------------------------------------------------------------------------------%
+\begin{resolution}{d}
   Considerando o ponto \((x_2, y_2) = (-1, -1)\)
   \[
-  f_{xx}(-1, -1) = -6
+    f_{xx}(-1, -1) = -6
   \]
   \[
-  f_{yy}(-1, -1) = -6
+    f_{yy}(-1, -1) = -6
   \]
   \[
-  f_{xy}(-1, -1) = 3
+    f_{xy}(-1, -1) = 3
   \]
   \[
-  D_2
-  = f_{xx}(-1, -1)f_{yy}(-1, -1) - f^2_{xy}(-1, -1)
-  = (-6)(-6) - 3^2
-  = 36 - 9
-  = 25 > 0
+    D_2
+    = f_{xx}(-1, -1)f_{yy}(-1, -1) - f^2_{xy}(-1, -1)
+    = (-6)(-6) - 3^2
+    = 36 - 9
+    = 25 > 0
   \]
   Portanto, o ponto $(-1, -1)$ é um máximo ou mínimo local.
   Como \(f_{xx}(-1, -1) = -6 < 0\)
   o ponto é um ponto de máximo local.
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%

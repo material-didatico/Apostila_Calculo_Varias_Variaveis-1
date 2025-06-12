@@ -60,6 +60,8 @@
 
 \definecolor{themeblue}{rgb}{0.1993,0.1993,0.6953}
 \definecolor{lightgray}{gray}{0.9}
+\definecolor{links}{HTML}{2A1B81}
+\definecolor{bgexample}{HTML}{0d5959}
 
 \setbeamerfont{institute}{size=\large}
 \setbeamerfont{date}{size=\small}
@@ -92,7 +94,6 @@
   \end{frame}
 }
 
-\definecolor{links}{HTML}{2A1B81}
 \hypersetup{colorlinks,linkcolor=,urlcolor=links}
 
 % Choosing a nice font
@@ -135,6 +136,21 @@
   #3%
   \end{frame}%
   }%
+}
+
+\newenvironment{question}{%
+  \addtocounter{exemplo}{1}%
+  \setbeamercolor{frametitle}{bg=bgexample}%
+  \begin{frame}{Exemplo \theexemplo}
+}{%
+  \end{frame}
+}
+
+\newenvironment{resolution}[1]{%
+  \setbeamercolor{frametitle}{bg=bgexample}%
+  \begin{frame}{Exemplo \theexemplo{} -- #1}
+}{%
+  \end{frame}
 }
 
 %------------------------------------------------------------------------------%
