@@ -1,20 +1,22 @@
 %------------------------------------------------------------------------------%
 \begin{question}
-  Calcule \(\left(1+\sqrt{3}i\right)^6\)
+  Calcule
+  \(
+    z = \left(1+\sqrt{3}i\right)^6
+  \)
 \end{question}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
   \[
-    z = 1+\sqrt{3}i
+    u = 1+\sqrt{3}i
     \qquad\qquad
     \pause
-    a = \Re(z) = 1
+    a = \Re(u) = 1
     \qquad\qquad
     \pause
-    b = \Im(z) = \sqrt{3}
+    b = \Im(u) = \sqrt{3}
   \]
-
   \[
     \pause
     \rho
@@ -27,7 +29,6 @@
     \pause
     = 2
   \]
-
   \[
     \pause
     \sin(\varphi)
@@ -35,15 +36,15 @@
     = \frac{b}{\rho}
     \pause
     = \frac{\sqrt{3}}{2}
+  \]
+  \[
     \pause
-    \qquad\qquad
     \cos(\varphi)
     \pause
     = \frac{a}{\rho}
     \pause
     = \frac{1}{2}
   \]
-
   \[
     \pause
     \varphi
@@ -52,10 +53,9 @@
     \pause
     = \frac{\pi}{3} \si{\radian}
   \]
-
   \[
     \pause
-    z
+    u
     \pause
     = \rho\left(\cos(\varphi)+i\sin(\varphi)\right)
     \pause
@@ -65,28 +65,21 @@
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
+  \onslide<+->{
   \[
-    z = 1+\sqrt{3}i
-    \pause
+    u
+    = 1+\sqrt{3}i
     = 2\left(\cos\left(\frac{\pi}{3}\right)+i\sin\left(\frac{\pi}{3}\right)\right)
-  \]
-
-  \vspace{0\baselineskip}
-  \[
-    \pause
-    z^6
-    \pause
-    = \rho^6 \big[\cos(6\varphi) + i\sin(6\varphi)\big]
-    \]
-    \[
-    \hphantom{z^6}
-    \pause
-    = 2^6 \left[\cos\left(6\frac{\pi}{3}\right) + i\sin\left(6\frac{\pi}{3}\right)\right]
-    \pause
-    = 64  \left[\cos\left(2\pi\right) + i\sin\left(2\pi\right)\right]
-    \pause
-    = 64
-  \]
+  \]}
+  \vspace{-\baselineskip}
+  \begin{align*}
+    \onslide<+->{z = u^6}
+    \onslide<+->{& = \rho^6 \big[\cos(6\varphi) + i\sin(6\varphi)\big] \\}
+    \onslide<+->{& = 2^6 \left[\cos\left(6\frac{\pi}{3}\right) + i\sin\left(6\frac{\pi}{3}\right)\right] \\}
+    \onslide<+->{& = 64  \left[\cos\left(2\pi\right) + i\sin\left(2\pi\right)\right] \\}
+    \onslide<+->{& = 64  \left[1 + i0\right] \\}
+    \onslide<+->{& = 64}
+\end{align*}
 \end{resolution}
 
 %------------------------------------------------------------------------------%

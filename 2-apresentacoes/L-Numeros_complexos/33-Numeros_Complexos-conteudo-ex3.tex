@@ -1,32 +1,80 @@
 %------------------------------------------------------------------------------%
-\begin{question}{Exemplo \theexemplo}
-  Encontre as raízes do polinômio
-  \[
-    p = 2z^2 -4z + 4
-  \]
+\begin{question}
+  Dado \(z=\frac{ \left(1-\sqrt{3}\right) + \left(1+\sqrt{3}\right)i}{2+2i} \)
+
+  calcule
+
+  a) a parte real de $z$
+
+  b) a parte imaginária de $z$
+
+  c) o módulo de $z$
+
+  d) o argumento de $z$
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-\begin{columns}
-\column{0.5\linewidth}
-  \begin{align*}
-	  \onslide<+->{\Delta        & = b^2 - 4 ac                   \\}
-	  \onslide<+->{              & = (-4)^2 - 4 \times 2 \times 4 \\}
-	  \onslide<+->{              & = 16 - 32                      \\}
-	  \onslide<+->{              & = -16                          \\[5mm]}
-	  \onslide<+->{\sqrt{\Delta} & = \sqrt{-16}                   \\}
-	  \onslide<+->{              & = \sqrt{16}\,i                 \\}
-	  \onslide<+->{              & = 4i}
-  \end{align*}
-\column{0.5\linewidth}
-  \begin{align*}
-	  \onslide<+->{z & = \frac{-b \pm \sqrt{\Delta}}{2a} \\}
-	  \onslide<+->{  & = \frac{-(-4) \pm 4i}{2\times 2}  \\}
-	  \onslide<+->{  & = \frac{4 \pm 4i}{4}              \\}
-	  \onslide<+->{  & = 1 \pm i}
-  \end{align*}
-\end{columns}
+\begin{resolution}{Avaliando $z$}
+\begin{align*}
+  z
+  & = \frac{ \left(1-\sqrt{3}\right) + \left(1+\sqrt{3}\right)i}{2+2i} \\
+  & = \frac{ \left[\left(1-\sqrt{3}\right) + \left(1+\sqrt{3}\right)i\right](2-2i)}{(2+2i)(2-2i)} \\
+  & = \frac{ \left(1-\sqrt{3}\right)(2-2i) + \left(1+\sqrt{3}\right)(2i+2)}{2^2 + 2^2} \\
+  & = \frac{ 2-2i-2\sqrt{3}+2\sqrt{3}i + 2i+2+2\sqrt{3}i +2\sqrt{3}}{8} \\
+  & = \frac{ 4 + 4\sqrt{3}i}{8}
+  \;=\; \frac{1}{2} + \frac{\sqrt{3}}{2}i
+\end{align*}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Partes real e imaginária de $z$}
+  Parte real de $z$
+  \[
+    \Re(z) = \frac{1}{2}
+  \]
+
+  Parte imaginária de $z$
+  \[
+    \Im(z) = \frac{\sqrt{3}}{2}
+  \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
+\begin{resolution}{Módulo de $z$}
+  \[
+    \abs{z}
+    = \sqrt{\left(\frac{1}{2}\right)^2 + \left(\frac{\sqrt{3}}{2}\right)^2}
+    = \sqrt{\frac{1}{4} + \frac{3}{4}}
+    = \sqrt{\frac{1+3}{4}}
+    = \sqrt{1}
+    = 1
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Argumento de $z$}
+  \[
+    \varphi=\arg(z)
+  \]
+  \[
+    \sin(\varphi)
+    = \frac{\Im(z)}{\abs{z}}
+    = \frac{\sqrt{3}}{2}
+  \]
+  \[
+    \cos(\varphi)
+    = \frac{\Re(z)}{\abs{z}}
+    = \frac{1}{2}
+  \]
+  \[
+    \arg(z)
+    = \ang{60}
+    = \frac{\pi}{3} \text{rad}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+
+
+
+

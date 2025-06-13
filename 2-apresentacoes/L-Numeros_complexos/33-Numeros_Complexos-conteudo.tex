@@ -2,7 +2,7 @@
 
 \usepackage{calculo_varias_variaveis-1}
 
-\title {Números Complexos}
+\title{Números Complexos}
 
 %------------------------------------------------------------------------------%
 \begin{document}
@@ -28,7 +28,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Unidade Imaginária}
+\begin{frame}{Unidade imaginária}
   \emph{Unidade imaginária}
   \[ i^2 = -1 \]
 
@@ -140,7 +140,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Cuidado com Raízes}
+\begin{frame}{Cuidado com raízes}
 \begin{columns}
 \column{0.4\linewidth}
   Sabemos que
@@ -186,7 +186,7 @@
   \]
 
   \vspace{\baselineskip}
-  \onslide<16>{\emph{Só é verdade para raízes reais!}}
+  \onslide<16>{\emph{Só é verdade nos reais!}}
 \end{columns}
 \end{frame}
 
@@ -197,31 +197,27 @@
 \section{Números Complexos}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Números Complexos}
-
+\begin{frame}{Números complexos}
   Conjunto dos Números Complexos
   \[
     \mathbb{C} = \big\{\, z=a+bi \;\big|\; a, b \in \R \,\big\}
   \]
-
   \pause
   Parte real de $z$
   \[
     \Re(z) = a
   \]
-
   \pause
   Parte imaginária de $z$
   \[
     \Im(z) = b
   \]
-
   \pause
   Os números complexos com parte imaginária nula são os Reais
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Igualdade Entre Números Complexos}
+\begin{frame}{Igualdade entre números complexos}
 
   \(z_1=a+bi\) \; é \emph{igual} a \; \(z_2=c+di\)
 
@@ -236,27 +232,27 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Operações com os Números Complexos}
-  \onslide<+->{Soma e subtração}
-  \onslide<+->{
-    \[
-      (a+b\emph{i}) \;+\; (c+d\emph{i}) \;=\; (a+c) \;+\; (b+d) \emph{i}
-    \]}
-  \onslide<+->{
-    \vspace{-\baselineskip}
-    \[
-      (a+b\emph{i}) \;-\; (c+d\emph{i}) \;=\; (a-c) \;+\; (b-d) \emph{i}
-    \]
-  }
+\begin{frame}{Soma e produto de números complexos}
+  \onslide<+->{\emph{Soma e subtração}}
+  \[
+    \onslide<+->{(a+b\emph{i}) + (c+d\emph{i})}
+    \onslide<+->{\;=\;  a + b\emph{i} + c + d\emph{i}}
+    \onslide<+->{\;=\; (a+c) + (b+d) \emph{i}}
+  \]
+  \vspace{-\baselineskip}
+  \[
+    \onslide<+->{(a+b\emph{i}) - (c+d\emph{i})}
+    \onslide<+->{\;=\; a+b\emph{i} -c -d\emph{i}}
+    \onslide<+->{\;=\; (a-c) + (b-d) \emph{i}}
+  \]
 
-  \vspace{-0.5\baselineskip}
-  \onslide<+->{Produto}
+  \onslide<+->{\emph{Produto}}
   \begin{align*}
     \onslide<+->{
-      (a+b\emph{i}) \cdot (c+d\emph{i})}
+      (a+b\emph{i}) \times (c+d\emph{i})}
     \onslide<+->{
-      & \;=\; a         \cdot (c+d\emph{i})
-        \;+\; b\emph{i} \cdot (c+d\emph{i}) } \\
+      & \;=\; a         \times (c+d\emph{i})
+        \;+\; b\emph{i} \times (c+d\emph{i}) } \\
     \onslide<+->{
       & \;=\; ac + ad\emph{i} + bc\emph{i} + bd\emph{i}^2 } \\
     \onslide<+->{
@@ -280,7 +276,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Propriedades dos Conjugados}
+\begin{frame}{Propriedades dos conjugados}
   \begin{enumerate}[<+->]
   \setlength\itemsep{1.5em}
 
@@ -302,9 +298,9 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Operações com os Números Complexos}
-  \onslide<+->{Divisão}%
-  \onslide<+->{: um número $q$ é a divisão de $z_1=a+bi$ por $z_2=c+di$ se}
+\begin{frame}{Divisão de números complexos}
+  \onslide<+->{\emph{Divisão}}%
+  \onslide<+->{: um número $q$ é a divisão de \(z_1=a+bi\) por \(z_2=c+di\) se}
   \begin{columns}
   \column{0.5\baselineskip}
     \begin{align*}
@@ -316,20 +312,28 @@
       \onslide<+->{                & = (ac + bd) + (ad -bc)i}
     \end{align*}
   \column{0.5\baselineskip}
-  \begin{align*}
-    \onslide<+->{q & = \frac{(ac + bd) + (ad -bc)i}{c^2 + d^2}           \\[2mm]}
-    \onslide<+->{  & = \frac{(ac + bd)}{c^2 + d^2} + \frac{(ad -bc)}{c^2 + d^2}i}
-  \end{align*}
-  \vspace{\baselineskip}
-  \onslide<+->{
-  \[
-    \frac{z_1}{z_2} = \frac{(ac + bd)}{c^2 + d^2} + \frac{(ad -bc)}{c^2 + d^2}i
-  \]}
+    \begin{align*}
+      \onslide<+->{q & = \frac{(ac + bd) + (ad -bc)i}{c^2 + d^2}           \\[2mm]}
+      \onslide<+->{  & = \frac{(ac + bd)}{c^2 + d^2} + \frac{(ad -bc)}{c^2 + d^2}i}
+    \end{align*}
   \end{columns}
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Corpo Complexo}
+\begin{frame}{Operações com os Números Complexos}
+  Divisão de \(z_1=a+bi\) por \(z_2=c+di\)
+  \[
+    \pause
+    \frac{z_1}{z_2}
+    \pause
+    \;=\; \frac{z_1\,\bar{z}_2}{z_2\,\bar{z}_2}
+    \pause
+    \;=\; \frac{(ac + bd)}{c^2 + d^2} + \frac{(ad -bc)}{c^2 + d^2}i
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Corpo complexo}
   A soma e o produto nos complexos tem as mesmas propriedades dos reais
 
   \vspace{\baselineskip}
@@ -344,14 +348,6 @@
 
 %------------------------------------------------------------------------------%
 \section{Plano Complexo}
-
-%------------------------------------------------------------------------------%
-\begin{frame}<handout:0>[t]{Plano Complexo}
-  \begin{gather*}
-    z = x + yi \quad          \in \mathbb{C} \\
-    (x, y)     \hspace{7.2ex} \in \R^2
-  \end{gather*}
-\end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}[t]{Plano Complexo}
@@ -370,55 +366,6 @@
     \item Módulo           \tabto{32mm} \( \abs{z} = \rho = \sqrt{x^2+y^2\,}\) \\[4mm]
     \item Argumento        \tabto{32mm} \( \arg{(z)} = \varphi = \arctan\left(\frac{\,y\,}{x}\right)\)
   \end{itemize}
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\section{Polinômios}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Polinômios}
-  Um \emph{polinômio} de grau $n\in\N$ de uma variável complexa $z$ \pause é
-  \[
-    P_n(z)
-    = a_n z^n
-    + a_{n-1} z^{n-1}
-    + \cdots
-    + a_2 z^2
-    + a_1 z
-    + a_0
-  \]
-  com \(z\), \(a_k\in\mathbb{C}\)
-
-  \pause
-  \vspace{\baselineskip}
-  Um polinômio de grau $n$ possui $n$ raízes complexas
-
-  \pause
-  \vspace{\baselineskip}
-  Se os coeficientes \(a_k\) forem reais, as raízes serão reais ou pares conjugados
-\end{frame}
-%------------------------------------------------------------------------------%
-\begin{frame}{Raízes da Equação Quadrática}
-  Raízes do polinômio
-  \[
-    ax^2 + bx + c = 0
-    \qquad\qquad
-    a\neq 0
-    \qquad
-    a, b, c \in \R
-  \]
-
-  \pause
-  Fórmula de Bhaskara
-  \[
-    x = \dfrac{\displaystyle -b \pm \sqrt{\Delta}}{2a}
-    \qquad\text{ onde }\quad
-    \Delta = b^2 - 4 ac
-  \]
-
-  \pause
-  Se \(\;\Delta<0\;\) temos
-  \(\quad \sqrt{\Delta} = \sqrt{\abs{\Delta}}\;i \)
 \end{frame}
 
 %------------------------------------------------------------------------------%

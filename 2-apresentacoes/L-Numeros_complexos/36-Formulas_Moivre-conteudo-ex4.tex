@@ -1,0 +1,80 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dado \(z=\left(\sqrt{3}+i\right)^4 \)
+
+  calcule
+
+  a) a parte real de $z$,
+
+  b) a parte imaginária de $z$,
+
+  c) o módulo de $z$,
+
+  d) o argumento de $z$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando $u$ na forma polar}
+  Convertendo $u=\sqrt{3}+i$ para a forma polar
+  \[
+    \rho
+    = \abs{u}
+    = \sqrt{\left(\sqrt{3}\right)^2 + 1^2}
+    = \sqrt{4}
+    = 2
+  \]
+  \[
+    \sin(\varphi) = \frac{\Im(u)}{\abs{u}} = \frac{1}{2}
+    \qquad
+    \cos(\varphi) = \frac{\Re(u)}{\abs{u}} = \frac{\sqrt{3}}{2}
+    \qquad
+    \varphi = \arg(u) = \ang{30} = \frac{\pi}{6}
+  \]
+  Assim
+  \[
+    u
+    = \rho\left[\cos\left(\varphi\right)+ i\sin\left(\varphi\right)\right]
+    = 2\left[\cos\left(\frac{\pi}{6}\right)+ i\sin\left(\frac{\pi}{6}\right)\right]
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando $z$}
+  \begin{align*}
+    z
+    & = u^3 \\
+    & = \rho^4\left[\cos\left(4\varphi\right)+ i\sin\left(4\varphi\right)\right] \\
+    & = 2^4\left[\cos\left(\frac{4\pi}{6}\right)+ i\sin\left(\frac{4\pi}{6}\right)\right] \\
+    & = 16\left[\cos\left(\frac{2\pi}{3}\right)+ i\sin\left(\frac{2\pi}{3}\right)\right] \\
+    & = 16\left[-\frac{1}{2}+ i\frac{\sqrt{3}}{2}\right] \\
+    & = -8 + 8\sqrt{3}i
+  \end{align*}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando $z$}
+\begin{columns}
+\column{0.5\linewidth}
+  Parte real de $z$
+  \[
+    \Re(z) = -8
+  \]
+  Parte imaginária de $z$
+  \[
+  \Im(z) = 8\sqrt{3}
+  \]
+\column{0.5\linewidth}
+  Módulo de $z$
+  \[
+  \abs{z} = 16
+  \]
+  Argumento de $z$
+  \[
+  \arg(z) = \frac{2\pi}{3}
+  \]
+\end{columns}
+\end{question}
+
+%------------------------------------------------------------------------------%
+
+
