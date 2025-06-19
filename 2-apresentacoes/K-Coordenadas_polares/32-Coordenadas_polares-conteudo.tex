@@ -27,131 +27,53 @@
   \begin{itemize}[<+->]
     \item Origem ou polo
     \item Raio inicial
-    \item $r$ distância orientada até a origem
-    \item $\theta$ ângulo orientado a partir do raio inicial (em radianos)
+    \item \emph{$r$ distância orientada} até a origem, \(r\in\R\)
+    \item \emph{$\theta$ ângulo orientado} a partir do raio inicial
+          (em radianos) \(\theta\in\R\)
     \item Coordenadas polares $(r, \theta)$
   \end{itemize}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Equações em Coordenadas Polares}
-  \begin{itemize}[<+->]
-    \item \(r=a\)              \tabto{16mm}
-      circulo com centro na origem e raio \(\abs{a}\)
-    \item \(\theta=\theta_0\)  \tabto{16mm}
-      reta passando pela origem com ângulo $\theta_0$ com o raio inicial
-  \end{itemize}
+  \onslide<+->{\(r=a\)}
+  \tabto{20mm}
+  \onslide<+->{circulo com centro na origem e raio \(\abs{a}\)}
+  \\[9mm]
+
+  \onslide<+->{\(\theta=\theta_0\)}
+  \tabto{20mm}
+  \onslide<+->{reta passando pela origem com ângulo $\theta_0$ com o raio inicial}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Relação Entre Coordenadas Polares e Cartesianas}
+\begin{columns}
+\column{0.2\linewidth}
+\begin{align*}
+  \onslide<2->{x          & = r\cos(\theta) \\}
+  \onslide<3->{y          & = r\sin(\theta) \\[9mm]}
+  \onslide<4->{r^2        & = x^2 + y^2     \\}
+  \onslide<5->{\tan\theta & = \frac{x}{y}}
+\end{align*}
+\column{0.7\linewidth}
   \centering
-  \includegraphics[height=68mm]{relacao_polares_catesianas}
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Relação Entre Coordenadas Polares e Cartesianas}
-  \[
-    x = r\cos(\theta) \qquad\qquad
-    y = r\sin(\theta)
-  \]
-
-  \pause
-  \vspace{\baselineskip}
-  \[
-    r^2 = x^2 + y^2  \qquad\qquad
-    \tan\theta = \frac{x}{y}
-  \]
+  \onslide<1->{\includegraphics[width=\linewidth]{relacao_polares_catesianas}}
+\end{columns}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \section{Exemplos}
 
-%------------------------------------------------------------------------------%
-\begin{question}
-  Encontre todas as coordenadas polares do ponto
-  \(
-    \left(r,\theta\right) =
-    \left(2, \frac{\pi}{6}\right)
-  \)
-
-  \pause
-  \vspace{\baselineskip}
-  Os pares são
-  \[
-    \left( 2, \frac{\pi}{6}+2n\pi\right)
-    \hphantom{--5}
-    \qquad n=0, \pm 1, \pm 2, \dots
-  \]
-  \[
-    \left(-2, -\frac{5\pi}{6}+2n\pi\right)
-    \qquad n=0, \pm 1, \pm 2, \dots
-  \]
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{question}
-  Encontre a equação polar para o círculo \(x^2+(y-3)^2=9\)
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-\onslide<+->{Escrevendo a equação em coordenadas polares}
-\begin{align*}
-  \onslide<+->{x^2 + (y-3)^2                 & = 9 \\}
-  \onslide<+->{x^2 + y^2 - 6y + 3^2          & = 9 \\}
-  \onslide<+->{x^2 + y^2 - 6y                & = 0 \\}
-  \onslide<+->{r^2 - 6 r \sin(\theta)        & = 0 \\}
-  \onslide<+->{r \big(r - 6\sin(\theta)\big) & = 0}
-\end{align*}
-\onslide<+->{Portanto}
-\[
-  \onslide<+->{r=0}
-  \onslide<+->{
-  \qquad\text{ou}\qquad
-  r = 6\sin(\theta)}
-\]
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{question}
-  Escreva a equação
-  \[
-    r = \frac{4}{2\cos(\theta)-\sin(\theta)}
-  \]
-  em coordenadas cartesianas
-  e identifique seu gráfico
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  Sabemos que
-  \(
-    x = r\cos(\theta) \quad
-    y = r\sin(\theta)
-  \)
-
-  \pause
-  Manipulando
-  \[
-    r = \frac{4}{2\cos(\theta)-\sin(\theta)}
-  \]
-  \pause
-  temos
-  \[
-    2r\cos(\theta) - r\sin(\theta) = 4
-  \]
-  \pause
-  que é o mesmo que
-  \[
-    2x - y = 4
-  \]
-  \pause
-  ou
-  \[
-    y = 2x - 4
-  \]
-\end{resolution}
+\include{32-Coordenadas_polares-conteudo-ex1}
+\include{32-Coordenadas_polares-conteudo-ex2}
+\include{32-Coordenadas_polares-conteudo-ex3}
+\include{32-Coordenadas_polares-conteudo-ex4}
+\include{32-Coordenadas_polares-conteudo-ex5}
+\include{32-Coordenadas_polares-conteudo-ex6}
+\include{32-Coordenadas_polares-conteudo-ex7}
+\include{32-Coordenadas_polares-conteudo-ex8}
+\include{32-Coordenadas_polares-conteudo-ex9}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}

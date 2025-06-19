@@ -1,0 +1,40 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Escreva a equação
+  \[
+    x^2 + xy + y^2 = 1
+  \]
+  em coordenadas polares e simplifique
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Sabemos que
+  \[
+    x = r\cos(\theta)
+    \qquad\qquad
+    y = r\sin(\theta)
+    \qquad\qquad
+    r^2 = x^2 + y^2
+  \]}
+  \vspace{-\baselineskip}
+  \begin{align*}
+    \onslide<+->{x^2 + xy + y^2                                                                    & = 1 \\}
+    \onslide<+->{\left(r\cos\theta\right)^2 + r\cos\theta r\sin\theta + \left(r\sin\theta\right)^2 & = 1 \\}
+    \onslide<+->{r^2\cos^2\theta + r^2\cos\theta \sin\theta + r^2\sin^2\theta                      & = 1 \\}
+    \onslide<+->{r^2\left(\cos^2\theta + \sin^2\theta + \cos\theta \sin\theta \right)              & = 1 \\}
+    \onslide<+->{r^2\left(1 + \cos\theta \sin\theta \right)                                        & = 1 \\}
+    \onslide<+->{r & = \frac{1}{\sqrt{1 + \cos\theta \sin\theta}}}
+  \end{align*}
+\end{resolution}
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução Alternativa}
+  \begin{align*}
+    \onslide<+->{r^2\left(1 + \cos\theta \sin\theta \right)   & = 1 \\}
+    \onslide<+->{r^2\left(1 + \frac{\sin(2\theta)}{2} \right) & = 1 \\}
+    \onslide<+->{r^2\left(2 + \sin(2\theta) \right)           & = 2 \\}
+    \onslide<+->{r & = \frac{2}{\sqrt{2 + \sin(2\theta)}}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
