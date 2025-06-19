@@ -1,287 +1,302 @@
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Encontre os valores máximo e mínimo absolutos de
   \[
-  f(x, y) = 2 + 2x + 2y - x^2 - y^2
+    f(x, y) = 2 + 2x + 2y - x^2 - y^2
   \]
-  na região triangular no primeiro quadrante limitada pelas retas \\
+  na região triangular limitada pelas retas
   \(x=0\), \(y=0\) e \(y = 9-x\)
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Pontos críticos interiores
+\begin{resolution}{Pontos críticos interiores}
   \[
-  f_x(x, y)
-  \pause
-  = \D{}{x}\left(2 + 2x + 2y - x^2 - y^2\right)
-  \pause
-  = 2-2x
-  \pause
-  = 0
-  \pause
-  \quad\Rightarrow\quad
-  x = 1
+    f_x(x, y)
+    \pause
+    = \D{}{x}\left(2 + 2x + 2y - x^2 - y^2\right)
+    \pause
+    = 2-2x
   \]
   \[
-  \pause
-  f_y(x, y)
-  \pause
-  = \D{}{y}\left(2 + 2x + 2y - x^2 - y^2\right)
-  \pause
-  = 2-2y
-  \pause
-  = 0
-  \pause
-  \quad\Rightarrow\quad
-  y = 1
+    \pause
+    f_y(x, y)
+    \pause
+    = \D{}{y}\left(2 + 2x + 2y - x^2 - y^2\right)
+    \pause
+    = 2-2y
   \]
-  \pause
-  É um ponto interior
+  \vspace{-0.5\baselineskip}
+  \begin{columns}
+  \column{0.3\linewidth}
+    \pause
+    \begin{align*}
+      f_x(x, y) & = 0 \\
+      2-2x      & = 0 \\
+      x         & = 1
+    \end{align*}
+  \column{0.3\linewidth}
+    \pause
+    \begin{align*}
+      f_y(x, y) & = 0 \\
+      2-2y      & = 0 \\
+      y         & = 1
+    \end{align*}
+  \end{columns}
 
   \pause
-  \vspace{\baselineskip}
-  Valor da função
-  \[
+  \vspace{0.5\baselineskip}
+  O ponto $(1, 1)$ está no interior da região $R$
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Valor da função}
+ \[
   f(1, 1)
-  \pause
-  = \left(2 + 2x + 2y - x^2 - y^2\right)\evalat{(1, 1)}{}
-  \pause
-  = 2 + 2 + 2 - 1 - 1
-  \pause
-  = 4
+    \pause
+    = \left(2 + 2x + 2y - x^2 - y^2\right)\evalat{(1, 1)}{}
+    \pause
+    = 2 + 2 + 2 - 1 - 1
+    \pause
+    = 4
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Pontos na fronteira
-
-  \pause
-  \vspace{\baselineskip}
-  Vamos tratar cada segmento em separado
+\begin{resolution}{Pontos na fronteira}
+  Vamos tratar cada segmento da fronteira separadamente
   \begin{enumerate}[<+->]
     \item \(y=0\)   \tabto{24mm} \(0\leq x\leq 9\)
     \item \(x=0\)   \tabto{24mm} \(0\leq y\leq 9\)
     \item \(y=9-x\) \tabto{24mm} \(0\leq x\leq 9\)
   \end{enumerate}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Segmento \(y=0\), \(0\leq x\leq 9\)
+\begin{resolution}{Primeiro segmento}
+  Segmento: \(y=0\), \(0\leq x\leq 9\)
 
   \pause
-  \vspace{\baselineskip}
   Função de uma variável, $x$, no intervalo fechado \(0\leq x\leq 9\)
   \[
-  \pause
-  g(x)
-  \pause
-  = f(x, 0)
-  \pause
-  = 2 + 2x - x^2
-  \]
-
-  \pause
-  \vspace{0.3\baselineskip}
-  Pontos interiores
-  \[
-  g'(x) = 2 - 2x = 0
-  \pause
-  \quad\Rightarrow\quad
-  x = 1
+    \pause
+    g(x)
+    \pause
+    = f(x, 0)
+    \pause
+    = \left(2 + 2x + 2y - x^2 - y^2\right)\evalat{y=0}{}
+    \pause
+    = 2 + 2x - x^2
   \]
   \pause
-  Extremos \(x=0\) e \(x=9\)
+  Pontos críticos de $g$ no interior do intervalo \([0, 9]\)
+  \vspace{-0.7\baselineskip}
+  \begin{columns}[t]
+  \column{0.4\linewidth}
+    \pause
+    \begin{align*}
+      \onslide<+->{g'(x)}
+      \onslide<+->{& = \frac{d}{dx}\left(2 + 2x - x^2\right) \\}
+      \onslide<+->{& = 2 - 2x}
+    \end{align*}
+  \column{0.4\linewidth}
+   \begin{align*}
+      \onslide<+->{g'(x)  & = 0 \\}
+      \onslide<+->{2 - 2x & = 0 \\}
+      \onslide<+->{x      & = 1}
+    \end{align*}
+  \end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Valores da função}
+  Ponto crítico e extremos do intervalo \(x=0\), \(x=1\) e \(x=9\)
 
   \pause
-  \vspace{0.5\baselineskip}
   Pontos no plano
   \((0, 0)\), \((1, 0)\), \((9, 0)\)
-\end{frame}
 
-%------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+  \pause
   Valores da função
   \[
-  \pause
-  f(0, 0)
-  \pause
-  = g(0)
-  \pause
-  = 2
+    \pause f(0, 0)
+    \pause = g(0)
+    \pause = \left(2 + 2x - x^2\right) \evalat{0}{}
+    \pause = 2
   \]
   \[
-  \pause
-  f(1, 0)
-  \pause
-  = g(1)
-  \pause
-  = 3
+    \pause f(1, 0)
+    \pause = g(1)
+    \pause = \left(2 + 2x - x^2\right) \evalat{1}{}
+    \pause = 3
   \]
   \[
-  \pause
-  f(9, 0)
-  \pause
-  = g(9)
-  \pause
-  = 2 + 2\times 9 - 9^2
-  \pause
-  = -61
+    \pause f(9, 0)
+    \pause = g(9)
+    \pause = \left(2 + 2x - x^2\right) \evalat{9}{}
+    \pause = 2 + 2\times 9 - 9^2
+    \pause = -61
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Segundo segmento}
   Segmento \(x=0\), \(0\leq y\leq 9\)
 
   \pause
-  \vspace{\baselineskip}
   Função de uma variável, $y$, no intervalo fechado \(0\leq y\leq 9\)
   \[
-  \pause
-  h(y)
-  \pause
-  = f(0, y)
-  \pause
-  = 2 + 2y - y^2
-  \]
-
-  \pause
-  \vspace{0.3\baselineskip}
-  Pontos interiores
-  \[
-  \pause
-  h'(y) = 2 - 2y = 0
-  \pause
-  \quad\Rightarrow\quad
-  y = 1
+    \pause h(y)
+    \pause = f(0, y)
+    \pause = \left(2 + 2x + 2y - x^2 - y^2\right)\evalat{x=0}{}
+    \pause = 2 + 2y - y^2
   \]
   \pause
-  Extremos \(y=0\) e \(y=9\)
+  Pontos críticos de $h$ no interior do intervalo \([0, 9]\)
+  \vspace{-0.7\baselineskip}
+  \begin{columns}[t]
+  \column{0.4\linewidth}
+    \pause
+    \begin{align*}
+      \onslide<+->{h'(y)}
+      \onslide<+->{& = \frac{d}{dy}\left(2 + 2y - y^2\right) \\}
+      \onslide<+->{& = 2 - 2y}
+    \end{align*}
+  \column{0.4\linewidth}
+    \begin{align*}
+      \onslide<+->{h'(y)  & = 0 \\}
+      \onslide<+->{2 - 2y & = 0 \\}
+      \onslide<+->{y      & = 1}
+    \end{align*}
+  \end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Valores da função}
+  Ponto crítico e extremos do intervalo \(y=0\), \(y=0\) e \(y=9\)
 
   \pause
-  \vspace{0.5\baselineskip}
   Pontos no plano
   \((0, 0)\), \((0, 1)\), \((0, 9)\)
-\end{frame}
 
-%------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+  \pause
   Valores da função
   \[
-  \pause
-  f(0, 0)
-  \pause
-  = h(0)
-  \pause
-  = 2
+    \pause
+    f(0, 0) = 2
+    \qquad\text{já calculado}
   \]
-
   \[
-  \pause
-  f(0, 1)
-  \pause
-  = h(1)
-  \pause
-  = 3
+    \pause f(0, 1)
+    \pause = h(1)
+    \pause = \left(2 + 2y - y^2\right) \evalat{1}{}
+    \pause = 3
   \]
-
   \[
-  \pause
-  f(0, 9)
-  \pause
-  = h(9) \pause
-  = 2 + 2\times 9 - 9^2
-  \pause
-  = -61
+    \pause f(0, 9)
+    \pause = h(9)
+    \pause = \left(2 + 2y - y^2\right) \evalat{9}{}
+    \pause = 2 + 2\times 9 - 9^2
+    \pause = -61
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Terceiro segmento}
   Segmento \(y=9-x\), \(0\leq x\leq 9\)
 
   \pause
   Função de uma variável, $x$, no intervalo fechado \(0\leq y\leq 9\)
-  \[
-  \pause
-  p(x)
-  \pause
-  = f(x, 9-x)
-  \pause
-  = 2 + 2x + 2(9-x) - x^2 - (9-x)^2
-  \]
-  \[
-  \hphantom{p(x)}
-  \pause
-  = 2 + 18 - 81 + 2x -2x +18x -x^2 - x^2
-  \]
-  \[
-  \hphantom{p(x)}
-  \pause
-  = -61 + 18x -2x^2
-  \]
+  \begin{align*}
+    \onslide<+->{p(x) & = f(x, 9-x)                        \\}
+    \onslide<+->{& = 2 + 2x + 2(9-x) - x^2 - (9-x)^2       \\}
+    \onslide<+->{& = 2 + 18 - 81 + 2x -2x +18x -x^2 - x^2  \\}
+    \onslide<+->{& = -61 + 18x -2x^2}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Terceiro segmento}
+  \onslide<+->{Pontos críticos de $p$ no interior do intervalo $[0, 9]$}
+  \vspace{-0.7\baselineskip}
+  \begin{columns}[t]
+  \column{0.5\linewidth}
+    \begin{align*}
+      \onslide<+->{p'(x)}
+      \onslide<+->{& = \frac{d}{dx}\left(-61 + 18x -2x^2\right) \\}
+      \onslide<+->{& = 18 - 4x}
+    \end{align*}
+  \column{0.5\linewidth}
+    \begin{align*}
+      \onslide<+->{p'(x)   & = 0           \\}
+      \onslide<+->{18 - 4x & = 0           \\}
+      \onslide<+->{9 - 2x  & = 0           \\}
+      \onslide<+->{2x      & = 9           \\}
+      \onslide<+->{x       & = \frac{9}{2}}
+    \end{align*}
+  \end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Ponto crítico e extremos do intervalo \(x=0\), \(x=\frac{9}{2}\) e \(x=9\)
 
   \pause
-  Pontos interiores
-  \[
-  \pause
-  p'(x) = 18 - 4x = 0
-  \pause
-  \quad\Rightarrow\quad
-  x = \frac{18}{4}
-  \pause
-  = \frac{9}{2}
-  \]
-  \pause
-  Extremos \(x=0\) e \(x=9\)
+  Para encontrar os pontos no plano usamos a relação \(y=9-x\)
+  \vspace{0.5\baselineskip}
 
   \pause
+  Quando \(x=0\),
+  \pause
+  \(
+    \quad\, y = 9-0 = 9
+  \)
+
+  \pause
+  Quando \(x=\frac{9}{2}\),
+  \pause
+  \(
+    \quad y = 9-\frac{9}{2} = \frac{9}{2}
+  \)
+
+  \pause
+  Quando \(x=9\),
+  \pause
+  \(
+    \quad\, y = 9-9 = 0
+  \)
+
+  \pause
+  \vspace{0.5\baselineskip}
   Pontos no plano
-  \((0, 9)\), \(\left(\sfrac{9}{2}, \sfrac{9}{2}\right)\), \((9, 0)\)
-\end{frame}
+  \((0, 9)\), \(\left(\frac{9}{2}, \frac{9}{2}\right)\), \((9, 0)\)
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Valores da função
-  \[
-  \pause
-  f(0, 9) = -61
-  \]
-
-  \[
-  \pause
-  f\left(\frac{9}{2}, \frac{9}{2}\right)
-  \pause
-  = 2 + 2\frac{9}{2} + 2\frac{9}{2} - \left(\frac{9}{2}\right)^2 - \left(\frac{9}{2}\right)^2
-  \pause
-  = 2 + 9 + 9 -\frac{81}{4} -\frac{81}{4}
-  \]
-  \[
-  \pause
-  \hphantom{p(x)}
-  = 20 -\frac{81}{2}
-  \pause
-  = \frac{40-81}{2}
-  \pause
-  = \frac{-41}{2}
-  \]
-
-  \[
-  \pause
-  f(9, 0) = -61
-  \]
-\end{frame}
+\begin{resolution}{Valores da função}
+  \begin{columns}
+  \column{30mm}
+    \onslide<+->{Já calculados}
+    \begin{align*}
+      \onslide<+->{f(0, 9) & = -61 \\}
+      \onslide<+->{f(9, 0) & = -61}
+    \end{align*}
+  \column{80mm}
+    \begin{align*}
+      \onslide<+->{f\left(\frac{9}{2}, \frac{9}{2}\right)}
+      \onslide<+->{& = p\left(\frac{9}{2}\right)                            \\}
+      \onslide<+->{& = \left(-61 + 18x -2x^2\right)\evalat{\sfrac{9}{2}}{}  \\}
+      \onslide<+->{& = -61 + 18\frac{9}{2} -2\left(\frac{9}{2}\right)^2     \\}
+      \onslide<+->{& = \frac{-41}{2}}
+    \end{align*}
+  \end{columns}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   Máximo absoluto de $f$ em $R$ é 4 e ocorre no ponto \((1, 1)\)
 
   \vspace{\baselineskip}
   Mínimo absoluto de $f$ em $R$ é $-61$ e ocorre nos pontos \((9, 0)\) e \((0, 9)\)
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%

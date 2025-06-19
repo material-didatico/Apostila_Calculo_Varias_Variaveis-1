@@ -1,6 +1,5 @@
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Encontre o maior e menor valores que a função
   \[
     f(x, y) = xy
@@ -9,10 +8,10 @@
   \[
     \frac{x^2}{8} + \frac{y^2}{2} = 1
   \]
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Interpretando o Problema}
   Queremos encontrar os valores extremos da função
   \[
     f(x, y) = xy
@@ -24,16 +23,16 @@
   \]
 
   \pause
-  Para isso precisamos encontrar os valores $x$, $y$, $z$ e $\lambda$ tais que
+  Para isso precisamos encontrar os valores $x$, $y$ e $\lambda$ tais que
   \[
     \nabla f = \lambda \nabla g
     \qquad\qquad
     g(x, y) = 0
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Gradientes}
 \begin{columns}
 \column{0.4\linewidth}
   Gradiente de $f$
@@ -85,12 +84,12 @@
     {\color<19>{blue}\nabla g = \vetor{\dfrac{x}{4}}{y}}
   \]
 \end{columns}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}[t]{Exemplo \theexemplo}
-\begin{columns}
-\column{0.5\linewidth}
+\begin{resolution}{Sistema}
+\begin{columns}[t]
+\column{0.4\linewidth}
   A equação
   \[
     \nabla f = \lambda \nabla g
@@ -98,17 +97,17 @@
   \pause
   se torna
   \[
-    \vetor{y}{x} = \lambda \vetor{\sfrac{x}{4}}{y}
+    \vetor{y}{x} = \lambda \Vetor{\dfrac{x}{4}}{y}
   \]
   {\color<8>{blue}%
   \pause
   \[
     \begin{cases}
-      y = \dfrac{\lambda x}{4} \\[2mm]
+      4y = \lambda x \\[2mm]
       x = \lambda y
     \end{cases}
   \]}
-\column{0.5\linewidth}
+\column{0.4\linewidth}
   \pause
   A equação
   \[
@@ -129,66 +128,65 @@
     x^2 + 4y^2 = 8
   \]}
 \end{columns}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Resolvendo o Sistema Não-Linear}
 \begin{columns}
 \column{0.5\linewidth}
   Precisamos resolver o sistema
   \[
     \begin{cases}
-      y = \dfrac{\lambda x}{4} \\
-      x = \lambda y \\
+      4y = \lambda x \\
+      x  = \lambda y \\
       x^2 + 4y^2 = 8
     \end{cases}
   \]
   \pause
-  Por substituição
+  Substituindo \(x = \lambda y\) em \( 4y = \lambda x\)
   \[
-    y = \dfrac{\lambda}{4} x
     \pause
-    = \dfrac{\lambda}{4} \lambda y
+    4y = \lambda x
     \pause
-    = \dfrac{\lambda^2}{4} y
+    = \lambda \lambda y
+  \]
+  \[
+    \pause
+    4y = \lambda^2 y
+    \pause
+    \qquad
+    \text{\color{red}Não divida por $y$!}
   \]
 \column{0.5\linewidth}
   \pause
-  Assim {\color<10>{blue}$y=0$}
+  Assim \(y=0\)
   \pause
-  ou
-  \[
-    1 = \dfrac{\lambda^2}{4}
-  \]
-  \[
-    \pause
-    \lambda^2 = 4
-  \]
-  \[
-    \pause
-    \abs{\lambda} = 2
-  \]
-  \[
-    \pause
-    {\color<10>{blue}\lambda = \pm 2}
-  \]
+  ou \(y\neq 0\)
+  \pause
+  e
+  \begin{align*}
+    \onslide<+->{\lambda^2     & = 4  \\}
+    \onslide<+->{\abs{\lambda} & = 2  \\}
+    \onslide<+->{\lambda       & = \pm 2}
+  \end{align*}
+
+  \onslide<+->{Caso 1: \emph{\(y=0\)}} \\
+  \onslide<+->{Caso 2: \emph{\(y\neq 0\)} e \emph{\(\lambda=2\)}} \\
+  \onslide<+->{Caso 3: \emph{\(y\neq 0\)} e \emph{\(\lambda=-2\)}}
 \end{columns}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Caso 1
+\begin{resolution}{Caso 1}
   \[
     y = 0
   \]
-
   \pause
   \[
     x = \lambda y
     \pause
     = 0
   \]
-
   \pause
   \[
     x^2 + 4y^2
@@ -197,39 +195,36 @@
     \pause
     \neq 8
   \]
-
   \pause
   Não resolve o sistema
 
   \pause
   \vspace{\baselineskip}
   Portanto \(y\neq 0\)
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Caso 2
-
-  \pause
+\begin{resolution}{Casos 2 e 3}
+\begin{columns}
+\column{0.5\linewidth}
   \[
     y \neq 0
     \qquad
-    \lambda = \pm 2
+    \lambda = 2
   \]
-
-  \pause
   \[
+    \pause
     x
     = \lambda y
     \pause
-    = \pm 2 y
+    = 2 y
   \]
   \[
     \pause
     x^2 = 4y^2
   \]
+  \pause
   \[
-    \pause
     x^2 + 4y^2
     \pause
     = 4y^2 + 4y^2
@@ -238,33 +233,79 @@
     \pause
     = 8
   \]
-
+  \[
+    \pause
+    y^2 = 1
+  \]
   \pause
   Portanto \(y=\pm 1\)
-
+  \pause
+\column{0.5\linewidth}
+  \[
+    y \neq 0
+    \qquad
+    \lambda = -2
+  \]
+  \[
+    \pause
+    x
+    = \lambda y
+    \pause
+    = -2 y
+  \]
+  \[
+    \pause
+    x^2 = 4y^2
+  \]
+  \pause
+  \[
+    x^2 + 4y^2
+    \pause
+    = 4y^2 + 4y^2
+    \pause
+    = 8y^2
+    \pause
+    = 8
+  \]
+  \[
+    \pause
+    y^2 = 1
+  \]
+  \pause
+  Portanto \(y=\pm 1\)
+\end{columns}
   \pause
   \vspace{\baselineskip}
   Temos então os pontos
-  \((-2, -1)\),
-  \((2, -1)\),
-  \((-2, 1)\) e
-  \((2, 1)\)
-
-\end{frame}
+  \(( 2,  1)\),
+  \(( 2, -1)\),
+  \((-2,  1)\) e
+  \((-2, -1)\)
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   \onslide<+->{Avaliando a função \(f(x, y)=xy\) nos pontos}
   \begin{align*}
-    \onslide<+->{f(           -2,            -1) & = (-2)(-1) = 2 \\[2mm]}
-    \onslide<+->{f(\hphantom{-}2,            -1) & = 2(-1) = -2 \\[2mm]}
-    \onslide<+->{f(           -2, \hphantom{-}1) & = -2 \times 1 = -2 \\[2mm]}
-    \onslide<+->{f(\hphantom{-}2, \hphantom{-}1) & = 2\times 1 = 2}
+    \onslide<+->{f(-2, -1)}
+    \onslide<+->{& = (-2)(-1)}
+    \onslide<+->{  =  2 \\}
+    \onslide<+->{f(\hphantom{-}2, -1)}
+    \onslide<+->{& = 2 (-1)}
+    \onslide<+->{  = -2 \\}
+    \onslide<+->{f(-2, \hphantom{-}1)}
+    \onslide<+->{& = -2 \times 1}
+    \onslide<+->{  = -2 \\}
+    \onslide<+->{f(\hphantom{-}2, \hphantom{-}1)}
+    \onslide<+->{& =  2 \times 1}
+    \onslide<+->{  = 2}
   \end{align*}
 
-  \onslide<+->{O valor máximo de $f$ é \hspace{1ex} 2 e ocorre nos pontos \((-2, -1)\) e \(( 2, 1)\)}
+  \onslide<+->{O valor máximo de $f$ é $\hpm 2$
+    e ocorre nos pontos \((-2, -1)\) e \(( 2, 1)\)}
 
-  \onslide<+->{O valor mínimo de $f$ é $-2$ e ocorre nos pontos \((-2, 1)\) e \((2, -1)\)}
-\end{frame}
+  \onslide<+->{O valor mínimo de $f$ é $-2$
+    e ocorre nos pontos \((-2, 1)\) e \((2, -1)\)}
+\end{resolution}
 
 %------------------------------------------------------------------------------%

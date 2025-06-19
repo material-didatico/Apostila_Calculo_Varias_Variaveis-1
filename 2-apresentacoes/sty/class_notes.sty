@@ -62,6 +62,7 @@
 \definecolor{lightgray}{gray}{0.9}
 \definecolor{links}{HTML}{2A1B81}
 \definecolor{bgexample}{HTML}{0d5959}
+\definecolor{bgproof}{gray}{0.3}
 
 \setbeamerfont{institute}{size=\large}
 \setbeamerfont{date}{size=\small}
@@ -144,7 +145,7 @@
 \newenvironment{question}{%
   \addtocounter{exemplo}{1}%
   \setbeamercolor{frametitle}{bg=bgexample}%
-  \begin{frame}{Exemplo \theexemplo}
+  \begin{frame}{Exemplo \theexemplo}{~}
 }{%
   \end{frame}
 }
@@ -152,6 +153,13 @@
 \newenvironment{resolution}[1]{%
   \setbeamercolor{frametitle}{bg=bgexample}%
   \begin{frame}{Exemplo \theexemplo{} -- #1}
+}{%
+  \end{frame}
+}
+
+\newenvironment{proofframe}[1]{%
+  \setbeamercolor{frametitle}{bg=bgproof}%
+  \begin{frame}{#1}
 }{%
   \end{frame}
 }

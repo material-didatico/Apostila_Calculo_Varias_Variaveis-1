@@ -1,43 +1,57 @@
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Encontre o ponto da superfície \(z=xy+1\) que está mais próximo da origem
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Queremos minimizar a distância
+\begin{resolution}{Formulação do Problema}
+  Queremos minimizar a distância até a origem
   \[
     d(x, y, z) = \sqrt{x^2 + y^2 + z^2}
   \]
-  Como a função raiz quadrada é crescente podemos minimizar a função
+  \pause
+  Como a função raiz quadrada é crescente, podemos minimizar a função
   \[
     f(x, y, z) = x^2 + y^2 + z^2
   \]
-  suas derivadas parciais são
+  \pause
+  sujeito a restrição
   \[
-    f_x(x, y, z) = 2x
-    \qquad
-    f_y(x, y, z) = 2y
-    \qquad
-    f_z(x, y, z) = 2z
+    g(x, y, z) = z - xy = 1
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  As derivadas parciais da função \(g(x, y, z)=z-xy\) são
+\begin{resolution}{Gradientes}
+\begin{columns}
+\column{0.5\linewidth}
+  \onslide<+->{Gradiente de \(f(x, y, z) = x^2 + y^2 + z^2\)}
+  \begin{align*}
+    \onslide<+->{f_x(x, y, z) & = 2x \\}
+    \onslide<+->{f_y(x, y, z) & = 2y \\}
+    \onslide<+->{f_z(x, y, z) & = 2z}
+  \end{align*}
+
+  \onslide<+->{
   \[
-    g_x(x, y, z) = -y
-    \qquad
-    g_y(x, y, z) = -x
-    \qquad
-    g_z(x, y, z) = 1
-  \]
-\end{frame}
+    \nabla f = \vetortri{2x}{2y}{2z}
+  \]}
+\column{0.5\linewidth}
+  \onslide<+->{Gradiente de \(g(x, y, z)=z-xy\)}
+  \begin{align*}
+    \onslide<+->{g_x(x, y, z) & = -y \\}
+    \onslide<+->{g_y(x, y, z) & = -x \\}
+    \onslide<+->{g_z(x, y, z) & = 1}
+  \end{align*}
+  \onslide<+->{
+  \[
+    \nabla g = \vetortri{-y}{-x}{1}
+  \]}
+\end{columns}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Sistema}
   Aplicando os Multiplicadores de Lagrange, precisamos resolver o sistema
   \[
   \begin{cases}
@@ -47,95 +61,140 @@
     z-xy = 1
   \end{cases}
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Isolamos $x$ na primeira equação e substituimos na segunda
+\begin{resolution}{Solução}
+  Isolamos $x$ na primeira equação e substituímos na segunda
   \[
+    \pause
+    2x = -\lambda y
+    \pause
+    \hspace{54mm}
     x = \frac{-\lambda y}{2}
   \]
+  \pause
   \[
     y
-    = \frac{-\lambda}{2} x
-    = \frac{-\lambda}{2} \; \frac{-\lambda y}{2}
-    = \frac{\lambda^2}{4} y
+    \pause = \frac{-\lambda}{2} x
+    \pause = \frac{-\lambda}{2} \; \frac{-\lambda y}{2}
+    \pause = \frac{\lambda^2}{4} y
+    \hspace{20mm}
+    \pause 4y = \lambda^2 y
   \]
-  Temos $y=0$ ou
-  \[
-    \frac{\lambda^2}{4} = 1
-    \quad\Rightarrow\quad
-    \lambda^2 = 4
-    \quad\Rightarrow\quad
-    \lambda = \pm 2
-  \]
-\end{frame}
+
+  \pause
+  \vspace{\baselineskip}
+  Temos dois casos \(y=0\) ou \(y\neq 0\)
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-
-  Se $y=0$ a quarta equação se reduz a $z=1$, pela terceira \(\lambda=2\) e
+\begin{resolution}{Caso 1}
+  Caso \(y=0\)
   \[
-    x
-    = \frac{-\lambda y}{2}
-    = \frac{-2\times 0}{2}
+    \pause
+    x = \frac{-\lambda y}{2}
+    \pause
     = 0
   \]
+
+  \pause
+  \(z-xy = 1\) se reduz a \(z=1\)
+
+  \pause
+  \vspace{\baselineskip}
   Obtemos o ponto \((x_1, y_1, z_1) = (0, 0, 1)\)
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Se $\lambda=2$
+\begin{resolution}{Caso 2}
+  Caso \(y\neq 0\)
   \[
-    x
-    = \frac{-\lambda y}{2}
-    = \frac{-2y}{2}
-    = -y
+    \pause
+    4y = \lambda^2 y
   \]
   \[
-    2z = \lambda = 2
-    \quad\Rightarrow\quad
-    z = 1
+    \pause
+    \lambda^2 = 4
   \]
-  Substituindo na quarta equação
-  \begin{align*}
-    z-xy & = 1 \\
-    1 - (-y)y & = 1 \\
-    y^2 = 0 \\
-    y = 0
-  \end{align*}
-  Obtemos novamente o ponto \((x_1, y_1, z_1) = (0, 0, 1)\)
-\end{frame}
+  \[
+    \pause
+    \lambda = \pm 2
+  \]
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Caso 2}
+  \begin{columns}[t]
+  \column{0.5\linewidth}
+    Se $\lambda=2$
+    \[
+      \pause x
+      \pause = \frac{-\lambda y}{2}
+      \pause = \frac{-2y}{2}
+      \pause = -y
+    \]
 
-  Se $\lambda=-2$
-  \[
-    x
-    = \frac{-\lambda y}{2}
-    = \frac{-(-2)y}{2}
-    = y
-  \]
-  \[
-    2z = \lambda = -2
-    \quad\Rightarrow\quad
-    z = -1
-  \]
-  Substituindo na quarta equação
-  \begin{align*}
-    z-xy & = 1 \\
-    -1 - y^2 & = 1 \\
-    -y^2 = 2 \\
-    y^2 = -2
-  \end{align*}
-  Não existe solução real.
-\end{frame}
+    \[
+      \pause 2z = \lambda
+      \pause = 2
+    \]
+    \[
+      \pause z = 1
+    \]
+  \column{0.5\linewidth}
+    \pause
+    Substituindo na quarta equação
+    \pause
+    \begin{align*}
+      \onslide<+->{z-xy      & = 1 \\}
+      \onslide<+->{1 - (-y)y & = 1 \\}
+      \onslide<+->{y^2       & = 0 \\}
+      \onslide<+->{y         & = 0   }
+    \end{align*}
+  \end{columns}
+
+  \vspace{\baselineskip}
+  \onslide<+->{Obtemos novamente o ponto \((x_1, y_1, z_1) = (0, 0, 1)\)}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Caso 2}
+  \begin{columns}[t]
+  \column{0.5\linewidth}
+    Se $\lambda=-2$
+    \[
+      \pause x
+      \pause = \frac{-\lambda y}{2}
+      \pause = \frac{-(-2)y}{2}
+      \pause = y
+    \]
+
+    \[
+      \pause 2z = \lambda = -2
+    \]
+    \[
+      \pause z = -1
+    \]
+  \column{0.5\linewidth}
+    \pause
+    Substituindo na quarta equação
+    \pause
+    \begin{align*}
+      \onslide<+->{z-xy     & = 1  \\}
+      \onslide<+->{-1 - y^2 & = 1  \\}
+      \onslide<+->{-y^2     & = 2  \\}
+      \onslide<+->{y^2      & = -2}
+    \end{align*}
+  \end{columns}
+
+  \vspace{\baselineskip}
+  \onslide<+->{Não existe solução}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
   O ponto mais próximo da origem é \((0, 0, 1)\)
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%

@@ -1,6 +1,5 @@
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Encontre os valores máximo e mínimo da função
   \[
     f(x, y) = 3x + 4y
@@ -9,10 +8,10 @@
   \[
     x^2 + y^2 = 1
   \]
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Interpretação do Problema}
   Queremos encontrar os valores extremos da função
   \[
     f(x, y) = 3x + 4y
@@ -24,16 +23,16 @@
   \]
 
   \pause
-  Para isso precisamos encontrar os valores $x$, $y$, $z$ e $\lambda$ tais que
+  Para isso precisamos encontrar os valores $x$, $y$ e $\lambda$ tais que
   \[
     \nabla f = \lambda \nabla g
     \qquad\qquad
     g(x, y) = 0
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Gradientes}
 \begin{columns}
 \column{0.4\linewidth}
   Gradiente de $f$
@@ -81,12 +80,12 @@
     {\color<17>{blue}\nabla g = \vetor{2x}{2y}}
   \]
 \end{columns}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}[t]{Exemplo \theexemplo}
-\begin{columns}
-\column{0.5\linewidth}
+\begin{resolution}{Sistema}
+\begin{columns}[t]
+\column{0.4\linewidth}
   A equação
   \[
     \nabla f = \lambda \nabla g
@@ -100,11 +99,11 @@
     \pause
     \[
     \begin{cases}
-      x = \dfrac{3}{2\lambda} \\[4mm]
-      y = \dfrac{2}{\lambda}
+      2x\lambda = 3 \\
+      2y\lambda = 4
     \end{cases}
   \]}
-\column{0.5\linewidth}
+\column{0.4\linewidth}
   \pause
   A equação
   \[
@@ -121,39 +120,49 @@
     x^2 + y^2 = 1
   \]}
 \end{columns}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
 \begin{columns}
-\column{0.5\linewidth}
-  \onslide<+->{Precisamos resolver o sistema
+\column{0.4\linewidth}
+  Precisamos resolver o sistema
   \[
   \begin{cases}
-    x = \dfrac{3}{2\lambda} \\[3mm]
-    y = \dfrac{2}{\lambda} \\[3mm]
+    2x\lambda = 3 \\
+    2y\lambda = 4 \\
     x^2 + y^2 = 1
   \end{cases}
-  \]}
-\column{0.5\linewidth}
+  \]
+  \pause
+  Notando que \(\lambda\neq 0\)
+  \[
+    \begin{cases}
+      x = \dfrac{3}{2\lambda} \\[2mm]
+      y = \dfrac{2}{ \lambda} \\[2mm]
+      x^2 + y^2 = 1
+    \end{cases}
+    \pause
+  \]
+\column{0.4\linewidth}
   \begin{align*}
-    \onslide<+->{x^2 + y^2 & = 1 \\[2mm]}
+    \onslide<+->{x^2 + y^2 & = 1                         \\}
     \onslide<+->{\left(\frac{3}{2\lambda}\right)^2 +
-                 \left(\frac{2}{\lambda}\right)^2 & = 1  \\[2mm]}
+                 \left(\frac{2}{\lambda}\right)^2 & = 1  \\}
     \onslide<+->{\frac{9}{4\lambda^2} +
-                 \frac{4}{\lambda^2} & = 1  \\[2mm]}
-    \onslide<+->{\frac{9+16}{4\lambda^2} & = 1  \\[2mm]}
-    \onslide<+->{4\lambda^2 & = 25  \\[2mm]}
+                 \frac{4}{\lambda^2} & = 1               \\}
+    \onslide<+->{\frac{9+16}{4\lambda^2} & = 1           \\}
+    \onslide<+->{4\lambda^2 & = 25                       \\}
     \onslide<+->{\lambda & = \pm \frac{5}{2}}
   \end{align*}
 \end{columns}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-\begin{columns}
-\column{0.5\linewidth}
-  Quando \(\lambda=\sfrac{5}{2}\)
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.4\linewidth}
+  Quando \(\lambda=\frac{5}{2}\)
   \[
     \pause
     x
@@ -172,7 +181,7 @@
     \pause
     = \frac{4}{5}
   \]
-\column{0.5\linewidth}
+\column{0.4\linewidth}
   \pause
   Quando \(\lambda=-\sfrac{5}{2}\)
   \[
@@ -194,10 +203,10 @@
     = -\frac{4}{5}
   \]
 \end{columns}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   \onslide<+->{Avaliando a função \(f(x, y)=3x + 4y\) nos pontos}
   \begin{align*}
     \onslide<+->{f\left(           -\frac{3}{5},            -\frac{4}{5}\right) &= }
@@ -210,12 +219,12 @@
     \onslide<+->{5}
   \end{align*}
 
-  \onslide<+->{O valor máximo de $f$ é \hspace{1ex} 5 e ocorre no ponto
+  \onslide<+->{O valor máximo de $f$ é $\hpm 5$ e ocorre no ponto
   \(\left(\frac{3}{5}, \frac{4}{5}\right)\)}
 
   \vspace{0.3\baselineskip}
   \onslide<+->{O valor mínimo de $f$ é $-5$ e ocorre no ponto
   \(\left(-\frac{3}{5}, -\frac{4}{5}\right)\)}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%

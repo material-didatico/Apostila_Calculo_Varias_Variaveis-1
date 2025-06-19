@@ -1,6 +1,5 @@
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
+\begin{question}
   Encontre os máximos e mínimos absolutos da função
   \[
     f(x, y) = x^2 + 2y^2 - x
@@ -9,22 +8,16 @@
   \[
     x^2 + y^2 \leq 1
   \]
-\end{frame}
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Pontos críticos interiores
+\begin{resolution}{Pontos críticos interiores}
   \[
     f_x(x, y)
     \pause
     = \D{}{x}\left(x^2 + 2y^2 - x\right)
     \pause
     = 2x-1
-    \pause
-    = 0
-    \pause
-    \quad\Rightarrow\quad
-    x = \frac{1}{2}
   \]
   \[
     \pause
@@ -33,125 +26,150 @@
     = \D{}{x}\left(x^2 + 2y^2 - x\right)
     \pause
     = 4y
-    \pause
-    = 0
-    \pause
-    \quad\Rightarrow\quad
-    y = 0
   \]
-  \pause
-  É um ponto interior
+  \vspace{-\baselineskip}
+  \begin{columns}
+  \column{20mm}
+    \pause
+      \begin{align*}
+      \onslide<+->{f_x(x, y) & = 0           \\}
+      \onslide<+->{2x-1      & = 0           \\}
+      \onslide<+->{x         & = \frac{1}{2}}
+    \end{align*}
+  \column{60mm}
+    \begin{align*}
+      \onslide<+->{f_y(x, y) & = 0 \\}
+      \onslide<+->{4y        & = 0 \\}
+      \onslide<+->{y         & = 0}
+    \end{align*}
+  \end{columns}
 
-  \pause
-  \vspace{\baselineskip}
-  Valor da função
-  \[
-    f\left(\sfrac{1}{2}, 0\right)
-    \pause
-    = \left(x^2 + 2y^2 - x\right)\evalat{\left(\sfrac{1}{2}, 0\right)}{}
-    \pause
-    = \left(\frac{1}{2}\right)^2 + 2\times 0 ^2 - \frac{1}{2}
-    \pause
-    = \frac{1}{4} - \frac{2}{4}
-    \pause
-    = -\frac{1}{4}
-  \]
-\end{frame}
+  \onslide<+->{O ponto \(\left(\frac{1}{2}, 0\right)\) está no interior da região $R$}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Fronteira
+\begin{resolution}{Valor da função}
+    \begin{align*}
+    \onslide<+->{f\left(\frac{1}{2}, 0\right)}
+    \onslide<+->{& = \left(x^2 + 2y^2 - x\right)\evalat{\left(\frac{1}{2}, 0\right)}{} \\}
+    \onslide<+->{& = \left(\frac{1}{2}\right)^2 + 2\times 0 ^2 - \frac{1}{2}           \\}
+    \onslide<+->{& = \frac{1}{4} - \frac{2}{4}                                         \\}
+    \onslide<+->{& = -\frac{1}{4}}
+    \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Fronteira}
+  Escrevemos a fronteira
   \[
     x^2+y^2 = 1
-    \pause
-    \quad\Rightarrow\quad
-    y^2 = 1 - x^2
   \]
-  \pause
-  com \(-1\leq x \leq 1\)
 
   \pause
-  \vspace{\baselineskip}
-  Função $f$ restrita à fronteira
+  Parte de cima
   \[
-    g(x)
-    \pause
-    = x^2 + 2\left(1 - x^2\right) -x
-    \pause
-    = x^2 + 2 - 2x^2 - x
-    \pause
-    = 2 - x^2 - x
+    y_1(x) = \hpm \sqrt{1-x^2} \qquad\qquad -1\leq x \leq 1
   \]
-\end{frame}
+
+  \pause
+  Parte de baixo
+  \[
+    y_2(x) = -\sqrt{1-x^2} \qquad\qquad -1\leq x \leq 1
+  \]
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Candidatos a máximos e mínimos na fronteira
-
-  \pause
-  \vspace{\baselineskip}
-  Extremidade esquerda
-  \[
-    x = -1
-    \pause
-    \quad\Rightarrow\quad
-    \pause
-    y^2 = 1 - (-1)^2 = 0
-  \]
-  \pause
-  Extremidade direita
-  \[
-    \pause
-    x = 1
-    \pause
-    \quad\Rightarrow\quad
-    y^2 = 1 - 1^2
-    \pause
-    = 0
-  \]
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Interior
-  \[
-    \pause
-    g'(x)
-    \pause
-    = \frac{d}{dx}\left(2 - x^2 - x\right)
-    \pause
-    = -2x - 1
-    \pause
-    = 0
-    \pause
-    \quad\Rightarrow\quad
-    x = -\frac{1}{2}
-  \]
-  \[
-    \pause
-    y^2 = 1 - x^2
-    \pause
-    = 1 - \left(-\frac{1}{2}\right)^2
-    \pause
-    = \frac{4}{4} - \frac{1}{4}
-    \pause
-    = \frac{3}{4}
- \]
- \[
-    \pause
-    \abs{y} = \sqrt{\frac{3}{4}}
-  \]
-  \[
-    \pause
-    y
-    = \pm\sqrt{\frac{3}{4}}
-    \pause
-    = \pm\frac{\sqrt{3}}{2}
-  \]
-\end{frame}
+\begin{resolution}{Fronteira}
+\begin{columns}
+\column{0.5\linewidth}
+  \onslide<+->{Na parte de cima da fronteira}
+  \begin{align*}
+    \onslide<+->{g_1(x) & = f\left(x, y_1(x)\right)                        \\}
+    \onslide<+->{& = \left(x^2 + 2y^2 - x\right) \evalat{y=\sqrt{1-x^2}}{} \\}
+    \onslide<+->{& = x^2 + 2\left(\sqrt{1-x^2}\right)^2 - x                \\}
+    \onslide<+->{& = x^2 + 2(1-x^2) - x                                    \\}
+    \onslide<+->{& = x^2 + 2 - 2x^2 - x                                    \\}
+    \onslide<+->{& = 2 -x -x^2}
+  \end{align*}
+\column{0.5\linewidth}
+  \onslide<+->{Na parte de baixo da fronteira}
+  \begin{align*}
+    \onslide<+->{g_2(x) & = f\left(x, y_2(x)\right)                         \\}
+    \onslide<+->{& = \left(x^2 + 2y^2 - x\right) \evalat{y=-\sqrt{1-x^2}}{} \\}
+    \onslide<+->{& = x^2 + 2\left(-\sqrt{1-x^2}\right)^2 - x                \\}
+    \onslide<+->{& = x^2 + 2(1-x^2) - x                                     \\}
+    \onslide<+->{& = x^2 + 2 - 2x^2 - x                                     \\}
+    \onslide<+->{& = 2 -x -x^2}
+    \onslide<+->{\;=\; g_1(x)}
+  \end{align*}
+\end{columns}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Candidatos a máximos e mínimos na fronteira}
+  Quando $x=-1$
+  \[
+    \pause y_1(-1)
+    \pause = \hpm \sqrt{1-(-1)^2}
+    \pause = 0
+  \]
+  \[
+    \pause y_2(-1)
+    \pause = -\sqrt{1-(-1)^2}
+    \pause = 0
+  \]
+
+  \pause
+  Quando $x=1$
+  \[
+    \pause y_1(1)
+    \pause = \hpm \sqrt{1-1^2}
+    \pause = 0
+  \]
+  \[
+    \pause y_2(1)
+    \pause = -\sqrt{1-1^2}
+    \pause = 0
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Pontos críticos no interior}
+  \[
+    \onslide<+->{g_1'(x)}
+    \onslide<+->{= \frac{d}{dx}\left(2 -x -x^2\right)}
+    \onslide<+->{= -1 -2x}
+  \]
+  \vspace{-2.2\baselineskip}
+  \begin{columns}[t]
+  \column{0.22\linewidth}
+    \begin{align*}
+      \onslide<+->{g_1'(x) & = 0            \\}
+      \onslide<+->{-1 -2x  & = 0            \\}
+      \onslide<+->{2x      & = -1           \\}
+      \onslide<+->{x       & = \frac{-1}{2}}
+    \end{align*}
+  \column{0.35\linewidth}
+    \begin{align*}
+      \onslide<+->{y_1\left(\frac{-1}{2}\right)}
+      \onslide<+->{& = \sqrt{1-\left(\frac{-1}{2}\right)^2} \\}
+      \onslide<+->{& = \sqrt{1-\frac{1}{4}}                 \\}
+      \onslide<+->{& = \sqrt{\frac{3}{4}}                   \\}
+      \onslide<+->{& = \frac{\sqrt{3}}{2}}
+    \end{align*}
+  \column{0.5\linewidth}
+    \begin{align*}
+      \onslide<+->{y_1\left(\frac{-1}{2}\right)}
+      \onslide<+->{& = -\sqrt{1-\left(\frac{-1}{2}\right)^2} \\}
+      \onslide<+->{& = -\sqrt{1-\frac{1}{4}}                 \\}
+      \onslide<+->{& = -\sqrt{\frac{3}{4}}                   \\}
+      \onslide<+->{& = \frac{-\sqrt{3}}{2}}
+    \end{align*}
+  \end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
   Avaliando a função nos pontos
   \[
     \pause
@@ -173,10 +191,10 @@
     \pause
     = 0
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   \[
     f\left(-\frac{1}{2}, \frac{\sqrt{3}}{2}\right)
     \pause
@@ -189,8 +207,7 @@
     \hphantom{f\left(-\frac{1}{2}, \frac{\sqrt{3}}{2}\right)}\,
     = \frac{1}{4} + 2\frac{3}{4} + \frac{2}{4}
     \pause
-    = \frac{9}{4}
-    = 2,25
+    \;=\; \frac{9}{4}
   \]
 
   \pause
@@ -206,13 +223,12 @@
     \hphantom{f\left(-\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)}\,
     = \frac{1}{4} + 2\frac{3}{4} + \frac{2}{4}
     \pause
-    = \frac{9}{4}
-    = 2,25
+    \;=\; \frac{9}{4}
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Solução}
   Máximo absoluto de $f$ na região é \(\frac{9}{4}\) e ocorre nos pontos \\
   \(\left(-\frac{1}{2}, -\frac{\sqrt{3}}{2}\right)\) e
   \(\left(-\frac{1}{2},  \frac{\sqrt{3}}{2}\right)\)
@@ -221,6 +237,6 @@
   Mínimo absoluto de $f$ na região é \(-\frac{1}{4}\)
   e ocorre no ponto
   \(\left(\frac{1}{2}, 0\right)\)
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%

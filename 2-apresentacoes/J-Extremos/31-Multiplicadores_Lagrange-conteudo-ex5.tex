@@ -1,45 +1,55 @@
 %------------------------------------------------------------------------------%
-\addtocounter{exemplo}{1}
-\begin{frame}{Exemplo \theexemplo}
-  Encontre o ponto da esfera \(x^2+y^2+z^2=4\) mais distante do ponto \((1, -1, 1)\)
-
-  \textit{Dica: não é necessário avaliar completamente a distância para determinar o máximo}
-\end{frame}
+\begin{question}
+  Encontre o ponto da esfera \( x^2 + y^2 + z^2 = 4 \)
+  mais distante do ponto \((1, -1, 1)\)
+\end{question}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Queremos minimizar a distância
+\begin{resolution}{Formulação do Problema}
+  Queremos maximizar a distância
   \[
     d(x, y, z) = \sqrt{(x-1)^2 + (y+1)^2 + (z-1)^2}
   \]
-  Como a função raiz quadrada é crescente podemos minimizar a função
+  \pause
+  Como a função raiz quadrada é crescente, podemos maximizar a função
   \[
     f(x, y, z) = (x-1)^2 + (y+1)^2 + (z-1)^2
   \]
-  suas derivadas parciais são
+  \pause
+  sujeito a restrição
   \[
-    f_x(x, y, z) = 2(x-1)
-    \qquad
-    f_y(x, y, z) = 2(y+1)
-    \qquad
-    f_z(x, y, z) = 2(z-1)
+    g(x, y, z) = x^2 + y^2 + z^2 = 4
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  As derivadas parciais da função \(g(x, y, z)=x^2+y^2+z^2\) são
+\begin{resolution}{Gradientes}
+\begin{columns}
+\column{0.55\linewidth}
+  \onslide<+->{\(f(x, y, z) = (x-1)^2 + (y+1)^2 + (z-1)^2\)}
+  \begin{align*}
+    \onslide<+->{f_x(x, y, z) & = 2(x-1) \\}
+    \onslide<+->{f_y(x, y, z) & = 2(y+1) \\}
+    \onslide<+->{f_z(x, y, z) & = 2(z-1)}
+  \end{align*}
   \[
-    g_x(x, y, z) = 2x
-    \qquad
-    g_y(x, y, z) = 2y
-    \qquad
-    g_z(x, y, z) = 2z
+    \onslide<+->{\nabla f = \vetortri{2(x-1)}{2(y+1)}{2(z-1)}}
   \]
-\end{frame}
+\column{0.45\linewidth}
+  \onslide<+->{\(g(x, y, z) = x^2 + y^2 + z^2\)}
+  \begin{align*}
+    \onslide<+->{g_x(x, y, z) & = 2x \\}
+    \onslide<+->{g_y(x, y, z) & = 2y \\}
+    \onslide<+->{g_z(x, y, z) & = 2z}
+  \end{align*}
+  \[
+    \onslide<+->{\nabla g = \vetortri{2x}{2y}{2z}}
+  \]
+\end{columns}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Sistema}
   Aplicando os Multiplicadores de Lagrange, precisamos resolver o sistema
   \[
   \begin{cases}
@@ -49,105 +59,148 @@
     x^2 + y^2 + z^2 = 4
   \end{cases}
   \]
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Das três primeiras equações obtemos
+\begin{resolution}{Solução}
+  \onslide<+->{Das três primeiras equações obtemos}
+  \begin{columns}
+  \column{0.3\linewidth}
+    \begin{align*}
+      \onslide<+->{2(x-1)       & = 2\lambda x        \\}
+      \onslide<+->{x-1          & = \lambda x         \\}
+      \onslide<+->{x(1-\lambda) & = 1                 \\}
+      \onslide<+->{x            & = \frac{1}{1-\lambda} }
+    \end{align*}
+  \column{0.3\linewidth}
   \begin{align*}
-    2(x-1)       & = 2\lambda x          & 2(y+1)       & = 2\lambda y          & 2(z-1)       & = 2\lambda z          \\
-    x-1          & = \lambda x           & y+1          & = \lambda y           & z-1          & = \lambda z           \\
-    x(1-\lambda) & = 1                   & y(1-\lambda) & = -1                  & z(1-\lambda) & = 1                   \\
-    x            & = \frac{1}{1-\lambda} & y            & =\frac{-1}{1-\lambda} & z            & = \frac{1}{1-\lambda}
+    \onslide<+->{2(y+1)       & = 2\lambda y        \\}
+    \onslide<+->{y+1          & = \lambda y         \\}
+    \onslide<+->{y(1-\lambda) & = -1                \\}
+    \onslide<+->{y            & =\frac{-1}{1-\lambda} }
   \end{align*}
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Sabemos que \(1-\lambda\neq 0\) pois \(x(1-\lambda) = 1\).
-
-  Substituindo na última equação
+  \column{0.3\linewidth}
   \begin{align*}
-    x^2 + y^2 + z^2 & = 4
-    \\[2mm]
-    \left(\frac{1}{1-\lambda}\right)^2 +
-    \left(\frac{-1}{1-\lambda}\right)^2 +
-    \left(\frac{1}{1-\lambda}\right)^2 & = 4
-    \\[2mm]
-    \frac{1 + 1 + 1}{\left(1-\lambda\right)^2} & = 4
-    \\[2mm]
-    \frac{1}{\left(1-\lambda\right)^2} & = \frac{4}{3}
-    \\[2mm]
-    \frac{1}{1-\lambda} & = \pm\sqrt{\frac{4}{3}}
-    = \pm\frac{2}{\sqrt{3}}
+    \onslide<+->{2(z-1)       & = 2\lambda z       \\}
+    \onslide<+->{z-1          & = \lambda z        \\}
+    \onslide<+->{z(1-\lambda) & = 1                \\}
+    \onslide<+->{z            & = \frac{1}{1-\lambda}}
   \end{align*}
-\end{frame}
+  \end{columns}
+
+  \vspace{\baselineskip}
+  \onslide<+->{Usamos que \(1-\lambda\neq 0\) pois \(x(1-\lambda) = 1\)}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Substituindo na Última Equação}
+  \begin{align*}
+    \onslide<+->{x^2 + y^2 + z^2 & = 4}
+    \\
+    \onslide<+->{\left(\frac{1}{1-\lambda}\right)^2 +
+                 \left(\frac{-1}{1-\lambda}\right)^2 +
+                 \left(\frac{1}{1-\lambda}\right)^2 & = 4}
+    \\
+    \onslide<+->{\frac{1 + 1 + 1}{\left(1-\lambda\right)^2} & = 4}
+    \\
+    \onslide<+->{\frac{1}{\left(1-\lambda\right)^2} & = \frac{4}{3}}
+    \\
+    \onslide<+->{\frac{1}{1-\lambda} & = \pm\sqrt{\frac{4}{3}}}
+    \onslide<+->{\;=\; \pm\frac{2}{\sqrt{3}}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.4\linewidth}
   Para \(\frac{1}{1-\lambda} = \frac{2}{\sqrt{3}}\)
   \[
-    x = \frac{2}{\sqrt{3}}
-    \qquad
-    y = \frac{-2}{\sqrt{3}}
-    \qquad
-    z = \frac{2}{\sqrt{3}}
+    \pause x = \frac{1}{1-\lambda}
+    \pause   = \frac{2}{\sqrt{3}}
   \]
-\end{frame}
 
-%------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+  \[
+    \pause y = \frac{-1}{1-\lambda}
+    \pause   = \frac{-2}{\sqrt{3}}
+  \]
+
+  \[
+    \pause z = \frac{1}{1-\lambda}
+    \pause   = \frac{2}{\sqrt{3}}
+  \]
+\column{0.4\linewidth}
+  \pause
   Para \(\frac{1}{1-\lambda} = -\frac{2}{\sqrt{3}}\)
   \[
-    x = \frac{-2}{\sqrt{3}}
-    \qquad
-    y = \frac{2}{\sqrt{3}}
-    \qquad
-    z = \frac{-2}{\sqrt{3}}
+    \pause x = \frac{1}{1-\lambda}
+    \pause   = \frac{-2}{\sqrt{3}}
   \]
-\end{frame}
+
+  \[
+    \pause y = \frac{-1}{1-\lambda}
+    \pause   = \frac{2}{\sqrt{3}}
+  \]
+
+  \[
+    \pause z = \frac{1}{1-\lambda}
+    \pause   = \frac{-2}{\sqrt{3}}
+  \]
+\end{columns}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Candidatos a Máximo}
   Temos dois candidatos
   \(\left( \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}\right)\) e
-  \(\left( \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}\right)\).
-\end{frame}
+  \(\left( \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}\right)\)
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Avaliando a função em cada ponto temos
+\begin{resolution}{Avaliando a Função}
   \begin{align*}
-    f\left( \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}\right)
-    & = \left(\frac{ 2}{\sqrt{3}}-1\right)^2
+    \onslide<+->{f\left( \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}\right)}
+    \onslide<+->{& = \left(\frac{ 2}{\sqrt{3}}-1\right)^2
     + \left(\frac{-2}{\sqrt{3}}+1\right)^2
-    + \left(\frac{ 2}{\sqrt{3}}-1\right)^2 \\[2mm]
-    & = \left(\frac{2}{\sqrt{3}}-1\right)^2
+    + \left(\frac{ 2}{\sqrt{3}}-1\right)^2 \\[2mm]}
+    \onslide<+->{& = \left(\frac{2}{\sqrt{3}}-1\right)^2
     + \left(\frac{2}{\sqrt{3}}-1\right)^2
-    + \left(\frac{2}{\sqrt{3}}-1\right)^2 \\[2mm]
-    & = 3\left(\frac{2}{\sqrt{3}}-1\right)^2
+    + \left(\frac{2}{\sqrt{3}}-1\right)^2 \\[2mm]}
+    \onslide<+->{& = 3\left(\frac{2}{\sqrt{3}}-1\right)^2}
   \end{align*}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
+\begin{resolution}{Avaliando a Função}
   \begin{align*}
-    f\left( \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}\right)
-    & = \left(\frac{-2}{\sqrt{3}}-1\right)^2
+    \onslide<+->{f\left( \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}\right)}
+    \onslide<+->{& = \left(\frac{-2}{\sqrt{3}}-1\right)^2
     + \left(\frac{ 2}{\sqrt{3}}+1\right)^2
-    + \left(\frac{-2}{\sqrt{3}}-1\right)^2 \\[2mm]
-    & = \left(\frac{2}{\sqrt{3}}+1\right)^2
+    + \left(\frac{-2}{\sqrt{3}}-1\right)^2 \\[2mm]}
+    \onslide<+->{& = \left(\frac{2}{\sqrt{3}}+1\right)^2
     + \left(\frac{2}{\sqrt{3}}+1\right)^2
-    + \left(\frac{2}{\sqrt{3}}+1\right)^2 \\[2mm]
-    & = 3\left(\frac{2}{\sqrt{3}}+1\right)^2
+    + \left(\frac{2}{\sqrt{3}}+1\right)^2 \\[2mm]}
+    \onslide<+->{& = 3\left(\frac{2}{\sqrt{3}}+1\right)^2}
   \end{align*}
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Exemplo \theexemplo}
-  Portanto o ponto mais distante é
+\begin{resolution}{Solução}
+  Como
+  \[
+    f\left( \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}\right)
+    = 3\left(\frac{2}{\sqrt{3}}-1\right)^2
+  \]
+  é menor do que
+  \[
+    f\left( \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}\right)
+    = 3\left(\frac{2}{\sqrt{3}}+1\right)^2
+  \]
+
+  \pause
+  O ponto mais distante é
   \(\left( \frac{-2}{\sqrt{3}}, \frac{2}{\sqrt{3}}, \frac{-2}{\sqrt{3}}\right)\)
   \clearpage
-\end{frame}
+\end{resolution}
 
 %------------------------------------------------------------------------------%

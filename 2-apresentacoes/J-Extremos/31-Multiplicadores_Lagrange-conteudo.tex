@@ -18,11 +18,11 @@
   sujeito a \(g(x, y, z) = 0\)
 
   \pause
-  \vspace{2\baselineskip}
-  \emph{$f$} função objetivo
+  \vspace{\baselineskip}
+  \quad \emph{$f$} \quad função objetivo
 
   \pause
-  \emph{$g$} restrição
+  \quad \emph{$g$} \quad restrição
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -38,46 +38,74 @@
   \pause
   cujo interior contém a curva
   \[
-    C\colon r(t)
-    = g(t)\veci
-    + h(t)\vecj
-    + k(t)\veck
+    C\colon\;
+    \pause r(t) \;=\; g(t)\veci + h(t)\vecj + k(t)\veck
+    \pause \;=\; \vetortri{g(t)}{h(t)}{k(t)}
   \]
 
   \pause
   Se $P_0$ é um ponto em $C$ onde $f$ possua um máximo ou mínimo local relativo
   aos seus valores em $C$,
   \pause
-  então \(\nabla f\) é ortogonal a $C$ em $P_0$
+  então \emph{\(\nabla f\) é normal a $C$ em $P_0$}
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Demonstração}
-  Os valores de $f$ em $C$ são dados pela composta
+\begin{proofframe}{Demonstração}
+  Os valores de $f$, restrita a $C$, são dados pela função
   \[
+    \pause
     p(t) = f(g(t), h(t), k(t))
   \]
-  \pause
-  então
   \[
+    \pause
     \frac{dp}{dt}
     \pause
-    = \D{f}{g}\frac{dg}{dt}
+    \;=\; \D{f}{g}\frac{dg}{dt}
     + \D{f}{h}\frac{dh}{dt}
     + \D{f}{k}\frac{dk}{dt}
     \pause
-    = \nabla f \cdot \frac{dr}{dt}
+    \;=\; \nabla f \cdot \frac{dr}{dt}
   \]
 
   \pause
-  Se $f$ possui máximo (mínimo) em \((a, b, c)\) correspondente a $t_0$
-  \[
+  Se $f$, restrita a $C$, possui extremo local em \((a, b, c) = (g(t_0), h(t_0), k(t_0))\)
+
+  \pause
+  \vspace{0.4\baselineskip}
+  então \(\frac{dp}{dt}(t_0)=0\)
+  \pause
+  \qquad
+  portanto
+  \quad
+  \emph{\(
     \nabla f(a, b, c) \cdot \frac{dr}{dt}(t_0) = 0
-  \]
-\end{frame}
+  \)}
+\end{proofframe}
 
 %------------------------------------------------------------------------------%
 \section{Multiplicadores de Lagrange}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Introdução}
+  Para encontrar o máximo (mínimo) da função \(f(x, y, z)\)\\[2mm]
+  sujeito a \(g(x, y, z) = 0\)
+
+  \pause
+  \vspace{\baselineskip}
+  Buscamos pelos pontos onde o gradiente de $f$ \\
+  é normal a curva de nível de \(g(x, y, z) = 0\)
+
+  \pause
+  \vspace{\baselineskip}
+  Isto é, os pontos onde os \emph{gradientes de $f$ e $g$ apontam na mesma direção}
+  \pause
+  \[
+    \nabla f = \lambda\;\nabla g
+  \]
+  \pause
+  \emph{\(\lambda\) é o Multiplicador de Lagrange}
+\end{frame}
 
 \framedgraphic{Extremos Condicionados}{LagrangeMultipliers2D}{}
 
@@ -94,15 +122,16 @@
   \pause
   encontre $x$, $y$, $z$ e $\lambda$ tais que
   \[
-    \nabla f = \lambda \nabla g
-    \qquad\qquad
-    g(x, y, z) = 0
+    \begin{cases}
+      \nabla f = \lambda \nabla g   \\
+      g(x, y, z) = 0
+    \end{cases}
   \]
-  \pause
-  \(\lambda\) é o Multiplicador de Lagrange
 \end{frame}
 
 %------------------------------------------------------------------------------%
+\section{Exemplos}
+
 \include{31-Multiplicadores_Lagrange-conteudo-ex1}
 \include{31-Multiplicadores_Lagrange-conteudo-ex2}
 \include{31-Multiplicadores_Lagrange-conteudo-ex3}
