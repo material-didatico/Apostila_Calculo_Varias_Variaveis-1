@@ -43,7 +43,7 @@ RUBBER= rubber --inplace --quiet --short
 RM_TMP_FILES=rm -vf *~ .*~ *.bak                                    \
                     *.aux *.bbl *.blg *.lof *.log *.lot *.out *.toc \
                     *.bcf *.run.xml *.snm *.nav *.vrb .*.sw?        \
-                    *.psynctex.gz *.synctex.gz
+                    *.psynctex.gz *.synctex.gz *.rubbercache *.pre
 
 .PHONY: clean
 clean:

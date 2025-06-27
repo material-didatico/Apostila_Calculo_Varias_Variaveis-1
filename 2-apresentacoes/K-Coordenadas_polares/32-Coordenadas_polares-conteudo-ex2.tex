@@ -3,9 +3,9 @@
   Converta as seguintes coordenadas cartesianas em coordenadas polares
   $(r, \theta)$
 
-  a) \quad \((x, y) = \left(3, 4\right)\)
+  a) \quad \((x, y) = \left(-2, 2\sqrt{3}\right)\)
 
-  b) \quad \((x, y) = \left(-2, 2\sqrt{3}\right)\)
+  b) \quad \((x, y) = \left(3, 4\right)\)
 
   c) \quad \((x, y) = \left(0, -5\right)\)
 
@@ -14,13 +14,89 @@
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução Item a}
+  \((x, y) = \left(-2, 2\sqrt{3}\right)\)
+  \[
+    r^2    \;=\; x^2 + y^2
+    \pause \;=\; (-2)^2 + \left(2\sqrt{3}\right)^2
+    \pause \;=\; 4 + 4\times 3
+    \pause \;=\; 16
+  \]
+  \[
+    \pause r = \pm 4
+  \]
+
+  \[
+    \pause \tan\theta \;=\; \frac{y}{x}
+    \pause            \;=\; \frac{2\sqrt{3}}{-2}
+    \pause            \;=\; -\sqrt{3}
+  \]
+  \[
+    \pause \theta \;=\; \arctan\left(-\sqrt{3}\right) \pm n\pi
+    \pause        \;=\; -\frac{\pi}{3} \pm n\pi
+    \qquad n\in \Z
+  \]
+
+  \[
+    \pause \left(r, \theta\right)
+    \pause = \left(4, -\dfrac{\pi}{3}+\pi\right)
+    \pause = \left(4, \dfrac{2\pi}{3}\right)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução Item a -- Alternativa}
+  \(
+    (x, y) = \left(-2, 2\sqrt{3}\right)
+    \qquad\qquad
+    \pause r = 4
+  \)
+
+  \pause
+  Podemos determinar $\theta$ resolvendo o sistema
+  \[
+    \begin{cases}
+      r\cos(\theta) = x\\
+      r\sin(\theta) = y
+    \end{cases}
+    \pause\qquad
+    \begin{cases}
+      4\cos(\theta) = -2\\
+      4\sin(\theta) = 2\sqrt{3}
+    \end{cases}
+    \pause\qquad
+    \begin{cases}
+      \cos(\theta) = -\dfrac{1}{2}      \\[2mm]
+      \sin(\theta) = \dfrac{\sqrt{3}}{2}
+    \end{cases}
+  \]
+  \pause
+  Como
+  \(
+    \begin{cases}
+      \cos\left(\frac{\pi}{3}\right) = \dfrac{1}{2}      \\[2mm]
+      \sin\left(\frac{\pi}{3}\right) = \dfrac{\sqrt{3}}{2}
+    \end{cases}
+    \qquad\quad
+    \pause \theta \;=\; \pi - \frac{\pi}{3}
+    \pause \;=\; \frac{2\pi}{3}
+    \qquad\quad
+    \pause \left(r, \theta\right) = \left(4, \dfrac{2\pi}{3}\right)
+  \)
+\end{resolution}
+
+
+
+
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução Item b}
+   \((x, y) = \left(3, 4\right)\)
   \[
     r^2    \;=\; x^2 + y^2
     \pause \;=\; 3^2 + 4^2
     \pause \;=\; 9 + 16
     \pause \;=\; 25
-  \]
-  \[
+    \qquad\qquad
     \pause r = \pm 5
   \]
 
@@ -40,43 +116,13 @@
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução Item b}
-  \[
-    r^2    \;=\; x^2 + y^2
-    \pause \;=\; (-2)^2 + \left(2\sqrt{3}\right)^2
-    \pause \;=\; 4 + 4\times 3
-    \pause \;=\; 16
-  \]
-  \[
-    \pause r = \pm 4
-  \]
-
-  \[
-    \pause \tan\theta \;=\; \frac{y}{x}
-    \pause            \;=\; \frac{2\sqrt{3}}{2}
-    \pause            \;=\; \sqrt{3}
-  \]
-  \[
-    \pause \theta \;=\; \arctan\left(\sqrt{3}\right) \pm n\pi
-    \pause        \;=\; \frac{\pi}{3} \pm n\pi
-    \qquad n\in \Z
-  \]
-
-  \pause
-  \[
-    \left(r, \theta\right) =
-    \left(4, \dfrac{2\pi}{3}\right)
-  \]
-\end{resolution}
-
-%------------------------------------------------------------------------------%
 \begin{resolution}{Solução Item c}
+  \((x, y) = \left(0, -5\right)\)
   \[
     r^2    \;=\; x^2 + y^2
     \pause \;=\; 0^2 + 5^2
     \pause \;=\; 25
-  \]
-  \[
+    \qquad\qquad
     \pause r = \pm 5
   \]
 
@@ -85,8 +131,27 @@
     \pause            \;=\; \frac{-5}{0}
     \pause            \quad \nexists
   \]
+  \pause
   \[
-    \pause \theta \;=\; \frac{\pi}{2} \pm n\pi
+    \begin{cases}
+      r\cos(\theta) = x\\
+      r\sin(\theta) = y
+    \end{cases}
+    \pause\qquad
+    \begin{cases}
+      5\cos(\theta) = 0 \\
+      5\sin(\theta) = -5
+    \end{cases}
+    \pause\qquad
+    \begin{cases}
+      \cos(\theta) = 0 \\
+      \sin(\theta) = -1
+    \end{cases}
+  \]
+
+  \pause
+  \[
+    \theta \;=\; -\frac{\pi}{2} \pm 2\pi n
     \qquad n\in \Z
   \]
 
