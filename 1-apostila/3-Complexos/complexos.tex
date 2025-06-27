@@ -15,4 +15,272 @@ Raízes $n$-ésimas de números complexos.
 
 Fórmula de Euler.
 
+
+%------------------------------------------------------------------------------%
+\section{Unidade Imaginária}
+
+%------------------------------------------------------------------------------%
+Considere a equação
+\[ x^2 + 1 = 0 \]
+Manipulando formalmente temos a solução
+\[ x = \sqrt{-1} \]
+Porém, \(x^2 \geq 0\) para todo $x\in\R$
+
+Não existe \(\sqrt{-1}\) dentro dos números reais
+
+%------------------------------------------------------------------------------%
+Unidade imaginária
+\[ i^2 = -1 \]
+
+\(j^2=-1\) para a Engenharia Elétrica
+
+%------------------------------------------------------------------------------%
+Potências de $i$
+\begin{align*}
+  i^1 & = i  \\
+  i^2 & = -1 \\
+  i^3 & = i^2 \, i = (-1) i = -i \\
+  i^4 & = i^2 \, i^2 = (-1)(-1) = 1  \\
+  i^5 & = i^4 \, i = 1\cdot i = i \\
+  i^6 & = i^4 \, i^2 = 1(-1) = -1    \\
+  i^7 & = i^4 \, i^3 = 1(-i) = -i    \\
+  i^8 & = i^4 \, i^4 = 1\cdot 1 = 1
+\end{align*}
+
+%------------------------------------------------------------------------------%
+\begin{align*}
+  i^0 & = 1\\
+  i^{-1}
+  & = \frac{1}{i}
+    = \frac{i}{i^2}
+    = \frac{i}{-1}
+    = -i\\
+  i^{-2}
+  & = \frac{1}{i^2}
+    = \frac{1}{-1}
+    = -1\\
+  i^{-3}
+  & = \frac{1}{i^3}
+    = \frac{1}{-i}
+    = \frac{i}{-i^2}
+    = \frac{i}{1}
+    = i
+\end{align*}
+
+\[
+  i^{75} = ?
+\]
+
+%------------------------------------------------------------------------------%
+Para uma potência $n$ inteira
+
+Dividimos $n$ por 4
+\[
+  \begin{array}{>{\;}c<{\;}>{\;}c<{\;}}
+    n & \multicolumn{1}{|c}{4} \\ \cline{2-2}
+    r & q
+  \end{array}
+  \qquad
+  \begin{array}{>{\;}c<{\;}>{\;}c<{\;}}
+    75 & \multicolumn{1}{|c}{4} \\ \cline{2-2}
+    3  & 18
+  \end{array}
+\]
+Assim
+\begin{gather*}
+  n = 4q + r \\
+  75 = 4\times 18 + 3
+\end{gather*}
+\begin{align*}
+  i^n
+  & = i^{4q+r} \\
+  & = i^{4q} \; i^r \\
+  & = \left(i^4\right)^q \; i^r \\
+  & = \left(1\right)^q \; i^r \\
+  & = i^r
+\end{align*}
+\[
+  i^{75} = i^3 = -i
+\]
+
+%------------------------------------------------------------------------------%
+Cuidado com raízes
+
+Sabemos que
+\[
+  \sqrt{a}\,\sqrt{b} = \sqrt{ab}
+\]
+
+Por exemplo
+\[
+  \sqrt{9}\,\sqrt{4}
+  = 3\times 2
+  = 6
+\]
+\[
+  \sqrt{9\times 4}
+  = \sqrt{36}
+  = 6
+\]
+\[
+  \sqrt{-9}\,\sqrt{-4}
+  = 3i\times 2i
+  = 6i^2
+  = -6
+\]
+\[
+  \sqrt{(-9)(-4)}
+  = \sqrt{36}
+  = 6
+\]
+Só é verdade para $a$ e $b$ positivos!
+
+%------------------------------------------------------------------------------%
+%\include{33-Numeros_Complexos-conteudo-ex1}
+
+%------------------------------------------------------------------------------%
+\section{Números Complexos}
+
+%------------------------------------------------------------------------------%
+Conjunto dos Números Complexos
+\[
+  \mathbb{C} = \big\{\, z=a+bi \;\big|\; a, b \in \R \,\big\}
+\]
+Parte real de $z$
+\[
+  \Re(z) = a
+\]
+Parte imaginária de $z$
+\[
+  \Im(z) = b
+\]
+Os números complexos com parte imaginária nula são os Reais
+
+%------------------------------------------------------------------------------%
+Igualdade entre números complexos
+
+\(z_1=a+bi\) \; é \emph{igual} a \; \(z_2=c+di\)
+
+se, e somente se,
+\[
+   a = c
+   \qquad\text{e}\qquad
+   b = d
+\]
+
+%------------------------------------------------------------------------------%
+Soma e produto de números complexos
+
+Soma e subtração
+\[
+  (a+b\emph{i}) + (c+d\emph{i})
+  \;=\;  a + b\emph{i} + c + d\emph{i}
+  \;=\; (a+c) + (b+d) \emph{i}
+\]
+\vspace{-\baselineskip}
+\[
+  (a+b\emph{i}) - (c+d\emph{i})
+  \;=\; a+b\emph{i} -c -d\emph{i}
+  \;=\; (a-c) + (b-d) \emph{i}
+\]
+
+\emph{Produto}
+\begin{align*}
+    (a+b\emph{i}) \times (c+d\emph{i})
+    & \;=\; a         \times (c+d\emph{i})
+      \;+\; b\emph{i} \times (c+d\emph{i})  \\
+    & \;=\; ac + ad\emph{i} + bc\emph{i} + bd\emph{i}^2  \\
+    & \;=\; ac + ad\emph{i} + bc\emph{i} - bd  \\
+    & \;=\; (ac-bd) \;+\; (ad+bc) \emph{i}
+\end{align*}
+
+%------------------------------------------------------------------------------%
+Conjugado
+O \emph{conjugado} do número complexo
+\[
+  z = a + bi
+\]
+é o número
+\[
+  \bar{z} = a - bi
+\]
+
+%------------------------------------------------------------------------------%
+Propriedades dos conjugados
+\begin{enumerate}
+  \item \;
+  \(
+    \bar{\bar{z}} = z
+  \)
+
+  \item \; se \(\bar{z}=z\) então $z$ é real
+
+  \item \;
+  \(
+    z\bar{z}
+    = (a+bi)(a-bi)
+    = a^2 -abi +abi - b^2 i^2
+    = a^2 + b^2
+  \)
+\end{enumerate}
+
+%------------------------------------------------------------------------------%
+Divisão de números complexos
+
+Divisão: um número $q$ é a divisão de \(z_1=a+bi\) por \(z_2=c+di\) se
+\begin{align*}
+  q z_2           & = z_1                   \\
+  q z_2 \bar{z}_2 & = z_1 \bar{z}_2         \\
+  q (c^2 + d^2)   & = (c+di)(a-bi)          \\
+                  & = ca -cbi +dai -dbi^2   \\
+                  & = ca -cbi +dai +dbi     \\
+                  & = (ac + bd) + (ad -bc)i
+\end{align*}
+\begin{align*}
+  q & = \frac{(ac + bd) + (ad -bc)i}{c^2 + d^2}           \\[2mm]
+    & = \frac{(ac + bd)}{c^2 + d^2} + \frac{(ad -bc)}{c^2 + d^2}i
+\end{align*}
+
+%------------------------------------------------------------------------------%
+Operações com os Números Complexos
+Divisão de \(z_1=a+bi\) por \(z_2=c+di\)
+\[
+  \frac{z_1}{z_2}
+  \;=\; \frac{z_1\,\bar{z}_2}{z_2\,\bar{z}_2}
+  \;=\; \frac{(ac + bd)}{c^2 + d^2} + \frac{(ad -bc)}{c^2 + d^2}i
+\]
+
+%------------------------------------------------------------------------------%
+Corpo complexo
+A soma e o produto nos complexos tem as mesmas propriedades dos reais
+
+Por isso o conjunto dos complexos é chamado \emph{corpo}
+
+Exemplos de corpos: racionais, reais, complexos
+
+%------------------------------------------------------------------------------%
+%\include{33-Numeros_Complexos-conteudo-ex2}
+
+%------------------------------------------------------------------------------%
+\section{Plano Complexo}
+
+%------------------------------------------------------------------------------%
+\begin{gather*}
+  z = x + yi \quad          \in \mathbb{C} \\
+  (x, y)     \hspace{7.2ex} \in \R^2
+\end{gather*}
+
+%\addtext{9}{7,1.5}{\scalebox{0.7}[0.8]{\input{fig_complex_plane}}}
+
+\begin{itemize}
+  \item Parte real       \tabto{32mm} \( \Re(z) = x \)     \\[4mm]
+  \item Parte imaginária \tabto{32mm} \( \Im(z) = y \)     \\[4mm]
+  \item Conjugado        \tabto{32mm} \( \bar{z} = x - yi \)        \\[4mm]
+  \item Módulo           \tabto{32mm} \( \abs{z} = \rho = \sqrt{x^2+y^2\,}\) \\[4mm]
+  \item Argumento        \tabto{32mm} \( \arg{(z)} = \varphi = \arctan\left(\frac{\,y\,}{x}\right)\)
+\end{itemize}
+
+%------------------------------------------------------------------------------%
+%\include{33-Numeros_Complexos-conteudo-ex3}
+
 %------------------------------------------------------------------------------%
