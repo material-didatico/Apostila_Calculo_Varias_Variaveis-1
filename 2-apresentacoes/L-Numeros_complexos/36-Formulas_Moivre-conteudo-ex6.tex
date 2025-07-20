@@ -5,100 +5,116 @@
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-Escrevemos \(z = 1 + i\) na forma polar
+  Escrevendo \(z = 1 + i\) na forma polar
 
+  \pause
   Módulo
   \[
-    \rho = \abs{1+i} = \sqrt{1^2 + 1^2} = \sqrt{2}
+    \rho
+    \pause
+    = \abs{1+i}
+    \pause
+    = \sqrt{1^2 + 1^2}
+    \pause
+    = \sqrt{2}
   \]
 
+  \pause
   Argumento
   \[
-    \varphi = \arg(1+i) = \ang{45} = \frac{\pi}{4}
+    \varphi
+    \pause
+    = \arg(1+i)
+    \pause
+    = \ang{45}
+    \pause
+    = \frac{\pi}{4}
   \]
+
+  \pause
+  Forma polar
   \[
     z = \sqrt{2} \left[ \cos\left(\frac{\pi}{4}\right)
                     + i \sin\left(\frac{\pi}{4}\right) \right]
   \]
-
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Raízes cúbicas}
 \begin{align*}
-  u_k
-  & = \sqrt[3]{\rho} \left[
+  \onslide<+->{u_k}
+  \onslide<+->{& = \sqrt[3]{\rho} \left[
   \cos\left(\frac{\varphi + 2k\pi}{3}\right)
   + i \sin\left(\frac{\varphi + 2k\pi}{3}\right)
   \right]
-  & k = 0, 1, 2    \\
-  & = \sqrt[3]{\sqrt{2}} \left[
+  & k = 0, 1, 2    \\}
+  \onslide<+->{& = \sqrt[3]{\sqrt{2}} \left[
   \cos\left(\frac{1}{3}\left(\frac{\pi}{4} + 2k\pi\right)\right)
   + i \sin\left(\frac{1}{3}\left(\frac{\pi}{4} + 2k\pi\right)\right)
-  \right] \\
-  & = \sqrt[6]{2} \left[
+  \right] \\}
+  \onslide<+->{& = \sqrt[6]{2} \left[
   \cos\left( \frac{\pi + 8k\pi}{12} \right)
   + i \sin\left( \frac{\pi + 8k\pi}{12} \right)
-  \right]
+  \right]}
 \end{align*}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
   \begin{align*}
-    u_0
-    & = \sqrt[6]{2} \left[
+    \onslide<+->{u_0}
+    \onslide<+->{& = \sqrt[6]{2} \left[
     \cos\left( \frac{\pi + 8\times0\pi}{12} \right)
     + i \sin\left( \frac{\pi + 8\times0\pi}{12} \right)
-    \right] \\[2mm]
-    & = \sqrt[6]{2} \left[
+    \right] \\[2mm]}
+    \onslide<+->{& = \sqrt[6]{2} \left[
     \cos\left( \frac{\pi}{12} \right)
     + i \sin\left( \frac{\pi}{12} \right)
-    \right]
+    \right]}
   \end{align*}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
   \begin{align*}
-    u_1
-    & = \sqrt[6]{2} \left[
+    \onslide<+->{u_1}
+    \onslide<+->{& = \sqrt[6]{2} \left[
     \cos\left( \frac{\pi + 8\times1\pi}{12} \right)
     + i \sin\left( \frac{\pi + 8\times1\pi}{12} \right)
-    \right] \\
-    & = \sqrt[6]{2} \left[
+    \right] \\}
+    \onslide<+->{& = \sqrt[6]{2} \left[
     \cos\left( \frac{9\pi}{12} \right)
     + i \sin\left( \frac{9\pi}{12} \right)
-    \right] \\
-    & = \sqrt[6]{2} \left[
+    \right] \\}
+    \onslide<+->{& = \sqrt[6]{2} \left[
     \cos\left( \frac{3\pi}{4} \right)
     + i \sin\left( \frac{3\pi}{4} \right)
-    \right] \\
-    & = \sqrt[6]{2} \left[
+    \right] \\}
+    \onslide<+->{& = \sqrt[6]{2} \left[
     - \frac{\sqrt{2}}{2}
     + i \frac{\sqrt{2}}{2}
-    \right] \\
-    & = - \frac{2^{\sfrac{1}{6}}}{2^{\sfrac{1}{2}}}
-    + \frac{2^{\sfrac{1}{6}}}{2^{\sfrac{1}{2}}} i  \\
-    & = - 2^{-\sfrac{1}{3}}
-    + 2^{-\sfrac{1}{3}} i \\[2mm]
-    & = - \frac{1}{\sqrt[3]{2}}
-    + \frac{i}{\sqrt[3]{2}}
+    \right] \\}
+    \onslide<+->{& = - \frac{2^{\sfrac{1}{6}}}{2^{\sfrac{1}{2}}}
+    + \frac{2^{\sfrac{1}{6}}}{2^{\sfrac{1}{2}}} i  \\}
+    \onslide<+->{& = - 2^{-\sfrac{1}{3}}
+    + 2^{-\sfrac{1}{3}} i \\[2mm]}
+    \onslide<+->{& = - \frac{1}{\sqrt[3]{2}}
+    + \frac{i}{\sqrt[3]{2}}}
   \end{align*}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
   \begin{align*}
-    u_2
-    & = \sqrt[6]{2} \left[
+    \onslide<+->{u_2}
+    \onslide<+->{& = \sqrt[6]{2} \left[
     \cos\left( \frac{\pi + 8\times2\pi}{12} \right)
     + i \sin\left( \frac{\pi + 8\times2\pi}{12} \right)
-    \right] \\
-    & = \sqrt[6]{2} \left[
+    \right] \\}
+    \onslide<+->{& = \sqrt[6]{2} \left[
     \cos\left( \frac{17}{12}\pi \right)
     + i \sin\left( \frac{17}{12}\pi \right)
-    \right]
+    \right]}
   \end{align*}
 \end{resolution}
 

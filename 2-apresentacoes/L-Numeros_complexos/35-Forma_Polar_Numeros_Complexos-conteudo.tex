@@ -13,51 +13,69 @@
 \section{Forma Polar ou Trigonométrica de um Número Complexo}
 
 %------------------------------------------------------------------------------%
-\begin{frame}[t]{Plano Complexo}
-  \begin{gather*}
-    z = x + yi \quad          \in \mathbb{C} \\
-    (x, y)     \hspace{7.2ex} \in \R^2
-  \end{gather*}
-
-  \addtext{9}{7,1.5}{\scalebox{0.7}[0.8]{\input{fig_complex_plane}}}
-
-  \pause
-  \begin{itemize}[<+->]
-    \item Parte real       \tabto{32mm} \( \Re(z) = x \)     \\[4mm]
-    \item Parte imaginária \tabto{32mm} \( \Im(z) = y \)     \\[4mm]
-    \item Conjugado        \tabto{32mm} \( \bar{z} = x - yi \)        \\[4mm]
-    \item Módulo           \tabto{32mm} \( \abs{z} = \rho = \sqrt{x^2+y^2\,}\) \\[4mm]
-    \item Argumento        \tabto{32mm} \( \arg{(z)} = \varphi = \arctan\left(\frac{\,y\,}{x}\right)\)
-  \end{itemize}
+\begin{frame}{Plano Complexo}
+  \begin{columns}[b]
+    \column{0.55\linewidth}
+    \begin{gather*}
+      \onslide<1->{z = x + yi \quad          \in \mathbb{C} \\}
+      \onslide<1->{(x, y)     \hspace{7.2ex} \in \R^2}
+    \end{gather*}
+    \onslide<2->{Parte real \tabto{24mm} \( \Re(z) = x \)       }\\[4mm]
+    \onslide<3->{Parte imag \tabto{24mm} \( \Im(z) = y \)       }\\[4mm]
+    \onslide<4->{Módulo     \tabto{24mm}}%
+      \(
+        \onslide<4->{\rho}
+        \onslide<5->{= \abs{z}}
+        \onslide<6->{= \sqrt{z\bar{z}}}
+        \onslide<7->{= \sqrt{x^2+y^2\,}}
+      \) \\[4mm]
+    \onslide<8->{Argumento \tabto{24mm}}%
+      \(
+        \onslide<8->{\varphi}
+        \onslide<9->{= \arg{(z)}}
+        \onslide<10->{= \arctan\left(\frac{\,y\,}{x}\right)}
+      \) \\[4mm]
+    \onslide<11->{Conjugado  \tabto{24mm} \( \bar{z} = x - yi \) }
+    \column{0.3\linewidth}
+    \begin{center}%
+      \only<1|handout:0>   {\includegraphics{plano_complexo-1}}% base
+      \only<2|handout:0>   {\includegraphics{plano_complexo-2}}% real
+      \only<3|handout:0>   {\includegraphics{plano_complexo-3}}% imaginario
+      \only<4-7|handout:0> {\includegraphics{plano_complexo-4}}% modulo
+      \only<8-10|handout:0>{\includegraphics{plano_complexo-5}}% argumento
+      \only<11|handout:0>  {\includegraphics{plano_complexo-6}}% conjugado
+      \only<12>            {\includegraphics{plano_complexo-7}}% conjugado
+    \end{center}
+  \end{columns}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Forma Polar ou Trigonométrica de um Número Complexo}
   Usando
   \[
-    \cos(\varphi) = \frac{a}{\rho}
-    \qquad\qquad
-    \pause
-    a = \rho\cos(\varphi)
+    x = \rho\cos(\varphi)
+    \qquad\text{e}\qquad
+    y = \rho\sin(\varphi)
   \]
-  \[
-    \pause
-    \sin(\varphi) = \frac{b}{\rho}
-    \qquad\qquad
-    \pause
-    b = \rho\sin(\varphi)
-  \]
-
   \pause
-  \vspace{\baselineskip}
-  Podemos escrever o número complexo \(z=a+bi\) como
+  Podemos escrever o número complexo \(z=x+yi\) como
   \[
-    z = \rho \left( \cos(\varphi) + i\sin(\varphi)\right)
+    \emph{z = \rho \big( \cos(\varphi) + i\sin(\varphi)\big)}
+  \]
+  \pause
+  Abreviação
+  \[
+    z = \rho \cis(\varphi)
+  \]
+  \pause
+  Notação de Steinmetz (circuitos de corrente alternada)
+  \[
+    z = \rho \;\angle\; \varphi
   \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\include{34-Forma_Polar_Numeros_Complexos-conteudo-ex1}
+\include{35-Forma_Polar_Numeros_Complexos-conteudo-ex1}
 
 %------------------------------------------------------------------------------%
 \section{Multiplicação}
@@ -105,8 +123,8 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\include{34-Forma_Polar_Numeros_Complexos-conteudo-ex2}
-\include{34-Forma_Polar_Numeros_Complexos-conteudo-ex3}
+\include{35-Forma_Polar_Numeros_Complexos-conteudo-ex2}
+\include{35-Forma_Polar_Numeros_Complexos-conteudo-ex3}
 
 %------------------------------------------------------------------------------%
 \section{Divisão}
@@ -130,7 +148,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\include{34-Forma_Polar_Numeros_Complexos-conteudo-ex4}
+\include{35-Forma_Polar_Numeros_Complexos-conteudo-ex4}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}

@@ -2,69 +2,98 @@
 \begin{question}
   Escreva os números complexos na sua forma polar
   \begin{enumerate}
-    \item \(z_1 = \sqrt{3} + i\)
+    \item \(z_1 = \sqrt{3} + i\) \\[3mm]
     \item \(z_2 = -2 + 2\sqrt{3}i\)
   \end{enumerate}
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
+\begin{resolution}{Solução -- 1}
   \[
     z_1 = \sqrt{3} + i
     \qquad\qquad
-    \pause
-    a = \Re(z) = \sqrt{3}
+    \pause a = \Re(z) = \sqrt{3}
     \qquad\qquad
-    \pause
-    b = \Im(z) = 1
+    \pause b = \Im(z) = 1
   \]
 
   \[
-    \pause
-    \rho
-    = \sqrt{a^2 + b^2}
-    \pause
-    = \sqrt{\left(\sqrt{3}\right)^2 + 1^2}
-    \pause
-    = \sqrt{3+1}
-    \pause
-    = \sqrt{4}
-    \pause
-    = 2
+    \pause \rho
+    \pause = \abs{z_1}
+    \pause = \sqrt{a^2 + b^2}
+    \pause = \sqrt{\left(\sqrt{3}\right)^2 + 1^2}
+    \pause = \sqrt{3+1}
+    \pause = \sqrt{4}
+    \pause = 2
   \]
 
   \[
-    \pause
-    \sin(\varphi)
-    \pause
-    = \frac{b}{\rho}
-    \pause
-    = \frac{1}{2}
-    \pause
+    \pause \sin(\varphi)
+    \pause = \frac{b}{\rho}
+    \pause = \frac{1}{2}
     \qquad\qquad
-    \cos(\varphi)
-    \pause
-    = \frac{a}{\rho}
-    \pause
-    = \frac{\sqrt{3}}{2}
+    \pause \cos(\varphi)
+    \pause = \frac{a}{\rho}
+    \pause = \frac{\sqrt{3}}{2}
   \]
 
   \[
-    \pause
-    \varphi
-    \pause
-    = \ang{30}
-    \pause
-    = \frac{\pi}{6} \si{\radian}
+    \pause \varphi
+    \pause = \arg(z_1)
+    \pause = \ang{30}
+    \pause = \frac{\pi}{6} \si{\radian}
   \]
 
   \[
-    \pause
-    z_1
-    \pause
-    = \rho\left(\cos(\varphi)+i\sin(\varphi)\right)
-    \pause
-    = 2\left(\cos\left(\frac{\pi}{6}\right)+i\sin\left(\frac{\pi}{6}\right)\right)
+    \pause z_1
+    \pause = \rho\left(\cos(\varphi)+i\sin(\varphi)\right)
+    \pause = 2\left(\cos\left(\frac{\pi}{6}\right)+i\sin\left(\frac{\pi}{6}\right)\right)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução -- 2}
+  \[
+    z_2 = -2 + 2\sqrt{3}i
+    \qquad\qquad
+    \pause a = \Re(z_2) = -2
+    \qquad\qquad
+    \pause b = \Im(z_2) = 2\sqrt{3}
+  \]
+
+  \[
+    \pause \rho
+    \pause = \abs{z_2}
+    \pause = \sqrt{a^2 + b^2}
+    \pause = \sqrt{\left(\sqrt{3}\right)^2 + 1^2}
+    \pause = \sqrt{3+1}
+    \pause = \sqrt{4}
+    \pause = 2
+  \]
+
+  \[
+    \pause \sin(\varphi)
+    \pause = \frac{\Im(z_2)}{\abs{z_2}}
+    \pause = \frac{b}{\rho}
+    \pause = \frac{1}{2}
+    \qquad\qquad
+    \pause \cos(\varphi)
+    \pause = \frac{\Re(z_2)}{\abs{z_2}}
+    \pause = \frac{a}{\rho}
+    \pause = \frac{\sqrt{3}}{2}
+  \]
+
+  \[
+    \pause \varphi
+    \pause = \arg(z_2)
+    \pause = \ang{30}
+    \pause = \frac{\pi}{6} \si{\radian}
+  \]
+
+  \[
+    \pause z_1
+    \pause = \rho\left(\cos(\varphi)+i\sin(\varphi)\right)
+    \pause = 2\left(\cos\left(\frac{\pi}{6}\right)+i\sin\left(\frac{\pi}{6}\right)\right)
   \]
 \end{resolution}
 

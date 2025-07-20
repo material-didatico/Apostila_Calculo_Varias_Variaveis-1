@@ -16,23 +16,28 @@
 %------------------------------------------------------------------------------%
 \begin{resolution}{Avaliando $z$}
 \begin{align*}
-  z
-  & = \frac{ \left(1-\sqrt{3}\right) + \left(1+\sqrt{3}\right)i}{2+2i} \\
-  & = \frac{ \left[\left(1-\sqrt{3}\right) + \left(1+\sqrt{3}\right)i\right](2-2i)}{(2+2i)(2-2i)} \\
-  & = \frac{ \left(1-\sqrt{3}\right)(2-2i) + \left(1+\sqrt{3}\right)(2i+2)}{2^2 + 2^2} \\
-  & = \frac{ 2-2i-2\sqrt{3}+2\sqrt{3}i + 2i+2+2\sqrt{3}i +2\sqrt{3}}{8} \\
-  & = \frac{ 4 + 4\sqrt{3}i}{8}
-  \;=\; \frac{1}{2} + \frac{\sqrt{3}}{2}i
+  \onslide<+->{z & = \frac{ \left(1-\sqrt{3}\right) + \left(1+\sqrt{3}\right)i}{2+2i} \\}
+  \onslide<+->{  & = \frac{ \left[\left(1-\sqrt{3}\right) + \left(1+\sqrt{3}\right)i\right](2-2i)}{(2+2i)(2-2i)} \\}
+  \onslide<+->{  & = \frac{ \left(1-\sqrt{3}\right)(2-2i) + \left(1+\sqrt{3}\right)(2i+2)}{2^2 + 2^2} \\}
+  \onslide<+->{  & = \frac{ 2-2i-2\sqrt{3}+2\sqrt{3}i + 2i+2+2\sqrt{3}i +2\sqrt{3}}{8} \\}
+  \onslide<+->{  & = \frac{ 4 + 4\sqrt{3}i}{8}}
+  \onslide<+->{\;=\; \frac{1}{2} + \frac{\sqrt{3}}{2}i}
 \end{align*}
 \end{question}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Partes real e imaginária de $z$}
+  \[
+    z = \frac{1}{2} + \frac{\sqrt{3}}{2}i
+  \]
+
+  \pause
   Parte real de $z$
   \[
     \Re(z) = \frac{1}{2}
   \]
 
+  \pause
   Parte imaginária de $z$
   \[
     \Im(z) = \frac{\sqrt{3}}{2}
@@ -42,12 +47,12 @@
 %------------------------------------------------------------------------------%
 \begin{resolution}{Módulo de $z$}
   \[
-    \abs{z}
-    = \sqrt{\left(\frac{1}{2}\right)^2 + \left(\frac{\sqrt{3}}{2}\right)^2}
-    = \sqrt{\frac{1}{4} + \frac{3}{4}}
-    = \sqrt{\frac{1+3}{4}}
-    = \sqrt{1}
-    = 1
+    \onslide<+->{\abs{z}}
+    \onslide<+->{= \sqrt{\left(\frac{1}{2}\right)^{\!2} + \left(\frac{\sqrt{3}}{2}\right)^{\!2}}}
+    \onslide<+->{= \sqrt{\frac{1}{4} + \frac{3}{4}}}
+    \onslide<+->{= \sqrt{\frac{1+3}{4}}}
+    \onslide<+->{= \sqrt{1}}
+    \onslide<+->{= 1}
   \]
 \end{resolution}
 
@@ -56,19 +61,30 @@
   \[
     \varphi=\arg(z)
   \]
+
+  \pause
   \[
     \sin(\varphi)
+    \pause
     = \frac{\Im(z)}{\abs{z}}
+    \pause
     = \frac{\sqrt{3}}{2}
   \]
   \[
+    \pause
     \cos(\varphi)
+    \pause
     = \frac{\Re(z)}{\abs{z}}
+    \pause
     = \frac{1}{2}
   \]
+
+  \pause
   \[
     \arg(z)
+    \pause
     = \ang{60}
+    \pause
     = \frac{\pi}{3} \text{rad}
   \]
 \end{resolution}

@@ -18,9 +18,9 @@
     \onslide<+->{z^n}
     \onslide<+->{& = zz\cdots z \\[5mm]}
     \onslide<+->{& = \rho\rho\cdots\rho}
-    \onslide<+->{    \big[\cos(\varphi\varphi\cdots\varphi)
-      + i\sin(\varphi\varphi\cdots\varphi)
-      \big] \\[5mm]}
+    \onslide<+->{    \big[\cos(\varphi+\varphi+\cdots+\varphi)
+                       + i\sin(\varphi+\varphi+\cdots+\varphi)
+                     \big] \\[5mm]}
     \onslide<+->{& = \rho^n\big[\cos(n\varphi) + i\sin(n\varphi)\big]}
   \end{align*}
 \end{proofframe}
@@ -89,13 +89,13 @@
   \pause
   ou seja
   \begin{gather*}
-    r=\sqrt[n]{\rho} \\
+    r = \sqrt[n]{\rho} \\
     n\alpha = \varphi + 2k\pi
   \end{gather*}
   \column{0.5\linewidth}
   \pause
   \[
-    \alpha = \frac{\varphi + 2k\pi}{n}
+    \alpha = \frac{\varphi}{n} + 2\pi\frac{k}{n}
   \]
   \pause
   apenas
@@ -119,8 +119,8 @@
   \[
     u_k = \sqrt[n]{\rho}
     \left[
-         \cos\left(\frac{\varphi+2k\pi}{n}\right)
-      + i\sin\left(\frac{\varphi+2k\pi}{n}\right)
+         \cos\left(\frac{\varphi}{n}+2\pi\frac{k}{n}\right)
+      + i\sin\left(\frac{\varphi}{n}+2\pi\frac{k}{n}\right)
     \right]
   \]
   com \(k=0, 1, 2, \dots, n-1\)
