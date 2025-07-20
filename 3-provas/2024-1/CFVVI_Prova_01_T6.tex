@@ -1,0 +1,221 @@
+%------------------------------------------------------------------------------%
+% Luis A. D'Afonseca
+%
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{style_avaliacao}
+
+\ShowAnswers
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 1 -- Turma 6}{08/07/2024}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{15}
+Escreva a equação \(x^2 + xy + y^2 = 1\) em coordenadas polares e simplifique.
+
+\begin{answer}
+  Sabemos que a relação entre as coordenadas é
+  \[
+    x = r\cos(\theta)
+    \qquad\qquad
+    y = r\sin(\theta)
+    \qquad\qquad
+    r^2 = x^2 + y^2
+  \]
+  Portanto, precisamos substituir as expressões e simplificar o resultado
+  \begin{align*}
+    x^2 + xy + y^2 & = 1 \\
+    \left(r\cos\theta\right)^2 + r\cos\theta r\sin\theta +
+    \left(r\sin\theta\right)^2 & = 1 \\
+    r^2\cos^2\theta + r^2\cos\theta \sin\theta + r^2\sin^2\theta & = 1 \\
+    r^2\left(\cos^2\theta + \sin^2\theta
+    + \cos\theta \sin\theta \right) & = 1 \\
+    r^2\left(1 + \cos\theta \sin\theta \right) & = 1
+  \end{align*}
+  Forma alternativa:
+  \begin{align*}
+    r^2\left(1 + \frac{\sin(2\theta)}{2} \right) & = 1 \\
+    r^2\left(2 + \sin(2\theta) \right) & = 2
+  \end{align*}
+  \clearpage
+\end{answer}
+
+%------------------------------------------------------------------------------%
+%\[
+%  (x-5)^2 + y^2 = 25
+%\]
+%
+%\begin{answer}
+%\begin{align*}
+%  (x-5)^2 + y^2 & = 25 \\
+%  \left(r\cos\theta-5\right)^2 + \left(r\sin\theta\right)^2 & = 25 \\
+%  r^2\cos^2\theta -2\cdot 5 \cos\theta + 5^2  + r^2\sin^2\theta & = 25 \\
+%  r^2\cos^2\theta + r^2\sin^2\theta -10\cos\theta + 25  & = 25 \\
+%  r^2\left(\cos^2\theta + \sin^2\theta\right) -10\cos\theta  & = 0 \\
+%  r^2 & = 10\cos\theta
+%\end{align*}
+%\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{10}
+Encontre e corte da quádrica \(y + z^2 = x\)
+pelo plano \(z = 0\),
+identifique a região e a esboce no plano.
+
+\begin{answer}
+  Encontramos o corte substituindo $z = 0$ na equação
+  \begin{align*}
+    y^2 + z^2 & = x \\
+    y^2 & = x \\
+    x & = y^2
+  \end{align*}
+  Essa é a expressão da \textbf{parábola} ilustrada a seguir
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{T6_E2_parabola}
+  \end{center}
+  \clearpage
+\end{answer}
+
+% 00
+%------------------------------------------------------------------------------%
+\exercise{15}
+Determine e esboce o domínio da função
+\(f(x, y)= \sqrt{y-x-2}\)
+
+\begin{answer}
+  A raiz quadrada só está definida para valores maiores ou iguais a zero,
+  assim, seu domínio consiste dos pontos que satisfaçam a condição
+  \begin{align*}
+    y-x-2 & \geq 0 \\
+    y & \geq x + 2
+  \end{align*}
+  isso é, os pontos ``a cima'' da reta \(y=x+2\)
+  \[
+    D_f = \left\{ (x, y)\in\R\st y \geq x + 2 \right\}
+  \]
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{T6_E3_dominio}
+  \end{center}
+  \clearpage
+\end{answer}
+
+% 00
+%------------------------------------------------------------------------------%
+\exercise{30}
+Calcule os limites solicitados, ou prove que o limite não existe
+\begin{multicols}{2}
+\begin{enumerate}
+  \item[a)] \(\lim_{(x, y)\to(1, 1)} \frac{xy - y -2x + 2}{x-1} \)
+  \item[b)] \(\lim_{(x, y)\to(1, 1)} \frac{x^2 - y^2}{y-x}      \)
+\end{enumerate}
+\end{multicols}
+
+\begin{answer}
+\begin{enumerate}
+  \item[a)]
+  Se tentarmos calcular diretamente a fração obtemos uma
+  indeterminação $\sfrac{0}{0}$.
+  Portanto, precisamos remover a indeterminação manipulando
+  algebricamente a função,
+  assumindo que $(x, y)\neq(1, 1)$, temos
+  \begin{align*}
+    f(x) & = \frac{xy - y -2x + 2}{x-1} \\[2mm]
+         & = \frac{(x - 1)y -2(x - 1)}{x-1} \\[2mm]
+         & = \frac{(x - 1)(y -2)}{x-1} \\
+         & = y - 2
+  \end{align*}
+  Onde o cancelamento só foi possível, pois $(x, y)\neq(1, 1)$.
+  Agora podemos calcular o limite, pois temos uma função contínua em $(1, 1)$,
+  \[
+    L
+    = \lim_{(x, y)\to(1, 1)} \frac{xy - y -2x + 2}{x-1}
+    = \lim_{(x, y)\to(1, 1)} y - 1 = 2
+  \]
+
+  \item[b)]
+  Se tentarmos calcular diretamente a fração obtemos uma
+  indeterminação $\sfrac{0}{0}$.
+  Portanto, precisamos remover a indeterminação manipulando
+  algebricamente a função,
+  assumindo que $(x, y)\neq(1, 1)$, temos
+  \begin{align*}
+    f(x) & = \frac{x^2 - y^2}{y-x}  \\[2mm]
+         & = \frac{(x-y)(x+y)}{y-x} \\[2mm]
+         & = -\frac{(x-y)(x+y)}{x-y} \\[2mm]
+         & = -(x+y) \\[2mm]
+         & = -x-y
+  \end{align*}
+  Onde o cancelamento só foi possível, pois $(x, y)\neq(1, 1)$.
+  Agora podemos calcular o limite, pois temos uma função contínua em $(1, 1)$,
+  \[
+    L
+    = \lim_{(x, y)\to(1, 1)} \frac{x^2 - y^2}{y-x}
+    = \lim_{(x, y)\to(1, 1)} -x-y = -2
+  \]
+\end{enumerate}
+\clearpage
+\end{answer}
+
+% 00
+%------------------------------------------------------------------------------%
+\exercise{30}
+Calcule as derivadas solicitadas realizando as contas na ordem indicada
+\begin{multicols}{2}
+\begin{enumerate}
+  \item[{a) [15]}] \(\D{}{y}     \Big(y^2 + y\left(\sin(xy)-x^4\right)\Big)  \)
+  \item[{b) [15]}] \(\DM{}{y}{x} \left(y e^{x^2 - y}\right)\)
+\end{enumerate}
+\end{multicols}
+
+\begin{answer}
+\begin{enumerate}
+  \item[a)] ~\vspace{-2\baselineskip}
+  \begin{align*}
+    \D{}{y} \Big(y^2 + y\left(\sin(xy)-x^4\right)\Big)
+    & = \D{y^2}{y} + \D{}{y}\Big(y\left(\sin(xy)-x^4\right)\Big) \\[2mm]
+    & = 2y + \D{y}{y}\left(\sin(xy)-x^4\right) + y\D{}{y}\left(\sin(xy)-x^4\right) \\[2mm]
+    & = 2y + \sin(xy) - x^4 + y\left(\D{}{y}\sin(xy)-0\right) \\[2mm]
+    & = 2y + \sin(xy) - x^4 + y\cos(xy)\D{}{y}(xy) \\[2mm]
+    & = 2y + \sin(xy) - x^4 + y\cos(xy)x\D{y}{y} \\[2mm]
+    & = 2y  - x^4 + \sin(xy) + xy\cos(xy)
+  \end{align*}
+  \item[b)] Começamos calculando a primeira derivada
+  \begin{align*}
+    \D{}{x} \left(y e^{x^2 - y}\right)
+    & = y \D{}{x} e^{x^2 - y} \\[2mm]
+    & = y e^{x^2 - y} \D{}{x}\left(x^2 - y\right) \\[2mm]
+    & = y e^{x^2 - y} \left(\D{x^2}{x} - 0\right) \\[2mm]
+    & = y e^{x^2 - y} 2x \\[2mm]
+    & = 2xy e^{x^2 - y}
+  \end{align*}
+  Agora calculamos a derivada segunda
+  \begin{align*}
+    \DM{}{y}{x} \left(y e^{x^2 - y}\right)
+    & = \D{}{y}\left(\D{}{x} \left(y e^{x^2 - y}\right)\right) \\[2mm]
+    & = \D{}{y}\left(2xy e^{x^2 - y}\right) \\[2mm]
+    & = 2x\D{}{y}\left(y e^{x^2 - y}\right) \\[2mm]
+    & = 2x\left(\D{y}{y}e^{x^2 - y} + y \D{}{y}e^{x^2 - y}\right) \\[2mm]
+    & = 2x\left(e^{x^2 - y}
+            + y e^{x^2 - y}\D{}{y}\left(x^2 - y\right)\right) \\[2mm]
+    & = 2x\left(e^{x^2 - y}
+            + y e^{x^2 - y}\left(0 - \D{y}{y}\right)\right) \\[2mm]
+    & = 2x\left(e^{x^2 - y} - y e^{x^2 - y}\right) \\[2mm]
+    & = 2x(1-y)e^{x^2 - y}
+  \end{align*}
+\end{enumerate}
+\clearpage
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

@@ -1,0 +1,204 @@
+%------------------------------------------------------------------------------%
+% Luis A. D'Afonseca
+%
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{style_avaliacao}
+
+\ShowAnswers
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 1 -- Turma 1}{08/07/2024}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{15}
+Escreva a equação \(r = 2\cos(\theta) - \sin(\theta)\)
+em coordenadas cartesianas e simplifique.
+
+\begin{answer}
+  Sabemos que a relação entre as coordenadas é
+  \[
+    \cos(\theta) = \frac{x}{r}
+    \qquad\qquad
+    \sin(\theta) = \frac{y}{r}
+    \qquad\qquad
+    r^2 = x^2 + y^2
+  \]
+  Portanto, precisamos substituir as expressões e simplificar o resultado
+  \begin{align*}
+    r & = 2\cos(\theta) - \sin(\theta) \\
+    r & = 2\frac{x}{r} - \frac{y}{r} \\
+    r & = \frac{2x-y}{r} \\
+    r^2 & = 2x-y \\
+    x^2 + y^2 & = 2x-y \\
+    x^2 + y^2 - 2x+ y& = 0 \\
+  \end{align*}
+  \clearpage
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{10}
+Encontre e corte da quádrica \(z^2 + 4y^2 - 4x^2 = 4\)
+pelo plano \(z = 0\),
+identifique a região e a esboce no plano.
+
+\begin{answer}
+  Encontramos o corte substituindo $z = 0$ na equação
+  \begin{align*}
+    z^2 + 4y^2 - 4x^2 & = 4 \\
+    4y^2 - 4x^2 & = 4 \\
+    y^2 - x^2 & = 1
+  \end{align*}
+  Essa é a expressão da \textbf{hipérbole} ilustrada a seguir
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{T1_E2_hiperbole}
+  \end{center}
+  \clearpage
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{15}
+Determine e esboce o domínio da função
+\(f(x, y)= \ln\left(x^2 + y^2 - 4\right)\)
+
+\begin{answer}
+  O logaritmo só está definido para valores estritamente maiores do que zero,
+  assim seu domínio consiste dos pontos que satisfaçam a condição
+  \begin{align*}
+    x^2 + y^2 - 4 & > 0 \\
+    x^2 + y^2 & > 4
+  \end{align*}
+  isso é, os pontos externos a circunferência de raio 2 centrada na origem
+  \[
+    D_f = \left\{ (x, y)\in\R\st x^2 + y^2 > 4 \right\}
+  \]
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{T1_E3_dominio}
+  \end{center}
+  \clearpage
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{30}
+Calcule os limites solicitados, ou prove que o limite não existe
+\begin{multicols}{2}
+  \begin{enumerate}
+    \item[{a)}] \(\lim_{(x, y)\to(2, 2)} \frac{x+y-4}{\sqrt{x+y}-2}\)
+    \item[{b)}] \(\lim_{(x, y)\to(0, 0)} \frac{xy}{\abs{xy}}\)
+  \end{enumerate}
+\end{multicols}
+
+\begin{answer}
+  \vspace{-1,5\baselineskip}
+  \begin{enumerate}
+    \item[a)]
+    Se tentarmos calcular diretamente a fração obtemos uma
+    indeterminação $\sfrac{0}{0}$.
+    Portanto, precisamos remover a indeterminação manipulando
+    algebricamente a função,
+    assumindo que $(x, y)\neq(2, 2)$, temos
+    \begin{align*}
+      f(x) & = \frac{x+y-4}{\sqrt{x+y}-2} \\[2mm]
+           & = \frac{x+y-4}{\sqrt{x+y}-2} \times
+               \frac{\sqrt{x+y}+2}{\sqrt{x+y}+2}  \\[2mm]
+           & = \frac{(x+y-4)\left(\sqrt{x+y}+2\right)}
+                    {\left(\sqrt{x+y}\right)^2 - 2^2}  \\[2mm]
+           & = \frac{(x+y-4)\left(\sqrt{x+y}+2\right)}{x+y-4}  \\[2mm]
+           & = \sqrt{x+y}+2
+    \end{align*}
+    Onde o cancelamento só foi possível, pois $(x, y)\neq(2, 2)$.
+    Agora podemos calcular o limite, pois temos uma função contínua em $(2, 2)$,
+    \begin{align*}
+      L & = \lim_{(x, y)\to(2, 2)} \frac{x+y-4}{\sqrt{x+y}-2} \\[2mm]
+        & = \lim_{(x, y)\to(2, 2)} \sqrt{x+y}+2 \\[2mm]
+        & = \sqrt{2+2}+2 = \sqrt{4} + 2 = 4
+    \end{align*}
+
+    \item[b)]
+      Analisando a função percebemos que se fizermos $y=x$ o limite restrito
+      a curva será
+      \[
+        L_1
+        = \lim_{(x, y)\to(0, 0)}
+          \left(\frac{xy}{\abs{xy}} \evalat{y=x}{} \right)
+        = \lim_{x\to 0} \frac{x^2}{\abs{x^2}}
+        = \lim_{x\to 0} \frac{x^2}{x^2}
+        = 1
+      \]
+      Por outro lado, escolhendo $y=-x$ temos
+      \[
+        L_2
+        = \lim_{(x, y)\to(0, 0)}
+          \left(\frac{xy}{\abs{xy}} \evalat{y=-x}{} \right)
+        = \lim_{x\to 0} \frac{-x^2}{\abs{-x^2}}
+        = \lim_{x\to 0} \frac{-x^2}{x^2}
+        = -1
+      \]
+      Como $L_1\neq L_2$ o limite não existe.
+  \end{enumerate}
+  \clearpage
+\end{answer}
+
+% 05
+%------------------------------------------------------------------------------%
+\exercise{30}
+Calcule as derivadas solicitadas realizando as contas na ordem indicada
+\begin{multicols}{2}
+\begin{enumerate}
+  \item[{a)}] \(\D{}{y}\;     y^2\ln\left(\frac{2x}{3y}\right)\)
+  \item[{b)}] \(\DM{}{x}{y}\, \sin(xy)\)
+\end{enumerate}
+\end{multicols}
+
+\begin{answer}
+\begin{enumerate}
+  \item[{a)}] ~\vspace{-2\baselineskip}
+  \begin{align*}
+    \D{}{y}\, y^2\ln\left(\frac{2x}{3y}\right)
+    & = \D{y^2}{y}\ln\left(\frac{2x}{3y}\right)
+      + y^2 \D{}{y}\ln\left(\frac{2x}{3y}\right) \\[2mm]
+    & = 2y\ln\left(\frac{2x}{3y}\right)
+      + y^2 \left(\frac{2x}{3y}\right)^{-1}\D{}{y}\frac{2x}{3y} \\[2mm]
+    & = 2y\ln\left(\frac{2x}{3y}\right)
+      + y^2 \frac{3y}{2x}\frac{2x}{3}\D{y^{-1}}{y} \\[2mm]
+    & = 2y\ln\left(\frac{2x}{3y}\right)
+      + y^3\D{y^{-1}}{y} \\[2mm]
+    & = 2y\ln\left(\frac{2x}{3y}\right) + y^3(-1)y^{-2} \\[2mm]
+    & = 2y\ln\left(\frac{2x}{3y}\right) - y \\[2mm]
+    & = y \left(2\ln\left(\frac{2x}{3y}\right) - 1 \right)
+  \end{align*}
+
+  \item[{b)}] Começamos calculando a primeira derivada
+  \begin{align*}
+    \D{}{y}\sin(xy)
+    & = \cos(xy)\D{}{y}(xy) \\[2mm]
+    & = \cos(xy)x\D{y}{y} \\[2mm]
+    & = x\cos(xy)
+  \end{align*}
+  Agora calculamos a derivada segunda
+  \begin{align*}
+    \DM{}{x}{y} \sin(xy)
+    & = \D{}{x} \left(\D{}{y}\sin(xy)\right) \\[2mm]
+    & = \D{}{x} \big(x\cos(xy)\big) \\[2mm]
+    & = \D{x}{x} \cos(xy) + x \D{}{x} \cos(xy) \\[2mm]
+    & = \cos(xy) - x \sin(xy)\D{}{x}(xy) \\[2mm]
+    & = \cos(xy) - x \sin(xy)y\D{x}{x} \\[2mm]
+    & = \cos(xy) - xy \sin(xy)
+  \end{align*}
+\end{enumerate}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

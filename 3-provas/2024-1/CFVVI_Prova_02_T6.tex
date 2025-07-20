@@ -1,0 +1,385 @@
+%------------------------------------------------------------------------------%
+% Luis A. D'Afonseca
+%
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{style_avaliacao}
+
+\ShowAnswers
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+
+\clearpage
+
+\makeHeader{CFVVI}{Prova 2 -- Turma 6}{12/08/2024}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{20}
+Calcule \(\D{z}{v}\left(-2, \pi\right)\) sabendo que
+\(
+  z = \ln\left(x^2+y^2\right)
+\),
+\(
+  x = ue^v\sin(u)
+\)
+e
+\(
+  y = ue^v\cos(u)
+\).
+
+\begin{answer}
+  Vamos usar a regra da cadeia
+  \[
+    \D{z}{v} = \D{z}{x}\D{x}{v} + \D{z}{y}\D{y}{v}
+  \]
+  Calculando as derivadas necessárias
+  \[
+    \D{z}{x}
+    = \D{}{x}\left(\ln\left(x^2+y^2\right)\right)
+    = \frac{1}{x^2+y^2}\D{}{x}(x^2+y^2)
+    = \frac{2x}{x^2+y^2}
+  \]
+  \[
+    \D{z}{y}
+    = \D{}{y}\left(\ln\left(x^2+y^2\right)\right)
+    = \frac{1}{x^2+y^2}\D{}{y}(x^2+y^2)
+    = \frac{2y}{x^2+y^2}
+  \]
+  \[
+    \D{x}{v}
+    = \D{}{v}\left(ue^v\sin(u)\right)
+    = ue^v\sin(u)
+  \]
+  \[
+    \D{y}{v}
+    = \D{}{v}\left(ue^v\cos(u)\right)
+    = ue^v\cos(u)
+  \]
+  Portanto
+  \begin{align*}
+    \D{z}{v}
+    & = \D{z}{x}\D{x}{v} + \D{z}{y}\D{y}{v} \\[2mm]
+    & = \frac{2x}{x^2+y^2} \times ue^v\sin(u)
+      + \frac{2y}{x^2+y^2} \times ue^v\cos(u) \\[2mm]
+    & = \frac{2ue^v}{x^2+y^2} \left(x\sin(u) + y\cos(u)\right)
+  \end{align*}
+  Avaliando no ponto \((u, v) = \left(-2, \pi\right)\)
+  \[
+    x\left(-2, \pi\right)
+    = \left(ue^v\sin(u)\right)\evalat{(-2, \pi)}{}
+    = -2e^\pi\sin(-2)
+  \]
+  \[
+    y\left(-2, \pi\right)
+    = \left(ue^v\cos(u)\right)\evalat{(-2, \pi)}{}
+    = -2e^\pi\cos(-2)
+  \]
+  \begin{align*}
+    \D{z}{v}
+    & = \left[\frac{2ue^v}{x^2+y^2} \left(x\sin(u) + y\cos(u)\right)\right]\evalat{(-2, \pi)}{} \\[3mm]
+    & = \frac{2(-2)e^\pi}{[-2e^\pi\sin(-2)]^2+[-2e^\pi\cos(-2)]^2}
+        \big[[-2e^\pi\sin(-2)]\sin(-2) + [-2e^\pi\cos(-2)]\cos(-2)\big] \\[3mm]
+    & = \frac{-4e^\pi}{4e^{2\pi}\sin^2(-2) + 4e^{2\pi}\cos(-2)}
+        \big[-2e^\pi\sin^2(-2) -2e^\pi\cos^2(-2)\big]  \\[3mm]
+    & = \frac{-4e^\pi}{4e^{2\pi}[\sin^2(-2) + \cos(-2)]}
+        \big[-2e^\pi[\sin^2(-2) +\cos^2(-2)]\big] \\[3mm]
+    & = \frac{-4e^{\pi}}{4e^{2\pi}}[-2e^\pi] \\[3mm]
+    & = 2
+  \end{align*}
+  \clearpage
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25}
+Calcule a derivada da função
+\(
+  f(x, y) = \frac{x-y}{xy+2}
+\)
+na direção
+\(
+  v = 3\veci + 4\vecj
+\)
+no ponto
+\((1, -1)\).
+
+\begin{answer}
+  Precisamos do vetor unitário na direção do vetor
+  \[
+    v = \vetor{3}{4}
+  \]
+  ou seja
+  \[
+    u
+    = \frac{v}{\abs{v}}
+    = \frac{1}{\sqrt{3^2+4^2}}\vetor{3}{4}
+    = \frac{1}{\sqrt{25}}\vetor{3}{4}
+    = \vetor{\sfrac{3}{5}}{\sfrac{4}{5}}
+  \]
+  Precisamos também do gradiente de $f$
+  \begin{align*}
+    \D{f}{x}
+    & = \D{}{x}\left(\frac{x-y}{xy+2}\right) \\[3mm]
+    & = \frac{\D{}{x}\left(x-y\right)\left(xy+2\right) - \left(x-y\right)\D{}{x}\left(xy+2\right)}
+             {\left(xy+2\right)^2} \\[3mm]
+    & = \frac{\left(1\right)\left(xy+2\right) - \left(x-y\right)\left(y\right)}
+             {\left(xy+2\right)^2} \\[3mm]
+    & = \frac{xy+2 - xy + y^2}{\left(xy+2\right)^2} \\[3mm]
+    & = \frac{2 + y^2}{\left(xy+2\right)^2}
+  \end{align*}
+  \begin{align*}
+  \D{f}{y}
+    & = \D{}{y}\left(\frac{x-y}{xy+2}\right) \\[3mm]
+    & = \frac{\D{}{y}\left(x-y\right)\left(xy+2\right) - \left(x-y\right)\D{}{y}\left(xy+2\right)}
+    {\left(xy+2\right)^2} \\[3mm]
+    & = \frac{\left(-1\right)\left(xy+2\right) - \left(x-y\right)\left(x\right)}
+    {\left(xy+2\right)^2} \\[3mm]
+    & = \frac{-xy -2 - x^2 + xy}{\left(xy+2\right)^2} \\[3mm]
+    & = \frac{-2 - x^2}{\left(xy+2\right)^2}
+  \end{align*}
+  \[
+    \nabla f
+    = \left(\begin{array}{r}
+      \dfrac{ 2 + y^2}{\left(xy+2\right)^2} \\[5mm]
+      \dfrac{-2 - x^2}{\left(xy+2\right)^2}
+    \end{array}\right)
+    = \frac{1}{\left(xy+2\right)^2}\vetor{ 2 + y^2}{-2 - x^2}
+  \]
+  Avaliando o gradiente no ponto \((1, -1)\)
+  \begin{align*}
+    \nabla f(1, -1)
+    & = \frac{1}{\left(xy+2\right)^2}\vetor{ 2 + y^2}{-2 - x^2}\evalat{(1, -1)}{} \\[3mm]
+    & = \frac{1}{\left(1(-1)+2\right)^2}\vetor{ 2 + (-1)^2}{-2 - 1^2} \\[3mm]
+    & = \frac{1}{\left(1\right)^2}\vetor{3}{-3} \\[3mm]
+    & = \vetor{3}{-3}
+  \end{align*}
+  Derivada direcional
+  \[
+    D_u
+    = u \cdot \nabla f(1, -1)
+    = \vetor{\sfrac{3}{5}}{\sfrac{4}{5}} \cdot \vetor{3}{-3}
+    = \frac{3}{5}3 + \frac{4}{5}(-3)
+    = \frac{9-12}{5}
+    = \frac{-3}{5}
+  \]
+  \clearpage
+\end{answer}
+
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre linearização da função
+\(
+  f(x, y) = x^2 - xy - y^2
+\)
+no ponto \((1, 1)\).
+
+\begin{answer}
+  A linearização de $f$ no ponto \((1, 1)\) é a função
+  \begin{align*}
+    L(x, y)
+    & = f(x_0, y_0) + f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0) \\
+    & = f(1, 1) + f_x(1, 1)(x-1) + f_y(1, 1)(y-1)
+  \end{align*}
+  Precisamos das derivadas parciais de $f$
+  \[
+    f_x(x, y)
+    = \D{f}{x}
+    = \D{}{x}\left[x^2 - xy - y^2\right]
+    = 2x -y
+  \]
+  \[
+    f_y(x, y)
+    = \D{f}{y}
+    = \D{}{y}\left[x^2 - xy - y^2\right]
+    = -x -2y
+  \]
+  Avaliando $f$ e suas derivadas no ponto $(1, 1)$
+  \[
+    f(1, 1)
+    = \left(x^2 - xy - y^2\right)\evalat{(1, 1)}{}
+    = 1^2 - 1\times 1 - 1^2
+    = -1
+  \]
+  \[
+    f_x(1, 1)
+    = \left(2x -y\right)\evalat{(1, 1)}{}
+    = 2\times 1 - 1
+    = 1
+  \]
+  \[
+    f_y(1, 1)
+    = \left(-x -2y\right)\evalat{(1, 1)}{}
+    = -1 -2 \times 1
+    = -3
+  \]
+  Assim
+  \begin{align*}
+    L(x, y)
+    & = f(1, 1) + f_x(1, 1)(x-1) + f_y(1, 1)(y-1) \\
+    & = -1 + 1(x-1) -3(y-1) \\
+    & = -1 + x -1 -3y +3 \\
+    & = x - 3y + 1
+  \end{align*}
+  \clearpage
+\end{answer}
+
+
+% 04 - pg 270 ex 14 - res pg 837
+%------------------------------------------------------------------------------%
+\exercise{30}
+Considerando a função
+\(
+  f(x, y) = x^3 + 3xy + y^3
+\).
+\begin{enumerate}[leftmargin=15mm,labelwidth=11.5mm,align=left]
+  \item[a) {[5]}] Calcule o gradiente de $f$.
+  \item[b) {[5]}] Calcule a hessiana de $f$.
+  \item[c) {[10]}] Encontre todos os pontos críticos de $f$.
+  \item[d) {[10]}] Classifique cada ponto crítico de $f$.
+\end{enumerate}
+
+\begin{answer}
+  \noindent\textbf{a)}
+
+  Precisamos das derivadas parciais de $f$
+  \[
+    \D{f}{x}
+    = \D{}{x}\left[x^3 + 3xy + y^3\right]
+    = 3x^2 + 3y
+  \]
+  \[
+    \D{f}{y}
+    = \D{}{y}\left[x^3 + 3xy + y^3\right]
+    = 3x + 3y^2
+  \]
+  então
+  \[
+    \nabla f = \vetor{3x^2 + 3y}{3x + 3y^2}
+  \]
+
+
+  \noindent\textbf{b)}
+
+  Precisamos das derivadas parciais de segunda ordem de $f$
+  \[
+    \DS{f}{x}
+    = \D{}{x}\left[3x^2 + 3y\right]
+    = 6x
+  \]
+  \[
+    \D{f}{y}
+    = \D{}{y}\left[3x + 3y^2\right]
+    = 6y
+  \]
+  \[
+    \DM{f}{x}{y}
+    = \D{}{x}\D{f}{y}
+    = \D{}{x}\left[3x + 3y^2\right]
+    = 3
+  \]
+  então
+  \[
+    H = \left(\begin{array}{cc}
+          6x & 3 \\
+          3 & 6y
+        \end{array}\right)
+  \]
+
+  \noindent\textbf{c)}
+
+  A função é um polinômio, então possui derivadas em todos os pontos do plano.
+  Assim os pontos críticos são apenas os pontos onde as derivadas parciais são zero,
+  \(\nabla f = 0\)
+  \[
+    3x^2 + 3y = 0
+    \qquad\text{e}\qquad
+    3x + 3y^2 = 0
+  \]
+  ou, simplificando,
+  \[
+    x^2 + y = 0
+    \qquad\text{e}\qquad
+    x + y^2 = 0
+  \]
+  Isolando $y$ na primeira equação, \(y = -x^2\), e substituindo na segunda, temos
+  \begin{align*}
+    x + y^2                 & = 0 \\
+    x + \left(-x^2\right)^2 & = 0 \\
+    x + x^4                 & = 0 \\
+    x(1+ x^3)               & = 0
+  \end{align*}
+  As soluções dessa equação são $x=0$ ou $x-1$.
+  Se $x=0$ temos $y=0$ e
+  se $x=-1$ temos $y=-1$.
+  Portanto, os pontos críticos são
+  \[
+    (x_1, y_1) = (0, 0)
+    \qquad\text{e}\qquad
+    (x_2, y_2) = (-1, -1)
+  \]
+
+  \noindent\textbf{d)}
+
+  Para classificar os pontos críticos precisamos avaliar o discriminante nos
+  pontos críticos.
+
+  Considerando o ponto \((x_1, y_1) = (0, 0)\)
+  \[
+    f_{xx}(0, 0) = 0
+  \]
+  \[
+    f_{yy}(0, 0) = 0
+  \]
+  \[
+    f_{xy}(0, 0) = 3
+  \]
+  \[
+    D_1
+    = f_{xx}(0, 0)f_{yy}(0, 0) - f^2_{xy}(0, 0)
+    = 0 \times 0 - 3^2
+    = -9 < 0
+  \]
+  Portanto, o ponto $(0, 0)$ é um ponto de sela.
+
+  Considerando o ponto \((x_2, y_2) = (-1, -1)\)
+  \[
+    f_{xx}(-1, -1) = -6
+  \]
+  \[
+    f_{yy}(-1, -1) = -6
+  \]
+  \[
+    f_{xy}(-1, -1) = 3
+  \]
+  \[
+    D_2
+    = f_{xx}(-1, -1)f_{yy}(-1, -1) - f^2_{xy}(-1, -1)
+    = (-6)(-6) - 3^2
+    = 36 - 9
+    = 25 > 0
+  \]
+  Portanto, o ponto $(-1, -1)$ é um máximo ou mínimo local.
+  Como \(f_{xx}(-1, -1) = -6 < 0\)
+  o ponto é um ponto de máximo local.
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

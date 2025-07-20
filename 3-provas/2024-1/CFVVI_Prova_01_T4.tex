@@ -1,0 +1,215 @@
+%------------------------------------------------------------------------------%
+% Luis A. D'Afonseca
+%
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{style_avaliacao}
+
+\ShowAnswers
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 1 -- Turma 4}{08/07/2024}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{15}
+Escreva a equação \(r = \frac{5}{\sin(\theta)-2\cos(\theta)}\)
+em coordenadas cartesianas e simplifique.
+
+\begin{answer}
+  Sabemos que a relação entre as coordenadas é
+  \[
+    \cos(\theta) = \frac{x}{r}
+    \qquad\qquad
+    \sin(\theta) = \frac{y}{r}
+    \qquad\qquad
+    r^2 = x^2 + y^2
+  \]
+  Portanto, precisamos substituir as expressões e simplificar o resultado
+  \begin{align*}
+    r & = \frac{5}{\sin(\theta)-2\cos(\theta)} \\[2mm]
+    r\left(\sin(\theta)-2\cos(\theta)\right) & = 5 \\[2mm]
+    r\left(\frac{y}{r}-2\frac{x}{r}\right) & = 5 \\[2mm]
+    r\frac{y-2x}{r} & = 5 \\[2mm]
+    y-2x & = 5\\[2mm]
+    y & = 2x + 5
+  \end{align*}
+  \clearpage
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{10}
+Encontre e corte da quádrica \(x^2 + y^2 + 4z^2 = 10\)
+pelo plano \(z = 0\),
+identifique a região e a esboce no plano.
+
+\begin{answer}
+  Encontramos o corte substituindo $z = 0$ na equação
+  \begin{align*}
+     x^2 + y^2 + 4z^2 & = 10 \\
+     x^2 + y^2 & = 10
+  \end{align*}
+  Essa é a expressão da \textbf{circunferência},
+  centrada na origem com raio \(\sqrt{10}\),
+  ilustrada a seguir
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{T4_E2_circunferencia}
+  \end{center}
+  \clearpage
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{15}
+Encontre e esboce duas curvas de nível da função
+\(f(x, y)=e^{xy}\)
+%\(f(x, y)=\ln\left(x^2+y^2+25\right)\)
+
+\begin{answer}
+  As curvas de nível da função são regiões onde o valor da função é constante,
+  ou seja, soluções das equações
+  \begin{align*}
+    f(x, y) & = c      \\
+    e^{xy}  & = c      \\
+    xy      & = \ln(c) \\
+    y       & = \frac{\ln(c)}{x}
+  \end{align*}
+  Note que $c$ precisa ser positiva para existir solução e, portanto,
+  curva de nível. Escolhemos os valores $c=e$ e $c=e^2$ para obter as curvas
+  \[
+    y = \frac{1}{x}
+    \qquad\text{e}\qquad
+    y = \frac{2}{x}
+  \]
+  \begin{center}
+    \includegraphics[width=0.5\linewidth]{T4_E3_curvas_nivel}
+  \end{center}
+  \clearpage
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{30}
+Calcule os limites solicitados, ou prove que o limite não existe
+\begin{multicols}{2}
+  \begin{enumerate}
+    \item[{a)}] \(\lim_{(x, y)\to(4, 3)}
+                  \frac{\sqrt{x}-\sqrt{y+1}}{x-y-1}\)
+    \item[{b)}] \(\lim_{(x, y)\to(0, 0)} \frac{x-y}{x+y}\)
+  \end{enumerate}
+\end{multicols}
+
+\begin{answer}
+  \vspace{-1,5\baselineskip}
+  \begin{enumerate}
+    \item[a)]
+    Se tentarmos calcular diretamente a fração obtemos uma
+    indeterminação $\sfrac{0}{0}$.
+    Portanto, precisamos remover a indeterminação manipulando
+    algebricamente a função,
+    assumindo que $(x, y)\neq(4, 3)$, temos
+    \begin{align*}
+      f(x) & = \frac{\sqrt{x}-\sqrt{y+1}}{x-y-1} \\[2mm]
+           & = \frac{\sqrt{x}-\sqrt{y+1}}{x-y-1} \times
+               \frac{\sqrt{x}+\sqrt{y+1}}{\sqrt{x}+\sqrt{y+1}} \\[2mm]
+           & = \frac{\left(\sqrt{x}\right)^2-\left(\sqrt{y+1}\right)^2}
+                    {(x-y-1)\left(\sqrt{x}+\sqrt{y+1}\right)} \\[2mm]
+           & = \frac{x-(y+1)}{(x-y-1)\left(\sqrt{x}+\sqrt{y+1}\right)}\\[2mm]
+           & = \frac{1}{\sqrt{x}+\sqrt{y+1}}
+    \end{align*}
+    Onde o cancelamento só foi possível pois $(x, y)\neq(4, 3)$.
+    Agora podemos calcular o limite, pois temos uma função contínua em $(4, 3)$,
+    \begin{align*}
+      L & = \lim_{(x, y)\to(4, 3)} \frac{\sqrt{x}-\sqrt{y+1}}{x-y-1} \\[2mm]
+        & = \lim_{(x, y)\to(4, 3)} \frac{1}{\sqrt{x}+\sqrt{y+1}}\\[2mm]
+        & = \frac{1}{\sqrt{4}+\sqrt{3+1}}
+          = \frac{1}{2+2}
+          = \frac{1}{4}
+    \end{align*}
+
+    \item[b)]
+    Analisando a função percebemos que se fizermos $y=x$ o limite restrito
+    a curva será
+    \[
+      L_1
+      = \lim_{(x, y)\to(0, 0)} \left(\frac{x-y}{x+y} \evalat{y=x}{}\right)
+      = \lim_{x\to 0} \frac{0}{2x} = 0
+    \]
+    Por outro lado, escolhendo $y=2x$ temos
+    \[
+      L_2
+      = \lim_{(x, y)\to(0, 0)} \left(\frac{x-y}{x+y} \evalat{y=2x}{}\right)
+      = \lim_{x\to 0} \frac{-x}{3x}
+      = \frac{-1}{3}
+    \]
+    Como $L_1\neq L_2$ o limite não existe.
+  \end{enumerate}
+  \clearpage
+\end{answer}
+
+% 05
+%------------------------------------------------------------------------------%
+\exercise{30}
+Calcule as derivadas solicitadas realizando as contas na ordem indicada
+\begin{multicols}{2}
+  \begin{enumerate}
+    \item[a)] \(\D{}{y}      \left(\cos\left(\frac{2x}{5y}\right)\right)^2\)
+    \item[b)] \(\DM{}{x}{y}\;\ln\left(x^2 + y^2\right)\)
+  \end{enumerate}
+\end{multicols}
+
+\begin{answer}
+  \begin{enumerate}
+    \item[a)] ~\vspace{-2.1\baselineskip}
+    \begin{align*}
+      \D{}{y} \left(\cos\left(\frac{2x}{5y}\right)\right)^2
+      & = 2\cos\left(\frac{2x}{5y}\right)
+          \D{}{y}\left(\cos\left(\frac{2x}{5y}\right)\right)  \\[2mm]
+      & = 2\cos\left(\frac{2x}{5y}\right)
+          (-1)\sin\left(\frac{2x}{5y}\right)
+          \D{}{y}\left(\frac{2x}{5y}\right)  \\[2mm]
+      & = -2\cos\left(\frac{2x}{5y}\right)
+          \sin\left(\frac{2x}{5y}\right)
+          \frac{2x}{5}\D{y^{-1}}{y}  \\[2mm]
+      & = -\frac{4x}{5}\cos\left(\frac{2x}{5y}\right)
+          \sin\left(\frac{2x}{5y}\right)
+          \D{y^{-1}}{y}  \\[2mm]
+      & = -\frac{4x}{5}\cos\left(\frac{2x}{5y}\right)
+          \sin\left(\frac{2x}{5y}\right)
+          (-1)y^{-2}  \\[2mm]
+      & = \frac{4x}{5y^2}\cos\left(\frac{2x}{5y}\right)
+          \sin\left(\frac{2x}{5y}\right)
+    \end{align*}
+    \item[b)] Começamos calculando a primeira derivada
+    \begin{align*}
+      \D{}{y} \ln\left(x^2 + y^2\right)
+      & = \frac{1}{x^2 + y^2} \, \D{}{y} \left(x^2 + y^2\right) \\[2mm]
+      & = \frac{1}{x^2 + y^2} \left(0 + \D{y^2}{y}\right) \\[2mm]
+      & = \frac{1}{x^2 + y^2} 2y \\[2mm]
+      & = \frac{2y}{x^2 + y^2}
+    \end{align*}
+    Agora calculamos a derivada segunda
+    \begin{align*}
+      \DM{}{x}{y} \ln\left(x^2 + y^2\right)
+      & = \D{}{x}\left(\D{}{y} \ln\left(x^2 + y^2\right)\right) \\[2mm]
+      & = \D{}{x}\left(\frac{2y}{x^2 + y^2} \right) \\[2mm]
+      & = 2y\D{}{x}\left(x^2 + y^2\right)^{-1} \\[2mm]
+      & = 2y(-1)\left(x^2 + y^2\right)^{-2}\D{}{x}\left(x^2 + y^2\right) \\[2mm]
+      & = -2y\frac{1}{\left(x^2 + y^2\right)^2}\left(2x + 0\right) \\[2mm]
+      & = \frac{-4yx}{\left(x^2 + y^2\right)^2}
+    \end{align*}
+  \end{enumerate}
+\end{answer}
+
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

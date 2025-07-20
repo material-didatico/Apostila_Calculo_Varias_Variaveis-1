@@ -1,0 +1,351 @@
+%------------------------------------------------------------------------------%
+% Luis A. D'Afonseca
+%
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{style_avaliacao}
+
+\ShowAnswers
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Exame Especial -- Turma 1}{18/09/2024}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25}
+Calcule o limite solicitado, ou prove que o limite não existe,
+\(
+  \lim_{(x, y)\to(1, 1)} \frac{x^2 - y^2}{y-x}
+\)
+
+\begin{answer}
+  Se tentarmos calcular diretamente a fração obtemos uma
+  indeterminação $\sfrac{0}{0}$.
+  Portanto, precisamos remover a indeterminação manipulando
+  algebricamente a função,
+  assumindo que $(x, y)\neq(1, 1)$, temos
+  \begin{align*}
+    f(x) & = \frac{x^2 - y^2}{y-x}  \\[2mm]
+    & = \frac{(x-y)(x+y)}{y-x} \\[2mm]
+    & = -\frac{(x-y)(x+y)}{x-y} \\[2mm]
+    & = -(x+y) \\[2mm]
+    & = -x-y
+  \end{align*}
+  Onde o cancelamento só foi possível, pois $(x, y)\neq(1, 1)$.
+  Agora podemos calcular o limite, pois temos uma função contínua em $(1, 1)$,
+  \[
+    L
+    = \lim_{(x, y)\to(1, 1)} \frac{x^2 - y^2}{y-x}
+    = \lim_{(x, y)\to(1, 1)} -x-y = -2
+  \]
+  \clearpage
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre o plano tangente ao gráfico da função
+\(
+  f(x, y) = x^2 + y^2 -2xy -x +3y + 4
+\)
+no ponto \((2, -3)\).
+
+\begin{answer}
+  A equação do plano tangente ao gráfico da função $f$ no ponto \((2, -3)\) é
+  \[
+    f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0) - (z-z_0) = 0
+  \]
+  \[
+    f_x(2, -3)(x-2) + f_y(2, -3)(y+3) - (z-z_0) = 0
+  \]
+  Calculando as derivadas parciais
+  \[
+    f_x(x, y)
+    = \D{f}{x}
+    = \D{}{x}\left(x^2 + y^2 -2xy -x +3y + 4\right)
+    = 2x -2y -1
+  \]
+  \[
+    f_y(x, y)
+    = \D{f}{y}
+    = \D{}{y}\left(x^2 + y^2 -2xy -x +3y + 4\right)
+    = 2y - 2x + 3
+  \]
+  Avaliando no ponto \((2, -3)\)
+  \begin{align*}
+    z_0
+    & = f(2, -3) \\
+    & = \left(x^2 + y^2 -2xy -x +3y + 4\right)\evalat{(2, -3)}{} \\
+    & = 2^2 + (-3)^2 -2(2)(-3) -2 +3(-3) + 4 \\
+    & = 4 + 9 + 12 - 2 - 9 + 4 \\
+    & = 18
+  \end{align*}
+  \[
+    f_x(2, -3)
+    = \left(2x -2y -1\right)\evalat{(2, -3)}{}
+    = 2(2) - 2(-3) - 1
+    = 4 + 6 - 1
+    = 9
+  \]
+  \[
+    f_y(2, -3)
+    = \left(2y - 2x + 3\right)\evalat{(2, -3)}{}
+    = 2(-3) - 2(2) + 3
+    = -6 -4 + 3
+    = -7
+  \]
+  Portanto, a equação do plano tangente é
+  \begin{gather*}
+    f_x(2, -3)(x-2) + f_y(2, -3)(y+3) - (z-z_0) = 0 \\
+    9(x-2) -7(y+3) - (z-18) = 0 \\
+    9x - 18 -7y -21 -z +18 = 0 \\
+    9x -7y -z = 21
+  \end{gather*}
+  \clearpage
+\end{answer}
+
+% 03
+% 04 - pg 270 ex 19 - res pg 838
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre e classifique os pontos críticos da função
+\(
+  f(x, y) = 4xy -x^4 -y^4
+\)
+
+\begin{answer}
+  Precisamos das derivadas parciais de $f$
+  \[
+    \D{f}{x}
+    = \D{}{x}\left[4xy -x^4 -y^4\right]
+    = 4y - 4x^3
+  \]
+  \[
+    \D{f}{y}
+    = \D{}{y}\left[4xy -x^4 -y^4\right]
+    = 4x -4y^3
+  \]
+  então
+  \[
+    \nabla f = \vetor{4y - 4x^3}{4x -4y^3}
+  \]
+
+  A função é um polinômio, então possui derivadas em todos os pontos do plano.
+  Assim os pontos críticos são apenas os pontos onde as derivadas parciais são zero,
+  \(\nabla f = 0\)
+  \[
+    4y - 4x^3 = 0
+    \qquad\text{e}\qquad
+    4x -4y^3 = 0
+  \]
+  ou, simplificando,
+  \[
+    y - x^3 = 0
+    \qquad\text{e}\qquad
+    x - y^3 = 0
+  \]
+  Isolando $y$ na primeira equação, \(y = x^3\), e substituindo na segunda, temos
+  \begin{align*}
+    x - y^3                & = 0 \\
+    x - \left(x^3\right)^3 & = 0 \\
+    x -x^9                 & = 0 \\
+    x(1 - x^8)             & = 0
+  \end{align*}
+  As soluções dessa equação são $x=0$, $x=1$ ou $x=-1$.
+  Se $x=0$ temos $y=0$,
+  se $x=1$ temos $y=1$ e
+  se $x=-1$ temos $y=-1$.
+  Portanto, os pontos críticos são
+  \[
+    (x_1, y_1) = (0, 0),
+    \qquad\qquad
+    (x_2, y_2) = (1, 1)
+    \qquad\text{e}\qquad
+    (x_3, y_3) = (-1, -1)
+  \]
+
+  Precisamos das derivadas parciais de segunda ordem de $f$
+  \[
+    \DS{f}{x}
+    = \D{}{x}\left[4y - 4x^3\right]
+    = -12x^2
+  \]
+  \[
+    \D{f}{y}
+    = \D{}{y}\left[4x -4y^3\right]
+    = -12y^2
+  \]
+  \[
+    \DM{f}{x}{y}
+    = \D{}{x}\D{f}{y}
+    = \D{}{x}\left[4x -4y^3\right]
+    = 4
+  \]
+  então
+  \[
+    H = \left(\begin{array}{cc}
+      -12x^2 & 4 \\
+      4 & -12y^2
+    \end{array}\right)
+  \]
+
+  Para classificar os pontos críticos precisamos avaliar o discriminante nos
+  pontos críticos.
+
+  Considerando o ponto \((x_1, y_1) = (0, 0)\)
+  \[
+    f_{xx}(0, 0) = 0
+  \]
+  \[
+    f_{yy}(0, 0) = 0
+  \]
+  \[
+    f_{xy}(0, 0) = 4
+  \]
+  \[
+    D_1
+    = f_{xx}(0, 0)f_{yy}(0, 0) - f^2_{xy}(0, 0)
+    = 0 \times 0 - 4^2
+    = -16 < 0
+  \]
+  Portanto, o ponto $(0, 0)$ é um ponto de sela.
+
+  Considerando o ponto \((x_2, y_2) = (1, 1)\)
+  \[
+    f_{xx}(1, 1) = -12
+  \]
+  \[
+    f_{yy}(1, 1) = -12
+  \]
+  \[
+    f_{xy}(1, 1) = 4
+  \]
+  \[
+    D_2
+    = f_{xx}(1, 1)f_{yy}(1, 1) - f^2_{xy}(1, 1)
+    = (-12)(-12) - 4^2
+    = 144 -16
+    = 128 > 0
+  \]
+  Portanto, o ponto $(1, 1)$ é um máximo ou mínimo local. Como \(f_{xx}(1, 1) = -12 < 0\)
+  o ponto é um ponto de máximo local.
+
+  Considerando o ponto \((x_3, y_3) = (-1, -1)\)
+  \[
+    f_{xx}(-1, -1) = -12
+  \]
+  \[
+    f_{yy}(-1, -1) = -12
+  \]
+  \[
+    f_{xy}(-1, -1) = 4
+  \]
+  \[
+    D_3
+    = f_{xx}(-1, -1)f_{yy}(-1, -1) - f^2_{xy}(-1, -1)
+    = (-12)(-12) - 4^2
+    = 144 -16
+    = 128 > 0
+  \]
+  Portanto, o ponto $(-1, -1)$ é um máximo ou mínimo local. Como \(f_{xx}(-1, -1) = -12 < 0\)
+  o ponto é um ponto de máximo local.
+  \clearpage
+\end{answer}
+
+% 04 ex 26 pg pdf 294
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre os números positivos $x$, $y$ e $z$, restritos a \(x+y+z^2=16\),
+tais que seu produto seja máximo.
+
+\begin{answer}
+  Queremos maximizar
+  \[
+    f(x, y, z) = xyz
+  \]
+  com a restrição
+  \[
+    g(x, y, z) = x + y + z^2 = 16
+  \]
+
+  Para usar multiplicadores de Lagrange precisamos das derivadas parciais de $f$ e $g$
+  \[
+    f_x(x, y, z) = yz \qquad\qquad
+    f_y(x, y, z) = xz \qquad\qquad
+    f_z(x, y, z) = xy
+  \]
+  \[
+    g_x(x, y, z) = 1 \qquad\qquad
+    g_y(x, y, z) = 1 \qquad\qquad
+    g_z(x, y, z) = 2z
+  \]
+  Vamos agora resolver o sistema \(\nabla f = \lambda\nabla g\) e \(g=16\)
+  \[
+  \begin{cases}
+    yz = \lambda \\
+    xz = \lambda \\
+    xy = 2\lambda z \\
+    x + y + z^2 = 16
+  \end{cases}
+  \]
+  Igualando as duas primeiras equações
+  \[
+    yz = xz
+  \]
+  obtemos \(z=0\) ou \(y=x\).
+
+  Como o enunciado especifica que os valores devem ser positivos então
+  $z=0$ pode ser desconsiderado.
+
+  Substituindo \(xz = \lambda\) e \(y=x\) na terceira equação
+  \begin{align*}
+    xy  & = 2\lambda z \\
+    x^2 & = 2xz^2
+  \end{align*}
+  temos \(x=0\) ou \(z^2=\frac{x}{2}\).
+
+  Como $x$ deve ser positivo temos
+  \[
+    y = x \qquad\text{e}\qquad z^2=\frac{x}{2}
+  \]
+  Substituindo na quarta equação
+  \begin{align*}
+    x + y + z^2 & = 16 \\[2mm]
+    x + x + \frac{x}{2} & = 16 \\[2mm]
+    \frac{2x}{2} + \frac{2x}{2} + \frac{x}{2} & = 16 \\[2mm]
+    \frac{5x}{2} & = 16 \\[2mm]
+    x & = \frac{16\times 2}{5} = \frac{32}{5}
+  \end{align*}
+  Portanto
+  \[
+    y = x = \frac{32}{5}
+  \]
+  \[
+    z^2 = \frac{x}{2} = \frac{1}{2}\frac{32}{5} = \frac{16}{5}
+    \qquad\qquad
+    z = \pm \frac{4}{\sqrt{5}}
+  \]
+  Novamente, como $z$ deve ser positivo temos que os valores são
+  \[
+    x = y = \frac{32}{5} \qquad\qquad
+    z = \frac{4}{\sqrt{5}}
+  \]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

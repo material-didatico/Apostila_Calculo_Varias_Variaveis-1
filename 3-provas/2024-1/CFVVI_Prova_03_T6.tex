@@ -1,0 +1,256 @@
+%------------------------------------------------------------------------------%
+% Luis A. D'Afonseca
+%
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{style_avaliacao}
+
+\ShowAnswers
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+\newcommand{\comentario}[1]{{\color{magenta} #1 \par\vspace{\baselineskip}\par}}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 3 -- Turma 6}{09/09/2024}
+
+%\comentario{
+%  Nos exercícios sobre números complexos:
+%  \begin{itemize}
+%    \item Como esta é uma disciplina de cálculo, exigi que as respostas sejam sempre
+%    em radianos, mas os alunos podem fazer os passos intermediários em graus.
+%
+%    \item No cálculo das raizes o aluno pode deixar a resposta final na forma polar,
+%    não é necessário retornar para a forma canônica.
+%  \end{itemize}
+%}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{50}
+Encontre o ponto do plano \(x+2y+3z=13\) mais próximo do ponto \((1, 1, 1)\).
+
+\begin{answer}
+  Queremos minimizar a distância
+  \[
+    d(x, y, z) = \sqrt{(x-1)^2 + (y-1)^2 + (z-1)^2}
+  \]
+  Como a função raiz quadrada é crescente podemos minimizar a função
+  \[
+    f(x, y, z) = (x-1)^2 + (y-1)^2 + (z-1)^2
+  \]
+  suas derivadas parciais são
+  \[
+    f_x(x, y, z) = 2(x-1)
+    \qquad
+    f_y(x, y, z) = 2(y-1)
+    \qquad
+    f_z(x, y, z) = 2(z-1)
+  \]
+  As derivadas parciais da função \(g(x, y, z)=x+2y+3z\) são
+  \[
+    g_x(x, y, z) = 1
+    \qquad
+    g_y(x, y, z) = 2
+    \qquad
+    g_z(x, y, z) = 3
+  \]
+  Aplicando os Multiplicadores de Lagrange, precisamos resolver o sistema
+  \[
+  \begin{cases}
+    2(x-1) =  \lambda \\
+    2(y-1) = 2\lambda \\
+    2(z-1) = 3\lambda \\
+    x + 2y + 3z = 13
+  \end{cases}
+  \]
+  Das três primeiras equações obtemos
+  \[
+    2(x-1) = \lambda
+    \quad\Rightarrow\quad
+    x = \frac{\lambda}{2} + 1
+  \]
+  \[
+    2(y-1) = 2\lambda
+    \quad\Rightarrow\quad
+    y = \lambda + 1
+  \]
+  \[
+    2(z-1) = 3\lambda
+    \quad\Rightarrow\quad
+    z = \frac{3\lambda}{2} + 1
+  \]
+  Substituindo na última equação
+  \begin{align*}
+    x + 2y + 3z & = 13
+    \\[2mm]
+    \left(\frac{\lambda}{2} + 1\right)
+    + 2 \left(\lambda + 1\right)
+    + 3 \left(\frac{3\lambda}{2} + 1\right) & = 13
+    \\[2mm]
+    \frac{\lambda}{2} + 1
+    + 2\lambda + 2
+    + \frac{9\lambda}{2} + 3 & = 13
+    \\[2mm]
+    \lambda + 2
+    + 4\lambda + 4
+    + 9\lambda + 6 & = 13\times 2
+    \\[2mm]
+    14\lambda + 12 & = 26
+    \\[2mm]
+    14\lambda & = 14
+    \\[2mm]
+    \lambda & = 1
+  \end{align*}
+  Portanto
+  \[
+    x = \frac{\lambda}{2} + 1 = \frac{3}{2}
+  \]
+  \[
+    y = \lambda + 1 = 2
+  \]
+  \[
+    z = \frac{3\lambda}{2} + 1 = \frac{5}{2}
+  \]
+  O ponto mais próximo é o ponto \(\left(\frac{3}{2}, 2, \frac{5}{2}\right)\)
+  \clearpage
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre as raízes do polinômio \(p(x) = x^3 -6x^2 + 10x\)
+
+\begin{answer}
+  Queremos resolver a equação
+  \[
+    x^3 -6x^2 + 10x = 0
+  \]
+  que podemos escrever como
+  \[
+    x\left(x^2 -6x + 10\right) = 0
+  \]
+  Uma das raízes é \(x=0\), usamos Bhaskara para encontrar as demais
+  \[
+    \Delta
+    = b^2 - 4ac
+    = (-6)^2 - 4 \times 1 \times 10
+    = 36 - 40
+    = -4
+  \]
+  \[
+    \sqrt{\Delta}
+    = \sqrt{-4}
+    = i\sqrt{4}
+    = 2i
+  \]
+  Temos então
+  \[
+    x
+    = \frac{-b\pm\sqrt{\Delta}}{2a}
+    = \frac{-(-6)\pm 2i}{2}
+    = 3\pm i
+  \]
+  Portanto as raízes de $p$ são
+  \[
+    x_1 = 0 \qquad\qquad
+    x_2 = 3-i \qquad\qquad
+    x_3 = 3+i
+  \]
+  \clearpage
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre as raízes cúbicas complexas do número \( z = -27 \).
+
+\begin{answer}
+  Escrevemos \( z = -27 \) na forma trigonométrica
+  \[
+  z = 27 \left[ \cos\left(\pi\right) + i \sin\left(\pi\right) \right]
+  \]
+  As raízes cúbicas são
+  \begin{align*}
+    u_k
+    & = \sqrt[3]{27} \left[
+    \cos\left(\frac{\pi+2k\pi}{3}\right)
+    + i \sin\left(\frac{\pi+2k\pi}{3}\right)
+    \right]
+    & k = 0, 1, 2    \\[2mm]
+    & = 3 \left[
+    \cos\left(\frac{\pi+2k\pi}{3}\right)
+    + i \sin\left(\frac{\pi+2k\pi}{3}\right)
+    \right]
+  \end{align*}
+  Para cada valor de $k$
+  \begin{align*}
+    u_0
+    & = 3 \left[
+    \cos\left( \frac{\pi+2\times 0\pi}{3} \right)
+    + i \sin\left( \frac{\pi+2\times 0\pi}{3} \right)
+    \right] \\[2mm]
+    & = 3 \left[
+    \cos\left( \frac{\pi}{3} \right)
+    + i \sin\left( \frac{\pi}{3} \right)
+    \right] \\[2mm]
+    & = 3 \left[
+    \cos\left( \ang{60} \right)
+    + i \sin\left( \ang{60} \right)
+    \right] \\[2mm]
+    & = 3 \left[
+    \frac{1}{2}
+    + i \frac{\sqrt{3}}{2}
+    \right] \\[2mm]
+    & =  \frac{3}{2} + \frac{3\sqrt{3}}{2} i
+  \end{align*}
+  \begin{align*}
+    u_1
+    & = 3 \left[
+    \cos\left( \frac{\pi+2\times 1\pi}{3} \right)
+    + i \sin\left( \frac{\pi+2\times 1\pi}{3} \right)
+    \right] \\[2mm]
+    & = 3 \left[
+    \cos\left( \pi \right)
+    + i \sin\left( \pi \right)
+    \right] \\[2mm]
+    & = 3 \left[ -1 + i0 \right] \\[2mm]
+    & = -3
+  \end{align*}
+
+  \begin{align*}
+    u_2
+    & = 3 \left[
+    \cos\left( \frac{\pi+2\times 2\pi}{3} \right)
+    + i \sin\left( \frac{\pi+2\times 2\pi}{3} \right)
+    \right] \\[2mm]
+    & = 3 \left[
+    \cos\left( \frac{5\pi}{3} \right)
+    + i \sin\left( \frac{5\pi}{3} \right)
+    \right] \\[2mm]
+    & = 3 \left[
+    \cos\left( \ang{300} \right)
+    + i \sin\left( \ang{300} \right)
+    \right] \\[2mm]
+    & = 3 \left[
+    \frac{1}{2}
+    - i \frac{\sqrt{3}}{2}
+    \right] \\[2mm]
+    & = \frac{3}{2} - \frac{3\sqrt{3}}{2}i
+  \end{align*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

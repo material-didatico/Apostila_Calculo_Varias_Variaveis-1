@@ -1,0 +1,190 @@
+%------------------------------------------------------------------------------%
+% Luis A. D'Afonseca
+%
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{style_avaliacao}
+
+% \ShowAnswers
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova Substitutiva -- Turma 6}{11/09/2024}
+
+\textbf{O exercício correspondente a prova que será substituida vale 50 pontos}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25}
+Calcule o limite
+\(
+  \lim_{(x, y) \to (0, 0)} \frac{xy}{x^2 + y^2}
+\)
+ou mostre que ele não existe.
+
+\begin{answer}
+  Restringindo a função à reta \( y = 0 \) temos
+  \[
+    \left(\lim_{(x, y) \to (0, 0)} \frac{xy}{x^2 + y^2}\right)  \evalat{y=0}{}
+    = \lim_{x\to 0} \frac{0}{x^2}
+    = \lim_{x\to 0} 0
+    = 0
+  \]
+  Porém, se restringirmos $f$ à reta \( y=x\), temos
+  \[
+    \left(\lim_{(x, y) \to (0, 0)} \frac{xy}{x^2 + y^2}\right) \evalat{y=x}{}
+    = \lim_{x\to 0} \frac{x^2}{x^2+x^2}
+    = \lim_{x\to 0} \frac{1}{2}
+    = \frac{1}{2}
+  \]
+  Os limites ao longo de diferentes caminhos são diferentes, logo o limite não existe.
+  \clearpage
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre e classifique os pontos críticos da função
+\(
+  f(x, y) = x^2 + y^2 - 4x - 6y + 12
+\)
+
+\begin{answer}
+  Calculando as derivadas parciais de $f$
+  \[
+    f_x(x, y) = 2x - 4 \qquad\qquad f_y(x, y) = 2y - 6
+  \]
+
+  Como as derivadas parciais são polinômios elas existem em todos os pontos
+  do plano. Portanto, temos apenas os pontos críticos onde as derivadas se anulam.
+  Assim precisamos resolver o sistema \(\nabla f = 0\)
+  \[
+    \begin{cases}
+      f_x(x, y) = 2x - 4 = 0 \\
+      f_y(x, y) = 2y - 6 = 0
+    \end{cases}
+  \]
+  que pode ser reescrito como
+  \[
+    \begin{cases}
+      x = 2 \\
+      y = 3
+    \end{cases}
+  \]
+  Encontramos o ponto crítico \((2, 3)\)
+
+  Para classificar o ponto crítico, usamos o teste da segunda derivada.
+
+  Calculando as derivadas de segundas de $f$
+  \[
+    f_{xx}(x, y) = 2 \qquad\qquad
+    f_{yy}(x, y) = 2 \qquad\qquad
+    f_{xy}(x, y) = 0
+  \]
+
+  O discriminante é
+  \[
+    D(x, y) = f_{xx}(x, y)f_{yy}(x, y) - \big(f_{xy}(x, y)\big)^2
+    = 2 \times 2 - 0^2
+    = 4
+  \]
+  Como \(D(2, 3) = 4 >0\) o ponto é um máximo ou mínimo local,
+  como \( f_xx(2, 3) = 2 > 0 \) o ponto é um mínimo local.
+\clearpage
+\end{answer}
+
+% 03 ex 26 pg pdf 294
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre os números positivos $x$, $y$ e $z$, restritos a \(x+y+z^2=16\),
+tais que seu produto seja máximo.
+
+\begin{answer}
+  Queremos maximizar
+  \[
+    f(x, y, z) = xyz
+  \]
+  com a restrição
+  \[
+    g(x, y, z) = x + y + z^2 = 16
+  \]
+
+  Para usar multiplicadores de Lagrange precisamos das derivadas parciais de $f$ e $g$
+  \[
+    f_x(x, y, z) = yz \qquad\qquad
+    f_y(x, y, z) = xz \qquad\qquad
+    f_z(x, y, z) = xy
+  \]
+  \[
+    g_x(x, y, z) = 1 \qquad\qquad
+    g_y(x, y, z) = 1 \qquad\qquad
+    g_z(x, y, z) = 2z
+  \]
+  Vamos agora resolver o sistema \(\nabla f = \lambda\nabla g\) e \(g=16\)
+  \[
+    \begin{cases}
+      yz = \lambda \\
+      xz = \lambda \\
+      xy = 2\lambda z \\
+      x + y + z^2 = 16
+    \end{cases}
+  \]
+  Igualando as duas primeiras equações
+  \[
+    yz = xz
+  \]
+  obtemos \(z=0\) ou \(y=x\).
+
+  Como o enunciado especifica que os valores devem ser positivos então
+  $z=0$ pode ser desconsiderado.
+
+  Substituindo \(xz = \lambda\) e \(y=x\) na terceira equação
+  \begin{align*}
+    xy  & = 2\lambda z \\
+    x^2 & = 2xz^2
+  \end{align*}
+  temos \(x=0\) ou \(z^2=\frac{x}{2}\).
+
+  Como $x$ deve ser positivo temos
+  \[
+    y = x \qquad\text{e}\qquad z^2=\frac{x}{2}
+  \]
+  Substituindo na quarta equação
+  \begin{align*}
+    x + y + z^2 & = 16 \\[2mm]
+    x + x + \frac{x}{2} & = 16 \\[2mm]
+    \frac{2x}{2} + \frac{2x}{2} + \frac{x}{2} & = 16 \\[2mm]
+    \frac{5x}{2} & = 16 \\[2mm]
+    x & = \frac{16\times 2}{5} = \frac{32}{5}
+  \end{align*}
+  Portanto
+  \[
+    y = x = \frac{32}{5}
+  \]
+  \[
+    z^2 = \frac{x}{2} = \frac{1}{2}\frac{32}{5} = \frac{16}{5}
+    \qquad\qquad
+    z = \pm \frac{4}{\sqrt{5}}
+  \]
+  Novamente, como $z$ deve ser positivo temos que os valores são
+  \[
+    x = y = \frac{32}{5} \qquad\qquad
+    z = \frac{4}{\sqrt{5}}
+  \]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

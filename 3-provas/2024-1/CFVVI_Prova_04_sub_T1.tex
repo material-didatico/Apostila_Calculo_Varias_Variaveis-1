@@ -1,0 +1,228 @@
+%------------------------------------------------------------------------------%
+% Luis A. D'Afonseca
+%
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{style_avaliacao}
+
+%\ShowAnswers
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova Substitutiva -- Turma 1}{11/09/2024}
+
+\textbf{O exercício correspondente a prova que será substituida vale 50 pontos}
+
+%P1
+%Determine e esboce o domínio da função
+%Encontre e esboce duas curvas de nível da função
+%Calcule os limites solicitados, ou prove que o limite não existe
+%
+%P2
+%Derivada direcional
+%Regra da cadeia
+%Linearização
+%Plano tangente
+%Pontos Críticos e regra derivada segunda
+%Derivada função implicita
+%
+%P3
+%Extremos em região fechada e limitada
+%Multiplicadores de Lagrange
+%Números Complexos
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25}
+Calcule o limite
+\(
+  \lim_{(x, y) \to (0, 0)} \frac{x^2 - y^2}{x^2 + y^2}
+\)
+ou mostre que ele não existe.
+
+\begin{answer}
+  Restringindo a função à reta \( y = 0 \) temos
+  \[
+    \left(\lim_{(x, y) \to (0, 0)} \frac{x^2 - y^2}{x^2 + y^2}\right) \evalat{y=0}{}
+    = \lim_{x\to 0} \frac{x^2}{x^2}
+    = \lim_{x\to 0} 1
+    = 1
+  \]
+  Porém, se restringirmos $f$ à reta \( x = 0 \), temos
+  \[
+    \left(\lim_{(x, y) \to (0, 0)} \frac{x^2 - y^2}{x^2 + y^2}\right) \evalat{x=0}{}
+    = \lim_{y\to 0} \frac{-y^2}{y^2}
+    = \lim_{y\to 0} -1
+    = -1
+  \]
+  Os limites ao longo de diferentes caminhos são diferentes, logo o limite não existe.
+  \clearpage
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre e classifique os pontos críticos da função
+\(
+  f(x, y) = x^2 + y^2 - 4xy
+\)
+
+\begin{answer}
+  Calculando as derivadas parciais de $f$
+  \[
+    f_x(x, y) = 2x - 4y, \qquad\qquad f_y(x, y) = 2y - 4x
+  \]
+
+  Como as derivadas parciais são polinômios elas existem em todos os pontos
+  do plano. Portanto, temos apenas os pontos críticos onde as derivadas se anulam.
+  Assim precisamos resolver o sistema \(\nabla f = 0\)
+  \[
+    \begin{cases}
+      f_x(x, y) = 2x - 4y = 0 \\
+      f_y(x, y) = 2y - 4x = 0
+    \end{cases}
+  \]
+  que pode ser reescrito como
+  \[
+    \begin{cases}
+      x = 2y \\
+      y = 2x
+    \end{cases}
+  \]
+  Substituindo \( y = 2x \) em \( x = 2y \), obtemos
+  \[
+    x = 4x
+  \]
+  portanto
+  \[
+    x = 0 \qquad \text{e} \qquad y = 0
+  \]
+  Encontramos o ponto crítico \((0, 0)\)
+
+  Para classificar o ponto crítico, usamos o teste da segunda derivada.
+
+  Calculando as derivadas de segundas de $f$
+  \[
+    f_{xx}(x, y) = 2 \qquad\qquad
+    f_{yy}(x, y) = 2 \qquad\qquad
+    f_{xy}(x, y) = -4
+  \]
+
+  O discriminante é
+  \[
+    D(x, y) = f_{xx}(x, y)f_{yy}(x, y) - \big(f_{xy}(x, y)\big)^2
+    = 2 \times 2 - (-4)^2
+    = 4 - 16
+    = -12
+  \]
+  Como \(D(0, 0) = -12 <0\) o ponto \((0, 0)\) é um ponto de sela
+  \clearpage
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre os valores máximo e mínimo de \(f(x, y, z) = x - 2y + 5z\)
+na esfera \(x^2+y^2+z^2=30\)
+
+\begin{answer}
+  Queremos os extremos da função
+  \[
+    f(x, y, z) = x - 2y + 5z
+  \]
+  restrita a
+  \[
+    g(x, y, z) = x^2 + y^2 + z^2 = 30
+  \]
+  Para aplicarmos multiplicadores de Lagrange precisamos das derivadas parciais
+  das funções $f$ e $g$
+  \[
+    f_x(x, y, z) =  1 \qquad\qquad
+    f_y(x, y, z) = -2 \qquad\qquad
+    f_z(x, y, z) =  5
+  \]
+  \[
+    g_x(x, y, z) = 2x \qquad\qquad
+    g_y(x, y, z) = 2y \qquad\qquad
+    g_z(x, y, z) = 2z
+  \]
+  Precisamos resolver o sistema \(\nabla f = \lambda \nabla g\) e \(g=30\)
+  \[
+    \begin{cases}
+       \hphantom{-}1 = 2\lambda x \\
+      -2 = 2\lambda y \\
+       \hphantom{-}5 = 2\lambda z \\
+       x^2 + y^2 + z^2 = 30
+    \end{cases}
+  \]
+  Da primeiro equação temos
+  \[
+    \lambda = \frac{1}{2x}
+  \]
+  Isolando $y$ na segunda e substituindo $\lambda$ temos
+  \[
+    y
+    = \frac{-2}{2\lambda}
+    = \frac{-1}{\lambda}
+    = -2x
+  \]
+  Fazendo o mesmo na terceira temos
+  \[
+    z
+    = \frac{5}{2\lambda}
+    = \frac{5\times 2x}{2}
+    = 5x
+  \]
+  Substituindo $y$ e $z$ na quarta equação
+  \begin{align*}
+    x^2 + y^2 + z^2        & = 30 \\
+    x^2 + (-2x)^2 + (5x)^2 & = 30 \\
+    x^2 + 4x^2 + 25x^2     & = 30 \\
+    30 x^2 = 30            &  \\
+    x = \pm 1              &
+  \end{align*}
+
+  Para $x=1$
+  \[
+    y = -2x = -2 \qquad\qquad
+    z = 5x = 5
+  \]
+  portanto
+  \[
+    f(1, -2, 5)
+    = 1 - 2(-2) + 5\times 5
+    = 1 + 4 + 25
+    = 30
+  \]
+
+  Para $x=-1$
+  \[
+    y = -2x = 2 \qquad\qquad
+    z = 5x = -5
+  \]
+  portanto
+  \[
+  f(-1, 2, -5)
+    = -1 - 2\times 2 + 5(-5)
+    = -1 - 4 - 25
+    = -30
+  \]
+
+  O valor mínimo de $f$ é $-30$ e o valor máximo é $30$
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

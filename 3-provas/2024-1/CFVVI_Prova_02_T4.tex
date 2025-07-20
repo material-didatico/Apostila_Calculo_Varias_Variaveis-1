@@ -1,0 +1,424 @@
+%------------------------------------------------------------------------------%
+% Luis A. D'Afonseca
+%
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{style_avaliacao}
+
+\ShowAnswers
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\clearpage
+
+\makeHeader{CFVVI}{Prova 2 -- Turma 4}{12/08/2024}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{20}
+Calcule \(\D{z}{u}\left(2, \frac{\pi}{4}\right)\) sabendo que
+\(
+  z = 4e^{x\ln(y)}
+\),
+\(
+  x = \ln\left(u\cos(v)\right)
+\)
+e
+\(
+  y = u \sin(v)
+\).
+
+\begin{answer}
+  Vamos usar a regra da cadeia
+  \[
+    \D{z}{u} = \D{z}{x}\D{x}{u} + \D{z}{y}\D{y}{u}
+  \]
+  Calculando as derivadas necessárias
+  \[
+    \D{z}{x}
+    = \D{}{x}\left(4e^{x\ln(y)}\right)
+    = 4e^{x\ln(y)} \D{}{x}\left(x\ln(y)\right)
+    = 4e^{x\ln(y)} \ln(y)
+  \]
+  \[
+    \D{z}{y}
+    = \D{}{y}\left(4e^{x\ln(y)}\right)
+    = 4e^{x\ln(y)} \D{}{y}\left(x\ln(y)\right)
+    = 4e^{x\ln(y)} \frac{x}{y}
+    = \frac{4x}{y}e^{x\ln(y)}
+  \]
+  \[
+    \D{x}{u}
+    = \D{}{u}\left(\ln\left(u\cos(v)\right)\right)
+    = \frac{1}{u\cos(v)}\D{}{u}\left(u\cos(v)\right)
+    = \frac{1}{u\cos(v)}\cos(v)
+    = \frac{1}{u}
+  \]
+  \[
+    \D{y}{u}
+    = \D{}{u}\left(u \sin(v)\right)
+    = \sin(v)
+  \]
+  Portanto
+  \begin{align*}
+    \D{z}{u}
+    & = \D{z}{x}\D{x}{u} + \D{z}{y}\D{y}{u} \\[2mm]
+    & = 4e^{x\ln(y)} \ln(y) \times \frac{1}{u}
+      + \frac{4x}{y}e^{x\ln(y)} \times \sin(v) \\[2mm]
+    & = 4e^{x\ln(y)}\left(\frac{\ln(y)}{u} + \frac{\sin(v)}{y}\right)
+  \end{align*}
+  Avaliando no ponto \((u, v) = \left(2, \frac{\pi}{4}\right)\)
+  \[
+    x\left(2, \frac{\pi}{4}\right)
+    = \left(\ln\left(u\cos(v)\right)\right)\evalat{\left(2, \frac{\pi}{4}\right)}{}
+    = \ln\left(2\cos\left(\frac{\pi}{4}\right)\right)
+    = \ln\left(\frac{2}{\sqrt{2}}\right)
+    = \ln\left(\sqrt{2}\right)
+  \]
+  \[
+    y\left(2, \frac{\pi}{4}\right)
+    = \left(u \sin(v)\right)\evalat{\left(2, \frac{\pi}{4}\right)}{}
+    = 2 \frac{1}{\sqrt{2}}
+    = \sqrt{2}
+  \]
+  \begin{align*}
+    \D{z}{u}
+    & = 4 e^{x\ln(y)}
+        \left(\frac{\ln(y)}{u} + \frac{\sin(v)}{y}
+        \right)\evalat{\left(2, \frac{\pi}{4}\right)}{} \\[2mm]
+    & = 4 \exp\left[\ln\left(\sqrt{2}\right) \ln\left(\sqrt{2}\right)\right]
+        \left[\frac{\ln\left(\sqrt{2}\right)}{2} + \frac{\sin\left(\frac{\pi}{4}\right)}{\sqrt{2}}
+        \right] \\[2mm]
+    & = 4 \exp\left[\left(\ln\sqrt{2}\right)^2\right]
+    \left[\frac{\ln\left(\sqrt{2}\right)}{2} + \frac{1}{\sqrt{2}\sqrt{2}}\right] \\[2mm]
+    & = 4 e^{\ln^2\sqrt{2}}
+    \left[\frac{\ln\left(\sqrt{2}\right)+1}{2}\right] \\[2mm]
+    & = 2 \left(\ln\sqrt{2}+1\right)e^{\ln^2\sqrt{2}}
+  \end{align*}
+  \clearpage
+\end{answer}
+
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25}
+Calcule a derivada da função
+\(
+  f(x, y, z) = 3e^x\cos(yz)
+\)
+na direção
+\(
+  v = 2\veci + \vecj -2\veck
+\)
+no ponto
+\((0, 0, 0)\).
+
+\begin{answer}
+  Precisamos do vetor unitário na direção do vetor
+  \[
+    v = \left(\begin{array}{r} 2 \\ 1 \\ -2 \end{array}\right)
+  \]
+  ou seja,
+  \[
+    u
+    = \frac{v}{\abs{v}}
+    = \frac{1}{\sqrt{2^2+1^2+(-2)^2}}\left(\begin{array}{r} 2 \\ 1 \\ -2 \end{array}\right)
+    = \frac{1}{\sqrt{9}}\left(\begin{array}{r} 2 \\ 1 \\ -2 \end{array}\right)
+    = \left(\begin{array}{r} \sfrac{2}{3} \\ \sfrac{1}{3} \\ \sfrac{-2}{3} \end{array}\right)
+  \]
+  Precisamos também do gradiente de $f$
+  \[
+    \D{f}{x}
+    = \D{}{x}\left(3e^x\cos(yz)\right)
+    = 3e^x\cos(yz)
+  \]
+  \[
+    \D{f}{y}
+    = \D{}{y}\left(3e^x\cos(yz)\right)
+    = -3e^xz\sin(yz)
+  \]
+  \[
+    \D{f}{z}
+    = \D{}{z}\left(3e^x\cos(yz)\right)
+    = -3e^xy\sin(yz)
+  \]
+  \[
+    \nabla f = \left(\begin{array}{r}
+      3e^x\cos(yz) \\
+      -3e^xz\sin(yz) \\
+      -3e^xy\sin(yz)
+    \end{array}\right)
+  \]
+  Avaliando o gradiente no ponto \((0, 0, 0)\)
+  \[
+    \nabla f(0, 0, 0)
+    = \left(\begin{array}{r}
+      3e^x\cos(yz) \\
+      -3e^xz\sin(yz) \\
+      -3e^xy\sin(yz)
+    \end{array}\right)\evalat{(0, 0, 0)}{}
+    = \left(\begin{array}{r}
+      3e^0\cos(0) \\
+      -3e^00\sin(0) \\
+      -3e^00\sin(0)
+    \end{array}\right)
+    = \left(\begin{array}{r}
+    3 \\
+    0 \\
+    0
+    \end{array}\right)
+  \]
+  Derivada direcional
+  \[
+    D_u
+    = u \cdot \nabla f(0, 0, 0)
+    = \left(\begin{array}{r} \sfrac{2}{3} \\ \sfrac{1}{3} \\ \sfrac{-2}{3} \end{array}\right)
+      \cdot
+      \left(\begin{array}{r} 3 \\ 0 \\ 0 \end{array}\right)
+    = \frac{2}{3}3 + 0 + 0
+    = 2
+  \]
+  \clearpage
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre o plano tangente ao gráfico da função
+\(
+  f(x, y) = x^2 + y^2 -2xy -x +3y + 4
+\)
+no ponto \((2, -3)\).
+
+\begin{answer}
+  A equação do plano tangente ao gráfico da função $f$ no ponto \((2, -3)\) é
+  \[
+    f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0) - (z-z_0) = 0
+  \]
+  \[
+    f_x(2, -3)(x-2) + f_y(2, -3)(y+3) - (z-z_0) = 0
+  \]
+  Calculando as derivadas parciais
+  \[
+    f_x(x, y)
+    = \D{f}{x}
+    = \D{}{x}\left(x^2 + y^2 -2xy -x +3y + 4\right)
+    = 2x -2y -1
+  \]
+  \[
+    f_y(x, y)
+    = \D{f}{y}
+    = \D{}{y}\left(x^2 + y^2 -2xy -x +3y + 4\right)
+    = 2y - 2x + 3
+  \]
+  Avaliando no ponto \((2, -3)\)
+  \begin{align*}
+    z_0
+    & = f(2, -3) \\
+    & = \left(x^2 + y^2 -2xy -x +3y + 4\right)\evalat{(2, -3)}{} \\
+    & = 2^2 + (-3)^2 -2(2)(-3) -2 +3(-3) + 4 \\
+    & = 4 + 9 + 12 - 2 - 9 + 4 \\
+    & = 18
+  \end{align*}
+  \[
+    f_x(2, -3)
+    = \left(2x -2y -1\right)\evalat{(2, -3)}{}
+    = 2(2) - 2(-3) - 1
+    = 4 + 6 - 1
+    = 9
+  \]
+  \[
+    f_y(2, -3)
+    = \left(2y - 2x + 3\right)\evalat{(2, -3)}{}
+    = 2(-3) - 2(2) + 3
+    = -6 -4 + 3
+    = -7
+  \]
+  Portanto, a euquação do plano tangente é
+  \begin{gather*}
+      f_x(2, -3)(x-2) + f_y(2, -3)(y+3) - (z-z_0) = 0 \\
+      9(x-2) -7(y+3) - (z-18) = 0 \\
+      9x - 18 -7y -21 -z +18 = 0 \\
+      9x -7y -z = 21
+  \end{gather*}
+  \clearpage
+\end{answer}
+
+
+% 04 - pg 270 ex 19 - res pg 838
+%------------------------------------------------------------------------------%
+\exercise{30}
+Considerando a função
+\(
+  f(x, y) = 4xy -x^4 -y^4
+\).
+
+\begin{enumerate}[leftmargin=15mm,labelwidth=11.5mm,align=left]
+  \item[a) {[5]}] Calcule o gradiente de $f$.
+  \item[b) {[5]}] Calcule a hessiana de $f$.
+  \item[c) {[10]}] Encontre todos os pontos críticos de $f$.
+  \item[d) {[10]}] Classifique cada ponto crítico de $f$.
+\end{enumerate}
+
+\begin{answer}
+  \noindent\textbf{a)}
+
+  Precisamos das derivadas parciais de $f$
+  \[
+    \D{f}{x}
+    = \D{}{x}\left[4xy -x^4 -y^4\right]
+    = 4y - 4x^3
+  \]
+  \[
+    \D{f}{y}
+    = \D{}{y}\left[4xy -x^4 -y^4\right]
+    = 4x -4y^3
+  \]
+  então
+  \[
+    \nabla f = \vetor{4y - 4x^3}{4x -4y^3}
+  \]
+
+  \noindent\textbf{b)}
+
+  Precisamos das derivadas parciais de segunda ordem de $f$
+  \[
+    \DS{f}{x}
+    = \D{}{x}\left[4y - 4x^3\right]
+    = -12x^2
+  \]
+  \[
+    \D{f}{y}
+    = \D{}{y}\left[4x -4y^3\right]
+    = -12y^2
+  \]
+  \[
+    \DM{f}{x}{y}
+    = \D{}{x}\D{f}{y}
+    = \D{}{x}\left[4x -4y^3\right]
+    = 4
+  \]
+  então
+  \[
+    H = \left(\begin{array}{cc}
+            -12x^2 & 4 \\
+            4 & -12y^2
+        \end{array}\right)
+  \]
+
+  \noindent\textbf{c)}
+
+  A função é um polinômio, então possui derivadas em todos os pontos do plano.
+  Assim os pontos críticos são apenas os pontos onde as derivadas parciais são zero,
+  \(\nabla f = 0\)
+  \[
+    4y - 4x^3 = 0
+    \qquad\text{e}\qquad
+    4x -4y^3 = 0
+  \]
+  ou, simplificando,
+  \[
+    y - x^3 = 0
+    \qquad\text{e}\qquad
+    x - y^3 = 0
+  \]
+  Isolando $y$ na primeira equação, \(y = x^3\), e substituindo na segunda, temos
+  \begin{align*}
+    x - y^3                & = 0 \\
+    x - \left(x^3\right)^3 & = 0 \\
+    x -x^9                 & = 0 \\
+    x(1 - x^8)             & = 0
+  \end{align*}
+  As soluções dessa equação são $x=0$, $x=1$ ou $x-1$.
+  Se $x=0$ temos $y=0$,
+  se $x=1$ temos $y=1$ e
+  se $x=-1$ temos $y=-1$.
+  Portanto, os pontos críticos são
+  \[
+    (x_1, y_1) = (0, 0),
+    \qquad\qquad
+    (x_2, y_2) = (1, 1)
+    \qquad\text{e}\qquad
+    (x_3, y_3) = (-1, -1)
+  \]
+
+  \noindent\textbf{d)}
+
+  Para classificar os pontos críticos precisamos avaliar o discriminante nos
+  pontos críticos.
+
+  Considerando o ponto \((x_1, y_1) = (0, 0)\)
+  \[
+    f_{xx}(0, 0) = 0
+  \]
+  \[
+    f_{yy}(0, 0) = 0
+  \]
+  \[
+    f_{xy}(0, 0) = 4
+  \]
+  \[
+    D_1
+    = f_{xx}(0, 0)f_{yy}(0, 0) - f^2_{xy}(0, 0)
+    = 0 \times 0 - 4^2
+    = -16 < 0
+  \]
+  Portanto, o ponto $(0, 0)$ é um ponto de sela.
+
+  Considerando o ponto \((x_2, y_2) = (1, 1)\)
+  \[
+    f_{xx}(1, 1) = -12
+  \]
+  \[
+    f_{yy}(1, 1) = -12
+  \]
+  \[
+    f_{xy}(1, 1) = 4
+  \]
+  \[
+    D_2
+    = f_{xx}(1, 1)f_{yy}(1, 1) - f^2_{xy}(1, 1)
+    = (-12)(-12) - 4^2
+    = 144 -16
+    = 128 > 0
+  \]
+  Portanto, o ponto $(1, 1)$ é um máximo ou mínimo local. Como \(f_{xx}(1, 1) = -12 < 0\)
+  o ponto é um ponto de máximo local.
+
+  Considerando o ponto \((x_3, y_3) = (-1, -1)\)
+  \[
+    f_{xx}(-1, -1) = -12
+  \]
+  \[
+    f_{yy}(-1, -1) = -12
+  \]
+  \[
+    f_{xy}(-1, -1) = 4
+  \]
+  \[
+    D_3
+    = f_{xx}(-1, -1)f_{yy}(-1, -1) - f^2_{xy}(-1, -1)
+    = (-12)(-12) - 4^2
+    = 144 -16
+    = 128 > 0
+  \]
+  Portanto, o ponto $(-1, -1)$ é um máximo ou mínimo local. Como \(f_{xx}(-1, -1) = -12 < 0\)
+  o ponto é um ponto de máximo local.
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

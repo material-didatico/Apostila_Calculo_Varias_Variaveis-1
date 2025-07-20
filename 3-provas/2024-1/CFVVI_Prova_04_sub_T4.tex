@@ -1,0 +1,226 @@
+%------------------------------------------------------------------------------%
+% Luis A. D'Afonseca
+%
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{style_avaliacao}
+
+% \ShowAnswers
+
+\newcommand{\D}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\DS}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\DM}[3]{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova Substitutiva -- Turma 4}{11/09/2024}
+
+\textbf{O exercício correspondente a prova que será substituída vale 50 pontos}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25}
+Calcule o limite
+\(
+  \lim_{(x, y) \to (0, 0)} \frac{x^2 + y^2}{x^2 - y^2}
+\)
+ou mostre que ele não existe.
+
+\begin{answer}
+  Restringindo a função à reta \( y = 0 \) temos
+  \[
+    \left(\lim_{(x, y) \to (0, 0)} \frac{x^2 + y^2}{x^2 - y^2}\right) \evalat{y=0}{}
+    = \lim_{x\to 0} \frac{x^2}{x^2}
+    = \lim_{x\to 0} 1
+    = 1
+  \]
+  Porém, se restringirmos $f$ à reta \( x = 0 \), temos
+  \[
+    \left(\lim_{(x, y) \to (0, 0)} \frac{x^2 + y^2}{x^2 - y^2}\right) \evalat{x=0}{}
+    = \lim_{y\to 0} \frac{y^2}{-y^2}
+    = \lim_{y\to 0} -1
+    = -1
+  \]
+  Os limites ao longo de diferentes caminhos são diferentes, logo o limite não existe.
+  \clearpage
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre e classifique os pontos críticos da função
+\(
+  f(x, y) = x^4 + y^4 - 4xy
+\)
+
+\begin{answer}
+  Calculando as derivadas parciais de $f$
+  \[
+    f_x(x, y) = 4x^3 - 4y \qquad\qquad f_y(x, y) = 4y^3 - 4x
+  \]
+
+  Como as derivadas parciais são polinômios elas existem em todos os pontos
+  do plano. Portanto, temos apenas os pontos críticos onde as derivadas se anulam.
+  Assim precisamos resolver o sistema \(\nabla f = 0\)
+  \[
+    \begin{cases}
+      f_x(x, y) = 4x^3 - 4y = 0 \\
+      f_y(x, y) = 4y^3 - 4x = 0
+    \end{cases}
+  \]
+  que pode ser reescrito como
+  \[
+    \begin{cases}
+      y = x^3 \\
+      x = y^3
+    \end{cases}
+  \]
+  Substituindo \( y = x^3 \) em \( x = y^3 \), obtemos
+  \[
+    x = \left(x^3\right)^3 = x^9
+    \qquad\Rightarrow\qquad
+    x^9 - x = 0
+    \qquad\Rightarrow\qquad
+    x(x^8-1) = 0
+  \]
+  temos duas soluções \(x=0\) ou \(x=1\).
+
+  Para $x=0$ temos \(y=0\), enquanto para $x=1$ temos \(y=1\),
+  portanto temos os pontos
+  \[
+    (x_1, y_1) = (0, 0)
+    \qquad\qquad
+    (x_2, y_2) = (1, 1)
+  \]
+
+  Para classificar os pontos críticos, usamos o teste da segunda derivada.
+
+  Calculando as derivadas de segundas de $f$
+  \[
+    f_{xx}(x, y) = 12x^2 \qquad\qquad
+    f_{yy}(x, y) = 12y^2 \qquad\qquad
+    f_{xy}(x, y) = -4
+  \]
+
+  O discriminante é
+  \[
+    D(x, y) = f_{xx}(x, y)f_{yy}(x, y) - \big(f_{xy}(x, y)\big)^2
+    = 12x^2 \; 12y^2 - (-4)^2
+    = 144 x^2 y^2 -16
+  \]
+
+  Considerando o ponto \((x_1, y_1) = (0, 0)\).
+  O discriminante é
+  \[
+    D(0, 0)
+    = 144 \times 0^2 \times 0^2 - 16
+    = -16
+  \]
+  Como \(D(0, 0) = -12 <0\) o ponto \((0, 0)\) é um ponto de sela
+
+  Considerando o ponto \((x_2, y_2) = (1, 1)\)
+  \[
+    D(0, 0)
+    = 144 \times 1^2 \times 1^2 - 16
+    = 144 - 16
+    = 128
+  \]
+  Como \(D(1, 1) = 128 >0\) o ponto é um máximo ou mínimo local,
+  como \( f_xx(1, 1) = 12\times 1^2 = 12> 0 \) o ponto é um mínimo local.
+  \clearpage
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre as dimensões da caixa retangular fechada com máximo volume
+que pode ser inscrita na esfera unitária.
+
+\begin{answer}
+  Queremos maximizar a função
+  \[
+    f(x, y, z) = (2x)(2y)(2z) = 8xyz
+  \]
+  sugeita à
+  \[
+    g(x, y, z) = x^2 + y^2 + z^2 = 1
+  \]
+  Sabemos também que $x$, $y$ e $z$ precisam sere positivos para que o volume $f$
+  seja positivo.
+
+  Para aplicarmos multiplicadores de Lagrange precisamos das derivadas
+  parciais de $f$ e $g$
+  \[
+    f_x(x, y, z) = 8yz \qquad\qquad
+    f_y(x, y, z) = 8xz \qquad\qquad
+    f_z(x, y, z) = 8xy
+  \]
+  \[
+    g_x(x, y, z) = 2x \qquad\qquad
+    g_y(x, y, z) = 2y \qquad\qquad
+    g_z(x, y, z) = 2z
+  \]
+  Vamos agora resolver o sistema \(\nabla f = \lambda\nabla g\) e \(g=1\)
+  \[
+    \begin{cases}
+      8yz = 2\lambda x \\
+      8xz = 2\lambda y \\
+      8xy = 2\lambda z \\
+      x^2 + y^2 + z^2 = 1
+    \end{cases}
+  \]
+  Simplificando
+  \[
+    \begin{cases}
+      4yz = \lambda x \\
+      4xz = \lambda y \\
+      4xy = \lambda z \\
+      x^2 + y^2 + z^2 = 1
+    \end{cases}
+  \]
+
+  Isolando o $\lambda$ na primeira equação
+  \[
+    \lambda = \frac{4yz}{x}
+  \]
+  e substituindo na segunda
+  \[
+    4xz
+    = \lambda y
+    = \frac{4yz}{x} y
+    = \frac{4y^2z}{x}
+    \qquad\Rightarrow\qquad
+    x^2 = y^2
+  \]
+  Substituindo na terceira
+  \[
+    4xy = \lambda z
+    = \frac{4yz}{x}z
+    = \frac{4yz^2}{x}
+    \qquad\Rightarrow\qquad
+    x^2 = z^2
+  \]
+  Assim a terceira equação se torna
+  \begin{align*}
+    x^2 + y^2 + z^2 & = 1                      \\[2mm]
+    3x^2            & = 1                      \\[2mm]
+    x^2             & = \frac{1}{3}            \\[2mm]
+    x               & = \frac{1}{\sqrt{3}}
+  \end{align*}
+  Portanto
+  \[
+    x = y = z = \frac{1}{\sqrt{3}}
+  \]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
