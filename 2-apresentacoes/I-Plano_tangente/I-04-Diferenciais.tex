@@ -1,0 +1,301 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt,ignorenonframetext]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Diferenciais}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Variação em uma Direção}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Variação em uma Dimensão}
+  Em uma dimensão podemos estimar o valor da função em um ponto próximo à $x_0$
+  usando a derivada em $x_0$
+
+  \pause
+  \[
+  df = f'(x_0) ds
+  \]
+
+  \[
+  \pause
+  ds = x - x_0
+  \]
+
+  \[
+  \pause
+  df \approx f(x) - f(x_0)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Variação em Várias Dimensões}
+  Em várias dimensões usamos a derivada direcional
+  \pause
+  \[
+  df
+  = \left(D_u f\evalat{(x_0, y_0)}{}\right) ds
+  \pause
+  = \left(\nabla f\evalat{(x_0, y_0)}{} \cdot u\right) ds
+  \]
+  \pause
+  \[
+  ds = \sqrt{(x - x_0)^2 + (y-y_0)^2}
+  \]
+  \pause
+  \[
+  df \approx f(x, y) - f(x_0, y_0)
+  \]
+\end{frame}
+
+% 01
+%------------------------------------------------------------------------------%
+\begin{question}
+  Calcule quanto
+  \[
+  f(x, y, z) = y\sin(x) + 2yz
+  \]
+  irá variar se nos movermos 0,1 unidades a partir de \(P_0(0, 1, 0)\) \\
+  na direção do ponto \(P_1(2, 2, -2)\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Direção do movimento}
+  \[
+  \pause
+  v
+  \pause
+  = \overrightarrow{P_0P_1}
+  \pause
+  = \left(\begin{array}{r} 2 \\ 2 \\ -2 \end{array}\right)
+  - \left(\begin{array}{r} 0 \\ 1 \\  0 \end{array}\right)
+  \pause
+  = \left(\begin{array}{r} 2 \\ 1 \\  -2 \end{array}\right)
+  \pause
+  = 2\veci + \vecj -2\veck
+  \]
+  \pause
+  Normalizando o vetor
+  \[
+  \pause
+  u
+  \pause
+  = \frac{v}{\abs{v}}
+  \pause
+  = \frac{2\veci + \vecj -2\veck}{\sqrt{2^2 + 1^2 + (-2)^2}}
+  \pause
+  = \frac{2\veci + \vecj -2\veck}{\sqrt{9}}
+  \pause
+  = \frac{2}{3} \veci + \frac{1}{3} \vecj - \frac{2}{3} \veck
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Derivadas parciais}
+  \begin{align*}
+    \onslide<+->{\D{f}{x} & = \D{}{x}\left(y\sin(x) + 2yz\right)}
+    \onslide<+->{ = y\cos(x) \\[5mm]}
+    \onslide<+->{\D{f}{y} & = \D{}{y}\left(y\sin(x) + 2yz\right)}
+    \onslide<+->{ = \sin(x) + 2z\\[5mm]}
+    \onslide<+->{\D{f}{z} & = \D{}{z}\left(y\sin(x) + 2yz\right)}
+    \onslide<+->{ = 2y}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Gradiente de $f$}
+
+  \[
+  \onslide<+->{\nabla f}
+  \onslide<+->{= (y\cos(x))\veci + (\sin(x) + 2z)\vecj + (2y)\veck}
+  \onslide<+->{= \left(\begin{array}{c}
+      y\cos(x) \\
+      \sin(x) + 2z \\
+      2y
+    \end{array}\right)}
+  \]
+
+  \[
+  \onslide<+->{\nabla f(0, 1, 0)}
+  \onslide<+->{= (1\cos(0))\veci + (\sin(0) + 2\times 0)\vecj + (2\times 1)\veck}
+  \onslide<+->{= \veci + 2\veck}
+  \onslide<+->{= \left(\begin{array}{r} 1 \\ 0 \\ 2 \end{array}\right)}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Derivada direcional}
+  \[
+  \pause
+  D_u f\evalat{(0, 1, 0)}{}
+  \pause
+  = \left(\nabla f\evalat{(0, 1, 0)}{} \cdot u\right)
+  \pause
+  = \left(\veci + 2\veck\right)
+  \cdot
+  \left(\frac{2}{3} \veci + \frac{1}{3} \vecj - \frac{2}{3} \veck\right)
+  \]
+  \[
+  \hphantom{D_u f\evalat{(0, 1, 0)}{}}
+  \pause
+  = 1\times\frac{2}{3} + 0\times\frac{1}{3} + 2 \times\left(- \frac{2}{3}\right)
+  \pause
+  = \frac{2}{3} - \frac{4}{3}
+  \pause
+  = -\frac{2}{3}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Variação}
+  \[
+  \pause
+  df
+  \pause
+  = \left(D_u f\evalat{(0, 1, 0)}{}\right) ds
+  \pause
+  = -\frac{2}{3}\times 0,1
+  \pause
+  = -\frac{2}{3} \frac{1}{10}
+  \pause
+  = -\frac{2}{30}
+  \pause
+  = -\frac{1}{15}
+  \pause
+  \approx -0,067
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\section{Diferenciais}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diferencial em Uma Dimensão}
+  Quando $x$ varia de $x_0$ para
+  \tabto{55mm}\(x_0+\Delta x\)
+
+  \pause
+  \vspace{\baselineskip}
+  A variação da função $f$ é
+  \tabto{55mm}\(\Delta f = f(x_0 + \Delta x) - f(x_0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A diferencial de $f$ é
+  \tabto{55mm}\(df = f'(x_0) \Delta x\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diferencial em Uma Dimensão}
+  Quando $x$ varia de $x_0$ para
+  \tabto{55mm}\(x_0+dx\)
+
+  \vspace{\baselineskip}
+  A variação da função $f$ é
+  \tabto{55mm}\(\Delta f = f(x_0 + dx) - f(x_0)\)
+
+  \vspace{\baselineskip}
+  A diferencial de $f$ é
+  \tabto{55mm}\(df = f'(x_0) dx\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diferencial em Duas Dimensão}
+  Quando $(x, y)$ varia de $(x_0, y_0)$ para
+  \tabto{65mm}\((x_0+dx, y_0+dy)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A variação da função $f$ é
+  \tabto{65mm}\(\Delta f = f(x_0+dx, y_0+dy) - f(x_0, y_0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A diferencial de $f$ é
+  \tabto{65mm}\(df = f_x(x_0, y_0) dx +  f_y(x_0, y_0) dy\)
+
+  \pause
+  \vspace{\baselineskip}
+  As diferenciais $dx$ e $dy$ são variáveis independentes
+  \[
+    dx = x - x_0
+    \qquad
+    dy=y-y_0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição}
+  Se movemos de \((x_0, y_0)\) para um ponto próximo \((x_0+dx, y_0+dy)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A \emph{Diferencial Total de $f$} é
+  \[
+    df \;=\; f_x(x_0, y_0)\, dx \;+\;  f_y(x_0, y_0)\, dy
+  \]
+\end{frame}
+
+% 02
+%------------------------------------------------------------------------------%
+\begin{question}
+  Uma lata de formato cilíndrico foi projetada para ter um raio de 1 pol.
+  e uma altura de 5 pol., mas o raio tem um erro de \(dr=0,03\) e a altura
+  tem um erro de \(dh=-0,1\).
+
+  \vspace{\baselineskip}
+  Qual a variação resultante no volume da lata?
+\end{question}
+
+\begin{resolution}{Variação exata}
+  \begin{align*}
+    \onslide<+->{\Delta V}
+    \onslide<+->{& = V(r_0+dr, h_0+dh)- V(r_0, h_0) \\}
+    \onslide<+->{& = V(1+0,03, 5-0,1) - V(1, 5)\\}
+    \onslide<+->{& = V(1,03, 4,9) - V(1, 5) \\}
+    \onslide<+->{& = \pi(1,03)^2 \times 4,9 - \pi 1^2 \times 5 \\}
+    \onslide<+->{& \approx 16,3313 - 15,7080 \\}
+    \onslide<+->{& = 0,6233}
+  \end{align*}
+\end{resolution}
+
+\begin{resolution}{Variação usando o diferencial}
+  \begin{align*}
+    \onslide<+->{\Delta V}
+    \onslide<+->{& \approx dV = V_r(r_0, h_0) dr + V_h(r_0, h_0) dh \\}
+    \onslide<+->{& = \left(2\pi r h\right)\evalat{(r_0, h_0)}{} dr
+      + \left(\pi r^2\right)\evalat{(r_0, h_0)}{} dh \\}
+    \onslide<+->{& = \left(2\pi r h\right)\evalat{(1, 5)}{} (0,03)
+      + \left(\pi r^2\right)\evalat{(1, 5)}{} (-0,1) \\}
+    \onslide<+->{& = \left(2\pi 1 \times 5\right)(0,03)
+      - \left(\pi 1^2\right)(0,1) \\}
+    \onslide<+->{& = 0,3\pi - 0,1\pi  \\}
+    \onslide<+->{& = 0,2\pi \\}
+    \onslide<+->{& \approx 0,6283}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.6
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios:
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

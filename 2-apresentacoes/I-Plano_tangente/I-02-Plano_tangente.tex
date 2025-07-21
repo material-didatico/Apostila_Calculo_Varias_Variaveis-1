@@ -1,0 +1,249 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt,ignorenonframetext]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Planos Tangentes}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Plano Tangente à Superfície de Nível}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Justificativa}
+  Primeiro vamos verificar que o gradiente é normal a superfície de nível
+
+  \pause
+  Considere uma função $f(x, y)$ diferenciável e sua superfície de nível
+  \[
+    f(x, y, z)  = c
+  \]
+  \pause
+  Assuma que a curva paramétrica
+  \[
+    r(t)
+      = g(t)\veci + h(t)\vecj + k(t)\veck
+      = \left(\begin{array}{c}
+          g(t) \\ h(t) \\ k(t)
+        \end{array}\right)
+  \]
+  \pause
+  está contida na superfície de nível $c$ da função $f$
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Justificativa}
+\begin{columns}
+\column{0.5\linewidth}
+  \begin{align*}
+     \onslide<+->{f\big(g(t), h(t), k(t)\big) & = c \\[5mm]}
+     \onslide<+->{\frac{d}{dt}f\big(g(t), h(t), k(t)\big) & = \frac{dc}{dt} \\[5mm]}
+     \onslide<+->{\D{f}{x}\frac{dg}{dt} + \D{f}{y}\frac{dh}{dt} + \D{f}{z}\frac{dk}{dt} & = 0}
+  \end{align*}
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{\begin{pmatrix}
+        \D{f}{x} \\[3mm]
+        \D{f}{y} \\[3mm]
+        \D{f}{z}
+      \end{pmatrix}
+      \cdot
+      \begin{pmatrix}
+        \frac{dg}{dt} \\[3mm]
+        \frac{dh}{dt} \\[3mm]
+        \frac{dk}{dt}
+      \end{pmatrix}
+      & = 0 \\[2mm]}
+    \onslide<+->{\nabla f \cdot \frac{dr}{dt} & = 0}
+  \end{align*}
+\end{columns}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Justificativa}
+  Se tomarmos todas as curvas suaves que passam por um ponto \((x_0, y_0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  Seus vetores tangentes são todos ortogonais ao vetor gradiente no ponto
+
+  \pause
+  \vspace{\baselineskip}
+  Todos os vetores tangentes estão no plano tangente a superfície
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição}
+  O Plano Tangente ao ponto \((x_0, y_0, z_0)\)
+  \pause
+  na superfície de nível
+  \(f(x, y, z) = c\)
+
+  \pause
+  de uma função diferenciável $f$
+  \pause
+  é o plano passando pelo ponto \((x_0, y_0, z_0)\)
+
+  \pause
+  e normal a \(\nabla f (x_0, y_0, z_0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A Reta Normal da superfície no ponto é a reta passando pelo ponto
+
+  \pause
+  e paralela
+  a \(\nabla f (x_0, y_0, z_0)\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação do Plano Tangente}
+  \[
+    \emph{\nabla f(x_0, y_0, z_0)} \cdot (X-X_0) = 0
+  \]
+  \pause
+  \[
+    \emph{\nabla f(x_0, y_0, z_0)} \cdot \left(
+        \begin{array}{c}
+          x - x_0 \\
+          y - y_0 \\
+          z - z_0
+        \end{array}
+      \right) = 0
+  \]
+
+  \pause
+  \[
+    \emph{f_x(x_0, y_0, z_0)} (x-x_0) +
+    \emph{f_y(x_0, y_0, z_0)} (y-y_0) +
+    \emph{f_z(x_0, y_0, z_0)} (z-z_0) = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação da Reta Normal}
+  \[
+    X = X_0 + t\,\emph{\nabla f(x_0, y_0, z_0)}
+    \qquad\qquad
+    t \in \R
+  \]
+
+  \pause
+  \[
+    \begin{pmatrix} x \\ y \\ z \end{pmatrix}
+    = \begin{pmatrix} x_0\\ y_0 \\ z_0 \end{pmatrix}
+    + t \begin{pmatrix}
+      \emph{f_x(x_0, y_0, z_0)} \\
+      \emph{f_y(x_0, y_0, z_0)} \\
+      \emph{f_z(x_0, y_0, z_0)}
+    \end{pmatrix}
+  \]
+
+  \pause
+  \[
+    \begin{cases}
+      x = x_0 + t\,\emph{f_x(x_0, y_0, z_0)} \\
+      y = y_0 + t\,\emph{f_y(x_0, y_0, z_0)} \\
+      z = z_0 + t\,\emph{f_z(x_0, y_0, z_0)}
+    \end{cases}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{I-02-Plano_tangente-ex1}
+
+%------------------------------------------------------------------------------%
+\section{Plano Tangente ao Gráfico de uma Função}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Justificativa}
+  Queremos o Plano Tangente a superfície suave \(z=f(x, y)\) \\
+  em um ponto \((x_0, y_0, z_0)\)
+  onde \(z_0 = f(x_0, y_0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  Podemos escrever \(z=f(x, y)\) como \(f(x, y) - z = 0\)
+
+  \pause
+  \vspace{\baselineskip}
+  Queremos o plano tangente a curva de nível zero da função
+  \[
+    F(x, y, z) = f(x, y) - z = 0
+  \]
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Justificativa}
+  Derivadas de $F$
+  \begin{align*}
+    \onslide<+->{F_x = \D{}{x}\left(f(x, y) - z\right) = f_x - 0 = f_x \\[5mm]}
+    \onslide<+->{F_y = \D{}{y}\left(f(x, y) - z\right) = f_y - 0 = f_y \\[5mm]}
+    \onslide<+->{F_z = \D{}{z}\left(f(x, y) - z\right) = 0 - 1 = -1}
+  \end{align*}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Justificativa}
+  Equação do Plano Tangente ao gráfico da função $f(x, y)$
+  \[
+    \emph{\nabla F(x_0, y_0, z_0)} \cdot
+    \begin{pmatrix}
+      x - x_0 \\
+      y - y_0 \\
+      z - z_0
+    \end{pmatrix} = 0
+  \]
+
+  \pause
+  \[
+    \emph{F_x(x_0, y_0, z_0)} (x-x_0) +
+    \emph{F_y(x_0, y_0, z_0)} (y-y_0) +
+    (z-z_0) = 0
+  \]
+
+  \pause
+  \[
+    {\color{magenta} f_x(x_0, y_0)} (x-x_0) +
+    {\color{magenta} f_y(x_0, y_0)} (y-y_0) -
+    (z-z_0) = 0
+  \]
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Plano Tangente a superfície $z=f(x, y)$}
+  O plano tangente à superfície \(z=f(x, y)\) \\
+  de uma função diferenciável $f$
+  no ponto \(\left(x_0, y_0, f(x_0, y_0)\right)\) é
+  \[
+    f_x(x_0, y_0) (x-x_0) +
+    f_y(x_0, y_0) (y-y_0) -
+    (z-z_0) = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{I-02-Plano_tangente-ex2}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.6
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 2, 4, 6, 8
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

@@ -1,0 +1,152 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt,ignorenonframetext]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Derivação Implícita}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Derivação Implícita}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivação Implícita}
+  Suponha que $F(x, y)$ seja diferenciável e que a equação
+  \[
+    F(x, y) = 0
+  \]
+  defina $y$ como função de $x$, encontre \(\frac{dy}{dx}\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Derivação Implícita -- Justificativa}
+\begin{columns}
+\column{0.4\linewidth}
+\begin{align*}
+  \onslide<+->{w(x)          = F\big(x, y(x)\big)                              & = 0 \\[4mm]}
+  \onslide<+->{\frac{dw}{dx} = \D{F}{x} \frac{dx}{dx} + \D{F}{y} \frac{dy}{dx} & = 0}
+\end{align*}
+\column{0.6\linewidth}
+\begin{align*}
+  \onslide<+->{F_x \frac{dx}{dx} + F_y \frac{dy}{dx} & = 0      \\[2mm]}
+  \onslide<+->{F_x + F_y \frac{dy}{dx}               & = 0      \\[2mm]}
+  \onslide<+->{F_y \frac{dy}{dx}                     & = - F_x  \\[2mm]}
+  \onslide<+->{\frac{dy}{dx}                         & = - \frac{F_x}{F_y}
+               \qquad \text{desde que } F_y \neq 0}
+\end{align*}
+\end{columns}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivação Implícita -- Fórmula}
+  Suponha que $F(x, y)$ seja diferenciável e que a equação
+  \[
+    F(x, y)=0
+  \]
+  defina $y$ como função de $x$, \(y=y(x)\), então
+  \[
+    \frac{dy}{dx} = -\frac{F_x}{F_y}
+  \]
+  desde que \(F_y \neq 0\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{G-02-Derivacao_implicita-ex1}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivação Implícita -- Três Variáveis}
+  Suponha que $F(x, y, z)$ seja diferenciável e que a equação
+  \[
+    F(x, y, z) = 0
+  \]
+  defina $z$ como função de $(x, y)$, isto é, $z=f(x, y)$,
+  determine
+  \(\D{z}{x}\) e
+  \(\D{z}{y}\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Derivação Implícita -- Justificativa}
+\begin{columns}
+  \column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{F\big(x, y, z(x, y)\big)                               & = 0 \\[2mm]}
+    \onslide<+->{\D{} {x\vphantom{y}}\left[F\big(x, y, z(x, y)\big)\right]          & = 0 \\[2mm]}
+    \onslide<+->{\D{F}{x\vphantom{y}}\D{x}{x} + \D{F}{y}\D{y}{x} + \D{F}{z}\D{z}{x} & = 0 \\[2mm]}
+    \onslide<+->{\D{F}{x\vphantom{y}} + 0 + \D{F}{z}\D{z}{x}                        & = 0}
+  \end{align*}
+  \column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{F_x + F_z \D{z}{x\vphantom{y}} & = 0                   \\[2mm]}
+    \onslide<+->{F_z \D{z}{x\vphantom{y}}       & = - F_x               \\[2mm]}
+    \onslide<+->{\D{z}{x\vphantom{y}}           & = - \frac{F_x}{F_z} \qquad \text{desde que } F_z \neq 0}
+  \end{align*}
+\end{columns}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Derivação Implícita -- Justificativa}
+  \begin{columns}
+    \column{0.5\linewidth}
+    \begin{align*}
+      F\big(x, y, z(x, y)\big)                               & = 0 \\[2mm]
+      \D{}{y}\left[F\big(x, y, z(x, y)\big)\right]           & = 0 \\[2mm]
+      \D{F}{x}\D{x}{y} + \D{F}{y}\D{y}{y} + \D{F}{z}\D{z}{y} & = 0 \\[2mm]
+      0 + \D{F}{y} + \D{F}{z}\D{z}{y}                        & = 0
+    \end{align*}
+    \column{0.5\linewidth}
+    \begin{align*}
+      F_y + F_z \D{z}{y} & = 0                   \\[2mm]
+      F_z \D{z}{y}       & = - F_y               \\[2mm]
+      \D{z}{y}           & = - \frac{F_y}{F_z} \qquad \text{desde que } F_z \neq 0
+    \end{align*}
+  \end{columns}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivação Implícita -- Três Variáveis -- Fórmulas}
+  Suponha que $F(x, y, z)$ seja diferenciável e que a equação
+  \[
+    F(x, y, z) = 0
+  \]
+  defina $z$ como função de $(x, y)$, então
+  \[
+    \D{z}{x} = -\frac{F_x}{F_z}
+  \]
+  \[
+    \D{z}{y} = -\frac{F_y}{F_z}
+  \]
+  desde que \(F_z \neq 0\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{G-02-Derivacao_implicita-ex2}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+\include{G-02-Derivacao_implicita-ex3}
+\include{G-02-Derivacao_implicita-ex4}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.4
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 26, 28, 30, 32
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

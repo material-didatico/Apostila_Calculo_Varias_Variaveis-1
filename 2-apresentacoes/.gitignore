@@ -1,4 +1,3 @@
 .directory
-*-apresentacao*.pdf
-*-handout*.pdf
-*-conteudo*.pdf
+*pres*.pdf
+[A-Z]-[0-9][0-9]*.pdf

@@ -1,0 +1,374 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt,ignorenonframetext]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Funções de Várias Variáveis}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Funções}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Funções}
+  \[
+    f\colon A \to B
+  \]
+  \pause
+  \vspace{-\baselineskip}
+  \begin{itemize}[<+->]
+    \item $A$ \emph{domínio}
+    \item $B$ \emph{contradomínio}
+    \item $f$ \emph{relação} que associa elementos do domínio a elementos do contradomínio
+    \item Cada elemento do domínio deve estar associado a \emph{um único} elemento do contradomínio
+    \item A \emph{imagem} é um subconjunto de $B$ composto dos \emph{elementos que são imagem} de algum elemento de $A$
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Domínio}
+  \begin{itemize}[<+->]
+    \item Precisa ser dado a priori
+    \item Geralmente é determinado pela aplicação
+    \item Se nada for dito, assumimos o domínio ``natural'', \\
+          ie, todos os valores onde podemos efetuar as contas
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Imagem}
+  \begin{itemize}[<+->]
+    \item Subconjunto do contradomínio
+    \item O contradomínio é definido a priori
+    \item Pode ser difícil identificar a imagem de uma função
+    \item Dada uma função \(f\colon D \to C \) \\
+          $y$ pertence a imagem de $f$,
+          se existe $x\in D$ tal que
+          \[y=f(x)\]
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Nomenclatura -- Curiosidade}
+  Função real
+  \[
+    f\colon D \subset \R \to \R
+  \]
+  \pause
+  Função de várias variáveis
+  \[
+    f\colon D \subset \R^n \to \R
+  \]
+  \pause
+  Função vetorial ou paramétrica
+  \[
+    f\colon D \subset \R \to \R^n
+  \]
+  \pause
+  Campo vetorial
+  \[
+    f\colon D \subset \R^n \to \R^m
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Funções de Várias Variáveis}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Funções de Várias Variáveis}
+  \[
+    f\colon D \subset \R^n \to \R
+  \]
+  \pause
+  \[
+    f(x, y) = x + y
+  \]
+  \pause
+  \[
+    f(\vec{r}) = \sqrt{\sum_{k=1}^n r_k^2\,}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Funções de Várias Variáveis}
+  Suponha que $D$ seja um conjunto  de $n$-uplas de números reais
+  \((x_1, x_2, \dots, x_n)\)
+
+  \pause
+  Uma \emph{função} a valores reais $f$ em $D$ é uma regra que associa
+  \emph{um único número real}
+  \[
+    w = f(x_1, x_2, \dots, x_n)
+  \]
+  a cada elemento em $D$
+
+  \pause
+  O conjunto $D$ é o \emph{domínio} da função
+
+  \pause
+  O conjunto de valores de $w$ assumidos por $f$ é a \emph{imagem} da função
+
+  \pause
+  O símbolo $w$ é a variável \emph{dependente} de $f$, e dizemos que $f$
+  é função de $n$ variáveis \emph{independentes} $x_1$ a $x_n$
+
+  \pause
+  Também chamamos os $x_j$ de variáveis de \emph{entrada} da função e
+  denominamos $w$ a variável de \emph{saída} da função
+\end{frame}
+
+%------------------------------------------------------------------------------%
+%\framedgraphic{Funções de Várias Variáveis}{definicao_funcao}{}
+
+%------------------------------------------------------------------------------%
+%\begin{frame}{Domínio e Imagem}
+%
+%  Determinamos o \emph{domínio} eliminando pontos que levam a divisões por zero ou
+%  valores complexos.
+%
+%  \pause
+%  \vspace{\baselineskip}
+%
+%  A \emph{imagem} consiste on conjunto de valores de saída para a variável dependente
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Intervalos}
+  Subconjuntos contínuos de $\R$
+  \vspace{\baselineskip}
+
+  \pause
+  Intervalo fechado
+  \[
+    [0, 1] = \left\{ x\in\R\st 0 \leq x \leq 1 \right\}
+  \]
+  \pause
+  Intervalo aberto
+  \[
+    (-2, 2) = \left\{ x\in\R\st -2 < x < 2 \right\}
+  \]
+  \pause
+  Aberto a esquerda e fechado a direita
+  \[
+    (1, 5] = \left\{ x\in\R\st 1 < x \leq 5 \right\}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Interior e Fronteira de um Conjunto}
+  Um ponto $(x_0, y_0)$ em uma região (conjunto) $R$ no plano $xy$ é um
+  \emph{ponto interior} de $R$ se é o centro de um disco de raio positivo que está
+  inteiramente em $R$
+
+  \pause
+  \vspace{\baselineskip}
+  Um ponto $(x_0, y_0)$ é um \emph{ponto de fronteira} de $R$ se todo disco
+  centrado em $(x_0, y_0)$ contém ao mesmo tempo pontos que estão em $R$ e fora de $R$
+
+  \pause
+  \vspace{\baselineskip}
+  O ponto de fronteira não precisa pertencer a $R$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Interior e Fronteira de um Conjunto}
+  Os pontos interiores de uma região, como um conjunto, \\
+  formam o \emph{interior} da região
+
+  \pause
+  \vspace{\baselineskip}
+  Os pontos de fronteira da região formam sua \emph{fronteira}
+
+  \pause
+  \vspace{\baselineskip}
+  Uma região é \emph{aberta} se consiste apenas de pontos interiores
+
+  \pause
+  \vspace{\baselineskip}
+  Uma região é \emph{fechada} se contem todos os seus pontos de fronteira
+\end{frame}
+
+%------------------------------------------------------------------------------%
+%\framedgraphic{Regiões no Plano}{definicao_regioes}{}
+\framedgraphic{Regiões no Plano}{pontos_regioes}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regiões Limitadas}
+  Uma região do plano é limitada se está dentro de um disco de raio fixo
+
+  \pause
+  \vspace{\baselineskip}
+
+  Caso contrário ela é ilimitada
+\end{frame}
+
+% 01
+%------------------------------------------------------------------------------%
+\begin{question}
+  Descreva o domínio da função \(f(x, y) = \sqrt{y-x^2}\)
+
+  \pause
+  \vspace{\baselineskip}
+  \begin{enumerate}[<+->]
+    \item Qual a condição que os pontos do domínio deve satisfazer?
+    \item Que região é essa? Represente-a graficamente.
+    \item Qual o interior da região?
+    \item Qual a fronteira da região?
+    \item A região é aberta ou fechada?
+    \item A região é limitada?
+  \end{enumerate}
+\end{question}
+
+% 01
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Condição que deve ser satisfeita para um ponto estar no domínio}
+  \begin{align*}
+    \onslide<+->{y-x^2 & \geq 0 \\}
+    \onslide<+->{y & \geq x^2}
+  \end{align*}
+
+  \onslide<+->{
+  Domínio
+  \[
+    D_f = \left\{ (x, y)\in\R^2 \st y \geq x^2\right\}
+  \]}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Representação Gráfica}
+  \centering
+  \includegraphics[height=0.8\textheight]{dominio_funcao}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{enumerate}
+    \item \onslide<+->{Interior da região} \\
+    \onslide<+->{
+    \(
+      y > x^2
+    \)}
+    \item \onslide<+->{Fronteira da região} \\
+    \onslide<+->{
+    \(
+      y = x^2
+    \)}
+    \item \onslide<+->A região é aberta ou fechada? \\
+    \onslide<+->{Fechada,}
+    \onslide<+->{pois \(y = x^2\) pertence ao domínio}
+    \item \onslide<+->{A região é limitada?} \\
+    \onslide<+->{Ilimitada,}
+    \onslide<+->{pois dado qualquer disco sempre teremos um ponto fora dele}
+  \end{enumerate}
+\end{resolution}
+
+% 02
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre e esboce o domínio da função
+  \[
+    f(x, y) = \ln\left(x^2 + y^2 - 4\right)
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Condição}
+  \begin{align*}
+    \onslide<+->{x^2 + y^2 - 4 & > 0 \\}
+    \onslide<+->{x^2 + y^2 & > 4}
+  \end{align*}
+
+  \onslide<+->{Pontos exteriores ao circulo centrado na origem e raio 2}
+
+  \onslide<+->{
+  Domínio
+  \[
+    D_f = \left\{ (x, y)\in\R^2 \st x^2 + y^2 > 4\right\}
+  \]}
+\end{resolution}
+
+% 03
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre e esboce o domínio da função
+  \(
+    f(x, y) = \frac{\sqrt{x^2-4\,}}{\;\ln(y-1)\;}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Condições para avaliar a função
+  \(f(x, y) = \frac{\sqrt{x^2-4\,}}{\;\ln(y-1)\;}\)
+
+  \pause
+  \begin{enumerate}[<+->]
+    \item \(x^2-4 \geq 0\)
+    \item \(\ln(y-1) \neq 0\)
+    \item \(y-1 > 0\)
+  \end{enumerate}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.3\linewidth}
+  \onslide<+->{Condição 1}
+  \begin{align*}
+    \onslide<+->{x^2-4     & \geq 0                       \\}
+    \onslide<+->{x^2       & \geq 4                       \\}
+    \onslide<+->{\abs{x}   & \geq 2                       \\}
+    \onslide<+->{x \leq -2 & \quad\text{ou}\quad x \geq 2}
+  \end{align*}
+\column{0.3\linewidth}
+  \onslide<+->{Condição 2}
+  \begin{align*}
+    \onslide<+->{\ln(y-1) & \neq 0 \\}
+    \onslide<+->{y-1      & \neq 1 \\}
+    \onslide<+->{y        & \neq 2}
+  \end{align*}
+\column{0.3\linewidth}
+  \onslide<+->{Condição 3}
+  \begin{align*}
+    \onslide<+->{y-1 & > 0 \\}
+    \onslide<+->{y   & > 1}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Domínio
+  \[
+    D_f = \left\{ (x, y)\in\R^2 \st
+      \abs{x} \geq 2 \;\text{ e }\;
+      y > 1          \;\text{ e }\;
+      y \neq 2
+    \right\}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.1
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 1-2, 5-9
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
