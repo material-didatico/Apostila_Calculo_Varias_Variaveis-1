@@ -1,0 +1,333 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova Substitutiva -- Turma 7}{21/07/2025}
+
+\textbf{O exercício correspondente a prova que será substituída vale 50 pontos}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25}
+Considerando a função
+\(
+  f(x, y) = \sqrt{2x-y}-2
+\)
+\begin{enumerate}[label=\alph*)]
+  \item Determine e esboce o domínio de $f$
+  \item Determine as curvas de nível de $f$ e esboce três delas
+  \item Calcule o limite
+  \(
+    \lim_{(x, y)\to(2, 0)} \frac{f(x, y)}{2x-y-4}
+  \)
+  ou mostre que ele não existe
+\end{enumerate}
+\begin{questiononly}
+\begin{multicols}{2}
+  Domínio
+  \vspace{-0.8\baselineskip}
+  \begin{center}
+    \includegraphics{axis_xy}
+  \end{center}
+  Curvas de nível
+  \vspace{-0.8\baselineskip}
+  \begin{center}
+    \includegraphics{axis_xy}
+  \end{center}
+\end{multicols}
+\end{questiononly}
+\clearpagequestiononly
+
+\begin{answer}
+  \begin{multicols}{2}
+    Domínio
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{T7_dominio}
+    \end{center}
+    Curvas de nível
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{T7_curvas_nivel}
+    \end{center}
+  \end{multicols}
+
+\clearpage
+%\setlength\columnsep{3em}
+\begin{multicols*}{2}
+\raggedcolumns
+\setlength{\jot}{5pt}
+
+\textbf{a)\;}
+O domínio de $f$ consiste dos pontos onde é possível avaliar
+a raiz quadrada, isto é, os pontos que satisfazem $2x-y\geq 0$,
+ou seja,
+\begin{align*}
+  2x-y & \geq 0  \\
+  -y   & \geq 2x \\
+  y    & \leq 2x
+\end{align*}
+Portanto,
+\[
+  D_f = \left\{(x, y)\in\R^2 \st y \leq 2x \right\},
+\]
+que são os pontos abaixo a reta $y=2x$.
+
+\vspace{\baselineskip}
+\textbf{b)\;}
+As curvas de nível de $f$ são compostas pelos pontos onde $f(x, y) = c$
+para alguma constante $c$ na imagem de $f$.
+
+Para determinar a imagem de $f$ observamos que $2x-y$ pode assumir
+qualquer valor não negativo. Portanto, $\sqrt{2x-y}$ está no intervalo $[0, \infty)$.
+Concluímos que os valores de $f$ estão em $[-2, \infty)$, isto é,
+\(\Im(f) = [-2, \infty)\)
+
+Para qualquer $c\in\Im(f)=[-2, \infty)$, temos a curva de nível
+\begin{align*}
+  f(x, y)       & = c              \\
+  \sqrt{2x-y}-2 & = c              \\
+  \sqrt{2x-y}   & = c + 2          \\
+  2x-y          & = (c + 2)^2      \\
+  -y            & = (c + 2)^2 - 2x \\
+  y             & = 2x - (c + 2)^2
+\end{align*}
+Que são retas.
+Escolhendo os valores $c=-2$, $c=0$ e $c=2$, temos as curvas de nível
+\begin{align*}
+  \gamma_1\colon & y = 2x - (-2 + 2)^2 = 2x - 0 = 2x \\
+  \gamma_2\colon & y = 2x - ( 0 + 2)^2 = 2x - 4      \\
+  \gamma_3\colon & y = 2x - ( 2 + 2)^2 = 2x - 16
+\end{align*}
+
+\vspace{\baselineskip}
+\textbf{c)\;}
+Calculando o limite
+\setlength{\jot}{12pt}
+\setlength{\mathindent}{0cm}
+\begin{align*}
+  L
+  & = \lim_{(x, y)\to(2, 0)} \frac{f(x, y)}{2x-y-4} \\
+  & = \lim_{(x, y)\to(2, 0)} \frac{\sqrt{2x-y}-2}{2x-y-4} \\
+  & = \lim_{(x, y)\to(2, 0)} \frac{\sqrt{2x-y}-2}{2x-y-4} \times
+      \frac{\sqrt{2x-y}+2}{\sqrt{2x-y}+2} \\
+  & = \lim_{(x, y)\to(2, 0)} \frac{\left(\sqrt{2x-y}\right)^2-2^2}
+                                  {\left(2x-y-4\right)\left(\sqrt{2x-y}+2\right)} \\
+  & = \lim_{(x, y)\to(2, 0)} \frac{2x-y-4}{\left(2x-y-4\right)\left(\sqrt{2x-y}+2\right)} \\
+  & = \lim_{(x, y)\to(2, 0)} \frac{1}{\sqrt{2x-y}+2} \\
+  & = \frac{1}{\sqrt{2\times 2-0}+2} \\
+  & = \frac{1}{\sqrt{4} + 2} \\
+  & = \frac{1}{4}
+\end{align*}
+\end{multicols*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25}
+Considerando que a equação
+\(
+  z^3 - xy + yz + y^3 - 2 = 0
+\)
+define $z$ como função de $x$ e $y$.
+\begin{enumerate}[label=\alph*)]
+  \item Calcule as derivadas \(\D{z}{x}\) e \(\D{z}{y}\)
+  \item Encontre os valores de \(\D{z}{x}\) e \(\D{z}{y}\) em \((1, 1, 1)\)
+  \item Construa a aproximação linear da função $z(x, y)$ no ponto \((1, 1)\)
+\end{enumerate}
+\clearpagequestiononly
+
+\begin{answer}
+\vspace{\baselineskip}
+\textbf{a)\;}
+Considerando $z=z(x, y)$ e derivando por $x$ os dois lados da equação temos
+\begin{align*}
+  \left(z(x, y)\right)^3 - xy + yz(x, y) + y^3 & = 2 \\
+  \D{}{x}\left(\left(z(x, y)\right)^3 - xy + yz(x, y) + y^3\right) & = \D{2}{x} \\
+  \D{}{x}\left(\left(z(x, y)\right)^3\right) -
+  \D{}{x}\left(xy\right) +
+  \D{}{x}\left(yz(x, y)\right) +
+  \D{}{x}\left(y^3\right) & = 0 \\
+  3\left(z(x, y)\right)^2\D{z}{x} -y +y\D{z}{x} + 0 = 0 \\
+  \left(3\left(z(x, y)\right)^2 + y\right)\D{z}{x} = y \\
+  \D{z}{x} = \frac{y}{3\left(z(x, y)\right)^2 + y}
+\end{align*}
+Derivando por $y$ os dois lados da equação temos
+\begin{align*}
+  \left(z(x, y)\right)^3 - xy + yz(x, y) + y^3 & = 2 \\
+  \D{}{y}\left(\left(z(x, y)\right)^3 - xy + yz(x, y) + y^3\right) & = \D{2}{y} \\
+  \D{}{y}\left(\left(z(x, y)\right)^3\right) -
+  \D{}{y}\left(xy\right) +
+  \D{}{y}\left(yz(x, y)\right) +
+  \D{}{y}\left(y^3\right) & = 0 \\
+  3\left(z(x, y)\right)^2\D{z}{y} -x + \D{y}{y}z(x, y) + y\D{z}{y} + 3y^2 & = 0 \\
+  \left(3\left(z(x, y)\right)^2+y\right)\D{z}{y} -x +z(x, y) +3y^2 & = 0 \\
+  \left(3\left(z(x, y)\right)^2+y\right)\D{z}{y} & = x -z(x, y) -3y^2 \\
+  \D{z}{y} & = \frac{x -z(x, y) -3y^2}{3\left(z(x, y)\right)^2+y}
+\end{align*}
+
+\vspace{\baselineskip}
+\textbf{b)\;}
+Avaliando as derivadas no ponto \((1, 1, 1)\)
+\begin{align*}
+  \D{z}{x}(1, 1)
+  & = \left(\frac{y}{3z^2 + y}\right)\evalat{(1, 1, 1)}{}
+    = \frac{1}{3\times 1^2 + 1}
+    = \frac{1}{4}
+  \\
+  \D{z}{y}(1, 1)
+  & = \left(\frac{x -z -3y^2}{3z^2+y}\right)\evalat{(1, 1, 1)}{}
+    = \frac{1 -1 -3\times 1^2}{3\times 1^2 + 1}
+    = \frac{-3}{4}
+\end{align*}
+
+\vspace{\baselineskip}
+\textbf{c)\;}
+A aproximação linear da função $z(x, y)$ no ponto \((x_0, y_0) = (1, 1)\) é
+\begin{align*}
+  L(x, y)
+  & = z(x_0, y_0) + (x-x_0)\D{z}{x}(x_0, y_0) + (y-y_0)\D{z}{y}(x_0, y_0) \\
+  & = z(1, 1) + (x-1)\D{z}{x}(1, 1) + (y-1)\D{z}{y}(1, 1) \\
+  & = 1 + \frac{1}{4}(x-1) - \frac{3}{4}(y-1)
+\end{align*}
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre os valores máximo e mínimo da função
+\(
+  f(x, y) = 4xy
+\)
+restrita a região fechada limitada
+\(
+  x^2 + y^2 \leq 32
+\)
+\clearpagequestiononly
+
+\begin{answer}
+\setlength\columnsep{3em}
+\setlength{\jot}{5pt}
+\begin{multicols*}{2}
+  \raggedcolumns
+  Como a função é contínua e a região é fechada e limitada sabemos que
+  $f$ assume um valor máximo e um valor mínimo na região.
+
+  \vspace{\baselineskip}
+  Temos que buscar os pontos críticos no interior e aplicar multiplicadores
+  de Lagrange na fronteira.
+
+  \vspace{\baselineskip}
+  \textbf{Gradiente} de $f$
+  \[
+    \D{f}{x}
+    = \D{}{x}\left(4xy\right)
+    = 4y
+  \]
+  \[
+    \D{f}{y}
+    = \D{}{y}\left(4xy\right)
+    = 4x
+  \]
+
+  \vspace{\baselineskip}
+  \textbf{Pontos críticos}:
+  Impondo \(\nabla f = 0\) temos o ponto interior
+  \[
+    P_1 = (0, 0)
+  \]
+
+  \vspace{\baselineskip}
+  \textbf{Multiplicadores de Lagrange}:
+  Temos a restrição \(g(x, y) = x^2 + y^2 \leq 9\) e seu gradiente é
+  \[
+    \D{g}{x}
+    = \D{}{x}\left(x^2 + y^2\right)
+    = 2x
+  \]
+  \[
+    \D{g}{y}
+    = \D{}{y}\left(x^2 + y^2\right)
+    = 2y
+  \]
+
+  Precisamos resolver o sistema
+  \begin{gather*}
+    4y = 2\lambda x \\
+    4x = 2\lambda y \\
+    x^2 + y^2 = 32
+  \end{gather*}
+  que pode ser simplificado para
+  \begin{gather*}
+    2y = \lambda x \\
+    2x = \lambda y \\
+    x^2 + y^2 = 32
+  \end{gather*}
+  Se $\lambda=0$ temos que $y=0$ pela primeira equação e $x=0$ pela segunda,
+  mas esses valores não resolvem a terceira equação. Concluímos que $\lambda\neq0$.
+
+  Assim podemos isolar $x$ na primeira equação e substituir na segunda
+  \begin{align*}
+    2y                  & = \lambda x          \\
+    x                   & = \frac{2y}{\lambda} \\[3mm]
+    2x                  & = \lambda y          \\
+    2\frac{2y}{\lambda} & = \lambda y          \\
+    4y                  & = \lambda^2 y
+  \end{align*}
+  As soluções são $y=0$ ou $\lambda=\pm 2$.
+
+  Se $y=0$ temos \(4x = 2\lambda y = 0\), que não resolve a terceira equação.
+
+  Se $\lambda=2$, pela primeira equação, temos que $x=y$.
+  A terceira equação se torna
+  \begin{align*}
+    x^2 + y^2 & = 32    \\
+    2x^2      & = 32    \\
+    x^2       & = 16    \\
+    x         & = \pm 4
+  \end{align*}
+  Encontramos os pontos
+  \[
+    P_2 = (4, 4)
+    \qquad
+    P_3 = (-4, -4)
+  \]
+
+  Se $\lambda=-2$, pela primeira equação, temos que $x=-y$.
+  A terceira equação se torna
+  \begin{align*}
+    x^2 + y^2    & = 32    \\
+    x^2 + (-x)^2 & = 32    \\
+    2x^2         & = 32    \\
+    x^2          & = 16    \\
+    x            & = \pm 4
+  \end{align*}
+  Encontramos os pontos
+  \[
+    P_4 = (4, -4)
+    \qquad
+    P_5 = (-4, 4)
+  \]
+
+  \textbf{Avaliando} a função nos pontos encontrados
+  \begin{gather*}
+    f( 0,  0) = 4\times   0  \times   0  =   0 \\
+    f( 4,  4) = 4\times   4  \times   4  =  64 \\
+    f(-4, -4) = 4\times (-4) \times (-4) =  64 \\
+    f(-4,  4) = 4\times (-4) \times   4  = -64 \\
+    f( 4, -4) = 4\times   4  \times (-4) = -64
+  \end{gather*}
+
+  O valor mínimo de $f$ é $-64$ e o valor máximo é 64
+\end{multicols*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

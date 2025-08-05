@@ -1,0 +1,233 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 1 -- Turma 4}{05/05/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre uma parametrização para o movimento de uma partícula que começa no
+ponto \((-2, 0)\) e traça a metade superior do círculo \(x^2+y^2=4\)
+\clearpagequestiononly
+
+\begin{answer}
+  Metade superior do círculo de raio 2 centrado na origem
+
+  Parametrização do círculo unitário centrado na origem
+  \begin{align*}
+    x      & = \cos(\theta) \\
+    y      & = \sin(\theta) \\
+    \theta & \in [0, 2\pi)
+  \end{align*}
+  Parametrização do círculo de raio 2 centrado na origem
+  \begin{align*}
+    x      & = 2\cos(\theta) \\
+    y      & = 2\sin(\theta) \\
+    \theta & \in [0, 2\pi)
+  \end{align*}
+  Parametrização da metade superior
+  \begin{align*}
+    x      & = 2\cos(\theta) \\
+    y      & = 2\sin(\theta) \\
+    \theta & \in [0, \pi]
+  \end{align*}
+  Essa parametrização começa em \((2, 0)\) e termina em \((-2, 0)\).
+  Queremos inverter o sentido em que percorremos a trajetória
+  \begin{align*}
+    x      & = 2\cos(\pi -\theta) =    - 2 \cos(\theta)\\
+    y      & = 2\sin(\pi -\theta) = \hpm 2 \sin(\theta)\\
+    \theta & \in [0, \pi)
+  \end{align*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25}
+Considerando a função
+\(
+  f(x, y) = \ln(\pi - x - y)
+\)
+\begin{enumerate}[label=(\alph*)]
+  \item \ [10] Determine o domínio de $f$ e represente-o graficamente
+  \item \ [5] Encontre a imagem de $f$
+  \item \ [10] Caracterize todas as curvas de nível de $f$ e esboce três delas
+\end{enumerate}
+\begin{questiononly}
+  \begin{multicols}{2}
+    Domínio
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{axis_xy}
+    \end{center}
+    Curvas de nível
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{axis_xy}
+    \end{center}
+  \end{multicols}
+  \clearpage
+\end{questiononly}
+
+\begin{answer}
+  \begin{multicols}{2}
+    Domínio
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{P1_T4_dominio}
+    \end{center}
+    Curvas de nível
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{P1_T4_curvas_nivel}
+    \end{center}
+  \end{multicols}
+
+  \begin{enumerate}[label=(\alph*)]
+    \item   O domínio de $f$ é o conjunto de pontos \((x, y)\) tais que
+    \[
+      \pi - x - y > 0
+    \]
+    \[
+      y < \pi - x
+    \]
+    Portanto
+    \[
+      D_f = \{(x, y) \in \R^2 \st y < \pi - x\}
+    \]
+
+    \item A imagem de $f$ é o conjunto de valores que $f$ pode assumir.
+    Como \( y < \pi - x \) assume valores no intervalo \((0, \infty)\)
+    a imagem de $f$ é
+    \(
+      \text{Im}(f) = (-\infty, \infty)
+    \)
+
+    \item As curvas de nível são dadas por
+    \[
+      \ln(\pi - x - y) = c \qquad \text{ para } c \in \R
+    \]
+    \[
+       \pi - x - y = e^c
+    \]
+    \[
+      y = \pi -e^c - x
+    \]
+    isto é, retas com coeficiente angular $-1$ e intercepto $b = \pi - e^c$
+    \begin{align*}
+      b & = -2 & c & = \ln(\pi-(-2)) = \ln(\pi+2) & y & = -2 -x \\
+      b & =  0 & c & = \ln(\pi)                   & y & = - x   \\
+      b & =  2 & c & = \ln(\pi-2)                 & y & = 2 - x
+    \end{align*}
+  \end{enumerate}
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{30}
+Calcule o limite ou mostre que ele não existe
+\begin{enumerate}[label=(\alph*)]
+  \item \ [15] \(\lim_{(x,y) \to (0, 0)} \frac{xy^2}{x^2 + y^4}\)
+  \item \ [15] \(\lim_{(x,y) \to (4, 3)} \frac{\sqrt{x}-\sqrt{y+1}}{x-y-1}\)
+\end{enumerate}
+\clearpagequestiononly
+
+\begin{answer}
+\begin{enumerate}[label=(\alph*)]
+\item Testando diferentes caminhos \\
+  Caminho \(x = y^2\)
+  \[
+    \lim_{(x,y) \to (0,0)} \frac{xy^2}{x^2 + y^4} \evalat{x = y^2}{}
+    = \lim_{y \to 0} \frac{y^2 y^2}{y^4 + y^4}
+    = \lim_{y \to 0} \frac{y^4}{2y^4}
+    = \lim_{y \to 0} \frac{1}{2}
+    = \frac{1}{2}
+  \]
+  Caminho \(x = 0\)
+  \[
+    \lim_{(x,y) \to (0,0)} \frac{xy^2}{x^2 + y^4} \evalat{x = 0}{}
+    = \lim_{y \to 0} \frac{0 \times y^2}{0 + y^4}
+    = \lim_{y \to 0} 0
+    = 0
+  \]
+  Como os limites são diferentes, o limite \textbf{não existe}
+
+\item Multiplicando pelo conjugado
+  \begin{align*}
+    \frac{\sqrt{x}-\sqrt{y+1}}{x-y-1}
+    & = \frac{\sqrt{x} - \sqrt{y+1}}{x - y - 1}
+        \times
+        \frac{\sqrt{x} + \sqrt{y+1}}{\sqrt{x} + \sqrt{y+1}} \\
+    & = \frac{x - (y+1)}{(x - y - 1)\left(\sqrt{x} + \sqrt{y+1}\right)} \\
+    & = \frac{1}{\sqrt{x} + \sqrt{y+1}}
+  \end{align*}
+  \begin{align*}
+    \lim_{(x,y) \to (4, 3)} \frac{\sqrt{x}-\sqrt{y+1}}{x-y-1}
+    & = \lim_{(x,y) \to (4, 3)} \frac{1}{\sqrt{x} + \sqrt{y+1}} \\
+    & = \frac{1}{\sqrt{4} + \sqrt{3+1}} \\
+    & = \frac{1}{2+2} = \frac{1}{4}
+  \end{align*}
+\end{enumerate}
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{20}
+Encontre e esboce as curvas que representam o corte da superfície
+\( x^2 + y^2 = 4 - z^2 \)
+pelos planos
+\(z=0\) e
+\(y=0\)
+\begin{questiononly}
+  \begin{multicols}{2}
+    \(z=0\)
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{axis_xy}
+    \end{center}
+    \(y=0\)
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{axis_xz}
+    \end{center}
+  \end{multicols}
+\end{questiononly}
+
+\begin{answer}
+  \begin{multicols}{2}
+    \(z=0\)
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{T4_conica_z0}
+    \end{center}
+    \(y=0\)
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{T4_conica_y0}
+    \end{center}
+  \end{multicols}
+
+  No plano \(z=0\) a equação \( x^2 + y^2 = 4 - z^2 \) se reduz a
+  \begin{align*}
+    x^2 + y^2 & = 4 - 0 \\
+    x^2 + y^2 & = 2^2
+  \end{align*}
+  que corresponde circunferência de raio 2 centrada na origem
+
+  No plano \(y=0\) a equação \( x^2 + y^2 = 4 - z^2 \) se reduz a
+  \begin{align*}
+    x^2 + 0   & = 4 - z^2 \\
+    x^2 + z^2 & = 2^2
+  \end{align*}
+  que corresponde circunferência de raio 2 centrada na origem
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

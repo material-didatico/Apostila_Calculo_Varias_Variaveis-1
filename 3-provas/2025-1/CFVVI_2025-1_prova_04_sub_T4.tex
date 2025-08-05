@@ -1,0 +1,332 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova Substitutiva -- Turma 4}{21/07/2025}
+
+\textbf{O exercício correspondente a prova que será substituída vale 50 pontos}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25}
+Considerando a função
+\(
+  f(x, y) = \sqrt{9-x^2-y^2}-3
+\)
+\begin{enumerate}[label=\alph*)]
+  \item Determine e esboce o domínio de $f$
+  \item Determine as curvas de nível de $f$ e esboce três delas
+  \item Calcule o limite
+  \(
+    \lim_{(x, y)\to(0, 0)} \frac{f(x, y)}{x^2+y^2}
+  \)
+  ou mostre que ele não existe
+\end{enumerate}
+\begin{questiononly}
+\begin{multicols}{2}
+  Domínio
+  \vspace{-0.8\baselineskip}
+  \begin{center}
+    \includegraphics{axis_xy}
+  \end{center}
+  Curvas de nível
+  \vspace{-0.8\baselineskip}
+  \begin{center}
+    \includegraphics{axis_xy}
+  \end{center}
+\end{multicols}
+\end{questiononly}
+\clearpagequestiononly
+
+\begin{answer}
+  \begin{multicols}{2}
+    Domínio
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{T4_dominio}
+    \end{center}
+    Curvas de nível
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{T4_curvas_nivel}
+    \end{center}
+  \end{multicols}
+
+\clearpage
+\setlength\columnsep{3em}
+\begin{multicols*}{2}
+\raggedcolumns
+\setlength{\jot}{5pt}
+
+\vspace{\baselineskip}
+\textbf{a)\;}
+O domínio de $f$ consiste dos pontos onde é possível avaliar
+a raiz quadrada, isto é, os pontos que satisfazem $9-x^2-y^2\geq 0$,
+ou seja,
+\begin{align*}
+  9 -x^2 -y^2 & \geq 0   \\
+  -x^2 -y^2   & \geq -9 \\
+  x^2 +y^2    & \leq 9 = 3^2
+\end{align*}
+Portanto,
+\[
+  D_f = \left\{(x, y)\in\R^2 \st x^2 + y^2 \leq 9 \right\},
+\]
+que corresponde a um disco de raio 3, centrado na origem.
+
+\vspace{\baselineskip}
+\textbf{b)\;}
+As curvas de nível de $f$ são compostas pelos pontos onde $f(x, y) = c$
+para alguma constante $c$ na imagem de $f$.
+
+Para determinar a imagem de $f$ observamos que $x^2+y^2$ só pode assumir
+valores no intervalo $[0, 9]$. Portanto, $9 - x^2 - y^2$ está limitado
+ao mesmo intervalo. Consequentemente $\sqrt{9 - x^2 - y^2}$ está em $[0, 3]$.
+Concluímos que os valores de $f$ estão em $[-3, 0]$, isto é,
+\(\Im(f) = [-3, 0]\)
+
+Para qualquer $c\in\Im(f)=[-3, 0]$, temos a curva de nível
+\begin{align*}
+  f(x, y)                & = c             \\
+  \sqrt{9 -x^2 -y^2} - 3 & = c             \\
+  \sqrt{9 -x^2 -y^2}     & = c + 3         \\
+  9 -x^2 -y^2            & = (c + 3)^2     \\
+  -x^2 -y^2              & = (c + 3)^2 -9  \\
+  x^2 +y^2               & = 9 - (c + 3)^2
+\end{align*}
+Que corresponde a uma circunferência centrada na origem de raio
+\[
+  r = \sqrt{9 - (c + 3)^2}
+\]
+
+Escolhendo os valores $c=-3$, $c=-2$ e $c=-1$, temos as curvas de nível
+\begin{align*}
+  \gamma_1\colon & x^2 + y^2 = 9 - (-3 + 3)^2 = 9 - 0 = 9 \\
+  \gamma_2\colon & x^2 + y^2 = 9 - (-2 + 3)^2 = 9 - 1 = 8 \\
+  \gamma_3\colon & x^2 + y^2 = 9 - (-1 + 3)^2 = 9 - 4 = 5
+\end{align*}
+
+\vspace{\baselineskip}
+\textbf{c)\;}
+Calculando o limite
+\setlength{\jot}{12pt}
+\setlength{\mathindent}{0cm}
+\begin{align*}
+  L
+  & = \lim_{(x, y)\to(0, 0)} \frac{f(x, y)}{x^2+y^2} \\
+  & = \lim_{(x, y)\to(0, 0)} \frac{\sqrt{9-x^2-y^2}-3}{x^2+y^2} \\
+  & = \lim_{(x, y)\to(0, 0)} \frac{\sqrt{9-x^2-y^2}-3}{x^2+y^2} \times \\
+  & \hspace{32mm}            \frac{\sqrt{9-x^2-y^2}+3}{\sqrt{9-x^2-y^2}+3} \\
+  & = \lim_{(x, y)\to(0, 0)} \frac{\left(\sqrt{9-x^2-y^2}\right)^2-3^2}
+                                  {\left(x^2+y^2\right)\left(\sqrt{9-x^2-y^2}+3\right)} \\
+  & = \lim_{(x, y)\to(0, 0)} \frac{9-x^2-y^2-9}{\left(x^2+y^2\right)\left(\sqrt{9-x^2-y^2}+3\right)} \\
+  & = \lim_{(x, y)\to(0, 0)} \frac{-\left(x^2+y^2\right)}{\left(x^2+y^2\right)\left(\sqrt{9-x^2-y^2}+3\right)}\\
+  & = \lim_{(x, y)\to(0, 0)} \frac{-1}{\sqrt{9-x^2-y^2}+3} \\
+  & = \frac{-1}{\sqrt{9-0^2-0^2}+3} \\
+  & = \frac{-1}{3 + 3} = \frac{-1}{6}
+\end{align*}
+\end{multicols*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25}
+Considerando que a equação
+\(
+  xe^y + ye^z + 2\ln(x) -2 -3\ln(2) = 0
+\)
+define $z$ como função de $x$ e $y$.
+\begin{enumerate}[label=\alph*)]
+  \item Calcule as derivadas \(\D{z}{x}\) e \(\D{z}{y}\)
+  \item Encontre os valores de \(\D{z}{x}\) e \(\D{z}{y}\) em \((1, \ln(2), \ln(3))\)
+  \item Construa a aproximação linear da função $z(x, y)$ no ponto \((1, \ln(2))\)
+\end{enumerate}
+\clearpagequestiononly
+
+\begin{answer}
+\vspace{\baselineskip}
+\textbf{a)\;}
+Considerando $z=z(x, y)$ e derivando por $x$ os dois lados da equação temos
+\begin{align*}
+  xe^y + ye^{z(x, y)} + 2\ln(x) & = 2 +3\ln(2)  \\
+  \D{}{x}\left[xe^y + ye^{z(x, y)} + 2\ln(x)\right] & = \D{}{x}\left[2 +3\ln(2)\right] \\
+  \D{}{x}\left(xe^y\right) +
+  \D{}{x}\left(ye^{z(x, y)}\right) +
+  \D{}{x}\left(2\ln(x)\right)      & = 0 \\
+  e^y + ye^{z(x, y)}\D{z}{x} + \frac{2}{x} & = 0 \\
+  ye^{z(x, y)}\D{z}{x} & = -e^y - \frac{2}{x}  \\
+  \D{z}{x}     & = \frac{-1}{ye^{z(x, y)}}\left(e^y + \frac{2}{x}\right)
+\end{align*}
+Derivando por $y$ os dois lados da equação temos
+\begin{align*}
+  xe^y + ye^{z(x, y)} + 2\ln(x) & = 2 +3\ln(2) \\
+  \D{}{y}\left[xe^y + ye^{z(x, y)} + 2\ln(x)\right] & = \D{}{y}\left[2 +3\ln(2)\right] \\
+  \D{}{y}\left(xe^y\right) +
+  \D{}{y}\left(ye^{z(x, y)}\right) +
+  \D{}{y}\left(2\ln(x)\right) & = 0 \\
+  x\D{e^y}{y} + \D{y}{y}e^{z(x, y)} + y\D{}{y}e^{z(x, y)} + 0 & = 0 \\
+  xe^y + e^{z(x, y)} + ye^{z(x, y)}\D{z}{y} & = 0 \\
+  ye^{z(x, y)}\D{z}{y} & = -xe^y - e^{z(x, y)} \\
+  \D{z}{y} & = - \frac{xe^y + e^{z(x, y)}}{ye^{z(x, y)}}
+\end{align*}
+
+\vspace{\baselineskip}
+\textbf{b)\;}
+Avaliando as derivadas no ponto \((1, \ln(2), \ln(3))\)
+\begin{align*}
+  \D{z}{x}(1, \ln(2))
+  & = \left(\frac{-1}{ye^z}\left(e^y + \frac{2}{x}\right)\right)\evalat{(1, \ln(2), \ln(3))}{} \\
+  & = \frac{-1}{\ln(2)e^{\ln(3)}}\left(e^{\ln(2)} + \frac{2}{1}\right) \\
+  & = \frac{-1}{3\ln(2)}\left(2 + 2\right) \\
+  & = \frac{-4}{3\ln(2)} \\
+  \D{z}{y}(1, \ln(2))
+  & = \left(- \frac{xe^y + e^{z(x, y)}}{ye^{z(x, y)}}\right)\evalat{(1, \ln(2), \ln(3))}{} \\
+  & = - \frac{1e^{\ln(2)} + e^{\ln(3)}}{{\ln(2)}e^{\ln(3)}} \\
+  & = - \frac{2 + 3}{{\ln(2)}3} \\
+  & = \frac{-5}{3\ln(2)}
+  \end{align*}
+
+\vspace{\baselineskip}
+\textbf{c)\;}
+A aproximação linear da função $z(x, y)$ no ponto \((x_0, y_0) = (1, \ln(2))\) é
+\begin{align*}
+  L(x, y)
+  & = z(x_0, y_0) + (x-x_0)\D{z}{x}(x_0, y_0) + (y-y_0)\D{z}{y}(x_0, y_0) \\
+  & = z(1, \ln(2)) + (x-1)\D{z}{x}(1, \ln(2)) + (y-\ln(2))\D{z}{y}(1, \ln(2)) \\
+  & = \ln(3) + (x-1)\frac{-4}{3\ln(2)} + (y-\ln(2))\frac{-5}{3\ln(2)} \\
+  & = \ln(3) - \frac{4}{3\ln(2)}(x-1) - \frac{5}{3\ln(2)}(y-\ln(2))
+\end{align*}
+
+Não faz parte da resolução solicitada na prova, mas com o uso de uma calculadora
+podemos avaliar essa expressão, obtendo uma aproximação para $z(x, y)$
+quando $(x, y)\approx (1, 0.69)$
+\begin{align*}
+  z(x, y) & \approx L(x, y) \\
+  & = \ln(3)
+    + \frac{4}{3\ln(2)}
+    + \frac{5}{3}
+    - \frac{4}{3\ln(2)} x
+    - \frac{5}{3\ln(2)} y \\
+  & \approx 4,689 -1,924 x - 2,404 y
+\end{align*}
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre os valores máximo e mínimo da função
+\(
+  f(x, y) = 2x^2 + y^2
+\)
+restrita a região fechada limitada
+\(
+  x^2 + 2y^2 \leq 16
+\)
+\clearpagequestiononly
+
+\begin{answer}
+\setlength\columnsep{3em}
+\setlength{\jot}{5pt}
+\begin{multicols*}{2}
+  \raggedcolumns
+  Como a função é contínua e a região é fechada e limitada sabemos que
+  $f$ assume um valor máximo e um valor mínimo na região.
+
+  \vspace{\baselineskip}
+  Temos que buscar os pontos críticos no interior e aplicar multiplicadores
+  de Lagrange na fronteira.
+
+  \vspace{\baselineskip}
+  \textbf{Gradiente} de $f$
+  \[
+    \D{f}{x}
+    = \D{}{x}\left(2x^2 + y^2\right)
+    = 4x
+  \]
+  \[
+    \D{f}{y}
+    = \D{}{y}\left(2x^2 + y^2\right)
+    = 2y
+  \]
+
+  \vspace{\baselineskip}
+  \textbf{Pontos críticos}:
+  Impondo \(\nabla f = 0\) temos o ponto interior
+  \[
+    P_1 = (0, 0)
+  \]
+
+  \vspace{\baselineskip}
+  \textbf{Multiplicadores de Lagrange}:
+  Temos a restrição \(g(x, y) = x^2 + 2y^2 \leq 16\) e seu gradiente é
+  \[
+    \D{g}{x}
+    = \D{}{x}\left(x^2 + 2y^2\right)
+    = 2x
+  \]
+  \[
+    \D{g}{y}
+    = \D{}{y}\left(x^2 + 2y^2\right)
+    = 4y
+  \]
+
+  Precisamos resolver o sistema
+  \begin{gather*}
+    4x = 2\lambda x \\
+    2y = 4\lambda y \\
+    x^2 + 2y^2 = 16
+  \end{gather*}
+  Que pode ser simplificado
+  \begin{gather*}
+    2x =  \lambda x \\
+     y = 2\lambda y \\
+    x^2 + 2y^2 = 16
+  \end{gather*}
+  Da primeira equação temos que $x=0$ ou $\lambda=2$.
+
+  Se $x=0$ a terceira equação se reduz a
+  \begin{align*}
+    x^2 + 2y^2 & = 16           &  \\
+    2y^2       & = 16           &  \\
+    y^2        & = 8            &  \\
+    y          & = \pm 2\sqrt{2} &
+  \end{align*}
+  Substituindo qualquer uma delas na segunda equação
+  temos $\lambda = 0$. Encontramos o segundo e terceiro pontos
+  \[
+    P_2 = \left(0, -2\sqrt{2}\right)
+    \qquad
+    P_3 = \left(0, 2\sqrt{2}\right)
+  \]
+
+  Se $\lambda=2$ a segunda equação se torna $y=8y$ e, portanto, $y=0$.
+  Substituindo na terceira equação temos $x^2=16$, cujas soluções são
+  $x=-4$ ou $x=4$.  Encontramos o quarto e quinto pontos
+  \[
+    P_4 = (-4, 0)
+    \qquad
+    P_5 = (4, 0)
+  \]
+
+  \textbf{Avaliando} a função nos pontos encontrados
+  \begin{align*}
+    f( 0,  0)                    & = 2\times    0^2 +    0^2 =  0                 \\
+    f\left( 0, -2\sqrt{2}\right) & = 2\times 0^2 + \left(-2\sqrt{2}\right)^2 = 8 \\
+    f\left( 0,  2\sqrt{2}\right) & = 2\times 0^2 + \left( 2\sqrt{2}\right)^2 = 8 \\
+    f(-4,  0)                    & = 2\times (-4)^2 +    0^2 = 32                 \\
+    f( 4,  0)                    & = 2\times    4^2 +    0^2 = 32
+  \end{align*}
+
+  O valor mínimo de $f$ é 0 e o valor máximo é 32
+\end{multicols*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

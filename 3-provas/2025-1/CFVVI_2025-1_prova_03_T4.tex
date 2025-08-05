@@ -1,0 +1,299 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 3 -- Turma 4}{14/07/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{20}
+Converta a equação para coordenadas cartesianas e mostre que a solução é uma cônica
+\[
+  r = \frac{12}{1 - 3\cos\theta}
+\]
+\clearpagequestiononly
+
+\begin{answer}
+  Queremos mostrar que a equação, escrita em coordenadas cartesianas, $(x, y)$,
+  é uma expressão com termos de segundo grau em $x$ e $y$
+  \begin{align*}
+    r                       & = \frac{12}{1 - 3\cos\theta} \\
+    r(1 - 3\cos\theta)      & = 12                         \\
+    r - 3r\cos\theta        & = 12                         \\
+    \sqrt{x^2 + y^2} - 3x   & = 12                         \\
+    \sqrt{x^2 + y^2}        & = 12 + 3x                    \\
+    x^2 + y^2               & = 144 + 72x + 9x^2           \\
+    -8x^2 + y^2 - 72x - 144 & = 0                          \\
+    8x^2 - y^2 + 72x + 144  & = 0
+  \end{align*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{20}
+Encontre as raízes cúbicas de \( z = 27\left(\frac{1}{2} - i\frac{\sqrt{3}}{2}\right) \)
+\clearpagequestiononly
+
+\begin{answer}
+    Converter para forma polar
+    \begin{align*}
+        x       & = \Re(z) = \frac{27}{2}         \\
+        y       & = \Im(z) = \frac{-27\sqrt{3}}{2} \\
+        |z|     & = \sqrt{x^2+y^2}
+                  = \sqrt{\left(\frac{27}{2}\right)^2 + \left(\frac{-27\sqrt{3}}{2}\right)^2}
+                  = \sqrt{\frac{27^2}{2^2} + \frac{27^2\times 3}{2^2}}
+                  = \sqrt{\frac{27^2\times 4}{2^2}}
+                  = \frac{27\times 2}{2}
+                  = 27         \\
+        \varphi & = \arg(z)
+                  = \arctan\left(\frac{y}{x}\right)
+                  = \arctan\left(\frac{\dfrac{-27\sqrt{3}}{2}}{\dfrac{27}{2}}\right)
+                  = \arctan\left(-\sqrt{3}\right)
+                  = - \frac{\pi}{3} \\
+        z       & = 27 \cis{\frac{-\pi}{3}}
+        = 27 e^{-i\pi/3}
+      \end{align*}
+
+    Aplicar a fórmula de De Moivre para as raízes cúbicas
+    \[
+      u_k
+      = \sqrt[3]{27}\cis{\frac{-\pi/3 + 2k\pi}{3}}
+      \qquad\qquad k = 0,1,2
+    \]
+    Calculando os argumentos das raízes
+    \begin{align*}
+        \varphi_0
+        & = \frac{-\pi/3 + 2\times 0\pi}{3}
+          = \frac{-\pi}{9} \\
+        \varphi_1
+        & = \frac{-\pi/3 + 2\times 1\pi}{3}
+          = \frac{-\pi/3 + 6\pi/3}{3}
+          = \frac{5\pi}{9} \\
+        \varphi_2
+        & = \frac{-\pi/3 + 2\times 2\pi}{3}
+          = \frac{-\pi/3 + 12\pi/3}{3}
+          = \frac{11\pi}{9}
+      \end{align*}
+    As raízes são
+    \begin{align*}
+        u_0 & = 3\cis{\frac{ -\pi}{9}} = 3e^{\sfrac{- i\pi}{9}} \\
+        u_1 & = 3\cis{\frac{ 5\pi}{9}} = 3e^{\sfrac{5 i\pi}{9}} \\
+        u_2 & = 3\cis{\frac{11\pi}{9}} = 3r^{\sfrac{11i\pi}{9}}
+      \end{align*}
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{30}
+Encontre e classifique os pontos críticos da função
+\(
+  f(x, y) = y^3 + 3x^2y - 6x^2 - 6y^2 + 2
+\)
+\clearpagequestiononly
+
+\begin{answer}
+\setlength\columnsep{3em}
+\begin{multicols*}{2}
+\raggedcolumns
+  Calculando as \textbf{derivadas primeiras} de $f$
+  \begin{align*}
+    \D{f}{x}
+    & = \D{}{x}\left(y^3 + 3x^2y - 6x^2 - 6y^2 + 2\right) \\
+    & = 0 + 3\times 2xy - 6\times 2x - 0 + 0 \\
+    & = 6xy - 12x \\
+    & = 6x(y - 2)
+  \end{align*}
+  \begin{align*}
+    \D{f}{y}
+    & = \D{}{y}\left(y^3 + 3x^2y - 6x^2 - 6y^2 + 2\right) \\
+    & = 3y^2 + 3x^2 - 0 - 6\times 2y + 0 \\
+    & = 3y^2 + 3x^2 - 12y \\
+    & = 3(y^2 - 4y + x^2)
+  \end{align*}
+
+  Encontrando os \textbf{pontos críticos}.
+  As derivadas parciais de $f$ existem em todo o plano, temos então que resolver o sistema
+  \begin{align*}
+    \D{f}{x} & = 6x(y - 2) = 0 \\
+    \D{f}{y} & = 3(y^2 - 4y + x^2) = 0
+  \end{align*}
+
+  Da primeira equação temos que $x=0$ ou $y=2$
+
+  Se $x=0$ temos
+  \begin{align*}
+    3(y^2 - 4y + x^2) & = 0 \\
+    y(y - 4)          & = 0
+  \end{align*}
+  cujas soluções são $y=0$ ou $y=4$. Temos então os pontos críticos
+  \[
+    P_1 = (0, 0)
+    \quad\text{e}\quad
+    P_2 = (0, 4)
+  \]
+
+  Se $y=2$ temos
+  \begin{align*}
+    3(y^2 - 4y + x^2)     & = 0     \\
+    2^2 - 4\times 2 + x^2 & = 0     \\
+    4 - 8 + x^2           & = 0     \\
+    x^2                   & = 4     \\
+    x                     & = \pm 2
+  \end{align*}
+  cujas soluções são $x=2$ ou $x=-2$. Temos então os pontos críticos
+  \[
+    P_3 = (2, 2)
+    \quad\text{e}\quad
+    P_4 = (-2, 2)
+  \]
+
+  Para \textbf{classificar} os pontos críticos precisamos
+  do determinante da Hessiana
+  \begin{align*}
+    \DS{f}{x}    & = \D{}{x}\left(6xy - 12x\right)         = 6y - 12 \\
+    \DS{f}{y}    & = \D{}{y}\left(3y^2 + 3x^2 - 12y\right) = 6y - 12 \\
+    \DM{f}{y}{x} & = \D{}{y}\left(6xy - 12x\right)         = 6x
+  \end{align*}
+  \begin{align*}
+    D(x, y)
+    & = f_{xx}(x, y) f_{yy}(x, y) - \left(f_{xy}(x, y)\right)^2 \\
+    & = (6y-12)(6y-12) - (6x)^2 \\
+    & = (6y-12)^2 - 36x^2
+  \end{align*}
+
+  Classificando o ponto $P_1$
+  \begin{align*}
+    D\left(0, 0\right)
+    & = (6\times 0-12)^2 - 36\times 0^2 \\
+    & = (-12)^2 > 0 \\
+    f_{xx}\left(0, 0\right)
+    & = 6\times 0 - 12 = -12 < 0
+  \end{align*}
+  O ponto $P_1$ é um máximo local
+
+  Classificando o ponto $P_2$
+  \begin{align*}
+    D\left(0, 4\right)
+    & = (6\times 4-12)^2 - 36\times 0^2 \\
+    & = (24-12)^2 > 0 \\
+    f_{xx}\left(0, 4\right)
+    & = 6\times 4 - 12 = 12 > 0
+  \end{align*}
+  O ponto $P_2$ é um mínimo local
+
+  Classificando o ponto $P_3$
+  \begin{align*}
+    D\left(2, 2\right)
+    & = (6\times 2-12)^2 - 36\times 2^2 \\
+    & = (12-12)^2 - 36\times 4 \\
+    & = -36\times 4 < 0
+  \end{align*}
+  $P_3$ é um ponto de sela
+
+  Classificando o ponto $P_4$
+  \begin{align*}
+    D\left(-2, 2\right)
+    & = (6\times 2-12)^2 - 36\times(-2)^2 \\
+    & = (12-12)^2 - 36\times 4 \\
+    & = -36\times 4 < 0
+  \end{align*}
+  $P_4$ é um ponto de sela
+\end{multicols*}
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{30}
+Encontre o valor mínimo de
+\(
+  e^{xy}
+\)
+sujeitos a
+\(
+  x^3 + y^3 = 16
+\)
+\clearpagequestiononly
+
+\begin{answer}
+  \setlength\columnsep{3em}
+  \begin{multicols}{2}
+    Queremos encontrar o valor mínimo de $e^{xy}$
+    mas como a função exponencial é crescente podemos localizar  ponto
+    onde o mínimo acontece usando a função
+    \[
+      f(x,y) = xy
+    \]
+    sujeitos a restrição
+    \[
+      g(x, y) = x^3 + y^3 = 16
+    \]
+    Gradiente de $f$
+    \[
+      \D{f}{x}
+      = \D{}{x}\left(xy\right)
+      = y
+    \]
+    \[
+      \D{f}{y}
+      = \D{}{y}\left(xy\right)
+      = x
+    \]
+    \[
+      \nabla f(x, y) = \vetor{y}{x}
+    \]
+    Gradiente de $g$
+    \[
+      \D{g}{x}
+      = \D{}{x}\left(x^3 + y^3\right)
+      = 3x^2
+    \]
+    \[
+      \D{g}{y}
+      = \D{}{y}\left(x^3 + y^3\right)
+      = 3y^2
+    \]
+    \[
+      \nabla g(x, y) = \vetor{3x^2}{3y^2}
+    \]
+    Precisamos resolver o sistema
+    \begin{align*}
+      y         & = \lambda 3x^2 \\
+      x         & = \lambda 3y^2 \\
+      x^3 + y^3 & = 16
+    \end{align*}
+    Que podemos manipular as duas primeiras equações para obter
+    \begin{align*}
+      \dfrac{xy}{3} & = \lambda x^3 \\
+      \dfrac{xy}{3} & = \lambda y^3
+    \end{align*}
+    Portanto,
+    \(
+      \lambda x^3 = \lambda y^3
+    \) \\
+    Assim $\lambda=0$ ou $x=y$ \\
+    Se $\lambda=0$ as duas primeiras equações
+    determinam $x=0$ e $y=0$ o que é incompatível com a
+    terceira equação. Portanto, sabemos que $\lambda\neq 0$.
+
+    Substituindo $x=y$ na terceira equação
+    \begin{align*}
+      x^3 + y^3 & = 16 \\
+      2x^3      & = 16 \\
+      x^3       & = 8  \\
+      x         & = 2
+    \end{align*}
+    Portanto o único ponto candidato a mínimo é $(x, y) = (2, 2)$.
+
+    Avaliando $e^{xy}$ no ponto temos $\min = e^4$
+  \end{multicols}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

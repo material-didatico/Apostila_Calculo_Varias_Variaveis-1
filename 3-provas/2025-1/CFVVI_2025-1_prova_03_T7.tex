@@ -1,0 +1,274 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 3 -- Turma 7}{14/07/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{20}
+Converta a equação para coordenadas cartesianas e mostre que a solução é uma cônica
+\[
+  r = \frac{8}{3 + 2\cos\theta + 2\sin\theta}
+\]
+\clearpagequestiononly
+
+\begin{answer}
+Queremos mostrar que a equação, escrita em coordenadas cartesianas, $(x, y)$,
+é uma expressão com termos de segundo grau em $x$ e $y$
+\begin{align*}
+  r                                  & = \frac{8}{3 + 2\cos\theta + 2\sin\theta} &  \\
+  r(3 + 2\cos\theta + 2\sin\theta)   & = 8                                       &  \\
+  3r + 2r\cos\theta + 2r\sin\theta   & = 8                                       &  \\
+  3\sqrt{x^2 + y^2} + 2x + 2y        & = 8                                       &  \\
+  3\sqrt{x^2 + y^2}                  & = 8 - 2x - 2y                             &  \\
+  9(x^2 + y^2)                       & = (8 - 2x - 2y)^2                         &  \\
+  9x^2 + 9y^2                        & = 64 - 32x - 32y + 4x^2 + 8xy + 4y^2      &  \\
+  5x^2 + 5y^2 - 8xy + 32x + 32y - 64 & = 0                                       &
+\end{align*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{20}
+Determine todas as raízes cúbicas de \( z = -8i \)
+\clearpagequestiononly
+
+\begin{answer}
+  Converter para forma polar
+  \begin{align*}
+    x       & = \Re(z) = 0  \\
+    y       & = \Im(z) = -8 \\
+    |z|     & = \sqrt{x^2+y^2}
+              = \sqrt{(-8)^2}
+              = 8         \\
+    \varphi & = \arg(z) = -\frac{\pi}{2}
+  \end{align*}
+  Aplicar a fórmula de De Moivre para as raízes cúbicas
+  \[
+    u_k = 2\cis{\frac{-\pi/2 + 2k\pi}{3}}
+  \qquad\qquad k = 0,1,2
+  \]
+  Calculando os argumentos das raízes
+  \begin{align*}
+    \varphi_0
+    & = \frac{-\pi/2 + 2\times 0\pi}{3}
+      = \frac{-\pi}{6} \\
+    \varphi_1
+    & = \frac{-\pi/2 + 2\times 1\pi}{3}
+      = \frac{-\pi/2 + 4\pi/2}{3}
+      = \frac{\pi}{2}\\
+    \varphi_2
+    & = \frac{-\pi/2 + 2\times 2\pi}{3}
+      = \frac{-\pi/2 + 8\pi/2}{3}
+      = \frac{7\pi}{6}
+  \end{align*}
+  As raízes são
+  \begin{align*}
+    u_0 & = 2\cis{\frac{-\pi}{6}} = 2 e^{\sfrac{-i\pi}{6}} =  \sqrt{3} - i \\
+    u_1 & = 2\cis{\frac{ \pi}{2}} = 2 e^{\sfrac{  \pi}{2}} = 2i            \\
+    u_2 & = 2\cis{\frac{7\pi}{6}} = 2 e^{\sfrac{7i\pi}{6}} = -\sqrt{3} - i
+  \end{align*}
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{30}
+Encontre e classifique os pontos críticos da função
+\(
+  f(x, y) = x^3 - 12xy + 8y^3
+\)
+\clearpagequestiononly
+
+\begin{answer}
+\setlength\columnsep{3em}
+\begin{multicols*}{2}
+\raggedcolumns
+  Calculando as \textbf{derivadas primeiras} de $f$
+  \begin{align*}
+    \D{f}{x}
+    & = \D{}{x}\left(x^3 - 12xy + 8y^3\right) \\
+    & = 3x^2 - 12y + 0 \\
+    & = 3x^2 - 12y
+  \end{align*}
+  \begin{align*}
+    \D{f}{y}
+    & = \D{}{y}\left(x^3 - 12xy + 8y^3\right) \\
+    & = 0 - 12x +8\times 3 y^2 \\
+    & = 24y^2 - 12x
+  \end{align*}
+
+  Encontrando os \textbf{pontos críticos}.
+  As derivadas parciais de $f$ existem em todo o plano, temos então que resolver o sistema
+  \begin{align*}
+    \D{f}{x} & =  3x^2 - 12y = 0 \\
+    \D{f}{y} & = 24y^2 - 12x = 0
+  \end{align*}
+  Simplificando
+  \begin{align*}
+     x^2 - 4y = 0 \\
+    2y^2 -  x = 0
+  \end{align*}
+  Isolando $x$ na segunda equação e substituindo na primeira temos
+  \begin{align*}
+    x                        & = 2y^2 \\
+    x^2 - 4y                 & = 0    \\
+    \left(2y^2\right)^2 - 4y & = 0    \\
+    4y^4 - 4y                & = 0    \\
+    y\left(y^3 - 1\right)    & = 0
+  \end{align*}
+  As soluções são $y=0$ e $y=1$.
+
+  Se $y=0$, temos
+  \[
+    x = 2\times 0^2 = 0
+  \]
+  e o ponto $P_1 = (0, 0)$
+
+  Se $y=1$, temos
+  \[
+    x = 2\times 1^2 = 2
+  \]
+  e o ponto $P_2 = (2, 1)$
+
+  Para \textbf{classificar} os pontos críticos precisamos
+  do determinante da Hessiana
+  \begin{align*}
+    \DS{f}{x}    & = \D{}{x}\left( 3x^2 - 12y\right) =  6x \\
+    \DS{f}{y}    & = \D{}{y}\left(24y^2 - 12x\right) = 48y \\
+    \DM{f}{y}{x} & = \D{}{y}\left( 3x^2 - 12y\right) = -12
+  \end{align*}
+  \begin{align*}
+    D(x, y)
+    & = f_{xx}(x, y) f_{yy}(x, y) - \left(f_{xy}(x, y)\right)^2 \\
+    & = (6x)(48y) - (-12)^2 \\
+    & = 144(2xy - 1)
+  \end{align*}
+
+  Classificando o ponto $P_1$
+  \[
+    D\left(0, 0\right)
+    = 144(2\times 0 \times 0 - 1)
+    = -144 < 0
+  \]
+  $P_1$ é ponto de sela
+
+  Classificando o ponto $P_2$
+  \begin{align*}
+    D\left(2, 1\right)
+    & = 144(2\times 2 \times 1 - 1)
+      = 144(4-1) > 0 \\
+    f_{xx}\left(2, 1\right)
+    & = 6\times 2
+      = 12 > 0
+  \end{align*}
+  O ponto $P_2$ é um mínimo local
+\end{multicols*}
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{30}
+Encontre os valores máximo e mínimo de
+\(
+  3x + y
+\)
+sujeitos a
+\(
+  x^2 + y^2 = 10
+\)
+\clearpagequestiononly
+
+\begin{answer}
+\setlength\columnsep{3em}
+\begin{multicols*}{2}
+  Queremos encontrar os valores máximo e mínimo da função
+  \[
+    f(x,y) = 3x + y
+  \]
+  sujeitos a restrição
+  \[
+    g(x, y) = x^2 + y^2 = 10
+  \]
+  Gradiente de $f$
+  \[
+    \D{f}{x}ç
+    = \D{}{x}\left(3x + y\right)
+    = 3
+  \]
+  \[
+    \D{f}{y}
+    = \D{}{y}\left(3x + y\right)
+    = 1
+  \]
+  \[
+    \nabla f(x, y) = \vetor{3}{1}
+  \]
+  Gradiente de $g$
+  \[
+    \D{g}{x}
+    = \D{}{x}\left(x^2 + y^2\right)
+    = 2x
+  \]
+  \[
+    \D{g}{y}
+    = \D{}{y}\left(x^2 + y^2\right)
+    = 2y
+  \]
+  \[
+    \nabla g(x, y) = \vetor{2x}{2y}
+  \]
+  Precisamos resolver o sistema
+  \begin{align*}
+    3 & = \lambda 2x \\
+    1 & = \lambda 2y \\
+    x^2 + y^2 & = 10
+  \end{align*}
+
+  Da primeira equação verificamos que $x\neq 0$ e $\lambda\neq 0$,
+  da segunda verificamos que $y\neq 0$.
+
+  Isolando $x$ e $y$ nas duas primeiras equações e substituindo na terceira, temos
+  \begin{align*}
+    x         & = \frac{3}{2\lambda} \\
+    y         & = \frac{1}{2\lambda} \\
+    x^2 + y^2 & = 10                 \\
+    \left(\frac{3}{2\lambda}\right)^2 + \left(\frac{1}{2\lambda}\right)^2 & = 10 \\
+    \frac{9}{4\lambda^2} + \frac{1}{4\lambda^2} & = 10 \\
+    \frac{10}{4\lambda^2} & = 10 \\
+    4\lambda^2 & = 1 \\
+    \lambda & = \pm \frac{1}{2}
+  \end{align*}
+
+  Se \(\lambda = \frac{1}{2}\)
+  \begin{align*}
+    x & = \frac{3}{2\lambda} = \frac{3}{2\sfrac{1}{2}} = 3 \\
+    y & = \frac{1}{2\lambda} = \frac{1}{2\sfrac{1}{2}} = 1
+  \end{align*}
+  Então o primeiro ponto é \(P_1 = \left(3, 1\right)\)
+
+  Se \(\lambda = -\frac{1}{2}\)
+  \begin{align*}
+    x & = \frac{3}{2\lambda} = \frac{3}{2\left(-\sfrac{1}{2}\right)} = -3 \\
+    y & = \frac{1}{2\lambda} = \frac{1}{2\left(-\sfrac{1}{2}\right)} = -1
+  \end{align*}
+  Então o primeiro ponto é \(P_1 = \left(-3, -1\right)\)
+
+  Avaliando a função nos pontos
+  \begin{align*}
+    f(3, 1)   & = 3\times 3 + 1 = 10       \\
+    f(-3, -1) & = 3\times(-3) + (-1) = -10
+  \end{align*}
+  O valor mínimo da função é $-10$ e o valor máximo é $10$
+\end{multicols*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

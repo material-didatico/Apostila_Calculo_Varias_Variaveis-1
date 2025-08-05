@@ -1,0 +1,156 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 2 -- Turma 7}{04/06/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25}
+Considere que a equação
+\(
+  \ln(z) + xyz = y^2
+\)
+defina $z$ como função de $x$ e $y$, encontre \(\D{z}{x}\)
+\clearpagequestiononly
+
+\begin{answer}
+  \begin{align*}
+    \ln(z) + xyz                             & = y^2                   \\
+    \D{}{x} \left( \ln(z) + xyz \right)      & = \D{}{x}y^2            \\
+    \frac{1}{z} \D{z}{x} + yz + xy \D{z}{x}  & = 0                     \\
+    \left( \frac{1}{z} + xy \right) \D{z}{x} & = -yz                   \\
+    \frac{1+ xyz}{z} \; \D{z}{x}             & = -yz                   \\
+    \D{z}{x}                                 & = \frac{-yz^2}{1 + xyz}
+  \end{align*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25}
+Seja \( f(x, y) = \sqrt{4x + y^2} \),
+use a aproximação linear de $f$ no ponto $(1, 2)$
+para estimar $f(1,02; 1,98)$
+\clearpagequestiononly
+
+\begin{answer}
+  Calculando as derivadas
+  \begin{align*}
+    \D{f}{x} & = \frac{2}{\sqrt{4x + y^2}} \\
+    \D{f}{y} & = \frac{y}{\sqrt{4x + y^2}}
+  \end{align*}
+  Avaliando a função e as derivadas no ponto $(1, 2)$
+  \begin{align*}
+    f(1, 2)        & = \sqrt{4 + 4} = \sqrt{8} = 2\sqrt{2}      \\
+    \D{f}{x}(1, 2) & = \frac{2}{2\sqrt{2}} = \frac{1}{\sqrt{2}} \\
+    \D{f}{y}(1, 2) & = \frac{2}{2\sqrt{2}} = \frac{1}{\sqrt{2}}
+  \end{align*}
+  A aproximação linear é
+  \begin{align*}
+    L(x, y) & = f(x_0, y_0) + \D{f}{x}(x_0, y_0)(x-x_0) + \D{f}{y}(y-y_0) \\
+            & = f(1, 2) + \D{f}{x}(1, 2)(x - 1) + \D{f}{y}(1, 2)(y - 2)   \\
+            & = 2\sqrt{2} + \frac{1}{\sqrt{2}}(x - 1) + \frac{1}{\sqrt{2}}(y - 2) \\
+            & = \frac{4}{\sqrt{2}} + \frac{x + y - 3}{\sqrt{2}} \\
+            & = \frac{x + y + 1}{\sqrt{2}}
+  \end{align*}
+  \[
+    L(1,02; 1,98) = \frac{1,02 + 1,98 + 1}{\sqrt{2}}
+                  = \frac{4}{\sqrt{2}}
+                  = 2\sqrt{2}
+                  \approx 2.8284
+  \]
+  Comparando com o valor exato
+  \[
+    f(1,02; 1,98) = 2.8285
+  \]
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25}
+Seja \( f(x, y) = \ln(x^2 + y^2 + 1) \)
+\begin{enumerate}[label=\alph*)]
+  \item Calcule o gradiente de $f$
+  \item Calcule a derivada de $f$ no ponto $(1, 2)$ na direção do vetor $\vetor{-2}{1}$
+\end{enumerate}
+\clearpagequestiononly
+
+\begin{answer}
+  \begin{enumerate}[label=\alph*)]
+    \item
+    Vetor gradiente
+    \[
+    \nabla f(x, y)
+    = \Vetor{\D{f}{x}}{\D{f}{y}}
+    = \Vetor{\frac{2x}{x^2 + y^2 + 1}}{\frac{2y}{x^2 + y^2 + 1}}
+    \]
+    \item
+    Gradiente no ponto $(1, 2)$
+    \[
+    \nabla f(x, y) (1, 2)
+    = \Vetor{\frac{2}{6}}{\frac{4}{6}}
+    = \Vetor{\frac{1}{3}}{\frac{2}{3}}
+    \]
+    Calculando um vetor unitário na direção de $v$
+    \[
+    u
+    = \frac{v}{\norm{v}}
+    = \frac{1}{\sqrt{(-2)^2 + 1^2}} \vetor{-2}{1}
+    = \frac{1}{\sqrt{5}} \vetor{-2}{1}
+    \]
+    Derivada direcional
+    \begin{align*}
+      D_u f(1, 2)
+      & = \nabla f(1, 2) \cdot u                       \\
+      & = \Vetor{\frac{1}{3}}{\frac{2}{3}} \cdot \frac{1}{\sqrt{5}} \vetor{-2}{1} \\
+      & = \frac{1}{\sqrt{5}} \left( \frac{-2}{3} + \frac{2}{3} \right) \\
+      &  = 0
+    \end{align*}
+  \end{enumerate}
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{25}
+Seja \( f(x, y, z) = x^2 \sin(yz) \),
+calcule \( \DM{f}{y}{z} \) no ponto \( (1, \pi, 0) \).
+Efetue as derivadas na ordem especificada pela notação.
+\clearpagequestiononly
+
+\begin{answer}
+  \begin{align*}
+    \D{f}{z}
+    & = \D{}{z}\left(x^2 \sin(yz)\right) \\
+    & = x^2 \D{}{z}\left(\sin(yz)\right) \\
+    & = x^2 \cos(yz)\D{}{z}\left(yz\right) \\
+    & = x^2 \cos(yz) y \\
+    & = x^2 y \cos(yz)
+  \end{align*}
+  \begin{align*}
+    \DM{f}{y}{z}
+    & = \D{}{y}\left(x^2 y \cos(yz)\right) \\
+    & = x^2 \D{}{y}\left(y \cos(yz)\right) \\
+    & = x^2 \left[\D{y}{y}\cos(yz) + y\D{}{y}\cos(yz)\right] \\
+    & = x^2 \left[\cos(yz) - y\sin(yz)\D{}{y}(yz)\right] \\
+    & = x^2 \left[\cos(yz) - y\sin(yz)z\right] \\
+    & = x^2 \left[\cos(yz) - yz\sin(yz)\right]
+  \end{align*}
+  \begin{align*}
+    \DM{f}{y}{z}(1, \pi, 0)
+    & = x^2 \left[\cos(yz) - yz\sin(yz)\right] \evalat{(1, \pi, 0)}{} \\
+    & = 1^2 \left[\cos(\pi\times 0) - \pi\times 0\sin(\pi\times 0)\right] \\
+    & = 1 \left[\cos(0) - 0\right] \\
+    & = 1
+  \end{align*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+

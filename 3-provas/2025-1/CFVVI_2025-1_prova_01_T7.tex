@@ -1,0 +1,220 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 1 -- Turma 7}{05/05/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25}
+Encontre uma parametrização para o movimento de uma partícula que parte do
+ponto \((a, 0)\) e traça o círculo \(x^2+y^2=a^2\) duas vezes no sentido horário.
+\clearpagequestiononly
+
+\begin{answer}
+  Duas voltas no círculo de raio $a$ centrado na origem
+
+  Parametrização do círculo unitário centrado na origem no sentido anti-horário
+  \begin{align*}
+    x      & = \cos(\theta) \\
+    y      & = \sin(\theta) \\
+    \theta & \in [0, 2\pi]
+  \end{align*}
+  Parametrização do círculo de raio $a$ centrado na origem
+  \begin{align*}
+    x      & = a\cos(\theta) \\
+    y      & = a\sin(\theta) \\
+    \theta & \in [0, 2\pi]
+  \end{align*}
+  Realizando duas voltas no círculo
+  \begin{align*}
+    x      & = a\cos(\theta) \\
+    y      & = a\sin(\theta) \\
+    \theta & \in [0, 4\pi]
+  \end{align*}
+  Invertendo o sentido de rotação
+  \begin{align*}
+    x      & = a\cos(4\pi -\theta) = a\cos(-\theta) = \hpm a\cos(\hpm\theta) \\
+    y      & = a\sin(4\pi -\theta) = a\sin(-\theta) = -    a\sin(   -\theta) \\
+    \theta & \in [0, 4\pi]
+  \end{align*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25}
+Considerando a função
+\(
+  f(x,y) = \sqrt{4 - x - y^2}
+\)
+\begin{enumerate}[label=(\alph*)]
+  \item \ [10] Determine o domínio de $f$ e represente-o graficamente
+  \item \ [5]  Encontre a imagem de $f$
+  \item \ [10] Caracterize todas as curvas de nível de $f$ e esboce três delas
+\end{enumerate}
+\begin{questiononly}
+  \begin{multicols}{2}
+  Domínio
+  \vspace{-0.8\baselineskip}
+  \begin{center}
+    \includegraphics{axis_xy}
+  \end{center}
+  Curvas de nível
+  \vspace{-0.8\baselineskip}
+  \begin{center}
+    \includegraphics{axis_xy}
+  \end{center}
+  \end{multicols}
+  \clearpage
+\end{questiononly}
+
+\begin{answer}
+\begin{multicols}{2}
+  Domínio
+  \vspace{-0.8\baselineskip}
+  \begin{center}
+    \includegraphics{P1_T7_dominio}
+  \end{center}
+  Curvas de nível
+  \vspace{-0.8\baselineskip}
+  \begin{center}
+    \includegraphics{P1_T7_curvas_nivel}
+  \end{center}
+\end{multicols}
+
+\begin{enumerate}[label=(\alph*)]
+\item O domínio de $f$ é o conjunto de pontos \((x, y)\) tais que
+  \begin{gather*}
+    4 - x - y^2 \geq 0 \\
+    x \leq 4 - y^2
+  \end{gather*}
+  Portanto, o domínio é
+  \[
+    D_f = \{(x, y) \in \R^2 \st x \leq 4 - y^2\}
+  \]
+  Geometricamente, corresponde à região à esquerda da parábola \( x = 4 - y^2 \)
+
+\item Como \( 4 - x - y^2 \in [0, 4] \) no domínio, temos
+  \(
+    \text{Im}(f) = [0, 2]
+  \)
+
+\item As curvas de nível são determinadas por \( f(x,y) = c \) para \( c \in [0, 2] \):
+  \begin{gather*}
+    \sqrt{4 - x - y^2} = c \\
+    x = 4 - y^2 - c^2
+  \end{gather*}
+  isto é, parábolas voltadas para a esquerda
+  \begin{align*}
+    c & = 0 & x & = 4 - y^2 -0^2 = 4 - y^2 \\
+    c & = 1 & x & = 4 - y^2 -1^2 = 3 - y^2 \\
+    c & = 2 & x & = 4 - y^2 -2^2 =   - y^2
+  \end{align*}
+\end{enumerate}
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{30}
+Calcule o limite ou mostre que ele não existe
+\begin{enumerate}[label=(\alph*)]
+  \item \ [15] \(\lim_{(x,y) \to (0,0)} \frac{xy^2}{x^2 + y^4}\)
+  \item \ [15] \(\lim_{(x,y) \to (0,1)} \frac{\ln(y)\sin(x)}{x}\)
+\end{enumerate}
+\clearpagequestiononly
+
+\begin{answer}
+  \begin{enumerate}[label=(\alph*)]
+    \item Testando diferentes caminhos \\
+    Caminho \(x = y^2\)
+    \[
+    \lim_{(x,y) \to (0,0)} \frac{xy^2}{x^2 + y^4} \evalat{x = y^2}{}
+    = \lim_{y \to 0} \frac{y^2 y^2}{y^4 + y^4}
+    = \lim_{y \to 0} \frac{y^4}{2y^4}
+    = \lim_{y \to 0} \frac{1}{2}
+    = \frac{1}{2}
+    \]
+    Caminho \(x = 0\)
+    \[
+    \lim_{(x,y) \to (0,0)} \frac{xy^2}{x^2 + y^4} \evalat{x = 0}{}
+    = \lim_{y \to 0} \frac{0 \times y^2}{0 + y^4}
+    = \lim_{y \to 0} 0
+    = 0
+    \]
+    Como os limites são diferentes, o limite \textbf{não existe}
+    \item
+    \begin{align*}
+      \lim_{(x,y) \to (0,1)} \frac{\ln(y)\sin(x)}{x}
+      & = \left(\lim_{(x,y) \to (0,1)} \ln(y)\right)
+          \left(\lim_{(x,y) \to (0,1)} \frac{\sin(x)}{x}\right) \\
+      & = \ln(1)
+          \times 1 \\
+      & = 0
+    \end{align*}
+  \end{enumerate}
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{20}
+Encontre e esboce as curvas que representam o corte da superfície
+\(4x^2+y^2=16\)
+pelos planos
+\(z=0\) e
+\(y=0\)
+\begin{questiononly}
+  \begin{multicols}{2}
+    \(z=0\)
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{axis_xy}
+    \end{center}
+    \(y=0\)
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{axis_xz}
+    \end{center}
+  \end{multicols}
+\end{questiononly}
+
+\begin{answer}
+  \begin{multicols}{2}
+    \(z=0\)
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{T7_conica_z0}
+    \end{center}
+    \(y=0\)
+    \vspace{-0.8\baselineskip}
+    \begin{center}
+      \includegraphics{T7_conica_y0}
+    \end{center}
+  \end{multicols}
+
+  No plano \(z=0\) a equação \(4x^2+y^2=16\) permanece inalterada, porém,
+  agora representa a elipse
+  \[
+    \frac{x^2}{2^2} + \frac{y^2}{4^2} = 1
+  \]
+  que intercepta o eixo $x$ nos pontos \((2, 0)\) e \((-2, 0)\)
+  e o eixo $y$ nos pontos \((4, 0)\) e \((-4, 0)\)
+
+  No plano \(y=0\) a equação \(4x^2+y^2=16\) se reduz a
+  \begin{align*}
+    4x^2 + 0 & = 16    \\
+    x^2      & = 4     \\
+    \abs{x}  & = 2     \\
+    x        & = \pm 2
+  \end{align*}
+  que representa as retas verticais \(x=2\) e \(x=-2\)
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
