@@ -1,4 +1,5 @@
 #------------------------------------------------------------------------------#
+.NOTPARALLEL:
 
 TEX_FILES := $(shell find -maxdepth 1 -name '*.tex' -type f -exec basename {} \;)
 EXT_FILES := $(shell find -maxdepth 2 \

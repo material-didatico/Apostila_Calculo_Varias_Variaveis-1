@@ -1,4 +1,5 @@
 #------------------------------------------------------------------------------#
+.NOTPARALLEL:
 
 ASY_FILES=$(shell find -maxdepth 1 -name '*.asy')
 PDF_FILES=$(ASY_FILES:.asy=.pdf)
