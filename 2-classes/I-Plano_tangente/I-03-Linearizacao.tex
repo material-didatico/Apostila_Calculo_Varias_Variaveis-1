@@ -1,0 +1,100 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Linearização}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Aproximação Linear}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Plano Tangente a superfície $z=f(x, y)$}
+  Sabemos que o plano tangente à superfície \(z=f(x, y)\) \\
+  de uma função diferenciável $f$
+  no ponto \(\left(x_0, y_0, f(x_0, y_0)\right)\) é
+  \[
+    \emph{f_x(x_0, y_0)} (x-x_0) +
+    \emph{f_y(x_0, y_0)} (y-y_0) -
+    (z-z_0) = 0
+  \]
+
+  \pause
+  Rearranjando
+  \[
+    z
+    = \emph{f(x_0, y_0)}
+    + \emph{f_x(x_0, y_0)} (x-x_0)
+    + \emph{f_y(x_0, y_0)} (y-y_0)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Aproximação Linear}
+  Aproximação linear de uma função diferenciável de duas variáveis \\
+  em torno do ponto \((x_0, y_0)\)
+  \pause
+  \[
+    L(x, y)
+    = \emph{f(x_0, y_0)}
+    + \emph{f_x(x_0, y_0)} (x-x_0)
+    + \emph{f_y(x_0, y_0)} (y-y_0)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{I-03-Linearizacao-ex1}
+
+%------------------------------------------------------------------------------%
+\section{Erro na Aproximação Linear}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Erro na Aproximação Linear}
+  Se $f$ possui primeira e segunda derivadas parciais
+  \pause
+  sobre um conjunto aberto
+  contendo um retângulo $R$ centrado em \((x_0, y_0)\)
+  \pause
+  e se $M$ é qualquer
+  limitante superior para os valores de \(\abs{f_{xx}}\),  \(\abs{f_{yy}}\)
+  e \(\abs{f_{xy}}\) em $R$
+  \pause
+  \[
+    \emph{\abs{f_{xx}} \leq M} \qquad
+    \emph{\abs{f_{yy}} \leq M} \qquad
+    \emph{\abs{f_{xy}} \leq M} \qquad
+    \forall (x, y) \in R
+  \]
+  \pause
+  então o erro $E(x, y)$ na linearização satisfaz
+  \[
+    \emph{\abs{E(x, y)} \leq \frac{M}{2} \big(\abs{x-x_0}+\abs{y-y_0}\big)^2}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{I-03-Linearizacao-ex2}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.6
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 20, 22, 24, 26, 30, 34, 36, 42, 48
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

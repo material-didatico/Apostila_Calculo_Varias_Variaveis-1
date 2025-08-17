@@ -1,0 +1,149 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Fórmulas de De Moivre}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Potencias de Números Complexos}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Justificativa}
+  \begin{align*}
+    \onslide<+->{z^n}
+    \onslide<+->{& = zz\cdots z \\[5mm]}
+    \onslide<+->{& = \rho\rho\cdots\rho}
+    \onslide<+->{    \big[\cos(\varphi+\varphi+\cdots+\varphi)
+                       + i\sin(\varphi+\varphi+\cdots+\varphi)
+                     \big] \\[5mm]}
+    \onslide<+->{& = \rho^n\big[\cos(n\varphi) + i\sin(n\varphi)\big]}
+  \end{align*}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Primeira Fórmula de De Moivre}
+  Se
+  \[
+    z = \rho \big[\cos(\varphi) + i\sin(\varphi)\big]
+  \]
+  e $n$ um número natural
+
+  \pause
+  \vspace{\baselineskip}
+  Primeira Fórmula de De Moivre
+  \[
+    z^n = \rho^n \big[\cos(n\varphi) + i\sin(n\varphi)\big]
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{L-04-Formulas_Moivre-ex1}
+\include{L-04-Formulas_Moivre-ex2}
+
+%------------------------------------------------------------------------------%
+\section{Raízes de Números Complexos}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Justificativa}
+  Se
+  \(
+    z = \rho \big[\cos(\varphi) + i\sin(\varphi)\big]
+  \)
+  e $n>1$ é um número natural
+
+  \pause
+  \vspace{\baselineskip}
+  A raiz $n$-ésima de $z$ é um número
+  \[
+    u = r \big[\cos(\alpha) + i\sin(\alpha)\big]
+  \]
+  \pause
+  tal que
+  \[
+    u^n = z
+  \]
+  \[
+    \pause
+    r^n \big[\cos(n\alpha) + i\sin(n\alpha)\big]
+    = \rho \big[\cos(\varphi) + i\sin(\varphi)\big]
+  \]
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Justificativa}
+\begin{columns}
+\column{0.5\linewidth}
+  Encontrar $r$ e $\alpha$
+  \pause
+   tais que
+  \begin{gather*}
+    r^n = \rho \\
+    \cos(n\alpha) = \cos(\varphi) \\
+    \sin(n\alpha) = \sin(\varphi)
+  \end{gather*}
+  \pause
+  ou seja
+  \begin{gather*}
+    r = \sqrt[n]{\rho} \\
+    n\alpha = \varphi + 2k\pi
+  \end{gather*}
+  \column{0.5\linewidth}
+  \pause
+  \[
+    \alpha = \frac{\varphi}{n} + 2\pi\frac{k}{n}
+  \]
+  \pause
+  apenas
+  \[
+    k = 0, 1, 2, \dots, n-1
+  \]
+  fornecem soluções distintas
+\end{columns}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Segunda Formula de De Moire}
+  Se
+  \(
+    z = \rho \big[\cos(\varphi) + i\sin(\varphi)\big]
+  \)
+  e $n>1$ é um número natural
+
+  \vspace{\baselineskip}
+  As raízes $n$-ésimas de $z$ são
+  \[
+    u_k = \sqrt[n]{\rho}
+    \left[
+         \cos\left(\frac{\varphi}{n}+2\pi\frac{k}{n}\right)
+      + i\sin\left(\frac{\varphi}{n}+2\pi\frac{k}{n}\right)
+    \right]
+  \]
+  com \(k=0, 1, 2, \dots, n-1\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+\include{L-04-Formulas_Moivre-ex3}
+\include{L-04-Formulas_Moivre-ex4}
+\include{L-04-Formulas_Moivre-ex5}
+\include{L-04-Formulas_Moivre-ex6}
+\include{L-04-Formulas_Moivre-ex7}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

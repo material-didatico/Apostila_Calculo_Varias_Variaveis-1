@@ -1,0 +1,197 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Diferenciabilidade}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Diferenciabilidade}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Derivada Ordinária -- Uma variável}
+
+  Variação da função com relação à variável
+
+  \pause
+  \vspace{\baselineskip}
+  Derivada da função \(f\colon R\subset\R\to\R\) no ponto $x_0$
+
+  \[
+    \frac{df}{dx}\evalat{x=x_0}{}
+    =\; \lim_{h\to 0} \frac{f(x_0+h)-f(x_0)}{h}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diferenciabilidade em 1D}
+	Se a \emph{derivada de $f$ existe} em $x_0$ então $f$ é \emph{diferenciável} em $x_0$
+
+	\pause
+	\vspace{0.3\baselineskip}
+	Existe uma \emph{reta tangente} a $f$ no ponto \(\big(x_0, f(x_0)\big)\)
+
+	\pause
+	\vspace{0.3\baselineskip}
+	Podemos \emph{aproximar} a função pela reta em uma vizinhança de $x_0$
+  \[
+    \pause
+    \Delta x = x - x_0
+  \]
+  \[
+    \pause
+    \Delta y = f(x) - f(x_0)
+  \]
+  \[
+    \pause
+    \hphantom{\Delta y} = f'(x_0)\Delta x + \emph{\varepsilon \Delta x}
+  \]
+  \[
+    \pause
+    \emph{\varepsilon\to 0} \;\text{ quando }\; \emph{\Delta x \to 0}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição -- Derivada Parcial em $x$}
+  A derivada parcial, com relação a \emph{$x$},
+  da função \(f\colon R\subset\R^2\to\R\), \(f(x, y)\) \\
+  no ponto \((x, y) = (x_0, y_0)\)
+
+  \[
+    \frac{\partial f}{\partial x}(x_0, y_0)
+    =\; \lim_{h\to 0} \frac{f(\emph{x_0+h}, y_0)-f(\emph{x_0}, y_0)}{h}
+  \]
+
+  \vspace{\baselineskip}
+  Desde que o limite exista
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diferenciabilidade em $n$ Dimensões}
+	A existência das derivadas parciais \emph{não} garante diferenciabilidade
+
+	\pause
+	\vspace{\baselineskip}
+	Diferenciabilidade está associada a existência do \emph{plano tangente}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição: Diferenciabilidade em 2D}
+  Uma função \(z=f(x, y)\) é \emph{diferenciável} em \((x_0, y_0)\)
+
+  \pause
+  \vspace{0.5\baselineskip}
+  se \(\frac{df}{dx}(x_0, y_0)\) e \(\frac{df}{dy}(x_0, y_0)\) existem
+
+  \pause
+  \vspace{0.5\baselineskip}
+  e \(\Delta z = f(x_0+\Delta x, y_0+\Delta y)-f(x_o, y_0)\)
+
+  \pause
+  \vspace{0.5\baselineskip}
+  satisfaz
+  \[
+    \Delta z
+    \;=\; f_x(x_0, y_0) \Delta x
+    \;+\; f_y(x_0, y_0) \Delta y
+    \;+\; \emph{\varepsilon_1 \Delta x}
+    \;+\; \emph{\varepsilon_2 \Delta y}
+  \]
+  \[
+    \pause
+    \emph{\varepsilon_1, \varepsilon_2 \to 0}
+    \;\text{ quando }\;
+    \emph{\Delta x, \Delta y \to 0}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema do Incremento}
+	Suponha que as derivadas parciais de primeira ordem de $f(x, y)$ sejam
+	definidas em uma região aberta $R$, que contem o ponto $(x_0, y_0)$
+  \pause
+	e que \emph{$f_x$ e $f_y$ sejam contínuas em $(x_0, y_0)$},
+	\pause
+	então a variação
+	\[
+		\pause
+    \Delta z
+		= f\left(x_0+\Delta x, y_0 + \Delta y\right)
+		- f(x_0, y_0)
+	\]
+	\pause
+  com \(\left(x_0+\Delta x, y_0 + \Delta y\right)\in R\),
+	\pause
+  satisfaz
+	\[
+		\Delta z
+		= f_x(x_0, y_0) \Delta x
+		+ f_y(x_0, y_0) \Delta y
+		+ \emph{\varepsilon_1 \Delta x}
+		+ \emph{\varepsilon_2 \Delta y}
+	\]
+	\[
+		\pause
+    \emph{\varepsilon_1, \varepsilon_2 \to 0}
+    \;\text{ quando }\;
+    \emph{\Delta x, \Delta y \to 0}
+	\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Corolário do Teorema do Incremento}
+  Se \(\frac{df}{dx}(x_0, y_0)\) e \(\frac{df}{dy}(x_0, y_0)\) existem
+
+  \pause
+  \vspace{0.5\baselineskip}
+  e são \emph{contínuas} em uma região aberta $R$
+
+  \pause
+  \vspace{0.5\baselineskip}
+  então $f$ é \emph{diferenciável} em $R$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diferenciabilidade em 2D}
+  Dizemos que $f$ é \emph{diferenciável}
+  se ela é diferenciável em todos os
+  pontos do seu domínio
+
+  \pause
+  \vspace{0.5\baselineskip}
+  Nesse caso dizemos que seu gráfico é uma \emph{superfície lisa}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema Diferenciabilidade e Continuidade}
+    Se uma função $f(x, y)$ é \emph{diferenciável} em \((x_0, y_0)\)
+
+    \pause
+    \vspace{0.5\baselineskip}
+    então ela é contínua em \((x_0, y_0)\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.3
+  \begin{enumerate}
+    \item Estudar o texto da seção
+%    \item Resolver os exercícios:
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

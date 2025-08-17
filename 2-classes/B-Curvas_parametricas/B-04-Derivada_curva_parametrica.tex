@@ -1,0 +1,97 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Derivadas de Curvas Paramétricas}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Derivada Primeira}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Fórmula Paramétrica para \(dy/dx\)}
+  \pause
+  Se $y$ for uma função derivável de $x$ ao longo da curva paramétrica
+  \[
+    y = y(x)
+  \]
+
+  \pause
+  Não temos a expressão de $y$ em função de $x$
+
+  \pause
+  \vspace{0.2\baselineskip}
+  A \emph{regra da cadeia} fornece a relação
+  \[
+    \frac{dy}{dt} = \frac{dy}{dx} \, \frac{dx}{dt}
+  \]
+
+  \pause
+  Se \(\frac{dx}{dt}\neq 0\) temos \emph{
+  \(
+    \frac{dy}{dx} = \frac{\;\sfrac{dy}{dt}\;}{\sfrac{dx}{dt}}
+  \)}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{B-04-Derivada_curva_parametrica-ex1}
+\include{B-04-Derivada_curva_parametrica-ex2}
+
+%------------------------------------------------------------------------------%
+\section{Derivada Segunda}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Fórmula Paramétrica para \(d^2y/dx^2\)}
+  \begin{columns}
+    \column{0.5\linewidth}
+      Sabemos que
+      \[
+        \frac{dy}{dx} = \frac{\;\dfrac{dy}{dt}\;}{\dfrac{dx}{dt}}
+      \]
+
+      \pause
+      Substituindo $y$ por $y'$ temos
+      \[
+        \frac{d\emph{y'}}{dx} = \frac{\;\dfrac{d\emph{y'}}{dt}\;}{\dfrac{dx}{dt}}
+      \]
+    \column{0.5\linewidth}
+      \pause
+      \emph{
+      \[
+        \frac{d^2y}{dx^2}
+        \pause
+        = \frac{d y'}{dx}
+        \pause
+        = \frac{\;\dfrac{dy'}{dt}\;}{\dfrac{dx}{dt}}
+      \]}
+  \end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{B-04-Derivada_curva_parametrica-ex3}
+\include{B-04-Derivada_curva_parametrica-ex4}
+
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 11.2
+  \begin{enumerate}
+    \item Estudar todo o texto da seção
+    \item Resolver os exercícios: 2, 8, 12, 16, 18, 20
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

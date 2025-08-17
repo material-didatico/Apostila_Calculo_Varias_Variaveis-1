@@ -1,0 +1,154 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Derivadas Parciais de Ordem Superior}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Derivadas Parciais de Segunda Ordem}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Conceito}
+  Derivada de uma derivada de uma função
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Notações}
+\begin{columns}
+\column{0.5\linewidth}
+  Derivadas de segunda ordem
+  \[
+    \frac{\partial^2 f}{\partial x^2} \qquad\qquad\qquad
+    f_{xx}
+  \]
+
+  \vspace{\baselineskip}
+  \[
+    \frac{\partial^2 f}{\partial y^2} \qquad\qquad\qquad
+    f_{yy}
+  \]
+\column{0.5\linewidth}
+  \pause
+  Derivadas de segunda ordem mistas
+  \[
+    \frac{\partial^2 f}{\partial x \partial y} \qquad\qquad\qquad
+    f_{yx}
+  \]
+
+  \vspace{\baselineskip}
+  \[
+    \frac{\partial^2 f}{\partial y \partial x} \qquad\qquad\qquad
+    f_{xy}
+  \]
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Atenção Para a Ordem das Derivadas Mistas}
+  \[
+    \frac{\partial^2 f}{{\color{magenta} \partial x} {\color{blue} \partial y}}
+    = \frac{\partial}{{\color{magenta} \partial x}}
+      \left(\,\frac{\partial f}{{\color{blue} \partial y}}\,\right)
+  \]
+
+  \vspace{\baselineskip}
+  \[
+    f_{{\color{blue} x}{\color{magenta} y}} = \big(\,f_{\color{blue} x}\,\big)_{\color{magenta} y}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{F-03-Derivadas_parciais_ordem_superior-ex1}
+\include{F-03-Derivadas_parciais_ordem_superior-ex2}
+
+%------------------------------------------------------------------------------%
+\section{Teorema das Derivadas Mistas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema das Derivadas Mistas}
+  Se a função \(f(x, y)\) e suas derivadas parciais
+  \, $f_\emph{x}$,\, $f_\emph{y}$,\, $f_{\emph{xy}}$\, e \,$f_{\emph{yx}}$
+
+  \pause
+  forem definidas em uma vizinhança do ponto \((a, b)\)
+
+  \pause
+  e \emph{todas forem contínuas}, então
+
+  \pause
+  \[
+    \DM{f}{x}{y} = \DM{f}{y}{x}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{F-03-Derivadas_parciais_ordem_superior-ex3}
+
+%------------------------------------------------------------------------------%
+\section{Derivadas Parciais de Ordem Superior}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Notações}
+  \begin{columns}
+    \column{0.5\linewidth}
+    Derivadas terceiras
+    \[
+      \frac{\partial^3 f}{\partial x^3} \qquad\qquad\qquad
+      f_{xxx}
+    \]
+
+    \vspace{\baselineskip}
+    \[
+      \frac{\partial^3 f}{\partial y\partial x^2} \qquad\qquad\qquad
+      f_{xxy}
+    \]
+    \column{0.5\linewidth}
+    Derivadas quartas
+    \[
+      \frac{\partial^4 f}{\partial x^4} \qquad\qquad\qquad
+      f_{xxx}
+    \]
+
+    \vspace{\baselineskip}
+    \[
+      \frac{\partial^4 f}{\partial y^2 \partial x^2} \qquad\qquad\qquad
+      f_{xxyy}
+    \]
+  \end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Ordem de Derivação}
+  Desde que todas as derivadas envolvidas sejam contínuas
+
+  \pause
+  a ordem de derivação é irrelevante
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{F-03-Derivadas_parciais_ordem_superior-ex4}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.3
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 43-45, 51-54, 57, 61
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

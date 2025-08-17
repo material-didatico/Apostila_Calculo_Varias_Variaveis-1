@@ -1,0 +1,147 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Derivada Direcional e Vetor Gradiente}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Derivada Direcional}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Derivada Direcional}{derivada_direcional}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição}
+  A derivada de $f$ em $(x_0, y_0)$
+  \pause
+  na direção do vetor unitário
+  \[
+    u
+    = u_1 \veci + u_2 \vecj
+    = \vetor{u_1}{u_2}
+    \qquad
+    \qquad
+    \norm{u} = 1
+  \]
+  \pause
+  é o número
+  \[
+    D_u f(x_0, y_0)
+    = \lim_{h\to 0} \frac{\;f( x_0 + hu_1, y_0 + hu_2)-f(x_0, y_0)\;}{h}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Interpretação da Derivada Direcional}{derivada_direcional_interpretacao}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Interpretação da Derivada Direcional}
+  A derivada direcional é a taxa de variação da função $f$ na direção do vetor $u$
+
+  \pause
+  \vspace{\baselineskip}
+  Se \(u=\veci=\vetor{1}{0}\)
+  \pause
+  então
+  \(
+    D_u f = \D{f}{x}
+  \)
+
+  \pause
+  \vspace{\baselineskip}
+  Se \(u=\vecj=\vetor{0}{1}\)
+  \pause
+  então
+  \(
+    D_u f = \D{f}{y}
+  \)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{H-01-Derivada_direcional_gradientes-ex1}
+
+%------------------------------------------------------------------------------%
+\section{Vetor Gradiente}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Vetor Gradiente}
+  O \emph{vetor gradiente} de $f(x, y)$ é
+
+  \[
+    \pause
+    \nabla f
+    \pause
+    \;=\; \D{f}{x}\veci \,+\, \D{f}{y}\vecj
+    \pause
+    \;=\; \left(\begin{array}{c}
+            \displaystyle\D{f}{x} \\[5mm]
+            \displaystyle\D{f}{y}
+          \end{array}\right)
+  \]
+
+  \pause
+  O símbolo \(\nabla\) é chamado nabla
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{H-01-Derivada_direcional_gradientes-ex2}
+
+%------------------------------------------------------------------------------%
+\section{Calculando a Derivada Direcional}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Calculando a Derivada Direcional}
+  Considere a reta que passa por \((x_0, y_0)\)
+  \pause
+  na direção de \(u=u_1\veci+u_2\vecj\)
+  \pause
+  \[
+    x = x_0 + su_1 \qquad
+    y = y_0 + su_2
+  \]
+
+  Restringindo $f$ à reta
+  \[
+    f(s) = f\big(x(s), y(s)\big)
+  \]
+\end{frame}
+
+\begin{frame}{Calculando a Derivada Direcional}
+\begin{align*}
+  \onslide<+->{D_u f }
+  \onslide<+->{& = \frac{df}{ds}                                 \\[2mm]}
+  \onslide<+->{& = \D{f}{x}\frac{dx}{ds} + \D{f}{y}\frac{dy}{ds} \\[2mm]}
+  \onslide<+->{& = \D{f}{x}u_1 + \D{f}{y}u_2                     \\[2mm]}
+  \onslide<+->{& = \left(\begin{array}{c} F_x \\ F_y \end{array}\right)
+                   \cdot \vetor{u_1}{u_2}                        \\[2mm]}
+  \onslide<+->{& = \emph{\nabla f \cdot u}}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{H-01-Derivada_direcional_gradientes-ex3}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.5
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 1-3, 7-9, 11-13
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

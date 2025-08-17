@@ -1,0 +1,73 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Vetor Tangente}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Vetor Tangente}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Curva Paramétrica}
+  $x$ e $y$ são dados como funções
+  \[
+    x = f(t)     \qquad
+    y = g(t)     \qquad
+    t \in I
+  \]
+
+  \pause
+  Vetorialmente escrevemos
+  \[
+    \begin{bmatrix}  x    \\ y    \end{bmatrix} =
+    \begin{bmatrix}  f(t) \\ g(t) \end{bmatrix}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Vetor Tangente}
+  Se $f$ e $g$ forem deriváveis em $t$, o \emph{vetor tangente} é
+  \pause
+  \[
+    \frac{d}{dt}\begin{bmatrix}  x    \\ y    \end{bmatrix} =
+    \pause
+    \begin{bmatrix}  x    \\ y    \end{bmatrix}' =
+    \pause
+    \begin{bmatrix} \;\dfrac{df}{dt}\;\null \\[5mm] \;\dfrac{dg}{dt}\;\null \end{bmatrix} =
+    \pause
+    \begin{bmatrix} \,f'(t)\,\null \\[2mm] \,g'(t)\,\null \end{bmatrix}
+  \]
+\end{frame}
+
+\framedgraphic{Vetor Tangente}{Vetor_tangente}{}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+\include{B-03-Vetor_tangente-ex}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 11.2
+  \begin{enumerate}
+    \item Estudar todo o texto da seção
+    \item Calcule o vetor tangente das funções dos exercícios: 2, 8, 12, 16, 18, 20\\
+          (Ignore o enunciado original dos exercícios)
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

@@ -1,0 +1,158 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Curvas Paramétricas}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Introdução}
+
+\framedgraphic{Trajetória}{trajeto_maps}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Curvas Paramétricas}
+  Funções de $\R$ em $\R^n$
+  \[
+    (x, y) = \big( f(t), g(t) \big)
+  \]
+  ou
+  \[
+  \left[\begin{array}{>{\,}c<{\,}}
+    x \\[1mm]
+    y
+  \end{array}\right]
+  =
+  \left[\begin{array}{>{\,}c<{\,}}
+    f(t) \\[1mm]
+    g(t)
+  \end{array}\right]
+  \]
+
+  \pause
+  \vspace{\baselineskip}
+  Podemos pensar na variável como o tempo e a curva como uma trajetória
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Curvas Paramétricas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição em 2D}
+  Se $x$ e $y$ são dados como funções
+  \[
+    x = f(t)
+    \qquad
+    y = g(t)
+  \]
+  sobre um intervalo $I$ de valores de $t$,
+  \pause
+  então o conjunto de pontos
+  \[
+    (x, y) = \big( f(t), g(t)\big)
+  \]
+  \pause
+  forma uma \emph{curva paramétrica} em $\R^2$
+
+  \pause
+  As equações são as \emph{equações paramétricas} da curva
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição em 3D}
+  Se $x$, $y$ e $z$ são dados como funções
+  \[
+    x = f(t)
+    \qquad
+    y = g(t)
+    \qquad
+    z = h(t)
+  \]
+  sobre um intervalo $I$ de valores de $t$,
+  então o conjunto de pontos
+  \[
+    (x, y, z) = \big( f(t), g(t), h(t) \big)
+  \]
+  forma uma \emph{curva paramétrica} em $\R^3$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição Geral}
+  Se $x_i$, $i=1, \dots, n$ são as coordenadas no espaço $\R^n$
+  \[
+    x_i = f_i(t)
+  \]
+  sobre um intervalo $I$ de valores de $t$,
+  então o conjunto de pontos
+  \[
+    (x_1, x_2, \dots, x_n) = \big( f_1(t), f_2(t), \dots, f_n(t)\big)
+  \]
+  forma uma \emph{curva paramétrica} em $\R^n$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Nomenclatura}
+  \emph{$t$} \quad é o parâmetro da curva
+
+  \pause
+  \emph{$I$} \quad intervalo do parâmetro
+
+  \pause
+  \vspace{\baselineskip}
+  Se $I$ é um intervalo fechado \emph{\(a\leq t \leq b\)}
+  \pause
+  \begin{description}[<+->]
+    \item[\(\big(f(a), g(a)\big)\)] é o ponto inicial
+    \item[\(\big(f(b), g(b)\big)\)] é o ponto final
+  \end{description}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Notações}
+  \[
+    (x, y)
+    = \big(x(t), y(t)\big)
+    = \big(f(t), g(t)\big)
+  \]
+
+  \pause
+  \[
+      \begin{pmatrix}  x    \\ y    \end{pmatrix}
+    = \begin{pmatrix}  x(t) \\ y(t) \end{pmatrix}
+    = \begin{pmatrix}  f(t) \\ g(t) \end{pmatrix}
+  \]
+
+  \pause
+  \[
+    (x_1, x_2, \dots, x_n) = \big( f_1(t), f_2(t), \dots, f_n(t)\big)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+\include{B-02-Curvas_parametricas-ex}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 11.1
+  \begin{enumerate}
+    \item Estudar todo o texto da seção
+    \item Resolver os exercícios: 3, 5, 11, 19, 21, 23, 31
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
