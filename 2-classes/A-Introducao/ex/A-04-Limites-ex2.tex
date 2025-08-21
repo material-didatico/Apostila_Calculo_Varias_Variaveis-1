@@ -1,0 +1,44 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Calcule o limite
+\(
+  \lim_{x \to \infty} \frac{3x^2 + 5x}{2x^2 - x}
+\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Não podemos substituir diretamente, mas sabemos que
+  \[
+    \lim_{x \to \infty} 3x^2 + 5x = \infty
+  \]
+  \[
+    \lim_{x \to \infty} 2x^2 - x = \infty
+  \]
+  portanto temos uma indeterminação \(\sfrac{\infty}{\infty}\)
+  e não podemos dizer nada sobre o limite
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Dividindo o numerador e o denominador pelo termo de maior grau, $x^2$
+  \[
+    f(x)
+    \;=\; \frac{3x^2 + 5x}{2x^2 - x}
+    \;=\; \frac{\left(3x^2 + 5x\right)\sfrac{}{x^2}}{\left(2x^2 - x\right)\sfrac{}{x^2}}
+    \;=\; \frac{3 + \sfrac{5}{x}}{2 - \sfrac{1}{x}}
+  \]
+  Sabemos que
+  \(
+    \lim_{x\to\infty} \frac{1}{x} = 0
+  \),
+  então
+  \[
+    \lim_{x\to\infty} f(x)
+    \;=\; \lim_{x\to\infty} \frac{3 + \sfrac{5}{x}}{2 - \sfrac{1}{x}}
+    \;=\; \frac{3 + 0}{2 - 0}
+    \;=\; \frac{3}{2}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
