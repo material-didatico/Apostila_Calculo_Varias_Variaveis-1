@@ -27,7 +27,12 @@ DEPENDENCIES := $(EXT_FILES) $(wildcard ./figs/*) $(ASY_DONE)
 
 #------------------------------------------------------------------------------#
 
-all: $(PRES_PDF_FILES) $(HAND_PDF_FILES)
+.PHONY: all pres hand
+all: pres hand
+
+pres: $(PRES_PDF_FILES)
+
+hand: $(HAND_PDF_FILES)
 
 $(PRES)_%.pdf: %.tex $(DEPENDENCIES)
 	@ echo Compiling $@
