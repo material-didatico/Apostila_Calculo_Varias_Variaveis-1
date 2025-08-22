@@ -18,10 +18,10 @@ pen grid_pen = gray(0.9) + linewidth(1pt);
 //-----------------------------------------------------------------------------
 
 pen[] pens = {
-  blue    + linewidth(1pt),
-  magenta + linewidth(1pt),
-  orange  + linewidth(1pt),
-  red     + linewidth(1pt)
+  blue    + linewidth(1.5pt),
+  magenta + linewidth(1.5pt),
+  orange  + linewidth(1.5pt),
+  red     + linewidth(1.5pt)
 };
 
 

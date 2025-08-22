@@ -1,0 +1,112 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+\begin{columns}
+\column{0.5\linewidth}
+  Calcule o vetor tangente à curva
+  \[
+  \begin{cases}
+    x & \!\!\!\!= e^{2t} \cos(\pi t) \\
+    y & \!\!\!\!= e^t \sin(\pi t)
+  \end{cases}
+  \]
+  em \(t=\frac{3}{4}\)
+\column{0.5\linewidth}
+  \pause
+  ~\\[5mm]
+  \includegraphics{B_03_exemplo_4_curva}
+\end{columns}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Derivada da coordenada $x$}
+  \begin{align*}
+    \onslide<+->{x'(t) & = \frac{dx}{dt}       \\}
+    \onslide<+->{      & = \frac{d}{dt}\left(e^{2t} \cos(\pi t)\right) } \\
+    \onslide<+->{      & = \frac{d}{dt}\left(e^{2t}\right) \cos(\pi t)
+      + e^{2t} \frac{d}{dt}\left(\cos(\pi t)\right) } \\
+    \onslide<+->{      & = e^{2t}\frac{d}{dt}\left(2t\right) \cos(\pi t)
+      - e^{2t} \sin(\pi t)\frac{d}{dt}\left(\pi t\right) } \\
+    \onslide<+->{      & = 2 e^{2t} \cos(\pi t) - \pi e^{2t} \sin(\pi t) }
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Derivada da coordenada $y$}
+  \begin{align*}
+    \onslide<+->{y'(t) & = \frac{dy}{dt}       \\[2mm]}
+    \onslide<+->{      & = \frac{d}{dt}\left(e^t \sin(\pi t)\right)} \\
+    \onslide<+->{      & = \frac{d}{dt}\left(e^t\right) \sin(\pi t)
+      + e^t \frac{d}{dt}\left(\sin(\pi t)\right)} \\
+    \onslide<+->{      & = e^t \sin(\pi t)
+      + e^t \cos(\pi t)\frac{d}{dt}\left(\pi t\right)} \\
+    \onslide<+->{      & = e^t \sin(\pi t)+ \pi e^t \cos(\pi t)}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Avaliando a derivada de $x(t)$ em \(t=\sfrac{3}{4}\)}
+  \begin{align*}
+    \onslide<+->{x'\left(\frac{3}{4}\right)}
+    \onslide<+->{& = \left[ 2 e^{2t} \cos(\pi t) - \pi e^{2t} \sin(\pi t)\right]
+                     \evalat{t=\sfrac{3}{4}}{}}
+    \\
+    \onslide<+->{& =   2 e^{2\frac{3}{4}} \cos\left(\pi \frac{3}{4}\right)
+                   - \pi e^{2\frac{3}{4}} \sin\left(\pi \frac{3}{4}\right)}
+    \\
+    \onslide<+->{& =   2 e^{\sfrac{3}{2}} \cos\left(\frac{3\pi}{4}\right)
+                   - \pi e^{\sfrac{3}{2}} \sin\left(\frac{3\pi}{4}\right)}
+    \\
+    \onslide<+->{& =   2 e^{\sfrac{3}{2}} \left(-\frac{\sqrt{2}}{2}\right)
+                   - \pi e^{\sfrac{3}{2}} \frac{\sqrt{2}}{2}}
+    \\
+    \onslide<+->{& = - \sqrt{2} \left(1 + \frac{\pi}{2} \right) e^{\sfrac{3}{2}}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Avaliando a derivada de $y(t)$ em \(t=\sfrac{3}{4}\)}
+  \begin{align*}
+    \onslide<+->{y'\left(\frac{3}{4}\right)}
+    \onslide<+->{& = \big(e^t \sin(\pi t)+ \pi e^t \cos(\pi t)\big)
+      \evalat{t=\sfrac{3}{4}}{}}
+    \\
+    \onslide<+->{& =     e^{\sfrac{3}{4}} \sin\left(\frac{3\pi}{4}\right)
+                   + \pi e^{\sfrac{3}{4}} \cos\left(\frac{3\pi}{4}\right)}
+    \\
+    \onslide<+->{& =     \frac{e^{\sfrac{3}{4}}}{\sqrt{2}}
+                   - \pi \frac{e^{\sfrac{3}{4}}}{\sqrt{2}}}
+    \\
+    \onslide<+->{& = \frac{1 - \pi}{\sqrt{2}} e^{\sfrac{3}{4}}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  O vetor tangente no ponto \(t=\sfrac{3}{4}\) é
+  \[
+    \frac{d}{dt}\left(\!
+    \begin{array}{c}
+      x \\ y
+    \end{array}
+    \!\right)
+    =
+    \left(
+    \begin{array}{c}
+      - \sqrt{2} \left(1 + \dfrac{\pi}{2} \right) e^{\sfrac{3}{2}} \\[9mm]
+        \dfrac{1 - \pi}{\sqrt{2}} e^{\sfrac{3}{4}}
+    \end{array}
+    \right)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \centering
+  \includegraphics{B_03_exemplo_4_vetor}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

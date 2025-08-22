@@ -17,25 +17,40 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Curvas Paramétricas}
-  Funções de $\R$ em $\R^n$
+  Função de $\R$ em $\R^n$
   \[
-    (x, y) = \big( f(t), g(t) \big)
+    \pause
+    \gamma(t)
+    = (x, y)
+    \pause
+    = \big( f(t), g(t) \big)
   \]
+  \pause
   ou
   \[
-  \left[\begin{array}{>{\,}c<{\,}}
-    x \\[1mm]
-    y
-  \end{array}\right]
-  =
-  \left[\begin{array}{>{\,}c<{\,}}
-    f(t) \\[1mm]
-    g(t)
-  \end{array}\right]
+    \pause
+    \gamma(t) =
+    \left[\begin{array}{>{\,}c<{\,}}
+      x \\[1mm]
+      y
+    \end{array}\right]
+    \pause
+    =
+    \left[\begin{array}{>{\,}c<{\,}}
+      f(t) \\[1mm]
+      g(t)
+    \end{array}\right]
+  \]
+  \pause
+  ou
+  \[
+    \gamma(t)
+    = x\veci + y\vecj
+    \pause
+    = f(t)\veci + g(t)\vecj
   \]
 
   \pause
-  \vspace{\baselineskip}
   Podemos pensar na variável como o tempo e a curva como uma trajetória
 \end{frame}
 
@@ -44,23 +59,24 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Definição em 2D}
-  Se $x$ e $y$ são dados como funções
+  Se $x$ e $y$
+  \pause
+  são dados como funções
   \[
+    \pause
     x = f(t)
     \qquad
     y = g(t)
   \]
+  \pause
   sobre um intervalo $I$ de valores de $t$,
   \pause
   então o conjunto de pontos
   \[
-    (x, y) = \big( f(t), g(t)\big)
+    (x,\; y) = \big( f(t),\; g(t)\big)
   \]
   \pause
   forma uma \emph{curva paramétrica} em $\R^2$
-
-  \pause
-  As equações são as \emph{equações paramétricas} da curva
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -76,7 +92,7 @@
   sobre um intervalo $I$ de valores de $t$,
   então o conjunto de pontos
   \[
-    (x, y, z) = \big( f(t), g(t), h(t) \big)
+    (x,\; y,\; z) = \big( f(t),\; g(t),\; h(t) \big)
   \]
   forma uma \emph{curva paramétrica} em $\R^3$
 \end{frame}
@@ -90,20 +106,24 @@
   sobre um intervalo $I$ de valores de $t$,
   então o conjunto de pontos
   \[
-    (x_1, x_2, \dots, x_n) = \big( f_1(t), f_2(t), \dots, f_n(t)\big)
+    (x_1,\; x_2,\; \dots,\; x_n) = \big( f_1(t),\; f_2(t),\; \dots,\; f_n(t)\big)
   \]
   forma uma \emph{curva paramétrica} em $\R^n$
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Nomenclatura}
+  As equações são as \emph{equações paramétricas} da curva
+
+  \pause
+  \medskip
   \emph{$t$} \quad é o parâmetro da curva
 
   \pause
   \emph{$I$} \quad intervalo do parâmetro
 
   \pause
-  \vspace{\baselineskip}
+  \medskip
   Se $I$ é um intervalo fechado \emph{\(a\leq t \leq b\)}
   \pause
   \begin{description}[<+->]
@@ -136,7 +156,15 @@
 %------------------------------------------------------------------------------%
 \section{Exemplos}
 
-\include{B-02-Curvas_parametricas-ex}
+\include{ex/B-02-Curvas_parametricas-ex1}
+\include{ex/B-02-Curvas_parametricas-ex2}
+\include{ex/B-02-Curvas_parametricas-ex3}
+\include{ex/B-02-Curvas_parametricas-ex4}
+\include{ex/B-02-Curvas_parametricas-ex5}
+\include{ex/B-02-Curvas_parametricas-ex6}
+\include{ex/B-02-Curvas_parametricas-ex7}
+\include{ex/B-02-Curvas_parametricas-ex8}
+\include{ex/B-02-Curvas_parametricas-ex9}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}
