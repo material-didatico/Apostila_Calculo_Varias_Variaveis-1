@@ -24,6 +24,7 @@ docs_classes = docs / 'classes'
 docs_exams   = docs / 'exams'
 index        = docs / "index.md"
 
+tab = 4*' '
 
 #------------------------------------------------------------------------------#
 def cp_pdf(src: str, dest: str) -> None:
@@ -55,7 +56,7 @@ def mk_docs() -> None:
 #------------------------------------------------------------------------------#
 def write_pdf_link(f, file: Path, prefix: str = ''):
     text = file.name.replace('_', ' ').replace('-', ' ').replace('.pdf', '')
-    f.write(f'{prefix}[{text} [PDF]]({file})\n')
+    f.write(f'{prefix}[[PDF]]({file}) {text}\n')
 
 
 #------------------------------------------------------------------------------#
@@ -65,21 +66,23 @@ def mk_index() -> None:
         f.write(f"# {title}\n\nMateriais para a disciplina {discipline}\n")
 
         if add_book:
-            f.write("\n\n## Apostila\n\n")
+            f.write("\n??? Apostila\n")
             for file in sorted(docs.glob("*.pdf")):
-                write_pdf_link(f, file.relative_to(docs))
+                write_pdf_link(f, file.relative_to(docs), tab)
 
-        f.write('\n\n## Apresentações das Aulas\n\n')
+        f.write('\n??? "Apresentações das aulas"\n')
         for folder in sorted(docs_classes.glob("*")):
-            f.write(f"\n### {folder.name.replace('_', ' ')}\n\n")
+            name = folder.name.replace('_', ' ').replace('-', ' ')
+            f.write(f'\n{tab}??? abstract "{name}"\n')
             for file in sorted(folder.glob("*.pdf")):
-                write_pdf_link(f, file.relative_to(docs), '- ')
+                write_pdf_link(f, file.relative_to(docs), f'{tab}{tab}- ')
 
-        f.write('\n\n## Avaliações anteriores\n')
+        f.write('\n??? "Avaliações anteriores"\n')
         for folder in sorted(docs_exams.glob("*")):
-            f.write(f"\n### {folder.name.replace('_', ' ')}\n\n")
+            name = folder.name.replace('_', ' ').replace('-', ' ')
+            f.write(f'\n{tab}??? abstract "{name}"\n')
             for file in sorted(folder.glob("*.pdf")):
-                write_pdf_link(f, file.relative_to(docs), '- ')
+                write_pdf_link(f, file.relative_to(docs), f'{tab}{tab}- ')
 
 
 #------------------------------------------------------------------------------#

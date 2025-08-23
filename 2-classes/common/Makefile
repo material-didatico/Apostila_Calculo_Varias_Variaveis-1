@@ -27,7 +27,12 @@ DEPENDENCIES := $(EXT_FILES) $(wildcard ./figs/*) $(ASY_DONE)
 
 #------------------------------------------------------------------------------#
 
-all: $(PRES_PDF_FILES) $(HAND_PDF_FILES)
+.PHONY: all pres hand
+all: pres hand
+
+pres: $(PRES_PDF_FILES)
+
+hand: $(HAND_PDF_FILES)
 
 $(PRES)_%.pdf: %.tex $(DEPENDENCIES)
 	@ echo Compiling $@
@@ -46,6 +51,7 @@ $(ASY_DONE):
 clean:
 	@ echo Cleaning $(notdir $(CURDIR))
 	@ $(MAKE) asy clean
+	@ rm -f ./ex/*.aux
 	@ rm -f *~ .*~ *.bak                                    \
           *.aux *.bbl *.blg *.lof *.log *.lot *.out *.toc \
           *.bcf *.run.xml *.snm *.nav *.vrb .*.sw?        \

@@ -1,0 +1,129 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+\begin{columns}
+\column{0.5\linewidth}
+  Encontre o vetor tangente ao astroide
+  \[
+    x = \cos^3(t) \qquad
+  \]
+
+  \[
+    y = \sin^3(t) \qquad
+  \]
+
+  \[
+    0 \leq t \leq 2\pi
+  \]
+
+  no ponto \(t=\frac{\pi}{6}\)
+\column{0.5\linewidth}
+  \pause
+  ~\\[5mm]
+  \includegraphics{B_03_exemplo_5_curva}
+\end{columns}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Avaliando das derivadas das componentes
+
+  \pause
+  \medskip
+	\[
+		\frac{dx}{dt}
+		\pause
+		\;=\; \frac{d}{dt}\cos^3(t)
+		\pause
+		\;=\; 3\cos^2(t)\frac{d}{dt}\cos(t)
+		\pause
+		\;=\; -3\cos^2(t)\sin(t)
+	\]
+
+	\pause
+  \medskip
+	\[
+		\frac{dy}{dt}
+		\pause
+		\;=\; \frac{d}{dt}\sin^3(t)
+		\pause
+		\;=\; 3\sin^2(t)\frac{d}{dt}\sin(t)
+		\pause
+		\;=\; 3\sin^2(t)\cos(t)
+	\]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Avaliando a derivada de $x$ no ponto \(t=\frac{\pi}{6}\)
+  \pause
+  \[
+    \frac{dx}{dt}\left(\frac{\pi}{6}\right)
+    \pause
+    \;=\; \left[ -3\cos^2(t)\sin(t)\right] \evalat{\frac{\pi}{6}}{}
+    \pause
+    \;=\; -3\cos^2\left(\frac{\pi}{6}\right)\sin\left(\frac{\pi}{6}\right)
+  \]
+  \[
+    \pause
+    \hphantom{\frac{dx}{dt}\left(\frac{\pi}{6}\right)}
+    \;=\; -3\left(\frac{\sqrt{3}}{2}\right)^2 \left(\frac{1}{2}\right)
+    \pause
+    \;=\; -3\; \frac{3}{4}\; \frac{1}{2}
+    \pause
+    \;=\; \frac{-9}{8}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Avaliando a derivada de $y$ no ponto \(t=\frac{\pi}{6}\)
+  \pause
+  \[
+    \frac{dy}{dt}\left(\frac{\pi}{6}\right)
+    \pause
+    \;=\; \left[ 3\sin^2(t)\cos(t)\right] \evalat{\frac{\pi}{6}}{}
+    \pause
+    \;=\; 3\sin^2\left(\frac{\pi}{6}\right)\cos\left(\frac{\pi}{6}\right)
+  \]
+  \[
+    \pause
+    \hphantom{\frac{dy}{dt}\left(\frac{\pi}{6}\right)}
+    \;=\; 3\left(\frac{1}{2}\right)^2 \left(\frac{\sqrt{3}}{2}\right)
+    \pause
+    \;=\; 3 \; \frac{1}{4} \; \frac{\sqrt{3}}{2}
+    \pause
+    \;=\; \frac{3\sqrt{3}}{8}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Função vetor tangente
+  \pause
+  \[
+    V(t)
+    \pause
+    \;=\; \frac{d}{dt}\vetor{x}{y}
+    \pause
+    \;=\; \Vetor{-3\cos^2(t)\sin(t)}{\hpm 3\sin^2(t)\cos(t)}
+  \]
+
+  \pause
+  No ponto \(t=\frac{\pi}{6}\)
+  \[
+    \pause
+    V\left(\frac{\pi}{6}\right)
+    \pause
+    \;=\; \Vetor{\frac{-9}{8}}{\frac{3\sqrt{3}}{8}}
+    \pause
+    \;=\; \frac{3}{8} \vetor{-3}{\sqrt{3}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \centering
+  \includegraphics{B_03_exemplo_5_vetor}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

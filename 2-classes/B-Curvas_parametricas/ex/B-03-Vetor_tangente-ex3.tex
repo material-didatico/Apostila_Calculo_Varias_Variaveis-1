@@ -1,0 +1,81 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+\begin{columns}
+\column{0.5\linewidth}
+  Calcule o vetor tangente à curva
+  \[
+    x = t\cos(t)
+  \]
+
+  \[
+    y = t\sin(t)
+  \]
+
+  \[
+    0 \leq t < \infty
+  \]
+  quando \(t=\frac{\pi}{2}\)
+\column{0.5\linewidth}
+  \pause
+  ~\\[5mm]
+  \includegraphics{B_03_exemplo_3_curva}
+\end{columns}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{columns}
+    \column{0.5\linewidth}
+    \onslide<+->{Derivada da coordenada $x$}
+    \begin{align*}
+      \onslide<+->{x'(t) & = \frac{dx}{dt}                \\}
+      \onslide<+->{      & = \frac{d}{dt}t\cos(t)         \\}
+      \onslide<+->{      & = 1\times\cos(t) + t(-\sin(t)) \\}
+      \onslide<+->{      & = \cos(t) - t\sin(t)             }
+    \end{align*}
+
+    \column{0.5\linewidth}
+    \onslide<+->{Derivada da coordenada $y$}
+    \begin{align*}
+      \onslide<+->{y'(t) & = \frac{dy}{dt}              \\}
+      \onslide<+->{      & = \frac{d}{dt}t\sin(t)       \\}
+      \onslide<+->{      & = 1\times \sin(t) + t\cos(t) \\}
+      \onslide<+->{      & = \sin(t) + t\cos(t)           }
+    \end{align*}
+  \end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Avaliando as funções derivada em \(t=\frac{\pi}{2}\)}
+  \[
+    \onslide<+->{x'\left(\frac{\pi}{2}\right)}
+    \onslide<+->{   = \left(\cos(t) - t\sin(t)\right) \evalat{\frac{\pi}{2}}{}     }
+    \onslide<+->{   = \cos\left(\frac{\pi}{2}\right) - \frac{\pi}{2}\sin\left(\frac{\pi}{2}\right)}
+    \onslide<+->{   = 0 - \frac{\pi}{2} \times 1}
+    \onslide<+->{   = -\frac{\pi}{2}}
+  \]
+  \[
+    \onslide<+->{y'\left(\frac{\pi}{2}\right)}
+    \onslide<+->{   = \left(\sin(t) + t\cos(t)\right) \evalat{\frac{\pi}{2}}{}     }
+    \onslide<+->{   = \sin\left(\frac{\pi}{2}\right) + \frac{\pi}{2}\cos\left(\frac{\pi}{2}\right)}
+    \onslide<+->{   = 1 + \frac{\pi}{2} \times 0}
+    \onslide<+->{   = 1}
+  \]
+
+  \bigskip
+  \onslide<+->{O vetor tangente é
+    \(
+    \begin{bmatrix}
+      \sfrac{-\pi}{2} \\ 1
+    \end{bmatrix}
+    \)}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \centering
+  \includegraphics{B_03_exemplo_3_vetor}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

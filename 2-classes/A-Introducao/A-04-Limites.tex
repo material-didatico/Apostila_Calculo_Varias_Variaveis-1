@@ -33,33 +33,45 @@
   \]
 \end{frame}
 
-
-
 %------------------------------------------------------------------------------%
 \begin{frame}{Limites de algumas funções}
   \( \lim_{x\to a} c = c \)
 
   \pause
-  \vspace{0.5\baselineskip}
+  \medskip
   \( \lim_{x\to a} x = a \)
 
   \pause
-  \vspace{0.5\baselineskip}
+  \medskip
   \( \lim_{x\to a} x^n = a^n \)
   \tabto{35mm}
   $n$ número inteiro positivo
 
   \pause
-  \vspace{0.5\baselineskip}
+  \medskip
   \( \lim_{x\to a} \sqrt[n]{x} = \sqrt[n]{a} \)
   \tabto{35mm}
   $n$ número inteiro positivo, se $n$ for par precisamos impor $a\geq 0$
 
   \pause
-  \vspace{0.5\baselineskip}
+  \medskip
   \( \lim_{x\to a} p(x) = p(a) \)
   \tabto{35mm}
   onde $p(x)$ é um polinômio em $x$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Limites de algumas funções}
+  \( \lim_{x\to \infty} \frac{1}{x} = 0 \)
+
+  \pause
+  \medskip
+  \( \lim_{x\to 0^+} \frac{1}{x} = \infty \)
+
+  \pause
+  \medskip
+  \( \lim_{x\to 0^-} \frac{1}{x} = -\infty \)
+
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -127,6 +139,55 @@
   \[
    \lim_{x\to a} f(x) = L
   \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Técnicas para Calcular Limites em uma Variável}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Estratégia Geral para Cálculo de Limites}
+\begin{enumerate}[<+->]
+    \item Substituir diretamente o valor da variável no limite
+    \item Identificar o resultado: número finito, $\pm\infty$ ou indeterminação
+    \item Em caso de indeterminação:
+    \begin{itemize}
+        \item aplicar manipulações algébricas
+        \item utilizar fatorações
+        \item racionalizações
+        \item dividir pelo termo de maior grau
+    \end{itemize}
+\end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Indeterminações Comuns}
+\begin{itemize}[<+->]
+    \setlength{\itemsep}{5mm}
+    \item $\dfrac{0}{0}$           \tabto{35mm} indeterminação algébrica
+    \item $\dfrac{\infty}{\infty}$ \tabto{35mm} formas racionais
+    \item $\infty - \infty$        \tabto{35mm} diferença de infinitos
+    \item $0 \cdot \infty$
+    \item $1^\infty$,\; $0^0$,\; $\infty^0$
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{A-04-Limites-ex1}
+\include{A-04-Limites-ex2}
+\include{A-04-Limites-ex3}
+\include{A-04-Limites-ex4}
+\include{A-04-Limites-ex5}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Técnicas principais}
+\begin{itemize}
+  \item Substituição direta
+  \item Fatoração e simplificação algébrica
+  \item Divisão por maior potência para limites no infinito
+  \item Racionalização em diferenças envolvendo raízes
+  \item Reescrita de produtos em quocientes
+  \item Uso da Regra de L'Hôpital
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------------------------------------%

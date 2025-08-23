@@ -2,22 +2,22 @@
 
 ## Common
 
-- Mudar a identificação do enunciado para uma cor diferente
-a mudança da altura da faixa é desagradável (darker green)
+DONE - Mudar a identificação do enunciado para uma cor diferente
+DONE a mudança da altura da faixa é desagradável (darker green)
 
 - Escolher apenas exercícios ímpares para as listas mínimas
 
-- Incluir ilustrações no GeoGebra
+- Incluir ilustrações do GeoGebra
 
 - Copiar todos os exercícios das provas para as apresentações
 
 ## A - Introdução
 
-- Método matemático - Detalhes são extremamente importantes
+DONE - Método matemático - Detalhes são extremamente importantes
 
 ## B - Curvas paramétricas
 
-- Incluir a notação de soma de vetores i, j, k
+DONE - Incluir a notação de soma de vetores i, j, k
 
 ## C - Quádricas
 
