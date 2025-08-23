@@ -1,0 +1,67 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Considere as quádricas
+  \[
+    x^2 + y^2 + z^2 = 9
+    \hphantom{z = x^2 + y^2}
+    \quad \text{(esfera)}
+  \]
+  \[
+    z = x^2 + y^2
+    \hphantom{x^2 + y^2 + z^2 = 9}
+    \quad \text{(paraboloide circular)}
+  \]
+  Encontre a equação da curva de interseção
+
+  \pause
+  \bigskip
+  Dica: use \(u = x^2 + y^2\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Substituímos a equação do paraboloide
+  \[
+    z = x^2 + y^2
+  \]}
+  \onslide<+->{na da esfera}
+  \begin{align*}
+    \onslide<+->{x^2 + y^2 + z^2                      & = 9 \\}
+    \onslide<+->{x^2 + y^2 + \left(x^2 + y^2\right)^2 & = 9 \\}
+    \onslide<+->{u + u^2                              & = 9 \\}
+    \onslide<+->{u^2 + u - 9                          & = 0}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Resolvendo \(u^2 + u - 9 = 0\)}
+  \[
+    \onslide<+->{\Delta \;=\; b^2 - 4ac}
+    \onslide<+->{       \;=\; 1^2 -4 \times 1 \times (-9)}
+    \onslide<+->{       \;=\; 37}
+  \]
+
+  \[
+    \onslide<+->{u \;=\; \frac{-b\pm\sqrt{\Delta}}{2a}}
+    \onslide<+->{  \;=\; \frac{-1\pm\sqrt{37}}{2}}
+  \]
+
+  \onslide<+->{Como $u\geq 0$}
+  \[
+    \onslide<+->{u = \frac{-1+\sqrt{37}}{2}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Então
+  \[
+    x^2 + y^2 = \frac{-1 + \sqrt{37}}{2}
+  \]
+  \pause
+  Uma circunferência de raio \(\sqrt{\frac{-1 + \sqrt{37}}{2}}\)
+  centrada em \((0, 0, 0)\)
+\end{resolution}
+
+%------------------------------------------------------------------------------%
