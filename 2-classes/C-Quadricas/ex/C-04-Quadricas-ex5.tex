@@ -1,0 +1,38 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Considerando a esfera
+  \[
+    x^2 + y^2 + z^2 = 9
+  \]
+  e o plano
+  \[
+    x + y + z = 0
+  \]
+  Determine a projeção da interseção das superfícies no plano $xy$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.5\linewidth}
+  \onslide<+->{Isolamos $z$ na equação do plano}
+  \begin{gather*}
+    \onslide<+->{x + y + z = 0 \\}
+    \onslide<+->{z = -x - y}
+  \end{gather*}
+\column{0.5\linewidth}
+  \onslide<+->{Substituímos na equação da esfera}
+  \begin{align*}
+    \onslide<+->{x^2 + y^2 + z^2             & = 9           \\}
+    \onslide<+->{x^2 + y^2 + (-x - y)^2      & = 9           \\}
+    \onslide<+->{x^2 + y^2 + x^2 + 2xy + y^2 & = 9           \\}
+    \onslide<+->{2x^2 + 2y^2 + 2xy           & = 9           \\}
+    \onslide<+->{x^2 + y^2 + xy              & = \frac{9}{2}}
+  \end{align*}
+  \onslide<+->{que é uma cônica rotacionada}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+
+

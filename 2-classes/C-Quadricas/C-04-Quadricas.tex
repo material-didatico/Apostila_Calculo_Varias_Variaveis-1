@@ -1,0 +1,116 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Cilindros e Superfícies Quádricas}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Cilindros}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cilindro Sólido}
+  \centering
+  \includegraphics[height=70mm]{cilindro}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cilindros}
+  \centering
+  \includegraphics[height=75mm]{curva_geradora}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Quádricas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cônicas e Quádricas}
+  \emph{Cônica}:
+  Gráfico de uma equação de segundo grau no plano
+  \[
+    Ax^{\emph{2}} + By^{\emph{2}} + Cxy + Dx + Ey + F = 0
+  \]
+
+  \pause
+  \emph{Quádrica}:
+  gráfico de uma equação de segundo grau em $\R^3$
+  \[
+    Ax^{\emph{2}} + By^{\emph{2}} + Cz^{\emph{2}} +
+    Dxy  + Exz  + Fyz +
+    Gx   + Hy   + Iz + G = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Quádricas}
+  \begin{itemize}
+    \item Elipsoides
+    \item Paraboloides
+    \item Cones elípticos
+    \item Hiperboloides
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Elipsoides}
+  \[
+    \frac{x^2}{a^2} +
+    \frac{y^2}{b^2} +
+    \frac{z^2}{c^2} = 1
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Elipsoides}{elipsoide}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Paraboloide Hiperbólico}
+  \[
+    \frac{y^2}{b^2} -
+    \frac{x^2}{a^2} =
+    \frac{z}{c}
+  \]
+  Ponto de sela
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Elipsoides}{paraboloide-hiperbolico}{}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Elipsoide}{elipsoide_imagem}{}
+\framedgraphic{Paraboloide Elíptico}{paraboloide_eliptico_imagem}{}
+\framedgraphic{Cone Elíptico}{cone_eliptico_imagem}{}
+\framedgraphic{Hiperboloide de Uma Folha}{hiperboloide_de_uma_folha_imagem}{}
+
+%------------------------------------------------------------------------------%
+\include{ex/C-04-Quadricas-ex1}
+\include{ex/C-04-Quadricas-ex2}
+\include{ex/C-04-Quadricas-ex3}
+\include{ex/C-04-Quadricas-ex4}
+\include{ex/C-04-Quadricas-ex5}
+\include{ex/C-04-Quadricas-ex6}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 12.6
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Encontre a equação e esboce os gráficos dos cortes,
+          nos planos $x=0$, $y=0$ e $z=0$, das quádricas dos exercícios: 1-12
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
