@@ -23,29 +23,43 @@
   \]
 
   \pause
-  Vetorialmente escrevemos
+  Vetorialmente
   \[
-    \begin{bmatrix}  x    \\ y    \end{bmatrix} =
-    \begin{bmatrix}  f(t) \\ g(t) \end{bmatrix}
-  \]
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Vetor Tangente}
-  Se $f$ e $g$ forem deriváveis em $t$, o \emph{vetor tangente} é
-  \pause
-  \[
-    \frac{d}{dt}\begin{bmatrix}  x    \\ y    \end{bmatrix} =
-    \pause
-    \begin{bmatrix}  x    \\ y    \end{bmatrix}' =
-    \pause
-    \begin{bmatrix} \;\dfrac{df}{dt}\;\null \\[5mm] \;\dfrac{dg}{dt}\;\null \end{bmatrix} =
-    \pause
-    \begin{bmatrix} \,f'(t)\,\null \\[2mm] \,g'(t)\,\null \end{bmatrix}
+    \gamma(t)
+    \;=\; \vetor{x}{y}
+    \;=\; \vetor{f(t)}{g(t)}
   \]
 \end{frame}
 
 \framedgraphic{Vetor Tangente}{B_03_vetor_tangente}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Vetor Tangente}
+  Se
+  \[
+    \gamma(t)
+    = \vetor{x}{y}
+    = \vetor{f(t)}{g(t)}
+    \qquad
+    t \in I
+  \]
+  \pause
+  e $f$ e $g$ forem deriváveis em $t$,
+  \pause
+  o \emph{vetor tangente} é
+  \pause
+  \[
+    \gamma'(t)
+    \pause
+    \;=\; \frac{d}{dt} \vetor{x}{y}
+    \pause
+    \;=\; \vetor{x}{y}'
+    \pause
+    \;=\; \Vetor{\dfrac{df}{dt}}{\dfrac{dg}{dt}}
+    \pause
+    \;=\; \vetor{f'(t)}{g'(t)}
+  \]
+\end{frame}
 
 %------------------------------------------------------------------------------%
 \section{Exemplos}

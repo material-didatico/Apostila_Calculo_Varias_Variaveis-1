@@ -1,7 +1,7 @@
 
 size(0, 7.5cm);
 
-import "./utils.ah" as utils;
+import "../../common/asy/utils.ah" as utils;
 
 pair f(real t)
 {

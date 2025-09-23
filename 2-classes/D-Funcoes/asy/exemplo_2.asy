@@ -1,4 +1,4 @@
-import "utils.ah" as utils;
+import "../../common/asy/utils.ah" as utils;
 size(250);
 
 real R = 2;               

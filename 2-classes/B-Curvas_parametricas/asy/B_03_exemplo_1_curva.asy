@@ -1,7 +1,7 @@
 
 size(7cm);
 
-import "./utils.ah" as utils;
+import "../../common/asy/utils.ah" as utils;
 
 real x_min = -3;
 real x_max =  2;

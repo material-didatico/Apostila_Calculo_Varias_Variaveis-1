@@ -16,8 +16,12 @@
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
+\begin{columns}
+\column{0.5\linewidth}
   Calculando \(\frac{dx}{dt}\) e \(\frac{dy}{dt}\)
+
   \pause
+  \medskip
   \[
     \frac{dx}{dt}
     \pause
@@ -25,14 +29,28 @@
     \pause
     = 1 - 2t
   \]
+
   \pause
+  \medskip
   \[
     \frac{dy}{dt}
     = \frac{d}{dt}\left(t - t^3\right)
     \pause
     = 1 - 3t^2
   \]
-
+\column{0.5\linewidth}
+  \pause
+  Vetor tangente
+  \pause
+  \medskip
+  \[
+    v(t)
+    \pause
+    = \Vetor{\frac{dx}{dt}}{\frac{dy}{dt}}
+    \pause
+    = \vetor{1 - 2t}{1 - 3t^2}
+  \]
+\end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
