@@ -1,0 +1,279 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 1 -- Turma 2}{22/09/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\begin{multicols}{2}
+\raggedbottom
+\exercise{50\%}
+  Uma partícula descreve uma trajetória elíptica descrita
+  pelas equações paramétricas
+  \begin{gather*}
+    x(t) = 5 \sin\left(\frac{\pi}{2}-t\right) - 1\\
+    y(t) = 3 \cos\left(\frac{\pi}{2}-t\right) + 1\\
+    0 \leq t \leq \pi
+  \end{gather*}
+  \begin{enumerate}[label=\alph*),itemsep=0pt,topsep=0pt]
+    \item\!\! [20\%] calcule o vetor tangente à curva
+    \item\!\! [10\%] avalie o vetor tangente em \\
+           \hspace*{29pt} $t=0$, $t=\frac{\pi}{2}$ e em $t=\pi$
+    \item\!\! [20\%] esboce a curva e os vetores \\
+           \hspace*{29pt} tangentes calculados
+  \end{enumerate}
+\columnbreak
+~
+
+\begin{questiononly}
+  \hfill\includegraphics{axis_xy}
+\end{questiononly}
+\begin{answeronly}
+  \hfill\includegraphics{T2_B_parametrica}
+\end{answeronly}
+\end{multicols}
+\clearpagequestiononly
+
+\begin{answer}
+\textbf{a)} \quad
+O vetor tangente é
+\(
+  v(t) = \Vetor{\frac{dx}{dt}}{\frac{dy}{dt}}
+\)
+
+Avaliando cada derivada
+\medskip
+\[
+  \frac{dx}{dt}
+  = \frac{d}{dt}\left[5 \sin\left(\frac{\pi}{2}-t\right) - 1\right]
+  = 5 \frac{d}{dt}\sin\left(\frac{\pi}{2}-t\right)
+  = 5 \cos\left(\frac{\pi}{2}-t\right)\frac{d}{dt}\left(\frac{\pi}{2}-t\right)
+  = -5 \cos\left(\frac{\pi}{2}-t\right)
+\]
+
+\medskip
+\[
+  \frac{dy}{dt}
+  = \frac{d}{dt}\left[3 \cos\left(\frac{\pi}{2}-t\right) + 1\right]
+  = 3 \frac{d}{dt}\cos\left(\frac{\pi}{2}-t\right)
+  = -3 \sin\left(\frac{\pi}{2}-t\right)\frac{d}{dt}\left(\frac{\pi}{2}-t\right)
+  = 3 \sin\left(\frac{\pi}{2}-t\right)
+\]
+
+\medskip
+Portanto,
+\(
+  v(t) = \Vetor{-5 \cos\left(\frac{\pi}{2}-t\right)}{3 \sin\left(\frac{\pi}{2}-t\right)}
+\)
+
+\clearpage
+\textbf{b)} \quad
+Avaliando o vetor tangente nos pontos $t=0$, $t=\frac{\pi}{2}$ e em $t=\pi$
+\setlength{\mathindent}{0pt}
+\begin{multicols}{3}
+  \begin{align*}
+    v(0)
+    & = \Vetor{-5 \cos\left(\frac{\pi}{2}-t\right)}{3 \sin\left(\frac{\pi}{2}-t\right)} \evalat{0}{} \\[2mm]
+    & = \Vetor{-5 \cos\left(\frac{\pi}{2}\right)}{3 \sin\left(\frac{\pi}{2}\right)} \\[2mm]
+    & = \vetor{-5 \times 0}{3 \times 1} \\[2mm]
+    & = \vetor{0}{3}
+  \end{align*}
+
+  \newcolumn
+  \begin{align*}
+    v\left(\frac{\pi}{2}\right)
+    & = \Vetor{-5 \cos\left(\frac{\pi}{2}-t\right)}{3 \sin\left(\frac{\pi}{2}-t\right)} \evalat{\frac{\pi}{2}}{} \\[2mm]
+    & = \Vetor{-5 \cos\left(0\right)}{3 \sin\left(0\right)} \\[2mm]
+    & = \Vetor{-5 \times 1}{3\times 0} \\[2mm]
+    & = \vetor{-5}{0}
+  \end{align*}
+
+  \newcolumn
+  \begin{align*}
+    v(\pi)
+    & = \Vetor{-5 \cos\left(\frac{\pi}{2}-t\right)}{3 \sin\left(\frac{\pi}{2}-t\right)} \evalat{\pi}{} \\[2mm]
+    & = \Vetor{-5 \cos\left(\frac{\pi}{2}-\pi\right)}{3 \sin\left(\frac{\pi}{2}-\pi\right)} \\[2mm]
+    & = \Vetor{-5 \cos\left(-\frac{\pi}{2}\right)}{3 \sin\left(-\frac{\pi}{2}\right)} \\[2mm]
+    & = \vetor{-5 \times 0}{3(-1)} \\[2mm]
+    & = \vetor{0}{-3}
+  \end{align*}
+\end{multicols}
+
+\bigskip
+\textbf{b)} \quad
+Calculando os pontos associados a $t=0$, $t=\frac{\pi}{2}$ e em $t=\pi$
+\[
+  x(0)
+  = \left(5 \sin\left(\frac{\pi}{2}-t\right) - 1\right)\evalat{0}{}
+  = 5 \sin\left(\frac{\pi}{2}\right) - 1
+  = 5 \times 1 - 1
+  = 4
+\]
+\[
+  y(0)
+  = \left(3 \cos\left(\frac{\pi}{2}-t\right) + 1\right)\evalat{0}{}
+  = 3 \cos\left(\frac{\pi}{2}\right) + 1
+  = 3 \times 0 + 1
+  = 1
+\]
+
+\medskip
+\[
+  x\left(\frac{\pi}{2}\right)
+  = \left(5 \sin\left(\frac{\pi}{2}-t\right) - 1\right)\evalat{\frac{\pi}{2}}{}
+  = 5 \sin\left(0\right) - 1
+  = 5 \times 0 - 1
+  = -1
+\]
+\[
+  y\left(\frac{\pi}{2}\right)
+  = \left(3 \cos\left(\frac{\pi}{2}-t\right) + 1\right)\evalat{\frac{\pi}{2}}{}
+  = 3 \cos\left(0\right) + 1
+  = 3 \times 1 + 1
+  = 4
+\]
+
+\medskip
+\[
+  x(\pi)
+  = \left(5 \sin\left(\frac{\pi}{2}-t\right) - 1\right)\evalat{\pi}{}
+  = 5 \sin\left(-\frac{\pi}{2}\right) - 1
+  = 5 (-1) - 1
+  = -6
+\]
+\[
+  y(\pi)
+  = \left(3 \cos\left(\frac{\pi}{2}-t\right) + 1\right)\evalat{\pi}{}
+  = 3 \cos\left(-\frac{\pi}{2}\right) + 1
+  = 3 \times 0 + 1
+  = 1
+\]
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Considerando a função
+\(
+  f(x, y) = \frac{2}{\sqrt{x^2 + y^2 -4}}
+\)
+\begin{enumerate}[label=(\alph*),itemsep=0pt]
+  \item \ [10\%] determine o domínio de $f$
+  \item \ [10\%] esboce o domínio
+  \item \ [20\%] determine todas as curvas de nível de $f$
+  \item \ [10\%] determine e esboce a curva de nível que passa pelo ponto \((2, 4)\)
+\end{enumerate}
+\begin{questiononly}
+\begin{multicols}{2}
+  \;\; Domínio
+  \vspace{-0.3\baselineskip}
+  \begin{center}
+    \includegraphics{axis_xy}
+  \end{center}
+  \;\; Curva de nível
+  \vspace{-0.3\baselineskip}
+  \begin{center}
+    \includegraphics{axis_xy}
+  \end{center}
+\end{multicols}
+\end{questiononly}
+\begin{answeronly}
+  \begin{multicols}{2}
+    \;\; Domínio
+    \vspace{-0.3\baselineskip}
+    \begin{center}
+      \includegraphics{T2_B_dominio}
+    \end{center}
+    \;\; Curva de nível
+    \vspace{-0.3\baselineskip}
+    \begin{center}
+      \includegraphics{T2_B_curva_nivel}
+    \end{center}
+  \end{multicols}
+\end{answeronly}
+
+\begin{answer}
+\textbf{a)} \quad
+  Não podemos calcular a raiz quadrada de um número negativo e não
+  podemos dividir por zero, portanto, o domínio de $f$ é o conjunto
+  de todos os pontos \((x, y)\in\R^2\) tais que
+  \[
+    x^2 + y^2 - 4 > 0
+  \]
+  Podemos reescrever essa condição como
+  \[
+    x^2 + y^2 > 2^2
+  \]
+  ou seja, os pontos exteriores ao disco centrado em \((0, 0)\) de raio 2.
+  Assim, o domínio é
+  \[
+    D_f = \{(x, y) \in \R^2 \st x^2 + y^2 > 2^2\}
+  \]
+
+\bigskip
+\textbf{c)} \quad
+  Para determinarmos todas as curvas de nível de $f$ precisamos determinar sua
+  imagem. Observamos que dentro do domínio temos
+  \begin{align*}
+    x^2 + y^2 - 4                  & > 0 \\[2mm]
+    \sqrt{x^2 + y^2 - 4}           & > 0 \\[2mm]
+    \frac{\sqrt{x^2 + y^2 - 4}}{2} & > 0 \\[2mm]
+    0 < \frac{2}{\sqrt{x^2 + y^2 - 4}} & < \infty
+  \end{align*}
+  Assim, \(\Im_f = \left\{z\in\R \st z > 0\right\}\).
+  As curvas de nível de $f$ consistem dos pontos que satisfazem
+  \(
+    f(x, y) = c
+  \)
+  para cada \(c\in\Im_f\).
+  \begin{align*}
+    f(x, y)                        & = c                 \\[2mm]
+    \frac{2}{\sqrt{x^2 + y^2 - 4}} & = c                 \\[2mm]
+    \sqrt{x^2 + y^2 - 4}           & = \frac{2}{c}       \\[2mm]
+    x^2 + y^2 - 4                  & = \frac{4}{c^2}     \\[2mm]
+    x^2 + y^2                      & = \frac{4}{c^2} + 4
+  \end{align*}
+  As curvas de nível são circunferências centradas na origem com raio
+  \(
+    r
+    = \sqrt{\frac{4}{c^2}+4}
+    = \frac{2}{c}\sqrt{1+c^2}
+  \)
+
+\bigskip
+\textbf{c)} \quad
+A curva de nível que passa pelo ponto $(2, 4)$ tem o valor
+\[
+  c
+  = f(2, 4)
+  = \frac{2}{\sqrt{x^2 + y^2 - 4}}\evalat{(2, 4)}{}
+  = \frac{2}{\sqrt{2^2 + 4^2 - 4}}
+  = \frac{2}{\sqrt{4 + 16 - 4}}
+  = \frac{2}{\sqrt{16}}
+  = \frac{2}{4}
+  = \frac{1}{2}
+\]
+Correspondendo a uma circunferência de raio
+\[
+  r
+  = \sqrt{\frac{4}{c^2}+4}\;\evalat{\frac{1}{2}}{}
+  = \sqrt{\frac{4}{\sfrac{1}{4}}+4}
+  = \sqrt{16+4}
+  = \sqrt{20}
+  = \sqrt{4\times 5}
+  = 2\sqrt{5}
+  \approx 4,7321
+\]
+
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
