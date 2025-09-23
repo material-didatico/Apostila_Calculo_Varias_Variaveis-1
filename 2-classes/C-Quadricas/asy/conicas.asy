@@ -1,4 +1,9 @@
-import "utils.ah" as utils;
+
+size(6cm);
+
+import "../../common/asy/utils.ah" as utils;
+import "quadrics.ah" as quadrics;
+
 real larguraPlano; 
 real alturaPlano;
 
@@ -6,13 +11,13 @@ real alturaPlano;
 // FIGURA 1 – Círculo
 // ========================
 currentprojection = perspective(camera=(5,1,4), up=Z, target=(0,0,1));
-real h = 2;
+real h = 2.0;
 larguraPlano = h;
 alturaPlano = 2*h;
-utils.drawCone(h, lightblue+opacity(0.6));
+quadrics.drawCone(h, lightblue+opacity(0.6));
 
 real zc = h/2;
-utils.drawPlane((0,0,zc), (1,0,0), (0,1,0), larguraPlano, alturaPlano, gray+opacity(0.5));
+quadrics.drawPlane((0,0,zc), (1,0,0), (0,1,0), larguraPlano, alturaPlano, gray+opacity(0.5));
 draw(circle((0,0,zc), zc, Z), red+1.2bp);
 newpage();
 
@@ -23,11 +28,11 @@ currentprojection = perspective(camera=(5,1,4), up=Z, target=(0,0,1));
 h = 2;
 larguraPlano = h;
 alturaPlano = 2*h;
-utils.drawCone(h, lightblue+opacity(0.6));
+quadrics.drawCone(h, lightblue+opacity(0.6));
 
 real z0 = 0.7, s = 0.15, t = -0.10;
-utils.drawPlane((0,0,z0), (1,0,s), (0,1,t), larguraPlano, alturaPlano, gray+opacity(0.5));
-utils.curvaElipse(z0, s, t, h, -3, 3, 400, red+1.2bp);
+quadrics.drawPlane((0,0,z0), (1,0,s), (0,1,t), larguraPlano, alturaPlano, gray+opacity(0.5));
+//// quadrics.curvaElipse(z0, s, t, h, -3, 3, 400, red+1.2bp);
 newpage();
 
 // ========================
@@ -37,11 +42,11 @@ currentprojection = perspective(camera=(0.5,2,2), up=Z, target=(0,0,1));
 h = 2;
 larguraPlano = h;
 alturaPlano = 2*h;
-utils.drawCone(h, lightblue+opacity(0.6));
+quadrics.drawCone(h, lightblue+opacity(0.6));
 
 z0 = 0.5; s = 1.0; t = 0.0;
-utils.drawPlane((0,0,z0), (1,0,s), (0,1,t), larguraPlano, alturaPlano, gray+opacity(0.5));
-utils.curvaParabola(z0, s, t, h, -2.5, 2.5, 800, red+1.2bp);
+quadrics.drawPlane((0,0,z0), (1,0,s), (0,1,t), larguraPlano, alturaPlano, gray+opacity(0.5));
+quadrics.curvaParabola(z0, s, t, h, -2.5, 2.5, 800, red+1.2bp);
 newpage();
 
 // ========================
@@ -51,15 +56,15 @@ currentprojection = perspective(camera=(-0.5,3,2));
 h = 3;
 larguraPlano = h;
 alturaPlano = 2*h;
-utils.drawCone(h, lightblue+opacity(0.6));
+quadrics.drawCone(h, lightblue+opacity(0.6));
 
 z0 = 2.5; s = 5; t = 0;
 real x_centro = -z0*s / (s*s - 1);
 real z_centro = z0 + s*x_centro;
 triple centro_plano = (x_centro, 0, z_centro);
 
-utils.drawPlane(centro_plano, (1,0,s), (0,1,t), larguraPlano, alturaPlano, gray+opacity(0.7));
-utils.curvaHiperbole(z0, s, t, h, -h, h, 800, red+1.2bp);
+quadrics.drawPlane(centro_plano, (1,0,s), (0,1,t), larguraPlano, alturaPlano, gray+opacity(0.7));
+quadrics.curvaHiperbole(z0, s, t, h, -h, h, 800, red+1.2bp);
 newpage();
 
 // ========================
@@ -69,10 +74,10 @@ currentprojection = perspective(camera=(4,2,2), up=Z, target=(0,0,0));
 h = 2;
 larguraPlano = h;
 alturaPlano = 2*h;
-utils.drawCone(h, lightblue+opacity(0.6));
+quadrics.drawCone(h, lightblue+opacity(0.6));
 
 z0 = 0;
-utils.drawPlane((0,0,z0), (1,0,0), (0,1,0), larguraPlano, alturaPlano, gray+opacity(0.5));
+quadrics.drawPlane((0,0,z0), (1,0,0), (0,1,0), larguraPlano, alturaPlano, gray+opacity(0.5));
 dot((0,0,0), red+3bp);
 newpage();
 
@@ -85,8 +90,8 @@ larguraPlano = h;
 alturaPlano = 2*h;
 z0 = 1.0; s = 1.0; t = 0.0;
 
-utils.drawCone(h, lightblue+opacity(0.6));
-utils.drawPlane((0,0,z0), (1,0,s), (0,1,t), larguraPlano, alturaPlano, gray+opacity(0.5));
+quadrics.drawCone(h, lightblue+opacity(0.6));
+quadrics.drawPlane((0,0,z0), (1,0,s), (0,1,t), larguraPlano, alturaPlano, gray+opacity(0.5));
 
 triple origem = (0,0,0);
 triple g1 = (h,0,h);
@@ -104,13 +109,13 @@ h = 3;
 larguraPlano = h;
 alturaPlano = 2*h;
 
-utils.drawCone(h, lightblue+opacity(0.6));
+quadrics.drawCone(h, lightblue+opacity(0.6));
 
 triple centro = (0,0,0);
 triple dir1 = (1,0,0);
 triple dir2 = (0,0,1);
 
-utils.drawPlane(centro, dir1, dir2, larguraPlano, alturaPlano, gray+opacity(0.5));
+quadrics.drawPlane(centro, dir1, dir2, larguraPlano, alturaPlano, gray+opacity(0.5));
 
 triple base = (0,0,-h);
 triple topo = (0,0,h);

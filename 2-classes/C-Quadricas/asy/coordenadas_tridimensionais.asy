@@ -1,10 +1,12 @@
-import "utils.ah" as utils;
+
+size(6cm);
+
+import "../../common/asy/utils.ah" as utils;
+import "quadrics.ah" as quadrics;
 
 currentprojection = perspective(5,3,2);
 
 pen azulClaro = rgb(0.7, 0.85, 1.0) + opacity(0.4);
-
-
 
 triple A = (0,0,0);
 triple B = (1,0,0);
