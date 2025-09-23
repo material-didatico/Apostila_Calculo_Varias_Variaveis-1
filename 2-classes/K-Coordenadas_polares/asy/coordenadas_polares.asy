@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 
-import "./utils.ah" as utils;
+import "../../common/asy/utils.ah" as utils;
 
 size(6cm, 6cm, IgnoreAspect);
 draw(box((-1,-0.7),(3,2.1)), invisible);

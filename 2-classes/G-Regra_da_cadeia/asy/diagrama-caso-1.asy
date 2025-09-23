@@ -1,5 +1,7 @@
-import "utils.ah" as utils;
-size(200);
+
+size(6cm);
+
+import "../../common/asy/utils.ah" as utils;
 
 pair W = (0, 3);     
 pair X = (-2, 0);    
