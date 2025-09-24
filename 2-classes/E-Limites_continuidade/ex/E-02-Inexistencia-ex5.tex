@@ -1,0 +1,46 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Verifique a existência do limite
+  \(
+    \lim_{(x,y) \to (0,0)} \frac{\sqrt{x^2 + y^2 + 1} - 1}{x^2 + y^2}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Caminho \(y = x\)
+  \[
+    \pause
+    \lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2} \evalat{y=x}{}
+    \pause
+    \;=\; \lim_{x \to 0} \frac{x x}{x^2 + x^2}
+    \pause
+    \;=\; \lim_{x \to 0} \frac{x^2}{2x^2}
+    \pause
+    \;=\; \lim_{x \to 0} \frac{1}{2}
+    \pause
+    \;=\; \frac{1}{2}
+  \]
+
+  \pause
+  Caminho \(y = -x\)
+  \[
+    \pause
+    \lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2} \evalat{y=-x}{}
+    \pause
+    \;=\; \lim_{x \to 0} \frac{x(-x)}{x^2 + x^2}
+    \pause
+    \;=\; \lim_{x \to 0} \frac{-x^2}{2x^2}
+    \pause
+    \;=\; \lim_{x \to 0} \frac{-1}{2}
+    \pause
+    \;=\; -\frac{1}{2}
+  \]
+
+  \pause
+  Como os limites são diferentes,
+  \pause
+  \emph{o limite não existe}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

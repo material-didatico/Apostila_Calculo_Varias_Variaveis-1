@@ -11,6 +11,11 @@
 \addtitle
 
 %------------------------------------------------------------------------------%
+\section{Limites Iterados}
+
+\include{ex/E-01-Limites-ex1}
+
+%------------------------------------------------------------------------------%
 \section{Limites}
 
 %------------------------------------------------------------------------------%
@@ -55,6 +60,8 @@
     f(x, y) \to L \quad\text{ quando }\quad (x, y)\to(x_0, y_0)
   \]
 \end{frame}
+
+\include{ex/E-01-Limites-ex2}
 
 %------------------------------------------------------------------------------%
 \section{Propriedades}
@@ -162,341 +169,41 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\section{Exemplos}
-
-% 01
-%------------------------------------------------------------------------------%
-\begin{question}
-\begin{columns}[t]
-\column{0.5\linewidth}
-  Calcule os limites
-  \vspace{0.5\baselineskip}
-  \begin{enumerate}
-    \setlength\itemsep{1.5em}
-    \item \(\lim_{(x, y)\to(a, b)} k\)
-    \item \(\lim_{(x, y)\to(a, b)} x\)
-    \item \(\lim_{(x, y)\to(a, b)} y\)
-    \item \(\lim_{(x, y)\to(a, b)} xy\)
-  \end{enumerate}
-\column{0.5\linewidth}
-  \pause
-  Respostas
-  \pause
-  \vspace{0.5\baselineskip}
-  \begin{enumerate}[<+->]
-    \setlength\itemsep{1.5em}
-    \item \(\lim_{(x, y)\to(a, b)} k  = k  \)
-    \item \(\lim_{(x, y)\to(a, b)} x  = a  \)
-    \item \(\lim_{(x, y)\to(a, b)} y  = b  \)
-    \item \(\lim_{(x, y)\to(a, b)} xy = ab \)
-  \end{enumerate}
-\end{columns}
-\end{question}
-
-% 02
-%------------------------------------------------------------------------------%
-\begin{question}
-  Calcule o limite
-  \(
-    \lim_{(x, y)\to(0, 1)} \frac{x-xy+3}{x^2y +5xy - y^3}
-  \),
-  se ele existir
-
-  \pause
-  \vspace{2\baselineskip}
-  Assumindo que todos os limites necessários para aplicar as propriedades existam
-
-  (Isso pode não ser verdade)
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-\begin{align*}
-  \onslide<+->{\lim_{(x, y)\to(0, 1)} \frac{x-xy+3}{x^2y +5xy - y^3}}
-  \onslide<+->{& = \frac{\displaystyle \lim_{(x, y)\to(0, 1)}(x-xy+3)}
-           {\displaystyle \lim_{(x, y)\to(0, 1)}(x^2y +5xy - y^3)} \\}
-  \onslide<+->{& = \frac{\displaystyle \lim_{(x, y)\to(0, 1)} x -
-                          \lim_{(x, y)\to(0, 1)} xy +
-                          \lim_{(x, y)\to(0, 1)} 3}
-           {\displaystyle \lim_{(x, y)\to(0, 1)} x^2y +
-                          \lim_{(x, y)\to(0, 1)} 5xy -
-                          \lim_{(x, y)\to(0, 1)} y^3} \\}
-  \onslide<+->{& = \frac{0 - 0\times 1 + 3}{0^2\times 1 + 5\times 0 \times 1 - 1^3} \\}
-  \onslide<+->{& = \frac{3}{-1}}
-  \onslide<+->{= -3}
-\end{align*}
-\end{resolution}
-
-% 03
-%------------------------------------------------------------------------------%
-\begin{question}
-  Calcule o limite
-  \(
-    \lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
-  \)
-  se ele existir
-
-  \pause
-  \vspace{\baselineskip}
-  Assumindo que todos os limites necessários para aplicar as propriedades existam
-
-  (Isso pode não ser verdade)
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-\begin{align*}
-  \onslide<+->{\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
-  & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
-           {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\[2mm]}
-  \onslide<+->{& = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
-           {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\[2mm]}
-  \onslide<+->{& =   \frac{0-0}{0-0} }
-  \onslide<+->{\;=\; \frac{0}{0} }
-  \onslide<+->{\;=\; 1}
-\end{align*}
-\onslide<+->{\textcolor{red}{\textbf{Não existe divisão por zero !!!}}}
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-\begin{align*}
-  \,\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
-  & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
-    {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\[2mm]
-  & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
-    {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\[2mm]
-  & =  \frac{0-0}{0-0}
-  \;=\; \frac{0}{0}
-  \qquad\nexists
-\end{align*}
-\emph{Então o limite não existe?}
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \begin{align*}
-    \,\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
-    & \color{red}
-    = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
-    {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\[2mm]
-    & \color{red} = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
-    {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\[2mm]
-    & \color{red} = \frac{0-0}{0-0}
-    \;=\; \frac{0}{0}
-  \end{align*}
-  Não podemos aplicar a propriedade do quociente \\  \pause
-  \emph{Precisamos remover a indeterminação}
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \onslide<+->{Ao calcular o limite consideramos apenas os pontos dentro do domínio da função}
-
-  \onslide<+->{Para \(x\neq y\)}
-
-  \begin{align*}
-    \onslide<+->{\frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}}
-    \onslide<+->{& = \frac{\left(x^2-xy\right) \emph{\left(\sqrt{x}+\sqrt{y}\right)}}
-                          {\left(\sqrt{x}-\sqrt{y}\right)\emph{\left(\sqrt{x}+\sqrt{y}\right)}} \\[1mm]}
-    \onslide<+->{& = \frac{x\left(\emph{x-y}\right)\left(\sqrt{x}+\sqrt{y}\right)}{\emph{x-y}} \\[1mm]}
-    \onslide<+->{& = x\left(\sqrt{x}+\sqrt{y}\right)}
-  \end{align*}
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-\onslide<+->{Calculando o limite}
-
-\begin{align*}
-  \onslide<+->{\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}}
-  \onslide<+->{& = \lim_{(x, y)\to(0, 0)} x\left(\sqrt{x}+\sqrt{y}\right) \\[1mm]}
-  \onslide<+->{& = \left(\lim_{(x, y)\to(0, 0)} x\right)
-    \left[
-    \left(\lim_{(x, y)\to(0, 0)}\sqrt{x}\right) +
-    \left(\lim_{(x, y)\to(0, 0)}\sqrt{y}\right)\right] \\[2mm]}
-  \onslide<+->{& = 0\left(\sqrt{0}+\sqrt{0}\right) \\[2mm]}
-  \onslide<+->{& = 0}
-\end{align*}
-\end{resolution}
-
-% 04
-%------------------------------------------------------------------------------%
-\begin{question}
-  Analise o limite de \(f(x, y) = \frac{y}{x}\)
-  quando \((x, y)\)  se aproxima de \((0, 0)\)
-
-  \pause
-  \vspace{\baselineskip}
-  A reta \(x=0\) não faz parte do domínio de $f$
-
-  \pause
-  O ponto \((0, 0)\) não está no domínio de $f$
-
-  \pause
-  Não podemos usar as propriedades diretamente
-
-  \pause
-  Não existe manipulação que remova a indeterminação
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  Analisando $f$ sobre a reta \(y=x\)
-  \pause
+\begin{frame}{Teorema do Confronto}
+  Se
   \[
-    f(x, y) \evalat{y=x}{}
-    \pause
-    = f(x, x)
-    \pause
-    = \frac{x}{x}
-    \pause
-    = 1
-    \pause
-    \qquad\text{ pois } x=0 \text{ não está no domínio de } f
+    g(x, y) \leq f(x, y) \leq h(x, y)
   \]
-
   \pause
-  Analisando $f$ sobre a reta \(y=0\)
+  para todo \((x, y) \neq (a, b)\),
   \pause
+  em um disco centrado em \((a, b)\)
+  \pause
+  e
   \[
-    f(x, y) \evalat{y=0}{}
+    \lim_{(x, y)\to(a, b)} g(x, y)
     \pause
-    = f(x, 0)
+    \;=\;
+    \lim_{(x, y)\to(a, b)} h(x, y)
     \pause
-    = \frac{0}{x}
-    \pause
-    = 0
-    \pause
-    \qquad\text{ pois } x=0 \text{ não está no domínio de } f
+    \;=\;
+    L
   \]
-
-  \pause
-  O que vai acontecer com outas retas da forma \(y=ax\)?
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  Para qualquer $\delta>0$
-  \pause
-  sempre vai existir um
-
-  ponto da forma \((x, x)\) e um ponto da forma \((x, 0)\)
-
-  \pause
-  dentro da bola de raio $\delta$ de centro em \((0, 0)\)
-
-  \pause
-  Nenhum valor $L$ atende as condições da definição de limite
-
-  \pause
-  \vspace{\baselineskip}
-  \emph{O limite não existe}
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\section{Inexistência do Limite}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Teste dos Dois Caminhos}
-  Se \(f(x, y)\) tem limites diferentes ao longo de dois caminhos
-  diferentes,
-
-  no domínio de $f$,
-  \pause
-  quando $(x, y)$ se aproxima de $(x_0, y_0)$,
-
   \pause
   então
   \[
-    \lim_{(x, y)\to(x_0, y_0)} f(x, y) \quad \text{ \emph{não existe}}
+    \lim_{(x, y)\to(a, b)} f(x, y) \;=\; L
   \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \section{Exemplos}
 
-% 05
-%------------------------------------------------------------------------------%
-\begin{question}
-  Verifique se a função
-  \(
-  f(x, y) = \frac{2x^2y}{x^4+y^2}
-  \)
-  possui limite na origem.
-
-  \pause
-  \vspace{\baselineskip}
-  O limite na origem leva a uma indeterminação do tipo $\sfrac{0}{0}$
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  Fazendo \(y=mx\), para \(m\neq 0\) e \(x\neq 0\),
-  \pause
-  temos
-  \[
-    f(x, y)\evalat{y=mx}{}
-    \pause
-    = \frac{2x^2y}{x^4+y^2} \evalat{y=mx}{}
-    \pause
-    = \frac{2mx^3}{x^4+m^2x^2}
-    \pause
-    = \frac{2mx\,x^2}{\left(x^2+m^2\right)x^2}
-    \pause
-    = \frac{2mx}{x^2+m^2}
-  \]
-
-  \pause
-  Calculando o limite \(x\to 0\), que corresponde a \((x, y)\to (0, 0)\)
-  \[
-    \pause
-    \lim_{x\to 0} \frac{2mx}{x^2+m^2}
-    \pause
-    = \frac{0}{m^2}
-    \pause
-    = 0
-    \qquad\qquad
-    \forall m
-  \]
-
-  \pause
-  Portanto,
-  \(
-    {
-      \color<12->{red}
-      \lim_{(x, y)\to(0, 0)} \frac{2x^2y}{x^4+y^2} = 0
-    }
-    \pause
-    \qquad
-    \qquad
-    \text{\textcolor{red}{\textbf{Falso!}}}
-  \)
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  Fazendo \(y=kx^2\), para \(k\neq 0\) e \(x\neq 0\),
-  \pause
-  temos
-  \[
-  f(x, y)\evalat{y=kx^2}{}
-  \pause
-  = \frac{2x^2y}{x^4+y^2} \evalat{y=kx^2}{}
-  \pause
-  = \frac{2kx^4}{x^4+k^2x^4}
-  \pause
-  = \frac{2kx^4}{\left(1+k^2\right)x^4}
-  \pause
-  = \frac{2k}{1+k^2}
-  \]
-
-  \pause
-  Para cada valor de $k$, a função $f$ se aproxima da origem com um valor diferente
-
-  \pause
-  Portanto, o limite não existe
-\end{resolution}
+\include{ex/E-01-Limites-ex3}
+\include{ex/E-01-Limites-ex4}
+\include{ex/E-01-Limites-ex5}
+\include{ex/E-01-Limites-ex6}
+\include{ex/E-01-Limites-ex7}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}
@@ -506,7 +213,7 @@
   Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.2
   \begin{enumerate}
     \item Estudar o texto da seção
-    \item Resolver os exercícios: 4-6, 13-15, 18, 26, 55
+    \item Resolver os exercícios: 1, 5, 7, 9, 11, 15, 17, 23, 27, 55, 57
   \end{enumerate}
 
   \vfill

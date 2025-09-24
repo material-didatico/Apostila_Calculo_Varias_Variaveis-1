@@ -1,0 +1,41 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Mostre que
+  \[
+  f(x, y) = \cos\left(\frac{xy}{x^2+1}\right)
+  \]
+  é contínua em todos os pontos do plano
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Primeiro reconhecemos que temos a composição de funções $f=g\circ h$,
+  \pause
+  com
+  \[
+  h(x, y) = \frac{xy}{x^2+1}
+  \qquad\qquad\text{e}\qquad\qquad
+  g(t) = \cos(t)
+  \]
+  \pause
+  isso é,
+  \[
+  f(x, y) = g\big(h(x, y)\big) = \cos\left(\frac{xy}{x^2+1}\right)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  $h$ é uma combinação algébrica de funções contínuas e nunca teremos
+  uma divisão por zero, portanto, $h$ é contínua em todo o plano
+
+  \pause
+  \vspace{\baselineskip}
+  $g$ é uma função contínua em toda a reta real, portanto, qualquer que seja o ponto
+  $(x_0, y_0)$ a função $g$ será contínua em $h(x_0, y_0  )$
+
+  \pause
+  \vspace{\baselineskip}
+  Pelo teorema da continuidade da composta, $f$ é contínua em todo o plano
+\end{resolution}
+

@@ -1,0 +1,25 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Calcule o limite
+  \(
+    \lim_{(x,y) \to (0,1)} \frac{\ln(y)\sin(x)}{x}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Limite fundamental
+  \[
+    \lim_{x\to 0} \frac{\sin(x)}{x} = 1
+  \]}
+
+  \begin{align*}
+    \onslide<+->{\lim_{(x,y) \to (0,1)} \frac{\ln(y)\sin(x)}{x}}
+    \onslide<+->{& = \left(\lim_{(x,y) \to (0,1)} \ln(y)\right)
+                     \left(\lim_{(x,y) \to (0,1)} \frac{\sin(x)}{x}\right) \\}
+    \onslide<+->{& = \ln(1) \times 1 \\}
+    \onslide<+->{& = 0}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

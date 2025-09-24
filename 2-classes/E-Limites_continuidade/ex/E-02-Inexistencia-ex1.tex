@@ -1,0 +1,74 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Analise o limite de \(f(x, y) = \frac{y}{x}\)
+  quando \((x, y)\)  se aproxima de \((0, 0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A reta \(x=0\) não faz parte do domínio de $f$
+
+  \pause
+  O ponto \((0, 0)\) não está no domínio de $f$
+
+  \pause
+  Não podemos usar as propriedades diretamente
+
+  \pause
+  Não existe manipulação que remova a indeterminação
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Analisando $f$ sobre a reta \(y=x\)
+  \pause
+  \[
+    f(x, y) \evalat{y=x}{}
+    \pause
+    = f(x, x)
+    \pause
+    = \frac{x}{x}
+    \pause
+    = 1
+    \pause
+    \qquad\text{ pois } x=0 \text{ não está no domínio de } f
+  \]
+
+  \pause
+  Analisando $f$ sobre a reta \(y=0\)
+  \pause
+  \[
+    f(x, y) \evalat{y=0}{}
+    \pause
+    = f(x, 0)
+    \pause
+    = \frac{0}{x}
+    \pause
+    = 0
+    \pause
+    \qquad\text{ pois } x=0 \text{ não está no domínio de } f
+  \]
+
+  \pause
+  O que vai acontecer com outas retas da forma \(y=ax\)?
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Para qualquer $\delta>0$
+  \pause
+  sempre vai existir um
+
+  ponto da forma \((x, x)\) e um ponto da forma \((x, 0)\)
+
+  \pause
+  dentro da bola de raio $\delta$ de centro em \((0, 0)\)
+
+  \pause
+  Nenhum valor $L$ atende as condições da definição de limite
+
+  \pause
+  \vspace{\baselineskip}
+  \emph{O limite não existe}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

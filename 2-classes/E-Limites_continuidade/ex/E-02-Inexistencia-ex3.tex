@@ -1,0 +1,49 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Mostre que o limite
+  \(
+    \lim_{(x,y) \to (0,0)} \frac{xy^2}{x^2 + y^4}
+  \)
+  não existe
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Caminho \(x = y^2\)
+  \[
+    \pause
+    L_1
+    \pause
+    \;=\; \lim_{(x,y) \to (0,0)} \frac{xy^2}{x^2 + y^4} \evalat{x = y^2}{}
+    \pause
+    \;=\; \lim_{y \to 0} \frac{y^2 y^2}{y^4 + y^4}
+    \pause
+    \;=\; \lim_{y \to 0} \frac{y^4}{2y^4}
+    \pause
+    \;=\; \lim_{y \to 0} \frac{1}{2}
+    \pause
+    \;=\; \frac{1}{2}
+  \]
+
+  \pause
+  Caminho \(x = 0\)
+  \[
+    \pause
+    L_2
+    \pause
+    \;=\; \lim_{(x,y) \to (0,0)} \frac{xy^2}{x^2 + y^4} \evalat{x = 0}{}
+    \pause
+    \;=\; \lim_{y \to 0} \frac{0 \times y^2}{0 + y^4}
+    \pause
+    \;=\; \lim_{y \to 0} 0
+    \pause
+    \;=\; 0
+  \]
+
+  \pause
+  Como os limites são diferentes,
+  \pause
+  \emph{o limite não existe}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

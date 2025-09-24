@@ -1,0 +1,108 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Calcule o limite
+  \(
+    \lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
+  \)
+  se ele existir
+
+  \pause
+  \vspace{\baselineskip}
+  Assumindo que todos os limites necessários para aplicar as propriedades existam
+
+  (Isso pode não ser verdade)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+  \onslide<+->{\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}}
+  \onslide<+->{& = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
+           {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\[2mm]}
+  \onslide<+->{& = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
+           {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\[2mm]}
+  \onslide<+->{& =   \frac{0-0}{0-0} }
+  \onslide<+->{\;=\; \frac{0}{0} }
+  \onslide<+->{\;=\; 1}
+\end{align*}
+
+\onslide<+->{\textcolor{red}{\textbf{Não existe divisão por zero !!!}}}
+
+~
+
+~
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+  \,\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
+  & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
+    {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\[2mm]
+  & = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
+    {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\[2mm]
+  & =  \frac{0-0}{0-0}
+  \;=\; \frac{0}{0}
+  \qquad\nexists
+\end{align*}
+
+\emph{Então o limite não existe?}
+
+~
+
+~
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \,\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}
+    & \color{red}
+    = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} \left(x^2-xy\right)}
+    {\displaystyle \lim_{(x, y)\to(0, 0)} \left(\sqrt{x}-\sqrt{y}\right)} \\[2mm]
+    & \color{red} = \frac{\displaystyle \lim_{(x, y)\to(0, 0)} x^2 - \lim_{(x, y)\to(0, 0)}xy}
+    {\displaystyle \lim_{(x, y)\to(0, 0)} \sqrt{x} - \lim_{(x, y)\to(0, 0)}\sqrt{y}} \\[2mm]
+    & \color{red} = \frac{0-0}{0-0}
+    \;=\; \frac{0}{0}
+  \end{align*}
+
+  Não podemos aplicar a propriedade do quociente
+
+  \pause
+  \emph{Precisamos remover a indeterminação}
+
+  ~
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Ao calcular o limite consideramos apenas os pontos dentro do domínio da função}
+
+  \onslide<+->{Para \(x\neq y\)}
+
+  \begin{align*}
+    \onslide<+->{\frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}}
+    \onslide<+->{& = \frac{\left(x^2-xy\right) \emph{\left(\sqrt{x}+\sqrt{y}\right)}}
+                          {\left(\sqrt{x}-\sqrt{y}\right)\emph{\left(\sqrt{x}+\sqrt{y}\right)}} \\[1mm]}
+    \onslide<+->{& = \frac{x\left(\emph{x-y}\right)\left(\sqrt{x}+\sqrt{y}\right)}{\emph{x-y}} \\[1mm]}
+    \onslide<+->{& = x\left(\sqrt{x}+\sqrt{y}\right)}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\onslide<+->{Calculando o limite}
+
+\begin{align*}
+  \onslide<+->{\lim_{(x, y)\to(0, 0)} \frac{x^2-xy}{\,\sqrt{x}-\sqrt{y}\,}}
+  \onslide<+->{& = \lim_{(x, y)\to(0, 0)} x\left(\sqrt{x}+\sqrt{y}\right) \\[1mm]}
+  \onslide<+->{& = \left(\lim_{(x, y)\to(0, 0)} x\right)
+    \left[
+    \left(\lim_{(x, y)\to(0, 0)}\sqrt{x}\right) +
+    \left(\lim_{(x, y)\to(0, 0)}\sqrt{y}\right)\right] \\[2mm]}
+  \onslide<+->{& = 0\left(\sqrt{0}+\sqrt{0}\right) \\[2mm]}
+  \onslide<+->{& = 0}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

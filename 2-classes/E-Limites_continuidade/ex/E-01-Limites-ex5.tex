@@ -1,0 +1,36 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Calcule o limite
+  \(
+    \lim_{(x,y) \to (4, 3)} \frac{\sqrt{x}-\sqrt{y+1}}{x-y-1}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Manipulando a Função}
+  \onslide<+->{No interior do domínio da função}
+
+  \onslide<+->{Multiplicando pelo conjugado}
+
+  \begin{align*}
+    \onslide<+->{\frac{\sqrt{x}-\sqrt{y+1}}{x-y-1}}
+    \onslide<+->{& = \frac{\sqrt{x} - \sqrt{y+1}}{x - y - 1}
+        \times
+        \frac{\sqrt{x} + \sqrt{y+1}}{\sqrt{x} + \sqrt{y+1}} \\}
+    \onslide<+->{& = \frac{x - (y+1)}{(x - y - 1)\left(\sqrt{x} + \sqrt{y+1}\right)} \\}
+    \onslide<+->{& = \frac{1}{\sqrt{x} + \sqrt{y+1}}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Calculando o Limite}
+  \begin{align*}
+    \onslide<+->{\lim_{(x,y) \to (4, 3)} \frac{\sqrt{x}-\sqrt{y+1}}{x-y-1}}
+    \onslide<+->{& = \lim_{(x,y) \to (4, 3)} \frac{1}{\sqrt{x} + \sqrt{y+1}} \\}
+    \onslide<+->{& = \frac{1}{\sqrt{4} + \sqrt{3+1}} \\}
+    \onslide<+->{& = \frac{1}{2+2} \\}
+    \onslide<+->{& = \frac{1}{4}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

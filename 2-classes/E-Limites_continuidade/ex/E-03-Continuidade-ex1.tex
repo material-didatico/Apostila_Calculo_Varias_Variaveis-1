@@ -1,0 +1,77 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Mostre que
+  \[
+    f(x, y) =
+    \begin{cases}
+      \dfrac{2xy}{x^2+y^2}, & (x, y) \neq (0, 0) \\
+      \quad\; 0,            & (x, y) =    (0, 0)
+    \end{cases}
+  \]
+  é contínua em todos os pontos, exceto na origem
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Consideramos primeiro o caso \((x, y) \neq (0, 0)\)
+
+  \pause
+  \vspace{\baselineskip}
+  \(2xy\) é uma função contínua no plano
+
+  \pause
+  \(x^2+y^2\) é uma função contínua no plano
+
+  \pause
+  então \(\frac{2xy}{x^2+y^2}\)
+  \pause
+  é contínua para todo \((x, y) \neq (0, 0)\)
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Em \((x, y) = (0, 0)\) temos que aplicar a definição de continuidade
+
+  \pause
+  \vspace{0.5\baselineskip}
+  \begin{enumerate}
+    \setlength\itemsep{1.5em}
+    \item \(f\) é definida em \((0, 0)\)
+    \item \(\lim_{(x, y)\to(0, 0)} f(x, y)\) existe
+    \item \(\lim_{(x, y)\to(0, 0)} f(x, y) = f(0, 0)\)
+  \end{enumerate}
+
+  \pause
+  \vspace{\baselineskip}
+  A condição 1 vale, pois \(f(0, 0) = 0\)
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Verificando a condição 2, percebemos que o limite não existe
+
+  \pause
+  Se fizermos \(y=mx\),
+  \pause
+  para \(m\neq 0\) e \(x\neq 0\), temos
+  \pause
+  \[
+    f(x, y)\evalat{y=mx}{}
+    \pause
+    = \frac{2xy}{x^2+y^2}\evalat{y=mx}{}
+    \pause
+    = \frac{2mx^2}{x^2+m^2x^2}
+    \pause
+    = \frac{2mx^2}{\left(1+m^2\right)x^2}
+    \pause
+    = \frac{2m}{1+m^2}
+  \]
+
+  \pause
+  Para cada valor de $m$, a função $f$ se aproxima da origem com um valor diferente.
+
+  \pause
+  Portanto, o limite não existe e a função não é contínua na origem
+\end{resolution}
+
+%------------------------------------------------------------------------------%
