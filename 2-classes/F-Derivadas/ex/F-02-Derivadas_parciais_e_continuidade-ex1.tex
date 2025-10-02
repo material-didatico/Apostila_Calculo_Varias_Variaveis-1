@@ -1,0 +1,79 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Considerando a função
+  \(\;
+    f(x, y) = \begin{cases}
+      0, & xy \neq 0 \\
+      1, & xy = 0
+    \end{cases}
+  \) \\[5mm]
+  \begin{enumerate}
+    \item Mostre que suas derivadas parciais existem na origem \\[3mm]
+    \item Prove que $f$ não é contínua na origem
+  \end{enumerate}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Mostrar que as Derivadas Parciais Existem}
+  Fazendo $y=0$,
+  \pause
+  temos $xy=0$,
+  \pause
+  portanto \(f(x, 0) = 1\)
+  \pause
+  e
+  \[
+    \D{f}{x}\evalat{y=0}{}
+    =\; \D{1}{x}
+    \;=\; 0
+  \]
+
+  \pause
+  \bigskip
+  Fazendo $x=0$,
+  \pause
+  temos $xy=0$,
+  \pause
+  portanto \(f(0, y) = 1\)
+  \pause
+  e
+  \[
+    \D{f}{y}\evalat{x=0}{}
+    =\; \D{1}{y}
+    \;=\; 0
+  \]
+
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Mostrar que $f$ é Descontínua na Orígem}
+  Verificando a condição de existência do limite na origem
+
+  \pause
+  Considerando a reta $y=0$, com $x\neq 0$
+  \pause
+  \[
+    f(x, 0)
+    \pause
+    = 1
+  \]
+
+  \pause
+  Considerando a reta $y=x$, com $x\neq 0$
+  \[
+    \pause
+    f(x, x)
+    \pause
+    = 0
+  \]
+
+  \pause
+  Como $f$ tende a valores diferentes por
+  caminhos diferentes para a origem,\\
+  o limite não existe
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Derivada e Continuidade}{Derivadas_parciais_continuidade}{}
+
+%------------------------------------------------------------------------------%

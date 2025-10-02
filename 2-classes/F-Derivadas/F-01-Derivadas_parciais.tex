@@ -20,12 +20,12 @@
 
   \pause
   \vspace{\baselineskip}
-  Derivada da função \(f\colon R\subset\R\to\R\) no ponto $x_0$
+  Derivada da função \(f\colon R\subset\R\to\R\) no ponto $a$
 
   \[
-    \frac{df}{dx}(x_0)
-    = \frac{df}{dx}\evalat{x=x_0}{}
-    =\; \lim_{h\to 0} \frac{f(x_0+h)-f(x_0)}{h}
+    \frac{df}{dx}(a)
+    \;=\; \frac{df}{dx}\evalat{x=a}{}
+    =\; \lim_{h\to 0} \frac{\,f(a+h)-f(a)\,}{h}
   \]
 \end{frame}
 
@@ -43,13 +43,13 @@
 
   \pause
   \(f(x, y)\),
-  no ponto \((x_0, y_0)\)
+  no ponto \((a, b)\)
 
   \pause
   \[
-    \D{f}{\emph{x}}(x_0, y_0)
-    = \D{f}{\emph{x}}\evalat{(x, y) = (x_0, y_0)}{}
-    =\; \lim_{h\to 0} \frac{f(\emph{x_0+h}, y_0)-f(x_0, y_0)}{h}
+    \D{f}{\emph{x}}(a, b)
+    = \D{f}{\emph{x}}\evalat{(x, y) = (a, b)}{}
+    =\; \lim_{h\to 0} \frac{\,f(\emph{a+h}, b)-f(a, b)\,}{h}
   \]
 
   \vspace{\baselineskip}
@@ -63,13 +63,13 @@
 
   \pause
   \(f(x, y)\),
-  no ponto \((x_0, y_0)\)
+  no ponto \((a, b)\)
 
   \pause
   \[
-    \D{f}{\emph{y}}(x_0, y_0)
-    = \D{f}{\emph{y}}\evalat{(x, y) = (x_0, y_0)}{}
-    =\; \lim_{h\to 0} \frac{f(x_0, \emph{y_0+h})-f(x_0, y_0)}{h}
+    \D{f}{\emph{y}}(a, b)
+    = \D{f}{\emph{y}}\evalat{(x, y) = (a, b)}{}
+    =\; \lim_{h\to 0} \frac{\,f(a, \emph{b+h})-f(a, b)\,}{h}
   \]
 
   \vspace{\baselineskip}
@@ -81,7 +81,7 @@
   \begin{align*}
      \onslide<+->{& \frac{\partial f}{\partial y}(x, y) &  & \frac{\partial f}{\partial y} \\[11mm]}
      \onslide<+->{& f_y(x, y)                           &  & f_y                           \\[11mm]}
-     \onslide<+->{& \partial_x f(x, y)                  &  & \partial_y f}
+     \onslide<+->{& \partial_y f(x, y)                  &  & \partial_y f}
   \end{align*}
 \end{frame}
 

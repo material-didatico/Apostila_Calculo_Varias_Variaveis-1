@@ -20,28 +20,33 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Notações}
-\begin{columns}
+\begin{columns}[t]
 \column{0.5\linewidth}
   Derivadas de segunda ordem
+  \pause
+  \bigskip
   \[
     \frac{\partial^2 f}{\partial x^2} \qquad\qquad\qquad
     f_{xx}
   \]
 
-  \vspace{\baselineskip}
+  \pause
+  \bigskip
   \[
     \frac{\partial^2 f}{\partial y^2} \qquad\qquad\qquad
     f_{yy}
   \]
 \column{0.5\linewidth}
   \pause
+  \bigskip
   Derivadas de segunda ordem mistas
   \[
     \frac{\partial^2 f}{\partial x \partial y} \qquad\qquad\qquad
     f_{yx}
   \]
 
-  \vspace{\baselineskip}
+  \pause
+  \bigskip
   \[
     \frac{\partial^2 f}{\partial y \partial x} \qquad\qquad\qquad
     f_{xy}
@@ -51,16 +56,22 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Atenção Para a Ordem das Derivadas Mistas}
+
+  { \Large
   \[
     \frac{\partial^2 f}{{\color{magenta} \partial x} {\color{blue} \partial y}}
-    = \frac{\partial}{{\color{magenta} \partial x}}
-      \left(\,\frac{\partial f}{{\color{blue} \partial y}}\,\right)
+    \pause
+    \;=\; \frac{\partial}{{\color{magenta} \partial x}}
+          \left(\,\frac{\partial f}{{\color{blue} \partial y}}\,\right)
   \]
 
-  \vspace{\baselineskip}
+  \pause
+  \bigskip
   \[
-    f_{{\color{blue} x}{\color{magenta} y}} = \big(\,f_{\color{blue} x}\,\big)_{\color{magenta} y}
-  \]
+    f_{{\color{blue} x}{\color{magenta} y}} (x, y)
+    \pause
+    \;=\; \big(\,f_{\color{blue} x} (x, y)\,\big)_{\color{magenta} y}
+  \]}
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -98,28 +109,24 @@
   \begin{columns}
     \column{0.5\linewidth}
     Derivadas terceiras
-    \[
-      \frac{\partial^3 f}{\partial x^3} \qquad\qquad\qquad
+    \bigskip
+    \begin{align*} &
+      \frac{\partial^3 f}{\partial x^3} & &
       f_{xxx}
-    \]
-
-    \vspace{\baselineskip}
-    \[
-      \frac{\partial^3 f}{\partial y\partial x^2} \qquad\qquad\qquad
+      \\[7mm] &
+      \frac{\partial^3 f}{\partial y\partial x^2} & &
       f_{xxy}
-    \]
+    \end{align*}
     \column{0.5\linewidth}
     Derivadas quartas
-    \[
-      \frac{\partial^4 f}{\partial x^4} \qquad\qquad\qquad
+    \bigskip
+    \begin{align*} &
+      \frac{\partial^4 f}{\partial x^4} & &
       f_{xxx}
-    \]
-
-    \vspace{\baselineskip}
-    \[
-      \frac{\partial^4 f}{\partial y^2 \partial x^2} \qquad\qquad\qquad
+      \\[7mm] &
+      \frac{\partial^4 f}{\partial y^2 \partial x^2} & &
       f_{xxyy}
-    \]
+    \end{align*}
   \end{columns}
 \end{frame}
 
