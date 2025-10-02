@@ -27,7 +27,7 @@
 
   \pause
   se aproxima do \emph{limite} $L$
-  a medida que \((x, y)\) se aproxima de \((x_0, y_0)\)
+  a medida que \((x, y)\) se aproxima de \((a, b)\)
 
   \pause
   se, para todo \emph{$\varepsilon>0$,}
@@ -42,22 +42,22 @@
   \[
     \abs{f(x, y)-L} < \varepsilon
     \quad\text{ sempre que }\quad
-    0 < \sqrt{ \left(x-x_0\right)^2 + \left(y-y_0\right)^2 } < \delta(\varepsilon)
+    0 < \sqrt{ \left(x-a\right)^2 + \left(y-b\right)^2 } < \delta(\varepsilon)
   \]
 
   \pause
-  Obs: \((x_0, y_0)\) não precisa estar no domínio de $f$
+  Obs: \((a, b)\) não precisa estar no domínio de $f$
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Notação}
   \[
-    \lim_{(x, y)\to(x_0, y_0)} f(x, y) = L
+    \lim_{(x, y)\to(a, b)} f(x, y) = L
   \]
   \pause
   \vspace{\baselineskip}
   \[
-    f(x, y) \to L \quad\text{ quando }\quad (x, y)\to(x_0, y_0)
+    f(x, y) \to L \quad\text{ quando }\quad (x, y)\to(a, b)
   \]
 \end{frame}
 
@@ -70,7 +70,7 @@
 \begin{frame}{Teorema -- Unicidade do Limite}
   Se uma função \(f(x, y)\) possui um limite $L$
 
-  quando \((x, y)\) se aproxima de \((x_0, y_0)\),
+  quando \((x, y)\) se aproxima de \((a, b)\),
 
   \pause
   então \emph{$L$ é único}
@@ -82,26 +82,26 @@
   \begin{itemize}[<+->]
     \setlength\itemsep{1.5em}
     \item $L$, $M$ e $k$ forem números reais
-    \item \(\lim_{(x, y)\to(x_0, y_0)} f(x, y) = L\)
-    \item \(\lim_{(x, y)\to(x_0, y_0)} g(x, y) = M\)
+    \item \(\lim_{(x, y)\to(a, b)} f(x, y) = L\)
+    \item \(\lim_{(x, y)\to(a, b)} g(x, y) = M\)
   \end{itemize}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Regra da Soma e Diferença}
   \[
-    \lim_{(x, y)\to(x_0, y_0)} \left[f(x, y) + g(x, y)\right]
+    \lim_{(x, y)\to(a, b)} \left[f(x, y) + g(x, y)\right]
     \pause =
-    \lim_{(x, y)\to(x_0, y_0)} f(x, y) + \lim_{(x, y)\to(x_0, y_0)} g(x, y)
+    \lim_{(x, y)\to(a, b)} f(x, y) + \lim_{(x, y)\to(a, b)} g(x, y)
     \pause =
     L + M
   \]
   \pause
   \vspace{\baselineskip}
   \[
-    \lim_{(x, y)\to(x_0, y_0)} \left[f(x, y) - g(x, y)\right]
+    \lim_{(x, y)\to(a, b)} \left[f(x, y) - g(x, y)\right]
     \pause =
-    \lim_{(x, y)\to(x_0, y_0)} f(x, y) - \lim_{(x, y)\to(x_0, y_0)} g(x, y)
+    \lim_{(x, y)\to(a, b)} f(x, y) - \lim_{(x, y)\to(a, b)} g(x, y)
     \pause =
     L - M
   \]
@@ -110,19 +110,19 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Regra da Multiplicação por Constante e do Produto}
   \[
-    \lim_{(x, y)\to(x_0, y_0)} \left[k f(x, y)\right]
+    \lim_{(x, y)\to(a, b)} \left[\,k\, f(x, y)\right]
     \pause =
-    k \lim_{(x, y)\to(x_0, y_0)} f(x, y)
+    k \lim_{(x, y)\to(a, b)} f(x, y)
     \pause =
     k L
   \]
   \pause
   \vspace{\baselineskip}
   \[
-    \lim_{(x, y)\to(x_0, y_0)} \left[f(x, y) g(x, y)\right]
+    \lim_{(x, y)\to(a, b)} \left[f(x, y) g(x, y)\right]
     \pause =
-    \left[\lim_{(x, y)\to(x_0, y_0)} f(x, y) \right]
-    \left[\lim_{(x, y)\to(x_0, y_0)} g(x, y) \right]
+    \left[\lim_{(x, y)\to(a, b)} f(x, y) \right]
+    \left[\lim_{(x, y)\to(a, b)} g(x, y) \right]
     \pause =
     LM
   \]
@@ -131,10 +131,10 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Regra do Quociente (Divisão)}
   \[
-    \lim_{(x, y)\to(x_0, y_0)} \left[ \,\frac{\,f(x, y)\,}{g(x, y)} \, \right]
+    \lim_{(x, y)\to(a, b)} \left[ \,\frac{\,f(x, y)\,}{g(x, y)} \, \right]
     \pause =
-    \dfrac{\displaystyle\lim_{(x, y)\to(x_0, y_0)} f(x, y)\,}
-          {\displaystyle\lim_{(x, y)\to(x_0, y_0)} g(x, y)\,}
+    \dfrac{\displaystyle\lim_{(x, y)\to(a, b)} f(x, y)\,}
+          {\displaystyle\lim_{(x, y)\to(a, b)} g(x, y)\,}
     \pause =
     \frac{L}{M}
   \]
@@ -148,18 +148,18 @@
   Para $n$ inteiro positivo
   \pause
   \[
-    \lim_{(x, y)\to(x_0, y_0)} \left[f(x, y)\right]^n
+    \lim_{(x, y)\to(a, b)} \left[f(x, y)\right]^n
     \pause =
-    \left[\lim_{(x, y)\to(x_0, y_0)} f(x, y)\right]^n
+    \left[\lim_{(x, y)\to(a, b)} f(x, y)\right]^n
     \pause =
     L^n
   \]
   \pause
   \vspace{\baselineskip}
   \[
-    \lim_{(x, y)\to(x_0, y_0)} \sqrt[n]{f(x, y)}
+    \lim_{(x, y)\to(a, b)} \sqrt[n]{f(x, y)}
     \pause =
-    \sqrt[n]{\lim_{(x, y)\to(x_0, y_0)} f(x, y)}
+    \sqrt[n]{\lim_{(x, y)\to(a, b)} f(x, y)}
     \pause =
     \sqrt[n]{L}
   \]
