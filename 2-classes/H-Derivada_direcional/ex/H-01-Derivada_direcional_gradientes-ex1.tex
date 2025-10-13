@@ -7,14 +7,14 @@
   \)
 
   \vspace{2\baselineskip}
-  (Para simplificar os cálculos, ignore o fato desse vetor não ser unitário)
+  (Para simplificar os cálculos \emph{neste exemplo}, ignore o fato desse vetor não ser unitário)
 \end{question}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
   \begin{align*}
     \onslide<+->{D_u f(1, 2)}
-    \onslide<+->{& = \lim_{h\to 0} \frac{f(x_0+hu_1, y_0+hu_2)-f(x_0, y_0)}{h} \\}
+    \onslide<+->{& = \lim_{h\to 0} \frac{f(a+hu_1, b+hu_2)-f(a, b)}{h} \evalat{(a, b)=(1, 2)}{}\\}
     \onslide<+->{& = \lim_{h\to 0} \frac{f(1+2h, 2+3h)-f(1, 2)}{h}             \\}
     \onslide<+->{& = \lim_{h\to 0} \frac{\big[(1+2h)^2 + (1+2h)(2+3h)\big]
                                          -\left(1^2+1\times 2\right)}{h}       \\}

@@ -20,7 +20,7 @@
   \pause
   Considere uma função $f(x, y)$ diferenciável e sua superfície de nível
   \[
-    f(x, y, z)  = c
+    f(x, y, z) = k
   \]
   \pause
   Assuma que a curva paramétrica
@@ -40,8 +40,8 @@
 \begin{columns}
 \column{0.5\linewidth}
   \begin{align*}
-     \onslide<+->{f\big(g(t), h(t), k(t)\big) & = c \\[5mm]}
-     \onslide<+->{\frac{d}{dt}f\big(g(t), h(t), k(t)\big) & = \frac{dc}{dt} \\[5mm]}
+     \onslide<+->{f\big(g(t), h(t), k(t)\big) & = k \\[5mm]}
+     \onslide<+->{\frac{d}{dt}f\big(g(t), h(t), k(t)\big) & = \frac{dk}{dt} \\[5mm]}
      \onslide<+->{\D{f}{x}\frac{dg}{dt} + \D{f}{y}\frac{dh}{dt} + \D{f}{z}\frac{dk}{dt} & = 0}
   \end{align*}
 \column{0.5\linewidth}
@@ -65,7 +65,7 @@
 
 %------------------------------------------------------------------------------%
 \begin{proofframe}{Justificativa}
-  Se tomarmos todas as curvas suaves que passam por um ponto \((x_0, y_0)\)
+  Se tomarmos todas as curvas suaves que passam por um ponto \((a, b)\)
 
   \pause
   \vspace{\baselineskip}
@@ -78,18 +78,18 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Definição}
-  O Plano Tangente ao ponto \((x_0, y_0, z_0)\)
+  O Plano Tangente ao ponto \((a, b, c)\)
   \pause
   na superfície de nível
-  \(f(x, y, z) = c\)
+  \(f(x, y, z) = k\)
 
   \pause
   de uma função diferenciável $f$
   \pause
-  é o plano passando pelo ponto \((x_0, y_0, z_0)\)
+  é o plano passando pelo ponto \((a, b, c)\)
 
   \pause
-  e normal a \(\nabla f (x_0, y_0, z_0)\)
+  e normal a \(\nabla f (a, b, c)\)
 
   \pause
   \vspace{\baselineskip}
@@ -97,37 +97,37 @@
 
   \pause
   e paralela
-  a \(\nabla f (x_0, y_0, z_0)\)
+  a \(\nabla f (a, b, c)\)
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Equação do Plano Tangente}
   \[
-    \emph{\nabla f(x_0, y_0, z_0)} \cdot (X-X_0) = 0
+    \emph{\nabla f(a, b, c)} \cdot (X-X_0) = 0
   \]
   \pause
   \[
-    \emph{\nabla f(x_0, y_0, z_0)} \cdot \left(
+    \emph{\nabla f(a, b, c)} \cdot \left(
         \begin{array}{c}
-          x - x_0 \\
-          y - y_0 \\
-          z - z_0
+          x - a \\
+          y - b \\
+          z - c
         \end{array}
       \right) = 0
   \]
 
   \pause
   \[
-    \emph{f_x(x_0, y_0, z_0)} (x-x_0) +
-    \emph{f_y(x_0, y_0, z_0)} (y-y_0) +
-    \emph{f_z(x_0, y_0, z_0)} (z-z_0) = 0
+    \emph{f_x(a, b, c)} (x-a) +
+    \emph{f_y(a, b, c)} (y-b) +
+    \emph{f_z(a, b, c)} (z-c) = 0
   \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Equação da Reta Normal}
   \[
-    X = X_0 + t\,\emph{\nabla f(x_0, y_0, z_0)}
+    X = X_0 + t\,\emph{\nabla f(a, b, c)}
     \qquad\qquad
     t \in \R
   \]
@@ -135,20 +135,20 @@
   \pause
   \[
     \begin{pmatrix} x \\ y \\ z \end{pmatrix}
-    = \begin{pmatrix} x_0\\ y_0 \\ z_0 \end{pmatrix}
+    = \begin{pmatrix} a\\ b \\ c \end{pmatrix}
     + t \begin{pmatrix}
-      \emph{f_x(x_0, y_0, z_0)} \\
-      \emph{f_y(x_0, y_0, z_0)} \\
-      \emph{f_z(x_0, y_0, z_0)}
+      \emph{f_x(a, b, c)} \\
+      \emph{f_y(a, b, c)} \\
+      \emph{f_z(a, b, c)}
     \end{pmatrix}
   \]
 
   \pause
   \[
     \begin{cases}
-      x = x_0 + t\,\emph{f_x(x_0, y_0, z_0)} \\
-      y = y_0 + t\,\emph{f_y(x_0, y_0, z_0)} \\
-      z = z_0 + t\,\emph{f_z(x_0, y_0, z_0)}
+      x = a   + t\;\emph{f_x(a, b, c)} \\
+      y = b   + t\;\emph{f_y(a, b, c)} \\
+      z\, = c + t\;\emph{f_z(a, b, c)}
     \end{cases}
   \]
 \end{frame}
@@ -162,8 +162,8 @@
 %------------------------------------------------------------------------------%
 \begin{proofframe}{Justificativa}
   Queremos o Plano Tangente a superfície suave \(z=f(x, y)\) \\
-  em um ponto \((x_0, y_0, z_0)\)
-  onde \(z_0 = f(x_0, y_0)\)
+  em um ponto \((a, b, c)\)
+  onde \(c = f(a, b)\)
 
   \pause
   \vspace{\baselineskip}
@@ -181,9 +181,9 @@
 \begin{proofframe}{Justificativa}
   Derivadas de $F$
   \begin{align*}
-    \onslide<+->{F_x = \D{}{x}\left(f(x, y) - z\right) = f_x - 0 = f_x \\[5mm]}
-    \onslide<+->{F_y = \D{}{y}\left(f(x, y) - z\right) = f_y - 0 = f_y \\[5mm]}
-    \onslide<+->{F_z = \D{}{z}\left(f(x, y) - z\right) = 0 - 1 = -1}
+    \onslide<+->{F_x}\onslide<+->{ = \D{}{x}\big(f(x, y) - z\big)}\onslide<+->{ = f_x - 0}\onslide<+->{ = f_x} \\[5mm]
+    \onslide<+->{F_y}\onslide<+->{ = \D{}{y}\big(f(x, y) - z\big)}\onslide<+->{ = f_y - 0}\onslide<+->{ = f_y} \\[5mm]
+    \onslide<+->{F_z}\onslide<+->{ = \D{}{z}\big(f(x, y) - z\big)}\onslide<+->{ =   0 - 1}\onslide<+->{ =  -1}
   \end{align*}
 \end{proofframe}
 
@@ -191,38 +191,40 @@
 \begin{proofframe}{Justificativa}
   Equação do Plano Tangente ao gráfico da função $f(x, y)$
   \[
-    \emph{\nabla F(x_0, y_0, z_0)} \cdot
+    \emph{\nabla F(a, b, c)} \cdot
     \begin{pmatrix}
-      x - x_0 \\
-      y - y_0 \\
-      z - z_0
+      x - a \\
+      y - b \\
+      z - c
     \end{pmatrix} = 0
   \]
 
   \pause
   \[
-    \emph{F_x(x_0, y_0, z_0)} (x-x_0) +
-    \emph{F_y(x_0, y_0, z_0)} (y-y_0) +
-    (z-z_0) = 0
+    \emph{F_x(a, b, c)} (x-a) +
+    \emph{F_y(a, b, c)} (y-b) +
+    (z-c) = 0
   \]
 
   \pause
   \[
-    {\color{magenta} f_x(x_0, y_0)} (x-x_0) +
-    {\color{magenta} f_y(x_0, y_0)} (y-y_0) -
-    (z-z_0) = 0
+    {\color{magenta} f_x(a, b)} (x-a) +
+    {\color{magenta} f_y(a, b)} (y-b) -
+    (z-c) = 0
   \]
 \end{proofframe}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Plano Tangente a superfície $z=f(x, y)$}
-  O plano tangente à superfície \(z=f(x, y)\) \\
+  O plano tangente à superfície \(z=f(x, y)\)
+
   de uma função diferenciável $f$
-  no ponto \(\left(x_0, y_0, f(x_0, y_0)\right)\) é
+  no ponto \(\big(a,\, b,\, f(a, b)\big)\) é
+
   \[
-    f_x(x_0, y_0) (x-x_0) +
-    f_y(x_0, y_0) (y-y_0) -
-    (z-z_0) = 0
+    f_x(a, b) (x-a) \;+\;
+    f_y(a, b) (y-b) \;-\;
+    (z-c) \;=\; 0
   \]
 \end{frame}
 
