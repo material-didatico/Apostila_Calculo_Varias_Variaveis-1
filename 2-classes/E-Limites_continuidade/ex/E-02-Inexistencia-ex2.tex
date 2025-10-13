@@ -1,95 +1,46 @@
 %------------------------------------------------------------------------------%
 \begin{question}
-  Verifique se a função
+  Verifique a existência do limite
   \(
-  f(x, y) = \frac{2x^2y}{x^4+y^2}
+    \lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2}
   \)
-  possui limite na origem.
-
-  \pause
-  \vspace{\baselineskip}
-  O limite na origem leva a uma indeterminação do tipo $\sfrac{0}{0}$
 \end{question}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-  Fazendo \(y=mx\), para \(m\neq 0\) e \(x\neq 0\),
-  \pause
-  temos
+  Caminho \(y = x\)
   \[
-    f(x, y)\evalat{y=mx}{}
     \pause
-    \;=\; \frac{2x^2y}{x^4+y^2} \evalat{y=mx}{}
+    \lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2} \evalat{y=x}{}
     \pause
-    \;=\; \frac{2mx^3}{x^4+m^2x^2}
+    =\; \lim_{x \to 0} \frac{x x}{x^2 + x^2}
     \pause
-    \;=\; \frac{2mx\,x^2}{\left(x^2+m^2\right)x^2}
+    \;=\; \lim_{x \to 0} \frac{x^2}{2x^2}
     \pause
-    \;=\; \frac{2mx}{x^2+m^2}
+    \;=\; \lim_{x \to 0} \frac{1}{2}
+    \pause
+    \;=\; \frac{1}{2}
   \]
 
   \pause
-  Calculando o limite \(x\to 0\), que corresponde a \((x, y)\to (0, 0)\)
+  Caminho \(y = -x\)
   \[
     \pause
-    \lim_{x\to 0} \frac{2mx}{x^2+m^2}
+    \lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2} \evalat{y=-x}{}
     \pause
-    \;=\; \frac{0}{m^2}
+    =\; \lim_{x \to 0} \frac{x(-x)}{x^2 + x^2}
     \pause
-    \;=\; 0
-    \qquad\qquad
-    \forall m
+    \;=\; \lim_{x \to 0} \frac{-x^2}{2x^2}
+    \pause
+    \;=\; \lim_{x \to 0} \frac{-1}{2}
+    \pause
+    \;=\; -\frac{1}{2}
   \]
 
   \pause
-  Portanto,
-  \(
-    {
-      \color<12->{red}
-      \lim_{(x, y)\to(0, 0)} \frac{2x^2y}{x^4+y^2} = 0
-    }
-    \pause
-    \qquad
-    \qquad
-    \text{\textcolor{red}{\textbf{Falso!}}}
-  \)
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  Fazendo \(y=kx^2\), para \(k\neq 0\) e \(x\neq 0\),
+  Como os limites nos caminhos são diferentes,
   \pause
-  temos
-  \[
-    f(x, y)\evalat{y=kx^2}{}
-    \pause
-    \;=\; \frac{2x^2y}{x^4+y^2} \evalat{y=kx^2}{}
-    \pause
-    \;=\; \frac{2kx^4}{x^4+k^2x^4}
-    \pause
-    \;=\; \frac{2kx^4}{\left(1+k^2\right)x^4}
-    \pause
-    \;=\; \frac{2k}{1+k^2}
-  \]
-
-  \pause
-  Calculando os limites até o ponto $(0, 0)$
-  \[
-    \pause
-    \lim_{x\to 0} f(x, y)\evalat{y=kx^2}{}
-    \pause
-    \;=\; \lim_{x\to 0} \frac{2k}{1+k^2}
-    \pause
-    \;=\; \frac{2k}{1+k^2}
-  \]
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  Para cada valor de $k$, a função $f$ se aproxima da origem com um valor diferente
-
-  \pause
-  Portanto, o limite não existe
+  \emph{o limite não existe}
 \end{resolution}
 
 %------------------------------------------------------------------------------%

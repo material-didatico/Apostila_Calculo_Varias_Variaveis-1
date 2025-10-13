@@ -100,12 +100,21 @@
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Resposta}
-\begin{align*}
-  f_{xx}(x, y) & = ye^x                           \\[3mm]
-  f_{xy}(x, y) & = \color<2>{blue}{e^x - \sin(y)} \\[3mm]
-  f_{yy}(x, y) & = -x\cos(y)                      \\[3mm]
-  f_{yx}(x, y) & = \color<2>{blue}{e^x - \sin(y)}
-\end{align*}
+\begin{columns}
+\column{0.4\linewidth}
+  \begin{align*}
+    f_x(x, y) & = \cos(y) + ye^x \\[3mm]
+    f_y(x, y) & = e^x - x\sin(y)
+  \end{align*}
+\column{0.6\linewidth}
+\pause
+  \begin{align*}
+    f_{xx}(x, y) & = ye^x                           \\[3mm]
+    f_{xy}(x, y) & = \color<3>{blue}{e^x - \sin(y)} \\[3mm]
+    f_{yy}(x, y) & = -x\cos(y)                      \\[3mm]
+    f_{yx}(x, y) & = \color<3>{blue}{e^x - \sin(y)}
+  \end{align*}
+\end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%

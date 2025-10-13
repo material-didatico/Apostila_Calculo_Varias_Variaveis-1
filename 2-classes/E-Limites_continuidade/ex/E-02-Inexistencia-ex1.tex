@@ -19,55 +19,54 @@
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-  Analisando $f$ sobre a reta \(y=x\)
+  Calculando o limite $f$ sobre a reta \(y=x\)
   \pause
   \[
-    f(x, y) \evalat{y=x}{}
+    \lim_{(x, y)\to(0, 0)} f(x, x)
     \pause
-    = f(x, x)
+    \;=\; \lim_{(x, y)\to(0, 0)} \frac{y}{x} \evalat{y=x}{}
     \pause
-    = \frac{x}{x}
+    =\; \lim_{x\to 0} \frac{x}{x}
     \pause
-    = 1
-    \pause
-    \qquad\text{ pois } x=0 \text{ não está no domínio de } f
+    \;=\; 1
   \]
 
   \pause
-  Analisando $f$ sobre a reta \(y=0\)
+  \bigskip
+  Calculando o limite $f$ sobre a reta \(y=0\)
   \pause
   \[
-    f(x, y) \evalat{y=0}{}
+    \lim_{(x, y)\to(0, 0)} f(x, 0)
     \pause
-    = f(x, 0)
+    \;=\; \lim_{(x, y)\to(0, 0)} \frac{y}{x} \evalat{y=0}{}
     \pause
-    = \frac{0}{x}
+    =\; \lim_{x\to 0} \frac{0}{x}
     \pause
-    = 0
-    \pause
-    \qquad\text{ pois } x=0 \text{ não está no domínio de } f
+    \;=\; 0
   \]
-
-  \pause
-  O que vai acontecer com outas retas da forma \(y=ax\)?
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
   Para qualquer $\delta>0$
-  \pause
-  sempre vai existir um
-
-  ponto da forma \((x, x)\) e um ponto da forma \((x, 0)\)
 
   \pause
-  dentro da bola de raio $\delta$ de centro em \((0, 0)\)
+  dentro da bola de raio $\delta$ e centro em \((0, 0)\)
+  \pause
+  sempre vai existir
 
   \pause
+  um ponto da forma \((x, x)\) onde a função vale 1 e
+
+  \pause
+  um ponto da forma \((x, 0)\) onde a  função vale 0
+
+  \pause
+  \medskip
   Nenhum valor $L$ atende as condições da definição de limite
 
   \pause
-  \vspace{\baselineskip}
+  \bigskip
   \emph{O limite não existe}
 \end{resolution}
 

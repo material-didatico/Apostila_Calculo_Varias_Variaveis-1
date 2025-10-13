@@ -2,77 +2,82 @@
 \begin{question}
   Considere a função
   \[
-  f(x, y) = \frac{x^2 - y^2}{x^2 + y^2}
+    f(x, y) = \frac{x^2 - y^2}{x^2 + y^2}
   \]
   Calcule os limites
   \quad
   \(
-  \lim_{x \to 0} \left(\lim_{y \to 0} f(x,y)\right)
+    \lim_{x \to 0} \left(\lim_{y \to 0} f(x,y)\right)
   \)
   \quad
   e
   \quad
   \(
-  \lim_{y \to 0} \left(\lim_{x \to 0} f(x,y)\right)
+    \lim_{y \to 0} \left(\lim_{x \to 0} f(x,y)\right)
   \)
 \end{question}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Limite em $y$ depois em $x$}
   \[
-  L_1
-  = \lim_{x \to 0} \left( \lim_{y \to 0} \frac{x^2 - y^2}{x^2 + y^2} \right)
+    L_1
+    = \lim_{x \to 0} \left( \lim_{y \to 0} \frac{x^2 - y^2}{x^2 + y^2} \right)
   \]
 
   \pause
   Para $x$ fixo diferente de zero
   \[
-  \lim_{y \to 0} \frac{x^2 - y^2}{x^2 + y^2}
-  \pause
-  \;=\; \frac{x^2}{x^2}
-  \pause
-  \;=\; 1
+    \lim_{y \to 0} \frac{x^2 - y^2}{x^2 + y^2}
+    \pause
+    \;=\; \frac{x^2}{x^2}
+    \pause
+    \;=\; 1
   \]
+
   \pause
   Logo
   \[
-  L_1
-  \pause
-  \;=\; \lim_{x \to 0} \left(\lim_{y \to 0} f(x,y)\right)
-  \pause
-  \;=\; \lim_{x \to 0} 1
-  \pause
-  \;=\; 1
+    L_1
+    \pause
+    \;=\; \lim_{x \to 0} \left(\lim_{y \to 0} f(x,y)\right)
+    \pause
+    \;=\; \lim_{x \to 0} 1
+    \pause
+    \;=\; 1
   \]
+
+  ~
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Limite em $x$ depois em $y$}
   \[
-  L_2
-  = \lim_{y \to 0} \left( \lim_{x \to 0} \frac{x^2 - y^2}{x^2 + y^2} \right)
+    L_2
+    = \lim_{y \to 0} \left( \lim_{x \to 0} \frac{x^2 - y^2}{x^2 + y^2} \right)
   \]
 
   \pause
   Para $y$ diferente de zero
   \[
-  \lim_{x \to 0} \frac{x^2 - y^2}{x^2 + y^2}
-  \pause
-  \;=\; \frac{-y^2}{y^2}
-  \pause
-  \;=\; -1
+    \lim_{x \to 0} \frac{x^2 - y^2}{x^2 + y^2}
+    \pause
+    \;=\; \frac{-y^2}{y^2}
+    \pause
+    \;=\; -1
   \]
+
   \pause
   Logo
   \[
-  L_2
-  \pause
-  \;=\; \lim_{y \to 0} \left(\lim_{x \to 0} f(x,y)\right)
-  \pause
-  \;=\; \lim_{y \to 0} (-1)
-  \pause
-  \;=\; -1
+    L_2
+    \pause
+    \;=\; \lim_{y \to 0} \left(\lim_{x \to 0} f(x,y)\right)
+    \pause
+    \;=\; \lim_{y \to 0} (-1)
+    \pause
+    \;=\; -1
   \]
+
   \pause
   Não podemos definir o limite em várias variáveis dessa forma
 \end{resolution}
