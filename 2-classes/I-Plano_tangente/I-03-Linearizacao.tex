@@ -17,33 +17,33 @@
 \begin{frame}{Plano Tangente a superfície $z=f(x, y)$}
   Sabemos que o plano tangente à superfície \(z=f(x, y)\) \\
   de uma função diferenciável $f$
-  no ponto \(\left(x_0, y_0, f(x_0, y_0)\right)\) é
+  no ponto \(\left(a, b, f(a, b)\right)\) é
   \[
-    \emph{f_x(x_0, y_0)} (x-x_0) +
-    \emph{f_y(x_0, y_0)} (y-y_0) -
-    (z-z_0) = 0
+    \emph{f_x(a, b)} (x-a) +
+    \emph{f_y(a, b)} (y-b) -
+    (z-c) = 0
   \]
 
   \pause
   Rearranjando
   \[
     z
-    = \emph{f(x_0, y_0)}
-    + \emph{f_x(x_0, y_0)} (x-x_0)
-    + \emph{f_y(x_0, y_0)} (y-y_0)
+    = \emph{f(a, b)}
+    + \emph{f_x(a, b)} (x-a)
+    + \emph{f_y(a, b)} (y-b)
   \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Aproximação Linear}
   Aproximação linear de uma função diferenciável de duas variáveis \\
-  em torno do ponto \((x_0, y_0)\)
+  em torno do ponto \((a, b)\)
   \pause
   \[
     L(x, y)
-    = \emph{f(x_0, y_0)}
-    + \emph{f_x(x_0, y_0)} (x-x_0)
-    + \emph{f_y(x_0, y_0)} (y-y_0)
+    = \emph{f(a, b)}
+    + \emph{f_x(a, b)} (x-a)
+    + \emph{f_y(a, b)} (y-b)
   \]
 \end{frame}
 
@@ -58,7 +58,7 @@
   Se $f$ possui primeira e segunda derivadas parciais
   \pause
   sobre um conjunto aberto
-  contendo um retângulo $R$ centrado em \((x_0, y_0)\)
+  contendo um retângulo $R$ centrado em \((a, b)\)
   \pause
   e se $M$ é qualquer
   limitante superior para os valores de \(\abs{f_{xx}}\),  \(\abs{f_{yy}}\)
@@ -73,7 +73,7 @@
   \pause
   então o erro $E(x, y)$ na linearização satisfaz
   \[
-    \emph{\abs{E(x, y)} \leq \frac{M}{2} \big(\abs{x-x_0}+\abs{y-y_0}\big)^2}
+    \emph{\abs{E(x, y)} \leq \frac{M}{2} \big(\abs{x-a}+\abs{y-b}\big)^2}
   \]
 \end{frame}
 
