@@ -1,110 +1,70 @@
 
-size(6cm);
-
 import "../../common/asy/utils.ah" as utils;
+import "cadeia.ah" as cadeia;
 
-pair W = (0, 3);
-pair X = (-2, 1);
-pair Y = (0, 1);
-pair Z = (2, 1);
-pair RS = (0, -1);
+size(6cm, 6cm);
 
-void caixa(string texto, pair pos) {
-draw(box((pos.x - 0.2, pos.y - 0.2), (pos.x + 0.2, pos.y + 0.2)), pens[0]+ 0.8pt);
-label(texto, pos);
-}
+pair w = ( 0,    3);     
+pair x = (-2.5,  0);    
+pair z = ( 2.5,  0);     
+pair r = ( 0,   -3);
+pair y = ( 0,    0);    
 
+label("$w = f(x, y, z)$", w, N);
+label("$x$",              x, W);
+label("$y$",              y, W);
+label("$r$",              r, S);
+label("$z$",              z, E);
 
-caixa("$w$", W);
-caixa("$x$", X);
-caixa("$y$", Y);
-caixa("$z$", Z);
-caixa("$r,s$", RS);
+dot( midpoint(w), pens[0] + 3pt );
+dot( midpoint(x), pens[0] + 3pt );
+dot( midpoint(y), pens[0] + 3pt );
+dot( midpoint(r), pens[0] + 3pt );
+dot( midpoint(z), pens[0] + 3pt );
 
+draw( x--w, pens[0]+ 1pt );
+draw( z--w, pens[0]+ 1pt );
+draw( r--x, pens[0]+ 1pt );
+draw( r--z, pens[0]+ 1pt );
+draw( w--r, pens[0]+ 1pt );
 
-
-draw(box((X.x - 0.8, X.y - 0.5), (Z.x + 0.8, Z.y + 0.5)), dashed);
-
-
-draw((0, 1.5)--(0, 2.8), Arrow(TeXHead));
-label("$f$", midpoint(W--Y), E);
-
-draw((-0.2, -0.9)--(-2, 0.8), Arrow(TeXHead));
-label("$g$", midpoint(X--RS), SW - 1);
-
-draw((0, -0.8)--(0, 0.8), Arrow(TeXHead));
-label("$h$", midpoint(Y--RS), SW);
-
-draw((0.2, -0.9)--(2, 0.8), Arrow(TeXHead));
-label("$k$", midpoint(Z--RS), SW);
-
-
-
+label(cadeia.D("w", "x"), midpoint(x--w), NW);
+label(cadeia.D("w", "y"), midpoint(y--w), SE);
+label(cadeia.D("w", "z"), midpoint(z--w), NE);
+label(cadeia.D("x", "r"), midpoint(r--x), SW);
+label(cadeia.D("y", "r"), midpoint(r--y), NE);
+label(cadeia.D("z", "r"), midpoint(r--z), SE);
+  
 newpage();
-size(200);
+size(6cm, 6cm);
 
-pair W = (0, 3);     
-pair X = (-2, 0);    
-pair Z = (2, 0);     
-pair R = (0, -3);
-pair Y = (0, 0);    
+pair w = ( 0,    3);     
+pair x = (-2.5,  0);    
+pair z = ( 2.5,  0);     
+pair s = ( 0,   -3);
+pair y = ( 0,    0);    
 
+label("$w = f(x, y, z)$", w, N);
+label("$x$",              x, W);
+label("$y$",              y, W);
+label("$s$",              s, S);
+label("$z$",              z, E);
 
-label("$w = f(x, y,z)$", W, N);
-label("$x$", X, W);
-label("$y$", Y+0.1, W);
-label("$r$", R, S);
-label("$z$", Z, W);
+dot( midpoint(w), pens[0] + 3pt );
+dot( midpoint(x), pens[0] + 3pt );
+dot( midpoint(y), pens[0] + 3pt );
+dot( midpoint(s), pens[0] + 3pt );
+dot( midpoint(z), pens[0] + 3pt );
 
-dot(midpoint(W), pens[0] + 3pt);
-dot(midpoint(X), pens[0] + 3pt);
-dot(midpoint(Y), pens[0] + 3pt);
-dot(midpoint(R), pens[0] + 3pt);
-dot(midpoint(Z), pens[0] + 3pt);
+draw( x--w, pens[0]+ 1pt );
+draw( z--w, pens[0]+ 1pt );
+draw( s--x, pens[0]+ 1pt );
+draw( s--z, pens[0]+ 1pt );
+draw( w--s, pens[0]+ 1pt );
 
-draw(X--W, pens[0]+ 1pt);
-draw(Z--W,pens[0]+ 1pt);
-draw(R--X,pens[0]+ 1pt);
-draw(R--Z,pens[0]+ 1pt);
-draw(W--R,pens[0]+ 1pt);
-
-label("$\frac{\partial w}{\partial x}$", midpoint(Z--W), NE);
-label("$\frac{\partial w}{\partial x}$", midpoint(X--W), NW);
-label("$\frac{\partial w}{\partial y}$", midpoint(Y--W), NW);
-label("$\frac{\partial x}{\partial r}$", midpoint(R--X), SW);
-label("$\frac{\partial y}{\partial r}$", midpoint(R--Y), SW);
-label("$\frac{\partial z}{\partial r}$", midpoint(R--Z), SE);
-
-newpage();
-
-pair W = (0, 3);     
-pair X = (-2, 0);    
-pair Z = (2, 0);     
-pair S = (0, -3);
-pair Y = (0, 0);    
-
-
-label("$w = f(x, y,z)$", W, N);
-label("$x$", X, W);
-label("$y$", Y+0.1, W);
-label("$s$", S, S);
-label("$z$", Z, W);
-
-dot(midpoint(W), pens[0] + 3pt);
-dot(midpoint(X), pens[0] + 3pt);
-dot(midpoint(Y), pens[0] + 3pt);
-dot(midpoint(S), pens[0] + 3pt);
-dot(midpoint(Z), pens[0] + 3pt);
-
-draw(X--W, pens[0]+ 1pt);
-draw(Z--W,pens[0]+ 1pt);
-draw(S--X,pens[0]+ 1pt);
-draw(S--Z,pens[0]+ 1pt);
-draw(W--S,pens[0]+ 1pt);
-
-label("$\frac{\partial w}{\partial x}$", midpoint(Z--W), NE);
-label("$\frac{\partial w}{\partial x}$", midpoint(X--W), NW);
-label("$\frac{\partial w}{\partial y}$", midpoint(Y--W), NW);
-label("$\frac{\partial x}{\partial s}$", midpoint(S--X), SW);
-label("$\frac{\partial y}{\partial s}$", midpoint(S--Y), SW);
-label("$\frac{\partial z}{\partial s}$", midpoint(S--Z), SE);
+label(cadeia.D("w", "x"), midpoint(x--w), NW);
+label(cadeia.D("w", "y"), midpoint(y--w), SE);
+label(cadeia.D("w", "z"), midpoint(z--w), NE);
+label(cadeia.D("x", "s"), midpoint(r--x), SW);
+label(cadeia.D("y", "s"), midpoint(r--y), NE);
+label(cadeia.D("z", "s"), midpoint(r--z), SE);

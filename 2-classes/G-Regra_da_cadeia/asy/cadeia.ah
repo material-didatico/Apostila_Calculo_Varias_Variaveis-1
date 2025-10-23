@@ -1,0 +1,22 @@
+
+void caixa(string texto, pair pos, pen cor=black)
+{
+  draw(box( (pos.x - 0.6, pos.y - 0.3), 
+            (pos.x + 0.6, pos.y + 0.3)), 
+            cor );
+
+  label(texto, pos);
+}
+
+
+string d(string a, string b)
+{
+  return "$\displaystyle\frac{d" + a + "}{d" + b + "}$";
+}
+
+string D(string a, string b)
+{
+  return "$\displaystyle\frac{\partial " + a + "}{\partial " + b + "}$";
+}
+
+defaultpen(fontsize(10pt));

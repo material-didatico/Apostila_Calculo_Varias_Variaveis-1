@@ -47,7 +47,7 @@ def mk_docs() -> None:
         print('Coping booklet...')
         sh.copy(book, docs)
 
-    print('Coping handouts...')
+    print('Copying handouts...')
     cp_pdf(classes, docs_classes)
 
     print('Coping exams...')
