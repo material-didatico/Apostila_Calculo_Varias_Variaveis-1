@@ -1,0 +1,129 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Calcule quanto
+  \[
+    f(x, y, z) = y\sin(x) + 2yz
+  \]
+  irá variar se nos movermos 0,1 unidades a partir de \((0, 1, 0)\) \\
+  na direção do ponto \((2, 2, -2)\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Direção do movimento}
+  \[
+    \pause
+    v
+    \pause
+    \;=\; \vetortri{2}{2}{-2}
+        - \vetortri{0}{1}{ 0}
+    \pause
+    \;=\; \vetortri{2}{1}{-2}
+    \pause
+    \;=\; 2\veci + \vecj -2\veck
+  \]
+  \pause
+  Normalizando o vetor
+  \[
+    \pause
+    u
+    \pause
+    = \frac{v}{\abs{v}}
+    \pause
+    = \frac{2\veci + \vecj -2\veck}{\sqrt{2^2 + 1^2 + (-2)^2}}
+    \pause
+    = \frac{2\veci + \vecj -2\veck}{\sqrt{9}}
+    \pause
+    = \frac{2}{3} \veci + \frac{1}{3} \vecj - \frac{2}{3} \veck
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Derivadas parciais}
+  \begin{align*}
+    \onslide<+->{\D{f}{x}}
+    \onslide<+->{& = \D{}{x}\left(y\sin(x) + 2yz\right)}
+    \onslide<+->{ = y\cos(x) \\[5mm]}
+    \onslide<+->{\D{f}{y} & = \D{}{y}\left(y\sin(x) + 2yz\right)}
+    \onslide<+->{ = \sin(x) + 2z\\[5mm]}
+    \onslide<+->{\D{f}{z} & = \D{}{z}\left(y\sin(x) + 2yz\right)}
+    \onslide<+->{ = 2y}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Gradiente de $f$}
+
+  \[
+    \onslide<+->{\nabla f}
+    \onslide<+->{= (y\cos(x))\veci + (\sin(x) + 2z)\vecj + (2y)\veck}
+    \onslide<+->{= \vetortri{y\cos(x)}{\sin(x) + 2z}{2y}}
+  \]
+
+  \[
+    \onslide<+->{\nabla f(0, 1, 0)}
+    \onslide<+->{= (1\cos(0))\veci + (\sin(0) + 2\times 0)\vecj + (2\times 1)\veck}
+    \onslide<+->{= \veci + 2\veck}
+    \onslide<+->{= \vetortri{1}{0}{2}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Derivada direcional}
+  \[
+    D_u f(0, 1, 0)
+    \pause
+    \;=\; \nabla f(0, 1, 0) \cdot u
+  \]
+
+  \[
+    \hphantom{D_u f(0, 1, 0)}
+    \pause
+    \;=\; \left(\veci + 2\veck\right)
+    \cdot
+    \left(\frac{2}{3} \veci + \frac{1}{3} \vecj - \frac{2}{3} \veck\right)
+  \]
+
+  \[
+    \hphantom{D_u f(0, 1, 0)}
+    \pause
+    \;=\; 1\times\frac{2}{3} + 0\times\frac{1}{3} + 2 \times\left(- \frac{2}{3}\right)
+  \]
+
+  \[
+    \hphantom{D_u f(0, 1, 0)}
+    \pause
+    \;=\; \frac{2}{3} - \frac{4}{3}
+    \pause
+    \;=\; -\frac{2}{3}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Variação}
+  \[
+    \pause
+    df
+    \pause
+    \;=\; D_u f(0, 1, 0) ds
+  \]
+
+  \[
+    \pause
+    \hphantom{df}
+    \;=\; -\frac{2}{3}\times 0,1
+    \pause
+    \;=\; -\frac{2}{3} \frac{1}{10}
+    \pause
+    \;=\; -\frac{2}{30}
+    \pause
+    \;=\; -\frac{1}{15}
+  \]
+
+  \[
+    \pause
+    \hphantom{df}
+    \approx -0,067
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

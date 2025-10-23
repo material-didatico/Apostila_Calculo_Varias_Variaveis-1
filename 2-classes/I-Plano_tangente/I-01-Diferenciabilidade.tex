@@ -58,18 +58,22 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Definição -- Derivada Parcial em $x$}
-  A derivada parcial, com relação a \emph{$x$},
-  da função \(f\colon R\subset\R^2\to\R\), \(f(x, y)\) \\
+\begin{frame}{Definição -- Derivadas Parciais}
+  As derivadas parciais, com relação a \emph{$x$} e \emph{$y$},
+  da função \(f\colon R\subset\R^2\to\R\),
   no ponto \((x, y) = (a, b)\)
 
   \[
-    \frac{\partial f}{\partial x}(a, b)
+    \D{f}{x}(a, b)
     =\; \lim_{h\to 0} \frac{f(\emph{a+h}, b)-f(\emph{a}, b)}{h}
   \]
 
-  \vspace{\baselineskip}
-  Desde que o limite exista
+  \[
+    \D{f}{y}(a, b)
+    =\; \lim_{h\to 0} \frac{f(a, \emph{b+h})-f(a, \emph{b})}{h}
+  \]
+
+  Desde que os limites existam
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -87,7 +91,7 @@
 
   \pause
   \vspace{0.5\baselineskip}
-  se \(\frac{df}{dx}(a, b)\) e \(\frac{df}{dy}(a, b)\) existem
+  se \(\D{f}{x}(a, b)\) e \(\D{f}{y}(a, b)\) existem
 
   \pause
   \vspace{0.5\baselineskip}
@@ -114,7 +118,7 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Teorema do Incremento}
 	Suponha que as derivadas parciais de primeira ordem de $f(x, y)$ sejam
-	definidas em uma região aberta $R$, que contem o ponto $(a, b)$
+	definidas em uma região aberta $R$, que contém o ponto $(a, b)$
   \pause
 	e que \emph{$f_x$ e $f_y$ sejam contínuas em $(a, b)$},
 	\pause
@@ -146,7 +150,7 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Corolário do Teorema do Incremento}
-  Se \(\frac{df}{dx}(a, b)\) e \(\frac{df}{dy}(a, b)\) existem
+  Se \(\D{f}{x}(a, b)\) e \(\D{f}{y}(a, b)\) existem
 
   \pause
   \vspace{0.5\baselineskip}

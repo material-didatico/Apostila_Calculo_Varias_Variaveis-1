@@ -1,0 +1,40 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Uma lata de formato cilíndrico foi projetada para ter um raio de 1 pol.
+  e uma altura de 5 pol., mas o raio tem um erro de \(dr=0,03\) e a altura
+  tem um erro de \(dh=-0,1\).
+
+  \vspace{\baselineskip}
+  Qual a variação resultante no volume da lata?
+\end{question}
+
+\begin{resolution}{Variação exata}
+  \begin{align*}
+    \onslide<+->{\Delta V}
+    \onslide<+->{& = V(r_0+dr, h_0+dh)- V(r_0, h_0) \\}
+    \onslide<+->{& = V(1+0,03, 5-0,1) - V(1, 5)\\}
+    \onslide<+->{& = V(1,03, 4,9) - V(1, 5) \\}
+    \onslide<+->{& = \pi(1,03)^2 \times 4,9 - \pi 1^2 \times 5 \\}
+    \onslide<+->{& = 16,3313 - 15,7080 \\}
+    \onslide<+->{& = 0,6233}
+  \end{align*}
+\end{resolution}
+
+\begin{resolution}{Variação usando o diferencial}
+  \begin{align*}
+    \onslide<+->{\Delta V}
+    \onslide<+->{& \approx dV = V_r(r_0, h_0) dr + V_h(r_0, h_0) dh \\}
+    \onslide<+->{& = \left(2\pi r h\right)\evalat{(r_0, h_0)}{} dr
+      + \left(\pi r^2\right)\evalat{(r_0, h_0)}{} dh \\}
+    \onslide<+->{& = \left(2\pi r h\right)\evalat{(1, 5)}{} (0,03)
+      + \left(\pi r^2\right)\evalat{(1, 5)}{} (-0,1) \\}
+    \onslide<+->{& = \left(2\pi 1 \times 5\right)(0,03)
+      - \left(\pi 1^2\right)(0,1) \\}
+    \onslide<+->{& = 0,3\pi - 0,1\pi  \\}
+    \onslide<+->{& = 0,2\pi \\}
+    \onslide<+->{& \approx 0,6283}
+    \onslide<+->{& & \Delta V = 0,6233}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

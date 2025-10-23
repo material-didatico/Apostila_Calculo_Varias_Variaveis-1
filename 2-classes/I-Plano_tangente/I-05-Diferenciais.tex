@@ -1,0 +1,150 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Diferenciais}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Variação em uma Direção}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Variação em uma Dimensão}
+  Em uma dimensão podemos estimar a variação do valor da função
+  em um ponto próximo à $a$ usando a derivada em $a$
+
+  \pause
+  \[
+    df = f'(a) dx
+  \]
+
+  \[
+    \pause
+    dx = x - a
+  \]
+
+  \[
+    \pause
+    df \approx f(x) - f(a)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Variação em Várias Dimensões}
+  Em várias dimensões usamos a derivada direcional
+  \pause
+  \[
+    df
+    = \left(D_u f(a, b){}\right) ds
+    \pause
+    = \left(\nabla f(a, b){} \cdot u\right) ds
+  \]
+  \pause
+  \[
+    ds = \sqrt{(x - a)^2 + (y-b)^2}
+  \]
+  \pause
+  \[
+    df \approx f(x, y) - f(a, b)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{ex/I-05-Diferenciais-ex1}
+
+%------------------------------------------------------------------------------%
+\section{Diferenciais}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diferencial em Uma Dimensão}
+  Quando $x$ varia de $a$ para
+  \tabto{55mm}\(a+\Delta x\)
+
+  \pause
+  \vspace{\baselineskip}
+  A variação da função $f$ é
+  \tabto{55mm}\(\Delta f = f(a + \Delta x) - f(a)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A diferencial de $f$ é
+  \tabto{55mm}\(df = f'(a) \Delta x\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diferencial em Uma Dimensão}
+  Quando $x$ varia de $a$ para
+  \tabto{55mm}\(a+dx\)
+
+  \vspace{\baselineskip}
+  A variação da função $f$ é
+  \tabto{55mm}\(\Delta f = f(a + dx) - f(a)\)
+
+  \vspace{\baselineskip}
+  A diferencial de $f$ é
+  \tabto{55mm}\(df = f'(a) dx\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diferencial em Duas Dimensão}
+  Quando $(x, y)$ varia de $(a, b)$ para
+  \tabto{65mm}\((a+dx, b+dy)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A variação da função $f$ é
+  \tabto{65mm}\(\Delta f = f(a+dx, b+dy) - f(a, b)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A diferencial de $f$ é
+  \tabto{65mm}\(df = f_x(a, b) dx +  f_y(a, b) dy\)
+
+  \pause
+  \vspace{\baselineskip}
+  As diferenciais $dx$ e $dy$ são variáveis independentes
+  \[
+    dx = x - a
+    \qquad
+    dy=y-b
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição}
+  Se movemos de \((a, b)\) para um ponto próximo \((a+dx, b+dy)\)
+
+  \pause
+  \vspace{\baselineskip}
+  A \emph{Diferencial Total de $f$} é
+  \[
+    df \;=\; f_x(a, b)\, dx \;+\;  f_y(a, b)\, dy
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{ex/I-05-Diferenciais-ex2}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.6
+  \begin{enumerate}
+    \item Estudar o texto da seção
+    \item Resolver os exercícios: 19-24
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

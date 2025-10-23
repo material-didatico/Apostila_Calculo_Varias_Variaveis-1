@@ -1,0 +1,99 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Encontre o plano tangente ao gráfico da função
+\[
+  f(x, y) = x^2 + y^2 -2xy -x +3y + 4
+\]
+no ponto \((2, -3)\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  A equação do plano tangente ao gráfico da função $f$ no ponto \((2, -3)\) é
+  \pause
+  \[
+    f_x(a, b)(x-a) + f_y(a, b)(y-b) - (z-c) = 0
+  \]
+  \[
+    \pause
+    f_x(2, -3)(x-2) + f_y(2, -3)(y+3) - (z-c) = 0
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Calculando a derivada parcial em $x$}
+  \[
+    f_x(x, y)
+    \pause
+    \;=\; \D{f}{x}
+    \pause
+    \;=\; \D{}{x}\left(x^2 + y^2 -2xy -x +3y + 4\right)
+    \pause
+    \;=\; 2x -2y -1
+  \]
+
+  \pause
+  \bigskip
+  \[
+    f_x(2, -3)
+    \pause
+    \;=\; \left(2x -2y -1\right)\evalat{(2, -3)}{}
+    \pause
+    =\; 2(2) - 2(-3) - 1
+    \pause
+    \;=\; 4 + 6 - 1
+    \pause
+    \;=\; 9
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Calculando a derivada parcial em $y$}
+  \[
+    f_y(x, y)
+    \pause
+    \;=\; \D{f}{y}
+    \pause
+    \;=\; \D{}{y}\left(x^2 + y^2 -2xy -x +3y + 4\right)
+    \pause
+    \;=\; 2y - 2x + 3
+  \]
+
+  \pause
+  \bigskip
+  \[
+    f_y(2, -3)
+    \pause
+    \;=\; \left(2y - 2x + 3\right)\evalat{(2, -3)}{}
+    \pause
+    \;=\; 2(-3) - 2(2) + 3
+    \pause
+    \;=\; -6 -4 + 3
+    \pause
+    \;=\; -7
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando $f$ no ponto \((2, -3)\)}
+  \begin{align*}
+    \onslide<+->{c}
+    \onslide<+->{& = f(2, -3) \\}
+    \onslide<+->{& = \left(x^2 + y^2 -2xy -x +3y + 4\right)\evalat{(2, -3)}{} \\}
+    \onslide<+->{& = 2^2 + (-3)^2 -2(2)(-3) -2 +3(-3) + 4 \\[2mm]}
+    \onslide<+->{& = 4 + 9 + 12 - 2 - 9 + 4 \\[2mm]}
+    \onslide<+->{& = 18}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação do Plano Tangente}
+  \begin{gather*}
+      \onslide<+->{f_x(2, -3)(x-2) + f_y(2, -3)(y+3) - (z-c) = 0 \\[3mm]}
+      \onslide<+->{9(x-2) -7(y+3) - (z-18) = 0 \\[3mm]}
+      \onslide<+->{9x - 18 -7y -21 -z +18 = 0  \\[3mm]}
+      \onslide<+->{9x -7y -z = 21}
+  \end{gather*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

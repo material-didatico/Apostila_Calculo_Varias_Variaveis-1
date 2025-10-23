@@ -1,0 +1,109 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Seja
+\[
+  f(x, y) = \sqrt{4x + y^2}
+\]
+use a aproximação linear de $f$ no ponto $(1, 2)$
+para estimar $f(1,02; 1,98)$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando a Derivada Parcial em $x$}
+  \begin{align*}
+    \onslide<+->{\D{f}{x}}
+    \onslide<+->{& = \D{}{x} \sqrt{4x + y^2}  \\[1mm]}
+    \onslide<+->{& = \D{}{x} \left(4x + y^2\right)^{\sfrac{1}{2}}  \\[1mm]}
+    \onslide<+->{& = \frac{1}{2}\left(4x + y^2\right)^{\sfrac{-1}{2}}\D{}{x} \left(4x + y^2\right)  \\[1mm]}
+    \onslide<+->{& = \frac{1}{2} \, \frac{1}{\sqrt{4x + y^2}}\, 4  \\[1mm]}
+    \onslide<+->{& = \frac{2}{\sqrt{4x + y^2}}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando a Derivada Parcial em $x$}
+  \begin{align*}
+    \onslide<+->{\D{f}{x}(1, 2)}
+    \onslide<+->{& = \frac{2}{\sqrt{4x + y^2}} \evalat{(1, 2)}{}  \\[1mm]}
+    \onslide<+->{& = \frac{2}{\sqrt{4\times 1 + 2^2}}  \\[1mm]}
+    \onslide<+->{& = \frac{2}{\sqrt{8}}}
+    \onslide<+->{\;=\; \frac{2}{2\sqrt{2}}}
+    \onslide<+->{\;=\; \frac{1}{\sqrt{2}}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando a Derivada Parcial em $y$}
+  \begin{align*}
+    \onslide<+->{\D{f}{y}}
+    \onslide<+->{& = \D{}{y} \sqrt{4x + y^2}  \\[1mm]}
+    \onslide<+->{& = \D{}{y} \left(4x + y^2\right)^{\sfrac{1}{2}}  \\[1mm]}
+    \onslide<+->{& = \frac{1}{2}\left(4x + y^2\right)^{\sfrac{-1}{2}}\D{}{y} \left(4x + y^2\right)  \\[1mm]}
+    \onslide<+->{& = \frac{1}{2} \, \frac{1}{\sqrt{4x + y^2}}\, 2y  \\[1mm]}
+    \onslide<+->{& = \frac{y}{\sqrt{4x + y^2}}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando a Derivada Parcial em $y$}
+  \begin{align*}
+    \onslide<+->{\D{f}{y}(1, 2)}
+    \onslide<+->{& = \frac{y}{\sqrt{4x + y^2}} \;\evalat{(1, 2)}{}  \\[1mm]}
+    \onslide<+->{& = \frac{2}{\sqrt{4\times 1 + 2^2}}  \\[1mm]}
+    \onslide<+->{& = \frac{2}{\sqrt{8}}}
+    \onslide<+->{\;=\; \frac{2}{2\sqrt{2}}}
+    \onslide<+->{\;=\; \frac{1}{\sqrt{2}}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando a Função}
+  \begin{align*}
+    \onslide<+->{f(1, 2)}
+    \onslide<+->{& = \sqrt{4x + y^2}  \evalat{(1, 2)}{}  \\[1mm]}
+    \onslide<+->{& = \sqrt{4\times 1 + 2^2}  \\[1mm]}
+    \onslide<+->{& = \sqrt{4 + 4} \\[1mm]}
+    \onslide<+->{& = \sqrt{8} \\[1mm]}
+    \onslide<+->{& = 2\sqrt{2}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Aproximação Linear}
+  \begin{align*}
+    \onslide<+->{L(x, y) }
+    \onslide<+->{& = f(a, b) + \D{f}{x}(a, b)(x-a) + \D{f}{y}(y-b) \\}
+    \onslide<+->{& = f(1, 2) + \D{f}{x}(1, 2)(x - 1) + \D{f}{y}(1, 2)(y - 2)   \\}
+    \onslide<+->{& = 2\sqrt{2} + \frac{1}{\sqrt{2}}(x - 1) + \frac{1}{\sqrt{2}}(y - 2) \\}
+    \onslide<+->{& = \frac{4}{\sqrt{2}} + \frac{x + y - 3}{\sqrt{2}} \\}
+    \onslide<+->{& = \frac{x + y + 1}{\sqrt{2}}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Aproximação}
+  \[
+    L(1,02; 1,98)
+    \pause
+    = \frac{1,02 + 1,98 + 1}{\sqrt{2}}
+    \pause
+    = \frac{4}{\sqrt{2}}
+    \pause
+    = 2\sqrt{2}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Comparando com o Valor Exato}
+  Com uma calculadora podemos avaliar
+  \pause
+  \[
+    L(1,02; 1,98) \approx 2.8284
+  \]
+  \pause
+  \[
+    f(1,02; 1,98) = 2.8285
+  \]
+\end{resolution}
+%------------------------------------------------------------------------------%
+

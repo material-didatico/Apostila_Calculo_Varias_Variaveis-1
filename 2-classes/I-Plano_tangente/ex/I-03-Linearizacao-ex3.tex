@@ -1,0 +1,104 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Seja
+\[
+  f(x, y) = \ln\left(x^2 + y^2\right)
+\]
+use a aproximação linear de $f$ no ponto $(1, 2)$
+para estimar $f(1,01; 1,98)$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando a Derivada Parcial em $x$}
+  \[
+    \D{f}{x}
+    \pause
+    \;=\; \D{}{x} \left(\ln\left(x^2 + y^2\right)\right)
+    \pause
+    \;=\; \frac{1}{x^2 + y^2}\D{}{x} \left(x^2 + y^2\right)
+    \pause
+    \;=\; \frac{2x}{x^2 + y^2}
+  \]
+
+  \pause
+  \bigskip
+  \[
+    \D{f}{x}(1, 2)
+    \pause
+    \;=\; \frac{2x}{x^2 + y^2} \evalat{(1, 2)}{}
+    \pause
+    \;=\; \frac{2\times 1}{1^2 + 2^2}
+    \pause
+    \;=\; \frac{2}{5}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando a Derivada Parcial em $y$}
+  \[
+    \D{f}{y}
+    \pause
+    \;=\; \D{}{y} \left(\ln\left(x^2 + y^2\right)\right)
+    \pause
+    \;=\; \frac{1}{x^2 + y^2}\D{}{y} \left(x^2 + y^2\right)
+    \pause
+    \;=\; \frac{2y}{x^2 + y^2}
+  \]
+
+  \pause
+  \bigskip
+  \[
+    \D{f}{y}(1, 2)
+    \pause
+    \;=\; \frac{2y}{x^2 + y^2} \evalat{(1, 2)}{}
+    \pause
+    \;=\; \frac{2\times 2}{1^2 + 2^2}
+    \pause
+    \;=\; \frac{4}{5}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando a Função}
+  \[
+    f(1, 2)
+    \pause
+    \;=\; \ln(1 + 4)
+    \pause
+    \;=\; \ln(5)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Aproximação Linear}
+  \begin{align*}
+    \onslide<+->{L(x, y) }
+    \onslide<+->{& = f(a, b) + \D{f}{x}(a, b)(x-a) + \D{f}{y}(y-b) \\[2mm]}
+    \onslide<+->{& = \ln(5) + \frac{2}{5}(x - 1) + \frac{4}{5}(y - 2)}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avaliando no ponto $f(1,01; 1,98)$}
+  \begin{align*}
+    \onslide<+->{L(1,01; 1,98) }
+    \onslide<+->{& = \ln(5) + \frac{2}{5}(0,01) + \frac{4}{5}(-0,02) \\}
+    \onslide<+->{& = \ln(5) + \frac{2-8}{500} \\}
+    \onslide<+->{& = \ln(5) - \frac{6}{500} \\}
+    \onslide<+->{& = \ln(5) - \frac{3}{250}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Comparando com o valor exato}
+  Com uma calculadora podemos avaliar
+  \pause
+  \[
+    L(1,01; 1,98) \approx 1.59744
+  \]
+  \pause
+  \[
+    f(1,01; 1,98) \approx 1.59747
+  \]
+\end{resolution}
+%------------------------------------------------------------------------------%

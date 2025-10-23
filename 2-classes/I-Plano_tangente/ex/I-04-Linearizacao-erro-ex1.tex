@@ -1,0 +1,77 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre um limitante superior para o erro na aproximação
+  \[
+    f(x, y) \approx L(x, y) = 4x -y -2
+  \]
+  no retângulo
+  \[
+    R: \abs{x-3} \leq 0,1 \,,\quad \abs{y-2} \leq 0,1
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Calculando os módulos das derivadas segundas}
+  \begin{align*}
+    \onslide<+->{f_{xx}(x, y)}
+    \onslide<+->{& = \DS{}{x} \left(x^2 - xy + \frac{y^2}{2} + 3\right) \\}
+    \onslide<+->{& = \D{}{x}\left(2x - y\right)                         \\}
+    \onslide<+->{& = 2                                                  \\}
+    \onslide<+->{\abs{f_{xx}(x, y)}}
+    \onslide<+->{& = 2}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{f_{yy}(x, y)}
+    \onslide<+->{& = \DS{}{y} \left(x^2 - xy + \frac{y^2}{2} + 3\right) \\}
+    \onslide<+->{& = \D{}{y}\left(-x + y\right)                         \\}
+    \onslide<+->{& = 1                                                  \\}
+    \onslide<+->{\abs{f_{yy}(x, y)}}
+    \onslide<+->{& = 1}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{f_{xy}(x, y)}
+    \onslide<+->{& = \DM{}{x}{y} \left(x^2 - xy + \frac{y^2}{2} + 3\right) \\}
+    \onslide<+->{& = \D{}{x}\left(-x + y\right)                            \\}
+    \onslide<+->{& = -1                                                    \\}
+    \onslide<+->{\abs{f_{xy}(x, y)}}
+    \onslide<+->{& = 1}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Como o máximo das derivadas segundas em $R$ é 2}
+
+  \onslide<+->{podemos escolher $M=2$, portanto}
+  \begin{align*}
+      \onslide<+->{\abs{E(x, y)}}
+      \onslide<+->{& \leq \frac{M}{2} \big(\abs{x-a}+\abs{y-b}\big)^2 \\}
+      \onslide<+->{& = \frac{2}{2} \big(\abs{x-3}+\abs{y-2}\big)^2        \\}
+      \onslide<+->{& = \big(\abs{x-3}+\abs{y-2}\big)^2}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Como
+  \[
+    \abs{x-3} \leq 0,1 \qquad \abs{y-2} \leq 0,1
+  \]}
+  \begin{align*}
+    \onslide<+->{\abs{E(x, y)}}
+    \onslide<+->{& \leq \big(\abs{x-3}+\abs{y-2}\big)^2 \\}
+    \onslide<+->{& \leq \big(0,1+0,1\big)^2             \\}
+    \onslide<+->{& = \big(0,2\big)^2                    \\}
+    \onslide<+->{& = 0,04}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

@@ -1,76 +1,58 @@
 %------------------------------------------------------------------------------%
 \begin{question}
-  Encontre um limitante superior para o erro na aproximação
+  Encontre a linearização de
   \[
-    f(x, y) \approx L(x, y) = 4x -y -2
+    f(x, y) = x^2 - xy + \frac{y^2}{2} + 3
   \]
-  no retângulo
-  \[
-    R: \abs{x-3} \leq 0,1 \,,\quad \abs{y-2} \leq 0,1
-  \]
+  no ponto \((3, 2)\)
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Calculando os módulos das derivadas segundas}
+\begin{resolution}{Avaliando a Derivada Parcial em $x$}
   \begin{align*}
-    \onslide<+->{f_{xx}(x, y)}
-    \onslide<+->{& = \DS{}{x} \left(x^2 - xy + \frac{y^2}{2} + 3\right) \\}
-    \onslide<+->{& = \D{}{x}\left(2x - y\right)                         \\}
-    \onslide<+->{& = 2                                                  \\}
-    \onslide<+->{\abs{f_{xx}(x, y)}}
-    \onslide<+->{& = 2}
+    \onslide<+->{f_x(x, y)}
+    \onslide<+->{& = \D{}{x} \left(x^2 - xy + \frac{y^2}{2} + 3\right)}
+    \onslide<+->{= 2x - y
+      \\[3mm]}
+    \onslide<+->{f_x(3, 2)}
+    \onslide<+->{& = \left(2x - y\right)\evalat{(3, 2)}{}}
+    \onslide<+->{= 2\times 3 - 2}
+    \onslide<+->{= 4}
   \end{align*}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
+\begin{resolution}{Avaliando a Derivada Parcial em $y$}
   \begin{align*}
-    \onslide<+->{f_{yy}(x, y)}
-    \onslide<+->{& = \DS{}{y} \left(x^2 - xy + \frac{y^2}{2} + 3\right) \\}
-    \onslide<+->{& = \D{}{y}\left(-x + y\right)                         \\}
-    \onslide<+->{& = 1                                                  \\}
-    \onslide<+->{\abs{f_{yy}(x, y)}}
-    \onslide<+->{& = 1}
+    \onslide<+->{f_x(x, y)}
+    \onslide<+->{& = \D{}{x} \left(x^2 - xy + \frac{y^2}{2} + 3\right)}
+    \onslide<+->{= 2x - y
+      \\[3mm]}
+    \onslide<+->{f_y(3, 2)}
+    \onslide<+->{& = \left(-x + y\right)\evalat{(3, 2)}{}}
+    \onslide<+->{= -3 + 2}
+    \onslide<+->{= -1}
   \end{align*}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \begin{align*}
-    \onslide<+->{f_{xy}(x, y)}
-    \onslide<+->{& = \DM{}{x}{y} \left(x^2 - xy + \frac{y^2}{2} + 3\right) \\}
-    \onslide<+->{& = \D{}{x}\left(-x + y\right)                            \\}
-    \onslide<+->{& = -1                                                    \\}
-    \onslide<+->{\abs{f_{xy}(x, y)}}
-    \onslide<+->{& = 1}
-  \end{align*}
+\begin{resolution}{Avaliando a Função}
+\begin{align*}
+  \onslide<+->{f(3, 2)}
+  \onslide<+->{& = \left(x^2 - xy + \frac{y^2}{2} + 3\right)\evalat{(3, 2)}{}}
+  \onslide<+->{= 3^2 - 3\times 2 + \frac{2^2}{2} + 3}
+  \onslide<+->{= 8                                                   \\}
+\end{align*}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \onslide<+->{Como o máximo das derivadas segundas em $R$ é 2}
-
-  \onslide<+->{podemos escolher $M=2$, portanto}
+\begin{resolution}{Aproximação linear}
   \begin{align*}
-      \onslide<+->{\abs{E(x, y)}}
-      \onslide<+->{& \leq \frac{M}{2} \big(\abs{x-x_0}+\abs{y-y_0}\big)^2 \\}
-      \onslide<+->{& = \frac{2}{2} \big(\abs{x-3}+\abs{y-2}\big)^2        \\}
-      \onslide<+->{& = \big(\abs{x-3}+\abs{y-2}\big)^2}
-  \end{align*}
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \onslide<+->{Como
-  \[
-    \abs{x-3} \leq 0,1 \qquad \abs{y-2} \leq 0,1
-  \]}
-  \begin{align*}
-    \onslide<+->{\abs{E(x, y)}}
-    \onslide<+->{& \leq \big(\abs{x-3}+\abs{y-2}\big)^2 \\}
-    \onslide<+->{& \leq \big(0,1+0,1\big)^2             \\}
-    \onslide<+->{& = \big(0,2\big)^2                    \\}
-    \onslide<+->{& = 0,04}
+    \onslide<+->{L(x, y)}
+    \onslide<+->{& = f(a, b) + f_x(a, b)(x-a) + f_y(a, b)(y-b) \\}
+    \onslide<+->{& = f(3, 2) + f_x(3, 2)(x-3) + f_y(3, 2)(y-2)                 \\}
+    \onslide<+->{& = 8 + 4(x-3) + (-1)(y-2)                                    \\}
+    \onslide<+->{& = 4x -y -2}
   \end{align*}
 \end{resolution}
 

@@ -1,9 +1,9 @@
 %------------------------------------------------------------------------------%
-\documentclass[fleqn,utf8,aspectratio=169,12pt,handout]{beamer}
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
 
 \usepackage{calculo_varias_variaveis-1}
 
-\title{Linearização}
+\title{Erro na Linearização}
 
 %------------------------------------------------------------------------------%
 \begin{document}
@@ -11,51 +11,41 @@
 \addtitle
 
 %------------------------------------------------------------------------------%
-\section{Aproximação Linear}
+\section{Erro na Aproximação Linear}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Plano Tangente a superfície $z=f(x, y)$}
-  Sabemos que o plano tangente à superfície \(z=f(x, y)\) \\
-  de uma função diferenciável $f$
-  no ponto \(\left(a, b, f(a, b)\right)\) é
-  \[
-    \emph{f_x(a, b)} (x-a) +
-    \emph{f_y(a, b)} (y-b) -
-    (z-c) = 0
-  \]
-
+\begin{frame}{Erro na Aproximação Linear}
+  Se $f$ possui primeira e segunda derivadas parciais
   \pause
-  Rearranjando
-  \[
-    z
-    = \emph{f(a, b)}
-    + \emph{f_x(a, b)} (x-a)
-    + \emph{f_y(a, b)} (y-b)
-  \]
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Aproximação Linear}
-  \emph{Aproximação linear},
-  ou \emph{Linearização} de uma função diferenciável de duas variáveis \\
-  em torno do ponto \((a, b)\)
+  sobre um conjunto aberto
+  contendo um retângulo $R$ centrado em \((a, b)\)
+  \pause
+  e se $M$ é um
+  limitante superior para os valores de \(\abs{f_{xx}}\),  \(\abs{f_{yy}}\)
+  e \(\abs{f_{xy}}\) em $R$
   \pause
   \[
-    L(x, y)
-    = \emph{f(a, b)}
-    + \emph{f_x(a, b)} (x-a)
-    + \emph{f_y(a, b)} (y-b)
+    \emph{\abs{f_{xx}} \leq M} \qquad
+    \emph{\abs{f_{yy}} \leq M} \qquad
+    \emph{\abs{f_{xy}} \leq M} \qquad
+    \forall (x, y) \in R
+  \]
+  \pause
+  então o erro na linearização
+  \[
+    E(x, y) = f(x, y) - L(x, y)
+  \]
+  \pause
+  satisfaz
+  \[
+    \emph{\abs{E(x, y)} \leq \frac{M}{2} \big(\abs{x-a}+\abs{y-b}\big)^2}
   \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \section{Exemplos}
 
-\include{I-03-Linearizacao-ex1}
-\include{I-03-Linearizacao-ex2}
-\include{I-03-Linearizacao-ex3}
-\include{I-03-Linearizacao-ex4}
-\include{I-03-Linearizacao-ex5}
+\include{I-04-Linearizacao-erro-ex1}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}
@@ -65,7 +55,7 @@
   Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.6
   \begin{enumerate}
     \item Estudar o texto da seção
-    \item Resolver os exercícios: 25-30
+    \item Resolver os exercícios: 33-38
   \end{enumerate}
 
   \vfill
