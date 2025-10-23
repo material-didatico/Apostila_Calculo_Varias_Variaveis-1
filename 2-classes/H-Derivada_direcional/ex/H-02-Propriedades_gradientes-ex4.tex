@@ -1,61 +1,73 @@
 %------------------------------------------------------------------------------%
 \begin{question}
-  Dadas \; \(f(x, y)=x^2-2y\) \; e \; \(g(x, y)=xy^2\)
+  Encontre uma equação para a tangente à elipse
+  \[
+    \frac{x^2}{4} + y^2 = 2
+  \]
+  no ponto \((-2, 1)\)
 
-  a)\; calcule os gradientes de $f$ e $g$
 
-  b)\; calcule \(\nabla(f-g)\)
+  Note que a elipse é uma curva de nível da função
+  \[
+    f(x, y) = \frac{x^2}{4} + y^2
+  \]
 
-  c)\; calcule \(\nabla(fg)\)
+%  \only<2>{\addgraphic{9}{6.5,2.5}{tangente_elipse}}
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
+\begin{resolution}{Derivadas parciais de $f$}
   \[
-    \nabla f
     \pause
-    \;=\; \Vetor{\D{f}{x}}{\D{f}{y}}
+    \D{f}{x}
     \pause
-    \;=\; \Vetor{\D{}{x}\left(x^2-2y\right)}{\D{}{y}\left(x^2-2y\right)}
+    = \D{}{x}\left(\frac{x^2}{4} + y^2\right)
     \pause
-    \;=\; \vetor{2x}{-2}
+    = \frac{x}{2}
   \]
 
+  \bigskip
+  \[
+    \pause
+    \D{f}{y}
+    \pause
+    = \D{}{y}\left(\frac{x^2}{4} + y^2\right)
+    \pause
+    = 2y
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Gradiente}
+  Então o gradiente de $f$, no ponto \((-2, 1)\), é
   \pause
   \[
-    \nabla g
+    \nabla f(-2, 1)
     \pause
-    \;=\; \Vetor{\D{g}{x}}{\D{g}{y}}
+    \;=\; \Vetor{\frac{x}{2}}{2y}\evalat{(-2, 1)}{}
     \pause
-    \;=\; \Vetor{\D{}{x}\left(xy^2\right)}{\D{}{y}\left(xy^2\right)}
-    \pause
-    \;=\; \vetor{y^2}{2xy}
+    = \vetor{-1}{2}
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
+\begin{resolution}{Reta Tangente}
+  \onslide<+->{A reta tangente é ortogonal ao vetor gradiente}
+  \begin{columns}
+  \column{0.5\linewidth}
+    \begin{align*}
+      \onslide<+->{\nabla f(a, b)  & \cdot \vetor{x-a}{y-b} = 0 \\[3mm]}
+      \onslide<+->{\nabla f(-2, 1) & \cdot \vetor{x-(-2)}{y-1}  = 0 \\[3mm]}
+      \onslide<+->{\vetor{-1}{2}   & \cdot \vetor{x+2}{y-1}     = 0}
+    \end{align*}
+  \column{0.5\linewidth}
   \begin{align*}
-    \onslide<+->{\nabla(f-g)}
-    \onslide<+->{& = \nabla f - \nabla g               \\}
-    \onslide<+->{& = \vetor{2x}{-2} - \vetor{y^2}{2xy} \\}
-    \onslide<+->{& = \vetor{2x-y^2}{-2-2xy}}
+    \onslide<+->{-(x+2) + 2(y-1) & = 0 \\}
+    \onslide<+->{-x +2y -4 & = 0 \\}
+    \onslide<+->{-x +2y    & = 4 \\}
+    \onslide<+->{ x        & = 2y-4}
   \end{align*}
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \begin{align*}
-    \onslide<+->{\nabla(fg)}
-    \onslide<+->{& = f\nabla g + g\nabla f                   \\}
-    \onslide<+->{& = \big(x^2-2y\big)\vetor{y^2}{2xy}
-                   + \big(xy^2  \big)\vetor{2x}{2}           \\}
-    \onslide<+->{& = \vetor{(x^2-2y)y^2}{(x^2-2y)2xy}
-                   + \vetor{(xy^2)2x}{(xy^2)2}               \\}
-    \onslide<+->{& = \vetor{x^2y^2-2y^3}{2x^3y-4xy^2}
-                   + \vetor{2x^2y^2}{2xy^2}                  \\}
-    \onslide<+->{& = \vetor{3x^2y^2 - 2y^3}{2x^3y - 2xy^2}}
-  \end{align*}
+  \end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%

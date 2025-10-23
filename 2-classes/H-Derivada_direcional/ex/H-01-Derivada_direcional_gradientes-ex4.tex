@@ -2,17 +2,17 @@
 \begin{question}
   Encontre a derivada de
   \(
-    f(x, y) = xe^y + \cos(xy)
+    f(x, y) = \ln\left(x^2 + y^2 + 1\right)
   \)
   no ponto
   \(
-    (2, 0)
+    (1, 2)
   \) \\
 
   \smallskip
   na direção
   \(
-    v=3\veci-4\vecj
+    v = \vetor{-2}{1}
   \)
 \end{question}
 
@@ -27,11 +27,9 @@
     u
     \;=\; \frac{v}{\abs{v}}
     \pause
-    \;=\; \frac{3\veci-4\vecj}{\sqrt{3^2+4^2}}
+    \;=\; \frac{1}{\sqrt{(-2)^2 + 1^2}} \vetor{-2}{1}
     \pause
-    \;=\; \frac{3\veci-4\vecj}{\sqrt{25}}
-    \pause
-    \;=\; \frac{3}{5}\veci - \frac{4}{5}\vecj
+    \;=\; \frac{1}{\sqrt{5}} \vetor{-2}{1}
   \]
 \end{resolution}
 
@@ -40,19 +38,25 @@
   \[
     \D{f}{x}
     \pause
-    \;=\;  \D{}{x}\left(xe^y + \cos(xy)\right)
+    \;=\; \D{}{x} \ln\left(x^2 + y^2 + 1\right)
     \pause
-    \;=\;  e^y - y\sin(xy)
+    \;=\; \frac{1}{x^2 + y^2 + 1} \D{}{x}\left(x^2 + y^2 + 1\right)
+    \pause
+    \;=\; \frac{2x}{x^2 + y^2 + 1}
   \]
 
   \pause
   \bigskip
   \[
-    \D{f}{x}(2, 0)
+    \D{f}{x}(1, 2)
     \pause
-    \;=\;  e^0 - 0\sin(2\times 0)
+    \;=\; \frac{2x}{x^2 + y^2 + 1}\evalat{(1, 2)}{}
     \pause
-    \;=\;  1
+    \;=\; \frac{2\times 1}{1^2 + 2^2 + 1}
+    \pause
+    \;=\; \frac{2}{6}
+    \pause
+    \;=\; \frac{1}{3}
   \]
 \end{resolution}
 
@@ -61,54 +65,53 @@
   \[
     \D{f}{y}
     \pause
-    \;=\; \D{}{y}\left(xe^y + \cos(xy)\right)
+    \;=\; \D{}{y} \ln\left(x^2 + y^2 + 1\right)
     \pause
-    \;=\; xe^y - x\sin(xy)
+    \;=\; \frac{1}{x^2 + y^2 + 1} \D{}{y}\left(x^2 + y^2 + 1\right)
+    \pause
+    \;=\; \frac{2y}{x^2 + y^2 + 1}
   \]
 
   \pause
   \bigskip
   \[
-    \D{f}{y}(2, 0)
+    \D{f}{y}(1, 2)
     \pause
-    \;=\; 2e^0 - 2\sin(2\times 0)
+    \;=\; \frac{2y}{x^2 + y^2 + 1}\evalat{(1, 2)}{}
     \pause
-    \;=\; 2
+    \;=\; \frac{2\times 2}{1^2 + 2^2 + 1}
+    \pause
+    \;=\; \frac{4}{6}
+    \pause
+    \;=\; \frac{2}{3}
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Gradiente no ponto $(2, 0)$}
+\begin{resolution}{Gradiente no ponto $(1, 2)$}
   \[
     \nabla f(x, y)
-    \;=\; \Vetor{e^y - y\sin(xy)}{xe^y - x\sin(xy)}
+    \;=\; \Vetor{\frac{2x}{x^2 + y^2 + 1}}{\frac{2y}{x^2 + y^2 + 1}}
     \pause
-    \qquad\qquad
-    \nabla f(2, 0)
-    = \vetor{1}{2}
+    \qquad\qquad\qquad
+    \nabla f(1, 2)
+    \;=\; \Vetor{\frac{1}{3}}{\frac{2}{3}}
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Calculando a Derivada Direcional}
   \[
-    D_u f(2, 0)
+    D_u f(1, 2)
     \pause
-    \;=\; \nabla f(2, 0) \cdot u
+    \;=\; \nabla f(1, 2) \cdot u
     \pause
-    \;=\; \vetor{1}{2} \cdot \vetor{\sfrac{3}{5}}{-\sfrac{4}{5}}
-  \]
-
-  \[
-    \hphantom{D_u f(2, 0){}}
+    \;=\; \Vetor{\frac{1}{3}}{\frac{2}{3}} \cdot
+          \Vetor{\frac{-2}{\sqrt{5}}}{\frac{1}{\sqrt{5}}}
     \pause
-    \;=\; 1 \frac{3}{5} + 2 \frac{-4}{5}
+    \;=\; \frac{-2}{3\sqrt{5}} + \frac{2}{3\sqrt{5}}
     \pause
-    \;=\; \frac{3}{5} - \frac{8}{5}
-    \pause
-    \;=\; - \frac{5}{5}
-    \pause
-    \;=\; -1
+    \;=\; 0
   \]
 \end{resolution}
 

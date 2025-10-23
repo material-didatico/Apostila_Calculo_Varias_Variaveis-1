@@ -1,81 +1,149 @@
 %------------------------------------------------------------------------------%
 \begin{question}
-  Encontre uma equação para a tangente à elipse
+  Dada a função
   \[
-    \frac{x^2}{4} + y^2 = 2
+    f(x, y) = (x-2)^2 + (y-1)^2
   \]
-  no ponto \((-2, 1)\)
+
+  a) Determine e esboce a curva de nível \(f(x, y) = 4\)
+
+  b) Calcule e esboce o gradiente de $f$ nos pontos
+  \((0,  1)\),
+  \((2, -1)\),
+  \((2,  3)\) e
+  \((4,  1)\)
 \end{question}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-  Encontre uma equação para a tangente à elipse
-  \[
-    \frac{x^2}{4} + y^2 = 2
-  \]
-  no ponto \((-2, 1)\)
-
-  \addgraphic{9}{6.5,2.5}{tangente_elipse}
+  \onslide<+->{a) Determinando a curva de nível}
+  \begin{align*}
+    \onslide<+->{f(x, y)           & = 4}   \\
+    \onslide<+->{(x-2)^2 + (y-1)^2 & = 2^2}
+  \end{align*}
+  \onslide<+->{Equação da circunferência centrada em \((2, 1)\) e raio 2}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-  Precisamos notar que a elipse é uma curva de nível da função
-  \[
-    f(x, y) = \frac{x^2}{4} + y^2
-  \]
+  b) Calculando as derivadas parciais de $f$
 
   \pause
-  Calculando as derivadas parciais de $f$ temos
   \[
-    \pause
     \D{f}{x}
     \pause
-    = \D{}{x}\left(\frac{x^2}{4} + y^2\right)
+    \;=\; \D{}{x}\left[(x-2)^2 + (y-1)^2\right]
     \pause
-    = \frac{x}{2}
+    \;=\; 2(x-2)\D{}{x}(x-2)
+    \pause
+    \;=\; 2(x-2)
   \]
-  \[
-    \pause
-    \D{f}{y}
-    \pause
-    = \D{}{y}\left(\frac{x^2}{4} + y^2\right)
-    \pause
-    = 2y
-  \]
-\end{resolution}
 
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  Então o gradiente de $f$, no ponto \((-2, 1)\), é
   \pause
   \[
-    \nabla f(-2, 1)
+    \D{f}{y}
     \pause
-    \;=\; \Vetor{\frac{x}{2}}{2y}\evalat{(-2, 1)}{}
+    \;=\; \D{}{y}\left[(x-2)^2 + (y-1)^2\right]
     \pause
-    = \vetor{-1}{2}
+    \;=\; 2(y-1)\D{}{y}(y-1)
+    \pause
+    \;=\; 2(y-1)
+  \]
+
+  \pause
+  Gradiente de $f$
+  \pause
+  \[
+    \nabla f(x, y)
+    \pause
+    \;=\; \nabla\left[(x-2)^2 + (y-1)^2\right]
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\ 2(y-1)
+    \end{pmatrix}
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-  \onslide<+->{A reta tangente é ortogonal ao vetor gradiente}
-  \begin{columns}
-  \column{0.5\linewidth}
-    \begin{align*}
-      \onslide<+->{\nabla f(x_0, y_0) \cdot \vetor{x-x_0}{y-y_0} & = 0 \\}
-      \onslide<+->{\nabla f(-2, 1)    \cdot \vetor{x-(-2)}{y-1}  & = 0 \\}
-      \onslide<+->{\vetor{-1}{2} \cdot \vetor{x+2}{y-1} & = 0}
-    \end{align*}
-  \column{0.5\linewidth}
-  \begin{align*}
-    \onslide<+->{-(x+2) + 2(y-1) & = 0 \\}
-    \onslide<+->{-x +2y -4 & = 0 \\}
-    \onslide<+->{-x +2y    & = 4 \\}
-    \onslide<+->{ x        & = 2y-4}
-  \end{align*}
-  \end{columns}
+  Calculando o gradiente nos pontos
+  \((0,  1)\) e
+  \((2, -1)\)
+
+  \pause
+  \[
+    \nabla f(0, 1)
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\ 2(y-1)
+    \end{pmatrix} \evalat{(0, 1)}{}
+    \pause
+    \;=\; \begin{pmatrix}
+    2(0-2) \\ 2(1-1)
+    \end{pmatrix}
+    \pause
+    \;=\; \begin{pmatrix}
+    -4 \\ 0
+    \end{pmatrix}
+  \]
+
+  \pause
+  \[
+    \nabla f(2, -1)
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\ 2(y-1)
+    \end{pmatrix} \evalat{(2, -1)}{}
+    \pause
+    \;=\; \begin{pmatrix}
+      2(2-2) \\ 2(-1-1)
+    \end{pmatrix}
+    \pause
+    \;=\; \begin{pmatrix}
+      0 \\ -4
+    \end{pmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Calculando o gradiente nos pontos
+  \((2,  3)\) e
+  \((4,  1)\)
+
+  \pause
+  \[
+    \nabla f(2, 3)
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\ 2(y-1)
+    \end{pmatrix} \evalat{(2, 3)}{}
+    \pause
+    \;=\; \begin{pmatrix}
+      2(2-2) \\ 2(2-1)
+    \end{pmatrix}
+    \pause
+    \;=\; \begin{pmatrix}
+      0 \\ 4
+    \end{pmatrix}
+  \]
+
+  \pause
+  \[
+    \nabla f(4, 1)
+    \pause
+    \;=\; \begin{pmatrix}
+      2(x-2) \\ 2(y-1)
+    \end{pmatrix} \evalat{(4, 1)}{}
+    \pause
+    \;=\; \begin{pmatrix}
+      2(4-2) \\ 2(1-1)
+    \end{pmatrix}
+    \pause
+    \;=\; \begin{pmatrix}
+      4 \\ 0
+    \end{pmatrix}
+  \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%

@@ -1,0 +1,61 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dadas \; \(f(x, y)=x^2-2y\) \; e \; \(g(x, y)=xy^2\)
+
+  a)\; calcule os gradientes de $f$ e $g$
+
+  b)\; calcule \(\nabla(f-g)\)
+
+  c)\; calcule \(\nabla(fg)\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \nabla f
+    \pause
+    \;=\; \Vetor{\D{f}{x}}{\D{f}{y}}
+    \pause
+    \;=\; \Vetor{\D{}{x}\left(x^2-2y\right)}{\D{}{y}\left(x^2-2y\right)}
+    \pause
+    \;=\; \vetor{2x}{-2}
+  \]
+
+  \pause
+  \[
+    \nabla g
+    \pause
+    \;=\; \Vetor{\D{g}{x}}{\D{g}{y}}
+    \pause
+    \;=\; \Vetor{\D{}{x}\left(xy^2\right)}{\D{}{y}\left(xy^2\right)}
+    \pause
+    \;=\; \vetor{y^2}{2xy}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{\nabla(f-g)}
+    \onslide<+->{& = \nabla f - \nabla g               \\}
+    \onslide<+->{& = \vetor{2x}{-2} - \vetor{y^2}{2xy} \\}
+    \onslide<+->{& = \vetor{2x-y^2}{-2-2xy}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{\nabla(fg)}
+    \onslide<+->{& = f\nabla g + g\nabla f                   \\}
+    \onslide<+->{& = \big(x^2-2y\big)\vetor{y^2}{2xy}
+                   + \big(xy^2  \big)\vetor{2x}{2}           \\}
+    \onslide<+->{& = \vetor{(x^2-2y)y^2}{(x^2-2y)2xy}
+                   + \vetor{(xy^2)2x}{(xy^2)2}               \\}
+    \onslide<+->{& = \vetor{x^2y^2-2y^3}{2x^3y-4xy^2}
+                   + \vetor{2x^2y^2}{2xy^2}                  \\}
+    \onslide<+->{& = \vetor{3x^2y^2 - 2y^3}{2x^3y - 2xy^2}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

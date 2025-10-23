@@ -15,7 +15,7 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}[t]{Vetor Gradiente}
-  Se uma função \(f(x, y)\) possui derivadas parciais,
+  Se uma função \(f(x, y)\) é derivável,
   seu \emph{vetor gradiente} é
 
   \vspace{0.99\baselineskip}
@@ -31,7 +31,7 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}[t]{Vetor Gradiente 3D}
-  Se uma função \(f(x, y, z)\) possui derivadas parciais,
+  Se uma função \(f(x, y, z)\) é derivável,
   seu \emph{vetor gradiente} é
 
   \[
@@ -49,17 +49,17 @@
 \section{Gradientes e Crescimento da Função}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Derivada Direcional}
+\begin{proofframe}{Derivada Direcional}
   \begin{align*}
     \onslide<+->{D_u f}
     \onslide<+->{& = \nabla f \cdot u                        \\[5mm]}
-    \onslide<+->{& = \norm{\nabla f}\; \norm{u} \cos(\theta)     \\[5mm]}
+    \onslide<+->{& = \norm{\nabla f}\; \norm{u} \cos(\theta) \\[5mm]}
     \onslide<+->{& = \norm{\nabla f} \cos(\theta)}
   \end{align*}
-\end{frame}
+\end{proofframe}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Derivada Direcional}
+\begin{proofframe}{Crescimento da Função}
 \begin{enumerate}
   \setlength\itemsep{1.5em}
   \item A função aumenta mais rapidamente quando
@@ -80,23 +80,23 @@
         \pause
   \item Se $u$ for \emph{ortogonal} a \(\nabla f\neq 0\)
         \pause
-        ele aponta para uma direção de \emph{variação zero}
+        ele aponta para uma direção de \emph{variação nula}
 \end{enumerate}
-\end{frame}
+\end{proofframe}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Gradientes e Crescimento da Função}
   \begin{enumerate}[<+->]
     \setlength\itemsep{1.5em}
-    \item Direção de maior crescimento da função $f$ no ponto \({x, y}\)
+    \item Direção de \emph{maior crescimento} da função $f$ no ponto \((x, y)\)
           \[
             v_M = \nabla f(x, y)
           \]
-    \item Direção de maior decrescimento da função $f$ no ponto \({x, y}\)
+    \item Direção de \emph{maior decrescimento} da função $f$ no ponto \((x, y)\)
           \[
             v_m = -\nabla f(x, y)
           \]
-    \item Direção de variação nula da função $f$ no ponto \({x, y}\)
+    \item Direção de \emph{variação nula} da função $f$ no ponto \((x, y)\)
           \[
             \nabla f(x, y) \cdot v_o  = 0
           \]
@@ -104,13 +104,13 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\include{H-02-Propriedades_gradientes-ex1}
+\include{ex/H-02-Propriedades_gradientes-ex1}
 
 %------------------------------------------------------------------------------%
 \section{Gradientes e Curvas de Nível}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Curvas de Nível}
+\begin{proofframe}{Curvas de Nível}
   Curva de Nível é o conjunto de pontos \((x, y)\) onde
   \[
     f(x, y) = c
@@ -132,10 +132,10 @@
     = g(t)\veci + h(t)\vecj
     = \vetor{g(t)}{h(t)}
   \]
-\end{frame}
+\end{proofframe}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Tangente de uma Curva de Nível}
+\begin{proofframe}{Tangente de uma Curva de Nível}
 \begin{columns}
 \column{0.5\linewidth}
   \begin{align*}
@@ -148,27 +148,28 @@
 \column{0.5\linewidth}
   \onslide<+->{\[\nabla f \cdot \frac{dr}{dt} = 0\]}
 
-  \onslide<+->{O gradiente é ortogonal ao vetor tangente à curva de nível}
+  \onslide<+->{O gradiente é \emph{ortogonal} ao vetor tangente à curva de nível}
 \end{columns}
-\end{frame}
+\end{proofframe}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Funções Diferenciáveis}
-  Em todo ponto \((x_0, y_0)\) no domínio de uma \emph{função diferenciável}
+  Em todo ponto \((a, b)\) no domínio de uma \emph{função diferenciável}
   \(f(x, y)\),
 
   \pause
   o \emph{gradiente} de $f$
   \pause
-  é normal à \emph{curva de nível} que passa por \((x_0, y_0)\)
+  é normal à \emph{curva de nível} que passa por \((a, b)\)
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \framedgraphic{Gradientes e Curvas de Nível}{gradiente_curva_nivel}{}
 
 %------------------------------------------------------------------------------%
-\include{H-02-Propriedades_gradientes-ex2}
-\include{H-02-Propriedades_gradientes-ex3}
+\include{ex/H-02-Propriedades_gradientes-ex2}
+\include{ex/H-02-Propriedades_gradientes-ex3}
+\include{ex/H-02-Propriedades_gradientes-ex4}
 
 %------------------------------------------------------------------------------%
 \section{Propriedades Algébricas}
@@ -187,7 +188,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\include{H-02-Propriedades_gradientes-ex4}
+\include{ex/H-02-Propriedades_gradientes-ex5}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}

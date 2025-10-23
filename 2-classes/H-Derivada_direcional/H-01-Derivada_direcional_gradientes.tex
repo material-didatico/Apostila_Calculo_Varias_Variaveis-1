@@ -96,7 +96,7 @@
 \section{Calculando a Derivada Direcional}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Calculando a Derivada Direcional}
+\begin{proofframe}{Calculando a Derivada Direcional}
   Considere a reta que passa por \((a, b)\)
   \pause
   na direção de \(u=u_1\veci+u_2\vecj\)
@@ -106,26 +106,53 @@
     y = b + su_2
   \]
 
+  \pause
   Restringindo $f$ à reta
   \[
     f(s) = f\big(x(s), y(s)\big)
   \]
-\end{frame}
+\end{proofframe}
 
-\begin{frame}{Calculando a Derivada Direcional}
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Calculando a Derivada Direcional}
 \begin{align*}
   \onslide<+->{D_u f }
-  \onslide<+->{& = \frac{df}{ds}                                 \\[2mm]}
-  \onslide<+->{& = \D{f}{x}\frac{dx}{ds} + \D{f}{y}\frac{dy}{ds} \\[2mm]}
-  \onslide<+->{& = \D{f}{x}u_1 + \D{f}{y}u_2                     \\[2mm]}
+  \onslide<+->{& = \frac{df}{ds}                                         }
+  \onslide<+->{\;= \frac{d}{ds} \left(f\big(x(s), y(s)\big)\right)     \\}
+  \onslide<+->{& = \D{f}{x}\frac{dx}{ds} + \D{f}{y}\frac{dy}{ds}       \\}
+  \onslide<+->{& = \D{f}{x}\frac{d}{ds}\left(a + su_1\right)
+                 + \D{f}{y}\frac{d}{ds}\left(b + su_2\right)           \\}
+  \onslide<+->{& = \D{f}{x}u_1 + \D{f}{y}u_2                           \\}
   \onslide<+->{& = \left(\begin{array}{c} F_x \\ F_y \end{array}\right)
-                   \cdot \vetor{u_1}{u_2}                        \\[2mm]}
-  \onslide<+->{& = \emph{\nabla f \cdot u}}
+                   \cdot \vetor{u_1}{u_2}                                }
+  \onslide<+->{\;=\; \emph{\nabla f \cdot u}}
 \end{align*}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Fórmula para a Derivada Direcional}
+  A derivada de $f$ em $(a, b)$
+  \pause
+  na direção do vetor unitário
+  \[
+    u
+    \;=\; u_1 \veci + u_2 \vecj
+    \;=\; \vetor{u_1}{u_2}
+    \qquad
+    \qquad
+    \norm{u} = 1
+  \]
+  \pause
+  pode ser calculada pela fórmula
+  \[
+    D_u f(a, b)
+    \;=\; \emph{\nabla f \cdot u}
+  \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\include{H-01-Derivada_direcional_gradientes-ex3}
+\include{ex/H-01-Derivada_direcional_gradientes-ex3}
+\include{ex/H-01-Derivada_direcional_gradientes-ex4}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}
