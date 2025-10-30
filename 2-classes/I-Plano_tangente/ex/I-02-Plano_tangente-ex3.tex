@@ -12,11 +12,11 @@ no ponto \((2, -3)\)
   A equação do plano tangente ao gráfico da função $f$ no ponto \((2, -3)\) é
   \pause
   \[
-    f_x(a, b)(x-a) + f_y(a, b)(y-b) - (z-c) = 0
+    f_x(a, b)\big(x-a\big) + f_y(a, b)\big(y-b\big) - \big(z-f(x, y)\big) = 0
   \]
   \[
     \pause
-    f_x(2, -3)(x-2) + f_y(2, -3)(y+3) - (z-c) = 0
+    f_x(2, -3)\big(x-2\big) + f_y(2, -3)\big(y+3\big) - \big(z-f(2, -3)\big) = 0
   \]
 \end{resolution}
 
@@ -25,7 +25,7 @@ no ponto \((2, -3)\)
   \[
     f_x(x, y)
     \pause
-    \;=\; \D{f}{x}
+    \;=\; \D{f}{x}(x, y)
     \pause
     \;=\; \D{}{x}\left(x^2 + y^2 -2xy -x +3y + 4\right)
     \pause
@@ -52,7 +52,7 @@ no ponto \((2, -3)\)
   \[
     f_y(x, y)
     \pause
-    \;=\; \D{f}{y}
+    \;=\; \D{f}{y}(x, y)
     \pause
     \;=\; \D{}{y}\left(x^2 + y^2 -2xy -x +3y + 4\right)
     \pause
@@ -77,8 +77,7 @@ no ponto \((2, -3)\)
 %------------------------------------------------------------------------------%
 \begin{resolution}{Avaliando $f$ no ponto \((2, -3)\)}
   \begin{align*}
-    \onslide<+->{c}
-    \onslide<+->{& = f(2, -3) \\}
+    \onslide<+->{f(2, -3)}
     \onslide<+->{& = \left(x^2 + y^2 -2xy -x +3y + 4\right)\evalat{(2, -3)}{} \\}
     \onslide<+->{& = 2^2 + (-3)^2 -2(2)(-3) -2 +3(-3) + 4 \\[2mm]}
     \onslide<+->{& = 4 + 9 + 12 - 2 - 9 + 4 \\[2mm]}
@@ -89,7 +88,7 @@ no ponto \((2, -3)\)
 %------------------------------------------------------------------------------%
 \begin{resolution}{Equação do Plano Tangente}
   \begin{gather*}
-      \onslide<+->{f_x(2, -3)(x-2) + f_y(2, -3)(y+3) - (z-c) = 0 \\[3mm]}
+      \onslide<+->{f_x(2, -3)\big(x-2\big) + f_y(2, -3)\big(y+3\big) - \big(z-f(2, -3)\big) = 0 \\[3mm]}
       \onslide<+->{9(x-2) -7(y+3) - (z-18) = 0 \\[3mm]}
       \onslide<+->{9x - 18 -7y -21 -z +18 = 0  \\[3mm]}
       \onslide<+->{9x -7y -z = 21}

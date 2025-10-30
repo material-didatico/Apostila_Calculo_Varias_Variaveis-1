@@ -11,7 +11,7 @@
 \begin{resolution}{Avaliando o valor da função no ponto}
   \[
     \pause
-    z
+    c
     \pause
     \;=\; f(0, 0)
     \pause
@@ -24,20 +24,19 @@
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \onslide<+->{Derivadas parciais de $f(x, y)$}
+\begin{resolution}{Derivadas parciais de $f(x, y)$}
   \begin{align*}
-    \onslide<+->{\D{f}{x}}
+    \onslide<+->{\D{f}{x}(x, y)}
     \onslide<+->{& = \D{}{x} \left(x\cos(y) - ye^x\right)}
-    \onslide<+->{  = \cos(y) - ye^x                        \\}
-    \onslide<+->{\D{f}{y}}
+    \onslide<+->{  = \cos(y) - ye^x                        \\[1mm]}
+    \onslide<+->{\D{f}{y}(x, y)}
     \onslide<+->{& = \D{}{y} \left(x\cos(y) - ye^x\right)}
     \onslide<+->{  = -x\sin(y) - e^x}
   \end{align*}
   \begin{align*}
     \onslide<+->{\D{f}{x}(0, 0)}
     \onslide<+->{& = \left(  \cos(y) - ye^x\right) \evalat{(0, 0)}{}}
-    \onslide<+->{  = 1                                    \\}
+    \onslide<+->{  = 1                                    \\[1mm]}
     \onslide<+->{\D{f}{y}(0, 0)}
     \onslide<+->{& = \left(-x\sin(y) - e^x \right) \evalat{(0, 0)}{}}
     \onslide<+->{  = -1}
@@ -48,23 +47,23 @@
 \begin{resolution}{Solução}
   Plano tangente
   \[
-    \emph{f_x(a, b)} (x-a) +
-    \emph{f_y(a, b)} (y-b) -
-    (z-c) = 0
+    \emph{f_x(a, b)} \big(x-a\big) +
+    \emph{f_y(a, b)} \big(y-b\big) -
+    \big(z-\emph{f(a, b)}\big) = 0
   \]
 
   \pause
   \[
-    \emph{f_x(0, 0)} (x-0) +
-    \emph{f_y(0, 0)} (y-0) -
-    (z-0) = 0
+    \emph{f_x(0, 0)} \big(x-0\big) +
+    \emph{f_y(0, 0)} \big(y-0\big) -
+    \big(z-\emph{f(0, 0)}\big) = 0
   \]
 
   \pause
   \[
     \emph{1} (x-0) -
     \emph{1} (y-0) -
-    (z-0) = 0
+    (z-\emph{0}) = 0
   \]
 
   \pause

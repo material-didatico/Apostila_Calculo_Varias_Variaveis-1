@@ -18,7 +18,7 @@
   Primeiro vamos verificar que o gradiente é normal a superfície de nível
 
   \pause
-  Considere uma função $f(x, y)$ diferenciável e sua superfície de nível
+  Considere uma função $f(x, y, z)$ diferenciável e sua superfície de nível
   \[
     f(x, y, z) = k
   \]
@@ -26,13 +26,13 @@
   Assuma que a curva paramétrica
   \[
     r(t)
-      = g(t)\veci + h(t)\vecj + k(t)\veck
+      = u(t)\veci + v(t)\vecj + w(t)\veck
       = \left(\begin{array}{c}
-          g(t) \\ h(t) \\ k(t)
+          u(t) \\ v(t) \\ w(t)
         \end{array}\right)
   \]
   \pause
-  está contida na superfície de nível $c$ da função $f$
+  está contida na superfície de nível $k$ da função $f$
 \end{proofframe}
 
 %------------------------------------------------------------------------------%
@@ -40,32 +40,23 @@
 \begin{columns}
 \column{0.5\linewidth}
   \begin{align*}
-     \onslide<+->{f\big(g(t), h(t), k(t)\big) & = k \\[5mm]}
-     \onslide<+->{\frac{d}{dt}f\big(g(t), h(t), k(t)\big) & = \frac{dk}{dt} \\[5mm]}
-     \onslide<+->{\D{f}{x}\frac{dg}{dt} + \D{f}{y}\frac{dh}{dt} + \D{f}{z}\frac{dk}{dt} & = 0}
+     \onslide<+->{f\big(u(t), v(t), w(t)\big) & = k \\[5mm]}
+     \onslide<+->{\frac{d}{dt}f\big(u(t), v(t), w(t)\big) & = \frac{dk}{dt} \\[5mm]}
+     \onslide<+->{\D{f}{x}\frac{du}{dt} + \D{f}{y}\frac{dv}{dt} + \D{f}{z}\frac{dw}{dt} & = 0}
   \end{align*}
 \column{0.5\linewidth}
   \begin{align*}
-    \onslide<+->{\begin{pmatrix}
-        \D{f}{x} \\[3mm]
-        \D{f}{y} \\[3mm]
-        \D{f}{z}
-      \end{pmatrix}
-      \cdot
-      \begin{pmatrix}
-        \frac{dg}{dt} \\[3mm]
-        \frac{dh}{dt} \\[3mm]
-        \frac{dk}{dt}
-      \end{pmatrix}
-      & = 0 \\[2mm]}
-    \onslide<+->{\nabla f \cdot \frac{dr}{dt} & = 0}
+    \onslide<+->{\Vetortri{\D{f}{x}}{\D{f}{y}}{\D{f}{z}}
+                 & \cdot
+                 \Vetortri{\frac{du}{dt}}{\frac{dv}{dt}}{\frac{dw}{dt}} = 0 \\[2mm]}
+    \onslide<+->{\nabla f & \cdot \frac{dr}{dt} = 0}
   \end{align*}
 \end{columns}
 \end{proofframe}
 
 %------------------------------------------------------------------------------%
 \begin{proofframe}{Justificativa}
-  Se tomarmos todas as curvas suaves que passam por um ponto \((a, b)\)
+  Se tomarmos todas as curvas suaves que passam por um ponto \((a, b, c)\)
 
   \pause
   \vspace{\baselineskip}
@@ -161,19 +152,19 @@
 
 %------------------------------------------------------------------------------%
 \begin{proofframe}{Justificativa}
-  Queremos o Plano Tangente a superfície suave \(z=f(x, y)\) \\
+  Queremos o Plano Tangente a superfície suave \(z=g(x, y)\) \\
   em um ponto \((a, b, c)\)
-  onde \(c = f(a, b)\)
+  onde \(c = g(a, b)\)
 
   \pause
   \vspace{\baselineskip}
-  Podemos escrever \(z=f(x, y)\) como \(f(x, y) - z = 0\)
+  Podemos escrever \(z=g(x, y)\) como \(g(x, y) - z = 0\)
 
   \pause
   \vspace{\baselineskip}
   Queremos o plano tangente a curva de nível zero da função
   \[
-    F(x, y, z) = f(x, y) - z = 0
+    f(x, y, z) = g(x, y) - z = 0
   \]
 \end{proofframe}
 
@@ -181,9 +172,9 @@
 \begin{proofframe}{Justificativa}
   Derivadas de $F$
   \begin{align*}
-    \onslide<+->{F_x}\onslide<+->{ = \D{}{x}\big(f(x, y) - z\big)}\onslide<+->{ = f_x - 0}\onslide<+->{ = f_x} \\[5mm]
-    \onslide<+->{F_y}\onslide<+->{ = \D{}{y}\big(f(x, y) - z\big)}\onslide<+->{ = f_y - 0}\onslide<+->{ = f_y} \\[5mm]
-    \onslide<+->{F_z}\onslide<+->{ = \D{}{z}\big(f(x, y) - z\big)}\onslide<+->{ =   0 - 1}\onslide<+->{ =  -1}
+    \onslide<+->{f_x(x, y, z)}\onslide<+->{ & = \D{}{x}\big(g(x, y) - z\big)}\onslide<+->{ = g_x(x, y) - 0}\onslide<+->{ = g_x(x, y)} \\[5mm]
+    \onslide<+->{f_y(x, y, z)}\onslide<+->{ & = \D{}{y}\big(g(x, y) - z\big)}\onslide<+->{ = g_y(x, y) - 0}\onslide<+->{ = g_y(x, y)} \\[5mm]
+    \onslide<+->{f_z(x, y, z)}\onslide<+->{ & = \D{}{z}\big(g(x, y) - z\big)}\onslide<+->{ =         0 - 1}\onslide<+->{ =  -1}
   \end{align*}
 \end{proofframe}
 
@@ -191,40 +182,40 @@
 \begin{proofframe}{Justificativa}
   Equação do Plano Tangente ao gráfico da função $f(x, y)$
   \[
-    \emph{\nabla F(a, b, c)} \cdot
-    \begin{pmatrix}
-      x - a \\
-      y - b \\
-      z - c
-    \end{pmatrix} = 0
+    \emph{\nabla f(a, b, c)} \cdot \vetortri{x - a}{y - b}{z - c} = 0
   \]
 
   \pause
   \[
-    \emph{F_x(a, b, c)} (x-a) +
-    \emph{F_y(a, b, c)} (y-b) +
-    \emph{F_z(a, b, c)} (z-c) = 0
+    \emph{f_x(a, b, c)} (x-a) +
+    \emph{f_y(a, b, c)} (y-b) +
+    \emph{f_z(a, b, c)} (z-c) = 0
   \]
 
   \pause
   \[
-    {\color{magenta} f_x(a, b)} (x-a) +
-    {\color{magenta} f_y(a, b)} (y-b) -
+    {\color{magenta} g_x(a, b)} (x-a) +
+    {\color{magenta} g_y(a, b)} (y-b) -
     (z-c) = 0
   \]
 \end{proofframe}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Plano Tangente a superfície $z=f(x, y)$}
-  O plano tangente à superfície \(z=f(x, y)\)
+  O plano tangente ao gráfico de $f(x, y)$,
+  \pause
+  isto é, à superfície \(z=f(x, y)\)
 
+  \pause
   de uma função diferenciável $f$
-  no ponto \(\big(a,\, b,\, f(a, b)\big)\) é
+  \pause
+  no ponto \((a, b)\) é
 
+  \pause
   \[
-    f_x(a, b) (x-a) \;+\;
-    f_y(a, b) (y-b) \;-\;
-    (z-c) \;=\; 0
+    \D{f}{x}(a, b) \, \big(x-a\big) \;+\;
+    \D{f}{y}(a, b) \, \big(y-b\big) \;-\;
+    \big(z-f(a, b)\big) \;=\; 0
   \]
 \end{frame}
 
