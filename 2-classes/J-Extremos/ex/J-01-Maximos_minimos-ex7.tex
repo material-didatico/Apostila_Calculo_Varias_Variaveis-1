@@ -5,148 +5,239 @@
     f(x, y) = x^3 + 3xy + y^3
   \)
 
+  \smallskip
   a) Calcule o gradiente de $f$
 
+  \smallskip
   b) Calcule a hessiana de $f$
 
+  \smallskip
   c) Encontre todos os pontos críticos de $f$
 
+  \smallskip
   d) Classifique cada ponto crítico de $f$
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{a}
-  Precisamos das derivadas parciais de $f$
+\begin{resolution}{a)\; Gradiente de $f$}
+  Derivadas parciais de $f$
+
   \[
+    \pause
     \D{f}{x}
-    = \D{}{x}\left[x^3 + 3xy + y^3\right]
-    = 3x^2 + 3y
+    \pause
+    \;=\; \D{}{x}\left[x^3 + 3xy + y^3\right]
+    \pause
+    \;=\; 3x^2 + 3y
   \]
+
   \[
+    \pause
     \D{f}{y}
-    = \D{}{y}\left[x^3 + 3xy + y^3\right]
-    = 3x + 3y^2
+    \pause
+    \;=\; \D{}{y}\left[x^3 + 3xy + y^3\right]
+    \pause
+    \;=\; 3x + 3y^2
   \]
+
+  \pause
   então
   \[
+    \pause
     \nabla f = \vetor{3x^2 + 3y}{3x + 3y^2}
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{b}
-  Precisamos das derivadas parciais de segunda ordem de $f$
+\begin{resolution}{b)\; Hessiana de $f$}
+  Derivadas parciais de segunda ordem de $f$
   \[
+    \pause
     \DS{f}{x}
-    = \D{}{x}\left[3x^2 + 3y\right]
-    = 6x
+    \pause
+    \;=\; \D{}{x}\left[3x^2 + 3y\right]
+    \pause
+    \;=\; 6x
   \]
   \[
+    \pause
     \D{f}{y}
-    = \D{}{y}\left[3x + 3y^2\right]
-    = 6y
+    \pause
+    \;=\; \D{}{y}\left[3x + 3y^2\right]
+    \pause
+    \;=\; 6y
   \]
   \[
+    \pause
     \DM{f}{x}{y}
-    = \D{}{x}\D{f}{y}
-    = \D{}{x}\left[3x + 3y^2\right]
-    = 3
+    \pause
+    \;=\; \D{}{x}\D{f}{y}
+    \pause
+    \;=\; \D{}{x}\left[3x + 3y^2\right]
+    \pause
+    \;=\; 3
   \]
+
+  \pause
   então
   \[
+    \pause
     H = \left(\begin{array}{cc}
       6x & 3 \\
-      3 & 6y
+      3  & 6y
     \end{array}\right)
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{c}
-  A função é um polinômio, então possui derivadas em todos os pontos do plano.
-  Assim os pontos críticos são apenas os pontos onde as derivadas parciais são zero,
+\begin{resolution}{c)\; Pontos Críticos de $f$}
+  A função é um polinômio, então possui derivadas em todos os pontos do plano
+
+  \pause
+  Os pontos críticos são apenas onde as derivadas parciais são zero,
   \(\nabla f = 0\)
+
   \[
+    \pause
     3x^2 + 3y = 0
     \qquad\text{e}\qquad
+    \pause
     3x + 3y^2 = 0
   \]
-  ou, simplificando,
+  \pause
+  simplificando
   \[
+    \pause
     x^2 + y = 0
     \qquad\text{e}\qquad
+    \pause
     x + y^2 = 0
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{c}
-  Isolando $y$ na primeira equação, \(y = -x^2\), e substituindo na segunda, temos
+\begin{resolution}{c)\; Pontos Críticos de $f$}
+  \onslide<+->{Isolando $y$ na primeira equação}
   \begin{align*}
-    x + y^2                 & = 0 \\
-    x + \left(-x^2\right)^2 & = 0 \\
-    x + x^4                 & = 0 \\
-    x(1+ x^3)               & = 0
+    \onslide<+->{x^2 + y & = 0} \\
+    \onslide<+->{y & = -x^2}
   \end{align*}
-  As soluções dessa equação são $x=0$ ou $x-1$.
-  Se $x=0$ temos $y=0$ e
-  se $x=-1$ temos $y=-1$.
-  Portanto, os pontos críticos são
+  \onslide<+->{e substituindo na segunda}
+  \begin{align*}
+    \onslide<+->{x + y^2                 & = 0 \\}
+    \onslide<+->{x + \left(-x^2\right)^2 & = 0 \\}
+    \onslide<+->{x + x^4                 & = 0 \\}
+    \onslide<+->{x(1+ x^3)               & = 0}
+  \end{align*}
+  \onslide<+->{As soluções dessa equação são $x=0$ ou $x-1$}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{c)\; Pontos Críticos de $f$}
+  Como \(y = -x^2\)
+
+  \pause
+  \medskip
+  se $x=0$, então $y=0$
+
+  \pause
+  \medskip
+  se $x=-1$, então $y=-1$
+
+  \pause
+  \bigskip
+  os pontos críticos são
   \[
     (x_1, y_1) = (0, 0)
+    \pause
     \qquad\text{e}\qquad
     (x_2, y_2) = (-1, -1)
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{d}
-  Para classificar os pontos críticos precisamos avaliar o discriminante nos
-  pontos críticos.
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{d}
+\begin{resolution}{d)\; Classificando os Pontos}
   Considerando o ponto \((x_1, y_1) = (0, 0)\)
   \[
-    f_{xx}(0, 0) = 0
+    \pause
+    f_{xx}(0, 0)
+    \pause
+    = \left(6x\right)\evalat{(0, 0)}{}
+    \pause
+    = 0
   \]
   \[
-    f_{yy}(0, 0) = 0
+    \pause
+    f_{yy}(0, 0)
+    \pause
+    = \left(6y\right)\evalat{(0, 0)}{}
+    \pause
+    = 0
   \]
   \[
+    \pause
     f_{xy}(0, 0) = 3
   \]
   \[
+    \pause
     D_1
-    = f_{xx}(0, 0)f_{yy}(0, 0) - f^2_{xy}(0, 0)
-    = 0 \times 0 - 3^2
-    = -9 < 0
+    \pause
+    \;=\; f_{xx}(0, 0)f_{yy}(0, 0) - f^2_{xy}(0, 0)
+    \pause
+    \;=\; 0 \times 0 - 3^2
+    \pause
+    \;=\; -9
+    \pause
+    \;<\; 0
   \]
+
+  \pause
   Portanto, o ponto $(0, 0)$ é um ponto de sela.
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{d}
+\begin{resolution}{d)\; Classificando os Pontos}
   Considerando o ponto \((x_2, y_2) = (-1, -1)\)
   \[
-    f_{xx}(-1, -1) = -6
+    \pause
+    f_{xx}(-1, -1)
+    \pause
+    = \left(6x\right)\evalat{(-1, -1)}{}
+    \pause
+    = -6
   \]
   \[
-    f_{yy}(-1, -1) = -6
+    \pause
+    f_{yy}(-1, -1)
+    \pause
+    = \left(6y\right)\evalat{(-1, -1)}{}
+    \pause
+    = -6
   \]
   \[
+    \pause
     f_{xy}(-1, -1) = 3
   \]
   \[
+    \pause
     D_2
-    = f_{xx}(-1, -1)f_{yy}(-1, -1) - f^2_{xy}(-1, -1)
-    = (-6)(-6) - 3^2
-    = 36 - 9
-    = 25 > 0
+    \pause
+    \;=\; f_{xx}(-1, -1)f_{yy}(-1, -1) - f^2_{xy}(-1, -1)
+    \pause
+    \;=\; (-6)(-6) - 3^2
+    \pause
+    \;=\; 36 - 9
+    \pause
+    \;=\; 25 > 0
   \]
-  Portanto, o ponto $(-1, -1)$ é um máximo ou mínimo local.
+
+  \pause
+  Portanto, o ponto $(-1, -1)$ é um máximo ou mínimo local
+
+  \pause
   Como \(f_{xx}(-1, -1) = -6 < 0\)
+
+  \pause
   o ponto é um ponto de máximo local.
 \end{resolution}
 

@@ -8,6 +8,10 @@
   \[
     x^2 + y^2 \leq 1
   \]
+
+  \pause
+  Dica: \textit{Use uma função para descrever a parte de cima e outra para a parte de baixo
+  da fronteira}
 \end{question}
 
 %------------------------------------------------------------------------------%
@@ -51,7 +55,7 @@
 \begin{resolution}{Valor da função}
     \begin{align*}
     \onslide<+->{f\left(\frac{1}{2}, 0\right)}
-    \onslide<+->{& = \left(x^2 + 2y^2 - x\right)\evalat{\left(\frac{1}{2}, 0\right)}{} \\}
+    \onslide<+->{& = \left(x^2 + 2y^2 - x\right)\evalat{\left(\sfrac{1}{2}, 0\right)}{} \\}
     \onslide<+->{& = \left(\frac{1}{2}\right)^2 + 2\times 0 ^2 - \frac{1}{2}           \\}
     \onslide<+->{& = \frac{1}{4} - \frac{2}{4}                                         \\}
     \onslide<+->{& = -\frac{1}{4}}
@@ -140,16 +144,21 @@
     \onslide<+->{= \frac{d}{dx}\left(2 -x -x^2\right)}
     \onslide<+->{= -1 -2x}
   \]
-  \vspace{-2.2\baselineskip}
+
+  \begin{align*}
+    \onslide<+->{g_1'(x) & = 0            \\}
+    \onslide<+->{-1 -2x  & = 0            \\}
+    \onslide<+->{2x      & = -1           \\}
+    \onslide<+->{x       & = \frac{-1}{2}}
+  \end{align*}
+
+  \onslide<+->{O ponto crítico de $g_1(x)$ é \(\frac{-1}{2}\)}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Encontrando o ponto no plano $xy$}
   \begin{columns}[t]
-  \column{0.22\linewidth}
-    \begin{align*}
-      \onslide<+->{g_1'(x) & = 0            \\}
-      \onslide<+->{-1 -2x  & = 0            \\}
-      \onslide<+->{2x      & = -1           \\}
-      \onslide<+->{x       & = \frac{-1}{2}}
-    \end{align*}
-  \column{0.35\linewidth}
+    \column{0.4\linewidth}
     \begin{align*}
       \onslide<+->{y_1\left(\frac{-1}{2}\right)}
       \onslide<+->{& = \sqrt{1-\left(\frac{-1}{2}\right)^2} \\}
@@ -157,15 +166,20 @@
       \onslide<+->{& = \sqrt{\frac{3}{4}}                   \\}
       \onslide<+->{& = \frac{\sqrt{3}}{2}}
     \end{align*}
-  \column{0.5\linewidth}
+    \column{0.4\linewidth}
     \begin{align*}
-      \onslide<+->{y_1\left(\frac{-1}{2}\right)}
+      \onslide<+->{y_2\left(\frac{-1}{2}\right)}
       \onslide<+->{& = -\sqrt{1-\left(\frac{-1}{2}\right)^2} \\}
       \onslide<+->{& = -\sqrt{1-\frac{1}{4}}                 \\}
       \onslide<+->{& = -\sqrt{\frac{3}{4}}                   \\}
       \onslide<+->{& = \frac{-\sqrt{3}}{2}}
     \end{align*}
   \end{columns}
+
+  \onslide<+->{Pontos no plano
+    \(\left(\frac{-1}{2}, \frac{\sqrt{3}}{2}\right)\) e
+    \(\left(\frac{-1}{2}, \frac{-\sqrt{3}}{2}\right)\)
+  }
 \end{resolution}
 
 %------------------------------------------------------------------------------%

@@ -21,13 +21,13 @@
   \begin{itemize}[<+->]
     \item \(f(a, b)\) é um valor \emph{máximo local} de $f$ se
           \[
-            f(a, b) \geq f(x, y)
+            \emph{f(a, b) \;\geq\; f(x, y)}
           \]
           para \((x, y)\) do domínio em um disco aberto centrado em \((a, b)\)
           \\[5mm]
     \item \(f(a, b)\) é um valor \emph{mínimo local} de $f$ se
           \[
-            f(a, b) \leq f(x, y)
+            \emph{f(a, b) \;\leq\; f(x, y)}
           \]
           para \((x, y)\) do domínio em um disco aberto centrado em \((a, b)\)
   \end{itemize}
@@ -35,19 +35,21 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Teste da derivada de primeira ordem}
-  Se $f(x, y)$ tiver um máximo ou mínimo local\\
-  em um ponto interior \((a, b)\) do seu domínio
+  Se $f(x, y)$ tiver um máximo ou mínimo local
+  em um ponto interior \((a, b)\) \\
+  do seu domínio
 
   \pause
-  \vspace{0.1\baselineskip}
+  \medskip
   e se as derivadas de primeira ordem existirem em \((a, b)\), então
 
   \pause
-  \vspace{0.1\baselineskip}
+  \medskip
   \[
-    f_x(a, b) = 0
+    \emph{f_x(a, b) = 0}
     \qquad
-    f_y(a, b) = 0
+    \pause
+    \emph{f_y(a, b) = 0}
   \]
 \end{frame}
 
@@ -57,21 +59,19 @@
   Um \emph{Ponto Crítico} de uma função \(f(x, y)\)
 
   \pause
-  \vspace{0.1\baselineskip}
-  é um ponto $(a, b)$, no interior do domínio de $f$, onde
+  \medskip
+  é um ponto $(a, b)$, no \emph{interior do domínio} de $f$, onde
 
   \pause
-  \vspace{0.1\baselineskip}
-  \emph{\(f_x(a, b) = 0\)} e \emph{\(f_y(a, b) =0\)  }
+  \bigskip
+  \emph{\(f_x(a, b) = 0\)} \; e \; \emph{\(f_y(a, b) =0\)}
   \pause
   \tabto{70mm}
   \(\nabla f(a, b) = 0\)
 
   \pause
-  \vspace{0.1\baselineskip}
-  ou
-
-  \emph{\(f_x(a, b)\) ou \(f_y(a, b)\) não exista}
+  \bigskip
+  \(f_x(a, b)\) \; ou \; \(f_y(a, b)\) \; \emph{não exista}
   \pause
   \tabto{70mm}
   \(\nabla f(a, b)\) não existe
@@ -83,19 +83,18 @@
   Uma função diferenciável \(f(x, y)\) possui um \emph{ponto de sela} em \((a, b)\)
 
   \pause
-  \vspace{0.1\baselineskip}
-  se em todo disco aberto centrado em \((a, b)\)
+  \medskip
+  se, em todo disco aberto centrado em \((a, b)\),
+  existirem pontos \((x, y)\) onde
 
   \pause
-  \vspace{0.1\baselineskip}
-  existirem pontos \((x, y)\) onde
+  \medskip
   \[
-    f(x, y) > f(a, b)
+    \emph{f(x, y) \;>\; f(a, b)}
   \]
-  \pause
-  e existirem pontos \((x, y)\) onde
   \[
-    f(x, y) < f(a, b)
+    \pause
+    \emph{f(x, y) \;<\; f(a, b)}
   \]
 \end{frame}
 
@@ -109,19 +108,27 @@
 \begin{frame}{Hessiana}
   \emph{Matriz Hessiana}
   \[
+    \pause
     \arraycolsep=2mm
     \def\arraystretch{1.2}
-    H(x, y) = \begin{bmatrix}
+    H(x, y)
+    \pause
+      \;=\; \begin{bmatrix}
       \null\;f_{xx}(x, y)\;\null & \null\;f_{xy}(x, y)\;\null \\
       f_{yx}(x, y) & f_{yy}(x, y)
     \end{bmatrix}
   \]
 
   \pause
-  \vspace{\baselineskip}
-  \emph{Discriminante (ou hessiano)}
+  \bigskip
+  \emph{Discriminante (ou Hessiano)}
   \[
-    D(x, y) = \det H(x, y) \;=\; f_{xx}(x, y)\,f_{yy}(x, y) \;-\; f_{xy}^2(x, y)
+    \pause
+    D(x, y)
+    \pause
+    \;=\; \det H(x, y)
+    \pause
+    \;=\; f_{xx}(x, y)\,f_{yy}(x, y) \;-\; f_{xy}^2(x, y)
   \]
 \end{frame}
 
@@ -156,14 +163,14 @@
 %------------------------------------------------------------------------------%
 \section{Exemplos}
 
-\include{J-01-Maximos_minimos-ex2}
-\include{J-01-Maximos_minimos-ex3}
-\include{J-01-Maximos_minimos-ex4}
-\include{J-01-Maximos_minimos-ex5}
-\include{J-01-Maximos_minimos-ex6}
-\include{J-01-Maximos_minimos-ex7}
-\include{J-01-Maximos_minimos-ex8}
-\include{J-01-Maximos_minimos-ex9}
+\include{ex/J-01-Maximos_minimos-ex2}
+\include{ex/J-01-Maximos_minimos-ex3}
+\include{ex/J-01-Maximos_minimos-ex4}
+\include{ex/J-01-Maximos_minimos-ex5}
+\include{ex/J-01-Maximos_minimos-ex6}
+\include{ex/J-01-Maximos_minimos-ex7}
+\include{ex/J-01-Maximos_minimos-ex8}
+\include{ex/J-01-Maximos_minimos-ex9}
 
 %------------------------------------------------------------------------------%
 \section{Lista mínima}
