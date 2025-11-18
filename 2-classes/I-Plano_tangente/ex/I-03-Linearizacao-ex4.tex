@@ -5,11 +5,11 @@ Seja
   f(x, y) = \sqrt{4x + y^2}
 \]
 use a aproximação linear de $f$ no ponto $(1, 2)$
-para estimar $f(1,02; 1,98)$
+para estimar $f(1.02, 1.99)$
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Avaliando a Derivada Parcial em $x$}
+\begin{resolution}{Avaliando a derivada parcial em $x$}
   \begin{align*}
     \onslide<+->{\D{f}{x}}
     \onslide<+->{& = \D{}{x} \sqrt{4x + y^2}  \\[1mm]}
@@ -21,7 +21,7 @@ para estimar $f(1,02; 1,98)$
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Avaliando a Derivada Parcial em $x$}
+\begin{resolution}{Avaliando a derivada parcial em $x$}
   \begin{align*}
     \onslide<+->{\D{f}{x}(1, 2)}
     \onslide<+->{& = \frac{2}{\sqrt{4x + y^2}} \evalat{(1, 2)}{}  \\[1mm]}
@@ -33,7 +33,7 @@ para estimar $f(1,02; 1,98)$
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Avaliando a Derivada Parcial em $y$}
+\begin{resolution}{Avaliando a derivada parcial em $y$}
   \begin{align*}
     \onslide<+->{\D{f}{y}}
     \onslide<+->{& = \D{}{y} \sqrt{4x + y^2}  \\[1mm]}
@@ -45,7 +45,7 @@ para estimar $f(1,02; 1,98)$
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Avaliando a Derivada Parcial em $y$}
+\begin{resolution}{Avaliando a derivada parcial em $y$}
   \begin{align*}
     \onslide<+->{\D{f}{y}(1, 2)}
     \onslide<+->{& = \frac{y}{\sqrt{4x + y^2}} \;\evalat{(1, 2)}{}  \\[1mm]}
@@ -57,7 +57,7 @@ para estimar $f(1,02; 1,98)$
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Avaliando a Função}
+\begin{resolution}{Avaliando a função}
   \begin{align*}
     \onslide<+->{f(1, 2)}
     \onslide<+->{& = \sqrt{4x + y^2}  \evalat{(1, 2)}{}  \\[1mm]}
@@ -69,10 +69,10 @@ para estimar $f(1,02; 1,98)$
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Aproximação Linear}
+\begin{resolution}{Aproximação linear}
   \begin{align*}
     \onslide<+->{L(x, y) }
-    \onslide<+->{& = f(a, b) + \D{f}{x}(a, b)(x-a) + \D{f}{y}(y-b) \\}
+    \onslide<+->{& = f(a, b) + \D{f}{x}(a, b)(x-a) + \D{f}{y}(a, b)(y-b) \\}
     \onslide<+->{& = f(1, 2) + \D{f}{x}(1, 2)(x - 1) + \D{f}{y}(1, 2)(y - 2)   \\}
     \onslide<+->{& = 2\sqrt{2} + \frac{1}{\sqrt{2}}(x - 1) + \frac{1}{\sqrt{2}}(y - 2) \\}
     \onslide<+->{& = \frac{4}{\sqrt{2}} + \frac{x + y - 3}{\sqrt{2}} \\}
@@ -83,26 +83,26 @@ para estimar $f(1,02; 1,98)$
 %------------------------------------------------------------------------------%
 \begin{resolution}{Aproximação}
   \[
-    L(1,02; 1,98)
+    L(1.02, 1.99)
     \pause
-    = \frac{1,02 + 1,98 + 1}{\sqrt{2}}
+    = \frac{1.02 + 1.99 + 1}{\sqrt{2}}
     \pause
-    = \frac{4}{\sqrt{2}}
+    = \frac{4.01}{\sqrt{2}}
     \pause
-    = 2\sqrt{2}
+    = 2.005 \sqrt{2}
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Comparando com o Valor Exato}
+\begin{resolution}{Comparando com o valor exato}
   Com uma calculadora podemos avaliar
   \pause
   \[
-    L(1,02; 1,98) \approx 2.8284
+    L(1.02, 1.99) \approx 2.8284
   \]
   \pause
   \[
-    f(1,02; 1,98) = 2.8285
+    f(1.02, 1.99) \approx 2.8355
   \]
 \end{resolution}
 %------------------------------------------------------------------------------%
