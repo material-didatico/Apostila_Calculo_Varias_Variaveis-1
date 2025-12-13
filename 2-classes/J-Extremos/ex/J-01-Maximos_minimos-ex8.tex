@@ -15,64 +15,87 @@
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{a}
-
-  Precisamos das derivadas parciais de $f$
+\begin{resolution}{a -- Gradiente de $f$}
   \[
     \D{f}{x}
-    = \D{}{x}\left[4xy -x^4 -y^4\right]
-    = 4y - 4x^3
+    \pause
+    \;=\; \D{}{x}\left[4xy -x^4 -y^4\right]
+    \pause
+    \;=\; 4y - 4x^3
   \]
+
+  \pause
   \[
     \D{f}{y}
-    = \D{}{y}\left[4xy -x^4 -y^4\right]
-    = 4x -4y^3
+    \pause
+    \;=\;  \D{}{y}\left[4xy -x^4 -y^4\right]
+    \pause
+    \;=\;  4x -4y^3
   \]
-  então
+
+  \pause
   \[
-    \nabla f = \vetor{4y - 4x^3}{4x -4y^3}
+    \text{então}\qquad
+    \nabla f(x, y) \;=\; \vetor{4y - 4x^3}{4x -4y^3}
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{b}
-  Precisamos das derivadas parciais de segunda ordem de $f$
+\begin{resolution}{b -- Hessiana de $f$}
   \[
     \DS{f}{x}
-    = \D{}{x}\left[4y - 4x^3\right]
-    = -12x^2
+    \pause
+    \;=\; \D{}{x}\left[4y - 4x^3\right]
+    \pause
+    \;=\; -12x^2
   \]
+
+  \pause
   \[
-    \D{f}{y}
-    = \D{}{y}\left[4x -4y^3\right]
-    = -12y^2
+    \DS{f}{y}
+    \pause
+    \;=\; \D{}{y}\left[4x -4y^3\right]
+    \pause
+    \;=\; -12y^2
   \]
+
+  \pause
   \[
     \DM{f}{x}{y}
-    = \D{}{x}\D{f}{y}
-    = \D{}{x}\left[4x -4y^3\right]
-    = 4
+    \pause
+    \;=\; \D{}{x}\D{f}{y}
+    \pause
+    \;=\; \D{}{x}\left[4x -4y^3\right]
+    \pause
+    \;=\; 4
   \]
-  então
+  \pause
   \[
-    H = \left(\begin{array}{cc}
-      -12x^2 & 4 \\
-      4 & -12y^2
+    \text{então}\qquad
+    H(x, y)
+    \;=\; \left(\begin{array}{cc}
+      -12x^2 & 4      \\
+      4      & -12y^2
     \end{array}\right)
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{c}
-  A função é um polinômio, então possui derivadas em todos os pontos do plano.
-  Assim os pontos críticos são apenas os pontos onde as derivadas parciais são zero,
-  \(\nabla f = 0\)
+\begin{resolution}{c -- Pontos críticos de $f$}
+  A função é um polinômio, então possui derivadas em todos os pontos do plano
+
+  \pause
+  Assim os pontos críticos são apenas os pontos onde \(\nabla f = 0\)
+
+  \pause
   \[
     4y - 4x^3 = 0
     \qquad\text{e}\qquad
     4x -4y^3 = 0
   \]
-  ou, simplificando,
+
+  \pause
+  ou
   \[
     y - x^3 = 0
     \qquad\text{e}\qquad
@@ -81,101 +104,187 @@
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{c}
-  Isolando $y$ na primeira equação, \(y = x^3\), e substituindo na segunda, temos
+\begin{resolution}{c -- Resolvendo o sistema}
+\begin{columns}[t]
+\column{0.45\linewidth}
+  \onslide<+->{Isolando $y$ na primeira equação}
   \begin{align*}
-    x - y^3                & = 0 \\
-    x - \left(x^3\right)^3 & = 0 \\
-    x -x^9                 & = 0 \\
-    x(1 - x^8)             & = 0
+    \onslide<+->{y - x^3 & = 0   \\}
+    \onslide<+->{y       & = x^3}
   \end{align*}
-  As soluções dessa equação são $x=0$, $x=1$ ou $x-1$.
-  Se $x=0$ temos $y=0$,
-  se $x=1$ temos $y=1$ e
-  se $x=-1$ temos $y=-1$.
-  Portanto, os pontos críticos são
+\column{0.55\linewidth}
+  \onslide<+->{e substituindo na segunda}
+  \begin{align*}
+    \onslide<+->{x - y^3                & = 0 \\}
+    \onslide<+->{x - \left(x^3\right)^3 & = 0 \\}
+    \onslide<+->{x -x^9                 & = 0 \\}
+    \onslide<+->{x\left(1 - x^8\right)  & = 0}
+  \end{align*}
+  \onslide<+->{As soluções dessa equação são\\$x=0$, $x=1$ ou $x-1$}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{c -- Resolvendo o sistema}
+  Como \(y=x^3\)
+
+  \pause
+  Se \(x=0\) temos \(y=0\)
+
+  \pause
+  Se \(x=1\) temos \(y=1\)
+
+  \pause
+  Se \(x=-1\) temos \(y=-1\)
+
+  \pause
+  \bigskip
+  Os pontos críticos são
   \[
     (x_1, y_1) = (0, 0),
-    \qquad\qquad
+    \qquad
     (x_2, y_2) = (1, 1)
-    \qquad\text{e}\qquad
+    \quad\text{e}\quad
     (x_3, y_3) = (-1, -1)
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{d}
-  Para classificar os pontos críticos precisamos avaliar o discriminante nos
-  pontos críticos.
+\begin{resolution}{d -- Classificando o ponto \((x_1, y_1) = (0, 0)\)}
+\begin{columns}[t]
+\column{0.45\linewidth}
+  \[
+    f_{xx}(0, 0)
+    \pause
+    \;=\; \left(-12x^2\right) \evalat{(0, 0)}{}
+    \pause
+    =\; 0
+  \]
+  \[
+    \pause
+    f_{yy}(0, 0)
+    \pause
+    \;=\; \left(-12y^2\right) \evalat{(0, 0)}{}
+    \pause
+    =\; 0
+  \]
+  \[
+    \pause
+    f_{xy}(0, 0)
+    \pause
+    \;=\; \left(4\right) \evalat{(0, 0)}{}
+    \pause
+    =\; 4
+  \]
+\column{0.55\linewidth}
+  \pause
+  \begin{align*}
+    \onslide<+->{D_1}
+    \onslide<+->{& = \det H(0, 0) \\}
+    \onslide<+->{& = f_{xx}(0, 0)f_{yy}(0, 0) - f^2_{xy}(0, 0) \\}
+    \onslide<+->{& = 0 \times 0 - 4^2 \\}
+    \onslide<+->{& = -16 }
+    \onslide<+->{< 0}
+  \end{align*}
+\end{columns}
+
+  \bigskip
+  \onslide<+->{O ponto $(0, 0)$ é um \emph{ponto de sela}}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{d}
-  Considerando o ponto \((x_1, y_1) = (0, 0)\)
+\begin{resolution}{d -- Classificando o ponto \((x_2, y_2) = (1, 1)\)}
+\begin{columns}[t]
+\column{0.45\linewidth}
   \[
-    f_{xx}(0, 0) = 0
+    f_{xx}(1, 1)
+    \pause
+    \;=\; \left(-12x^2\right) \evalat{(1, 1)}{}
+    \pause
+    =\; -12
   \]
   \[
-    f_{yy}(0, 0) = 0
+    \pause
+    f_{yy}(1, 1)
+    \pause
+    \;=\; \left(-12y^2\right) \evalat{(1, 1)}{}
+    \pause
+    =\; -12
   \]
   \[
-    f_{xy}(0, 0) = 4
+    \pause
+    f_{xy}(1, 1)
+    \pause
+    \;=\; \left(-12x^2\right) \evalat{(1, 1)}{}
+    \pause
+    =\; 4
   \]
-  \[
-    D_1
-    = f_{xx}(0, 0)f_{yy}(0, 0) - f^2_{xy}(0, 0)
-    = 0 \times 0 - 4^2
-    = -16 < 0
-  \]
-  Portanto, o ponto $(0, 0)$ é um ponto de sela.
+\column{0.55\linewidth}
+  \pause
+  \begin{align*}
+    \onslide<+->{D_2}
+    \onslide<+->{& = \det H(1, 1) \\}
+    \onslide<+->{& = f_{xx}(1, 1)f_{yy}(1, 1) - f^2_{xy}(1, 1) \\}
+    \onslide<+->{& = (-12)(-12) - 4^2 \\}
+    \onslide<+->{& = 144 -16 \\}
+    \onslide<+->{& = 128 }
+    \onslide<+->{> 0}
+  \end{align*}
+\end{columns}
+
+  \bigskip
+  \onslide<+->{O ponto $(1, 1)$ é um extremo local}
+
+  \onslide<+->{Como \(f_{xx}(1, 1) = -12 < 0\)}
+  \onslide<+->{o ponto é um \emph{máximo local}}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{d}
-  Considerando o ponto \((x_2, y_2) = (1, 1)\)
+\begin{resolution}{d -- Classificando o ponto \((x_3, y_3) = (-1, -1)\)}
+\begin{columns}[t]
+\column{0.5\linewidth}
   \[
-    f_{xx}(1, 1) = -12
+    f_{xx}(-1, -1)
+    \pause
+    = \left(-12x^2\right) \evalat{(-1, -1)}{}
+    \pause
+    \!\!= -12
   \]
   \[
-    f_{yy}(1, 1) = -12
+    \pause
+    f_{yy}(-1, -1)
+    \pause
+    = \left(-12x^2\right) \evalat{(-1, -1)}{}
+    \pause
+    \!\!= -12
   \]
   \[
-    f_{xy}(1, 1) = 4
+    \pause
+    f_{xy}(-1, -1)
+    \pause
+    = \left(-12x^2\right) \evalat{(-1, -1)}{}
+    \pause
+    \!\!= 4
   \]
-  \[
-    D_2
-    = f_{xx}(1, 1)f_{yy}(1, 1) - f^2_{xy}(1, 1)
-    = (-12)(-12) - 4^2
-    = 144 -16
-    = 128 > 0
-  \]
-  Portanto, o ponto $(1, 1)$ é um máximo ou mínimo local.
-  Como \(f_{xx}(1, 1) = -12 < 0\)
-  o ponto é um ponto de máximo local.
-\end{resolution}
+\column{0.5\linewidth}
+  \pause
+  \begin{align*}
+    \!
+    \onslide<+->{D_3}
+    \onslide<+->{& = \det H(-1, -1) \\}
+    \onslide<+->{& = f_{xx}(-1, -1)f_{yy}(-1, -1) - f^2_{xy}(-1, -1) \\}
+    \onslide<+->{& = (-12)(-12) - 4^2 \\}
+    \onslide<+->{& = 144 -16 \\}
+    \onslide<+->{& = 128 }
+    \onslide<+->{> 0}
+  \end{align*}
+\end{columns}
 
-%------------------------------------------------------------------------------%
-\begin{resolution}{d)}
-  Considerando o ponto \((x_3, y_3) = (-1, -1)\)
-  \[
-    f_{xx}(-1, -1) = -12
-  \]
-  \[
-    f_{yy}(-1, -1) = -12
-  \]
-  \[
-    f_{xy}(-1, -1) = 4
-  \]
-  \[
-    D_3
-    = f_{xx}(-1, -1)f_{yy}(-1, -1) - f^2_{xy}(-1, -1)
-    = (-12)(-12) - 4^2
-    = 144 -16
-    = 128 > 0
-  \]
-  Portanto, o ponto $(-1, -1)$ é um máximo ou mínimo local.
-  Como \(f_{xx}(-1, -1) = -12 < 0\)
-  o ponto é um ponto de máximo local.
+  \bigskip
+  \onslide<+->{O ponto $(-1, -1)$ é um extremo local}
+
+  \onslide<+->{Como \(f_{xx}(-1, -1) = -12 < 0\)}
+  \onslide<+->{o ponto é um \emph{máximo local}}
 \end{resolution}
 
 %------------------------------------------------------------------------------%

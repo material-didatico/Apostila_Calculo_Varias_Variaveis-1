@@ -15,65 +15,86 @@
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{a}
-
-  Precisamos das derivadas parciais de $f$
+\begin{resolution}{a -- Gradiente de $f$}
   \[
     \D{f}{x}
-    = \D{}{x}\left[x^4 + y^4 + 4xy\right]
-    = 4x^3 + 4y
+    \pause
+    \;=\; \D{}{x}\left[x^4 + y^4 + 4xy\right]
+    \pause
+    \;=\; 4x^3 + 4y
   \]
+
+  \pause
   \[
     \D{f}{y}
-    = \D{}{y}\left[x^4 + y^4 + 4xy\right]
-    = 4y^3 + 4x
+    \pause
+    \;=\; \D{}{y}\left[x^4 + y^4 + 4xy\right]
+    \pause
+    \;=\; 4y^3 + 4x
   \]
-  então
+
+  \pause
   \[
+    \text{então}\qquad
     \nabla f = \vetor{4x^3 + 4y}{4y^3 + 4x}
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{b}
-
-  Precisamos das derivadas parciais de segunda ordem de $f$
+\begin{resolution}{b -- Hessiana de $f$}
   \[
     \DS{f}{x}
-    = \D{}{x}\left[4x^3 + 4y\right]
-    = 12x^2
+    \pause
+    \;=\; \D{}{x}\left[4x^3 + 4y\right]
+    \pause
+    \;=\; 12x^2
   \]
+
+  \pause
   \[
-    \D{f}{y}
-    = \D{}{y}\left[4y^3 + 4x\right]
-    = 12y^2
+    \DS{f}{y}
+    \pause
+    \;=\; \D{}{y}\left[4y^3 + 4x\right]
+    \pause
+    \;=\; 12y^2
   \]
+
+  \pause
   \[
     \DM{f}{x}{y}
-    = \D{}{x}\D{f}{y}
-    = \D{}{x}\left[4y^3 + 4x\right]
-    = 4
+    \pause
+    \;=\; \D{}{x}\D{f}{y}
+    \pause
+    \;=\; \D{}{x}\left[4y^3 + 4x\right]
+    \pause
+    \;=\; 4
   \]
-  então
+
+  \pause
   \[
+    \text{então}\qquad
     H = \left(\begin{array}{cc}
-      12x^2 & 4 \\
-      4 & 12y^2
+      12x^2 & 4     \\
+      4     & 12y^2
     \end{array}\right)
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{c}
-  A função é um polinômio, então possui derivadas em todos os pontos do plano.
-  Assim os pontos críticos são apenas os pontos onde as derivadas parciais são zero,
-  \(\nabla f = 0\)
+\begin{resolution}{c -- Pontos críticos}
+  A função é um polinômio, então possui derivadas em todos os pontos do plano
+
+  \pause
+  Assim os pontos críticos são apenas os pontos onde \(\nabla f = 0\)
+
+  \pause
   \[
     4x^3 + 4y = 0
     \qquad\text{e}\qquad
     4y^3 + 4x = 0
   \]
-  ou, simplificando,
+  \pause
+  ou
   \[
     x^3 + y = 0
     \qquad\text{e}\qquad
@@ -82,7 +103,7 @@
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{c}
+\begin{resolution}{c -- Resolvendo o sistema}
   Isolando $y$ na primeira equação, \(y = -x^3\), e substituindo na segunda, temos
   \begin{align*}
     y^3 + x                 & = 0 \\
@@ -106,14 +127,7 @@
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{d}
-  Para classificar os pontos críticos precisamos avaliar o discriminante nos
-  pontos críticos.
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{d}
-  Considerando o ponto \((x_1, y_1) = (0, 0)\)
+\begin{resolution}{d -- Classificando o ponto \((x_1, y_1) = (0, 0)\)}
   \[
   f_{xx}(0, 0) = 0
   \]
@@ -133,8 +147,7 @@
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{d}
-  Considerando o ponto \((x_2, y_2) = (1, -1)\)
+\begin{resolution}{d -- Classificando o ponto \((x_2, y_2) = (1, -1)\)}
   \[
     f_{xx}(1, -1) = 12
   \]
@@ -157,8 +170,7 @@
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{d}
-  Considerando o ponto \((x_3, y_3) = (-1, 1)\)
+\begin{resolution}{d -- Classificando o ponto \((x_3, y_3) = (-1, 1)\)}
   \[
     f_{xx}(-1, 1) = 12
   \]

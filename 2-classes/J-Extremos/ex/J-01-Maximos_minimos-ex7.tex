@@ -19,7 +19,7 @@
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{a)\; Gradiente de $f$}
+\begin{resolution}{a -- Gradiente de $f$}
   Derivadas parciais de $f$
 
   \[
@@ -49,7 +49,7 @@
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{b)\; Hessiana de $f$}
+\begin{resolution}{b -- Hessiana de $f$}
   Derivadas parciais de segunda ordem de $f$
   \[
     \pause
@@ -61,7 +61,7 @@
   \]
   \[
     \pause
-    \D{f}{y}
+    \DS{f}{y}
     \pause
     \;=\; \D{}{y}\left[3x + 3y^2\right]
     \pause
@@ -90,7 +90,7 @@
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{c)\; Pontos Críticos de $f$}
+\begin{resolution}{c -- Pontos Críticos de $f$}
   A função é um polinômio, então possui derivadas em todos os pontos do plano
 
   \pause
@@ -116,7 +116,9 @@
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{c)\; Pontos Críticos de $f$}
+\begin{resolution}{c -- Pontos Críticos de $f$}
+\begin{columns}[t]
+\column{0.45\linewidth}
   \onslide<+->{Isolando $y$ na primeira equação}
   \begin{align*}
     \onslide<+->{x^2 + y & = 0} \\
@@ -127,13 +129,22 @@
     \onslide<+->{x + y^2                 & = 0 \\}
     \onslide<+->{x + \left(-x^2\right)^2 & = 0 \\}
     \onslide<+->{x + x^4                 & = 0 \\}
-    \onslide<+->{x(1+ x^3)               & = 0}
+    \onslide<+->{x\left(1+ x^3\right)    & = 0}
   \end{align*}
-  \onslide<+->{As soluções dessa equação são $x=0$ ou $x-1$}
+\column{0.55\linewidth}
+  \begin{align*}
+    \onslide<+->{x=0 \quad\text{ ou }\quad}
+    \onslide<+->{1+ x^3 & = 0            \\}
+    \onslide<+->{x^3    & = -1           \\}
+    \onslide<+->{x  \;  & = \sqrt[3]{-1} \\}
+    \onslide<+->{x  \;  & = -1}
+  \end{align*}
+  \onslide<+->{As soluções dessa equação são\\ \emph{$x=0$} ou \emph{$x=-1$}}
+\end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{c)\; Pontos Críticos de $f$}
+\begin{resolution}{c--Pontos Críticos de $f$}
   Como \(y = -x^2\)
 
   \pause
@@ -156,7 +167,7 @@
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{d)\; Classificando os Pontos}
+\begin{resolution}{d -- Classificando os Pontos}
   Considerando o ponto \((x_1, y_1) = (0, 0)\)
   \[
     \pause
@@ -174,15 +185,15 @@
     \pause
     = 0
   \]
+  \pause
   \[
-    \pause
     f_{xy}(0, 0) = 3
   \]
+  \pause
   \[
-    \pause
     D_1
     \pause
-    \;=\; f_{xx}(0, 0)f_{yy}(0, 0) - f^2_{xy}(0, 0)
+    = f_{xx}(0, 0)f_{yy}(0, 0) - f^2_{xy}(0, 0)
     \pause
     \;=\; 0 \times 0 - 3^2
     \pause
@@ -192,11 +203,11 @@
   \]
 
   \pause
-  Portanto, o ponto $(0, 0)$ é um ponto de sela.
+  Portanto, o ponto $(0, 0)$ é um \emph{ponto de sela}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{d)\; Classificando os Pontos}
+\begin{resolution}{d -- Classificando os Pontos}
   Considerando o ponto \((x_2, y_2) = (-1, -1)\)
   \[
     \pause
@@ -214,21 +225,21 @@
     \pause
     = -6
   \]
+  \pause
   \[
-    \pause
     f_{xy}(-1, -1) = 3
   \]
+  \pause
   \[
-    \pause
     D_2
     \pause
-    \;=\; f_{xx}(-1, -1)f_{yy}(-1, -1) - f^2_{xy}(-1, -1)
+    = f_{xx}(-1, -1)f_{yy}(-1, -1) - f^2_{xy}(-1, -1)
     \pause
     \;=\; (-6)(-6) - 3^2
     \pause
     \;=\; 36 - 9
     \pause
-    \;=\; 25 > 0
+    \;=\; 27 > 0
   \]
 
   \pause
@@ -236,9 +247,8 @@
 
   \pause
   Como \(f_{xx}(-1, -1) = -6 < 0\)
-
   \pause
-  o ponto é um ponto de máximo local.
+  o ponto é um ponto de \emph{máximo local}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
