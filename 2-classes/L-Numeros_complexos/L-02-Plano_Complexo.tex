@@ -1,0 +1,64 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Plano Complexo}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Plano Complexo}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Plano Complexo}
+\begin{columns}[b]
+\column{0.55\linewidth}
+  \begin{gather*}
+    \onslide<1->{z = x + yi \quad          \in \mathbb{C} \\}
+    \onslide<1->{(x, y)     \hspace{7.2ex} \in \R^2}
+  \end{gather*}
+  \onslide<2->{Parte real       \tabto{30mm} \( \Re(z) = x \)       }\\[4mm]
+  \onslide<3->{Parte imaginária \tabto{30mm} \( \Im(z) = y \)       }\\[4mm]
+  \onslide<4->{Módulo           \tabto{30mm}}%
+  \(
+    \onslide<5->{\abs{z}}
+    \onslide<6->{= \sqrt{z\bar{z}}}
+    \onslide<7->{= \sqrt{x^2+y^2\,}}
+  \) \\[4mm]
+  \onslide<8->{Argumento \tabto{30mm}}%
+  \(
+    \onslide<9->{\arg{(z)}}
+    \onslide<10->{= \arctan\left(\frac{\,y\,}{x}\right)}
+  \) \\[4mm]
+  \onslide<11->{Conjugado  \tabto{30mm} \( \bar{z} = x - yi \) }
+\column{0.3\linewidth}
+\begin{center}%
+  \only<1|handout:0>   {\includegraphics{plano_complexo-1}}% base
+  \only<2|handout:0>   {\includegraphics{plano_complexo-2}}% real
+  \only<3|handout:0>   {\includegraphics{plano_complexo-3}}% imaginário
+  \only<4-7|handout:0> {\includegraphics{plano_complexo-4}}% modulo
+  \only<8-10|handout:0>{\includegraphics{plano_complexo-5}}% argumento
+  \only<11|handout:0>  {\includegraphics{plano_complexo-6}}% conjugado
+  \only<12>            {\includegraphics{plano_complexo-7}}% conjugado
+\end{center}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{L-02-Plano_Complexo-ex1}
+
+%------------------------------------------------------------------------------%
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

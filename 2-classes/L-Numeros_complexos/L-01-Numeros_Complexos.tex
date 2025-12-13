@@ -24,7 +24,7 @@
   Porém, \(x^2 \geq 0\) para todo $x\in\R$
 
   \pause
-  \vspace{\baselineskip}
+  \bigskip
   Não existe \(\sqrt{-1}\) dentro dos números reais
 \end{frame}
 
@@ -39,25 +39,25 @@
 
   \pause
   A Engenharia Elétrica usa
-  \vspace{\baselineskip}
+  \bigskip
   \(j^2=-1\)
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Propriedades de Potências}
-  \large
+  \Large
   \[
     a^p a^q = a^{p+q}
   \]
 
   \pause
-  \vspace{0.\baselineskip}
+  \bigskip
   \[
     \frac{a^p}{a^q} = a^{p-q}
   \]
 
   \pause
-  \vspace{0.\baselineskip}
+  \bigskip
   \[
     \left(a^p\right)^q = a^{pq}
   \]
@@ -65,11 +65,16 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Potências de $i$}
+\large
 \begin{columns}
 \column{0.5\linewidth}
+  {
+  \setlength{\jot}{5pt}
   \begin{align*}
-    \onslide<+->{i^1 & = i \\}
-    \onslide<+->{i^2 & = -1 \\}
+    \onslide<+->{i^1}
+    \onslide<+->{ & = i } \\
+    \onslide<+->{i^2}
+    \onslide<+->{ & = -1 } \\
     \onslide<+->{i^3}
     \onslide<+->{& = i^2 \, i \;}
     \onslide<+->{ = (-1) i}
@@ -92,33 +97,31 @@
     \onslide<+->{ = -i}    \\
     \onslide<+->{i^8}
     \onslide<+->{ & = i^4 \, i^4}
-    \onslide<+->{  = 1\times 1}
+    \onslide<+->{ = 1\times 1}
     \onslide<+->{ = 1}
   \end{align*}
+  }
 \column{0.5\linewidth}
 \begin{align*}
-  \onslide<+->{i^0 & = 1\\}
+  \onslide<+->{i^0 & = 1 } \\
   \onslide<+->{i^{-1}}
   \onslide<+->{& = \frac{1}{i}}
   \onslide<+->{  = \frac{i}{i^2}}
   \onslide<+->{  = \frac{i}{-1}}
-  \onslide<+->{  = -i\\}
+  \onslide<+->{  = -i } \\
   \onslide<+->{i^{-2}}
   \onslide<+->{& = \frac{1}{i^2}}
   \onslide<+->{  = \frac{1}{-1}}
-  \onslide<+->{  = -1\\}
+  \onslide<+->{  = -1 } \\
   \onslide<+->{i^{-3}}
   \onslide<+->{& = \frac{1}{i^3}}
   \onslide<+->{  = \frac{1}{-i}}
   \onslide<+->{  = \frac{i}{-i^2}}
   \onslide<+->{  = \frac{i}{1}}
-  \onslide<+->{  = i\\}
+  \onslide<+->{  = i } \\[7mm]
+  \onslide<+->{i^{75}}
+  \onslide<+->{& = ?}
 \end{align*}
-
-\[
-\onslide<+->{i^{75} =}
-\onslide<+->{?}
-\]
 \end{columns}
 \end{frame}
 
@@ -129,7 +132,7 @@
   \onslide<+->{Para uma potência $n$ inteira}
 
   \onslide<+->{
-  \vspace{\baselineskip}
+  \bigskip
   Dividimos $n$ por 4}
   \[
     \onslide<+->{
@@ -145,25 +148,38 @@
     \end{array}}
   \]
   \onslide<+->{Assim}
-  \begin{gather*}
-    \onslide<+->{n = 4q + r} \\
-    \onslide<+->{75 = 4\times 18 + 3}
-  \end{gather*}
+  \begin{align*}
+    \onslide<+->{n  & = 4q + r} \\
+    \onslide<+->{75 & = 4\times 18 + 3}
+  \end{align*}
 \column{0.5\linewidth}
-{\large
+{\Large
   \begin{align*}
     \onslide<+->{i^n}
-    \onslide<+->{& = i^{\,4q\,+\,r} \\}
-    \onslide<+->{& = i^{\,4q} \; i^r \\}
-    \onslide<+->{& = \left(i^4\right)^q \; i^r \\}
-    \onslide<+->{& = \left(1\right)^q \; i^r \\}
-    \onslide<+->{& = i^r}
-  \end{align*}}
-  \onslide<+->{
-  \[
-    i^{75} = i^3 = -i
-  \]}
+    \onslide<+->{& = i^{\,4q\,+\,r} } \\
+    \onslide<+->{& = i^{\,4q} \; i^r } \\
+    \onslide<+->{& = \left(i^4\right)^q \, i^r } \\
+    \onslide<+->{& = \left(1  \right)^q \, i^r } \\
+    \onslide<+->{& = i^r} \\[3mm]
+    \onslide<+->{i^{75} & = i^3 = -i}
+  \end{align*}
+}
 \end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Raízes de Números Negativos}
+  Seja \(a\in\R\), \(a>0\)
+  \pause
+  \[
+    \sqrt{-a^2}
+    \pause
+    \;=\; \sqrt{(-1)\,a^2}
+    \pause
+    \;=\; i\sqrt{a^2}
+    \pause
+    \;=\; ai
+  \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -212,7 +228,7 @@
     = {\color<15->{red}6}
   \]
 
-  \vspace{\baselineskip}
+  \bigskip
   \onslide<16>{\emph{Só é verdade para $a$ e $b$ positivos!}}
 \end{columns}
 \end{frame}
@@ -244,66 +260,80 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
+\section{Operações com números complexos}
+
+%------------------------------------------------------------------------------%
 \begin{frame}{Igualdade entre números complexos}
 
-  \(z_1=a+bi\) \; é \emph{igual} a \; \(z_2=c+di\)
+  \( z_1 = a + bi \) \; é \emph{igual} a \;
+  \( z_2 = p + qi \)
 
   \pause
-  \vspace{\baselineskip}
+  \bigskip
   se, e somente se,
   \[
-     a = c
+     a = p
      \qquad\text{e}\qquad
-     b = d
+     b = q
   \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Soma e produto de números complexos}
-  \onslide<+->{\emph{Soma e subtração}}
+\begin{frame}{Soma e subtração de números complexos}
+  \onslide<+->{\emph{Soma}}
   \[
-    \onslide<+->{(a+b\emph{i}) + (c+d\emph{i})}
-    \onslide<+->{\;=\;  a + b\emph{i} + c + d\emph{i}}
-    \onslide<+->{\;=\; (a+c) + (b+d) \emph{i}}
-  \]
-  \vspace{-\baselineskip}
-  \[
-    \onslide<+->{(a+b\emph{i}) - (c+d\emph{i})}
-    \onslide<+->{\;=\; a+b\emph{i} -c -d\emph{i}}
-    \onslide<+->{\;=\; (a-c) + (b-d) \emph{i}}
+    \onslide<+->{z_1 + z_2}
+    \onslide<+->{\;=\; (a+b\emph{i}) + (p+q\emph{i})}
+    \onslide<+->{\;=\; a + b\emph{i} + p + q\emph{i}}
+    \onslide<+->{\;=\; (a+p) + (b+q) \emph{i}}
   \]
 
+  \onslide<+->{\emph{Subtração}}
+  \[
+    \onslide<+->{z_1 - z_2}
+    \onslide<+->{\;=\; (a+b\emph{i}) - (p+q\emph{i})}
+    \onslide<+->{\;=\; a+b\emph{i} -p -q\emph{i}}
+    \onslide<+->{\;=\; (a-p) + (b-q) \emph{i}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Produto de números complexos}
   \onslide<+->{\emph{Produto}}
   \begin{align*}
+    \onslide<+->{z_1z_2}
     \onslide<+->{
-      (a+b\emph{i}) \times (c+d\emph{i})}
+      & \;=\; (a+b\emph{i})(p+q\emph{i})} \\
     \onslide<+->{
-      & \;=\; a         \times (c+d\emph{i})
-        \;+\; b\emph{i} \times (c+d\emph{i}) } \\
+      & \;=\; a         (p+q\emph{i})
+        \;+\; b\emph{i} (p+q\emph{i}) } \\
     \onslide<+->{
-      & \;=\; ac + ad\emph{i} + bc\emph{i} + bd\emph{i}^2 } \\
+      & \;=\; ap + aq\emph{i} + bp\emph{i} + bq\emph{i}^2 } \\
     \onslide<+->{
-      & \;=\; ac + ad\emph{i} + bc\emph{i} - bd } \\
+      & \;=\; ap + aq\emph{i} + bp\emph{i} - bq } \\
     \onslide<+->{
-      & \;=\; (ac-bd) \;+\; (ad+bc) \emph{i} }
+      & \;=\; (ap-bq) \;+\; (aq+bp) \emph{i} }
   \end{align*}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Conjugado}
   O \emph{conjugado} do número complexo
+  {\Large
   \[
     z = a + bi
-  \]
+  \]}
   \pause
   é o número
+  {\Large
   \[
     \bar{z} = a - bi
-  \]
+  \]}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Propriedades dos conjugados}
+  \large
   \begin{enumerate}[<+->]
   \setlength\itemsep{1.5em}
 
@@ -312,109 +342,56 @@
     \bar{\bar{z}} \onslide<+->{= z}
   \)
 
-  \item \; se \(\bar{z}=z\) \onslide<+->{então $z$ é real}
+  \item \;
+  se \(\bar{z}=z\) \onslide<+->{então $z$ é real}
 
   \item \;
   \(
     z\bar{z}
     \onslide<+->{= (a+bi)(a-bi)}
     \onslide<+->{= a^2 -abi +abi - b^2 i^2}
+  \) \\[3mm]
+  \(
+    \hspace{21pt}
     \onslide<+->{= a^2 + b^2}
   \)
   \end{enumerate}
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Divisão de números complexos}
-  \onslide<+->{\emph{Divisão}}%
-  \onslide<+->{: um número $q$ é a divisão de \(z_1=a+bi\) por \(z_2=c+di\) se}
-  \begin{columns}
-  \column{0.5\baselineskip}
-    \begin{align*}
-      \onslide<+->{q z_2           & = z_1                   \\}
-      \onslide<+->{q z_2 \bar{z}_2 & = z_1 \bar{z}_2         \\}
-      \onslide<+->{q (c^2 + d^2)   & = (c+di)(a-bi)          \\}
-      \onslide<+->{                & = ca -cbi +dai -dbi^2   \\}
-      \onslide<+->{                & = ca -cbi +dai +dbi     \\}
-      \onslide<+->{                & = (ac + bd) + (ad -bc)i}
-    \end{align*}
-  \column{0.5\baselineskip}
-    \begin{align*}
-      \onslide<+->{q & = \frac{(ac + bd) + (ad -bc)i}{c^2 + d^2}           \\[2mm]}
-      \onslide<+->{  & = \frac{(ac + bd)}{c^2 + d^2} + \frac{(ad -bc)}{c^2 + d^2}i}
-    \end{align*}
-  \end{columns}
-\end{frame}
+\begin{frame}{Divisão de Números Complexos}
+  \onslide<+->{Dividir \(z_1=a+bi\) por \(z_2=p+qi\)}
+  \begin{align*}
+    \onslide<+->{\frac{z_1}{z_2}}
+    \onslide<+->{& = \frac{a+bi}{p+qi}}
+    \onslide<+->{\;=\; \mathcolor{red}{?}}
+  \end{align*}
 
-%------------------------------------------------------------------------------%
-\begin{frame}{Operações com os Números Complexos}
-  Divisão de \(z_1=a+bi\) por \(z_2=c+di\)
-  \[
-    \pause
-    \frac{z_1}{z_2}
-    \pause
-    \;=\; \frac{z_1\,\bar{z}_2}{z_2\,\bar{z}_2}
-    \pause
-    \;=\; \frac{(ac + bd)}{c^2 + d^2} + \frac{(ad -bc)}{c^2 + d^2}i
-  \]
+  \begin{align*}
+    \onslide<+->{\frac{z_1}{z_2}}
+    \onslide<+->{& = \frac{z_1\,\mathcolor{blue}{\bar{z}_2}}{z_2\,\mathcolor{blue}{\bar{z}_2}}}\\[2mm]
+    \onslide<+->{& = \frac{(a+bi)(p-qi)}{(p+qi)(p-qi)}}
+    \onslide<+->{  = \frac{ap - aqi + bpi -bqi^2}{p^2+q^2}}
+    \onslide<+->{  = \frac{(ap+bq) + (bp-aq)i}{p^2+q^2}} \\[2mm]
+    \onslide<+->{& = \left(\frac{ap+bq}{p^2+q^2}\right) + \left(\frac{bp-aq}{p^2+q^2}\right)i}
+  \end{align*}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Corpo complexo}
   A soma e o produto nos complexos tem as mesmas propriedades dos reais
 
-  \vspace{\baselineskip}
+  \pause
+  \bigskip
   Por isso o conjunto dos complexos é chamado \emph{corpo}
 
-  \vspace{\baselineskip}
+  \pause
+  \bigskip
   Exemplos de corpos: racionais, reais, complexos
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \include{L-01-Numeros_Complexos-ex2}
-
-%------------------------------------------------------------------------------%
-\section{Plano Complexo}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Plano Complexo}
-\begin{columns}[b]
-\column{0.55\linewidth}
-  \begin{gather*}
-    \onslide<1->{z = x + yi \quad          \in \mathbb{C} \\}
-    \onslide<1->{(x, y)     \hspace{7.2ex} \in \R^2}
-  \end{gather*}
-  \onslide<2->{Parte real \tabto{24mm} \( \Re(z) = x \)       }\\[4mm]
-  \onslide<3->{Parte imag \tabto{24mm} \( \Im(z) = y \)       }\\[4mm]
-  \onslide<4->{Módulo     \tabto{24mm}}%
-  \(
-    \onslide<4->{\rho}
-    \onslide<5->{= \abs{z}}
-    \onslide<6->{= \sqrt{z\bar{z}}}
-    \onslide<7->{= \sqrt{x^2+y^2\,}}
-  \) \\[4mm]
-  \onslide<8->{Argumento \tabto{24mm}}%
-  \(
-    \onslide<8->{\varphi}
-    \onslide<9->{= \arg{(z)}}
-    \onslide<10->{= \arctan\left(\frac{\,y\,}{x}\right)}
-  \) \\[4mm]
-  \onslide<11->{Conjugado  \tabto{24mm} \( \bar{z} = x - yi \) }
-\column{0.3\linewidth}
-\begin{center}%
-  \only<1|handout:0>   {\includegraphics{plano_complexo-1}}% base
-  \only<2|handout:0>   {\includegraphics{plano_complexo-2}}% real
-  \only<3|handout:0>   {\includegraphics{plano_complexo-3}}% imaginario
-  \only<4-7|handout:0> {\includegraphics{plano_complexo-4}}% modulo
-  \only<8-10|handout:0>{\includegraphics{plano_complexo-5}}% argumento
-  \only<11|handout:0>  {\includegraphics{plano_complexo-6}}% conjugado
-  \only<12>            {\includegraphics{plano_complexo-7}}% conjugado
-\end{center}
-\end{columns}
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\include{L-01-Numeros_Complexos-ex3}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}
