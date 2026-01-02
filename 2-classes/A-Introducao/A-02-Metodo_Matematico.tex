@@ -132,6 +132,42 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
+\begin{frame}{Exemplo do uso de $\Rightarrow$}
+Afirmação verdadeira para $x\in\R$
+\[
+  x > 7 \quad\Rightarrow\quad x > 3
+\]
+
+\pause
+Substituindo valores
+\pause
+\begin{ceqn}
+\[
+\begin{array}{>{\quad}c<{\quad}>{\quad}c<{\quad}>{\quad}c<{\quad}} \hline
+  x        & x > 7             & x > 3             \\ \hline \pause
+  9        & \text{verdadeiro} & \text{verdadeiro} \\ \pause
+  5        & \text{falso}      & \text{verdadeiro} \\ \pause
+  1        & \text{falso}      & \text{falso}      \\ \pause
+  \nexists & \text{falso}      & \text{verdade}    \\ \hline
+\end{array}
+\]
+\end{ceqn}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Evite Erros Comuns}
+  \begin{itemize}[<+->]
+    \setlength\itemsep{1em}
+    \item Não existe $\times-$
+    \item \(f(x) \neq f(a)\)
+    \item \(\frac{a+b}{c} \neq \frac{a}{c}+\frac{b}{c}\)
+    \item \((a+b)^2 \neq a^2 + b^2\)
+    \item \(\sqrt{4} = 2 \neq \pm 2 \)
+    \item \(\sqrt{x^2} \neq x\)
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
 \begin{frame}{Não Pule Passagens}
   \begin{itemize}[<+->]
     \item Escreva todas as passagens
@@ -142,22 +178,29 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Repetições}
+
 Prefira sequências de igualdades a sequências de equações
+
+\bigskip
 \begin{columns}
-  \column{0.5\linewidth}
+\column{0.3\linewidth}
   \pause
+  \quad Evite
+  \vspace{-0.4\baselineskip}
   \begin{align*}
-    f(x) & = 2 + 2 + 2 + 2 \\
-    f(x) & = 4 + 2 + 2     \\
-    f(x) & = 6 + 2         \\
+    f(x) & = 2 + 2 + 2 + 2 \\[-1mm]
+    f(x) & = 4 + 2 + 2     \\[-1mm]
+    f(x) & = 6 + 2         \\[-1mm]
     f(x) & = 8
   \end{align*}
-  \column{0.5\linewidth}
+\column{0.6\linewidth}
   \pause
+  \quad Prefira
+  \vspace{-0.4\baselineskip}
   \begin{align*}
-    f(x) & = 2 + 2 + 2 + 2 \\
-         & = 4 + 2 + 2     \\
-         & = 6 + 2         \\
+    f(x) & = 2 + 2 + 2 + 2 \\[-1mm]
+         & = 4 + 2 + 2     \\[-1mm]
+         & = 6 + 2         \\[-1mm]
          & = 8
   \end{align*}
 \end{columns}
@@ -217,7 +260,7 @@ Forma alternativa (menos legível)
   ~
 
   Ler a Apostila
-  ``\href{https://sites.google.com/view/prof-luis-dafonseca/ensino-b\%C3\%A1sico/infinito}%
+  ``\href{https://material-didatico.github.io/pages/infinito/}%
   {Quem disse que $0,999\dots=1$}''
 \end{frame}
 
