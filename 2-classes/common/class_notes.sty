@@ -64,6 +64,7 @@
 \definecolor{bgquestion}{HTML}{133e3d}
 \definecolor{bgexample}{HTML}{0d5959}
 \definecolor{bgproof}{gray}{0.3}
+\definecolor{bgwarning}{HTML}{8d4c0b}
 
 \setbeamerfont{institute}{size=\large}
 \setbeamerfont{date}{size=\small}
@@ -162,6 +163,14 @@
   \setbeamercolor{frametitle}{bg=bgproof}%
   \begin{frame}{#1}
 }{%
+  \end{frame}
+}
+
+\newenvironment{warningframe}[1]{%
+  \addtocounter{exemplo}{1}%
+  \setbeamercolor{frametitle}{bg=bgwarning}%
+  \begin{frame}{#1}
+  }{%
   \end{frame}
 }
 
