@@ -1,7 +1,7 @@
 
 size(6cm);
 
-import "../../common/asy/utils.ah" as utils;
+import "../../0-common/asy/utils.ah" as utils;
 import "quadrics.ah" as quadrics;
 
 draw_axes(-6, 6, 1, -3, 6, 1);

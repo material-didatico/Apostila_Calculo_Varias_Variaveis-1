@@ -1,7 +1,7 @@
 
 size(6cm);
 
-import "../../common/asy/utils.ah" as utils;
+import "../../0-common/asy/utils.ah" as utils;
 import "quadrics.ah" as quadrics;
 
 currentprojection = perspective(5,3,2);

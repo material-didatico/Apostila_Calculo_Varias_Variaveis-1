@@ -1,7 +1,7 @@
 
 size(12cm, IgnoreAspect);
 
-import "../../common/asy/utils.ah" as utils;
+import "../../0-common/asy/utils.ah" as utils;
 import "quadrics.ah" as quadrics;
 
 real a = 2; 

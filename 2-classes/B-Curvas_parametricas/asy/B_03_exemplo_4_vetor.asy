@@ -1,7 +1,7 @@
 
 size(14cm, 7.5cm, IgnoreAspect);
 
-import "../../common/asy/utils.ah" as utils;
+import "../../0-common/asy/utils.ah" as utils;
 
 real x_min = -11;
 real x_max =  5;

@@ -1,4 +1,4 @@
-import "../../common/asy/utils.ah" as utils;
+import "../../0-common/asy/utils.ah" as utils;
 size(200);
 
 draw_axes(-1, 7, 1, -1, 5, 1);

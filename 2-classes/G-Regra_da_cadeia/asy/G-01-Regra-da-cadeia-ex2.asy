@@ -1,5 +1,5 @@
 
-import "../../common/asy/utils.ah" as utils;
+import "../../0-common/asy/utils.ah" as utils;
 import "cadeia.ah" as cadeia;
 
 size(6cm, 6cm);
