@@ -1,8 +1,9 @@
-
-size(6cm);
+//-----------------------------------------------------------------------------
 
 import "../../0-common/asy/utils.ah" as utils;
 import "quadrics.ah" as quadrics;
+
+size(6cm);
 
 currentprojection = perspective(camera=(0.5,4,3), up=Z, target=(0,0,0));
 

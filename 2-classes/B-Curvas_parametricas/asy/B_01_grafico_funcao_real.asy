@@ -1,7 +1,8 @@
-
-size(14cm);
+//-----------------------------------------------------------------------------
 
 import "../../0-common/asy/utils.ah" as utils;
+
+size(14cm);
 
 real x_min = -7;
 real x_max =  7;
@@ -15,5 +16,7 @@ real f(real x){
 }
 
 draw(graph(f, -7, 7), pens[0]);
+
+label( "$y=\cos(x)$", (0.2, 2.5), E );
 
 clip_to_axis();

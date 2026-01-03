@@ -6,7 +6,7 @@ settings.tex       = "pdflatex";
 settings.outformat = "pdf";
 settings.render = 0;
 
-defaultpen(fontsize(8pt));
+defaultpen(fontsize(10pt));
 
 path axis_region;
 pair domain;

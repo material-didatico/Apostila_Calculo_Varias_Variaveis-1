@@ -1,7 +1,8 @@
-
-size(7cm, 5cm, IgnoreAspect);
+//-----------------------------------------------------------------------------
 
 import "../../0-common/asy/utils.ah" as utils;
+
+size(7cm, 5cm, IgnoreAspect);
 
 real x_min = -11;
 real x_max =  5;

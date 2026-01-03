@@ -3,6 +3,7 @@
 import "../../0-common/asy/utils.ah" as utils;
 
 size(5cm, 5cm, IgnoreAspect);
+
 draw(box((-2,-2),(2,2)), invisible);
 
 real r = 1.5;

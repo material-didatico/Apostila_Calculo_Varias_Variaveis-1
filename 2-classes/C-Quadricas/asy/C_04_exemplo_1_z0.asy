@@ -1,7 +1,8 @@
-
-size(6cm);
+//-----------------------------------------------------------------------------
 
 import "../../0-common/asy/utils.ah" as utils;
+
+size(6cm);
 
 real x_min = -5;
 real x_max =  5;

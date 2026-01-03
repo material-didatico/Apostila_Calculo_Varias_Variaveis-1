@@ -1,7 +1,8 @@
-
-size(12cm, 7.5cm, IgnoreAspect);
+//-----------------------------------------------------------------------------
 
 import "../../0-common/asy/utils.ah" as utils;
+
+size(12cm, 7.5cm, IgnoreAspect);
 
 real x_min = -2;
 real x_max = 10;
@@ -15,7 +16,7 @@ pair f(real t)
 	return ( (t^2), t+1 );
 }
 
-draw(graph(f, -4, 4), pens[0]);
+draw(graph(f, -4, 1), pens[0]);
 
 dot( (9, -2) );
 dot( (4, -1) );
@@ -33,4 +34,8 @@ label( "$(1,  2)$", ( 1,  2.5) );
 label( "$(4,  3)$", ( 4,  3.5) );
 label( "$(9,  4)$", ( 9,  4.5) );
 
+label( "$t\in(-\infty, 1)$", ( 0.5,  4.5), E );
+
 clip_to_axis();
+
+//-----------------------------------------------------------------------------

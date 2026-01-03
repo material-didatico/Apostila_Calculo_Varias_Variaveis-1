@@ -1,8 +1,9 @@
-
-size(6cm);
+//-----------------------------------------------------------------------------
 
 import "../../0-common/asy/utils.ah" as utils;
 import "quadrics.ah" as quadrics;
+
+size(6cm);
 
 draw_axes(-6, 6, 1, -3, 6, 1);
 newpage();

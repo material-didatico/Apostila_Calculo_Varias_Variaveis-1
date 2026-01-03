@@ -1,13 +1,13 @@
 #------------------------------------------------------------------------------#
 .NOTPARALLEL:
 
-SUBDIRS := $(shell find -mindepth 1         \
-                        -maxdepth 1         \
-                        -type d             \
-                        -not -name '.git'   \
-                        -not -name '_*'     \
-                        -not -name 'pdf'    \
-                        -not -name 'common' )
+SUBDIRS := $(shell find -mindepth 1           \
+                        -maxdepth 1           \
+                        -type d               \
+                        -not -name '.git'     \
+                        -not -name '_*'       \
+                        -not -name 'pdf'      \
+                        -not -name '0-common' )
 
 #------------------------------------------------------------------------------#
 

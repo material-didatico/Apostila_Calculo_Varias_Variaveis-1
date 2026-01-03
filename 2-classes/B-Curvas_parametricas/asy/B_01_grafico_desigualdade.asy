@@ -1,7 +1,8 @@
-
-size(7.5cm, 7.5cm, IgnoreAspect);
+//-----------------------------------------------------------------------------
 
 import "../../0-common/asy/utils.ah" as utils;
+
+size(7.5cm, 7.5cm, IgnoreAspect);
 
 real x_min = -7;
 real x_max =  7;
@@ -30,3 +31,6 @@ fill(box(pos - size, pos + size), white);
 label("$x^2 + y^2 \leq 4^2$", pos);
 
 clip_to_axis();
+
+
+//-----------------------------------------------------------------------------

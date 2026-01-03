@@ -1,7 +1,8 @@
-
-size(7.5cm, 7.5cm, IgnoreAspect);
+//-----------------------------------------------------------------------------
 
 import "../../0-common/asy/utils.ah" as utils;
+
+size(7.5cm, 7.5cm, IgnoreAspect);
 
 real x_min = -6;
 real x_max =  6;
@@ -15,6 +16,10 @@ pair f(real t)
 	return ( t * cos(pi * t), t * sin(pi * t) );
 }
 
-draw(graph(f, 0, 5.7), pens[0]);
+draw(graph(f, 0, 5.7, n=200), pens[0]);
+
+pair pos = (3.5, 5);
+label( "$x = t \cos(\pi t)$", pos, N );
+label( "$y = t \sin(\pi t)$", pos, S );
 
 clip_to_axis();
