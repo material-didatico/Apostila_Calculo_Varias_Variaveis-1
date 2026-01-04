@@ -2,15 +2,17 @@
 
 import "../../0-common/asy/utils.ah" as utils;
 
-size(7.5cm, 7.5cm, IgnoreAspect);
+size(0, 7.5cm);
 
-real x_min = -7;
-real x_max =  7;
-real y_min = -7;
-real y_max =  7;
+draw(box((1, 1.1), (6, 2.9)), invisible);
 
-draw_axes(x_min, x_max, 1, y_min, y_max, 1);
+pair f(real t)
+{
+  return (t, sqrt(t) - 0.3*cos(2*t) );
+}
 
-clip_to_axis();
+draw(graph(f, 1, 6), pens[0]);
+
+label("$\gamma(t)$", f(6), SW, pens[0] + fontsize(18pt));
 
 //-----------------------------------------------------------------------------

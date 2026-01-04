@@ -2,7 +2,7 @@
 
 import "../../0-common/asy/utils.ah" as utils;
 
-size(14cm, 7.5cm, IgnoreAspect);
+size(14cm);
 
 real x_min = -11;
 real x_max =  5;
@@ -41,3 +41,5 @@ dot(a, dotpen );
 label("$\frac{\gamma'(t)}{3}$", (-6.5, 1.5), pens[1]+fontsize(18pt));
 
 clip_to_axis();
+
+//-----------------------------------------------------------------------------

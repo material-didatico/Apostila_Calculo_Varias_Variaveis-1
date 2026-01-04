@@ -2,26 +2,27 @@
 
 import "../../0-common/asy/utils.ah" as utils;
 
-size(7.5cm, 7.5cm, IgnoreAspect);
+size(7.5cm, 7.5cm);
 
-real x_min = -6;
-real x_max =  6;
-real y_min = -6;
-real y_max =  6;
+real x_min = -2.2;
+real x_max =  2.2;
+real y_min = -2.2;
+real y_max =  2.2;
 
 draw_axes(x_min, x_max, 1, y_min, y_max, 1);
 
 pair f(real t)
 {
-	return ( t * cos(pi * t), t * sin(pi * t) );
+  return (cos(t), sin(t));
 }
 
-draw(graph(f, 0, 5.7, n=200), pens[0]);
+real angle = 4*pi/4;
 
-pair pos = (3.5, 5);
-label( "$x = t \cos(\pi t)$", pos, N );
-label( "$y = t \sin(\pi t)$", pos, S );
+draw(graph(f, 0, angle), pens[0]);
+
+label("$t\in\left[0, \pi\right]$", (0.3, 1.5), E);
 
 clip_to_axis();
 
 //-----------------------------------------------------------------------------
+

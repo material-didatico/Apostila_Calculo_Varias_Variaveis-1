@@ -2,7 +2,7 @@
 
 import "../../0-common/asy/utils.ah" as utils;
 
-size(7cm, 5cm, IgnoreAspect);
+size(10cm);
 
 real x_min = -11;
 real x_max =  5;
@@ -22,3 +22,5 @@ pair f(real t)
 draw(graph(f, 0, 2), pens[0] +1pt);
 
 clip_to_axis();
+
+//-----------------------------------------------------------------------------

@@ -16,11 +16,13 @@ pair f(real t)
 	return ( t * cos(pi * t), t * sin(pi * t) );
 }
 
-draw(graph(f, 0, 5.7, n=200), pens[0]);
+draw(graph(f, 0, 6.5, n=200), pens[0]);
 
 pair pos = (3.5, 5);
 label( "$x = t \cos(\pi t)$", pos, N );
 label( "$y = t \sin(\pi t)$", pos, S );
+
+label("$t\in\left[0, \infty\right]$", (-5, 5.3), E);
 
 clip_to_axis();
 
