@@ -11,7 +11,7 @@ all: _all_done
 _all_done: $(PDF_FILES)
 	touch _all_done
 
-%.pdf: %.asy ../../0-common/asy/utils.ah *.ah
+%.pdf: %.asy ../../0-common/asy/utils.ah 
 	asy ${<}
 
 #------------------------------------------------------------------------------#
