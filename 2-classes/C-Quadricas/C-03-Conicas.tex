@@ -15,14 +15,14 @@
 
 \begin{frame}{Cônicas e Quádricas}
   \emph{Cônica}:
-  Gráfico de uma equação de segundo grau no plano
+  pontos no plano, $\R^2$, que são solução de uma equação de segundo grau
   \[
     Ax^{\emph{2}} + By^{\emph{2}} + Cxy + Dx + Ey + F = 0
   \]
 
   \pause
   \emph{Quádrica}:
-  gráfico de uma equação de segundo grau em $\R^3$
+  pontos no espaço, $\R^3$, que são solução de uma equação de segundo grau
   \[
     Ax^{\emph{2}} + By^{\emph{2}} + Cz^{\emph{2}} +
     Dxy  + Exz  + Fyz +
@@ -32,17 +32,37 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Cônicas}
-  Seções cônicas
+\begin{columns}
+\column{0.5\linewidth}
+  \onslide<+->{Seções cônicas}
   \begin{itemize}
-    \item Elipse (círculo)
-    \item Parábola
-    \item Hipérbole
+    \item \onslide<+->{Elipse} \; \onslide<+->{(círculo)}
+    \item \onslide<+->{Parábola}
+    \item \onslide<+->{Hipérbole}
   \end{itemize}
-  \addgraphic{10}{5,1.35}{conicas}
+
+  \bigskip
+  \onslide<+->{Seções cônicas degeneradas}
+  \begin{itemize}
+    \item \onslide<+->{Retas concorrentes}
+    \item \onslide<+->{Reta}
+    \item \onslide<+->{ponto}
+  \end{itemize}
+\column{0.5\linewidth}
+  ~\\[1mm]
+  \only<1>{\includegraphics{conicas_cone}}%
+  \only<2>{\includegraphics{conicas_elipse}}%
+  \only<3>{\includegraphics{conicas_circulo}}%
+  \only<4>{\includegraphics{conicas_parabola}}%
+  \only<5>{\includegraphics{conicas_hiperbole}}%
+  \only<6>{\includegraphics{conicas_cone}}%
+  \only<7>{\includegraphics{conicas_retas_concorrentes}}%
+  \only<8>{\includegraphics{conicas_reta}}%
+  \only<9>{\includegraphics{conicas_ponto}}%
+\end{columns}
 \end{frame}
 
-%------------------------------------------------------------------------------%
-%\framedgraphic{Cônicas}{conicas}
+\end{document}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Parábola}
