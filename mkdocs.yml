@@ -1,6 +1,10 @@
 
-site_name: Material Didático
-site_url: https://material-didatico.github.io
+site_name: CFVVI
+site_url:  https://material-didatico.github.io/Apostila_Calculo_Varias_Variaveis-1
+
+nav:
+  - Material Didático: https://material-didatico.github.io
+  - CFVVI: index.md
 
 theme:
   name:       material
