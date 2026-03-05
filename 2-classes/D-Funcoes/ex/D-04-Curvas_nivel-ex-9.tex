@@ -1,0 +1,43 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre a equação e esboce para a superfície de nível da função
+  \[
+    f(x, y, z) = \sqrt{x-y} - \ln(z)
+  \]
+  que passa pelo ponto \((3, -1, 1)\)
+\end{question}
+
+\begin{resolution}{Solução}
+  \onslide<+->{Domínio}
+  \begin{align*}
+    \onslide<+->{x-y & \geq 0  \\}
+    \onslide<+->{x   & \geq y}
+  \end{align*}
+  \onslide<+->{e
+  \[z > 0\]}
+
+\end{resolution}
+
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{c & = f(3, -1, 1)                                  \\}
+    \onslide<+->{c & = \sqrt{x-y} - \ln(z) \; \evalat{(3, -1, 1)}{} \\}
+    \onslide<+->{c & = \sqrt{3-(-1)} - \ln(1)                       \\}
+    \onslide<+->{c & = \sqrt{4}                                     \\}
+    \onslide<+->{c & = 2}
+  \end{align*}
+\end{resolution}
+
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{f(x, y, z)          & = 2              \\}
+    \onslide<+->{\sqrt{x-y} - \ln(z) & = 2              \\}
+    \onslide<+->{\sqrt{x-y}          & = 2 + \ln(z)     \\}
+    \onslide<+->{-4x +4y -4z         & = 2x + y -z      \\}
+    \onslide<+->{-4z + z             & = 2x + y +4x -4y \\}
+    \onslide<+->{-3z                 & = 6x -3y         \\}
+    \onslide<+->{z                   & = -2x + y}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

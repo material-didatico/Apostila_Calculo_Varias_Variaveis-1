@@ -1,0 +1,67 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre e esboce o domínio da função
+  \(
+    f(x, y) = \frac{\sqrt{x^2-4\,}}{\;\ln(y-1)\;}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Condições para avaliar a função
+  \(f(x, y) = \frac{\sqrt{x^2-4\,}}{\;\ln(y-1)\;}\)
+
+  \pause
+  \begin{enumerate}[<+->]
+    \item \(x^2-4 \geq 0\)
+    \item \(\ln(y-1) \neq 0\)
+    \item \(y-1 > 0\)
+  \end{enumerate}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.3\linewidth}
+  \onslide<+->{Condição 1}
+  \begin{align*}
+    \onslide<+->{x^2-4     & \geq 0                       \\}
+    \onslide<+->{x^2       & \geq 4                       \\}
+    \onslide<+->{\abs{x}   & \geq 2                       \\}
+    \onslide<+->{x \leq -2 & \quad\text{ou}\quad x \geq 2}
+  \end{align*}
+\column{0.3\linewidth}
+  \onslide<+->{Condição 2}
+  \begin{align*}
+    \onslide<+->{\ln(y-1) & \neq 0 \\}
+    \onslide<+->{y-1      & \neq 1 \\}
+    \onslide<+->{y        & \neq 2}
+  \end{align*}
+\column{0.3\linewidth}
+  \onslide<+->{Condição 3}
+  \begin{align*}
+    \onslide<+->{y-1 & > 0 \\}
+    \onslide<+->{y   & > 1}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Domínio
+  \[
+    D_f = \left\{ (x, y)\in\R^2 \st
+      \abs{x} \geq 2 \;\text{ e }\;
+      y > 1          \;\text{ e }\;
+      y \neq 2
+    \right\}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Representação Gráfica}
+  \centering
+  \includegraphics{ex_dominio_sqrt_x2_4_ln_y_1}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

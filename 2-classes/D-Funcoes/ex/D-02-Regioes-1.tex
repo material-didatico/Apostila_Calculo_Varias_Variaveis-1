@@ -1,0 +1,62 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Descreva o domínio da função
+  \(
+    f(x, y) = \sqrt{y-x^2}
+  \)
+  \begin{enumerate}
+    \item Qual a condição que os pontos do domínio deve satisfazer?
+    \item Que região é essa? Represente-a graficamente.
+    \item Qual o interior da região?
+    \item Qual a fronteira da região?
+    \item A região é aberta ou fechada?
+    \item A região é limitada?
+  \end{enumerate}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Condição que deve ser satisfeita para um ponto estar no domínio}
+  \begin{align*}
+    \onslide<+->{y-x^2 & \geq 0 \\}
+    \onslide<+->{y & \geq x^2}
+  \end{align*}
+
+  \onslide<+->{
+  Domínio
+  \[
+    D_f = \left\{ (x, y)\in\R^2 \st y \geq x^2\right\}
+  \]}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Representação Gráfica}
+  \centering
+  \includegraphics{ex_dominio_sqrt_y_x2}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{enumerate}
+    \item \onslide<+->{Interior da região}
+    \onslide<+->{
+    \[
+      \text{Interior } = \left\{ (x, y)\in\R^2 \st y > x^2\right\}
+    \]}
+    \vspace{-\baselineskip}
+    \item \onslide<+->{Fronteira da região}
+    \onslide<+->{
+    \[
+      \text{Fronteira } = \left\{ (x, y)\in\R^2 \st y = x^2\right\}
+    \]}
+    \vspace{-\baselineskip}
+    \item \onslide<+->A região é aberta ou fechada? \\
+    \onslide<+->{Fechada,}
+    \onslide<+->{pois \(y = x^2\) pertence ao domínio}
+    \item \onslide<+->{A região é limitada?} \\
+    \onslide<+->{Ilimitada,}
+    \onslide<+->{pois dado qualquer disco sempre teremos um ponto fora dele}
+  \end{enumerate}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

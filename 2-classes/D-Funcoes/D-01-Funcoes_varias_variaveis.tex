@@ -23,9 +23,12 @@
   \begin{itemize}[<+->]
     \item $A$ \emph{domínio}
     \item $B$ \emph{contradomínio}
-    \item $f$ \emph{relação} que associa elementos do domínio a elementos do contradomínio
-    \item Cada elemento do domínio deve estar associado a \emph{um único} elemento do contradomínio
-    \item A \emph{imagem} é um subconjunto de $B$ composto dos \emph{elementos que são imagem} de algum elemento de $A$
+    \item $f$ \emph{relação} que associa elementos do domínio a elementos
+          do contradomínio
+    \item Cada elemento do domínio deve estar associado a \emph{um único}
+          elemento do contradomínio
+    \item A \emph{imagem} é um subconjunto de $B$ composto dos
+          \emph{elementos que são imagem} de algum elemento de $A$
   \end{itemize}
 \end{frame}
 
@@ -122,237 +125,25 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-%\framedgraphic{Funções de Várias Variáveis}{definicao_funcao}
+\begin{frame}{Domínio e Imagem}
 
-%------------------------------------------------------------------------------%
-%\begin{frame}{Domínio e Imagem}
-%
-%  Determinamos o \emph{domínio} eliminando pontos que levam a divisões por zero ou
-%  valores complexos.
-%
-%  \pause
-%  \vspace{\baselineskip}
-%
-%  A \emph{imagem} consiste on conjunto de valores de saída para a variável dependente
-%\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Intervalos}
-  Subconjuntos contínuos de $\R$
-  \vspace{\baselineskip}
+  Determinamos o \emph{domínio} eliminando pontos que
+  levam a divisões por zero ou valores complexos.
 
   \pause
-  Intervalo fechado
-  \[
-    [0, 1] = \left\{ x\in\R\st 0 \leq x \leq 1 \right\}
-  \]
-  \pause
-  Intervalo aberto
-  \[
-    (-2, 2) = \left\{ x\in\R\st -2 < x < 2 \right\}
-  \]
-  \pause
-  Aberto a esquerda e fechado a direita
-  \[
-    (1, 5] = \left\{ x\in\R\st 1 < x \leq 5 \right\}
-  \]
+  \bigskip
+
+  A \emph{imagem} consiste on conjunto de valores de saída
+  para a variável dependente
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Interior e Fronteira de um Conjunto}
-  Um ponto $(x_0, y_0)$ em uma região (conjunto) $R$ no plano $xy$ é um
-  \emph{ponto interior} de $R$ se é o centro de um disco de raio positivo que está
-  inteiramente em $R$
-
-  \pause
-  \vspace{\baselineskip}
-  Um ponto $(x_0, y_0)$ é um \emph{ponto de fronteira} de $R$ se todo disco
-  centrado em $(x_0, y_0)$ contém ao mesmo tempo pontos que estão em $R$ e fora de $R$
-
-  \pause
-  \vspace{\baselineskip}
-  O ponto de fronteira não precisa pertencer a $R$
-\end{frame}
+\section{Exemplos}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Interior e Fronteira de um Conjunto}
-  Os pontos interiores de uma região, como um conjunto, \\
-  formam o \emph{interior} da região
-
-  \pause
-  \vspace{\baselineskip}
-  Os pontos de fronteira da região formam sua \emph{fronteira}
-
-  \pause
-  \vspace{\baselineskip}
-  Uma região é \emph{aberta} se consiste apenas de pontos interiores
-
-  \pause
-  \vspace{\baselineskip}
-  Uma região é \emph{fechada} se contem todos os seus pontos de fronteira
-\end{frame}
-
-%------------------------------------------------------------------------------%
-%\framedgraphic{Regiões no Plano}{definicao_regioes}
-\framedgraphic{Regiões no Plano}{pontos_regioes}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Regiões Limitadas}
-  Uma região do plano é limitada se está dentro de um disco de raio fixo
-
-  \pause
-  \vspace{\baselineskip}
-
-  Caso contrário ela é ilimitada
-\end{frame}
-
-% 01
-%------------------------------------------------------------------------------%
-\begin{question}
-  Descreva o domínio da função \(f(x, y) = \sqrt{y-x^2}\)
-
-  \pause
-  \vspace{\baselineskip}
-  \begin{enumerate}[<+->]
-    \item Qual a condição que os pontos do domínio deve satisfazer?
-    \item Que região é essa? Represente-a graficamente.
-    \item Qual o interior da região?
-    \item Qual a fronteira da região?
-    \item A região é aberta ou fechada?
-    \item A região é limitada?
-  \end{enumerate}
-\end{question}
-
-% 01
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \onslide<+->{Condição que deve ser satisfeita para um ponto estar no domínio}
-  \begin{align*}
-    \onslide<+->{y-x^2 & \geq 0 \\}
-    \onslide<+->{y & \geq x^2}
-  \end{align*}
-
-  \onslide<+->{
-  Domínio
-  \[
-    D_f = \left\{ (x, y)\in\R^2 \st y \geq x^2\right\}
-  \]}
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Representação Gráfica}
-  \centering
-  \includegraphics[height=0.8\textheight]{dominio_funcao}
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \begin{enumerate}
-    \item \onslide<+->{Interior da região} \\
-    \onslide<+->{
-    \(
-      y > x^2
-    \)}
-    \item \onslide<+->{Fronteira da região} \\
-    \onslide<+->{
-    \(
-      y = x^2
-    \)}
-    \item \onslide<+->A região é aberta ou fechada? \\
-    \onslide<+->{Fechada,}
-    \onslide<+->{pois \(y = x^2\) pertence ao domínio}
-    \item \onslide<+->{A região é limitada?} \\
-    \onslide<+->{Ilimitada,}
-    \onslide<+->{pois dado qualquer disco sempre teremos um ponto fora dele}
-  \end{enumerate}
-\end{resolution}
-
-% 02
-%------------------------------------------------------------------------------%
-\begin{question}
-  Encontre e esboce o domínio da função
-  \[
-    f(x, y) = \ln\left(x^2 + y^2 - 4\right)
-  \]
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \onslide<+->{Condição}
-  \begin{align*}
-    \onslide<+->{x^2 + y^2 - 4 & > 0 \\}
-    \onslide<+->{x^2 + y^2 & > 4}
-  \end{align*}
-
-  \onslide<+->{Pontos exteriores ao circulo centrado na origem e raio 2}
-
-  \onslide<+->{
-  Domínio
-  \[
-    D_f = \left\{ (x, y)\in\R^2 \st x^2 + y^2 > 4\right\}
-  \]}
-\end{resolution}
-
-% 03
-%------------------------------------------------------------------------------%
-\begin{question}
-  Encontre e esboce o domínio da função
-  \(
-    f(x, y) = \frac{\sqrt{x^2-4\,}}{\;\ln(y-1)\;}
-  \)
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  Condições para avaliar a função
-  \(f(x, y) = \frac{\sqrt{x^2-4\,}}{\;\ln(y-1)\;}\)
-
-  \pause
-  \begin{enumerate}[<+->]
-    \item \(x^2-4 \geq 0\)
-    \item \(\ln(y-1) \neq 0\)
-    \item \(y-1 > 0\)
-  \end{enumerate}
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-\begin{columns}[t]
-\column{0.3\linewidth}
-  \onslide<+->{Condição 1}
-  \begin{align*}
-    \onslide<+->{x^2-4     & \geq 0                       \\}
-    \onslide<+->{x^2       & \geq 4                       \\}
-    \onslide<+->{\abs{x}   & \geq 2                       \\}
-    \onslide<+->{x \leq -2 & \quad\text{ou}\quad x \geq 2}
-  \end{align*}
-\column{0.3\linewidth}
-  \onslide<+->{Condição 2}
-  \begin{align*}
-    \onslide<+->{\ln(y-1) & \neq 0 \\}
-    \onslide<+->{y-1      & \neq 1 \\}
-    \onslide<+->{y        & \neq 2}
-  \end{align*}
-\column{0.3\linewidth}
-  \onslide<+->{Condição 3}
-  \begin{align*}
-    \onslide<+->{y-1 & > 0 \\}
-    \onslide<+->{y   & > 1}
-  \end{align*}
-\end{columns}
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  Domínio
-  \[
-    D_f = \left\{ (x, y)\in\R^2 \st
-      \abs{x} \geq 2 \;\text{ e }\;
-      y > 1          \;\text{ e }\;
-      y \neq 2
-    \right\}
-  \]
-\end{resolution}
+\input{ex/D-01-Funcoes_varias_variaveis-1}
+\input{ex/D-01-Funcoes_varias_variaveis-2}
+\input{ex/D-01-Funcoes_varias_variaveis-3}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}

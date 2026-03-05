@@ -1,0 +1,46 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre a equação e esboce a curva de nível da função
+  \[
+    f(x, y) = \sqrt{x^2-1}
+  \]
+  que passa pelo ponto \((1, 0)\)
+\end{question}
+
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.5\linewidth}
+  Domínio
+  \begin{align*}
+    \onslide<+->{x^2 -1  & \geq 0  \\}
+    \onslide<+->{x^2     & \geq 1  \\}
+    \onslide<+->{\abs{x} & \geq 1  \\}
+    \onslide<+->{x       & \leq -1 \quad\text{ou}\quad x \geq 1}
+  \end{align*}
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{c & = f(1, 0)                           \\}
+    \onslide<+->{c & = \sqrt{x^2-1} \; \evalat{(1, 0)}{} \\}
+    \onslide<+->{c & = \sqrt{1-1}                        \\}
+    \onslide<+->{c & = 0}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{f(x, y)      & = 0 \\}
+    \onslide<+->{\sqrt{x^2-1} & = 0 \\}
+    \onslide<+->{x^2-1        & = 0 \\}
+    \onslide<+->{x^2          & = 1 \\}
+    \onslide<+->{\abs{x}      & = 1 \\}
+    \onslide<+->{x            & = \pm 1}
+  \end{align*}
+\column{0.5\linewidth}
+  \onslide<+->{\includegraphics{ex_curva_nivel_6}}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

@@ -1,0 +1,41 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Descreva e esboce as curvas de nível da função
+  \(f(x, y) = \ln\left(9-x^2-y^2\right)\)
+\end{question}
+
+\begin{resolution}{Solução}
+  \onslide<+->{Domínio de $f$}
+  \begin{align*}
+    \onslide<+->{9-x^2-y^2 & > 0         \\}
+    \onslide<+->{9         & > x^2 + y^2 \\}
+    \onslide<+->{x^2 + y^2 & < 3^2}
+  \end{align*}
+  \onslide<+->{Disco aberto centrado na origem de raio 3}
+
+  \onslide<+->{Imagem:}
+  \onslide<+->{a função assume valores no intervalo \(\big(-\infty, \ln(9)\,\big]\)}
+\end{resolution}
+
+\begin{resolution}{Solução}
+  \onslide<+->{Para cada valor $c \leq \ln(9)$}
+
+  \begin{align*}
+    \onslide<+->{f(x, y)                   & = c       \\}
+    \onslide<+->{\ln\left(9-x^2-y^2\right) & = c       \\}
+    \onslide<+->{9-x^2-y^2                 & = e^c     \\}
+    \onslide<+->{-x^2-y^2                  & = e^c - 9 \\}
+    \onslide<+->{x^2+y^2                   & = 9 - e^c}
+  \end{align*}
+
+  \onslide<+->{As curvas de nível são circunferências centrada nas origem de
+    raio $\sqrt{9 - e^c}$}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Curvas de Nível}
+  \centering
+  \includegraphics{ex_curva_nivel_4}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
