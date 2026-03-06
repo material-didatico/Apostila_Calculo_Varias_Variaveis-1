@@ -17,7 +17,7 @@ quadrics.drawCone(h, lightblue+opacity(0.6));
 
 //-----------------------------------------------------------------------------
 
-real zo = 0.7, s = 0.15, t = -0.10;
+real zo = 2, s = 0.25, t = -0.10;
 
 curvaElipse(zo, s, t, h, 800, pen_conica);
 

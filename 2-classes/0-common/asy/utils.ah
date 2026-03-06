@@ -4,14 +4,14 @@ import graph;
 
 settings.tex       = "pdflatex";
 settings.outformat = "pdf";
-settings.render = 0;
+settings.render    = 0;
 
 defaultpen(fontsize(10pt));
 
 path axis_region;
 pair domain;
 
-pen axis_pen = black + linewidth(1pt);
+pen axis_pen = black     + linewidth(1pt);
 pen grid_pen = gray(0.9) + linewidth(1pt);
 
 texpreamble("\usepackage{amsmath}");
@@ -19,10 +19,10 @@ texpreamble("\usepackage{amsmath}");
 //-----------------------------------------------------------------------------
 
 pen[] pens = {
-  blue    + linewidth(1.5pt),
-  magenta + linewidth(1.5pt),
-  orange  + linewidth(1.5pt),
-  red     + linewidth(1.5pt)
+  blue    + linewidth(1pt),
+  magenta + linewidth(1pt),
+  orange  + linewidth(1pt),
+  red     + linewidth(1pt)
 };
 
 
@@ -65,7 +65,9 @@ void draw_axes(
     real x_step =  1,
     real y_min  = -4,
     real y_max  =  4,
-    real y_step =  1
+    real y_step =  1,
+    string x_label = "$x$",
+    string y_label = "$y$"
   )
 {
   domain = (x_min, x_max);
@@ -98,7 +100,7 @@ void draw_axes(
   );
 
   xaxis(
-    L     = '$x$',
+    L     = x_label,
     xmin  = x_min,
     xmax  = x_max,
     p     = axis_pen,
@@ -119,7 +121,7 @@ void draw_axes(
   );
 
   yaxis(
-    L     = '$y$',
+    L     = y_label,
     ymin  = y_min,
     ymax  = y_max,
     p     = axis_pen,

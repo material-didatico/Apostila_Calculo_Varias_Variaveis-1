@@ -1,0 +1,30 @@
+//-----------------------------------------------------------------------------
+
+import "../../0-common/asy/utils.ah" as utils;
+
+size(4.9cm);
+
+real x_min = -5;
+real x_max =  5;
+real y_min = -5;
+real y_max =  5;
+
+draw_axes(x_min, x_max, 1, y_min, y_max, 1, '$y$', '$z$');
+
+real a = 3;
+real b = 2;
+real c = 4;
+
+pair ellipse( real t ){ return ( b*cos(t), c*sin(t) ); }
+
+draw(graph(ellipse, 0, 2pi), pens[0]);
+
+label('$-b$', (-b, 0), NW, pens[0]);
+label('$ b$', ( b, 0), NE, pens[0]);
+
+label('$-c$', (0, -c), SE, pens[0]);
+label('$ c$', (0,  c), NE, pens[0]);
+
+clip_to_axis();
+
+//-----------------------------------------------------------------------------

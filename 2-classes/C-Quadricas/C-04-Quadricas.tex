@@ -61,43 +61,514 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Quádricas}
   \begin{itemize}
-    \item Elipsoides
-    \item Paraboloides
-    \item Cones elípticos
-    \item Hiperboloides
+    \item Elipsoides       \\[5mm]
+    \item Paraboloides     \\[5mm]
+    \item Hiperboloides    \\[5mm]
+    \item Cones elípticos  \\[5mm]
+    \item Cilindro elípticos
   \end{itemize}
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Elipsoides}
+\begin{frame}{Elipsoide}
+\begin{columns}
+\column{0.4\linewidth}
+  Elipsoide canônico
+  \pause
+  \bigskip
+
+  Centrado na origem e\\
+  \pause
+  alinhado com os eixos
+  \pause
+  \medskip
+  {\large
   \[
     \frac{x^2}{a^2} +
     \frac{y^2}{b^2} +
     \frac{z^2}{c^2} = 1
-  \]
+  \]}
+  \medskip
+  \(a>0\), \(b>0\) e \(c>0\)
+\column{0.6\linewidth}
+  \pause
+  \includegraphics{quadricas_elipsoide}
+\end{columns}
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\framedgraphic{Elipsoides}{elipsoide}
+\begin{frame}{Elipsoide}
+\begin{columns}
+\column{0.32\linewidth}
+  \(
+    x=0
+    \pause
+    \qquad
+    \frac{y^2}{b^2} +
+    \frac{z^2}{c^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_elipsoide_x0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    y=0
+    \pause
+    \qquad
+    \frac{x^2}{a^2} +
+    \frac{z^2}{c^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_elipsoide_y0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    z=0
+    \pause
+    \qquad
+    \frac{x^2}{a^2} +
+    \frac{y^2}{b^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_elipsoide_z0}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Paraboloide Elíptico}
+\begin{columns}
+\column{0.4\linewidth}
+  Paraboloide elíptico canônico
+  \pause
+  \bigskip
+
+  ``Centrado'' na origem e\\
+  \pause
+  alinhado com os eixos
+  \pause
+  \medskip
+  {\large
+  \[
+    z = \frac{x^2}{a^2}
+      + \frac{y^2}{b^2}
+  \]}
+  \pause
+  \medskip
+  \(a>0\) e \(b>0\)
+\column{0.6\linewidth}
+  \pause
+  \includegraphics{quadricas_paraboloide_eliptico}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Paraboloide Elíptico}
+\begin{columns}
+\column{0.32\linewidth}
+  \(
+    x=0
+    \pause
+    \qquad
+    z = \frac{y^2}{b^2}
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_paraboloide_eliptico_x0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    y=0
+    \pause
+    \qquad
+    z = \frac{x^2}{a^2}
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_paraboloide_eliptico_y0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    z=1
+    \pause
+    \qquad
+    \frac{x^2}{a^2} +
+    \frac{y^2}{b^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_paraboloide_eliptico_z1}
+\end{columns}
+\end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Paraboloide Hiperbólico}
+\begin{columns}
+\column{0.4\linewidth}
+  Paraboloide hiperbólico canônico
+  \pause
+  \bigskip
+
+  ``Centrado'' na origem e\\
+  \pause
+  alinhado com os eixos
+  \pause
+  \medskip
+  {\large
   \[
     \frac{y^2}{b^2} -
     \frac{x^2}{a^2} =
     \frac{z}{c}
-  \]
-  Ponto de sela
+  \]}
+  \pause
+  \medskip
+  \(a>0\), \(b>0\) e \(c>0\)
+\column{0.6\linewidth}
+  \pause
+  \includegraphics{quadricas_paraboloide_hiperbolico}
+\end{columns}
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\framedgraphic{Elipsoides}{paraboloide-hiperbolico}
+\begin{frame}{Paraboloide Hiperbólico}
+\begin{columns}
+\column{0.32\linewidth}
+  \(
+    x=0
+    \pause
+    \qquad
+    \frac{y^2}{b^2} =
+    \frac{z}{c}
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_paraboloide_hiperbolico_x0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    y=0
+    \pause
+    \qquad
+    \frac{x^2}{a^2} =
+    -\frac{z}{c}
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_paraboloide_hiperbolico_y0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    z=0
+    \pause
+    \qquad
+    \frac{y^2}{b^2} =
+    \frac{x^2}{a^2}
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_paraboloide_hiperbolico_z0}
+\end{columns}
+\end{frame}
 
 %------------------------------------------------------------------------------%
-\framedgraphic{Elipsoide}{elipsoide_imagem}
-\framedgraphic{Paraboloide Elíptico}{paraboloide_eliptico_imagem}
-\framedgraphic{Cone Elíptico}{cone_eliptico_imagem}
-\framedgraphic{Hiperboloide de Uma Folha}{hiperboloide_de_uma_folha_imagem}
+\begin{frame}{Hiperboloide de Uma Folha}
+\begin{columns}
+\column{0.4\linewidth}
+  Hiperboloide de uma folha canônico
+  \pause
+  \bigskip
+
+  ``Centrado'' na origem e\\
+  \pause
+  alinhado com os eixos
+  \pause
+  \medskip
+  {\large
+  \[
+    \frac{x^2}{a^2} +
+    \frac{y^2}{b^2} -
+    \frac{z^2}{c^2} = 1
+  \]}
+  \pause
+  \medskip
+  \(a>0\), \(b>0\) e \(c>0\)
+\column{0.6\linewidth}
+  \pause
+  \includegraphics{quadricas_hiperboloide_uma_folha}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Hiperboloide de Uma Folha}
+\begin{columns}
+\column{0.32\linewidth}
+  \(
+    x=0
+    \pause
+    \qquad
+    \frac{y^2}{b^2} -
+    \frac{z^2}{c^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_hiperboloide_uma_folha_x0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    y=0
+    \pause
+    \qquad
+    \frac{x^2}{a^2} -
+    \frac{z^2}{c^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_hiperboloide_uma_folha_y0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    z=0
+    \pause
+    \qquad
+    \frac{x^2}{a^2} +
+    \frac{y^2}{b^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_hiperboloide_uma_folha_z0}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Hiperbolóide de Duas Folhas}
+\begin{columns}
+\column{0.4\linewidth}
+  Hiperboloide de duas folhas canônico
+  \pause
+  \bigskip
+
+  ``Centrado'' na origem e\\
+  \pause
+  alinhado com os eixos
+  \pause
+  \medskip
+  {\large
+  \[
+    - \frac{x^2}{a^2}
+    - \frac{y^2}{b^2}
+    + \frac{z^2}{c^2}
+    = 1
+  \]}
+  \pause
+  \medskip
+  \(a>0\), \(b>0\) e \(c>0\)
+\column{0.6\linewidth}
+  \pause
+  \includegraphics{quadricas_hiperboloide_duas_folhas}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Hiperboloide de Duas Folhas}
+\begin{columns}
+\column{0.32\linewidth}
+  \(
+    x=0
+    \pause
+    \qquad
+    \frac{z^2}{c^2} -
+    \frac{y^2}{b^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_hiperboloide_duas_folhas_x0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    y=0
+    \pause
+    \qquad
+    \frac{z^2}{c^2} -
+    \frac{x^2}{a^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_hiperboloide_duas_folhas_y0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    z=0
+    \pause
+    \qquad
+    - \frac{x^2}{a^2}
+    - \frac{y^2}{b^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_hiperboloide_duas_folhas_z0}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cone Elíptico}
+\begin{columns}
+\column{0.4\linewidth}
+  Cone elíptico canônico
+  \pause
+  \bigskip
+
+  Centrado na origem e\\
+  \pause
+  alinhado com os eixos
+  \pause
+  \medskip
+  {\large
+  \[
+    \frac{x^{2}}{a^2} +
+    \frac{y^{2}}{b^2} =
+    \frac{z^{2}}{c^2}
+  \]}
+  \pause
+  \medskip
+  \(a>0\), \(b>0\) e \(c>0\)
+\column{0.6\linewidth}
+  \pause
+  \includegraphics{quadricas_cone_eliptico}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cone Elíptico}
+\begin{columns}
+\column{0.32\linewidth}
+  \(
+    x=0
+    \pause
+    \qquad
+    \frac{y^{2}}{b^2} =
+    \frac{z^{2}}{c^2}
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_cone_eliptico_x0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    y=0
+    \pause
+    \qquad
+    \frac{x^{2}}{a^2} =
+    \frac{z^{2}}{c^2}
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_cone_eliptico_y0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    z=0
+    \pause
+    \qquad
+    \frac{x^{2}}{a^2} +
+    \frac{y^{2}}{b^2} = 0
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_cone_eliptico_z0}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cilindro Elíptico}
+\begin{columns}
+\column{0.4\linewidth}
+  Cilindro elíptico canônico
+  \pause
+  \bigskip
+
+  Centrado na origem e\\
+  \pause
+  alinhado com os eixos
+  \pause
+  \medskip
+  {\large
+  \[
+    \frac{x^2}{a^2} +
+    \frac{y^2}{b^2} = 1
+  \]}
+  \pause
+  \medskip
+  \(a>0\) e \(b>0\)
+\column{0.6\linewidth}
+  \pause
+  \includegraphics{quadricas_cilindro_eliptico}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cilindro Elíptico}
+\begin{columns}
+\column{0.32\linewidth}
+  \(
+    x=0
+    \pause
+    \qquad
+    \frac{y^{2}}{b^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_cilindro_eliptico_x0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    y=0
+    \pause
+    \qquad
+    \frac{x^{2}}{a^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_cilindro_eliptico_y0}
+  \pause
+\column{0.32\linewidth}
+  \(
+    z=0
+    \pause
+    \qquad
+    \frac{x^{2}}{a^2} +
+    \frac{y^{2}}{b^2} = 1
+  \)
+  \pause
+
+  \bigskip
+  \includegraphics{corte_cilindro_eliptico_z0}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
 
 %------------------------------------------------------------------------------%
 \include{ex/C-04-Quadricas-ex1}

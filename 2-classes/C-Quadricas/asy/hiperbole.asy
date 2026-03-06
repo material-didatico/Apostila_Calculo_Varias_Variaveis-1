@@ -1,62 +1,46 @@
 //-----------------------------------------------------------------------------
 
 import "../../0-common/asy/utils.ah" as utils;
-import "quadrics.ah" as quadrics;
 
-size(12cm, IgnoreAspect);
+size(0, 70mm);
 
-real a = 2; 
-real b = 1; 
+real xmin = -6;
+real xmax =  6;
+real ymin = -6;
+real ymax =  6;
+
+draw_axes(xmin, xmax, 1, ymin, ymax, 1);
+
+real a = 2.5; 
+real b = 2.3; 
 real c = sqrt(a^2 + b^2);
 
+pair h_dir(real t) 
+{ 
+  return ( a*cosh(t), b*sinh(t) ); 
+}
 
-pair Hdir(real t) { return ( a*cosh(t), b*sinh(t) ); }
-pair Hesq(real t) { return (-a*cosh(t), b*sinh(t) ); }
+pair h_esq(real t) 
+{ 
+  return (-a*cosh(t), b*sinh(t) ); 
+}
 
+draw(graph(h_dir, -4, 4), pens[0] + 1pt );
+draw(graph(h_esq, -4, 4), pens[0] + 1pt );
 
-real tP = 0.8;
-pair P = Hdir(tP);
+draw(h_dir(-8) -- h_esq( 8), gray + dashed + 1pt + linetype(new real[] {4, 4}) );
+draw(h_dir( 8) -- h_esq(-8), gray + dashed + 1pt + linetype(new real[] {4, 4}) );
 
+pair A = (-c,0);
+pair B = h_dir(1);
+pair C = ( c,0);
 
-pair F1 = (-c,0);
-pair F2 = ( c,0);
+dot(A, pens[1]+5bp);
+dot(B, pens[1]+5bp);
+dot(C, pens[1]+5bp);
 
+draw(A--B--C, pens[1] + 1pt + dashed + linetype(new real[] {4, 4}) );
 
-draw_axes(-8, 8, 1, -5, 5, 1);
+clip_to_axis();
 
-newpage();
-
-
-
-draw_axes(-8, 8, 1, -5, 5, 1);
-draw(graph(Hdir, -2, 2), black+1bp);
-draw(graph(Hesq, -2, 2), black+1bp);
-newpage();
-
-
-
-draw_axes(-8, 8, 1, -5, 5, 1);
-draw(graph(Hdir, -2, 2), black+1bp);
-draw(graph(Hesq, -2, 2), black+1bp);
-
-dot((0,0), pens[0]+5bp); 
-dot(F1, pens[0]+5bp);
-dot(F2, pens[0]+5bp);
-newpage();
-
-
-
-draw_axes(-8, 8, 1, -5, 5, 1);
-draw(graph(Hdir, -2, 2), black+1bp);
-draw(graph(Hesq, -2, 2), black+1bp);
-
-dot((0,0), pens[0]+5bp);
-dot(F1, pens[0]+5bp);
-dot(F2, pens[0]+5bp);
-dot(P, pens[2]+5bp);
-
-pen aux = pens[0] + linewidth(0.7) + linetype(new real[]{1,3}); 
-draw(P--F1, aux);
-draw(P--F2, aux);
-draw((a,5)--(a,-5),pens[0] + linewidth(0.7));
-draw((-a,5)--(-a,-5),pens[0] + linewidth(0.7));
+//-----------------------------------------------------------------------------

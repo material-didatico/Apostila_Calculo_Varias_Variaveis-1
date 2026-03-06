@@ -17,20 +17,19 @@ quadrics.drawCone(h, lightblue+opacity(0.6));
 
 //-----------------------------------------------------------------------------
 
-real R = 4;
-pen corPlano = gray + opacity(0.5);
-triple centro = (0,0,0);
-triple dir1 = (1,0,0);
-triple dir2 = (0,0,1);
-
-triple base = (0,0,-h);
-triple topo = (0,0,h);
-draw(base -- topo, pen_conica);
-
-draw((0,0,0) -- (h,0,h), dashed+blue+1bp);
-draw((0,0,0) -- (-h,0,-h), dashed+blue+1bp);
+draw((-h, 0, -h)--( h, 0, h), pen_conica);
+draw(( h, 0, -h)--(-h, 0, h), pen_conica);
 
 //-----------------------------------------------------------------------------
+
+// real R = 4;
+
+// pen corPlano = gray + opacity(0.5);
+
+// triple centro = (0,0,0);
+
+// triple dir1 = (1,0,0);
+// triple dir2 = (0,0,1);
 
 //quadrics.drawPlane(centro, dir1, dir2, R, h+1, corPlano);
 

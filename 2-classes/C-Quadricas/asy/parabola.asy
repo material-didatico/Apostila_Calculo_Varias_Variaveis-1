@@ -1,43 +1,33 @@
 //-----------------------------------------------------------------------------
 
 import "../../0-common/asy/utils.ah" as utils;
-import "quadrics.ah" as quadrics;
 
-size(6cm);
+size(0, 70mm);
 
-draw_axes(-6, 6, 1, -3, 6, 1);
-newpage();
+real xmin = -6;
+real xmax =  6;
+real ymin = -6;
+real ymax =  6;
 
+draw_axes(xmin, xmax, 1, ymin, ymax, 1);
 
-draw_axes(-6, 6, 1, -3, 6, 1);
 real p = 2;
-real f(real x) { return x^2/(4*p); }
-draw(graph(f, -6, 6), black+1bp);
-newpage();
 
+real f(real x)
+{ 
+  return x^2 / (4*p); 
+}
 
-draw_axes(-6, 6, 1, -3, 6, 1);
-draw(graph(f, -6, 6), black+1bp);
+draw((0, p)--(3.5,f(3.5))--(3.5,-p), pens[1]+dashed + 1pt + linetype(new real[] {4, 4}) );
 
-pair P = (4, f(4));
-pair V = (0,0);
-pair F = (0,p);
-pair Q = (P.x, -p);
+draw(graph(f, xmin, xmax), pens[0]);
 
-dot(V, pens[0]+5bp);
-dot(F, pens[0]+5bp);
-draw((-6,-p)--(6,-p), pens[0]);
-newpage();
+draw((xmin, -p)--(xmax, -p), pens[1]);
 
+dot((0,    p     ), pens[1]+5bp);
+dot((3.5,  f(3.5)), pens[1]+5bp);
+dot((3.5, -p     ), pens[1]+5bp);
 
-draw_axes(-6, 6, 1, -3, 6, 1);
-draw(graph(f, -6, 6), black+1bp);
+clip_to_axis();
 
-dot(V, pens[0]+5bp);
-dot(F, pens[0]+5bp);
-dot(Q, pens[0]+5bp);
-dot(P, black+5bp);
-pen aux = pens[0] + linewidth(0.7) + linetype(new real[]{1,3});
-draw((4, f(4)-0.1)--Q, aux);       
-draw(F--P-0.1, aux);       
-draw((-6,-p)--(6,-p), pens[0]); 
+//-----------------------------------------------------------------------------

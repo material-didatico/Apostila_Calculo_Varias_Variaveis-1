@@ -17,7 +17,7 @@ quadrics.drawCone(h, lightblue+opacity(0.6));
 
 //-----------------------------------------------------------------------------
 
-real zo = 0.5, s = 1.0, t = 0.0;
+real zo = 0.9, s = 1.0, t = -1.5;
 
 quadrics.curvaParabola(zo, s, t, h, -2.5, 2.5, 800, pen_conica);
 

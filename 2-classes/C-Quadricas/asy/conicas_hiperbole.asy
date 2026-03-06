@@ -17,9 +17,11 @@ quadrics.drawCone(h, lightblue+opacity(0.6));
 
 //-----------------------------------------------------------------------------
 
-real zo = 2.5, s = 5, t = 0;
+real zo = 1.5, s = 1.5, t = -5;
+
 real x_centro = -zo*s / (s*s - 1);
-real z_centro = zo + s*x_centro;
+real z_centro =  zo + s*x_centro;
+
 triple centro_plano = (x_centro, 0, z_centro);
 
 quadrics.curvaHiperbole(zo, s, t, h, -h, h, 800, pen_conica);
