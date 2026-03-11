@@ -2,6 +2,7 @@
 
 from pathlib  import Path
 from datetime import datetime
+from zoneinfo import ZoneInfo
 import shutil as sh
 
 #------------------------------------------------------------------------------#
@@ -151,8 +152,10 @@ def mk_index() -> None:
 
         # Header
 
+        now = datetime.now(ZoneInfo("America/Sao_Paulo"))
+
         f.write(f"# {title}\n\n")
-        f.write(datetime.now().strftime("Última atualização: %Y-%m-%d %H:%M:%S\n\n"))
+        f.write(now.strftime("Última atualização: %Y-%m-%d %H:%M:%S\n\n"))
         f.write(f"Materiais para a disciplina {discipline}\n\n")
 
         # Link to Book
