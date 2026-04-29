@@ -1,0 +1,172 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 2 -- Turma 2}{15/10/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{30\%}
+Use a definição para calcular a derivada parcial de
+\(
+  f(x, y) = x^2y + 3xy^2
+\)
+por $x$
+% \clearpagequestiononly
+
+\begin{answer}
+Pela definição,
+\[
+  \D{f}{x}(x, y) = \lim_{h \to 0} \frac{f(x+h, y) - f(x, y)}{h}
+\]
+Avaliando $f(x+h, y)$
+\begin{align*}
+  f(x, y)
+  & = x^2y + 3xy^2
+  \\[2mm]
+  f(x+h, y)
+  & = (x+h)^2y + 3(x+h)y^2 \\[2mm]
+  & = (x^2 + 2xh + h^2)y + 3xy^2 + 3y^2h \\[2mm]
+  & = x^2y + 2xyh + yh^2 + 3xy^2 + 3y^2h
+\end{align*}
+Portanto,
+\begin{align*}
+  f(x+h, y) - f(x,y)
+  & = \big(x^2y + 2xyh + yh^2 + 3xy^2 + 3y^2h\big) - \big(x^2y + 3xy^2\big) \\[2mm]
+  & = 2xyh + yh^2 + 3y^2h \\[2mm]
+  & = (2xy + 3y^2 + yh)h
+\end{align*}
+Dividindo por $h$
+\[
+  \frac{f(x+h, y) - f(x, y)}{h} = 2xy + 3y^2 + hy
+\]
+Tomando o limite
+\begin{align*}
+  \D{f}{x}(x,y)
+  & = \lim_{h \to 0} \frac{f(x+h,y) - f(x,y)}{h} \\[2mm]
+  & = \lim_{h \to 0} \big(2xy + 3y^2 + hy\big) \\[2mm]
+  & = 2xy + 3y^2
+\end{align*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{40\%}
+Calcule \(\DM{f}{x}{y}(\pi, 1)\)\!, respeitando a ordem descrita na notação, de
+\(
+  f(x, y) = x^2\cos\left(xy^2\right)
+\)
+% \clearpagequestiononly
+
+\begin{answer}
+\begin{align*}
+  \D{f}{y}
+  & = \D{}{y} \left[x^2\cos\left(xy^2\right)\right]\\[2mm]
+  & = x^2 \; \D{}{y} \cos\left(xy^2\right)\\[2mm]
+  & = x^2 \left[-\sin\left(xy^2\right)\right] \D{}{y}\left(xy^2\right) \\[2mm]
+  & = -x^2 \sin\left(xy^2\right) \;x \D{y^2}{y} \\[2mm]
+  & = -x^3 \sin\left(xy^2\right) \;2y \\[2mm]
+  & = -2y x^3 \sin\left(xy^2\right)
+\end{align*}
+\begin{align*}
+  \DM{f}{x}{y}
+  & = \D{}{x}\left(\D{f}{y}\right) \\[2mm]
+  & = \D{}{x}\left(-2y x^3 \sin\left(xy^2\right)\right) \\[2mm]
+  & = -2y \D{}{x}\left(x^3 \sin\left(xy^2\right)\right) \\[2mm]
+  & = -2y
+      \left[
+        \D{x^3}{x} \sin\left(xy^2\right) +
+        x^3 \D{}{x}\sin\left(xy^2\right)
+      \right] \\[2mm]
+  & = -2y
+      \left[
+        3x^2 \sin\left(xy^2\right) +
+        x^3 \cos\left(xy^2\right) \D{}{x}\left(xy^2\right)
+      \right] \\[2mm]
+  & = -2y
+      \left[
+        3x^2 \sin\left(xy^2\right) +
+        x^3 \cos\left(xy^2\right) y^2
+      \right] \\[2mm]
+  & = -2yx^2
+      \left[
+        3    \sin\left(xy^2\right) +
+        xy^2 \cos\left(xy^2\right)
+      \right]
+\end{align*}
+\begin{align*}
+  \DM{f}{x}{y}(\pi, 1)
+  & = -2yx^2
+      \left[
+        3    \sin\left(xy^2\right) +
+        xy^2 \cos\left(xy^2\right)
+      \right] \evalat{(\pi, 1)}{} \\[2mm]
+  & = -2 \times 1 \times \pi^2
+      \left[
+        3    \sin\left(\pi 1^2\right) +
+        \pi 1 \cos\left(\pi 1^2\right)
+      \right] \\[2mm]
+  & = -2\pi^2
+      \left[
+        3   \sin\left(\pi\right) +
+        \pi \cos\left(\pi\right)
+      \right] \\[2mm]
+  & = -2\pi^2 \left[ 0 - \pi \right] \\[2mm]
+  & = 2\pi^3
+\end{align*}
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{30\%}
+Utilize a derivação implícita para encontrar \(\D{z}{y}\), assumindo que a equação
+\;$
+   x e^{yz} + y^2z = 1
+$
+define $z$ como função de $x$ e $y$
+% \clearpagequestiononly
+
+\begin{answer}
+  Utilizando a fórmula com \(F(x, y, z) = x e^{yz} + y^2z - 1\)
+  \begin{align*}
+    F_y(x, y, z)
+    & = \D{F}{y}(x, y, z) \\[2mm]
+    & = \D{}{y} \left(x e^{yz} + y^2z - 1\right) \\[2mm]
+    & = \D{}{y} \left(x e^{yz}\right)
+      + \D{}{y} \left(y^2z\right)
+      - \D{1}{y} \\[2mm]
+    & = x\D{}{y} \left(e^{yz}\right)
+      + z\D{}{y} \left(y^2\right) \\[2mm]
+    & = xe^{yz}\D{}{y} \left(yz\right) + z2y \\[2mm]
+    & = xze^{yz} + 2yz
+    \\[2mm]
+    F_z(x, y, z)
+    & = \D{F}{z}(x, y, z) \\[2mm]
+    & = \D{}{z} \left(x e^{yz} + y^2z - 1\right) \\[2mm]
+    & = \D{}{z} \left(x e^{yz}\right)
+      + \D{}{z} \left(y^2z\right)
+      - \D{1}{z} \\[2mm]
+    & = x\D{e^{yz}}{z} + y^2\D{z}{z} \\[2mm]
+    & = xe^{yz}\D{yz}{z} + y^2 \\[2mm]
+    & = xye^{yz} + y^2
+  \end{align*}
+  Portanto,
+  \[
+    \D{z}{y}(x, y, z)
+    = -\frac{F_y(x, y, z)}{F_z(x, y, z)}
+    = -\frac{xze^{yz} + 2yz}{xye^{yz} + y^2}
+  \]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
+
+

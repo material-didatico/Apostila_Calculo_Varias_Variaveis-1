@@ -1,0 +1,151 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+ \ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 2 -- Turma 2}{15/10/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{30\%}
+Use a definição para calcular a derivada parcial de
+\(
+  f(x, y) = 4x^2y^2 + xy
+\)
+por $y$
+% \clearpagequestiononly
+
+\begin{answer}
+Pela definição,
+\[
+  \D{f}{y}(x, y) = \lim_{h \to 0} \frac{f(x,y+h) - f(x, y)}{h}
+\]
+Calculando,
+\begin{align*}
+  f(x, y)
+  & = 4x^2y^2 + xy
+  \\
+  f(x, y+h)
+  & = 4x^2(y+h)^2 + x(y+h) \\[2mm]
+  & = 4x^2(y^2 + 2yh + h^2) + xy + xh \\[2mm]
+  & = 4x^2y^2 + 8x^2yh + 4x^2h^2 + xy + xh
+\end{align*}
+Logo,
+\begin{align*}
+  f(x, y+h) - f(x, y)
+  & = \big(4x^2y^2 + 8x^2yh + 4x^2h^2 + xy + xh\big) - \big(4x^2y^2 + xy\big) \\[2mm]
+  & = 8x^2yh + 4x^2h^2 + xh \\[2mm]
+  & = \big(8x^2y + x + 4x^2h\big)h
+\end{align*}
+Dividindo por $h$
+\[
+  \frac{f(x, y+h) - f(x, y)}{h}
+    = 8x^2y + x + 4x^2h
+\]
+Tomando o limite
+\begin{align*}
+  \D{f}{y}(x, y)
+  & = \lim_{h \to 0} \big(8x^2y + x + 4x^2h\big) \\[2mm]
+  & = 8x^2y + x
+\end{align*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{40\%}
+Calcule \(\DM{f}{x}{y}(2, 3)\)\!, respeitando a ordem descrita na notação, de
+\(
+  f(x, y) = \ln\left(yx^2 + xy^2\right)
+\)
+% \clearpagequestiononly
+
+\begin{answer}
+\begin{align*}
+  \D{f}{y}
+  & = \D{}{y} \left[\ln\left(yx^2 + xy^2\right)\right]\\[2mm]
+  & = \frac{1}{yx^2 + xy^2} \;\D{}{y} \left(yx^2 + xy^2\right)\\[2mm]
+  & = \frac{1}{yx^2 + xy^2} \left(\D{}{y}\left(yx^2\right) + \D{}{y}\left(xy^2\right)\right)\\[2mm]
+  & = \frac{1}{yx^2 + xy^2} \left(x^2\D{y}{y} + x\D{y^2}{y}\right)\\[2mm]
+  & = \frac{1}{yx^2 + xy^2} \left(x^2 + 2xy\right)\\[2mm]
+  & = \frac{x^2 + 2xy}{yx^2 + xy^2} \\[2mm]
+  & = \frac{x + 2y}{yx + y^2}
+\end{align*}
+\begin{align*}
+  \DM{f}{x}{y}
+  & = \D{}{x}\left(\D{f}{y}\right) \\[2mm]
+  & = \D{}{x}\left(\frac{x + 2y}{yx + y^2}\right) \\[2mm]
+  & = \frac{1}{\left(yx + y^2\right)^2} \left[
+    \D{}{x}\left(x + 2y\right)
+    \left(yx + y^2\right)
+    -
+    \left(x + 2y\right)
+    \D{}{x}\left(yx + y^2\right)
+    \right] \\[2mm]
+  & = \frac{1}{\left(yx + y^2\right)^2} \left[
+    1 \left(yx + y^2\right)
+    - \left(x + 2y\right) y
+    \right] \\[2mm]
+  & = \frac{yx + y^2 - \left(xy + 2y^2\right)}{\left(yx + y^2\right)^2} \\[2mm]
+  & = \frac{-y^2}{\left(yx + y^2\right)^2} \\[2mm]
+  & = \frac{-y^2}{y^2\left(x + y\right)^2} \\[2mm]
+  & = \frac{-1}{\left(x + y\right)^2}
+\end{align*}
+\[
+  \DM{f}{x}{y}(2, 3)
+  = \frac{-1}{\left(x + y\right)^2} \evalat{(2, 3)}{}
+  = \frac{-1}{\left(2 + 3\right)^2}
+  = \frac{-1}{5^2}
+  = \frac{-1}{25}
+\]
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{30\%}
+Utilize a derivação implícita para encontrar \(\D{z}{y}\), assumindo que a equação
+\mbox{$
+  xy^2 + z^2 = 4xe^{yz}
+$}
+define $z$ como função de $x$ e $y$
+% \clearpagequestiononly
+
+\begin{answer}
+  Utilizando a fórmula com \(F(x, y, z) = xy^2 + z^2 - 4xe^{yz}\)
+  \begin{align*}
+    F_y(x, y, z)
+    & = \D{F}{y}(x, y, z) \\[2mm]
+    & = \D{}{y} \left(xy^2 + z^2 - 4xe^{yz}\right) \\[2mm]
+    & = \D{}{y} \left(xy^2\right)
+      + \D{}{y} \left(z^2 \right)
+      - \D{}{y} \left(4xe^{yz}\right) \\[2mm]
+    & = x \D{y^2}{y} + 0 - 4x\D{}{y}\left(e^{yz}\right) \\[2mm]
+    & = x2y - 4xe^{yz}\D{}{y}\left(yz\right) \\[2mm]
+    & = 2xy - 4xe^{yz}z \\[2mm]
+    & = 2xy - 4xze^{yz} \\[2mm]
+    F_z(x, y, z)
+    & = \D{F}{z}(x, y, z) \\[2mm]
+    & = \D{}{z} \left(xy^2 + z^2 - 4xe^{yz}\right) \\[2mm]
+    & = \D{}{z} \left(xy^2\right)
+      + \D{}{z} \left(z^2 \right)
+      - \D{}{z} \left(4xe^{yz}\right) \\[2mm]
+    & = 0 + 2z - 4x\D{}{z}\left(e^{yz}\right) \\[2mm]
+    & = 2z - 4xe^{yz}\D{}{z}\left(yz\right) \\[2mm]
+    & = 2z - 4xye^{yz}
+  \end{align*}
+  Portanto,
+  \[
+    \D{z}{y}(x, y, z)
+    = -\frac{F_y(x, y, z)}{F_z(x, y, z)}
+    = -\frac{2xy - 4xze^{yz}}{2z - 4xye^{yz}}
+    = \frac{2xze^{yz}- xy}{z - 2xye^{yz}}
+  \]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

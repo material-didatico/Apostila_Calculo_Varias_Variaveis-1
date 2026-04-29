@@ -1,0 +1,391 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Exame -- Turma 7}{12/01/2026}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{40\%}
+Determine os pontos candidatos a extremos de
+\(
+    x^2 + \ln y
+\)
+com $y>0$, sujeita à restrição
+\(
+    2x + y = 3
+\)
+\clearpagequestiononly
+
+\begin{answer}
+\begin{multicols}{2}
+Queremos os extremos de
+\[
+    f(x, y) = x^2+\ln y \qquad y > 0
+\]
+sujeita à restrição
+\[
+    g(x, y) = 2x + y = 3
+\]
+Gradientes
+\[
+    \nabla f = \vetor{2x}{\sfrac{1}{y}}
+    \qquad
+    \nabla g = \vetor{2}{1}
+\]
+
+Pelo método dos multiplicadores de Lagrange
+\begin{align*}
+    2x          & = 2\lambda \\
+    \frac{1}{y} & = \lambda \\
+    2x + y      & = 3
+\end{align*}
+Da primeira equação temos que \(x=\lambda\), \\
+substituindo na segunda temos
+\[
+    \frac{1}{y} = \lambda = x
+    \qquad
+    y = \frac{1}{x}
+\]
+Substituindo na restrição
+\begin{align*}
+    2x + y           & = 3  \\
+    2x + \frac{1}{x} & = 3  \\
+    2x^2 + 1         & = 3x \\
+    2x^2 - 3x + 1    & = 0
+\end{align*}
+Resolvendo
+\[
+    \Delta
+    = b^2 - 4ac
+    = (-3)^2 - 4 \times 2 \times 1
+    = 9 - 8
+    = 1
+\]
+\[
+    x
+    = \frac{-b\pm\sqrt{\Delta}}{2a}
+    = \frac{3\pm 1}{4}
+\]
+
+\smallskip
+Para \(x=\frac{3+1}{4}=1\) temos \(y=1\)
+
+\smallskip
+Para \(x=\frac{3-1}{4}=\frac{1}{2}\) temos \(y=2\)
+
+\smallskip
+Os pontos candidatos a extremos são
+\[
+  P_1 = \left(1, 1\right)
+  \quad \text{ e } \quad
+  P_2 = \left(\frac{1}{2}, 2\right)
+\]
+\end{multicols}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\begin{multicols}{2}
+\raggedbottom
+\exercise{20\%}
+  Uma partícula descreve uma trajetória elíptica descrita
+  pelas equações paramétricas
+  \begin{gather*}
+    x(t) = 3 \cos\left(\frac{\pi}{2}-t\right) + 2 \\
+    y(t) = 5 \sin\left(\frac{\pi}{2}-t\right) + 1 \\
+    0 \leq t \leq \pi
+  \end{gather*}
+  \begin{enumerate}[label=\alph*),itemsep=0pt,topsep=0pt]
+    \item\!\! [20\%] calcule o vetor tangente à curva
+    \item\!\! [10\%] avalie o vetor tangente em \\
+    \hspace*{29pt} $t=0$, $t=\frac{\pi}{2}$ e em $t=\pi$
+    \item\!\! [20\%] esboce a curva e os vetores \\
+           \hspace*{29pt} tangentes calculados
+  \end{enumerate}
+\columnbreak
+~
+
+\begin{questiononly}
+  \hfill\includegraphics{axis_xy}
+\end{questiononly}
+\begin{answeronly}
+  \hfill\includegraphics{T2_A_parametrica}
+\end{answeronly}
+\end{multicols}
+\clearpagequestiononly
+
+\begin{answer}
+\textbf{a)} \quad
+O vetor tangente é
+\(
+  v(t) = \Vetor{\frac{dx}{dt}}{\frac{dy}{dt}}
+\)
+
+Avaliando cada derivada
+
+\medskip
+\[
+  \frac{dx}{dt}
+  = \frac{d}{dt}\left[2 + 3 \cos\left(\frac{\pi}{2}-t\right)\right]
+  = 3 \frac{d}{dt}\cos\left(\frac{\pi}{2}-t\right)
+  = -3 \sin\left(\frac{\pi}{2}-t\right)\frac{d}{dt}\left(\frac{\pi}{2}-t\right)
+  = 3 \sin\left(\frac{\pi}{2}-t\right)
+\]
+
+\medskip
+\[
+  \frac{dy}{dt}
+  = \frac{d}{dt}\left[1 + 5 \sin\left(\frac{\pi}{2}-t\right)\right]
+  = 5 \frac{d}{dt}\sin\left(\frac{\pi}{2}-t\right)
+  = 5 \cos\left(\frac{\pi}{2}-t\right)\frac{d}{dt}\left(\frac{\pi}{2}-t\right)
+  = -5 \cos\left(\frac{\pi}{2}-t\right)
+\]
+
+\medskip
+Portanto,
+\(
+  v(t) = \Vetor{3 \sin\left(\frac{\pi}{2}-t\right)}{-5 \cos\left(\frac{\pi}{2}-t\right)}
+\)
+
+\clearpage
+\textbf{b)} \quad
+Avaliando o vetor tangente nos pontos $t=0$, $t=\frac{\pi}{2}$ e em $t=\pi$
+\setlength{\mathindent}{0pt}
+\begin{multicols}{3}
+\begin{align*}
+  v(0)
+  & = \Vetor{3 \sin\left(\frac{\pi}{2}-t\right)}{-5 \cos\left(\frac{\pi}{2}-t\right)} \evalat{0}{} \\[2mm]
+  & = \Vetor{3 \sin\left(\frac{\pi}{2}\right)}{-5 \cos\left(\frac{\pi}{2}\right)} \\[2mm]
+  & = \vetor{3 \times 1}{-5 \times 0} \\[2mm]
+  & = \vetor{3}{0}
+\end{align*}
+
+\newcolumn
+\begin{align*}
+  v\left(\frac{\pi}{2}\right)
+  & = \Vetor{3 \sin\left(\frac{\pi}{2}-t\right)}{-5 \cos\left(\frac{\pi}{2}-t\right)} \evalat{\frac{\pi}{2}}{} \\[2mm]
+  & = \Vetor{3 \sin\left(\frac{\pi}{2}-\frac{\pi}{2}\right)}{-5 \cos\left(\frac{\pi}{2}-\frac{\pi}{2}\right)} \\[2mm]
+  & = \Vetor{3 \sin\left(0\right)}{-5 \cos\left(0\right)} \\[2mm]
+  & = \vetor{3 \times 0}{-5 \times 1} \\[2mm]
+  & = \vetor{0}{-5}
+\end{align*}
+
+\newcolumn
+\begin{align*}
+  v(\pi)
+  & = \Vetor{3 \sin\left(\frac{\pi}{2}-t\right)}{-5 \cos\left(\frac{\pi}{2}-t\right)} \evalat{\pi}{} \\[2mm]
+  & = \Vetor{3 \sin\left(\frac{\pi}{2}-\pi\right)}{-5 \cos\left(\frac{\pi}{2}-\pi\right)} \\[2mm]
+  & = \Vetor{3 \sin\left(\frac{-\pi}{2}\right)}{-5 \cos\left(-\frac{\pi}{2}\right)} \\[2mm]
+  & = \vetor{3(-1)}{-5 \times 0} \\[2mm]
+  & = \vetor{-3}{0}
+\end{align*}
+\end{multicols}
+
+\bigskip
+\textbf{c)} \quad
+Calculando os pontos associados a $t=0$, $t=\frac{\pi}{2}$ e em $t=\pi$
+\[
+  x(0)
+  = \left(3 \cos\left(\frac{\pi}{2}-t\right) + 2\right)\evalat{0}{}
+  = 3 \cos\left(\frac{\pi}{2}\right) + 2
+  = 3 \times 0 + 2
+  = 2
+\]
+\[
+  y(0)
+  = \left(5 \sin\left(\frac{\pi}{2}-t\right) + 1\right)\evalat{0}{}
+  = 5 \sin\left(\frac{\pi}{2}\right) + 1
+  = 5 \times 1 + 1
+  = 6
+\]
+
+\medskip
+\[
+  x\left(\frac{\pi}{2}\right)
+  = \left(3 \cos\left(\frac{\pi}{2}-t\right) + 2\right)\evalat{\frac{\pi}{2}}{}
+  = 3 \cos\left(0\right) + 2
+  = 3 \times 1 + 2
+  = 5
+\]
+\[
+  y\left(\frac{\pi}{2}\right)
+  = \left(5 \sin\left(\frac{\pi}{2}-t\right) + 1\right)\evalat{\frac{\pi}{2}}{}
+  = 5 \sin\left(0\right) + 1
+  = 5 \times 0 + 1
+  = 1
+\]
+
+\medskip
+\[
+  x(\pi)
+  = \left(3 \cos\left(\frac{\pi}{2}-t\right) + 2\right)\evalat{\pi}{}
+  = 3 \cos\left(-\frac{\pi}{2}\right) + 2
+  = 3 \times 0 + 2
+  = 2
+\]
+\[
+  y(\pi)
+  = \left(5 \sin\left(\frac{\pi}{2}-t\right) + 1\right)\evalat{\pi}{}
+  = 5 \sin\left(-\frac{\pi}{2}\right) + 1
+  = 5 (-1) + 1
+  = -4
+\]
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{40\%}
+Determine e classifique os pontos críticos da função
+\(
+  f(x,y) = e^{xy} - x^2 - y^2
+\)
+
+\clearpagequestiononly
+
+\begin{answer}
+  Calculando o gradiente
+  \[
+    f_x(x, y)
+    = y e^{xy} - 2x
+  \]
+  \[
+    f_y(x, y)
+    = x e^{xy} - 2y
+  \]
+  Igualando o gradiente ao vetor nulo
+  \[
+    \begin{cases}
+      y e^{xy} - 2x = 0\\
+      x e^{xy} - 2y = 0
+    \end{cases}
+  \]
+  rearranjando
+  \[
+    \begin{cases}
+      2x = y e^{xy} \\
+      2y = x e^{xy}
+    \end{cases}
+  \]
+  Subtraindo as equações
+  \[
+    2(x-y) = -(x-y)e^{xy}
+  \]
+
+  Caso 1: $x\neq y$, dividimos os dois lados por $x-y$, obtendo
+  \(
+    2 = -e^{xy}
+  \)
+  que não possui solução.
+
+  Caso 2: $x=y$, a equação \(2(x-y) = -(x-y)e^{xy}\) é satisfeita
+
+  Substituindo na primeira equação e obtemos
+  \begin{align*}
+    2x & = y e^{xy} \\
+    2x & = x e^{x^2}
+  \end{align*}
+
+  Se $x=0$, essa equação é satisfeita e temos o primeiro ponto crítico \(P_1=(0, 0)\)
+
+  Se $x\neq y$, dividimos os dois termos por $x$
+  \begin{align*}
+    2x      & = x e^{x^2}        \\
+    2       & = e^{x^2}          \\
+    \ln(2)  & = x^2              \\
+    \abs{x} & = \sqrt{\ln(2)}    \\
+    x       & = \pm\sqrt{\ln(2)}
+  \end{align*}
+  Encontramos os pontos críticos
+  \(P_2 = \left( \sqrt{\ln(2)},  \sqrt{\ln(2)}\right)\) e
+  \(P_3 = \left(-\sqrt{\ln(2)}, -\sqrt{\ln(2)}\right)\)
+
+  \bigskip
+  Calculando a Hessiana de $f$
+  \[
+    f_{xx}(x, y)
+    = y^2 e^{xy}-2
+  \]
+  \[
+    f_{yy}(x, y)
+    = x^2 e^{xy}-2
+  \]
+  \[
+    f_{xy}(x, y)
+    = xy e^{xy}+e^{xy}
+  \]
+  Discriminante (Determinante da Hessiana)
+  \[
+    D(x, y) = f_{xx}(x, y)f_{yy}(x, y) - f^2_{xy}(x, y)
+  \]
+
+  \bigskip
+  Classificando o ponto \((0, 0)\)
+  \[
+    f_{xx}(0, 0) = -2
+  \]
+  \[
+    f_{yy}(0, 0) = -2
+  \]
+  \[
+    f_{xy}(0, 0) =  1
+  \]
+  \[
+    D(0, 0) = 4-1 = 3 > 0
+  \]
+  Como \(f_{xx}(0, 0) = -2 < 0\), \textbf{o ponto \((0,0)\) é um máximo local}
+
+  \bigskip
+  No ponto \(\left(\sqrt{\ln 2}, \sqrt{\ln 2}\right)\)
+  \[
+    f_{xx}\left(\sqrt{\ln 2}, \sqrt{\ln 2}\right)
+    = 2\ln 2 -2
+  \]
+  \[
+    f_{yy}\left(\sqrt{\ln 2}, \sqrt{\ln 2}\right)
+    = 2\ln 2 -2
+  \]
+  \[
+    f_{xy}\left(\sqrt{\ln 2}, \sqrt{\ln 2}\right)
+    = 2\ln 2 +2
+  \]
+  \[
+    D\left(\sqrt{\ln 2}, \sqrt{\ln 2}\right)
+    = (2\ln 2 -2)^2 - (2\ln 2 +2)^2
+    < 0
+  \]
+  Portanto, é um \textbf{ponto de sela}
+
+  \bigskip
+  No ponto \(\left(-\sqrt{\ln 2}, -\sqrt{\ln 2}\right)\)
+  \[
+    f_{xx}\left(-\sqrt{\ln 2}, -\sqrt{\ln 2}\right)
+    = 2\ln 2 -2
+  \]
+  \[
+    f_{yy}\left(-\sqrt{\ln 2}, -\sqrt{\ln 2}\right)
+    = 2\ln 2 -2
+  \]
+  \[
+    f_{xy}\left(-\sqrt{\ln 2}, -\sqrt{\ln 2}\right)
+    = 2\ln 2 +2
+  \]
+  \[
+    D\left(-\sqrt{\ln 2}, -\sqrt{\ln 2}\right)
+    = (2\ln 2 -2)^2 - (2\ln 2 +2)^2
+    < 0
+  \]
+  Portanto, é um \textbf{ponto de sela}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
+

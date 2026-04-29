@@ -1,0 +1,149 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+% B
+\makeHeader{CFVVI}{Prova 2 -- Turma 7}{17/10/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{30\%}
+Calcule o limite ou mostre que ele não existe
+\(
+  \lim_{(x, y)\to(0, 0)} \frac{x^2-\sin^2(y)}{2x^2-y^2}
+\)
+% \clearpagequestiononly
+
+\begin{answer}
+Escolhendo o caminho $y=0$ temos
+\begin{align*}
+  L_1
+  & = \left(\lim_{(x, y)\to(0, 0)} \frac{x^2-\sin^2(y)}{2x^2-y^2}\right) \evalat{y=0}{} \\[2mm]
+  & = \lim_{x\to 0} \frac{x^2-\sin^2(0)}{2x^2-0} \\[2mm]
+  & = \lim_{x\to 0} \frac{x^2}{2x^2} \\[2mm]
+  & = \lim_{x\to 0} \frac{1}{2} \\[2mm]
+  & = \frac{1}{2}
+\end{align*}
+Escolhendo o caminho $x=0$ temos
+\begin{align*}
+  L_2
+  & = \left(\lim_{(x, y)\to(0, 0)} \frac{x^2-\sin^2(y)}{2x^2-y^2}\right) \evalat{x=0}{} \\[2mm]
+  & = \lim_{y\to0} \frac{0-\sin^2(y)}{0-y^2} \\[2mm]
+  & = \lim_{y\to0} \frac{0-\sin^2(y)}{0-y^2} \\[2mm]
+  & = \lim_{y\to0} \left(\frac{\sin(y)}{y}\right)^2 \\[2mm]
+  & = \left(\lim_{y\to0} \frac{\sin(y)}{y}\right)^2 \\[2mm]
+  & = 1^2 \\[2mm]
+  & = 1
+\end{align*}
+Limites diferentes por caminhos diferentes, portanto o limite não existe.
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{40\%}
+Calcule \(\DM{f}{x}{y}(-1, 1)\)\! de
+\(
+  f(x, y) = x^4 \ln\left(y^2x^2 - xy\right)
+\)
+respeitando a ordem descrita na notação
+% \clearpagequestiononly
+
+\begin{answer}
+  \begin{align*}
+    \D{f}{y}
+    & = \D{}{y} \left[x^4 \ln\left(y^2x^2 - xy\right)\right] \\[2mm]
+    & = x^4 \D{}{y} \left[\ln\left(y^2x^2 - xy\right)\right] \\[2mm]
+    & = x^4 \frac{1}{y^2x^2 - xy} \D{}{y}\left(y^2x^2 - xy\right) \\[2mm]
+    & = \frac{x^4}{x^2y^2 - xy} \left(
+          \D{}{y}\left(y^2x^2\right) - \D{}{y}\left(xy\right)
+        \right) \\[2mm]
+    & = \frac{x^3}{xy^2 - y} \left(x^2\D{y^2}{y} - x\D{y}{y}\right) \\[2mm]
+    & = \frac{x^3}{xy^2 - y} \left(x^22y - x\right) \\[2mm]
+    & = \frac{2x^5y - x^4}{xy^2 - y}
+  \end{align*}
+  \begin{align*}
+    \DM{f}{x}{y}
+    & = \D{}{x}\left(\D{f}{y}\right) \\[2mm]
+    & = \D{}{x}\left(\frac{2x^5y - x^4}{xy^2 - y}\right) \\[2mm]
+    & = \frac{1}{\left(xy^2 - y\right)^2}\left[
+          \D{}{x}\left(2x^5y - x^4\right)\left(xy^2 - y\right) -
+          \left(2x^5y - x^4\right)\D{}{x}\left(xy^2 - y\right)
+        \right]\\[2mm]
+    & = \frac{1}{\left(xy^2 - y\right)^2}\left[
+          \left(2y\D{x^5}{x} - \D{x^4}{x}\right)\left(xy^2 - y\right) -
+          \left(2x^5y - x^4\right)\left(y^2\D{x}{x} - \D{y}{x}\right)
+        \right]\\[2mm]
+    & = \frac{1}{\left(xy^2 - y\right)^2}\left[
+          \left(10yx^4 - 4x^3\right)\left(xy^2 - y\right) -
+          \left(2x^5y - x^4\right)y^2
+        \right]\\[2mm]
+    & = \frac{\left(10yx^4 - 4x^3\right)\left(xy^2 - y\right) -
+              \left(2x^5y - x^4\right)y^2}
+             {\left(xy^2 - y\right)^2}
+  \end{align*}
+  \begin{align*}
+    \DM{f}{x}{y}(-1, 1)
+    & = \frac{\left(10yx^4 - 4x^3\right)\left(xy^2 - y\right) -
+              \left(2x^5y - x^4\right)y^2}
+             {\left(xy^2 - y\right)^2}\evalat{(-1, 1)}{} \\[2mm]
+    & = \frac{\left(10(1)(-1)^4 - 4(-1)^3\right)\left((-1)(1)^2 - (1)\right) -
+              \left(2(-1)^5(1) - (-1)^4\right)(1)^2}
+             {\left((-1)(1)^2 - (1)\right)^2} \\[2mm]
+    & = \frac{\left(10 + 4\right)\left(-1 - 1\right) -
+              \left(-2 - 1\right)}
+             {\left(-1 - 1\right)^2} \\[2mm]
+    & = \frac{14(-2) + 3}{(-2)^2}
+    = \frac{-25}{4}
+  \end{align*}
+\end{answer}
+
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{30\%}
+Assumindo que a equação
+\(
+  x^3y + xz^2 = 4x\sin(yz)
+  \vphantom{\int}
+\)
+define $z$ como função de $x$ e $y$,
+utilize a derivação implícita para encontrar \(\D{z}{y}\)
+% \clearpagequestiononly
+
+\begin{answer}
+  Utilizando a fórmula com \(F(x, y, z) = x^3y + xz^2 - 4x\sin(yz)\)
+  \begin{align*}
+    F_y(x, y, z)
+    & = \D{F}{y}(x, y, z) \\[2mm]
+    & = \D{}{y} \left(x^3y + xz^2 - 4x\sin(yz)\right) \\[2mm]
+    & = \D{}{y} \left(x^3y\right) + \D{}{y} \left(xz^2\right) - \D{}{y} \left(4x\sin(yz)\right) \\[2mm]
+    & = x^3\D{y}{y} + 0 - 4x\D{}{y} \left(\sin(yz)\right) \\[2mm]
+    & = x^3 - 4x\cos(yz)\D{yz}{y} \\[2mm]
+    & = x^3 - 4xz\cos(yz) \\[2mm]
+    F_z(x, y, z)
+    & = \D{F}{z}(x, y, z) \\[2mm]
+    & = \D{}{z} \left(x^3y + xz^2 - 4x\sin(yz)\right) \\[2mm]
+    & = \D{}{z} \left(x^3y\right) + \D{}{z} \left(xz^2\right) - \D{}{z} \left(4x\sin(yz)\right) \\[2mm]
+    & = 0 + x\D{z^2}{z} - 4x\D{}{z} \left(\sin(yz)\right) \\[2mm]
+    & = 2xz - 4x\cos(yz)\D{yz}{z} \\[2mm]
+    & = 2xz - 4xy\cos(yz)
+  \end{align*}
+  Portanto,
+  \[
+  \D{z}{y}(x, y, z)
+  = -\frac{F_y(x, y, z)}{F_z(x, y, z)}
+  = -\frac{x^3 - 4xz\cos(yz)}{2xz - 4xy\cos(yz)}
+  = \frac{4xz\cos(yz)-x^3}{2xz - 4xy\cos(yz)}
+  = \frac{4z\cos(yz)-x^2}{2z - 4y\cos(yz)}
+  \]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

@@ -1,0 +1,207 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 5 -- Turma 2}{17/12/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Considere a equação em coordenadas polares
+\(
+    4r = \left(1+\cos\theta\right)^{-1},
+\)
+transforme-a em coordenadas cartesianas,
+identifique a cônica obtida e esboce seu gráfico.
+
+\begin{questiononly}
+  \bigskip
+  \hfill\includegraphics{axis_xy}
+\end{questiononly}
+\clearpagequestiononly
+
+\begin{answer}
+\begin{multicols}{2}
+\begin{align*}
+    4r                       & = \left(1+\cos\theta\right)^{-1} \\
+    4r                       & = \frac{1}{1+\cos\theta}         \\
+    4r(1+\cos\theta)         & = 1                              \\
+    4r+4r\cos\theta          & = 1                              \\
+    4r+4x                    & = 1                              \\
+    4r                       & = 1 - 4x                         \\
+    16r^2                    & = (1 - 4x)^2                     \\
+    16\left(x^2 + y^2\right) & = 1 -8x + 16x^2                  \\
+    16y^2                    & = 1 -8x                          \\
+    8x                       & = 1 - 16y^2                      \\
+    x                        & = \frac{1}{8} -2y^2
+\end{align*}
+
+\columnbreak
+A cônica é uma parábola
+\bigskip
+
+\includegraphics{T2_A_conica}
+\end{multicols}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Determine todas as raízes cúbicas de
+\(
+    z = 4\sqrt{3}-4i
+\)
+
+\clearpagequestiononly
+
+\begin{answer}
+Módulo de $z$
+\[
+    \abs{z}
+    = \sqrt{\left(4\sqrt{3}\right)^2+(-4)^2}
+    = \sqrt{48+16}
+    = 8
+\]
+Para encontrar o argumento \(\varphi = \arg(z)\),
+usamos o seno e o cosseno do âlgulo
+\[
+    \sin(\varphi)
+    = \frac{\Im(z)}{\abs{z}}
+    = \frac{-4}{8}
+    = \frac{-1}{2}
+\]
+\[
+    \cos(\varphi)
+    = \frac{\Re(z)}{\abs{z}}
+    = \frac{4\sqrt{3}}{8}
+    = \frac{\sqrt{3}}{2}
+\]
+portanto \(\varphi=\frac{12n -1}{6}\pi\), escolhemos \(\varphi=\frac{-\pi}{6}\)
+\[
+    z = 8
+    \left(
+        \cos\left(\frac{-\pi}{6}\right) +
+        i\sin\left(\frac{-\pi}{6}\right)
+    \right)
+\]
+
+Pela segunda fórmula de Moivre, as raízes cúbicas são
+\[
+    u_k=\sqrt[3]{8}
+    \left(
+          \cos\left(\frac{-\sfrac{\pi}{6}+2k\pi}{3}\right)
+        +i\sin\left(\frac{-\sfrac{\pi}{6}+2k\pi}{3}\right)
+    \right)
+    \qquad k = 0, 1, 2
+\]
+
+Como $\sqrt[3]{8}=2$, obtemos
+\[
+    u_0 = 2 \left(
+                \cos\left(-\frac{\pi}{18}\right)
+                +i\sin\left(-\frac{\pi}{18}\right)
+            \right)
+\]
+\[
+    u_1 = 2 \left(
+                \cos\left(\frac{11\pi}{18}\right)
+                +i\sin\left(\frac{11\pi}{18}\right)
+            \right)
+\]
+\[
+    u_2 = 2 \left(
+                \cos\left(\frac{23\pi}{18}\right)
+                +i\sin\left(\frac{23\pi}{18}\right)
+            \right)
+\]
+\end{answer}
+
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Determine os pontos candidatos a extremos de
+\(
+    x^2 + \ln y
+\)
+com $y>0$, sujeita à restrição
+\(
+    2x + y = 3
+\)
+
+\begin{answer}
+\begin{multicols}{2}
+Queremos os extremos de
+\[
+    f(x, y) = x^2+\ln y \qquad y > 0
+\]
+sujeita à restrição
+\[
+    g(x, y) = 2x + y = 3
+\]
+Gradientes
+\[
+    \nabla f = \vetor{2x}{\sfrac{1}{y}}
+    \qquad
+    \nabla g = \vetor{2}{1}
+\]
+
+Pelo método dos multiplicadores de Lagrange
+\begin{align*}
+    2x          & = 2\lambda \\
+    \frac{1}{y} & = \lambda \\
+    2x + y      & = 3
+\end{align*}
+Da primeira equação temos que \(x=\lambda\), \\
+substituindo na segunda temos
+\[
+    \frac{1}{y} = \lambda = x
+    \qquad
+    y = \frac{1}{x}
+\]
+Substituindo na restrição
+\begin{align*}
+    2x + y           & = 3  \\
+    2x + \frac{1}{x} & = 3  \\
+    2x^2 + 1         & = 3x \\
+    2x^2 - 3x + 1    & = 0
+\end{align*}
+Resolvendo
+\[
+    \Delta
+    = b^2 - 4ac
+    = (-3)^2 - 4 \times 2 \times 1
+    = 9 - 8
+    = 1
+\]
+\[
+    x
+    = \frac{-b\pm\sqrt{\Delta}}{2a}
+    = \frac{3\pm 1}{4}
+\]
+
+\smallskip
+Para \(x=\frac{3+1}{4}=1\) temos \(y=1\)
+
+\smallskip
+Para \(x=\frac{3-1}{4}=\frac{1}{2}\) temos \(y=2\)
+
+\smallskip
+Os pontos candidatos a extremos são
+\[
+  P_1 = \left(1, 1\right)
+  \quad \text{ e } \quad
+  P_2 = \left(\frac{1}{2}, 2\right)
+\]
+\end{multicols}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

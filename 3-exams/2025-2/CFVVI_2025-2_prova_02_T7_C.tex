@@ -1,0 +1,145 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+% C
+\makeHeader{CFVVI}{Prova 2 -- Turma 7}{17/10/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{30\%}
+Calcule o limite ou mostre que ele não existe
+\(
+\lim_{(x, y)\to(0, 0)} \frac{5y^4\cos^2(x)}{x^4+y^4}
+\)
+% \clearpagequestiononly
+
+\begin{answer}
+  Escolhendo o caminho $y=0$ temos
+  \begin{align*}
+    L_1
+    & = \left(\lim_{(x, y)\to(0, 0)} \frac{5y^4\cos^2(x)}{x^4+y^4} \evalat{y=0}{} \right) \\[2mm]
+    & = \lim_{x\to 0} \frac{5\times0\cos^2(x)}{x^4+0} \\[2mm]
+    & = \lim_{x\to 0} \frac{0}{x^4} \\[2mm]
+    & = \lim_{x\to 0} 0 \\[2mm]
+    & = 0
+  \end{align*}
+  Escolhendo o caminho $x=0$ temos
+  \begin{align*}
+    L_2
+    & = \left(\lim_{(x, y)\to(0, 0)} \frac{5y^4\cos^2(x)}{x^4+y^4} \evalat{x=0}{} \right) \\[2mm]
+    & = \lim_{y\to 0} \frac{5y^4\cos^2(0)}{0+y^4} \\[2mm]
+    & = \lim_{y\to 0} \frac{5y^4}{y^4} \\[2mm]
+    & = \lim_{y\to 0} 5 \\[2mm]
+    & = 5
+  \end{align*}
+  Limites diferentes por caminhos diferentes, portanto o limite não existe.
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{40\%}
+Calcule \(\DM{f}{x}{y}\left(2, \sqrt{\pi}\right)\)\!,
+respeitando a ordem descrita na notação, de
+\(
+  f(x, y) = \frac{\sin\left(xy^2\right)}{2xe^x}
+\)
+% \clearpagequestiononly
+
+\begin{answer}
+  \begin{align*}
+    \D{f}{y}
+    & = \D{}{y} \left[\frac{\sin\left(xy^2\right)}{2xe^x}\right]       \\[2mm]
+    & = \frac{1}{2xe^x} \, \D{}{y} \left[\sin\left(xy^2\right)\right]  \\[2mm]
+    & = \frac{1}{2xe^x} \cos\left(xy^2\right) \D{}{y}\left(xy^2\right) \\[2mm]
+    & = \frac{1}{2xe^x} \cos\left(xy^2\right) x \D{y^2}{y}             \\[2mm]
+    & = \frac{1}{2e^x} \cos\left(xy^2\right) 2y                        \\[2mm]
+    & = \frac{y\cos\left(xy^2\right)}{e^x}
+  \end{align*}
+  \begin{align*}
+    \DM{f}{x}{y}
+    & = \D{}{x}\left(\D{f}{y}\right)                                  \\[2mm]
+    & = \D{}{x}\left(\frac{y\cos\left(xy^2\right)}{e^x}\right)        \\[2mm]
+    & = y \D{}{x}\left(\frac{\cos\left(xy^2\right)}{e^x}\right)       \\[2mm]
+    & = \frac{y}{e^{2x}}\left[
+    \D{}{x}\left[\cos\left(xy^2\right)\right]e^x  -
+    \cos\left(xy^2\right)\D{e^x}{x}
+    \right]                                                       \\[2mm]
+    & = \frac{y}{e^{2x}}\left[
+    -\sin\left(xy^2\right)\D{}{x}\left(xy^2\right)e^x  -
+    \cos\left(xy^2\right)e^x
+    \right]                                                       \\[2mm]
+    & = \frac{-y}{e^{x}}\left[
+    \sin\left(xy^2\right)x2y + \cos\left(xy^2\right)
+    \right]                                                       \\[2mm]
+    & = \frac{-y}{e^{x}}\left[
+    2xy\sin\left(xy^2\right) + \cos\left(xy^2\right)
+    \right]
+  \end{align*}
+  \begin{align*}
+    \DM{f}{x}{y}\left(2, \sqrt{\pi}\right)
+    & = \frac{-y}{e^{x}}\left[
+        2xy\sin\left(xy^2\right) + \cos\left(xy^2\right)
+    \right] \evalat{\left(2, \sqrt{\pi}\right)}{} \\[2mm]
+    & = \frac{-\sqrt{\pi}}{e^2}\left[
+          2\times 2\sqrt{\pi}\sin\left(2\left(\sqrt{\pi}\right)^2\right)
+          + \cos\left(2\left(\sqrt{\pi}\right)^2\right)
+        \right]  \\[2mm]
+    & = \frac{-\sqrt{\pi}}{e^2}\left[
+          4\sqrt{\pi}\sin\left(2\pi\right)
+          + \cos\left(2\pi\right)
+        \right]   \\[2mm]
+    & = \frac{-\sqrt{\pi}}{e^2}\left[ 0 + 1 \right]    \\[2mm]
+    & = \frac{-\sqrt{\pi}}{e^2}
+  \end{align*}
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{30\%}
+Assumindo que a equação
+\(
+  x^3y + xz^2 = 4x\sin(yz)
+  \vphantom{\int}
+\)
+define $z$ como função de $x$ e $y$,
+utilize a derivação implícita para encontrar \(\D{z}{y}\)
+% \clearpagequestiononly
+
+\begin{answer}
+  Utilizando a fórmula com \(F(x, y, z) = x^3y + xz^2 - 4x\sin(yz)\)
+  \begin{align*}
+    F_y(x, y, z)
+    & = \D{F}{y}(x, y, z) \\[2mm]
+    & = \D{}{y} \left(x^3y + xz^2 - 4x\sin(yz)\right) \\[2mm]
+    & = \D{}{y} \left(x^3y\right) + \D{}{y} \left(xz^2\right) - \D{}{y} \left(4x\sin(yz)\right) \\[2mm]
+    & = x^3\D{y}{y} + 0 - 4x\D{}{y} \left(\sin(yz)\right) \\[2mm]
+    & = x^3 - 4x\cos(yz)\D{yz}{y} \\[2mm]
+    & = x^3 - 4xz\cos(yz) \\[2mm]
+    F_z(x, y, z)
+    & = \D{F}{z}(x, y, z) \\[2mm]
+    & = \D{}{z} \left(x^3y + xz^2 - 4x\sin(yz)\right) \\[2mm]
+    & = \D{}{z} \left(x^3y\right) + \D{}{z} \left(xz^2\right) - \D{}{z} \left(4x\sin(yz)\right) \\[2mm]
+    & = 0 + x\D{z^2}{z} - 4x\D{}{z} \left(\sin(yz)\right) \\[2mm]
+    & = 2xz - 4x\cos(yz)\D{yz}{z} \\[2mm]
+    & = 2xz - 4xy\cos(yz)
+  \end{align*}
+  Portanto,
+  \[
+  \D{z}{y}(x, y, z)
+    = -\frac{F_y(x, y, z)}{F_z(x, y, z)}
+    = -\frac{x^3 - 4xz\cos(yz)}{2xz - 4xy\cos(yz)}
+    = \frac{4xz\cos(yz)-x^3}{2xz - 4xy\cos(yz)}
+    = \frac{4z\cos(yz)-x^2}{2z - 4y\cos(yz)}
+  \]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

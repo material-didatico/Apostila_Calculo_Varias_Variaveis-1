@@ -1,0 +1,255 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 1 -- Turma 8}{01/04/2026}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Uma partícula descreve uma trajetória senoidal descrita
+pelas equações paramétricas
+\[
+  x(t) = 4\cos\left(\frac{\pi t}{2}\right) + 2
+  \qquad\qquad
+  y(t) = 6 - 3t
+  \qquad\qquad\qquad
+  0 \leq t \leq 2
+\]
+\begin{enumerate}[label=\alph*),itemsep=0pt,topsep=0pt]
+  \item\!\! [10\%] determine on pontos onde da curva associados com
+                   $t=0$, $t=1$ e em $t=2$
+  \item\!\! [15\%] calcule a expressão para o vetor tangente à curva
+  \item\!\! [15\%] avalie o vetor tangente em
+                   $t=0$, $t=1$ e em $t=2$
+  \item\!\! [10\%] esboce a curva e os vetores
+                   tangentes calculados
+                   (considere $\pi\approx 3$)
+\end{enumerate}
+~
+
+\begin{questiononly}
+  \qquad\includegraphics{axis_xy}
+\end{questiononly}
+\begin{answeronly}
+  \qquad\includegraphics{T8_A_parametrica}
+\end{answeronly}
+\clearpagequestiononly
+
+\begin{answer}
+\textbf{a)} \quad
+Calculando os pontos associados a $t=0$, $t=1$ e em $t=2$
+\begin{multicols}{2}
+\begin{align*}
+  x(0)
+  & = \left(4\cos\left(\frac{\pi t}{2}\right) + 2 \right)\evalat{0}{} \\
+  & = 4\cos\left(\frac{\pi \times 0}{2}\right) + 2 \\
+  & = 4 \times 1 + 2 \\
+  & = 6
+\end{align*}
+\newcolumn
+\begin{align*}
+  y(0)
+  & = \left(6 - 3t\right)\evalat{0}{} \\
+  & = 6 - 3\times 0 \\
+  & = 6
+\end{align*}
+\end{multicols}
+\begin{multicols}{2}
+  \begin{align*}
+    x(1)
+    & = \left(4\cos\left(\frac{\pi t}{2}\right) + 2 \right)\evalat{1}{} \\
+    & = 4\cos\left(\frac{\pi}{2}\right) + 2 \\
+    & = 4 \times 0 + 2 \\
+    & = 2
+  \end{align*}
+  \newcolumn
+  \begin{align*}
+    y(1)
+    & = \left(6 - 3t\right)\evalat{1}{} \\
+    & = 6 - 3\times 1 \\
+    & = 3
+  \end{align*}
+\end{multicols}
+\begin{multicols}{2}
+  \begin{align*}
+    x(2)
+    & = \left(4\cos\left(\frac{\pi t}{2}\right) + 2 \right)\evalat{2}{} \\
+    & = 4\cos\left(\frac{\pi \times 2}{2}\right) + 2 \\
+    & = 4(-1) + 2 \\
+    & = -2
+  \end{align*}
+  \newcolumn
+  \begin{align*}
+    y(2)
+    & = \left(6 - 3t\right)\evalat{2}{} \\
+    & = 6 - 3\times 2 \\
+    & = 0
+  \end{align*}
+\end{multicols}
+
+\vspace{-\baselineskip}
+\textbf{b)} \quad
+O vetor tangente é
+\(
+  v(t) = \Vetor{\frac{dx}{dt}}{\frac{dy}{dt}}
+\)
+
+Avaliando cada derivada
+\begin{multicols}{2}
+\begin{align*}
+  \frac{dx}{dt}
+  & = \frac{d}{dt}\left[4\cos\left(\frac{\pi t}{2}\right) + 2\right] \\
+  & = -4\sin\left(\frac{\pi t}{2}\right)\frac{d}{dt}\left(\frac{\pi t}{2}\right) \\
+  & = -4\sin\left(\frac{\pi t}{2}\right)\frac{\pi}{2} \\
+  & = -2\pi\sin\left(\frac{\pi t}{2}\right)
+\end{align*}
+\newcolumn
+\[
+ \frac{dy}{dt}
+  = \frac{d}{dt}\left[6 - 3t\right]
+  = -3
+\]
+\end{multicols}
+\vspace{-\baselineskip}
+Portanto,
+\(
+  v(t) = \vetor{-2\pi\sin\left(\frac{\pi t}{2}\right)}{-3}
+\)
+
+\bigskip
+\textbf{c)} \quad
+Avaliando o vetor tangente nos pontos $t=0$, $t=1$ e em $t=2$
+\begin{multicols}{3}
+\setlength{\mathindent}{0pt}
+\begin{align*}
+  v(0)
+  & = \Vetor{-2\pi\sin\left(\frac{\pi t}{2}\right)}{-3} \evalat{0}{} \\[2mm]
+  & = \Vetor{-2\pi\sin(0)}{-3} \\[2mm]
+  & = \vetor{-2\pi\times 0}{-3} \\[2mm]
+  & = \vetor{0}{-3}
+\end{align*}
+
+\newcolumn
+\begin{align*}
+  v(1)
+  & = \Vetor{-2\pi\sin\left(\frac{\pi t}{2}\right)}{-3} \evalat{1}{} \\[2mm]
+  & = \Vetor{-2\pi\sin\left(\frac{\pi}{2}\right)}{-3} \\[2mm]
+  & = \Vetor{-2\pi\times 1}{-3} \\[2mm]
+  & = \vetor{-2\pi}{-3}
+\end{align*}
+
+\newcolumn
+\begin{align*}
+  v(2)
+  & = \Vetor{-2\pi\sin\left(\frac{\pi t}{2}\right)}{-3} \evalat{2}{} \\[2mm]
+  & = \Vetor{-2\pi\sin(\pi)}{-3} \\[2mm]
+  & = \Vetor{-2\pi\times 0}{-3} \\[2mm]
+  & = \vetor{0}{-3}
+\end{align*}
+\end{multicols}
+
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Considerando a função
+\(
+f(x, y) = \sqrt{\frac{2}{9 - x^2}}
+\)
+\begin{enumerate}[label=(\alph*),itemsep=0pt]
+  \item \ [15\%] determine o domínio de $f$
+  \item \ [15\%] esboce o domínio
+  \item \ [10\%] determine a curva de nível que passa pelo ponto \((2, 2)\)
+  \item \ [10\%] esboce a curva de nível que passa pelo ponto \((2, 2)\)
+\end{enumerate}
+\begin{questiononly}
+  \begin{multicols}{2}
+    \;\; Domínio
+    \vspace{-0.3\baselineskip}
+    \begin{center}
+      \includegraphics{axis_xy}
+    \end{center}
+    \;\; Curva de nível
+    \vspace{-0.3\baselineskip}
+    \begin{center}
+      \includegraphics{axis_xy}
+    \end{center}
+  \end{multicols}
+\end{questiononly}
+\begin{answeronly}
+  \begin{multicols}{2}
+    \;\; Domínio
+    \vspace{-0.3\baselineskip}
+    \begin{center}
+      \includegraphics{T8_A_dominio}
+    \end{center}
+    \;\; Curva de nível
+    \vspace{-0.3\baselineskip}
+    \begin{center}
+      \includegraphics{T8_A_curva_nivel}
+    \end{center}
+  \end{multicols}
+\end{answeronly}
+
+\begin{answer}
+  \textbf{a)} \quad
+  Não podemos calcular a raiz quadrada de um número negativo e não
+  podemos dividir por zero, portanto, o domínio de $f$ é o conjunto
+  de todos os pontos \((x, y)\in\R^2\) tais que
+  \[
+    \frac{2}{9 - x^2} \geq 0 \qquad\text{ e }\qquad 9 - x^2 \text{ não é zero}
+  \]
+  portanto
+  \begin{align*}
+    9 - x^2 & > 0            \\
+    -x^2    & > -9           \\
+    x^2     & < 9            \\
+    \abs{x} & < \sqrt{9} = 3 \\
+    -3 < x  & < 3
+  \end{align*}
+  ou seja, os pontos entre as retas verticais \(x=-3\) e \(x=3\).
+  Assim, o domínio é
+  \[
+    D_f = \left\{(x, y) \in \R^2 \st -3 < x < 3 \right\}
+  \]
+
+  \bigskip
+  \textbf{c)} \quad
+  A curva de nível que passa pelo ponto $(2, 2)$ tem o valor
+  \[
+    c
+    = f(2, 2)
+    = \sqrt{\frac{2}{9 - x^2}} \evalat{(2, 2)}{}
+    = \sqrt{\frac{2}{9 - 2^2}}
+    = \sqrt{\frac{2}{5}}
+  \]
+  A curva de nível associada é
+  \begin{align*}
+    f(x, y)                  & = \sqrt{\frac{2}{5}} \\[2mm]
+    \sqrt{\frac{2}{9 - x^2}} & = \sqrt{\frac{2}{5}} \\[2mm]
+    \frac{2}{9 - x^2}        & = \frac{2}{5}        \\[2mm]
+    9 - x^2                  & = 5                  \\[2mm]
+    - x^2                    & = 5 - 9 = -4         \\[2mm]
+    x^2                      & = 4                  \\[2mm]
+    \abs{x}                  & = 2                  \\[2mm]
+    x                        & = \pm 2
+  \end{align*}
+  A curva de nível é o par de retas verticais
+  \[
+    x = 2
+    \qquad\text{ e }\qquad
+    x = -2
+  \]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

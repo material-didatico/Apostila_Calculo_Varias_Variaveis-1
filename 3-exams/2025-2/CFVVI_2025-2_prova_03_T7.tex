@@ -1,0 +1,148 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 3 -- Turma 7}{07/11/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Considere a função \(g:\mathbb{R}^3\to\mathbb{R}\) dada por
+\(
+  g(x, y, z)=\ln(1+x^2+y^2+z^2).
+\)
+Calcule a derivada direcional de \(g\) no ponto  \(Q = (1, -2, 2)\)
+na direção apontando do ponto \(Q\) para o ponto \(R = (3, -1, 5)\).
+
+\clearpagequestiononly
+
+\begin{answer}
+Vetor direção
+\[
+  \mathbf{v}
+  = \mathbf{v} = R - Q
+  = \vetortri{3-1}{-1-(-2)}{5-2}
+  = \vetortri{2}{1}{3}
+\]
+Normalização
+\[
+  \|\mathbf{v}\|=\sqrt{2^2+1^2+3^2}=\sqrt{14}
+  \qquad
+  \mathbf{u}=\frac{1}{\sqrt{14}}\vetortri{2}{1}{3}
+\]
+Gradiente de \(g\)
+\[
+  \nabla g(x, y, z)
+  = \Vetortri{\frac{2x}{1+x^2+y^2+z^2}}
+             {\frac{2y}{1+x^2+y^2+z^2}}
+             {\frac{2z}{1+x^2+y^2+z^2}}
+\]
+Avaliação no ponto \((1, -2, 2)\).
+Notando que
+\[
+  1+x^2+y^2+z^2  \evalat{(1, -2, 2)}{}
+  = 1 + 1^2 + (-2)^2 + 2^2
+  = 10
+\]
+temos
+\[
+  \nabla g(1, -2, 2)
+  = \Vetortri{\frac{2x}{1+x^2+y^2+z^2}}
+             {\frac{2y}{1+x^2+y^2+z^2}}
+             {\frac{2z}{1+x^2+y^2+z^2}} \evalat{(1, -2, 2)}{}
+  = \Vetortri{\frac{2}{10}}{\frac{-4}{10}}{\frac{4}{10}}
+  = \Vetortri{\frac{1}{5}}{-\frac{2}{5}}{\frac{2}{5}}
+\]
+Derivada direcional
+\begin{align*}
+  D_{\mathbf{u}}g(1,-2,2)
+  & = \nabla g(1,-2,2)\cdot \mathbf{u} \\
+  & = \Vetortri{\frac{1}{5}}{-\frac{2}{5}}{\frac{2}{5}}
+      \cdot
+      \Vetortri{\frac{2}{\sqrt{14}}}{\frac{1}{\sqrt{14}}}{\frac{3}{\sqrt{14}}}\\
+  & = \frac{1}{\sqrt{14}}\left(
+    \frac{1}{5}\cdot 2
+    + \left(-\frac{2}{5}\right)\cdot 1
+    + \frac{2}{5}\cdot 3
+    \right)\\[6pt]
+  &=\frac{1}{\sqrt{14}}\left(
+    \frac{2}{5}-\frac{2}{5}+\frac{6}{5}
+    \right) \\
+  & =\frac{1}{\sqrt{14}}\cdot \frac{6}{5} \\
+  & =\frac{6}{5\sqrt{14}}
+\end{align*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Seja \(f(x,y)=e^{x}\ln(1+x^{2}+y^{2})\). Determine a
+aproximação linear de \(f\) no ponto \((0, 1)\) e use-a para aproximar
+\(f(0.05, 0.98)\).
+
+
+\begin{answer}
+A aproximação linear é
+\[
+  L(x, y) = f(a, b) + f_x(a, b) (x-a) + f_y(a, b) (y-b)
+\]
+Cálculo das derivadas parciais
+\begin{align*}
+  f_x(x, y)
+  & = \D{}{x} \left[e^{x}\ln(1+x^{2}+y^{2})\right] \\
+  & = \D{}{x} \left[e^{x}\right]\ln(1+x^{2}+y^{2})
+    + e^{x}\D{}{x} \left[\ln(1+x^{2}+y^{2})\right] \\
+  & = e^{x}\ln(1+x^{2}+y^{2})
+    + e^{x} \frac{1}{1+x^{2}+y^{2}} \D{}{x} \left(1+x^{2}+y^{2}\right)\\
+  & = e^x\left(\ln\left(1+x^2+y^2\right) + \frac{2x}{1+x^2+y^2}\right)
+  \\[3mm]
+  f_y(x,y)
+  & = \D{}{y} \left[e^{x}\ln(1+x^{2}+y^{2})\right] \\
+  & = e^{x}\D{}{y} \left[\ln(1+x^{2}+y^{2})\right] \\
+  & = e^{x} \frac{1}{1+x^{2}+y^{2}} \D{}{y} \left(1+x^{2}+y^{2}\right)\\
+  & = \frac{2ye^x}{1+x^2+y^2}
+\end{align*}
+Avaliação em \((0, 1)\)
+\begin{align*}
+  f(0, 1)
+  & = \left[e^{x}\ln(1+x^{2}+y^{2})\right] \evalat{(0, 1)}{} \\
+  & = e^{x}\ln(1+0^{2}+1^{2}) \\
+  & = \ln 2 \\
+  f_x(0, 1)
+  & = \left[e^x\left(\ln\left(1+x^2+y^2\right) + \frac{2x}{1+x^2+y^2}\right)\right] \evalat{(0, 1)}{} \\
+  & = e^0\left(\ln\left(1+0^2+1^2\right) + \frac{2\times 0}{1+0^2+1^2}\right) \\
+  & = \ln 2 \\
+  f_y(0, 1)
+  & = \left[\frac{2ye^x}{1+x^2+y^2}\right] \evalat{(0, 1)}{} \\
+  & = \frac{2\times 1 \times e^0}{1+0^2+1^2} \\
+  & = 1
+\end{align*}
+A aproximação linear é
+\begin{align*}
+  L(x, y)
+  & = \ln(2)    + \ln(2)\,x + (y-1) \\
+  & = \ln(2)\,x + y + (\ln(2) -1)
+\end{align*}
+Aproximação em \((0.05,\,0.98)\)
+\begin{align*}
+  L(0.05, 0.98)
+  & = \ln(2) + \ln(2)\,0.05 + (0.98-1) \\
+  & = \ln(2) + \ln(2)\,0.05 - 0.02 \\
+  & = 1.05\ln(2) - 0.02
+\end{align*}
+Com uma calculadora podemos avaliar que
+\begin{align*}
+  L(0.05, 0.98) & = 0.7078 \\
+  f(0.05, 0.98) & = 0.7090
+\end{align*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

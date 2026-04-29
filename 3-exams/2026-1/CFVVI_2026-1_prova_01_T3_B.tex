@@ -1,0 +1,264 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 1 -- Turma 3}{01/04/2026}
+
+% 01
+%------------------------------------------------------------------------------%
+\begin{multicols}{2}
+\raggedbottom
+\exercise{50\%}
+  Uma partícula descreve uma trajetória circular descrita
+  pelas equações paramétricas
+  \begin{gather*}
+    x(t) = 3 \sin\left(t^2\right) +3 \\
+    y(t) = 3 \cos\left(t^2\right) +1 \\
+    0 \leq t \leq \sqrt{\pi}
+  \end{gather*}
+  \begin{enumerate}[label=\alph*),itemsep=0pt,topsep=0pt]
+    \item\!\! [10\%] determine on pontos onde da curva associados com \\
+                     \hspace*{29pt}
+                     $t=0$,
+                     $t=\sqrt{\frac{\pi}{2}}$ e
+                     $t=\sqrt{\pi}$
+    \item\!\! [15\%] calcule a expressão para o vetor tangente à curva
+    \item\!\! [15\%] avalie o vetor tangente em \\
+                     \hspace*{29pt}
+                     $t=\sqrt{\frac{\pi}{2}}$ e
+                     $t=\sqrt{\pi}$
+    \item\!\! [10\%] esboce a curva e os vetores
+                     tangentes calculados
+  \end{enumerate}
+\columnbreak
+~
+
+\begin{questiononly}
+  \hfill\includegraphics{axis_xy}
+\end{questiononly}
+\begin{answeronly}
+  \hfill\includegraphics{T3_B_parametrica}
+\end{answeronly}
+\end{multicols}
+\textit{
+  Apenas para esboçar os vetores, utilize as aproximações grosseiras
+  $\sqrt{\frac{\pi}{2}} \approx 1$ e
+  $\sqrt{\pi}           \approx \frac{3}{2}$
+}
+\clearpagequestiononly
+
+\begin{answer}
+  \textbf{a)} \quad
+  Calculando os pontos associados a $t=0$, $t=\sqrt{\frac{\pi}{2}}$ e em $t=\sqrt{\pi}$
+  \begin{multicols}{2}
+    \begin{align*}
+      x(0)
+      & = \left(3 \sin\left(t^2\right) +3\right) \evalat{0}{} \\
+      & = 3 \sin\left(0\right) +3 \\
+      & = 3 \times 0 +3 \\
+      & = 3
+    \end{align*}
+    \newcolumn
+    \begin{align*}
+      y(0)
+      & = \left(3 \cos\left(t^2\right) +1\right) \evalat{0}{} \\
+      & = 3 \cos\left(0\right) +1 \\
+      & = 3 \times 1 +1 \\
+      & = 4
+    \end{align*}
+  \end{multicols}
+
+  \clearpage
+  \begin{multicols}{2}
+    \begin{align*}
+      x\left(\sqrt{\frac{\pi}{2}}\right)
+      & = \left(3 \sin\left(t^2\right) +3\right) \evalat{\sqrt{\frac{\pi}{2}}}{} \\
+      & = 3 \sin\left(\frac{\pi}{2}\right) +3 \\
+      & = 3 \times 1 +3 \\
+      & = 6
+    \end{align*}
+    \newcolumn
+    \begin{align*}
+      y\left(\sqrt{\frac{\pi}{2}}\right)
+      & = \left(3 \cos\left(t^2\right) +1\right) \evalat{\sqrt{\frac{\pi}{2}}}{} \\
+      & = 3 \cos\left(\frac{\pi}{2}\right) +1 \\
+      & = 3 \times 0 +1 \\
+      & = 1
+    \end{align*}
+  \end{multicols}
+  \vspace{-\baselineskip}
+  \begin{multicols}{2}
+    \begin{align*}
+      x\left(\sqrt{\pi}\right)
+      & = \left(3 \sin\left(t^2\right) +3\right) \evalat{\sqrt{\pi}}{} \\
+      & = 3 \sin\left(\pi\right) +3 \\
+      & = 3 \times 0 +3 \\
+      & = 3
+    \end{align*}
+    \newcolumn
+    \begin{align*}
+      y\left(\sqrt{\pi}\right)
+      & = \left(3 \cos\left(t^2\right) +1\right) \evalat{\sqrt{\pi}}{} \\
+      & = 3 \cos\left(\pi\right) +1 \\
+      & = 3 (-1) +1 \\
+      & = -2
+    \end{align*}
+  \end{multicols}
+  \vspace{-2\baselineskip}
+  \textbf{b)} \quad
+  O vetor tangente é
+  \(
+  v(t) = \Vetor{\frac{dx}{dt}}{\frac{dy}{dt}}
+  \)
+
+  Avaliando cada derivada
+  \begin{multicols}{2}
+    \begin{align*}
+      \frac{dx}{dt}
+      & = \frac{d}{dt}\left[3 \sin\left(t^2\right) +3\right]   \\[2mm]
+      & = 3 \frac{d}{dt}\left[\sin\left(t^2\right)\right]      \\[2mm]
+      & = 3 \cos\left(t^2\right) \frac{d}{dt}\left(t^2\right)  \\[2mm]
+      & = 3 \cos\left(t^2\right) 2t                            \\[2mm]
+      & = 6 t \cos\left(t^2\right)
+    \end{align*}
+    \begin{align*}
+      \frac{dy}{dt}
+      & = \frac{d}{dt}\left[3 \cos\left(t^2\right) +1\right] \\[2mm]
+      & = 3\frac{d}{dt}\left[\cos\left(t^2\right)\right]     \\[2mm]
+      & = -3\sin\left(t^2\right)\frac{d}{dt}\left(t^2\right) \\[2mm]
+      & = -3\sin\left(t^2\right)2t \\[2mm]
+      & = -6t \sin\left(t^2\right)
+    \end{align*}
+  \end{multicols}
+  concluímos que,
+  \(
+  v(t) = \vetor%
+  { 6t \cos\left(t^2\right)}
+  {-6t \sin\left(t^2\right)}
+  \)
+
+  \bigskip
+  \textbf{c)} \quad
+  Avaliando o vetor tangente nos pontos
+  $t=\sqrt{\frac{\pi}{2}}$ e $t=\sqrt{\pi}$
+  \begin{multicols}{2}
+    \begin{align*}
+      v\left(\sqrt{\frac{\pi}{2}}\right)
+      & = \vetor
+      { 6t \cos\left(t^2\right)}
+      {-6t \sin\left(t^2\right)}
+      \evalat{\sqrt{\frac{\pi}{2}}}{} \\
+      & = \vetor
+      { 6\sqrt{\frac{\pi}{2}} \cos\left(\frac{\pi}{2}\right)}
+      {-6\sqrt{\frac{\pi}{2}} \sin\left(\frac{\pi}{2}\right)}
+      \\
+      & = \vetor
+      { 6\sqrt{\frac{\pi}{2}} \times 0}
+      {-6\sqrt{\frac{\pi}{2}} \times 1}
+      \\
+      & = \vetor{0}{-6\sqrt{\frac{\pi}{2}}}
+    \end{align*}
+    \newcolumn
+    \begin{align*}
+      v\left(\sqrt{\pi}\right)
+      & = \vetor
+      { 6t \cos\left(t^2\right)}
+      {-6t \sin\left(t^2\right)}
+      \evalat{\sqrt{\pi}}{} \\
+      & = \vetor
+      { 6\sqrt{\pi} \cos\left(\pi\right)}
+      {-6\sqrt{\pi} \sin\left(\pi\right)}
+      \\
+      & = \vetor{-6\sqrt{\pi}}{0}
+    \end{align*}
+  \end{multicols}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Considerando a função
+\(
+f(x, y) = \ln\left(9+x^2-y^2\right)
+\)
+\begin{enumerate}[label=(\alph*),itemsep=0pt]
+  \item \ [15\%] determine o domínio de $f$
+  \item \ [15\%] esboce o domínio
+  \item \ [10\%] determine a curva de nível que passa pelo ponto \((0, 1)\)
+  \item \ [10\%] esboce a curva de nível que passa pelo ponto \((0, 1)\)
+\end{enumerate}
+\begin{questiononly}
+  \begin{multicols}{2}
+    \;\; Domínio
+    \vspace{-0.3\baselineskip}
+    \begin{center}
+      \includegraphics{axis_xy}
+    \end{center}
+    \;\; Curva de nível
+    \vspace{-0.3\baselineskip}
+    \begin{center}
+      \includegraphics{axis_xy}
+    \end{center}
+  \end{multicols}
+\end{questiononly}
+\begin{answeronly}
+  \begin{multicols}{2}
+    \;\; Domínio
+    \vspace{-0.3\baselineskip}
+    \begin{center}
+      \includegraphics{T3_B_dominio}
+    \end{center}
+    \;\; Curva de nível
+    \vspace{-0.3\baselineskip}
+    \begin{center}
+      \includegraphics{T3_B_curva_nivel}
+    \end{center}
+  \end{multicols}
+\end{answeronly}
+
+\begin{answer}
+  \textbf{a)} \quad
+  Não podemos calcular logaritmo de um número negativo ou do zero,
+  portanto, o domínio de $f$ é o conjunto
+  de todos os pontos \((x, y)\in\R^2\) tais que
+  \begin{align*}
+    9+x^2-y^2                         & > 0 \\
+    -x^2 + y^2                        & < 9 \\
+    \frac{y^2}{3^2} - \frac{x^2}{3^2} & < 1
+  \end{align*}
+  ou seja, os pontos ``entre os lados'' da hipérbole.
+  Assim, o domínio é
+  \[
+  D_f = \{(x, y) \in \R^2 \st y^2 - x^2 < 9\}
+  \]
+
+  \bigskip
+  \textbf{c)} \quad
+  A curva de nível que passa pelo ponto $(0, 1)$ tem o valor
+  \[
+    c
+    = f(0, 1)
+    = \ln\left(9 +x^2 -y^2 \right) \evalat{(0, 1)}{}
+    = \ln\left(9 +0^2 -1^2 \right)
+    = \ln 8
+  \]
+  A curva de nível associada é
+  \begin{align*}
+    f(x, y)                   & = \ln 8     \\[2mm]
+    \ln\left(9+x^2-y^2\right) & = \ln 8     \\[2mm]
+    9 + x^2 - y^2             & = e^{\ln 8} \\[2mm]
+    x^2 - y^2                 & = 8 - 9     \\[2mm]
+    y^2 - x^2                 & = 1
+  \end{align*}
+  Que é uma hipérbole.
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

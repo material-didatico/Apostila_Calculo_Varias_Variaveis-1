@@ -1,0 +1,187 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 5 -- Turma 7}{19/12/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Considere a equação em coordenadas polares
+\(
+  \left(\frac{r}{6}\right)^2 = \left(4\cos^2\theta+9\sin^2\theta\right)^{-1},
+\)
+escreva-a em coordenadas cartesianas, identifique a cônica e esboce seu gráfico.
+
+\begin{questiononly}
+  \bigskip
+  \hfill\includegraphics{axis_xy}
+\end{questiononly}
+
+\clearpagequestiononly
+
+\begin{answer}
+\begin{multicols}{2}
+\begin{align*}
+  \left(\frac{r}{6}\right)^2        & = \left(4\cos^2\theta+9\sin^2\theta\right)^{-1} \\[2mm]
+  \frac{r^2}{36}                    & = \frac{1}{4\cos^2\theta+9\sin^2\theta}         \\[2mm]
+  r^2                               & = \frac{36}{4\cos^2\theta+9\sin^2\theta}
+\end{align*}
+\vspace{-1.5\baselineskip}
+\begin{align*}
+  r^2\left(4\cos^2\theta+9\sin^2\theta\right) & = 36 \\
+  4r^2\cos^2\theta + 9r^2\sin^2\theta         & = 36 \\
+  4x^2 + 9y^2                                 & = 36 \\
+  \frac{4x^2}{36} + \frac{9y^2}{36}           & = 1  \\
+  \frac{x^2}{3^2} + \frac{y^2}{2^2}           & = 1
+\end{align*}
+
+\columnbreak
+A cônica é uma elípse
+\bigskip
+
+\includegraphics{T7_A_conica}
+\end{multicols}
+
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Determine todas as raízes cúbicas do número complexo
+\(
+    z = -4\left(1+i \sqrt{3}\right)
+\)
+\clearpagequestiononly
+
+\begin{answer}
+O módulo de $z$ é
+\[
+    \abs{z}
+    = \sqrt{(-4)^2 + \left(-4\sqrt{3}\right)^2}
+    = \sqrt{16 + 16\cdot 3}
+    = \sqrt{64}
+    = 8
+\]
+Derminamos o argumento \(\varphi = \arg(z)\) resolvendo o sistema
+\begin{align*}
+    \sin(\varphi) & = \frac{\Im(z)}{\abs{z}} = \frac{-4\sqrt{3}}{8} = \frac{-\sqrt{3}}{2} \\
+    \cos(\varphi) & = \frac{\Re(z)}{\abs{z}} = \frac{-4}{8} = \frac{-1}{2}
+\end{align*}
+portanto
+\[
+    \varphi = \arg(z) = \left(2n - \frac{2}{3}\right)\pi \qquad n\in\Z
+\]
+Podemos escolher
+\[
+  \varphi = -\frac{2\pi}{3}
+  \qquad\text{ ou }\qquad
+  \varphi = \frac{4\pi}{3}
+\]
+Vou seguir com
+\(
+  \varphi = -\frac{2\pi}{3}
+\)
+
+Pela segunda fórmula de Moivre, as raízes cúbicas de $z$ são dadas por
+\begin{align*}
+    u_k
+    & = \sqrt[3]{8}\left(\cos\frac{\varphi+2k\pi}{3}
+                      + i\sin\frac{\varphi+2k\pi}{3}\right) & & \quad k = 0, 1, 2 \\
+    & = 2 \left(\cos\frac{\sfrac{-2\pi}{3}+2k\pi}{3}
+             + i\sin\frac{\sfrac{-2\pi}{3}+2k\pi}{3}\right)\\
+    & = 2 \left(\cos\frac{-2\pi+6k\pi}{9}
+             + i\sin\frac{-2\pi+6k\pi}{9}\right)
+\end{align*}
+\[
+    u_0=2\left(\cos\frac{-2\pi}{9}+i\sin\frac{-2\pi}{9}\right)
+\]
+\[
+    u_1=2\left(\cos\frac{4\pi}{9}+i\sin\frac{4\pi}{9}\right)
+\]
+\[
+    u_2=2\left(\cos\frac{10\pi}{9}+i\sin\frac{10\pi}{9}\right)
+\]
+\end{answer}
+
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Determine os pontos candidatos a extremos de
+\(
+  x^2+e^{y}
+\)
+sujeita à restrição
+\(
+  x^2+y=1
+\)
+\clearpagequestiononly
+
+\begin{answer}
+\begin{multicols}{2}
+Queremos os extremos de
+\[
+  f(x, y) = x^2 + e^{y}
+\]
+sujeita à restrição
+\[
+  g(x, y) = x^2 + y - 1 = 0
+\]
+Gradientes
+\begin{align*}
+  \nabla f & = \vetor{2x}{e^{y}} \\
+  \nabla g & = \vetor{2x}{1}
+\end{align*}
+
+O sistema de Lagrange é
+\begin{align*}
+  2x    & =2\lambda x \\
+  e^{y} & =\lambda    \\
+  x^2+y & =1
+\end{align*}
+
+Da primeira equação
+\[
+  x = 0 \quad \text{ou} \quad \lambda=1
+\]
+
+Caso $x=0$, da restrição
+\[
+  y = 1
+\]
+e da segunda equação
+\[
+  \lambda = e
+\]
+obtermos o primeiro ponto
+\[
+  P_1 = (0, 1)
+\]
+
+Caso $\lambda=1$, da segunda equação
+\[
+  e^{y}=1 \quad\Rightarrow\quad y=0
+\]
+Da restrição
+\[
+x^2=1 \quad\Rightarrow\quad x=\pm1
+\]
+Encontramos o segundo e terceiro pontos
+\[
+P_2 = (1, 0) \qquad P_3 = (-1, 0)
+\]
+\end{multicols}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
+

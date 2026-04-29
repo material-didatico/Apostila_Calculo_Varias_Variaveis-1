@@ -1,0 +1,138 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 3 -- Turma 2}{05/11/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Determine a aproximação linear
+de \(f(x, y) = e^{xy}\cos(xy)\) no ponto \((\pi, 1)\) e
+use-a para aproximar \(f(3.1,\,1.02)\).
+Utilize apenas 2 casas decimais.
+\clearpagequestiononly
+
+\begin{answer}
+A aproximação linear de \(f\) em \((a, b)\) é dada por
+\[
+  L(x, y) = f(a, b) + f_x(a, b)(x-a) + f_y(a, b)(y-b)
+\]
+Cálculo das derivadas parciais
+\begin{align*}
+  f_x(x, y)
+  & = \D{}{x}\left(e^{xy}\cos(xy)\right) \\
+  & = \D{}{x}\left(e^{xy}\right) \cos(xy)
+    + e^{xy} \D{}{x}\left(\cos(xy)\right) \\
+  & = e^{xy}\D{}{x}\left(xy\right) \cos(xy)
+      + e^{xy} \left(-\sin(xy)\right)\D{}{x}(xy) \\
+  & = e^{xy}y \cos(xy) - e^{xy} \sin(xy)y \\
+  & = ye^{xy}\left(\cos(xy)-\sin(xy)\right)
+\end{align*}
+\begin{align*}
+  f_y(x, y)
+  & = \D{}{y}\left(e^{xy}\cos(xy)\right) \\
+  & = \D{}{y}\left(e^{xy}\right) \cos(xy)
+    + e^{xy} \D{}{y}\left(\cos(xy)\right) \\
+  & = e^{xy}\D{}{y}\left(xy\right) \cos(xy)
+      + e^{xy} \left(-\sin(xy)\right)\D{}{y}(xy) \\
+  & = e^{xy}x \cos(xy) - e^{xy} \sin(xy)x \\
+  & = xe^{xy}\left(\cos(xy)-\sin(xy)\right)
+\end{align*}
+Avaliação em \((\pi, 1)\):
+\[
+    f(\pi, 1)
+    = \left(e^{xy}\cos(xy)\right)\evalat{(\pi, 1)}{}
+    = e^\pi\cos(\pi)
+    = -e^\pi
+\]
+\begin{align*}
+    f_x(\pi, 1)
+    & = \left(ye^{xy}\left(\cos(xy)-\sin(xy)\right)\right)\evalat{(\pi, 1)}{} \\
+    & = 1e^\pi\left(\cos(\pi)-\sin(\pi)\right)
+    = e^\pi\left(-1-0\right)
+    = -e^\pi
+\end{align*}
+\begin{align*}
+    f_y(\pi, 1)
+    & = \left(xe^{xy}\left(\cos(xy)-\sin(xy)\right)\right)\evalat{(\pi, 1)}{} \\
+    & = \pi e^\pi\left(\cos(\pi)-\sin(\pi)\right)
+    = \pi e^\pi\left(-1-0\right)
+    = -\pi e^\pi
+\end{align*}
+A aproximação linear é
+\begin{align*}
+  L(x, y)
+  & = f(a, b) + f_x(a, b)(x-a) + f_y(a, b)(y-b) \\
+  & = f(\pi, 1) + f_x(\pi, 1)(x-\pi) + f_y(\pi, 1)(y-1) \\
+  & = -e^\pi - e^\pi(x-\pi) - \pi e^\pi (y-1) \\
+  & = -e^\pi \left[ 1 + (x-\pi) + \pi (y-1)\right]
+\end{align*}
+\begin{align*}
+  L(3.1,\,1.02)
+  & = -e^\pi \left[ 1 + (x-\pi) + \pi (y-1)\right] \evalat{(3.1,\,1.02)}{} \\
+  & = -e^\pi \left[ 1 + (3.1-\pi) + \pi (1.02-1)\right] \\
+  & = -e^\pi \left[ 1 + (-0.04) + \pi (0.02)\right] \\
+  & = -e^\pi \left[ 0.96 + 0.02\pi \right]
+\end{align*}
+Com uma calculadora podemos avaliar que
+\begin{align*}
+  L(3.1,\,1.02) = -23.669 \\
+  f(3.1,\,1.02) = -23.613
+\end{align*}
+\end{answer}
+
+% 05
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Considere a função \(f:\mathbb{R}^3\to\mathbb{R}\) dada por
+\(
+  f(x, y, z) = x e^{yz} + \sin(yz)
+\)
+Calcule a derivada direcional de \(f\) no ponto \(P = (1, 0, 2)\) na direção do vetor
+\(\mathbf{v}=(2, 1, -1)\).
+
+\begin{answer}
+Normalização o vetor \(\mathbf{v}\)
+\[
+  \|\mathbf{v}\| = \sqrt{2^2+1^2+(-1)^2}=\sqrt{6},
+  \qquad
+  \mathbf{u} = \frac{1}{\sqrt{6}}(2, 1, -1).
+\]
+Gradiente de \(f\):
+\begin{align*}
+  f_x(x, y, z) & = e^{yz}                \\
+  f_y(x, y, z) & = xz e^{yz} + z\cos(yz) \\
+  f_z(x, y, z) & = xy e^{yz} + y\cos(yz)
+\end{align*}
+Avaliação no ponto \(P=(1,0,2)\)
+\begin{align*}
+f_x(1, 0, 2) & = e^{0} = 1 \\
+f_y(1, 0, 2) & = 1 \cdot 2 \cdot e^{0} + 2\cos(0) = 2+2 = 4 \\
+f_z(1, 0, 2) & = 1 \cdot 0 \cdot e^{0} + 0\cos(0) = 0
+\end{align*}
+Assim,
+\(
+  \nabla f(1, 0, 2) = (1, 4, 0)
+\)
+
+A derivada direcional é o produto escalar
+\begin{align*}
+  D_{\mathbf{u}}f(1, 0, 2)
+  & = \nabla f(1, 0, 2)\cdot \mathbf{u} \\
+  & = (1, 4, 0)\cdot \frac{1}{\sqrt{6}}(2, 1, -1) \\
+  & = \frac{1}{\sqrt{6}}(1\cdot 2 + 4\cdot 1 + 0\cdot (-1)) \\
+  & = \frac{6}{\sqrt{6}} \\
+  & = \sqrt{6}
+\end{align*}.
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

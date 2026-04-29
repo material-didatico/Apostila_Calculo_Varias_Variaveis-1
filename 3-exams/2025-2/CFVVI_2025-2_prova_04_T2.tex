@@ -1,0 +1,430 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 4 -- Turma 2}{24/11/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Determine e classifique os pontos críticos da função
+\(
+  f(x,y) = \ln(1+x^2+y^2) - xy
+\)
+
+\clearpagequestiononly
+
+\begin{answer}
+  Calculando o gradiente
+  \[
+    f_x(x, y)
+    = \D{}{x}\left(\ln(1+x^2+y^2) - xy\right)
+    = \frac{2x}{1+x^2+y^2} - y
+  \]
+  \[
+    f_y(x, y)
+    = \D{}{y}\left(\ln(1+x^2+y^2) - xy\right)
+    = \frac{2y}{1+x^2+y^2} - x
+  \]
+  Igualando o gradiente ao vetor nulo
+  \[
+    \begin{cases}
+      \dfrac{2x}{1+x^2+y^2} - y = 0 \\[4mm]
+      \dfrac{2y}{1+x^2+y^2} - x = 0
+    \end{cases}
+  \]
+  rearranjando
+  \[
+    \begin{cases}
+      2x = y\left(1+x^2+y^2\right) \\
+      2y = x\left(1+x^2+y^2\right)
+    \end{cases}
+  \]
+  Subtraindo as equações
+  \[
+    2(x-y) = -(x-y)\left(1+x^2+y^2\right)
+  \]
+
+  Caso 1: $x\neq y$, dividimos os dois lados por $x-y$, obtendo
+  \begin{align*}
+    2(x-y)    & = -(x-y)\left(1+x^2+y^2\right) \\
+    2         & = -\left(1 + x^2 + y^2\right)  \\
+    2         & = -1 - x^2 - y^2               \\
+    x^2 + y^2 & = -3
+  \end{align*}
+  Não existe solução
+
+  \bigskip
+  Caso 2: $x=y$, a equação \(2(x-y) = -(x-y)\left(1+x^2+y^2\right)\) é satisfeita
+
+  Substituindo na primeira equação e obtemos
+  \begin{align*}
+    2x = y\left(1+x^2+y^2\right) \\
+    2x = x\left(1+x^2+x^2\right) \\
+    2x = x\left(1+2x^2\right)
+  \end{align*}
+
+  Se $x=0$, essa equação é satisfeita e temos o primeiro ponto crítico \(P_1=(0, 0)\)
+
+  Se $x\neq y$, dividimos os dois termos por $x$
+  \begin{align*}
+    2x      & = x\left(1+2x^2\right) \\
+    2       & = 1 + 2x^2             \\
+    2x^2    & = 1                    \\
+    x^2     & = \frac{1}{2}          \\
+    \abs{x} & = \frac{1}{\sqrt{2}}   \\
+    x       & = \frac{\pm 1}{\sqrt{2}}
+  \end{align*}
+  Encontramos os pontos críticos
+  \(P_2 = \left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)\) e
+  \(P_3 = \left(-\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}\right)\)
+
+  \bigskip
+  Calculando a Hessiana de $f$
+  \[
+    f_{xx}(x, y)
+    = \D{}{x}\left(\frac{2x}{1+x^2+y^2} - y\right)
+    = \frac{2(1+x^2+y^2)-4x^2}{\left(1+x^2+y^2\right)^2}
+    = \frac{2-2x^2+2y^2}{\left(1+x^2+y^2\right)^2}
+  \]
+  \[
+    f_{yy}(x, y)
+    = \D{}{y}\left(\frac{2y}{1+x^2+y^2} - x\right)
+    = \frac{2(1+x^2+y^2)-4y^2}{\left(1+x^2+y^2\right)^2}
+    = \frac{2+2x^2-2y^2}{\left(1+x^2+y^2\right)^2}
+  \]
+  \[
+    f_{xy}(x, y)
+    = \D{}{x}\left(\frac{2y}{1+x^2+y^2} - x\right)
+    = \frac{-4xy}{\left(1+x^2+y^2\right)^2} -1
+  \]
+  Discriminante (Determinante da Hessiana)
+  \[
+    D(x, y) = f_{xx}(x, y)f_{yy}(x, y) - f^2_{xy}(x, y)
+  \]
+
+  \bigskip
+  Classificando o ponto \((0, 0)\)
+  \[
+    f_{xx}(0, 0)
+    = \left(\frac{2-2x^2+2y^2}{\left(1+x^2+y^2\right)^2}\right)\evalat{(0, 0)}{}
+    = 2
+  \]
+  \[
+    f_{yy}(0, 0)
+    = \left(\frac{2+2x^2-2y^2}{\left(1+x^2+y^2\right)^2}\right)\evalat{(0, 0)}{}
+    = 2
+  \]
+  \[
+    f_{xy}(0, 0)
+    = \left(\frac{-4xy}{\left(1+x^2+y^2\right)^2} -1\right)\evalat{(0, 0)}{}
+    = -1
+  \]
+  \[
+    D(0, 0)
+    = 2 \times 2 - (-1)^2
+    = 3 > 0
+  \]
+  Como \(f_{xx}(0, 0) = 2 > 0\), é um \textbf{mínimo local}
+
+  \bigskip
+  No ponto \(\left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)\)
+  temos
+  \[
+    \left(\left(1+x^2+y^2\right)^2\right)\evalat{\left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)}{}
+    = \left(1+\frac{1}{2}+\frac{1}{2}\right)^2
+    = 2^2
+    = 4
+  \]
+  \[
+    f_{xx}\left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)
+    = \left(\frac{2-2x^2+2y^2}{\left(1+x^2+y^2\right)^2}\right)\evalat{\left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)}{}
+    = \frac{2-1+1}{4}
+    = \frac{1}{2}
+  \]
+  \[
+    f_{yy}\left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)
+    = \left(\frac{2+2x^2-2y^2}{\left(1+x^2+y^2\right)^2}\right)\evalat{\left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)}{}
+    = \frac{2+1-1}{4}
+    = \frac{1}{2}
+  \]
+  \[
+    f_{xy}\left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)
+    = \left(\frac{-4xy}{\left(1+x^2+y^2\right)^2} -1\right)\evalat{\left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)}{}
+    = \frac{-2}{4} -1
+    = \frac{-3}{2}
+  \]
+  \[
+    D\left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)
+    = \frac{1}{2}\times\frac{1}{2} - \left(\frac{-3}{2}\right)^2
+    = \frac{1}{4} - \frac{9}{4}
+    = \frac{-8}{4}
+    = -2
+    < 0
+  \]
+  Portanto, é um \textbf{ponto de sela}
+
+  \bigskip
+  No ponto \(\left( -\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}\right)\)
+  temos
+  \[
+    \left(\left(1+x^2+y^2\right)^2\right)\evalat{\left(-\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}\right)}{}
+    = \left(1+\frac{1}{2}+\frac{1}{2}\right)^2
+    = 2^2
+    = 4
+  \]
+  \[
+  f_{xx}\left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)
+  = \left(\frac{2-2x^2+2y^2}{\left(1+x^2+y^2\right)^2}\right)\evalat{\left(-\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}\right)}{}
+  = \frac{2-1+1}{4}
+  = \frac{1}{2}
+  \]
+  \[
+  f_{yy}\left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)
+  = \left(\frac{2+2x^2-2y^2}{\left(1+x^2+y^2\right)^2}\right)\evalat{\left(-\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}\right)}{}
+  = \frac{2+1-1}{4}
+  = \frac{1}{2}
+  \]
+  \[
+  f_{xy}\left( \frac{1}{\sqrt{2}},  \frac{1}{\sqrt{2}}\right)
+  = \left(\frac{-4xy}{\left(1+x^2+y^2\right)^2} -1\right)\evalat{\left(-\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}\right)}{}
+  = \frac{-2}{4} -1
+  = \frac{-3}{2}
+  \]
+  \[
+  D\left(-\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}}\right)
+  = \frac{1}{2}\times\frac{1}{2} - \left(\frac{-3}{2}\right)^2
+  = \frac{1}{4} - \frac{9}{4}
+  = \frac{-8}{4}
+  = -2
+  < 0
+  \]
+  Portanto, é um \textbf{ponto de sela}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Determine os valores máximo e mínimo absolutos da função
+\(
+  f(x, y) = x^2 + y^2 - 2x - 2y
+\)
+na região fechada imitada
+\(
+  R = \{(x, y)\in\R^2\colon \abs{x}\le 2 ,\; \abs{y}\le 4 \}
+\)
+
+\clearpagequestiononly
+
+\begin{answer}
+\textbf{Interior}
+
+Derivadas parciais
+\[
+  f_x(x, y) = 2x - 2 \qquad
+  f_y(x, y) = 2y - 2
+\]
+Igualando a zero
+\[
+  2x-2=0\quad\Rightarrow\quad x=1
+\]
+\[
+  2y-2=0\quad\Rightarrow\quad y=1
+\]
+Ponto crítico é $(1, 1)$, como \(\abs{1}\le 2\) e \(\abs{1}\le 4\),
+o ponto crítico está no interior de $R$
+
+Valor da função no ponto crítico
+\[
+  f(1, 1)
+  = \left(x^2 + y^2 - 2x - 2y\right) \evalat{(1, 1)}{}
+  = 1 + 1 - 2 - 2
+  = -2
+\]
+
+\bigskip
+A fronteira de \(R\) é composta por quatro arestas
+\begin{align*}
+  x = -2     & \quad y\in[-4, 4] \\
+  x = \hpm 2 & \quad y\in[-4, 4] \\
+  y = - 4    & \quad x\in[-2, 2] \\
+  y = \hpm 4 & \quad x\in[-2, 2]
+\end{align*}
+
+
+\bigskip
+\textbf{Aresta \(x=2\)}
+\[
+  g(y)
+  = f(2, y)
+  = 4 + y^2 - 4 - 2y
+  = y^2 - 2y
+\]
+\[
+  g'(y) = 2y - 2
+\]
+cuja raiz é \(y=1\)
+
+Então os candidatos a extremos no problema 1D são $y=-4$, $y=1$ e $y=4$
+
+Os candidatos no problema 2D são $(2, -4)$, $(2, 1)$ e $(2, 4)$
+
+Avaliando $f$
+\[
+  f(2, -4)
+  = g(-4)
+  = 16+8
+  = 24
+\]
+\[
+  f(2, 1)
+  = g(1)
+  = -1
+\]
+\[
+  f(2, 4)
+  = g(4)
+  = 16-8
+  = 8
+\]
+
+
+\bigskip
+\textbf{Aresta \(x=-2\)}
+\[
+  h(y)
+  = f(-2,y)
+  = 4+y^{2}+4-2y
+  = y^{2}-2y+8
+\]
+\[
+  h'(y)=2y-2
+\]
+com raiz \(y=1\)
+
+Então os candidatos a extremos no problema 1D são $y=-4$, $y=1$ e $y=4$
+
+Os candidatos no problema 2D são $(-2, -4)$, $(-2, 1)$ e $(-2, 4)$
+
+Avaliando $f$
+\[
+  f(-2, -4)
+  = h(-4)
+  = 16 + 8 + 8
+  = 32
+\]
+\[
+  f(-2, 1)
+  = h(1)
+  = 1 - 2 + 8
+  = 7
+\]
+\[
+  f(-2, 4)
+  = h(4)
+  = 16 - 8 + 8
+  = 16
+\]
+
+
+\bigskip
+\textbf{Aresta \(y=4\)}
+\[
+  p(x)
+  = f(x, 4)
+  = x^{2}+16-2x-8
+  = x^{2}-2x+8
+\]
+\[
+  p'(x)=2x-2
+\]
+com raiz \(x=1\)
+
+Então os candidatos a extremos no problema 1D são $x=-2$, $x=1$ e $x=2$
+
+Os candidatos no problema 2D são $(-2, 4)$, $(1, 4)$ e $(2, 4)$
+
+Avaliando $f$
+\[
+  f(-2, 4)
+  = p(-2)
+  = 4+4+8
+  = 16
+\]
+\[
+  f(1, 4)
+  = p(1)
+  = 1-2+8
+  = 7
+\]
+\[
+  f(2, 4)
+  = p(2)
+  = 4-4+8
+  = 8
+\]
+
+\bigskip
+\textbf{Aresta \(y=-4\)}
+\[
+  q(x)
+  = f(x, -4)
+  = x^{2}+16-2x+8
+  = x^{2}-2x+24
+\]
+\[
+  q'(x) = 2x-2
+\]
+com raiz \(x=1\)
+
+Então os candidatos a extremos no problema 1D são $x=-2$, $x=1$ e $x=2$
+
+Os candidatos no problema 2D são $(-2, -4)$, $(1, -4)$ e $(2, -4)$
+
+Avaliando $f$
+\[
+  f(-2, -4)
+  = q(-2)
+  = 4+4+24
+  = 32
+\]
+\[
+  f(1, -4)
+  = q(1)
+  = 1-2+24
+  = 23
+\]
+\[
+  f(2, -4)
+  = q(2)
+  = 4-4+24
+  = 24
+\]
+
+
+\bigskip
+\textbf{Comparando}
+\begin{align*}
+  f(1, 1)   & = -2 \\
+  f(2, 4)   & = 8  \\
+  f(2, -4)  & = 24 \\
+  f(-2, 4)  & = 16 \\
+  f(-2, -4) & = 32
+\end{align*}
+
+O mínimo absoluto de $f$ é $-2$ em $(1, 1)$
+
+O máximo absoluto de $f$ é 32 em $(-2, -4)$
+\end{answer}
+
+
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

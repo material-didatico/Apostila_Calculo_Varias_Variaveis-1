@@ -1,0 +1,324 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 4 -- Turma 7}{24/11/2025}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Determine e classifique os pontos críticos da função
+\(
+  f(x,y) = e^{xy} - x^2 - y^2
+\)
+
+\clearpagequestiononly
+
+\begin{answer}
+  Calculando o gradiente
+  \[
+    f_x(x, y)
+    = y e^{xy} - 2x
+  \]
+  \[
+    f_y(x, y)
+    = x e^{xy} - 2y
+  \]
+  Igualando o gradiente ao vetor nulo
+  \[
+    \begin{cases}
+      y e^{xy} - 2x = 0\\
+      x e^{xy} - 2y = 0
+    \end{cases}
+  \]
+  rearranjando
+  \[
+    \begin{cases}
+      2x = y e^{xy} \\
+      2y = x e^{xy}
+    \end{cases}
+  \]
+  Subtraindo as equações
+  \[
+    2(x-y) = -(x-y)e^{xy}
+  \]
+
+  Caso 1: $x\neq y$, dividimos os dois lados por $x-y$, obtendo
+  \(
+    2 = -e^{xy}
+  \)
+  que não possui solução.
+
+  Caso 2: $x=y$, a equação \(2(x-y) = -(x-y)e^{xy}\) é satisfeita
+
+  Substituindo na primeira equação e obtemos
+  \begin{align*}
+    2x & = y e^{xy} \\
+    2x & = x e^{x^2}
+  \end{align*}
+
+  Se $x=0$, essa equação é satisfeita e temos o primeiro ponto crítico \(P_1=(0, 0)\)
+
+  Se $x\neq y$, dividimos os dois termos por $x$
+  \begin{align*}
+    2x      & = x e^{x^2}        \\
+    2       & = e^{x^2}          \\
+    \ln(2)  & = x^2              \\
+    \abs{x} & = \sqrt{\ln(2)}    \\
+    x       & = \pm\sqrt{\ln(2)}
+  \end{align*}
+  Encontramos os pontos críticos
+  \(P_2 = \left( \sqrt{\ln(2)},  \sqrt{\ln(2)}\right)\) e
+  \(P_3 = \left(-\sqrt{\ln(2)}, -\sqrt{\ln(2)}\right)\)
+
+  \bigskip
+  Calculando a Hessiana de $f$
+  \[
+    f_{xx}(x, y)
+    = y^2 e^{xy}-2
+  \]
+  \[
+    f_{yy}(x, y)
+    = x^2 e^{xy}-2
+  \]
+  \[
+    f_{xy}(x, y)
+    = xy e^{xy}+e^{xy}
+  \]
+  Discriminante (Determinante da Hessiana)
+  \[
+    D(x, y) = f_{xx}(x, y)f_{yy}(x, y) - f^2_{xy}(x, y)
+  \]
+
+  \bigskip
+  Classificando o ponto \((0, 0)\)
+  \[
+    f_{xx}(0, 0) = -2
+  \]
+  \[
+    f_{yy}(0, 0) = -2
+  \]
+  \[
+    f_{xy}(0, 0) =  1
+  \]
+  \[
+    D(0, 0) = 4-1 = 3 > 0
+  \]
+  Como \(f_{xx}(0, 0) = -2 < 0\), \textbf{o ponto \((0,0)\) é um máximo local}
+
+  \bigskip
+  No ponto \(\left(\sqrt{\ln 2}, \sqrt{\ln 2}\right)\)
+  \[
+    f_{xx}\left(\sqrt{\ln 2}, \sqrt{\ln 2}\right)
+    = 2\ln 2 -2
+  \]
+  \[
+    f_{yy}\left(\sqrt{\ln 2}, \sqrt{\ln 2}\right)
+    = 2\ln 2 -2
+  \]
+  \[
+    f_{xy}\left(\sqrt{\ln 2}, \sqrt{\ln 2}\right)
+    = 2\ln 2 +2
+  \]
+  \[
+    D\left(\sqrt{\ln 2}, \sqrt{\ln 2}\right)
+    = (2\ln 2 -2)^2 - (2\ln 2 +2)^2
+    < 0
+  \]
+  Portanto, é um \textbf{ponto de sela}
+
+  \bigskip
+  No ponto \(\left(-\sqrt{\ln 2}, -\sqrt{\ln 2}\right)\)
+  \[
+    f_{xx}\left(-\sqrt{\ln 2}, -\sqrt{\ln 2}\right)
+    = 2\ln 2 -2
+  \]
+  \[
+    f_{yy}\left(-\sqrt{\ln 2}, -\sqrt{\ln 2}\right)
+    = 2\ln 2 -2
+  \]
+  \[
+    f_{xy}\left(-\sqrt{\ln 2}, -\sqrt{\ln 2}\right)
+    = 2\ln 2 +2
+  \]
+  \[
+    D\left(-\sqrt{\ln 2}, -\sqrt{\ln 2}\right)
+    = (2\ln 2 -2)^2 - (2\ln 2 +2)^2
+    < 0
+  \]
+  Portanto, é um \textbf{ponto de sela}
+
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Determine os valores máximo e mínimo absolutos da função
+\(
+  f(x, y) = y\sin(x)
+\)
+na região
+\(
+  R = \{(x,y)\in\R^2\colon -1 \le x \le 2,\, -2 \le y \le 2\}
+\)
+
+\textit{Dica: Considere as aproximações
+\(\sin(1)\approx 0,8\),
+\(\sin(2)\approx 0,9\) e
+\(\sin(3)\approx 0,1\)}
+
+\clearpagequestiononly
+
+\begin{answer}
+  \textbf{Interior}
+
+  Derivadas parciais
+  \[
+    f_x = y\cos(x) \qquad\qquad
+    f_y =  \sin(x)
+  \]
+  Pontos críticos no interior
+  \[
+    y\cos(x) = 0 \qquad\qquad
+     \sin(x) = 0
+  \]
+  Impondo \(\sin(x)=0\) em \(x\in[-1, 2]\) temos $x=0$.
+  A primeira equação se torna
+  \begin{align*}
+    y\cos(x) & = 0 \\
+    y\cos(0) & = 0 \\
+    y        & = 0
+  \end{align*}
+  O ponto critico no interior da região é \((0, 0)\), onde função vale
+  \[
+    f(0, 0)
+    = 0\sin(0)
+    = 0
+  \]
+
+  \textbf{Fronteira 1}: onde \(x=-1\) e \(-2\le y \le 2\)
+  \[
+    g(y)
+    = f(-1, y)
+    = y \sin(-1)
+    = -y \sin(1)
+  \]
+  Como \(g'(y) = -\sin(1) \neq 0\)
+  a função $g(y)$ não possui pontos críticos,
+  consideramos apenas
+  os extremos do intervalo $y=-2$ e $y=2$
+  \begin{gather*}
+    f(-1, -2)
+    = g(-2)
+    = 2\sin(1)
+    \\
+    f(-1, 2)
+    = g(2)
+    = -2\sin(1)
+  \end{gather*}
+
+  \textbf{Fronteira 2}: onde \(x=2\) e \(-2\le y \le 2\)
+  \[
+    h(y)
+    = f(2, y)
+    = y\sin(2)
+  \]
+  Como \(h'(y) = \sin(2) \neq 0\)
+  a função $h(y)$ não possui pontos críticos,
+  consideramos apenas
+  os extremos do intervalo $y=-2$ e $y=2$
+  \begin{gather*}
+    f(2, -2)
+    = h(-2)
+    = -2\sin(2)
+    \\
+    f(2, 2)
+    = h(2)
+    = 2\sin(2)
+  \end{gather*}
+
+  \textbf{Fronteira 3}: onde \(y=-2\) e  \(-1 \le x \le 2\)
+  \[
+    p(x)
+    = f(x, -2)
+    = -2\sin(x)
+  \]
+  Como \(p'(x) = -2\cos(x)\), impondo \(p'(x)=0\) com \(-1 \le x \le 2\)
+  temos que \(x=\frac{\pi}{2}\) é um ponto crítico no interior do intervalo.
+  Consideramos os pontos \(x=-1\), \(x=\frac{\pi}{2}\) e \(x=2\)
+  \begin{gather*}
+    f(-1, -2)
+    = p(-1)
+    = -2\sin(-1)
+    = 2\sin(1)
+    \\
+    f\left(\sfrac{\pi}{2}, -2\right)
+    = p\left(\sfrac{\pi}{2}\right)
+    = -2 \sin\left(\sfrac{\pi}{2}\right)
+    = -2
+    \\
+    f(2, -2)
+    = p(2)
+    = -2\sin(2)
+  \end{gather*}
+
+  \textbf{Fronteira 4}: onde \(y=2\) e  \(-1 \le x \le 2\)
+  \[
+    q(x)
+    = f(x, 2)
+    = 2\sin(x)
+  \]
+  Como \(q'(x) = 2\cos(x)\), impondo \(q'(x)=0\) com \(-1 \le x \le 2\)
+  temos que \(x=\frac{\pi}{2}\) é um ponto crítico no interior do intervalo.
+  Consideramos os pontos \(x=-1\), \(x=\frac{\pi}{2}\) e \(x=2\)
+  \begin{gather*}
+    f(-1, 2)
+    = q(-1)
+    = 2\sin(-1)
+    = -2\sin(1)
+    \\
+    f\left(\sfrac{\pi}{2}, 2\right)
+    = q\left(\sfrac{\pi}{2}\right)
+    = 2 \sin\left(\sfrac{\pi}{2}\right)
+    = 2
+    \\
+    f(2, 2)
+    = q(2)
+    = 2\sin(2)
+  \end{gather*}
+
+  Coletando todos os candidatos a extremo absoluto temos
+  \[
+    \begin{array}{rrrr}
+      \hline
+       x             &  y  &  f(x, y)  & \approx      \\ \hline
+       0             &  0  &           &   0,0 \\
+      -1             & -2  &  2\sin(1) &   1,6 \\
+      -1             &  2  & -1\sin(1) &  -0,8 \\
+       2             & -2  & -2\sin(2) &  -1,8 \\
+       2             &  2  &  2\sin(2) &   1,8 \\
+      -1             & -2  &  2\sin(1) &   1,6 \\
+      \sfrac{\pi}{2} & -2  &           &  -2,0 \\
+       2             & -2  & -2\sin(2) &  -1,8 \\
+      -1             &  2  & -2\sin(1) &   1,6 \\
+      \sfrac{\pi}{2} &  2  &           &   2,0 \\
+       2             &  2  &  2\sin(2) &  -1,8 \\ \hline
+    \end{array}
+  \]
+
+  O mínimo absoluto é $-2$ em \(\left(\frac{\pi}{2}, -2\right)\)
+
+  O máximo absoluto é 2 em \(\left(\frac{\pi}{2}, 2\right)\)
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
+
