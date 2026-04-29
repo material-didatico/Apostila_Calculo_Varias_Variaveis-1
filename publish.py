@@ -46,6 +46,7 @@ def folder_name(name: str) -> str:
             'J-Extremos'             : 'J - Extremos',
             'K-Coordenadas_polares'  : 'K - Coordenadas polares',
             }
+
     try:
         return names[name]
 

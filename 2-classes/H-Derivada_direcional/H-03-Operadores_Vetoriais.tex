@@ -1,0 +1,91 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Operadores Vetoriais}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Operadores Vetoriais}
+  As definições apresentadas nesta apresentação \emph{não} integram a ementa
+  da disciplina. Sua inclusão tem caráter introdutório,
+  com o objetivo de proporcionar um primeiro contato e promover a
+  familiarização dos alunos com esses conceitos.
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Operadores Diferenciais Vetoriais}
+  Seja $\mathbf{F} = (F_1, F_2, F_3)$ um campo vetorial (função de $\R^3$ em $\R^3$)
+
+  \medskip
+  $\phi$ um campo escalar (função de $\R^3$ em $\R$).
+
+  \medskip
+  suficientemente regulares
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Gradiente}
+  \emph{Gradiente}
+  \[
+    \nabla \phi
+    = \left( \D{\phi}{x},
+             \D{\phi}{y},
+             \D{\phi}{z}
+      \right)
+  \]
+
+  Indica a direção e a taxa de maior variação de um campo escalar
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Divergente}
+  \emph{Divergente}
+  \[
+    \nabla \cdot \mathbf{F}
+      = \D{F_1}{x}
+      + \D{F_2}{y}
+      + \D{F_3}{z}
+  \]
+
+  Mede a intensidade com que um campo vetorial se expande ou se contrai
+  em um ponto
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Rotacional}
+\emph{Rotacional}
+  \[
+    \nabla \times \mathbf{F} =
+    \left(
+    \D{F_3}{y} - \D{F_2}{z},\quad
+    \D{F_1}{z} - \D{F_3}{x},\quad
+    \D{F_2}{x} - \D{F_1}{y}
+    \right)
+  \]
+
+  Descreve a tendência de rotação ou circulação de um campo vetorial
+  em torno de um ponto
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Laplaciano}
+  \emph{Laplaciano}
+  \[
+    \nabla^2 \phi
+    \;=\; \nabla \cdot (\nabla \phi)
+    \;=\; \DS{\phi}{x} + \DS{\phi}{y} + \DS{\phi}{z}
+  \]
+
+  Expressa como um campo escalar difere, em um ponto,
+  da média de seus valores nas proximidades
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

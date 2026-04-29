@@ -7,6 +7,9 @@ TEX_FILES=$(shell find -maxdepth 1 -name '*.tex')
 PDF_FILES=$(TEX_FILES:.tex=.pdf)
 NON_FILES=$(TEX_FILES:.tex=)
 
+LATEX     := >/dev/null 2>&1 latexmk -pdf -silent
+PRINT_LOG := texlogfilter --filename $(@:.pdf=.log)
+
 all: $(PDF_FILES)
 	for D in ${SUBDIRS} ; do   \
 	  make -C $$D ;            \
@@ -14,7 +17,7 @@ all: $(PDF_FILES)
 
 %.pdf: %.tex $(wildcard *.cls) $(wildcard *.sty) $(wildcard *.bib)
 	-@ for D in $(SUBDIRS) ; do make -C $$D ; done
-	latexmk -pdf $(<:.tex=)
+	$(LATEX) $(<:.tex=) || $(PRINT_LOG)
 
 .PHONY: clean
 clean:
