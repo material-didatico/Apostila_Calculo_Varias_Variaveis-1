@@ -18,40 +18,55 @@ Encontre \(\D{w}{r}\)
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-\begin{columns}
-\column{0.5\linewidth}
   \[
     \D{w}{x}
     \pause
     \;=\; \D{}{x} e^{xyz}
     \pause
+    \;=\; e^{xyz}\D{}{x}(xyz)
+    \pause
+    \;=\; e^{xyz}yz\D{x}{x}
+    \pause
     \;=\; yz e^{xyz}
   \]
+
   \[
     \pause
     \D{w}{y}
     \pause
     \;=\; \D{}{y} e^{xyz}
     \pause
+    \;=\; e^{xyz}\D{}{y}(xyz)
+    \pause
+    \;=\; e^{xyz}xz\D{y}{y}
+    \pause
     \;=\; xz e^{xyz}
   \]
+
   \[
     \pause
     \D{w}{z}
     \pause
     \;=\; \D{}{z} e^{xyz}
     \pause
+    \;=\; e^{xyz}\D{}{z}(xyz)
+    \pause
+    \;=\; e^{xyz}xy\D{z}{z}
+    \pause
     \;=\; xy e^{xyz}
   \]
-\column{0.5\linewidth}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
   \[
-    \pause
     \D{x}{r}
     \pause
     \;=\; \D{}{r}\left(r^2 + 4s\right)
     \pause
     \;=\; 2r
   \]
+
   \[
     \pause
     \D{y}{r}
@@ -60,6 +75,7 @@ Encontre \(\D{w}{r}\)
     \pause
     \;=\; 2
   \]
+
   \[
     \pause
     \D{z}{r}
@@ -68,7 +84,6 @@ Encontre \(\D{w}{r}\)
     \pause
     \;=\; s
   \]
-\end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%

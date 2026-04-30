@@ -29,6 +29,8 @@
     \pause
     \;=\; \D{}{x}\left(x + 2y + z^2\right)
     \pause
+    \;=\; \D{x}{x} + 2\D{y}{x} + \D{z^2}{x}
+    \pause
     \;=\; 1
   \]
 
@@ -37,6 +39,8 @@
     \D{w}{y}
     \pause
     \;=\; \D{}{y}\left(x + 2y + z^2\right)
+    \pause
+    \;=\; \D{x}{y} + 2\D{y}{y} + \D{z^2}{y}
     \pause
     \;=\; 2
   \]
@@ -47,18 +51,20 @@
     \pause
     \;=\; \D{}{z}\left(x + 2y + z^2\right)
     \pause
+    \;=\; \D{x}{z} + 2\D{y}{z} + \D{z^2}{z}
+    \pause
     \;=\; 2z
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-\begin{columns}
-\column{0.4\linewidth}
   \[
     \D{x}{r}
     \pause
     \;=\; \D{}{r}\left(\frac{r}{s}\right)
+    \pause
+    \;=\; \frac{1}{s}\D{r}{r}
     \pause
     \;=\; \frac{1}{s}
   \]
@@ -69,6 +75,8 @@
     \pause
     \;=\; \D{}{r}\left(r^2 + \ln(s)\right)
     \pause
+    \;=\; \D{r^2}{r} + \D{}{r}\ln(s)
+    \pause
     \;=\; 2r
   \]
 
@@ -78,16 +86,22 @@
     \pause
     \;=\; \D{}{r}\left(2r\right)
     \pause
+    \;=\; 2\D{r}{r}
+    \pause
     \;=\; 2
   \]
-\column{0.6\linewidth}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
   \[
-    \pause
     \D{x}{s}
     \pause
     \;=\; \D{}{s}\left(\frac{r}{s}\right)
     \pause
-    \;=\; \D{}{s}\left(rs^{-1}\right)
+    \;=\; r\D{s^{-1}}{s}
+    \pause
+    \;=\; r(-1)s^{-2}
     \pause
     \;=\; -\frac{r}{s^2}
   \]
@@ -97,6 +111,8 @@
     \D{y}{s}
     \pause
     \;=\; \D{}{s}\left(r^2 + \ln(s)\right)
+    \pause
+    \;=\; \D{r^2}{s} + \D{}{s}\ln(s)
     \pause
     \;=\; \frac{1}{s}
   \]
@@ -109,7 +125,6 @@
     \pause
     \;=\; 0
   \]
-\end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
