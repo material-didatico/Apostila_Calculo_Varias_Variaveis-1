@@ -1,0 +1,275 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 2 -- Turma 8}{04/04/2026}
+
+\bigskip
+\textbf{Atenção}: a aplicação das regras do produto ou do quociente em casos
+nos quais um dos termos é constante \textbf{será considerada incorreta},
+por evidenciar compreensão inadequada das regras de derivação.
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Calcule o limite
+\(
+  \lim_{(x,y)\to(1,0)} \frac{(x-1)^2 - y^2}{(x-1)^2 + y^2},
+\)
+ou mostre que ele não existe
+
+\begin{answer}
+  \textbf{Atenção: os caminhos precisam passar pelo ponto $(1, 0)$}
+  \bigskip
+
+  Considerando o caminho $x=1$ temos
+  \[
+    g(y)
+    = \frac{(x-1)^2 - y^2}{(x-1)^2 + y^2} \evalat{x=1}{}
+    = \frac{(1-1)^2 - y^2}{(1-1)^2 + y^2}
+    = \frac{-y^2}{y^2}
+    = -1 \qquad \forall y\neq 0
+  \]
+  \[
+    L_1
+    = \lim_{y\to 0} g(y)
+    = \lim_{y\to 0} (-1)
+    = -1
+  \]
+
+  Considerando o caminho $y=0$ temos
+  \[
+    h(x)
+    = \frac{(x-1)^2 - y^2}{(x-1)^2 + y^2} \evalat{y=0}{}
+    = \frac{(x-1)^2 - 0^2}{(x-1)^2 + 0^2}
+    = \frac{(x-1)^2}{(x-1)^2}
+    = 1 \qquad \forall x\neq 1
+  \]
+  \[
+    L_2
+    = \lim_{x\to 1} h(x)
+    = \lim_{x\to 1} 1
+    = 1
+  \]
+  O limite não existe, pois assume valores diferentes em cada caminho
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Calcule $\DM{f}{x}{y}$ para
+\(
+  f(x, y) = y^2\sqrt{x^2+4} + x\ln(y) + e^{xy},
+\)
+na ordem indicada pela notação
+
+\begin{answer}
+  Como
+  \[
+    \DM{f}{x}{y} = \D{}{x} \left(\D{f}{y}\right)
+  \]
+  Primeiro calculamos a derivada de $f$ por $y$
+  \begin{align*}
+    \D{f}{y}
+    & = \D{}{y} \left( y^2\sqrt{x^2+4} + x\ln(y) + e^{xy} \right)
+    \\[2mm]
+    & = \D{}{y} \left( y^2\sqrt{x^2+4} \right)
+      + \D{}{y} \left( x\ln(y) \right)
+      + \D{}{y} \left( e^{xy} \right)
+    \\[2mm]
+    & = \sqrt{x^2+4} \, \D{y^2}{y}
+      + x \D{\ln(y)}{y}
+      + e^{xy} \D{xy}{y}
+    \\[2mm]
+    & = \sqrt{x^2+4}\, 2y
+      + x \frac{1}{y}
+      + e^{xy} x
+    \\[2mm]
+    & = 2y \sqrt{x^2+4} + \frac{x}{y} + x e^{xy}
+  \end{align*}
+  Calculamos agora a derivada mista
+  \begin{align*}
+    \DM{f}{x}{y}
+    & = \D{}{x} \left(\D{f}{y}\right)
+    \\[2mm]
+    & = \D{}{x} \left( 2y \sqrt{x^2+4} + \frac{x}{y} + x e^{xy}\right)
+    \\[2mm]
+    & = \D{}{x} \left( 2y \sqrt{x^2+4} \right)
+      + \D{}{x} \left( \frac{x}{y}\right)
+      + \D{}{x} \left( x e^{xy}\right)
+    \\[2mm]
+    & = 2y \D{}{x} \left(x^2+4\right)^{\sfrac{1}{2}}
+      + \frac{1}{y}\D{x}{x}
+      + \D{x}{x} e^{xy}
+      + x \D{e^{xy}}{x}
+    \\[2mm]
+    & = 2y \frac{1}{2} \left(x^2+4\right)^{-\sfrac{1}{2}}
+           \D{}{x} \left(x^2+4\right)
+      + \frac{1}{y}
+      + e^{xy}
+      + x e^{xy} \D{xy}{x}
+    \\[2mm]
+    & = y \frac{1}{\sqrt{x^2+4}} 2x
+      + \frac{1}{y}
+      + e^{xy}
+      + x e^{xy} y
+    \\[2mm]
+    & = \frac{2xy}{\sqrt{x^2+4}} + \frac{1}{y} + (1+xy)e^{xy}
+  \end{align*}
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Use a regra da cadeia para calcular $\frac{dz}{dt}$, onde
+\(
+  z = \sqrt{1 + x^2 y\,},
+\)
+\(
+  x = \cos\left(t^2\right),
+\)
+\(
+  y = e^{2t}
+\)
+
+\begin{answer}
+\begin{multicols}{2}
+  Notamos que \(z = z(x, y)\), \(x = x(t)\) e \(y = y(t)\),
+  portanto pela regra da cadeia temos
+  \[
+    \frac{dz}{dt}
+    = \D{z}{x} \frac{dx}{dt}
+    + \D{z}{y} \frac{dy}{dt}
+  \]
+  Calculando cada derivada
+  \begin{align*}
+    \D{z}{x}
+    & = \D{}{x} \left( \sqrt{1 + x^2 y\,} \right)
+    \\[2mm]
+    & = \D{}{x} \left( 1 + x^2 y \right)^{\sfrac{1}{2}}
+    \\[2mm]
+    & = \frac{1}{2}\left( 1 + x^2 y \right)^{-\sfrac{1}{2}}
+        \D{}{x} \left( 1 + x^2 y \right)
+    \\[2mm]
+    & = \frac{1}{2}\frac{1}{\sqrt{1 + x^2 y\,}} 2xy
+    \\[2mm]
+    & = \frac{xy}{\sqrt{1 + x^2 y}}
+  \end{align*}
+  \begin{align*}
+    \D{z}{y}
+    & = \D{}{y} \left( \sqrt{1 + x^2 y\,} \right)
+    \\[2mm]
+    & = \D{}{y} \left( 1 + x^2 y \right)^{\sfrac{1}{2}}
+    \\*[2mm]
+    & = \frac{1}{2}\left( 1 + x^2 y \right)^{-\sfrac{1}{2}}
+      \D{}{y} \left( 1 + x^2 y \right)
+    \\*[2mm]
+    & = \frac{1}{2}\frac{1}{\sqrt{1 + x^2 y\,}} x^2
+    \\*[2mm]
+    & = \frac{x^2}{2\sqrt{1 + x^2 y}}
+  \end{align*}
+
+  \begin{align*}
+    \frac{dx}{dt}
+    & = \frac{d}{dt}\cos\left(t^2\right) \\[2mm]
+    & = -\sin\left(t^2\right) \frac{dt^2}{dt} \\[2mm]
+    & = -2t\sin\left(t^2\right)
+  \end{align*}
+
+  \[
+    \frac{dy}{dt}
+    = \frac{de^{2t}}{dt}
+    = e^{2t}\frac{d}{dt}(2t)
+    = 2e^{2t}
+  \]
+
+  \begin{align*}
+    \frac{dz}{dt}
+    & = \D{z}{x} \frac{dx}{dt}
+      + \D{z}{y} \frac{dy}{dt}
+    \\[2mm]
+    & = \frac{xy}{\sqrt{1 + x^2 y}} \left(-2t\sin\left(t^2\right)\right)
+      + \frac{x^2}{2\sqrt{1 + x^2 y}} \, 2e^{2t}
+    \\[2mm]
+    & = \frac{-2txy\sin\left(t^2\right)}{\sqrt{1 + x^2 y}}
+      + \frac{x^2e^{2t}}{\sqrt{1 + x^2 y}}
+    \\[2mm]
+    & = \frac{x^2e^{2t}-2txy\sin\left(t^2\right)}{\sqrt{1 + x^2 y}}
+    \\[2mm]
+    & = \frac{\cos^2\left(t^2\right)e^{2t}-2t\cos\left(t^2\right)e^{2t}\sin\left(t^2\right)}
+             {\sqrt{1 + \cos^2\left(t^2\right) e^{2t}}}
+   \\[2mm]
+   & = \cos\left(t^2\right)e^{2t}
+     \frac{\cos\left(t^2\right) - 2t\sin\left(t^2\right)}
+          {\sqrt{1 + \cos^2\left(t^2\right) e^{2t}}}
+  \end{align*}
+\end{multicols}
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Use derivação implícita para avaliar \(\frac{dy}{dx},\)
+sabendo que a equação
+\mbox{\(
+  \sin(xy) + x^2 y = \cos(x+y),
+\)}
+define $y$ como função de $x$
+
+\begin{answer}
+  Vamos usar a fórmula
+  \[
+    \frac{dy}{dx} = - \frac{F_x}{F_y}
+  \]
+  com
+  \[
+    F(x, y) = \sin(xy) + x^2 y - \cos(x+y)
+  \]
+
+  Calculando as derivadas parciais
+  \begin{align*}
+    F_x = \D{F}{x} \;
+    & = \D{}{x} \left(\sin(xy) + x^2 y - \cos(x+y)\right)
+    \\[2mm]
+    & = \D{}{x} \left(\sin(xy) \right)
+      + \D{}{x} \left(x^2 y    \right)
+      - \D{}{x} \left(\cos(x+y)\right)
+    \\[2mm]
+    & = \cos(xy)  \D{xy}{x}
+      + y         \D{x^2}{x}
+      + \sin(x+y) \D{}{x}(x+y)
+    \\[2mm]
+    & = y\cos(xy) + 2yx + \sin(x+y)
+  \end{align*}
+
+  \begin{align*}
+    F_y = \D{F}{y} \;
+    & = \D{}{y} \left(\sin(xy) + x^2 y - \cos(x+y)\right)
+    \\[2mm]
+    & = \D{}{y} \left(\sin(xy) \right)
+      + \D{}{y} \left(x^2 y    \right)
+      - \D{}{y} \left(\cos(x+y)\right)
+    \\[2mm]
+    & = \cos(xy)  \D{xy}{y}
+      + x^2       \D{y}{y}
+      + \sin(x+y) \D{}{y}(x+y)
+    \\[2mm]
+    & = x\cos(xy) + x^2 + \sin(x+y)
+  \end{align*}
+  Substituindo na fórmula temos
+  \[
+  \frac{dy}{dx}
+  = - \frac{F_x}{F_y}
+  = - \frac{y\cos(xy) + 2yx + \sin(x+y)}{x\cos(xy) + x^2 + \sin(x+y)}
+  \]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

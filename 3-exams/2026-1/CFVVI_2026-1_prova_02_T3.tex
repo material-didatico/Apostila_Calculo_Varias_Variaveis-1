@@ -1,0 +1,280 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+% A
+\makeHeader{CFVVI}{Prova 2 -- Turma 3}{04/04/2026}
+
+\bigskip
+\textbf{Atenção}: a aplicação das regras do produto ou do quociente em casos
+nos quais um dos termos é constante \textbf{será considerada incorreta},
+por evidenciar compreensão inadequada das regras de derivação.
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Calcule o limite
+\(
+    \lim_{(x,y) \to (1, -1)} \frac{(x-1)(y+1)}{(x-1)^2 + (y+1)^2},
+\)
+ou mostre que ele não existe
+
+\begin{answer}
+  \textbf{Atenção: os caminhos precisam passar pelo ponto $(1, -1)$}
+  \bigskip
+
+  Considerando o caminho $x=1$ temos
+  \begin{align*}
+    g(y)
+    & = \frac{(x-1)(y+1)}{(x-1)^2 + (y+1)^2} \evalat{x=1}{} \\
+    & = \frac{(1-1)(y+1)}{(1-1)^2 + (y+1)^2} \\
+    & = \frac{0}{(y+1)^2} \\
+    & = 0 \qquad\qquad\qquad\qquad \forall y \neq -1
+  \end{align*}
+  \[
+    L_1
+    = \lim_{y\to -1} g(y)
+    = \lim_{y\to -1} 0
+    = 0
+  \]
+
+  Considerando o caminho $y=x-2$ temos
+  \begin{align*}
+    h(x)
+    & = \frac{(x-1)(y+1)}{(x-1)^2 + (y+1)^2} \evalat{y=x-2}{} \\
+    & = \frac{(x-1)(x-2+1)}{(x-1)^2 + (x-2+1)^2}\\
+    & = \frac{(x-1)(x-1)}{(x-1)^2 + (x-1)^2}\\
+    & = \frac{(x-1)^2}{2(x-1)^2}\\
+    & = \frac{1}{2} \qquad\qquad\qquad\qquad \forall x\neq 1
+  \end{align*}
+  \[
+    L_2
+    = \lim_{x\to 1} h(x)
+    = \lim_{x\to 1} \frac{1}{2}
+    = \frac{1}{2}
+  \]
+  O limite não existe, pois assume valores diferentes em cada caminho
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Calcule $\DM{f}{x}{y}$ para
+\(
+  f(x, y) = x^2 \ln(xy) + e^{xy} + \sin(xy),
+\)
+na ordem indicada pela notação
+
+\begin{answer}
+  Como
+  \[
+    \DM{f}{x}{y} = \D{}{x} \left(\D{f}{y}\right)
+  \]
+  Primeiro calculamos a derivada de $f$ por $y$
+  \begin{align*}
+    \D{f}{y}
+    & = \D{}{y} \left( x^2 \ln(xy) + e^{xy} + \sin(xy) \right)
+    \\[2mm]
+    & = \D{}{y} \left( x^2 \ln(xy) \right)
+      + \D{}{y} \left( e^{xy} \right)
+      + \D{}{y} \left( \sin(xy) \right)
+    \\[2mm]
+    & = x^2 \D{}{y} \left( \ln(xy) \right)
+      + e^{xy} \D{}{y} \left( xy \right)
+      + \cos(xy) \D{}{y} \left( xy \right)
+    \\[2mm]
+    & = x^2 \frac{1}{xy} \D{}{y} \left(xy\right)
+      + e^{xy} x
+      + \cos(xy) x
+    \\[2mm]
+    & = \frac{x^2}{y} + xe^{xy} + x\cos(xy)
+  \end{align*}
+  Calculamos agora a derivada mista
+  \begin{align*}
+    \DM{f}{x}{y}
+    & = \D{}{x} \left(\D{f}{y}\right)
+    \\[2mm]
+    & = \D{}{x} \left( \frac{x^2}{y} + xe^{xy} + x\cos(xy) \right)
+    \\[2mm]
+    & = \D{}{x} \left( \frac{x^2}{y} \right)
+      + \D{}{x} \left( xe^{xy} \right)
+      + \D{}{x} \left( x\cos(xy) \right)
+    \\[2mm]
+    & = \frac{1}{y} \D{x^2}{x}
+      + \D{x}{x} e^{xy}
+      + x \D{e^{xy}}{x}
+      + \D{x}{x} \cos(xy)
+      + x\D{}{x} \left( \cos(xy) \right)
+    \\[2mm]
+    & = \frac{2x}{y}
+      + e^{xy}
+      + x e^{xy}  \D{xy}{x}
+      + \cos(xy)
+      + x\left(-\sin(xy)\right)\D{xy}{x}
+    \\[2mm]
+    & = \frac{2x}{y}
+      + e^{xy}
+      + xy e^{xy}
+      + \cos(xy)
+      - xy\sin(xy)
+  \end{align*}
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Use a regra da cadeia para calcular $\frac{dz}{dt}$, onde
+\(
+  z = \ln\left(x^2 + y^2\right),
+\)
+\(
+  x = e^{t^2},
+\)
+\(
+ y = \sin t
+\)
+
+\begin{answer}
+\begin{multicols}{2}
+  Notamos que \(z = z(x, y)\), \(x = x(t)\) e \(y = y(t)\),
+  portanto pela regra da cadeia temos
+  \[
+    \frac{dz}{dt}
+    = \D{z}{x} \frac{dx}{dt}
+    + \D{z}{y} \frac{dy}{dt}
+  \]
+  Calculando cada derivada
+  \begin{align*}
+    \D{z}{x}
+    & = \D{}{x} \left( \ln\left(x^2 + y^2\right) \right)
+    \\[2mm]
+    & = \frac{1}{x^2 + y^2} \, \D{}{x} \left( x^2 + y^2\right)
+    \\[2mm]
+    & = \frac{2x}{x^2 + y^2}
+  \end{align*}
+  \begin{align*}
+    \D{z}{y}
+    & = \D{}{y} \left( \ln\left(x^2 + y^2\right) \right)
+    \\*[2mm]
+    & = \frac{1}{x^2 + y^2} \, \D{}{y} \left( x^2 + y^2\right)
+    \\*[2mm]
+    & = \frac{2y}{x^2 + y^2}
+  \end{align*}
+
+  \[
+    \frac{dx}{dt}
+    = \frac{d e^{t^2}}{dt}
+    = e^{t^2} \frac{d t^2}{dt}
+    = e^{t^2} 2t
+    = 2t e^{t^2}
+  \]
+
+  \[
+    \frac{dy}{dt}
+    = \frac{d \sin t}{dt}
+    = \cos t
+  \]
+
+  \begin{align*}
+    \frac{dz}{dt}
+    & = \D{z}{x} \frac{dx}{dt}
+      + \D{z}{y} \frac{dy}{dt}
+    \\[2mm]
+    & = \frac{2x}{x^2 + y^2} \, 2t e^{t^2}
+      + \frac{2y}{x^2 + y^2} \, \cos t
+    \\[2mm]
+    & = \frac{2}{x^2 + y^2}
+        \left(
+          x 2t e^{t^2}
+        + y \cos t
+        \right)
+    \\[2mm]
+    & = \frac{2}{\left(e^{t^2}\right)^2 + \left(\sin t\right)^2}
+        \left[
+          e^{t^2} 2t e^{t^2}
+          + \sin t \cos t
+        \right]
+    \\[2mm]
+    & = \frac{2}{e^{2t^2} + \sin^2 t}
+        \left[
+          2t e^{2t^2}
+          + \sin t \cos t
+        \right]
+  \end{align*}
+\end{multicols}
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Use derivação implícita para avaliar \(\frac{dy}{dx},\)
+sabendo que a equação
+\(
+  x^2 + y^2 + e^{xy} = \ln(x + y)
+\)
+define $y$ como função de $x$
+
+\begin{answer}
+  Vamos usar a fórmula
+  \[
+    \frac{dy}{dx} = - \frac{F_x}{F_y}
+  \]
+  com
+  \[
+    F(x, y) = x^2 + y^2 + e^{xy} - \ln(x + y)
+  \]
+
+  Calculando as derivadas parciais
+  \begin{align*}
+    F_x
+    & = \D{F}{x}
+    \\[2mm]
+    & = \D{}{x} \left(x^2 + y^2 + e^{xy} - \ln(x + y)\right)
+    \\[2mm]
+    & = \D{x^2}{x}
+      + \D{y^2}{x}
+      + \D{e^{xy}}{x}
+      - \D{}{x} \left(\ln(x + y)\right)
+    \\[2mm]
+    & = 2x + 0
+      + e^{xy}\D{xy}{x}
+      - \frac{1}{x + y}\,\D{}{x} (x + y)
+    \\[2mm]
+    & = 2x + ye^{xy} - (x + y)^{-1}
+  \end{align*}
+
+  \begin{align*}
+    F_y
+    & = \D{F}{y}
+    \\[2mm]
+    & = \D{}{y} \left(x^2 + y^2 + e^{xy} - \ln(x + y)\right)
+    \\[2mm]
+    & = \D{x^2}{y}
+      + \D{y^2}{y}
+      + \D{e^{xy}}{y}
+      - \D{}{y} \left(\ln(x + y)\right)
+    \\[2mm]
+    & = 0 + 2y
+      + e^{xy}\D{xy}{y}
+      - \frac{1}{x + y}\,\D{}{y} (x + y)
+    \\[2mm]
+    & = 2y + xe^{xy} - (x + y)^{-1}
+  \end{align*}
+  Substituindo na fórmula temos
+  \[
+    \frac{dy}{dx}
+    = - \frac{F_x}{F_y}
+    = - \frac{2x + ye^{xy} - (x + y)^{-1}}{2y + xe^{xy} - (x + y)^{-1}}
+  \]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
