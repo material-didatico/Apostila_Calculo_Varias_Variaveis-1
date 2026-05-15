@@ -1,0 +1,34 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\title{Propriedades Algébricas do Gradiente}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Propriedades Algébricas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedades Algébricas do Gradiente}
+  \begin{enumerate}[<+->]
+    \setlength\itemsep{1.3em}
+    \item Soma                        \tabto{55mm} \(\nabla(f+g) = \nabla f + \nabla g\)
+    \item Diferença                   \tabto{55mm} \(\nabla(f-g) = \nabla f - \nabla g\)
+    \item Multiplicação por constante \tabto{55mm} \(\nabla(kf) = k\nabla f\)
+    \item Produto                     \tabto{55mm} \(\nabla(fg) = f\nabla g + g\nabla f\)
+    \item Quociente                   \tabto{55mm}
+      \(\nabla\left(\frac{f}{g}\right) = \frac{g\nabla f - f\nabla g}{g^2}\)
+  \end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\include{ex/H-03-Propriedades_algebricas-ex1}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

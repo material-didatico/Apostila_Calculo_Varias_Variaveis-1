@@ -14,7 +14,7 @@
 \section{Derivada Direcional}
 
 %------------------------------------------------------------------------------%
-\framedgraphic{Derivada Direcional}{derivada_direcional}
+\framedgraphic*{Derivada Direcional}{H-01-Derivada_direcional}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Definição}
@@ -36,9 +36,6 @@
     = \lim_{h\to 0} \frac{\;f( a + hu_1, b + hu_2)-f(a, b)\;}{h}
   \]
 \end{frame}
-
-%------------------------------------------------------------------------------%
-\framedgraphic{Interpretação da Derivada Direcional}{derivada_direcional_interpretacao}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Interpretação da Derivada Direcional}
@@ -64,7 +61,7 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\include{H-01-Derivada_direcional_gradientes-ex1}
+\include{ex/H-01-Derivada_direcional_gradientes-ex1}
 
 %------------------------------------------------------------------------------%
 \section{Vetor Gradiente}
@@ -123,8 +120,7 @@
   \onslide<+->{& = \D{f}{x}\frac{d}{ds}\left(a + su_1\right)
                  + \D{f}{y}\frac{d}{ds}\left(b + su_2\right)           \\}
   \onslide<+->{& = \D{f}{x}u_1 + \D{f}{y}u_2                           \\}
-  \onslide<+->{& = \left(\begin{array}{c} F_x \\ F_y \end{array}\right)
-                   \cdot \vetor{u_1}{u_2}                                }
+  \onslide<+->{& = \vetor{f_x}{f_y} \cdot \vetor{u_1}{u_2}               }
   \onslide<+->{\;=\; \emph{\nabla f \cdot u}}
 \end{align*}
 \end{proofframe}

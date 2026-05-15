@@ -18,7 +18,7 @@
   Se uma função \(f(x, y)\) é derivável,
   seu \emph{vetor gradiente} é
 
-  \vspace{0.99\baselineskip}
+  \vspace{1.05\baselineskip}
   \[
     \nabla f
     \;=\; \D{f}{x}\veci + \D{f}{y}\vecj
@@ -110,7 +110,7 @@
 \section{Gradientes e Curvas de Nível}
 
 %------------------------------------------------------------------------------%
-\begin{proofframe}{Curvas de Nível}
+\begin{proofframe}{Curva de Nível}
   Curva de Nível é o conjunto de pontos \((x, y)\) onde
   \[
     f(x, y) = c
@@ -119,7 +119,7 @@
 
   \pause
   \vspace{0.5\baselineskip}
-  Em alguns casos, é possível escrever essa região como uma curva paramétrica
+  É possível representar essa curva parametricamente
   \[
     x = g(t)
     \qquad
@@ -127,11 +127,10 @@
   \]
   \pause
   Vetorialmente temos
-  \[
+  \(
     r(t)
-    = g(t)\veci + h(t)\vecj
     = \vetor{g(t)}{h(t)}
-  \]
+  \)
 \end{proofframe}
 
 %------------------------------------------------------------------------------%
@@ -164,31 +163,42 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
+\newcommand{\gradienteA}[2]{
+\begin{frame}{#1}
+  \addtext{10}{0.7,3}{\(f(x, y) = x^2 + y^2\)}
+  \addtext{10}{0.7,4.5}{\(\nabla f(x, y) = \vetor{2x}{2y}\)}
+  \addgraphic{7.5}{6,1.3}{#2}
+\end{frame}
+}
+
+\gradienteA{Curvas de Nível}{H-02-Propriedades_gradientes-x2y2-1}
+\gradienteA{Curvas de Nível}{H-02-Propriedades_gradientes-x2y2-2}
+\gradienteA{Curvas de Nível e Gradientes}{H-02-Propriedades_gradientes-x2y2-3}
+\gradienteA{Curvas de Nível e Gradientes em Escala}{H-02-Propriedades_gradientes-x2y2-4}
+\gradienteA{Curvas de Nível e Gradientes em Escala}{H-02-Propriedades_gradientes-x2y2-5}
+
+%------------------------------------------------------------------------------%
+\newcommand{\gradienteB}[2]{
+  \begin{frame}{#1}
+    \addtext{10}{0.7,3}{\(f(x, y) = xy\)}
+    \addtext{10}{0.7,4.5}{\(\nabla f(x, y) = \vetor{y}{x}\)}
+    \addgraphic{7.5}{6,1.3}{#2}
+  \end{frame}
+}
+
+\gradienteA{Curvas de Nível}{H-02-Propriedades_gradientes-xy-1}
+\gradienteA{Curvas de Nível}{H-02-Propriedades_gradientes-xy-2}
+\gradienteA{Curvas de Nível e Gradientes}{H-02-Propriedades_gradientes-xy-3}
+\gradienteA{Curvas de Nível e Gradientes em Escala}{H-02-Propriedades_gradientes-xy-4}
+\gradienteA{Curvas de Nível e Gradientes em Escala}{H-02-Propriedades_gradientes-xy-5}
+
+%------------------------------------------------------------------------------%
 \framedgraphic{Gradientes e Curvas de Nível}{gradiente_curva_nivel}
 
 %------------------------------------------------------------------------------%
 \include{ex/H-02-Propriedades_gradientes-ex2}
 \include{ex/H-02-Propriedades_gradientes-ex3}
 \include{ex/H-02-Propriedades_gradientes-ex4}
-
-%------------------------------------------------------------------------------%
-\section{Propriedades Algébricas}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Propriedades Algébricas do Gradiente}
-  \begin{enumerate}[<+->]
-    \setlength\itemsep{1.5em}
-    \item Soma                        \tabto{55mm} \(\nabla(f+g) = \nabla f + \nabla g\)
-    \item Diferença                   \tabto{55mm} \(\nabla(f-g) = \nabla f - \nabla g\)
-    \item Multiplicação por constante \tabto{55mm} \(\nabla(kf) = k\nabla f\)
-    \item Produto                     \tabto{55mm} \(\nabla(fg) = f\nabla g + g\nabla f\)
-    \item Quociente                   \tabto{55mm}
-      \(\nabla\left(\frac{f}{g}\right) = \frac{g\nabla f - f\nabla g}{g^2}\)
-  \end{enumerate}
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\include{ex/H-02-Propriedades_gradientes-ex5}
 
 %------------------------------------------------------------------------------%
 \section{Lista Mínima}
@@ -198,7 +208,7 @@
   Cálculo Vol. 2 do Thomas 12\textsuperscript{a} ed. -- Seção 14.5
   \begin{enumerate}
     \item Estudar o texto da seção
-    \item Resolver os exercícios: 20, 22, 24, 26, 28, 29
+    \item Resolver os exercícios: 19, 21, 23, 25, 29
   \end{enumerate}
 
   \vfill

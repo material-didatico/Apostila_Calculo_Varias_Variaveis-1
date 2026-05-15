@@ -166,31 +166,40 @@
   \addtocounter{exemplo}{1}%
   \setbeamercolor{frametitle}{bg=bgquestion}%
   \begin{frame}{Exemplo \theexemplo}
-}{%
-  \end{frame}
-}
+}{\end{frame}}
 
 \newenvironment{resolution}[1]{%
   \setbeamercolor{frametitle}{bg=bgexample}%
   \begin{frame}{Exemplo \theexemplo{} -- #1}
-}{%
-  \end{frame}
-}
+}{\end{frame}}
+
+\newenvironment{resolutiont}[1]{%
+  \setbeamercolor{frametitle}{bg=bgexample}%
+  \begin{frame}[t]{Exemplo \theexemplo{} -- #1}
+}{\end{frame}}
 
 \newenvironment{proofframe}[1]{%
   \setbeamercolor{frametitle}{bg=bgproof}%
   \begin{frame}{#1}
-}{%
-  \end{frame}
-}
+}{\end{frame}}
+
+\newenvironment{proofframet}[1]{%
+  \setbeamercolor{frametitle}{bg=bgproof}%
+  \begin{frame}[t]{#1}
+}{\end{frame}}
+
 
 \newenvironment{warningframe}[1]{%
   \addtocounter{exemplo}{1}%
   \setbeamercolor{frametitle}{bg=bgwarning}%
   \begin{frame}{#1}
-  }{%
-  \end{frame}
-}
+}{\end{frame}}
+
+\newenvironment{warningframet}[1]{%
+  \addtocounter{exemplo}{1}%
+  \setbeamercolor{frametitle}{bg=bgwarning}%
+  \begin{frame}[t]{#1}
+}{\end{frame}}
 
 %------------------------------------------------------------------------------%
 
@@ -202,11 +211,18 @@
   \end{textblock}%
 }
 
+
 % Add a figure on a fixed position
-\newcommand{\addgraphic}[3]%
+%   #1 - [*] don't change image size
+%   #2 - Width
+%   #3 - x.y coordinates
+%   #4 - image file
+\NewDocumentCommand{\addgraphic}{s m m m}
 {%
-  \begin{textblock}{#1}(#2)%
-    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{#3}%
+  \begin{textblock}{#2}(#3)%
+    \IfBooleanTF{#1}%
+    {\includegraphics{#4}}%
+    {\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{#4}}%
   \end{textblock}%
 }
 
