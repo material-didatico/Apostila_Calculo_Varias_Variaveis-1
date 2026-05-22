@@ -2,7 +2,7 @@
 \begin{question}
   Encontre o plano tangente ao gráfico da função
   \[
-    f(x, y) = x\cos(y) - ye^x
+    g(x, y) = x\cos(y) - ye^x
   \]
   no ponto \((0, 0)\)
 \end{question}
@@ -10,10 +10,9 @@
 %------------------------------------------------------------------------------%
 \begin{resolution}{Avaliando o valor da função no ponto}
   \[
-    \pause
     c
     \pause
-    \;=\; f(0, 0)
+    \;=\; g(0, 0)
     \pause
     \;=\; \left(x\cos(y) - ye^x\right)\evalat{(0, 0)}{}
     \pause
@@ -21,42 +20,85 @@
     \pause
     \;=\; 0
   \]
+
+  \pause
+  Ponto de tangência
+  \(
+    (a, b, c) = (0, 0, 0)
+  \)
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Derivadas parciais de $f(x, y)$}
+\begin{resolution}{Derivadas parciais de $g(x, y)$}
   \begin{align*}
-    \onslide<+->{\D{f}{x}(x, y)}
+    \onslide<+->{\D{g}{x}(x, y)}
     \onslide<+->{& = \D{}{x} \left(x\cos(y) - ye^x\right)}
     \onslide<+->{  = \cos(y) - ye^x                        \\[1mm]}
-    \onslide<+->{\D{f}{y}(x, y)}
+    \onslide<+->{\D{g}{y}(x, y)}
     \onslide<+->{& = \D{}{y} \left(x\cos(y) - ye^x\right)}
     \onslide<+->{  = -x\sin(y) - e^x}
   \end{align*}
   \begin{align*}
-    \onslide<+->{\D{f}{x}(0, 0)}
+    \onslide<+->{\D{g}{x}(0, 0)}
     \onslide<+->{& = \left(  \cos(y) - ye^x\right) \evalat{(0, 0)}{}}
+    \onslide<+->{  = \cos(0) - 0e^0}
     \onslide<+->{  = 1                                    \\[1mm]}
-    \onslide<+->{\D{f}{y}(0, 0)}
+    \onslide<+->{\D{g}{y}(0, 0)}
     \onslide<+->{& = \left(-x\sin(y) - e^x \right) \evalat{(0, 0)}{}}
+    \onslide<+->{  = -0\sin(0) - e^0}
     \onslide<+->{  = -1}
   \end{align*}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  Plano tangente
+\begin{resolution}{Gradientes}
+\begin{columns}
+\column{0.5\linewidth}
   \[
-    \emph{f_x(a, b)} \big(x-a\big) +
-    \emph{f_y(a, b)} \big(y-b\big) -
-    \big(z-\emph{f(a, b)}\big) = 0
+    \nabla g(x, y) = \vetor{\cos(y) - ye^x}{-x\sin(y) - e^x}
+  \]
+
+  \pause
+  \bigskip
+  \[
+    f(x, y, z) = g(x, y) - z
+  \]
+
+  \pause
+  \bigskip
+  \[
+    \nabla f(x, y, z) = \vetortri{\cos(y) - ye^x}{-x\sin(y) - e^x}{-1}
+  \]
+
+\column{0.5\linewidth}
+  \pause
+  \[
+    \nabla g(0, 0) = \vetor{1}{-1}
+  \]
+
+  \pause
+  \bigskip
+  \bigskip
+  \[
+    \nabla f(0, 0, 0) = \vetortri{1}{-1}{-1}
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Plano tangente ao gráfico de $g$ em $(0, 0)$
+  \[
+    \emph{g_x(a, b)} \big(x-a\big) +
+    \emph{g_y(a, b)} \big(y-b\big) -
+    \big(z-\emph{g(a, b)}\big) = 0
   \]
 
   \pause
   \[
-    \emph{f_x(0, 0)} \big(x-0\big) +
-    \emph{f_y(0, 0)} \big(y-0\big) -
-    \big(z-\emph{f(0, 0)}\big) = 0
+    \emph{g_x(0, 0)} \big(x-0\big) +
+    \emph{g_y(0, 0)} \big(y-0\big) -
+    \big(z-\emph{g(0, 0)}\big) = 0
   \]
 
   \pause
@@ -64,6 +106,33 @@
     \emph{1} (x-0) -
     \emph{1} (y-0) -
     (z-\emph{0}) = 0
+  \]
+
+  \pause
+  \[
+    x - y - z = 0
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução -- Alternativa}
+  Plano tangente à superfície de nível de $f$ em $(0, 0, 0)$
+  \[
+    f_x(a, b, c) (x-a) +
+    f_y(a, b, c) (y-b) +
+    f_z(a, b, c) (z-c) = 0
+  \]
+
+  \pause
+  \[
+    f_x(0, 0, 0) (x-0) +
+    f_y(0, 0, 0) (y-0) +
+    f_z(0, 0, 0) (z-0) = 0
+  \]
+
+  \pause
+  \[
+    1(x-0) - 1(y-0) -1(z-0) = 0
   \]
 
   \pause
