@@ -104,7 +104,16 @@
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{c -- Resolvendo o sistema}
-  Isolando $y$ na primeira equação, \(y = -x^3\), e substituindo na segunda, temos
+\begin{columns}[t]
+\column{0.5\linewidth}
+  Isolando $y$ na primeira equação
+  \begin{align*}
+    x^3 + y & = 0 \\
+    y       & = -x^3
+  \end{align*}
+
+\column{0.5\linewidth}
+  Substituindo na segunda
   \begin{align*}
     y^3 + x                 & = 0 \\
     \left(-x^3\right)^3 + x & = 0 \\
@@ -112,18 +121,34 @@
     x^9 - x                 & = 0 \\
     x(x^8 - 1)              & = 0
   \end{align*}
-  As soluções dessa equação são $x=0$, $x=1$ ou $x-1$.
-  Se $x=0$ temos $y=0$,
-  se $x=1$ temos $y=-1$ e
-  se $x=-1$ temos $y=1$.
+\end{columns}
+
+  \bigskip
+  As soluções são
+  \(
+    x=0
+    \quad
+    x=1
+    \quad\text{ou}\quad
+    x-1
+  \)
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{c -- Resolvendo o sistema}
+
+  Se $x=0$ temos $y=0$
+
+  Se $x=1$ temos $y=-1$
+
+  Se $x=-1$ temos $y=1$
+
   Portanto, os pontos críticos são
-  \[
-    (x_1, y_1) = (0, 0),
-    \qquad\qquad
-    (x_2, y_2) = (1, -1)
-    \qquad\text{e}\qquad
-    (x_3, y_3) = (-1, 1)
-  \]
+  \begin{align*}
+    (x_1, y_1) & = ( 0,  0) \\
+    (x_2, y_2) & = ( 1, -1) \\
+    (x_3, y_3) & = (-1,  1)
+  \end{align*}
 \end{resolution}
 
 %------------------------------------------------------------------------------%

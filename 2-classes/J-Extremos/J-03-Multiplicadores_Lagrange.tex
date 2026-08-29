@@ -15,8 +15,8 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Extremos Condicionados}
-  Encontre o máximo (mínimo) da função \(f(x, y, z)\)\\[2mm]
-  sujeito a \(g(x, y, z) = 0\)
+  Encontre o máximo (mínimo) da função \(f(x, y)\)\\[2mm]
+  sujeito a \(g(x, y) = c\)
 
   \pause
   \vspace{\baselineskip}
@@ -34,14 +34,14 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Teorema do Gradiente Ortogonal}
-  Seja \(f(x, y, z)\) uma função diferenciável em uma região
+  Seja \(f(x, y)\) uma função diferenciável em uma região
 
   \pause
   cujo interior contém a curva
   \[
     C\colon\;
-    \pause r(t) \;=\; g(t)\veci + h(t)\vecj + k(t)\veck
-    \pause \;=\; \vetortri{g(t)}{h(t)}{k(t)}
+    \pause r(t) \;=\; g(t)\veci + h(t)\vecj
+    \pause \;=\; \vetor{g(t)}{h(t)}
   \]
 
   \pause
@@ -56,31 +56,37 @@
   Os valores de $f$, restrita a $C$, são dados pela função
   \[
     \pause
-    p(t) = f(g(t), h(t), k(t))
+    p(t) = f\big(g(t), h(t)\big)
   \]
   \[
     \pause
     \frac{dp}{dt}
     \pause
     \;=\; \D{f}{g}\frac{dg}{dt}
-    + \D{f}{h}\frac{dh}{dt}
-    + \D{f}{k}\frac{dk}{dt}
+    \;+\; \D{f}{h}\frac{dh}{dt}
     \pause
     \;=\; \nabla f \cdot \frac{dr}{dt}
   \]
 
   \pause
-  Se $f$, restrita a $C$, possui extremo local em \((a, b, c) = (g(t_0), h(t_0), k(t_0))\)
+  Se $f$, restrita a $C$, possui extremo local em
+  \(
+    (a, b) = \big(g(t_0), h(t_0)\big)
+  \)
 
   \pause
   \vspace{0.4\baselineskip}
-  então \(\frac{dp}{dt}(t_0)=0\)
+  então
+  \(
+    \frac{dp}{dt}(t_0) = 0
+  \)
   \pause
   \qquad
   portanto
   \quad
-  \emph{\(
-    \nabla f(a, b, c) \cdot \frac{dr}{dt}(t_0) = 0
+  \emph{
+  \(
+    \nabla f(a, b) \cdot \frac{dr}{dt}(t_0) = 0
   \)}
 \end{proofframe}
 
@@ -89,17 +95,20 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Introdução}
-  Para encontrar o máximo (mínimo) da função \(f(x, y, z)\)\\[2mm]
-  sujeito a \(g(x, y, z) = 0\)
+  Para encontrar o máximo (mínimo) da função \(f(x, y)\)
+  \\[2mm]
+  sujeito a \(g(x, y) = c\)
 
   \pause
-  \vspace{\baselineskip}
-  Buscamos pelos pontos onde o gradiente de $f$ \\
-  é normal a curva de nível de \(g(x, y, z) = 0\)
+  \bigskip
+  Buscamos pelos pontos onde o gradiente de $f$
+  \\
+  é normal a curva de nível de \(g(x, y) = c\)
 
   \pause
-  \vspace{\baselineskip}
-  Isto é, os pontos onde os \emph{gradientes de $f$ e $g$ apontam na mesma direção}
+  \bigskip
+  Isto é, os pontos onde os
+  \emph{gradientes de $f$ e $g$ apontam na mesma direção}
   \pause
   \[
     \nabla f = \lambda\;\nabla g
@@ -112,20 +121,20 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Método dos Multiplicadores de Lagrange}
-  Suponha que \(f(x, y, z)\) e \(g(x, y, z)\) sejam diferenciáveis\\[2mm]
-  e \(\nabla g\neq 0\) quando \(g(x, y, z)=0\)
+  Suponha que \(f(x, y)\) e \(g(x, y)\) sejam diferenciáveis\\[2mm]
+  e \(\nabla g\neq 0\) quando \(g(x, y) = c\)
 
   \pause
   \vspace{\baselineskip}
-  Para encontrar os valores extremos locais de \(f(x, y, z)\) \\[2mm]
+  Para encontrar os valores extremos locais de \(f(x, y)\) \\[2mm]
   \pause
-  sujeito a restrição \(g(x, y, z)=0\) \\[2mm]
+  sujeito a restrição \(g(x, y) = c\) \\[2mm]
   \pause
-  encontre $x$, $y$, $z$ e $\lambda$ tais que
+  encontre $x$, $y$ e $\lambda$ tais que
   \[
     \begin{cases}
       \nabla f = \lambda \nabla g   \\
-      g(x, y, z) = 0
+      g(x, y) = c
     \end{cases}
   \]
 \end{frame}

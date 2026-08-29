@@ -1,0 +1,314 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 3 -- Turma 8}{20/05/2026}
+
+\bigskip
+\textbf{Atenção}: a aplicação das regras do produto ou do quociente em casos
+nos quais um dos termos é constante \textbf{será considerada incorreta},
+por evidenciar compreensão inadequada das regras de derivação.
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Considere a função
+\(
+  g(x, y, z) = \sqrt{x+y^2}\,\cos(yz)+\frac{x}{y+z}+z^3\ln(x+1)
+\)
+\begin{enumerate}[label=\alph*),nosep]
+  \item Calcule o gradiente de $f$
+
+  \item Calcule a derivada direcional de $f$ no ponto
+  \(
+    Q = (0, 1, 1)
+  \)
+  na direção
+  \(
+    w = (1, 2, -2)
+  \)
+
+  \item Determine a direção em que $f$ cresce mais rapidamente no ponto $P$
+\end{enumerate}
+
+\begin{answer}
+  \textbf{(a)} O gradiente de
+  \(
+    g(x, y, z)=\sqrt{x+y^2}\,\cos(yz)+\frac{x}{y+z}+z^3\ln(x+1)
+  \)
+  é
+  \(
+    \nabla f(x, y, z)
+    = \Vetortri{\D{g}{x}}{\D{g}{y}}{\D{g}{z}}
+  \)
+  \begin{align*}
+    \D{g}{x}
+    & = \D{}{x} \left( e^{xy}\ln\left(x+z^2\right) \right)
+      + \D{}{x} \left( \frac{y^2}{z} \right)
+      - \D{}{x} \left( \sin(xz) \right)
+    \\[2mm]
+    & = ye^{xy}\ln\left(x+z^2\right)
+      + e^{xy}\frac{1}{x+z^2}
+      - z\cos(xz)
+  \end{align*}
+  \begin{align*}
+    \D{f}{y}
+    & = \D{}{y} \left( e^{xy}\ln\left(x+z^2\right) \right)
+      + \D{}{y} \left( \frac{y^2}{z} \right)
+      - \D{}{y} \left( \sin(xz) \right)
+    \\[2mm]
+    & = xe^{xy}\ln\left(x+z^2\right)
+      + \frac{2y}{z}
+  \end{align*}
+  \begin{align*}
+    \D{f}{z}
+    & = \D{}{z} \left( e^{xy}\ln\left(x+z^2\right) \right)
+      + \D{}{z} \left( \frac{y^2}{z} \right)
+      - \D{}{z} \left( \sin(xz) \right)
+    \\[2mm]
+    & = e^{xy}\frac{2z}{x+z^2}
+      - \frac{y^2}{z^2}
+      - x\cos(xz)
+  \end{align*}
+  \[
+    \nabla f(x,y,z)
+    = \Vetortri{
+    ye^{xy}\ln(x+z^2)
+    +
+    \frac{e^{xy}}{x+z^2}
+    -
+    z\cos(xz)}{
+    xe^{xy}\ln(x+z^2)
+    +
+    \frac{2y}{z}}{
+    \frac{2ze^{xy}}{x+z^2}
+    -
+    \frac{y^2}{z^2}
+    -
+    x\cos(xz)}
+  \]
+
+  \textbf{(b)} No ponto \(P=(1, 1, 1)\),
+  \[
+    \nabla f(1, 1, 1)
+    = \Vetortri{e\ln2+\frac{e}{2}-\cos1}{e\ln2+2}{e-1-\cos1}
+  \]
+  O vetor unitário na direção de
+  \(
+    v = (2, -1, 2)
+  \)
+  é
+  \[
+    u
+    = \frac{v}{\norm{v}}
+    = \frac{1}{3} \vetortri{2}{-1}{2}
+    = \Vetortri{\frac{2}{3}}{-\frac{1}{3}}{\frac{2}{3}}
+  \]
+  A derivada direcional é
+  \begin{align*}
+    D_{u} f(1, 1, 1)
+    & = \nabla f(1, 1, 1) \cdot u                                        \\[2mm]
+    & = \Vetortri{e\ln2+\frac{e}{2}-\cos1}{e\ln2+2}{e-1-\cos1} \cdot
+        \Vetortri{\frac{2}{3}}{-\frac{1}{3}}{\frac{2}{3}}                \\[2mm]
+    & = \frac{2}{3} \left( e\ln 2 + \frac{e}{2} - \cos(1) \right)
+      - \frac{1}{3} \left( e\ln 2 + 2 \right)
+      + \frac23 \left( e - 1 - \cos(1) \right)                           \\[2mm]
+    & = \frac{1}{3} \left( e\ln 2 + 3e - 4\cos(1) - 4 \right)
+  \end{align*}
+
+  \textbf{(c)} A função cresce mais rapidamente na direção do gradiente
+  \[
+    \nabla f(1, 1, 1)
+    =\Vetortri{e\ln2+\frac{e}{2}-\cos1}{e\ln2+2}{e-1-\cos1}
+  \]
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Considerando a função
+\(
+  f(x, y) = x^2 e^y + \ln(x+y)
+\)
+\begin{enumerate}[label=\alph*),nosep]
+  \item Determine a equação do plano tangente ao gráfico de $f$
+        no ponto correspondente a \((1, 0)\)
+  \item Verifique se o ponto \((-1, 2, 1)\) pertence ao plano tangente
+\end{enumerate}
+
+\begin{answer}
+
+  \textbf{(a)}
+
+  A equação do plano tangente ao gráfico de \(z=f(x,y)\) no ponto
+  \[
+    (x_0,y_0,z_0)
+  \]
+  é dada por
+  \[
+    z-z_0
+    = f_x(x_0,y_0)(x-x_0)
+    + f_y(x_0,y_0)(y-y_0).
+  \]
+  
+  Primeiramente, calculamos o valor da função:
+  
+  \[
+  f(1,0)
+  =
+  1^2e^0+\ln(1+0)
+  =
+  1.
+  \]
+  
+  Logo,
+  
+  \[
+  z_0=1.
+  \]
+  
+  Calculamos agora as derivadas parciais.
+  
+  Para \(x\),
+  
+  \[
+  f_x(x,y)
+  =
+  2xe^y+\frac{1}{x+y}.
+  \]
+  
+  Para \(y\),
+  
+  \[
+  f_y(x,y)
+  =
+  x^2e^y+\frac{1}{x+y}.
+  \]
+  
+  Avaliando em \((1,0)\),
+  
+  \[
+  f_x(1,0)
+  =
+  2(1)e^0+\frac{1}{1}
+  =
+  3,
+  \]
+  
+  \[
+  f_y(1,0)
+  =
+  1^2e^0+\frac{1}{1}
+  =
+  2.
+  \]
+  
+  Substituindo na fórmula do plano tangente,
+  
+  \[
+  z-1
+  =
+  3(x-1)
+  +
+  2(y-0).
+  \]
+  
+  Simplificando,
+  
+  \[
+  z
+  =
+  3x+2y-2.
+  \]
+  
+    \bigskip
+    \textbf{(b)}
+    O ponto não pertence ao plano, pois
+    \begin{align*}
+      z
+      & = \left[3x+2y-2\right]\evalat{(-1, 2)}{} \\
+      & = -3 +4 -2 \\
+      & = -1 \\
+      & \neq 1
+    \end{align*}
+  
+  
+  
+  \hrulefill
+  
+  \hrulefill
+  
+    \textbf{(a)}
+    A equação do plano tangente ao gráfico de \(z = g(x, y)\) no ponto
+    \(
+      (a, b, c)
+    \)
+    é dada por
+    \[
+      z - c = g_x(a, b)(x - a) + g_y(a, b)(y - b)
+    \]
+    \[
+      c
+      = g(0, \pi)
+      = \sqrt{1} + \sin(-\pi)
+      = 1
+    \]
+    Derivadas parciais
+    \[
+      \D{g}{x}
+      = \frac{y}{2\sqrt{xy+1}} + \cos(x-y)
+    \]
+    \[
+      \D{g}{y}
+      = \frac{x}{2\sqrt{xy+1}} - \cos(x-y)
+    \]
+    Avaliando em \((0, \pi)\)
+    \[
+      \D{g}{x}(0, \pi)
+      = \frac{\pi}{2\sqrt{0+1}} + \cos(-\pi)
+      = \frac{\pi}{2} - 1
+    \]
+    \[
+      \D{g}{y}(0, \pi)
+      = \frac{0}{2\sqrt{0+1}} - \cos(0-\pi)
+      = 1
+    \]
+    Substituindo na fórmula
+    \[
+      z - 1
+      = \left( \frac{\pi}{2} - 1 \right)(x-0)
+      + 1 (y-\pi)
+    \]
+    \[
+      z - 1
+      = \left( \frac{\pi}{2} - 1 \right)x
+      + y -\pi
+    \]
+    \[
+      z
+      = \left( \frac{\pi}{2} - 1 \right)x
+      + y -\pi +1
+    \]
+  
+    \bigskip
+    \textbf{(b)}
+    O ponto não pertence ao plano, pois
+    \begin{align*}
+      z
+      & = \left[\left( \frac{\pi}{2} - 1 \right)x + y -\pi +1\right]\evalat{(2, 0)}{} \\
+      & = \left( \frac{\pi}{2} - 1 \right)2 + 0 -\pi +1 \\
+      & = \pi - 2 -\pi +1 \\
+      & = -1 \\
+      & \neq 1
+    \end{align*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
