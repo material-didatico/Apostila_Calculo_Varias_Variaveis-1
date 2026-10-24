@@ -1,0 +1,245 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 2 -- Turma 6}{28/09/2026}
+
+\bigskip
+\textbf{Atenção}: a aplicação das regras do produto ou do quociente em casos
+nos quais um dos termos é constante \textbf{será considerada incorreta},
+por evidenciar compreensão inadequada das regras de derivação.
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Calcule a derivada parcial mista
+\(
+  f_{xy}(x, y)
+\)
+da função
+\(
+  f(x, y) = ye^{xy} - x\sin\left(x^2 + y\right),
+\)
+na ordem indicada pela notação
+
+\begin{answer}
+  \begin{align*}
+    f_x(x, y)
+    & = \D{f}{x} \\
+    & = \D{}{x}\left[ye^{xy} - x\sin\left(x^2 + y\right)\right] \\
+    & = \D{}{x}\left[ye^{xy}\right]
+      - \D{}{x}\left[x\sin\left(x^2 + y\right)\right] \\
+    & = y\D{}{x}\left[e^{xy}\right] -
+        \left(
+          \D{x}{x}\sin\left(x^2 + y\right)
+        + x\D{}{x}\left[\sin\left(x^2 + y\right)\right]
+        \right)
+    \\
+    & = ye^{xy}\D{}{x}(xy)
+      - \sin\left(x^2 + y\right)
+      - x\cos\left(x^2 + y\right)\D{}{x}\left(x^2 + y\right)
+    \\
+    & = ye^{xy}y
+      - \sin\left(x^2 + y\right)
+      - x\cos\left(x^2 + y\right)2x
+    \\
+    & = y^2e^{xy}
+      - \sin\left(x^2 + y\right)
+      - 2x^2\cos\left(x^2 + y\right)
+  \end{align*}
+  \begin{align*}
+    f_{xy}(x, y)
+    & = \DM{f}{y}{x} \\
+    & = \D{}{y}\left(\D{f}{x}\right)
+    \\
+    & = \D{}{y}\left[
+          y^2e^{xy}
+          - \sin\left(x^2 + y\right)
+          - 2x^2\cos\left(x^2 + y\right)
+        \right]
+    \\
+    & = \D{}{y}\left[ y^2e^{xy} \right]
+      - \D{}{y}\left[ \sin\left(x^2 + y\right) \right]
+      - \D{}{y}\left[ 2x^2\cos\left(x^2 + y\right) \right]
+    \\
+    & = \D{y^2}{y}e^{xy} + y^2\D{e^{xy}}{y}
+      - \D{}{y}\left[ \sin\left(x^2 + y\right) \right]
+      - 2x^2\D{}{y}\left[ \cos\left(x^2 + y\right) \right]
+    \\
+    & = 2ye^{xy} + y^2e^{xy}\D{xy}{y}
+      - \cos\left(x^2 + y\right) \D{}{y}\left[ x^2 + y \right]
+      + 2x^2\sin\left(x^2 + y\right)\D{}{y}\left[ x^2 + y \right]
+    \\
+    & = 2yxe^{xy} + y^2e^{xy}
+      - \cos\left(x^2 + y\right)
+      + 2x^2\sin\left(x^2 + y\right)
+  \end{align*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+  Determine se o limite
+  \(
+    \lim_{(x, y)\to(0, 0)} \frac{x^2-y^2}{x^2+y^2}
+  \)
+  existe
+
+\begin{answer}
+  \[
+    f(x, y) = \frac{x^2-y^2}{x^2+y^2}
+  \]
+  Caminho $y=0$
+  \[
+    f(x, 0)
+    = \frac{x^2-y^2}{x^2+y^2} \evalat{y=0}{}
+    = \frac{x^2}{x^2}
+    = 1
+    \qquad\forall x\neq 0
+  \]
+  \[
+    L_1
+    = \lim_{(x, y)\to(0, 0)} \frac{x^2-y^2}{x^2+y^2} \evalat{y=0}{}
+    = \lim_{x \to 0} \frac{x^2-0^2}{x^2+0^2}
+    = \lim_{x \to 0} 1
+    = 1
+  \]
+  Caminho $x = 0$
+  \[
+    f(0, y)
+    = \frac{x^2-y^2}{x^2+y^2} \evalat{x=0}{}
+    = \frac{-y^2}{y^2} 4
+    = -1
+    \qquad\forall y\neq 0
+  \]
+  \[
+    L_2
+    = \lim_{(x, y)\to(0, 0)} \frac{x^2-y^2}{x^2+y^2} \evalat{x=0}{}
+    = \lim_{y \to 0} \frac{0^2-y^2}{0^2+y^2}
+    = \lim_{y \to 0} -1
+    = -1
+  \]
+  Os dois caminhos conduzem ao ponto $(0, 0)$,
+  mas produzem valores diferentes então o limite não existe.
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Dada a equação
+\(
+  x^2 + xy + y^2 = 7,
+\)
+determine \(\frac{dy}{dx}\) por derivação implícita e calcule seu valor no ponto $(2, 3)$
+
+\begin{answer}
+  \textbf{Método 1}
+  Pela fórmula temos
+  \[
+    \frac{dy}{dx} = - \frac{F_x}{F_y}
+  \]
+  com
+  \[
+    F(x, y) = x^2 + xy + y^2
+  \]
+  \[
+    F_x(x, y)
+    = \D{F}{x}
+    = \D{}{x}\left(x^2 + xy + y^2\right)
+    = 2x + y
+  \]
+  \[
+    F_y(x, y)
+    = \D{F}{y}
+    = \D{}{y}\left(x^2 + xy + y^2\right)
+    = x + 2y
+  \]
+  \[
+    \frac{dy}{dx}
+    = -\frac{F_x}{F_y}
+    = -\frac{2x + y}{x + 2y}
+  \]
+
+  \textbf{Método 2}
+
+  Como $y$ é uma função de $x$,
+  \(
+    y = y(x)
+  \)
+  \begin{align*}
+    x^2 + xy + y^2                                                & = 7                  \\
+    x^2 + xy(x) + \left(y(x)\right)^2                             & = 7                  \\
+    \frac{d}{dx} \left[ x^2 + xy(x) + \left(y(x)\right)^2 \right] & = \frac{d7}{dx}      \\
+    2x + \frac{dx}{dx}y + x\frac{dy}{dx} + 2y\frac{dy}{dx}        & = 0                  \\
+    2x + y + x\frac{dy}{dx} + 2y\frac{dy}{dx}                     & = 0                  \\
+    \frac{dy}{dx}\left(x + 2y\right) + 2x + y                     & = 0                  \\
+    \frac{dy}{dx}\left(x + 2y\right)                              & = - 2x - y           \\
+    \frac{dy}{dx}                                                 & = \frac{-2x-y}{x+2y}
+  \end{align*}
+
+  \textbf{No ponto $(1,2)$}
+
+  \[
+    \frac{dy}{dx}(2, 3)
+    = -\frac{2x + y}{x + 2y} \evalat{(2, 3)}{}
+    = -\frac{2\times 2 + 3}{2 + 2 \times 3}
+    = -\frac{7}{8}
+  \]
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Dados
+$
+  z=u^2+e^v
+$,
+$
+  u=x^2+y
+$ e
+$
+  v=xy
+$.
+Utilize a regra da cadeia para calcular
+\(
+  \D{z}{x}(1, 2)
+\)
+\begin{answer}
+\[
+  \D{z}{x} = \D{z}{u} \D{u}{x} + \D{z}{v} \D{v}{x}
+\]
+\[
+  \D{z}{u} = 2u
+\]
+\[
+  \D{z}{v} = e^v
+\]
+\[
+  \D{u}{x} = 2x
+\]
+\[
+  \D{v}{x} = y
+\]
+\begin{align*}
+  \D{z}{x}
+  & = \D{z}{u} \D{u}{x} + \D{z}{v} \D{v}{x} \\
+  & = 2u(2x) + e^v y                  \\
+  & = 4x\left(x^2 + y\right)+ye^{xy}
+\end{align*}
+\begin{align*}
+  \D{z}{x}(1, 2)
+  & = \left(4x\left(x^2 + y\right)+ye^{xy}\right) \evalat{(1, 2)}{} \\
+  & = 4(1)(1^2+2)+2e^{1 \times 2} \\
+  & = 12+2e^2
+\end{align*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

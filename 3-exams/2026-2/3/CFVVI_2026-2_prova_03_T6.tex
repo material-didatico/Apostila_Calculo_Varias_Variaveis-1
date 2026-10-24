@@ -1,0 +1,180 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{calculo_varias_variaveis-1}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{CFVVI}{Prova 3 -- Turma 6}{21/05/2026}
+
+\bigskip
+\textbf{Atenção}: a aplicação das regras do produto ou do quociente em casos
+nos quais um dos termos é constante \textbf{será considerada incorreta},
+por evidenciar compreensão inadequada das regras de derivação.
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{50\%}
+Considerando a função
+\(
+  f(x, y) = x^2y + e^{xy}
+\)
+
+\exerciseItem{20\%}
+  Calcule o gradiente de $f$ em $(1, 0)$ e $(3, 4)$
+
+\exerciseItem{30\%}
+  Calcule a derivada direcional de $f$ no ponto
+  $P=(1, 0)$, na direção do vetor $\vec{v}=(3, 4)$
+
+\begin{answer}
+\textbf{a)}
+\vspace{-\baselineskip}
+  \[
+    f_x(x, y)
+    = \D{}{x}\left(x^2y + e^{xy}\right)
+    = 2xy + ye^{xy}
+  \]
+  \[
+    f_y(x, y)
+    = \D{}{y}\left(x^2y + e^{xy}\right)
+    = x^2 + xe^{xy}
+  \]
+  \[
+    \nabla f(x, y)
+    = \vetor{f_x(x, y)}{f_y(x, y)}
+    = \vetor{2xy + ye^{xy}}{x^2 + xe^{xy}}
+  \]
+  \[
+    \nabla f(1, 0)
+    = \vetor{2xy + ye^{xy}}{x^2 + xe^{xy}} \evalat{(1, 0)}{}
+    = \vetor{2 \times 1 \times 0 + 0e^0}{1^2+1e^0}
+    = \vetor{0}{2}
+  \]
+  \[
+    \nabla f(3, 4)
+    = \vetor{2xy + ye^{xy}}{x^2 + xe^{xy}} \evalat{(3, 4)}{}
+    = \vetor{2 \times 3 \times 4 + 4e^{3\times 4}}
+            {3^2 + 3e^{3 \times 4}}
+    = \vetor{24+4e^{12}}{9+3e^{12}}
+  \]
+
+\bigskip
+\textbf{b)}
+\vspace{-\baselineskip}
+  \[
+    D_{\vec{u}}f(1, 0) = \nabla f(1, 0) \cdot \vec{u}
+  \]
+  O vetor $\vec{v}$ não é unitário. Sua norma é
+  \(
+    \norm{\vec{v}}
+    = \sqrt{3^2 + 4^2}
+    = 5
+  \)
+
+  Vetor unitário na direção de $\vec{v}$
+  \[
+    \vec{u}
+    = \frac{\vec{v}}{\norm{\vec{v}}}
+    = \Vetor{\frac{3}{5}}{\frac{4}{5}}
+  \]
+  Derivada direcionakl
+  \[
+    D_{\vec{u}}f(1, 0)
+    = \nabla f(1, 0) \cdot \vec{u}
+    = \vetor{0}{2} \cdot \Vetor{\frac{3}{5}}{\frac{4}{5}}
+    = 0 \times \frac{3}{5} + 2  \times  \frac{4}{5}
+    = \frac{8}{5}
+  \]
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\clearpagequestiononly
+\exercise{50\%}
+Considerando a função
+\(
+  h(x, y) = \ln\left(x^2+y^2\right) + e^{xy}
+\)
+\exerciseItem{10\%} calcule seu gradiente
+\exerciseItem{20\%} calcule a aproximação linear em torno de \((0, 2)\)
+                    (use $\ln(4) = 1,39$)
+\exerciseItem{20\%} use a aproximação linear para estimar \(f(0.05, 1.98)\)
+
+\begin{answer}
+\textbf{a)}
+\vspace{-\baselineskip}
+  \begin{align*}
+    h_x(x, y)
+    & = \D{}{x}\left(\ln\left(x^2+y^2\right) + e^{xy}\right) \\
+    & = \frac{1}{x^2+y^2}\D{}{x}\left(x^2+y^2\right)
+      + e^{xy}\D{}{x}\left(xy\right) \\
+    & = \frac{2x}{x^2+y^2} + ye^{xy}
+  \end{align*}
+  \begin{align*}
+    h_y(x, y)
+    & = \D{}{y}\left(\ln\left(x^2+y^2\right) + e^{xy}\right) \\
+    & = \frac{1}{x^2+y^2}\D{}{y}\left(x^2+y^2\right)
+      + e^{xy}\D{}{y}\left(xy\right) \\
+    & = \frac{2y}{x^2+y^2} + xe^{xy}
+  \end{align*}
+  \[
+    \nabla h(x, y)
+    = \vetor{h_x(x, y)}{h_y(x, y)}
+    = \Vetor{\frac{2x}{x^2+y^2} + ye^{xy}}{\frac{2y}{x^2+y^2} + xe^{xy}}
+  \]
+
+\bigskip
+\textbf{b)}
+\vspace{-\baselineskip}
+  \begin{align*}
+    L(x, y)
+    = h(a, b) + h_x(a, b)(x-a) + h_y(a, b)(y-b)
+    = h(0, 2) + h_x(0, 2)x + h_y(0, 2)(y-2)
+  \end{align*}
+  \begin{align*}
+    h(0, 2)
+    = \left(\ln\left(x^2+y^2\right) + e^{xy}\right) \evalat{(0, 2)}{}
+    = \ln\left(0+2^2\right) + e^{0}
+    = \ln(4) + 1
+    \approx 2,39
+  \end{align*}
+  \begin{align*}
+    h_x(0, 2)
+    = \left(\frac{2x}{x^2+y^2} + ye^{xy}\right) \evalat{(0, 2)}{}
+    = \frac{0}{0+2^2} + 2e^0
+    = 2
+  \end{align*}
+  \begin{align*}
+    h_y(0, 2)
+    = \left(\frac{2y}{x^2+y^2} + xe^{xy}\right) \evalat{(0, 2)}{}
+    = \frac{2\times 4}{0+2^2} + 0e^{0}
+    = \frac{8}{4}
+    = 2
+  \end{align*}
+    \begin{align*}
+      L(x, y)
+      = h(0, 2) + h_x(0, 2)x + h_y(0, 2)(y-2)
+      = 2,39 + 2x + 2(y-2)
+    \end{align*}
+
+\bigskip
+\textbf{c)}
+\vspace{-\baselineskip}
+  \begin{align*}
+    f(0.05, 1.98)
+    \approx L(0.05, 1.98)
+    & = \left(2,39 + 2x + 2(y-2)\right) \evalat{(0.05, 1.98)}{} \\
+    & = 2,39 + 2\times 0,05 + 2(1,98-2) \\
+    & = 2,39 + 0,10 - 0,04 \\
+    & = 2,45
+  \end{align*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
